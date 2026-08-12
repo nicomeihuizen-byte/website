@@ -1,32 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nico Meihuizen - AI Native Software Engineer</title>
+<meta name="description" content="Nico Meihuizen. AI-native software engineer based in Utrecht, NL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #10121A;
+    --bg-raised: #171A24;
+    --line: #262A38;
+    --text: #ECEDF3;
+    --text-muted: #8B90A3;
+    --text-dim: #565B6E;
+    --accent: #E8B34A;
+    --accent-dim: #6B5A2E;
+    --accent2: #5FA8D3;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --max-w: 780px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(232,179,74,0.07), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(95,168,211,0.06), transparent 60%);
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:var(--accent); color:#10121A; }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{ max-width:var(--max-w); margin:0 auto; padding:0 24px; }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(16,18,26,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px;
+    max-width:var(--max-w); margin:0 auto;
+  }
+  .brand{
+    font-family:var(--font-mono);
+    font-size:14px; font-weight:500;
+    color:var(--text);
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 8px var(--accent);
+  }
+  nav ul{ list-style:none; display:flex; gap:28px; }
+  nav a{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-muted);
+    transition:color .15s ease;
+  }
+  nav a:hover{ color:var(--accent); }
+
+  /* HERO / TERMINAL */
+  .hero{ padding:88px 0 64px; }
+  .terminal{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+  }
+  .terminal-bar span{
+    width:10px; height:10px; border-radius:50%;
+    background:#3A3E4C;
+  }
+  .terminal-bar .label{
+    margin-left:8px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-dim);
+  }
+  .terminal-body{
+    padding:28px 28px 32px;
+    font-family:var(--font-mono);
+  }
+  .prompt-line{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .prompt-line .sym{ color:var(--accent2); }
+  .type-target{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(28px, 5vw, 44px);
+    line-height:1.25;
+    color:var(--text);
+    min-height:2.7em;
+  }
+  .type-target .cursor{
+    display:inline-block;
+    width:3px; height:0.9em;
+    background:var(--accent);
+    margin-left:3px;
+    vertical-align:-0.12em;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+  .accent-word{ color:var(--accent); }
+
+  .hero-sub{
+    margin-top:22px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    font-family:var(--font-body);
+    font-size:15.5px;
+    color:var(--text-muted);
+    max-width:56ch;
+  }
+  .hero-sub strong{ color:var(--text); font-weight:600; }
+
+  .hero-cta{
+    display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--font-mono);
+    font-size:13px;
+    padding:11px 18px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    transition:border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .btn.primary{
+    background:var(--accent);
+    color:#181205;
+    border-color:var(--accent);
+    font-weight:600;
+  }
+  .btn.primary:hover{ background:#f2c266; }
+  .btn.ghost{ color:var(--text-muted); }
+  .btn.ghost:hover{ color:var(--text); border-color:var(--text-dim); }
+
+  /* SECTION HEADERS */
+  .section{ padding:64px 0; border-top:1px solid var(--line); }
+  .section-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom:32px;
+  }
+  .section-head .idx{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--accent2);
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:600;
+  }
+
+  /* WORK */
+  .work-list{ display:flex; flex-direction:column; gap:1px; background:var(--line); border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .work-item{
+    background:var(--bg-raised);
+    padding:22px 22px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:18px;
+    transition:background .15s ease;
+  }
+  .work-item:hover{ background:#1D2130; }
+  .work-item .file-icon{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .work-item .info h3{
+    font-family:var(--font-display);
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .work-item .info p{
+    font-size:13.5px;
+    color:var(--text-muted);
+  }
+  .tag{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--accent);
+    border:1px solid var(--accent-dim);
+    padding:4px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+  .work-note{
+    margin-top:16px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--text-dim);
+  }
+
+  /* ABOUT */
+  .about p{
+    font-size:15.5px;
+    color:var(--text-muted);
+    max-width:62ch;
+    margin-bottom:16px;
+  }
+  .about strong{ color:var(--text); font-weight:600; }
+  .stack{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:20px;
+  }
+  .stack span{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-muted);
+    border:1px solid var(--line);
+    padding:5px 10px;
+    border-radius:5px;
+  }
+
+  /* CONTACT / FOOTER */
+  footer{
+    border-top:1px solid var(--line);
+    padding:56px 0 40px;
+  }
+  footer h2{
+    font-family:var(--font-display);
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  footer p{ color:var(--text-muted); font-size:15px; margin-bottom:24px; max-width:48ch; }
+
+  /* CONTACT FORM */
+  .contact-form{
+    max-width:480px;
+    margin-bottom:36px;
+    padding:24px;
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .field{ margin-bottom:16px; }
+  .field:last-of-type{ margin-bottom:20px; }
+  .field label{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--accent2);
+    margin-bottom:6px;
+  }
+  .field input,
+  .field textarea{
+    width:100%;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:10px 12px;
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:14px;
+    resize:vertical;
+  }
+  .field input:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+  }
+  .contact-form .btn{
+    border:1px solid var(--accent);
+    cursor:pointer;
+  }
+  .form-hint{
+    margin:12px 0 0;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--text-dim);
+    max-width:none;
+  }
+  .contact-links{ display:flex; gap:22px; flex-wrap:wrap; margin-bottom:36px; }
+  .contact-links a{
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    color:var(--text);
+    border-bottom:1px solid var(--accent-dim);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .contact-links a:hover{ color:var(--accent); border-color:var(--accent); }
+  .foot-meta{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--text-dim);
+    flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width: 600px){
+    .work-item{ grid-template-columns:1fr; gap:8px; }
+    .work-item .tag{ justify-self:start; }
+    .terminal-body{ padding:22px 18px 26px; }
+    .hero{ padding:56px 0 44px; }
+  }
+
+  /* AMBIENT CODE BACKGROUND — scattered, low-opacity snippets behind content */
+  .code-bg{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .code-bg span{
+    position:absolute;
+    font-family:var(--font-mono);
+    font-weight:500;
+    white-space:nowrap;
+    opacity:0.09;
+    letter-spacing:0.02em;
+  }
+  /* Everything that isn't the background layer sits above it */
+  header, main, footer{ position:relative; z-index:1; }
+
+  @media (max-width: 700px){
+    .code-bg span:nth-child(n+9){ display:none; } /* keep just a handful on mobile */
+  }
+</style>
 </head>
 <body>
-    <div class="weather-card">
-        <div class="search-box">
-            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
-            <button id="search-btn">Search</button>
-        </div>
-        
-        <div class="weather-info" id="weather-info">
-            <h2 id="city-name">City Name</h2>
-            <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
-            <p id="temperature" class="temp">--°C</p>
-            <p id="description">Conditions</p>
-            <div class="details">
-                <p id="humidity">Humidity: --%</p>
-                <p id="wind">Wind: -- m/s</p>
-            </div>
-        </div>
 
-        <p id="error-msg" class="error hidden">City not found. Please try again.</p>
+<!--
+  Ambient background layer: real-ish code fragments scattered at fixed
+  positions across the viewport, each in a different syntax-highlight-style
+  color. aria-hidden because it's decorative only, not content.
+  pointer-events:none (set in CSS) so it never blocks clicks on real UI.
+-->
+<div class="code-bg" aria-hidden="true">
+  <span style="top:6%; left:4%; font-size:13px; color:#5FA8D3; transform:rotate(-4deg);">const engineer = () =&gt;</span>
+  <span style="top:14%; left:78%; font-size:12px; color:#E8B34A;">npm run build</span>
+  <span style="top:22%; left:20%; font-size:14px; color:#8B6FD6; transform:rotate(3deg);">async function deploy() {`{`}</span>
+  <span style="top:9%; left:52%; font-size:11px; color:#5FBF8E;">git commit -m "ship it"</span>
+  <span style="top:34%; left:88%; font-size:13px; color:#E8B34A; transform:rotate(-6deg);">await model.run(prompt)</span>
+  <span style="top:41%; left:6%; font-size:12px; color:#5FA8D3;">for (const task of queue)</span>
+  <span style="top:48%; left:65%; font-size:11px; color:#D97B7B;">return response.json()</span>
+  <span style="top:58%; left:30%; font-size:13px; color:#5FBF8E; transform:rotate(2deg);">export default App</span>
+  <span style="top:63%; left:82%; font-size:12px; color:#8B6FD6;">useEffect(() =&gt; {`{`})</span>
+  <span style="top:71%; left:12%; font-size:11px; color:#E8B34A; transform:rotate(-3deg);">pip install -r requirements.txt</span>
+  <span style="top:77%; left:55%; font-size:13px; color:#5FA8D3;">if (status === 200)</span>
+  <span style="top:85%; left:76%; font-size:12px; color:#D97B7B; transform:rotate(4deg);">try: agent.invoke(task)</span>
+  <span style="top:90%; left:8%; font-size:11px; color:#5FBF8E;">type Result&lt;T&gt; = T | Error</span>
+  <span style="top:2%; left:34%; font-size:12px; color:#8B6FD6;">SELECT * FROM projects</span>
+</div>
+
+<header>
+  <div class="navbar">
+    <div class="brand"><span class="dot"></span> nico.meihuizen</div>
+    <nav>
+      <ul>
+        <li><a href="#work">work</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
+        <span class="label">nico@utrecht — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="prompt-line"><span class="sym">➜</span> whoami</div>
+        <div class="type-target" id="typeTarget"></div>
+        <div class="hero-sub">
+          Previously <strong>8 years in enterprise tech sales</strong> — data center, cloud, SaaS. Retrained through the <strong>Metana AISE program</strong> and now build software full-time, self-employed, out of Utrecht.
+        </div>
+        <div class="hero-cta">
+          <a href="#work" class="btn primary">See the work</a>
+          <a href="#contact" class="btn ghost">Get in touch</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script href="script.js"></script>
+  <section class="section wrap" id="work">
+    <div class="section-head">
+      <span class="idx">~/work</span>
+      <h2>Recent builds</h2>
+    </div>
+    <div class="work-list">
+      <div class="work-item">
+        <span class="file-icon">01_project</span>
+        <div class="info">
+          <h3>Project one</h3>
+          <p>Placeholder — swap in a real build once it's ready.</p>
+        </div>
+        <span class="tag">AI / LLM</span>
+      </div>
+      <div class="work-item">
+        <span class="file-icon">02_project</span>
+        <div class="info">
+          <h3>Project two</h3>
+          <p>Placeholder — swap in a real build once it's ready.</p>
+        </div>
+        <span class="tag">full-stack</span>
+      </div>
+      <div class="work-item">
+        <span class="file-icon">03_project</span>
+        <div class="info">
+          <h3>Project three</h3>
+          <p>Placeholder — swap in a real build once it's ready.</p>
+        </div>
+        <span class="tag">automation</span>
+      </div>
+    </div>
+    <div class="work-note">// replace these three entries with real project names, one-line descriptions, and links</div>
+  </section>
+
+  <section class="section wrap about" id="about">
+    <div class="section-head">
+      <span class="idx">~/about</span>
+      <h2>Background</h2>
+    </div>
+    <p>I spent most of my career on the commercial side of enterprise IT — selling data center, cloud, and SaaS solutions to technical buyers. That gave me a habit of understanding a product from the inside out before I ever pitch it.</p>
+    <p>I retrained through <strong>Metana's AI Software Engineer program</strong> and now work as an <strong>AI-native software engineer</strong> — building with AI tools as a core part of the workflow, not a bolt-on. Based in Utrecht, working self-employed.</p>
+    <div class="stack">
+      <span>TypeScript</span>
+      <span>Python</span>
+      <span>React</span>
+      <span>Node.js</span>
+      <span>LLM tooling</span>
+      <span>Agentic workflows</span>
+    </div>
+  </section>
+
+  <footer id="contact" class="wrap">
+    <h2>Let's talk.</h2>
+    <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Fill this in and it'll open as a pre-filled email in your mail app.</p>
+
+    <form id="contactForm" class="contact-form">
+      <div class="field">
+        <label for="cf-name">name</label>
+        <input type="text" id="cf-name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">your email</label>
+        <input type="email" id="cf-email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">message</label>
+        <textarea id="cf-message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn primary">Send message</button>
+      <p class="form-hint" id="formHint">Opens your email client with this filled in — nothing is sent from this page directly.</p>
+    </form>
+
+    <div class="contact-links">
+      <a href="mailto:">your email here</a>
+      <a href="#" target="_blank" rel="noopener">github</a>
+      <a href="#" target="_blank" rel="noopener">linkedin</a>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Nico Meihuizen</span>
+      <span>Utrecht, NL</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // Self-invoking function (IIFE): runs immediately on page load and keeps
+  // its variables private instead of leaking them into the global scope.
+  (function(){
+
+    // The empty <div> in the hero terminal that the headline gets typed into.
+    var target = document.getElementById('typeTarget');
+
+    // The full sentence the typing animation builds up character by character.
+    var full = "Nico Meihuizen — AI-native software engineer.";
+
+    // The substring inside `full` that should be highlighted in the accent
+    // color once it appears — matched and wrapped in render().
+    var accentWord = "AI-native";
+
+    // Checks the OS/browser-level "reduce motion" accessibility setting.
+    // If the visitor has that turned on, we skip the animation entirely.
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Draws the current (possibly partial) string into the terminal.
+    // Called on every animation frame during typing, and once immediately
+    // if motion is reduced.
+    function render(text){
+      // If the accent word has fully appeared in the typed-so-far text,
+      // wrap it in a <span> so it picks up the --accent color via CSS.
+      // Otherwise leave the text as plain, still-being-typed characters.
+      var withAccent = text.split(accentWord).length > 1
+        ? text.replace(accentWord, '<span class="accent-word">' + accentWord + '</span>')
+        : text;
+
+      // Write the text into the DOM, plus a blinking cursor element at the end
+      // so it always appears to trail whatever has been "typed" so far.
+      target.innerHTML = withAccent + '<span class="cursor"></span>';
+    }
+
+    // Reduced-motion path: skip the typing effect and show the finished
+    // sentence straight away, then stop — tick() below is never scheduled.
+    if(reduced){
+      render(full);
+      return;
+    }
+
+    // Tracks how many characters of `full` have been "typed" so far.
+    var i = 0;
+
+    // Recursive timer step that reveals one more character each call,
+    // re-renders the terminal, and reschedules itself until the full
+    // sentence has been typed out — this is what drives the animation.
+    function tick(){
+      i++;
+      render(full.slice(0, i));
+      if(i < full.length){
+        setTimeout(tick, 28); // 28ms per character ≈ typing speed
+      }
+    }
+
+    // Kick off the animation as soon as the script runs.
+    tick();
+  })();
+
+  // Separate IIFE for the contact form, kept isolated from the typing
+  // animation above so the two features don't share variable names.
+  (function(){
+    var form = document.getElementById('contactForm');
+
+    // The address the mailto link will send to. Currently blank —
+    // fill this in with your real email once you have it, e.g.
+    // 'nico@example.com'. Left empty for now as requested.
+    var destinationEmail = '';
+
+    // Runs when the form is submitted. Instead of sending data anywhere,
+    // it builds a mailto: URL from the three fields and navigates to it,
+    // which hands off to the visitor's own email app with everything
+    // pre-filled — no backend or third-party service involved.
+    form.addEventListener('submit', function(e){
+      // Stop the browser's default form submission (which would just
+      // reload the page) so we can build our own mailto link instead.
+      e.preventDefault();
+
+      var name = document.getElementById('cf-name').value.trim();
+      var email = document.getElementById('cf-email').value.trim();
+      var message = document.getElementById('cf-message').value.trim();
+
+      // Subject line shows who's reaching out, right in the inbox.
+      var subject = 'Portfolio contact from ' + name;
+
+      // Body includes their email so it's easy to reply to them directly,
+      // plus their message underneath.
+      var body = 'From: ' + name + ' (' + email + ')\n\n' + message;
+
+      // encodeURIComponent turns spaces, line breaks, and punctuation
+      // into URL-safe characters so the mailto link doesn't break.
+      var mailtoUrl = 'mailto:' + destinationEmail
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      // Navigating to a mailto: URL is what actually triggers the
+      // visitor's default email app to open a new pre-filled message.
+      window.location.href = mailtoUrl;
+    });
+  })();
+</script>
+
 </body>
 </html>
