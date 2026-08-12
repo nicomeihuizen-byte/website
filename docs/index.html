@@ -20,8 +20,8 @@
     --text: #ECEDF3;
     --text-muted: #8B90A3;
     --text-dim: #565B6E;
-    --accent: #E8B34A;
-    --accent-dim: #6B5A2E;
+    --accent: #5FBF8E;
+    --accent-dim: #2E6B52;
     --accent2: #5FA8D3;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -127,23 +127,24 @@
   }
   .prompt-line .sym{ color:var(--accent2); }
   .type-target{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:clamp(28px, 5vw, 44px);
-    line-height:1.25;
-    color:var(--text);
+    font-family:var(--font-mono);
+    font-weight:500;
+    font-size:clamp(26px, 4vw, 36px);
+    line-height:1.5;
+    color:#FFFFFF;
     min-height:2.7em;
   }
   .type-target .cursor{
     display:inline-block;
     width:3px; height:0.9em;
-    background:var(--accent);
+    background:#FFFFFF;
     margin-left:3px;
     vertical-align:-0.12em;
     animation:blink 1s step-end infinite;
   }
   @keyframes blink{ 50%{ opacity:0; } }
-  .accent-word{ color:var(--accent); }
+  .accent-word{ color:#5FBF8E; }
+  .sequence-green{ color:#5FBF8E; }
 
   .hero-sub{
     margin-top:22px;
@@ -173,7 +174,7 @@
     border-color:var(--accent);
     font-weight:600;
   }
-  .btn.primary:hover{ background:#f2c266; }
+  .btn.primary:hover{ background:#7ad0a4; }
   .btn.ghost{ color:var(--text-muted); }
   .btn.ghost:hover{ color:var(--text); border-color:var(--text-dim); }
 
@@ -189,9 +190,10 @@
     color:var(--accent2);
   }
   .section-head h2{
-    font-family:var(--font-display);
+    font-family:var(--font-mono);
     font-size:22px;
     font-weight:600;
+    color:#5FBF8E;
   }
 
   /* WORK */
@@ -213,10 +215,11 @@
     white-space:nowrap;
   }
   .work-item .info h3{
-    font-family:var(--font-display);
+    font-family:var(--font-mono);
     font-size:16.5px;
     font-weight:600;
     margin-bottom:4px;
+    color:#5FBF8E;
   }
   .work-item .info p{
     font-size:13.5px;
@@ -265,10 +268,11 @@
     padding:56px 0 40px;
   }
   footer h2{
-    font-family:var(--font-display);
+    font-family:var(--font-mono);
     font-size:26px;
     font-weight:600;
     margin-bottom:10px;
+    color:#5FBF8E;
   }
   footer p{ color:var(--text-muted); font-size:15px; margin-bottom:24px; max-width:48ch; }
 
@@ -343,54 +347,9 @@
     .hero{ padding:56px 0 44px; }
   }
 
-  /* AMBIENT CODE BACKGROUND — scattered, low-opacity snippets behind content */
-  .code-bg{
-    position:fixed;
-    inset:0;
-    z-index:0;
-    overflow:hidden;
-    pointer-events:none;
-  }
-  .code-bg span{
-    position:absolute;
-    font-family:var(--font-mono);
-    font-weight:500;
-    white-space:nowrap;
-    opacity:0.09;
-    letter-spacing:0.02em;
-  }
-  /* Everything that isn't the background layer sits above it */
-  header, main, footer{ position:relative; z-index:1; }
-
-  @media (max-width: 700px){
-    .code-bg span:nth-child(n+9){ display:none; } /* keep just a handful on mobile */
-  }
 </style>
 </head>
 <body>
-
-<!--
-  Ambient background layer: real-ish code fragments scattered at fixed
-  positions across the viewport, each in a different syntax-highlight-style
-  color. aria-hidden because it's decorative only, not content.
-  pointer-events:none (set in CSS) so it never blocks clicks on real UI.
--->
-<div class="code-bg" aria-hidden="true">
-  <span style="top:6%; left:4%; font-size:13px; color:#5FA8D3; transform:rotate(-4deg);">const engineer = () =&gt;</span>
-  <span style="top:14%; left:78%; font-size:12px; color:#E8B34A;">npm run build</span>
-  <span style="top:22%; left:20%; font-size:14px; color:#8B6FD6; transform:rotate(3deg);">async function deploy() {`{`}</span>
-  <span style="top:9%; left:52%; font-size:11px; color:#5FBF8E;">git commit -m "ship it"</span>
-  <span style="top:34%; left:88%; font-size:13px; color:#E8B34A; transform:rotate(-6deg);">await model.run(prompt)</span>
-  <span style="top:41%; left:6%; font-size:12px; color:#5FA8D3;">for (const task of queue)</span>
-  <span style="top:48%; left:65%; font-size:11px; color:#D97B7B;">return response.json()</span>
-  <span style="top:58%; left:30%; font-size:13px; color:#5FBF8E; transform:rotate(2deg);">export default App</span>
-  <span style="top:63%; left:82%; font-size:12px; color:#8B6FD6;">useEffect(() =&gt; {`{`})</span>
-  <span style="top:71%; left:12%; font-size:11px; color:#E8B34A; transform:rotate(-3deg);">pip install -r requirements.txt</span>
-  <span style="top:77%; left:55%; font-size:13px; color:#5FA8D3;">if (status === 200)</span>
-  <span style="top:85%; left:76%; font-size:12px; color:#D97B7B; transform:rotate(4deg);">try: agent.invoke(task)</span>
-  <span style="top:90%; left:8%; font-size:11px; color:#5FBF8E;">type Result&lt;T&gt; = T | Error</span>
-  <span style="top:2%; left:34%; font-size:12px; color:#8B6FD6;">SELECT * FROM projects</span>
-</div>
 
 <header>
   <div class="navbar">
@@ -410,10 +369,8 @@
     <div class="terminal">
       <div class="terminal-bar">
         <span></span><span></span><span></span>
-        <span class="label">nico@utrecht — zsh</span>
       </div>
       <div class="terminal-body">
-        <div class="prompt-line"><span class="sym">➜</span> whoami</div>
         <div class="type-target" id="typeTarget"></div>
         <div class="hero-sub">
           Previously <strong>8 years in enterprise tech sales</strong> — data center, cloud, SaaS. Retrained through the <strong>Metana AISE program</strong> and now build software full-time, self-employed, out of Utrecht.
@@ -517,56 +474,58 @@
 
     // The empty <div> in the hero terminal that the headline gets typed into.
     var target = document.getElementById('typeTarget');
+    if(!target){ return; }
 
-    // The full sentence the typing animation builds up character by character.
-    var full = "Nico Meihuizen — AI-native software engineer.";
+    // The typing sequence runs in order: first the Java method signature in
+    // terminal green, then the personal headline with only "AI Native" in green.
+    var sequence = [
+      "public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {",
+      "Nico Meihuizen - AI Native Software Engineer."
+    ];
 
-    // The substring inside `full` that should be highlighted in the accent
-    // color once it appears — matched and wrapped in render().
-    var accentWord = "AI-native";
-
-    // Checks the OS/browser-level "reduce motion" accessibility setting.
-    // If the visitor has that turned on, we skip the animation entirely.
+    var accentWord = "AI Native";
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Draws the current (possibly partial) string into the terminal.
-    // Called on every animation frame during typing, and once immediately
-    // if motion is reduced.
-    function render(text){
-      // If the accent word has fully appeared in the typed-so-far text,
-      // wrap it in a <span> so it picks up the --accent color via CSS.
-      // Otherwise leave the text as plain, still-being-typed characters.
+    function render(text, isGreenSequence){
+      if(isGreenSequence){
+        target.innerHTML = '<span class="sequence-green">' + text + '</span><span class="cursor"></span>';
+        return;
+      }
+
       var withAccent = text.split(accentWord).length > 1
         ? text.replace(accentWord, '<span class="accent-word">' + accentWord + '</span>')
         : text;
 
-      // Write the text into the DOM, plus a blinking cursor element at the end
-      // so it always appears to trail whatever has been "typed" so far.
       target.innerHTML = withAccent + '<span class="cursor"></span>';
     }
 
-    // Reduced-motion path: skip the typing effect and show the finished
-    // sentence straight away, then stop — tick() below is never scheduled.
     if(reduced){
-      render(full);
+      render(sequence[1], false);
       return;
     }
 
-    // Tracks how many characters of `full` have been "typed" so far.
+    var sequenceIndex = 0;
     var i = 0;
 
-    // Recursive timer step that reveals one more character each call,
-    // re-renders the terminal, and reschedules itself until the full
-    // sentence has been typed out — this is what drives the animation.
     function tick(){
+      var full = sequence[sequenceIndex];
+      var isGreenSequence = sequenceIndex === 0;
       i++;
-      render(full.slice(0, i));
+      render(full.slice(0, i), isGreenSequence);
+
       if(i < full.length){
-        setTimeout(tick, 28); // 28ms per character ≈ typing speed
+        setTimeout(tick, 24);
+        return;
+      }
+
+      if(sequenceIndex < sequence.length - 1){
+        sequenceIndex++;
+        i = 0;
+        setTimeout(tick, 430);
+        return;
       }
     }
 
-    // Kick off the animation as soon as the script runs.
     tick();
   })();
 
