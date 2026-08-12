@@ -568,6 +568,10 @@
   (function(){
     var form = document.getElementById('contactForm');
 
+    window.addEventListener('pageshow', function(){
+      form.reset();
+    });
+
     // The address the mailto link will send to. Currently blank —
     // fill this in with your real email once you have it, e.g.
     // 'nico@example.com'. Left empty for now as requested.
@@ -598,6 +602,8 @@
       var mailtoUrl = 'mailto:' + destinationEmail
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
+
+      form.reset();
 
       // Navigating to a mailto: URL is what actually triggers the
       // visitor's default email app to open a new pre-filled message.
