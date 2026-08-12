@@ -125,7 +125,7 @@
     width:21%;
     max-width:520px;
     height:auto;
-    margin:0 auto 28px;
+    margin:0 auto 28px 0;
     border-radius:6px;
   }
   .prompt-line{
@@ -215,6 +215,7 @@
     gap:18px;
     transition:background .15s ease;
   }
+  a.work-item{ color:inherit; text-decoration:none; }
   .work-item:hover{ background:#1D2130; }
   .work-item .file-icon{
     font-family:var(--font-mono);
@@ -232,6 +233,17 @@
   .work-item .info p{
     font-size:13.5px;
     color:var(--text-muted);
+  }
+  .work-item .image{
+    display:block;
+    width:120px;
+    height:70px;
+    border-radius:6px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    text-indent:-9999px;
   }
   .tag{
     font-family:var(--font-mono);
@@ -351,6 +363,7 @@
   @media (max-width: 600px){
     .work-item{ grid-template-columns:1fr; gap:8px; }
     .work-item .tag{ justify-self:start; }
+    .work-item .image{ width:100%; height:150px; }
     .terminal-body{ padding:22px 18px 26px; }
     .hero{ padding:56px 0 44px; }
   }
@@ -379,10 +392,10 @@
         <span></span><span></span><span></span>
       </div>
       <div class="terminal-body">
-        <img class="hero-logo" src="images/logo.png" alt="Tech Voyager Digital Nomad logo">
+        <img class="hero-logo" src="images/logo.png" alt="Digital Nomad logo">
         <div class="type-target" id="typeTarget"></div>
         <div class="hero-sub">
-          Previously <strong>8 years in enterprise tech sales</strong> — data center, cloud, SaaS. Retrained through the <strong>Metana AISE program</strong> and now build software full-time, self-employed, out of Utrecht.
+         <p>I'm a results-driven professional with a strong foundation in enterprise sales and technology solutions, I bring years of experience from leading organizations including IBM, SoftLayer, Oracle, and Minitab. My career has been shaped by a deep understanding of data centers, cloud infrastructure, and IaaS/PaaS environments, combined with a proven ability to translate complex technical offerings into business value.</p>
         </div>
         <div class="hero-cta">
           <a href="#work" class="btn primary">See the work</a>
@@ -398,32 +411,43 @@
       <h2>Recent builds</h2>
     </div>
     <div class="work-list">
-      <div class="work-item">
-        <span class="file-icon">01_project</span>
+      <!-- Projects two, three, and four are temporarily hidden until their content is ready. -->
+      <!--
+      <a class="work-item" href="projects/project-four.html">
+        <span class="image" style="background-image: url('images/buuflouise.jpg');">01_project</span>
         <div class="info">
           <h3>Project one</h3>
-          <p>Placeholder — swap in a real build once it's ready.</p>
+          <p>AI-powered software project.</p>
         </div>
         <span class="tag">AI / LLM</span>
-      </div>
-      <div class="work-item">
-        <span class="file-icon">02_project</span>
+      </a>
+      <a class="work-item" href="projects/project-two.html">
+        <span class="image" style="background-image: url('images/buuflouise.jpg');">02_project</span>
         <div class="info">
           <h3>Project two</h3>
-          <p>Placeholder — swap in a real build once it's ready.</p>
+          <p>Full-stack web application.</p>
         </div>
         <span class="tag">full-stack</span>
-      </div>
-      <div class="work-item">
-        <span class="file-icon">03_project</span>
+      </a>
+      <a class="work-item" href="projects/project-three.html">
+        <span class="image" style="background-image: url('images/buuflouise.jpg');">03_project</span>
         <div class="info">
           <h3>Project three</h3>
-          <p>Placeholder — swap in a real build once it's ready.</p>
+          <p>Workflow automation tool.</p>
         </div>
         <span class="tag">automation</span>
-      </div>
+      </a>
+      -->
+      <a class="work-item" href="projects/project-one.html">
+        <span class="image" style="background-image: url('images/buuflouise.jpg');">04_project</span>
+        <div class="info">
+          <h3>Project one</h3>
+          <p>Vegetarian Ecommerce Website</p>
+        </div>
+        <span class="tag">Ecommerce</span>
+      </a>
     </div>
-    <div class="work-note">// replace these three entries with real project names, one-line descriptions, and links</div>
+    <!-- <div class="work-note">// projects two, three, and four are temporarily commented out in the source</div> -->
   </section>
 
   <section class="section wrap about" id="about">
@@ -431,8 +455,9 @@
       <span class="idx">~/about</span>
       <h2>Background</h2>
     </div>
-    <p>I spent most of my career on the commercial side of enterprise IT — selling data center, cloud, and SaaS solutions to technical buyers. That gave me a habit of understanding a product from the inside out before I ever pitch it.</p>
-    <p>I retrained through <strong>Metana's AI Software Engineer program</strong> and now work as an <strong>AI-native software engineer</strong> — building with AI tools as a core part of the workflow, not a bolt-on. Based in Utrecht, working self-employed.</p>
+    <p>I spent most of my career on the commercial side of enterprise IT selling data center, cloud, and SaaS solutions to technical buyers. That gave me a habit of understanding a product from the inside out before I ever pitch it.</p>
+    <p>I retrained through <strong>Metana's AI Software Engineer program</strong> and now work as an <strong>AI-native software engineer</strong> building with AI tools as a core part of the workflow, not a bolt-on.</p>
+    <p>I value work that supports quality of life, flexibility, and the freedom to operate as a digital nomad while continuing to grow within the evolving landscape of modern software development. "La dolce vita"</p>
     <div class="stack">
       <span>TypeScript</span>
       <span>Python</span>
@@ -461,7 +486,7 @@
         <textarea id="cf-message" name="message" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn primary">Send message</button>
-      <p class="form-hint" id="formHint">Opens your email client with this filled in — nothing is sent from this page directly.</p>
+      <!-- <p class="form-hint" id="formHint"><b>Opens your email client with this filled in — nothing is sent from this page directly!</b></p> -->
     </form>
 
     <div class="contact-links">
@@ -489,7 +514,7 @@
     // terminal green, then the personal headline with only "AI Native" in green.
     var sequence = [
       "public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {",
-      "Nico Meihuizen - AI Native Software Engineer."
+      "Nico Meihuizen - AI Native Software Engineer. $"
     ];
 
     var accentWord = "AI Native";
@@ -546,7 +571,7 @@
     // The address the mailto link will send to. Currently blank —
     // fill this in with your real email once you have it, e.g.
     // 'nico@example.com'. Left empty for now as requested.
-    var destinationEmail = '';
+    var destinationEmail = 'nico.meihuizen@protonmail.com';
 
     // Runs when the form is submitted. Instead of sending data anywhere,
     // it builds a mailto: URL from the three fields and navigates to it,
