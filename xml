@@ -1,6 +1,0 @@
-<div class="clock">
-  <div id="time"></div>
-  <div id="date"></div>
-</div>
-<div class="title">title position: float left
-  <h1>Welcome to My Website</h1>
