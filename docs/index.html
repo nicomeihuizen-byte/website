@@ -480,27 +480,26 @@
 
   <footer id="contact" class="wrap">
     <h2>Let's talk.</h2>
-    <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Fill this in and it'll open as a pre-filled email in your mail app.</p>
+    <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Send a message directly through the contact form.</p>
 
-    <form id="contactForm" class="contact-form">
+    <form id="contactForm" class="contact-form" action="https://formsubmit.co/nico.meihuizen@protonmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Portfolio contact from Nico Meihuizen">
       <div class="field">
         <label for="cf-name">name</label>
         <input type="text" id="cf-name" name="name" required>
       </div>
       <div class="field">
         <label for="cf-email">your email</label>
-        <input type="email" id="cf-email" name="email" required>
+        <input type="email" id="cf-email" name="_replyto" required>
       </div>
       <div class="field">
         <label for="cf-message">message</label>
         <textarea id="cf-message" name="message" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn primary">Send message</button>
-      <!-- <p class="form-hint" id="formHint"><b>Opens your email client with this filled in — nothing is sent from this page directly!</b></p> -->
     </form>
 
     <div class="contact-links">
-      <!--<a href="mailto:nico.meihuizen@protonmail.com">nico.meihuizen(at)mail.com</a> not needed at this time, looks oldskool-->
       <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
         <span class="sr-only">github</span>
@@ -559,22 +558,22 @@
     }
 
     let sequenceIndex = 0;
-    let i = 0;
+    let characterIndex = 0;
 
     function tick(){
       const full = sequence[sequenceIndex];
       const isGreenSequence = sequenceIndex === 0;
-      i++;
-      render(full.slice(0, i), isGreenSequence);
+      characterIndex++;
+      render(full.slice(0, characterIndex), isGreenSequence);
 
-      if(i < full.length){
+      if(characterIndex < full.length){
         setTimeout(tick, 24);
         return;
       }
 
       if(sequenceIndex < sequence.length - 1){
         sequenceIndex++;
-        i = 0;
+        characterIndex = 0;
         setTimeout(tick, 430);
         return;
       }
@@ -583,53 +582,6 @@
     tick();
   })();
 
-  // Separate IIFE for the contact form, kept isolated from the typing
-  // animation above so the two features don't share variable names.
-  (function(){
-    const form = document.getElementById('contactForm');
-
-    window.addEventListener('pageshow', function(){
-      form.reset();
-    });
-
-    // The address the mailto link will send to. Currently blank —
-    // fill this in with your real email once you have it, e.g.
-    // 'nico@example.com'. Left empty for now as requested.
-    const destinationEmail = 'nico.meihuizen@protonmail.com';
-
-    // Runs when the form is submitted. Instead of sending data anywhere,
-    // it builds a mailto: URL from the three fields and navigates to it,
-    // which hands off to the visitor's own email app with everything
-    // pre-filled — no backend or third-party service involved.
-    form.addEventListener('submit', function(e){
-      // Stop the browser's default form submission (which would just
-      // reload the page) so we can build our own mailto link instead.
-      e.preventDefault();
-
-      const name = document.getElementById('cf-name').value.trim();
-      const email = document.getElementById('cf-email').value.trim();
-      const message = document.getElementById('cf-message').value.trim();
-
-      // Subject line shows who's reaching out, right in the inbox.
-      const subject = 'Portfolio contact from ' + name;
-
-      // Body includes their email so it's easy to reply to them directly,
-      // plus their message underneath.
-      const body = 'From: ' + name + ' (' + email + ')\n\n' + message;
-
-      // encodeURIComponent turns spaces, line breaks, and punctuation
-      // into URL-safe characters so the mailto link doesn't break.
-      const mailtoUrl = 'mailto:' + destinationEmail
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
-
-      form.reset();
-
-      // Navigating to a mailto: URL is what actually triggers the
-      // visitor's default email app to open a new pre-filled message.
-      window.location.href = mailtoUrl;
-    });
-  })();
 </script>
 
 </body>
