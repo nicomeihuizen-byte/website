@@ -71,11 +71,7 @@ There is no package manager or build pipeline required for the current static si
 4. Extract and syntax-check the inline script in `index.html` with Node.js when JavaScript changes are made.
 5. Verify that all referenced image files still exist after renaming or moving assets.
 
-## Suggested Local Server
 
-Direct file opening is sufficient for this site. A local static server is useful when testing browser behavior:
-
-```text
 python -m http.server 8000 --directory website/docs
 ```
 
