@@ -1,4 +1,4 @@
-# Metana Website
+# Personal Website
 
 Personal portfolio website for Nico Meihuizen, built as a lightweight static site during the Metana bootcamp. The visual direction is a terminal-inspired portfolio: dark graphite surfaces, terminal green accents, monospace interface text, restrained motion, and content presented as practical work rather than a marketing landing page.
 
