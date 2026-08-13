@@ -94,7 +94,33 @@
   .btn.ghost{color:var(--text-muted);}
   .btn:hover{color:var(--text);border-color:var(--text-dim);}
   .btn.primary:hover{background:#7ad0a4;color:#181205;border-color:var(--accent);}
-  footer{display:flex;justify-content:space-between;gap:10px;max-width:var(--max-w);margin:0 auto;padding:0 24px 40px;color:var(--text-dim);font-family:var(--font-mono);font-size:11.5px;}
+  footer{max-width:var(--max-w);margin:0 auto;padding:0 24px 40px;color:var(--text-dim);font-family:var(--font-mono);font-size:11.5px;}
+  .social-links{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;}
+  .social-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 10px;
+    border:1px solid var(--accent-dim);
+    border-radius:4px;
+    color:var(--accent);
+    font-size:13.5px;
+    transition:color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .social-links a:hover{color:#10121A;border-color:var(--accent);background:var(--accent);}
+  .social-links svg{width:16px;height:16px;fill:currentColor;flex:none;}
+  .social-links .sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+  .footer-meta{display:flex;justify-content:flex-start;gap:10px;color:var(--accent);}
 
   @media (max-width:600px){
     .navbar{padding:16px 18px;}
@@ -149,6 +175,18 @@
   </article>
 </main>
 
-<footer><span>&copy; 2026 Nico Meihuizen</span><span>European Union</span></footer>
+<footer>
+  <div class="social-links" aria-label="Social links">
+    <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
+      <span class="sr-only">github</span>
+    </a>
+    <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg>
+      <span class="sr-only">linkedin</span>
+    </a>
+  </div>
+  <div class="footer-meta"><span>&copy; 2026 Nico Meihuizen</span><!-- <span>European Union</span> --></div>
+</footer>
 </body>
 </html>
