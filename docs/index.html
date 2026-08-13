@@ -433,7 +433,7 @@
       <!-- Projects two, three, and four are temporarily hidden until their content is ready. -->
       <!--
       <a class="work-item" href="projects/project-four.html">
-        <span class="image" style="background-image: url('images/buuflouise.jpg');">01_project</span>
+        <span class="image" style="background-image: url('images/buuf-louise.jpg');">01_project</span>
         <div class="info">
           <h3>Project one</h3>
           <p>AI-powered software project.</p>
@@ -441,7 +441,7 @@
         <span class="tag">AI / LLM</span>
       </a>
       <a class="work-item" href="projects/project-two.html">
-        <span class="image" style="background-image: url('images/buuflouise.jpg');">02_project</span>
+        <span class="image" style="background-image: url('images/buuf-louise.jpg');">02_project</span>
         <div class="info">
           <h3>Project two</h3>
           <p>Full-stack web application.</p>
@@ -449,7 +449,7 @@
         <span class="tag">full-stack</span>
       </a>
       <a class="work-item" href="projects/project-three.html">
-        <span class="image" style="background-image: url('images/buuflouise.jpg');">03_project</span>
+        <span class="image" style="background-image: url('images/buuf-louise.jpg');">03_project</span>
         <div class="info">
           <h3>Project three</h3>
           <p>Workflow automation tool.</p>
@@ -458,7 +458,7 @@
       </a>
       -->
       <a class="work-item" href="projects/project-one.html">
-        <span class="image" style="background-image: url('images/buuflouise.jpg');">04_project</span>
+        <span class="image" style="background-image: url('images/buuf-louise.jpg');">04_project</span>
         <div class="info">
           <h3>Project one</h3>
           <p>Vegetarian Ecommerce Website</p>
@@ -514,18 +514,18 @@
   (function(){
 
     // The empty <div> in the hero terminal that the headline gets typed into.
-    var target = document.getElementById('typeTarget');
+    const target = document.getElementById('typeTarget');
     if(!target){ return; }
 
     // The typing sequence runs in order: first the Java method signature in
     // terminal green, then the personal headline with only "AI Native" in green.
-    var sequence = [
+    const sequence = [
       "public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {",
       "Nico Meihuizen - AI Native Software Engineer. $"
     ];
 
-    var accentWord = "AI Native";
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const accentWord = "AI Native";
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function render(text, isGreenSequence){
       if(isGreenSequence){
@@ -533,7 +533,7 @@
         return;
       }
 
-      var withAccent = text.split(accentWord).length > 1
+      const withAccent = text.split(accentWord).length > 1
         ? text.replace(accentWord, '<span class="accent-word">' + accentWord + '</span>')
         : text;
 
@@ -545,12 +545,12 @@
       return;
     }
 
-    var sequenceIndex = 0;
-    var i = 0;
+    let sequenceIndex = 0;
+    let i = 0;
 
     function tick(){
-      var full = sequence[sequenceIndex];
-      var isGreenSequence = sequenceIndex === 0;
+      const full = sequence[sequenceIndex];
+      const isGreenSequence = sequenceIndex === 0;
       i++;
       render(full.slice(0, i), isGreenSequence);
 
@@ -573,7 +573,7 @@
   // Separate IIFE for the contact form, kept isolated from the typing
   // animation above so the two features don't share variable names.
   (function(){
-    var form = document.getElementById('contactForm');
+    const form = document.getElementById('contactForm');
 
     window.addEventListener('pageshow', function(){
       form.reset();
@@ -582,7 +582,7 @@
     // The address the mailto link will send to. Currently blank —
     // fill this in with your real email once you have it, e.g.
     // 'nico@example.com'. Left empty for now as requested.
-    var destinationEmail = 'nico.meihuizen@protonmail.com';
+    const destinationEmail = 'nico.meihuizen@protonmail.com';
 
     // Runs when the form is submitted. Instead of sending data anywhere,
     // it builds a mailto: URL from the three fields and navigates to it,
@@ -593,20 +593,20 @@
       // reload the page) so we can build our own mailto link instead.
       e.preventDefault();
 
-      var name = document.getElementById('cf-name').value.trim();
-      var email = document.getElementById('cf-email').value.trim();
-      var message = document.getElementById('cf-message').value.trim();
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
 
       // Subject line shows who's reaching out, right in the inbox.
-      var subject = 'Portfolio contact from ' + name;
+      const subject = 'Portfolio contact from ' + name;
 
       // Body includes their email so it's easy to reply to them directly,
       // plus their message underneath.
-      var body = 'From: ' + name + ' (' + email + ')\n\n' + message;
+      const body = 'From: ' + name + ' (' + email + ')\n\n' + message;
 
       // encodeURIComponent turns spaces, line breaks, and punctuation
       // into URL-safe characters so the mailto link doesn't break.
-      var mailtoUrl = 'mailto:' + destinationEmail
+      const mailtoUrl = 'mailto:' + destinationEmail
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
 
