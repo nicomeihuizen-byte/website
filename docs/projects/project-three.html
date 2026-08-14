@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project three | Nico Meihuizen</title>
-<meta name="description" content="Project three, a workflow automation tool by Nico Meihuizen.">
-<meta name="keywords" content="Nico Meihuizen, AI-native software engineer, AI software development, Europe, Metana AISE program, TypeScript, Python, React, Node.js, LLM tooling, Agentic workflows">
+<title>Portfolio Website | Nico Meihuizen</title>
+<meta name="description" content="A secure, responsive terminal-inspired portfolio website built with semantic HTML, CSS, and vanilla JavaScript. Includes project galleries, lightboxes, validation, and CSP controls.">
+<meta name="keywords" content="portfolio website, semantic HTML, responsive CSS, vanilla JavaScript, CSP, Content Security Policy, accessible lightbox, Nico Meihuizen">
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#10121A">
@@ -30,10 +30,20 @@
   <article class="terminal">
     <div class="terminal-bar"><span></span><span></span><span></span><!-- <span class="label">~/projects/project-three</span> --></div>
     <div class="terminal-body">
-      <!-- <div class="project-kicker">03_project / automation</div> -->
-      <h1>Project three</h1>
-      <p class="project-summary">A workflow automation tool for removing repetitive steps and keeping important work moving without constant manual attention.</p>
-      <a class="project-image" href="../images/project_one/buuf-louise-food.jpg" role="img" aria-label="Project three preview"></a>
+      <!-- <div class="project-kicker">03_project / portfolio</div> -->
+      <h1>Portfolio Website</h1>
+      <p class="project-summary">A responsive terminal-inspired portfolio built from a small static stack, with practical interaction design and security controls treated as part of the product.</p>
+      <div class="project-gallery" aria-label="Portfolio website implementation screenshots">
+        <a href="../images/project_three/homepage-screenshot.png">
+          <img src="../images/project_three/homepage-screenshot.png" alt="Portfolio homepage screenshot">
+        </a>
+        <a href="../images/project_three/homepage-interactions-code.png">
+          <img src="../images/project_three/homepage-interactions-code.png" alt="Homepage interaction code screenshot">
+        </a>
+        <a href="../images/project_three/lightbox-interactions-code.png">
+          <img src="../images/project_three/lightbox-interactions-code.png" alt="Lightbox interaction code screenshot">
+        </a>
+      </div>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
         <img src="" alt="Project three preview">
@@ -41,12 +51,19 @@
       <div class="project-grid">
         <section class="project-copy">
           <div class="section-label">// overview</div>
-          <p>This project maps a repeatable process into explicit triggers, actions, and outcomes so automation stays understandable as it evolves.</p>
-          <p>It is built around dependable handoffs: useful status information, predictable failures, and enough visibility for a person to stay in control.</p>
+          <h2>Terminal-inspired portfolio interface</h2>
+          <p>The site presents professional background, selected work, contact information, and project documentation in a focused terminal-inspired interface. The homepage includes a session-aware type sequence, responsive project cards, and direct navigation to the active work.</p>
+          <h2>Small JavaScript behaviors with clear boundaries</h2>
+          <p>Vanilla JavaScript powers the hero sequence, form validation, responsive project lightboxes, image cleanup, keyboard dismissal, and body-scroll locking. Shared behavior lives in external same-origin scripts rather than being duplicated across pages.</p>
+          <h2>Security best practices as a feature</h2>
+          <p>Every page carries a restrictive Content Security Policy, with a deploy-time response policy in <code>_headers</code>. The site removes unpinned third-party analytics, avoids unsafe HTML construction, validates contact input, rejects honeypot submissions, and uses a fixed mailto destination instead of a cross-site form POST.</p>
+          <h2>Responsive, accessible presentation</h2>
+          <p>Semantic headings, descriptive image alternatives, keyboard-friendly lightboxes, visible focus states, mobile touch targets, and CSS-centered image crops keep the experience usable across screen sizes.</p>
         </section>
         <section>
           <div class="section-label">// stack</div>
-          <div class="stack"><span>Python</span><span>Automation</span><span>Webhooks</span><span>Job queues</span></div>
+          <div class="stack"><span>HTML</span><span>CSS</span><span>Vanilla JavaScript</span><span>CSP</span><span>Accessibility</span><span>Responsive UI</span></div>
+          <p class="project-credit">AI-assisted development: GitHub Copilot.</p>
         </section>
       </div>
       <nav class="project-nav" aria-label="Project navigation">
@@ -56,7 +73,7 @@
     </div>
   </article>
 </main>
-<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>03 / 04</span></footer>
+<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>03 / 03</span></footer>
 <script src="../scripts/project-lightbox.js" defer></script>
 </body>
 </html>

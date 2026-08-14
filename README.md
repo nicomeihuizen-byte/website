@@ -12,7 +12,8 @@ The website is contained in `website/docs` and can be opened directly from the f
 - `about.html` presents the professional background, technology stack, page navigation, social links, and footer.
 - `projects/project-one.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
 - `projects/project-two.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
-- `projects/project-three.html` and `project-four.html` remain inactive project-page templates and are not linked from the active project sequence.
+- `projects/project-three.html` documents the portfolio website itself, including its interface, functionality, implementation, and security practices. It remains inactive in the project sequence.
+- `projects/project-four.html` remains an inactive project-page template and is not linked from the active project sequence.
 - `projects/project-pages.css` provides the shared layout and visual system for all project pages.
 
 ### Assets
@@ -21,6 +22,7 @@ Images are stored in `website/docs/images` and use descriptive filenames:
 
 - `main/digital-nomad-logo.png` is the hero logo.
 - `main/ai-software-engineering-workspace.png` is the about-page image.
+- `project_three/homepage-screenshot.png`, `project_three/homepage-interactions-code.png`, and `project_three/lightbox-interactions-code.png` support the Project Three case study.
 - `project_one/buuf-louise-food.jpg`, `project_one/buuf-louise-logo.png`, `project_one/buuf-louise-package.jpg`, and `project_one/buuf-louise-project.jpg` support the Project One previews.
 - `project_two/birdbox-farm-campervan-scene.png`, `project_two/birdbox-station-system-diagram.png`, and `project_two/biodynamic-farming-calendar.png` support the Project Two gallery.
 - `project_two/birdbox-farm-campervan-scene.png` is used for the Project Two card on the home page.

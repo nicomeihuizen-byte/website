@@ -26,4 +26,10 @@
        <changefreq>weekly</changefreq>
        <priority>0.8000</priority>
   </url>
+    <url>
+      <loc>https://www.meihuizen.ai/projects/project-three.html</loc>
+      <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6000</priority>
+    </url>
 </urlset>
