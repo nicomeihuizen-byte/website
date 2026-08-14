@@ -126,7 +126,7 @@ h1 {
   margin-top: 30px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: center / cover no-repeat url('../images/buuf-louise.jpg');
+  background: var(--bg) center / contain no-repeat url('../images/buuf-louise.jpg');
 }
 .project-gallery {
   display: grid;
@@ -156,6 +156,15 @@ h1 {
   font-family: var(--font-mono);
   font-size: 13px;
 }
+.project-copy h2 {
+  margin: 24px 0 8px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.project-copy h2:first-of-type { margin-top: 0; }
 .project-copy p {
   max-width: 48ch;
   margin-bottom: 16px;
