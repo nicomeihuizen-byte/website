@@ -550,6 +550,17 @@
 
     const accentWord = "AI Native";
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sequencePlayedKey = 'homepageSequencePlayed';
+    const sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
+    let internalNavigation = false;
+
+    if(document.referrer){
+      try{
+        internalNavigation = new URL(document.referrer, window.location.href).origin === window.location.origin;
+      }catch(error){
+        internalNavigation = false;
+      }
+    }
 
     function render(text, isGreenSequence){
       if(isGreenSequence){
@@ -564,10 +575,12 @@
       target.innerHTML = withAccent + '<span class="cursor"></span>';
     }
 
-    if(reduced){
+    if(reduced || sequenceAlreadyPlayed || internalNavigation){
       render(sequence[1], false);
       return;
     }
+
+    sessionStorage.setItem(sequencePlayedKey, 'true');
 
     let sequenceIndex = 0;
     let characterIndex = 0;
