@@ -24,6 +24,8 @@ Images are stored in `website/docs/images` and use descriptive filenames:
 - `project_one/buuf-louise-food.jpg`, `project_one/buuf-louise-logo.png`, `project_one/buuf-louise-package.jpg`, and `project_one/buuf-louise-project.jpg` support the Project One previews.
 - `project_two/birdbox-farm-campervan-scene.png`, `project_two/birdbox-station-system-diagram.png`, and `project_two/biodynamic-farming-calendar.png` support the Project Two gallery.
 - `project_two/birdbox-farm-campervan-scene.png` is used for the Project Two card on the home page.
+- `project_two/one-acre-project-overview.pdf` is available from Project Two as an openable and downloadable project document.
+- `project_two/pdf.png` is the visual thumbnail for the PDF download block.
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
 
