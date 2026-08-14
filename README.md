@@ -10,17 +10,20 @@ The website is contained in `website/docs` and can be opened directly from the f
 
 - `index.html` is the home page. It contains the terminal-style hero, work list, contact form, social links, and footer.
 - `about.html` presents the professional background, technology stack, page navigation, social links, and footer.
-- `projects/project-one.html` presents the completed vegetarian ecommerce project.
-- `projects/project-two.html`, `project-three.html`, and `project-four.html` are prepared project-page templates for future work.
+- `projects/project-one.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
+- `projects/project-two.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
+- `projects/project-three.html` and `project-four.html` remain inactive project-page templates and are not linked from the active project sequence.
 - `projects/project-pages.css` provides the shared layout and visual system for all project pages.
 
 ### Assets
 
-Images are stored in `website/docs/images` and use descriptive kebab-case filenames:
+Images are stored in `website/docs/images` and use descriptive filenames:
 
 - `logo.png` is the hero logo.
 - `ai-workspace.png` is the about-page image.
 - `buuf-louise.jpg`, `buuf-louise.png`, `buuf-package.jpg`, and `04-project.jpg` support the project previews.
+- `project_two/birdbox_farm_campervan_scene_v3.png`, `project_two/birdbox-station-770x280.png`, and `project_two/calendar.png` support the Project Two gallery.
+- `project_two/birdbox_sensor_station_mockup.png` is used for the Project Two card on the home page.
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
 
@@ -31,21 +34,22 @@ The pages share a dark terminal visual language defined by CSS custom properties
 The home page uses:
 
 - A sticky navigation bar with links to work, about, and contact.
-- A terminal window with a three-dot bar and an animated headline.
+- A terminal window with a three-dot bar and an animated headline that plays once per browser session and skips on same-site returns.
 - A responsive work list with project tags and image previews.
-- A contact form that opens a pre-filled `mailto:` URL in the visitor's email client.
-- Accessible inline GitHub and LinkedIn SVG marks styled as green terminal controls.
+- A contact form with client-side name, email, message, and honeypot validation that submits to FormSubmit.
+- Accessible inline GitHub, LinkedIn, and X SVG marks styled as green terminal controls.
 
-The about and project pages reuse the same terminal window pattern, responsive spacing, typography, borders, and green/blue status colors. Project pages use a shared stylesheet rather than duplicating their CSS.
+The about and project pages reuse the same terminal window pattern, responsive spacing, typography, borders, and green/blue status colors. Project pages use a shared stylesheet rather than duplicating their CSS. Project previews use centered `cover` cropping inside responsive frames; clicking a preview opens the uncropped source image in an in-page lightbox, which closes through the image, backdrop, close button, or Escape.
 
 ## Client-Side Behavior
 
-The inline script in `index.html` contains two isolated functions:
+The inline scripts provide these behaviors:
 
-1. The hero animation types two lines in sequence and highlights `AI Native` in green. It respects `prefers-reduced-motion` and shows the final headline immediately when reduced motion is enabled.
-2. The contact form trims the name, email, and message fields, URL-encodes the subject and body, resets the form, and navigates to a `mailto:` URL. No form data is sent to a website backend.
+1. The hero animation in `index.html` types two lines in sequence, highlights `AI Native` in green, respects `prefers-reduced-motion`, and shows the final headline immediately when reduced motion or same-site navigation applies.
+2. The contact form in `index.html` trims and validates the name, email, and message fields, rejects honeypot submissions, and allows valid submissions to reach FormSubmit.
+3. The project pages use native `<dialog>` lightboxes for full-size image previews and restore the page when the lightbox is closed.
 
-The social links open GitHub and LinkedIn in a new tab with `rel="noopener"`. SVG paths are hidden from assistive technology while each link retains an accessible `aria-label`.
+The social links open GitHub, LinkedIn, and X in a new tab with `rel="noopener"`. SVG paths are hidden from assistive technology while each link retains an accessible `aria-label`.
 
 ## Applicable Coding Rules
 
@@ -65,13 +69,15 @@ The TypeScript version, decorators, Jest, `jest.mock()`, coverage, and Jest snap
 
 There is no package manager or build pipeline required for the current static site. Before committing changes:
 
-1. Open `website/docs/index.html` and test navigation, the hero animation, the contact form, and both social links.
+1. Serve `website/docs` locally and test homepage navigation, the session-scoped hero animation, the contact form, and all social links.
 2. Open `website/docs/about.html` and each project page and check that all images load.
-3. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
-4. Extract and syntax-check the inline script in `index.html` with Node.js when JavaScript changes are made.
-5. Verify that all referenced image files still exist after renaming or moving assets.
+3. Test the Project One and Project Two active navigation sequence and confirm Projects Three and Four are not active destinations.
+4. Test project image cropping, full-size lightbox opening, and closing with the image, backdrop, close button, and Escape.
+5. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
+6. Extract and syntax-check inline scripts in `index.html` and the project pages with Node.js when JavaScript changes are made.
+7. Verify that all referenced image files still exist after renaming or moving assets.
 
-
+```sh
 python -m http.server 8000 --directory website/docs
 ```
 

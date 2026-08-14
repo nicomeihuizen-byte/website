@@ -41,7 +41,11 @@
       <!-- <div class="project-kicker">04_project / AI / LLM</div> -->
       <h1>Project four</h1>
       <p class="project-summary">An AI-powered software project focused on turning natural-language intent into useful, structured output.</p>
-      <div class="project-image" role="img" aria-label="Project four preview"></div>
+      <a class="project-image" href="../images/buuf-louise.jpg" role="img" aria-label="Project four preview"></a>
+      <dialog class="image-lightbox" aria-label="Full-size project image">
+        <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
+        <img src="" alt="Project four preview">
+      </dialog>
       <div class="project-grid">
         <section class="project-copy">
           <div class="section-label">// overview</div>
@@ -61,5 +65,30 @@
   </article>
 </main>
 <footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>04 / 04</span></footer>
+<script>
+  (function(){
+    const projectImage = document.querySelector('.project-image');
+    const lightbox = document.querySelector('.image-lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const closeButton = lightbox.querySelector('.image-lightbox-close');
+
+    projectImage.addEventListener('click', function(event){
+      event.preventDefault();
+      lightboxImage.src = projectImage.href;
+      lightbox.showModal();
+    });
+
+    function closeLightbox(){
+      lightbox.close();
+      lightboxImage.src = '';
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+    lightboxImage.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(event){
+      if(event.target === lightbox){ closeLightbox(); }
+    });
+  })();
+</script>
 </body>
 </html>

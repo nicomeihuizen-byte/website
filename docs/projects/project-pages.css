@@ -126,22 +126,70 @@ h1 {
   margin-top: 30px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--bg) center / contain no-repeat url('../images/buuf-louise.jpg');
+  background: var(--bg) center / cover no-repeat url('../images/buuf-louise.jpg');
 }
+.project-image { display: block; cursor: pointer; }
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 30px;
 }
+.project-gallery a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  min-width: 0;
+}
 .project-gallery img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 8px;
   object-fit: cover;
+  object-position: 50% 50%;
+  transition: border-color .15s ease, transform .15s ease;
 }
+.project-gallery a:hover img,
+.project-gallery a:focus-visible img {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.image-lightbox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  padding: 40px;
+  border: 0;
+  background: rgba(16, 18, 26, 0.94);
+}
+.image-lightbox::backdrop { background: rgba(16, 18, 26, 0.94); }
+.image-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+.image-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.image-lightbox-close:hover { color: var(--accent); }
 .project-grid {
   display: grid;
   grid-template-columns: 1.3fr .7fr;
