@@ -9,6 +9,7 @@
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#10121A">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self';">
 <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -16,15 +17,6 @@
 <link rel="shortcut icon" href="favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
 <link rel="manifest" href="favicon/site.webmanifest" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BNWQ23V8KC');
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -257,9 +249,12 @@
     display:block;
     width:120px;
     height:70px;
-    border-radius:6px;
+    aspect-ratio:12 / 7;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background-color:var(--bg);
     background-size:cover;
-    background-position:center;
+    background-position:50% 50%;
     background-repeat:no-repeat;
     overflow:hidden;
     text-indent:-9999px;
@@ -397,7 +392,7 @@
   @media (max-width: 600px){
     .work-item{ grid-template-columns:1fr; gap:8px; }
     .work-item .tag{ justify-self:start; }
-    .work-item .image{ width:100%; height:150px; }
+    .work-item .image{ width:100%; height:150px; aspect-ratio:auto; }
     .terminal-body{ padding:22px 18px 26px; }
     .hero{ padding:56px 0 44px; }
     .type-target{ min-height:10.5em; }
@@ -427,7 +422,7 @@
         <span></span><span></span><span></span>
       </div>
       <div class="terminal-body">
-        <img class="hero-logo" src="images/logo.png" alt="Digital Nomad logo">
+        <img class="hero-logo" src="images/main/digital-nomad-logo.png" alt="Digital Nomad logo">
         <div class="type-target" id="typeTarget"></div>
         <div class="hero-sub">
          <p>I'm a results-driven professional with a strong foundation in enterprise sales and technology solutions, I bring years of experience from leading organizations including IBM, SoftLayer, Oracle, and Minitab.</p>
@@ -450,7 +445,7 @@
     </div>
     <div class="work-list">
       <a class="work-item" href="projects/project-two.html">
-        <span class="image" style="background-image: url('images/project_two/birdbox_sensor_station_mockup.png');">02_project</span>
+        <span class="image" style="background-image: url('images/project_two/birdbox-farm-campervan-scene.png');">02_project</span>
         <div class="info">
           <h3>One Acre Zero Dependency</h3>
           <p>AI-driven off-grid homestead project.</p>
@@ -458,7 +453,7 @@
         <span class="tag">AI / hardware</span>
       </a>
       <a class="work-item" href="projects/project-one.html">
-        <span class="image" style="background-image: url('images/buuf-louise.jpg');">04_project</span>
+        <span class="image" style="background-image: url('images/project_one/buuf-louise-food.jpg');">04_project</span>
         <div class="info">
           <h3>Webdesign and Development</h3>
           <p>Vegetarian Ecommerce Website</p>
@@ -472,9 +467,7 @@
     <h2>Let's talk.</h2>
     <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Send a message directly through the contact form. Or reach me via Linkedin, GitHub or X.</p>
 
-    <form id="contactForm" class="contact-form" action="https://formsubmit.co/nico.meihuizen@protonmail.com" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="Portfolio contact from Nico Meihuizen">
-      <input type="hidden" name="_next" value="https://www.meihuizen.ai/">
+    <form id="contactForm" class="contact-form" action="#contact" method="post" novalidate>
       <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
       <div class="field">
         <label for="cf-name">name</label>
@@ -512,110 +505,7 @@
   </footer>
 </main>
 
-<script>
-  // Self-invoking function (IIFE): runs immediately on page load and keeps
-  // its variables private instead of leaking them into the global scope.
-  (function(){
-
-    // The empty <div> in the hero terminal that the headline gets typed into.
-    const target = document.getElementById('typeTarget');
-    if(!target){ return; }
-
-    // The typing sequence runs in order: first the Java method signature in
-    // terminal green, then the personal headline with only "AI Native" in green.
-    const sequence = [
-      "public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {",
-      "Nico Meihuizen - AI Native Software Engineer. $"
-    ];
-
-    const accentWord = "AI Native";
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const sequencePlayedKey = 'homepageSequencePlayed';
-    const sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
-    let internalNavigation = false;
-
-    if(document.referrer){
-      try{
-        internalNavigation = new URL(document.referrer, window.location.href).origin === window.location.origin;
-      }catch(error){
-        internalNavigation = false;
-      }
-    }
-
-    function render(text, isGreenSequence){
-      if(isGreenSequence){
-        target.innerHTML = '<span class="sequence-green">' + text + '</span><span class="cursor"></span>';
-        return;
-      }
-
-      const withAccent = text.split(accentWord).length > 1
-        ? text.replace(accentWord, '<span class="accent-word">' + accentWord + '</span>')
-        : text;
-
-      target.innerHTML = withAccent + '<span class="cursor"></span>';
-    }
-
-    if(reduced || sequenceAlreadyPlayed || internalNavigation){
-      render(sequence[1], false);
-      return;
-    }
-
-    sessionStorage.setItem(sequencePlayedKey, 'true');
-
-    let sequenceIndex = 0;
-    let characterIndex = 0;
-
-    function tick(){
-      const full = sequence[sequenceIndex];
-      const isGreenSequence = sequenceIndex === 0;
-      characterIndex++;
-      render(full.slice(0, characterIndex), isGreenSequence);
-
-      if(characterIndex < full.length){
-        setTimeout(tick, 24);
-        return;
-      }
-
-      if(sequenceIndex < sequence.length - 1){
-        sequenceIndex++;
-        characterIndex = 0;
-        setTimeout(tick, 430);
-        return;
-      }
-    }
-
-    tick();
-  })();
-
-  (function(){
-    const form = document.getElementById('contactForm');
-    const nameField = document.getElementById('cf-name');
-    const emailField = document.getElementById('cf-email');
-    const messageField = document.getElementById('cf-message');
-    const honeypotField = form.querySelector('[name="_honey"]');
-    const emailPattern = /^[^\s@,]+@[^\s@,]+\.[^\s@,]{2,}$/;
-    const testAddressPattern = /^(test|example|demo)(?:[+._-].*)?$/i;
-
-    form.addEventListener('submit', function(event){
-      const trimmedName = nameField.value.trim();
-      const trimmedEmail = emailField.value.trim();
-      const trimmedMessage = messageField.value.trim();
-      const emailLocalPart = trimmedEmail.split('@')[0];
-      const isNameValid = /^[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s.'-]{1,79}$/.test(trimmedName);
-      const isEmailValid = emailPattern.test(trimmedEmail) && !testAddressPattern.test(emailLocalPart);
-      const isMessageValid = trimmedMessage.length >= 10 && trimmedMessage.length <= 4000;
-
-      nameField.setCustomValidity(isNameValid ? '' : 'Enter a real name using letters, spaces, apostrophes, or hyphens.');
-      emailField.setCustomValidity(isEmailValid ? '' : 'Enter a valid, non-test email address.');
-      messageField.setCustomValidity(isMessageValid ? '' : 'Message must be between 10 and 4000 characters.');
-
-      if(honeypotField.value.trim() !== '' || !isNameValid || !isEmailValid || !isMessageValid){
-        event.preventDefault();
-      }
-    });
-  })();
-
-</script>
+<script src="scripts/site.js" defer></script>
 
 </body>
 </html>
