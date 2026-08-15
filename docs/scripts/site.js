@@ -29,7 +29,14 @@
     const sequence = [buildSequence()];
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const sequencePlayedKey = 'homepageSequencePlayed';
-    const sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
+    let sequenceAlreadyPlayed = false;
+
+    try {
+      sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
+    } catch (error) {
+      sequenceAlreadyPlayed = false;
+    }
+
     let internalNavigation = false;
 
     if (document.referrer) {
@@ -59,7 +66,12 @@
     if (reduced || sequenceAlreadyPlayed || internalNavigation) {
       render(sequence[0]);
     } else {
-      sessionStorage.setItem(sequencePlayedKey, 'true');
+      try {
+        sessionStorage.setItem(sequencePlayedKey, 'true');
+      } catch (error) {
+        // storage may be blocked (e.g. mobile Safari with cookies disabled); still play the animation
+      }
+
       let characterIndex = 0;
 
       function tick() {
