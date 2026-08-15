@@ -3,11 +3,30 @@
   const form = document.getElementById('contactForm');
 
   if (target) {
-    const sequence = [
-      'public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {',
-      'Nico Meihuizen - AI Native Software Engineer. $'
-    ];
-    const accentWord = 'AI Native';
+    const buildSequence = () => {
+      const prefix = 'public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {';
+      const suffixes = [
+        ' if (systemsAwake) {',
+        ' return build();',
+        ' while (ideasFlow) {',
+        ' ship(workingPrototype);',
+        ' // build with intent',
+        ' solve(problem);',
+        ' }',
+        ' keepMomentum();'
+      ];
+
+      let text = prefix;
+      const minLength = 220 + Math.floor(Math.random() * 90);
+
+      while (text.length < minLength) {
+        text += ' ' + suffixes[Math.floor(Math.random() * suffixes.length)];
+      }
+
+      return text.trim() + ' $';
+    };
+
+    const sequence = [buildSequence()];
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const sequencePlayedKey = 'homepageSequencePlayed';
     const sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
@@ -24,61 +43,32 @@
     function appendCursor() {
       const cursor = document.createElement('span');
       cursor.className = 'cursor';
+      cursor.setAttribute('aria-hidden', 'true');
       target.appendChild(cursor);
     }
 
-    function render(text, isGreenSequence) {
+    function render(text) {
       target.replaceChildren();
-
-      if (isGreenSequence) {
-        const sequenceText = document.createElement('span');
-        sequenceText.className = 'sequence-green';
-        sequenceText.textContent = text;
-        target.appendChild(sequenceText);
-        appendCursor();
-        return;
-      }
-
-      const accentStart = text.indexOf(accentWord);
-      if (accentStart === -1) {
-        target.textContent = text;
-        appendCursor();
-        return;
-      }
-
-      target.appendChild(document.createTextNode(text.slice(0, accentStart)));
-
-      const accentText = document.createElement('span');
-      accentText.className = 'accent-word';
-      accentText.textContent = accentWord;
-      target.appendChild(accentText);
-
-      target.appendChild(document.createTextNode(text.slice(accentStart + accentWord.length)));
+      const sequenceText = document.createElement('span');
+      sequenceText.className = 'sequence-green';
+      sequenceText.textContent = text;
+      target.appendChild(sequenceText);
       appendCursor();
     }
 
     if (reduced || sequenceAlreadyPlayed || internalNavigation) {
-      render(sequence[1], false);
+      render(sequence[0]);
     } else {
       sessionStorage.setItem(sequencePlayedKey, 'true');
-      let sequenceIndex = 0;
       let characterIndex = 0;
 
       function tick() {
-        const fullText = sequence[sequenceIndex];
-        const isGreenSequence = sequenceIndex === 0;
+        const fullText = sequence[0];
         characterIndex += 1;
-        render(fullText.slice(0, characterIndex), isGreenSequence);
+        render(fullText.slice(0, characterIndex));
 
         if (characterIndex < fullText.length) {
-          setTimeout(tick, 24);
-          return;
-        }
-
-        if (sequenceIndex < sequence.length - 1) {
-          sequenceIndex += 1;
-          characterIndex = 0;
-          setTimeout(tick, 430);
+          setTimeout(tick, 22);
         }
       }
 
