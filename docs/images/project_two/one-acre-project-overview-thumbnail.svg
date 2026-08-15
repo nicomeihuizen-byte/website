@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
+  <title id="title">One Acre project PDF</title>
+  <desc id="description">Thumbnail for the One Acre Zero Dependency project overview PDF.</desc>
+  <rect width="640" height="360" fill="#10121A"/>
+  <rect x="188" y="32" width="264" height="296" rx="8" fill="#ECEDF3"/>
+  <rect x="188" y="32" width="264" height="48" rx="8" fill="#5FBF8E"/>
+  <text x="320" y="64" fill="#10121A" font-family="monospace" font-size="22" font-weight="700" text-anchor="middle">PDF</text>
+  <text x="320" y="132" fill="#10121A" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">ONE ACRE</text>
+  <text x="320" y="158" fill="#565B6E" font-family="monospace" font-size="14" text-anchor="middle">ZERO DEPENDENCY</text>
+  <line x1="232" y1="194" x2="408" y2="194" stroke="#262A38" stroke-width="2"/>
+  <rect x="232" y="218" width="176" height="12" rx="6" fill="#5FA8D3"/>
+  <rect x="232" y="246" width="138" height="12" rx="6" fill="#5FBF8E"/>
+  <rect x="232" y="274" width="166" height="12" rx="6" fill="#E8B34A"/>
+</svg>
