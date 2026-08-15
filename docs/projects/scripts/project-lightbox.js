@@ -33,6 +33,7 @@ if (lightbox && lightboxImage) {
   });
 
   closeButton?.addEventListener('click', closeLightbox);
+  lightboxImage.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {
       closeLightbox();
