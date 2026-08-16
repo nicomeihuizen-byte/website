@@ -1,6 +1,8 @@
 # Personal Website
 
-Personal portfolio website for Nico Meihuizen, built as a lightweight static site during the Metana bootcamp. The visual direction is a terminal-inspired portfolio: dark graphite surfaces, terminal green accents, monospace interface text, restrained motion, and content presented as practical work rather than a marketing landing page.
+Personal portfolio website for Nico Meihuizen, built as a lightweight static site during the Metana bootcamp. It exists to land freelance and full-time software engineering work by showing practical, working projects rather than a marketing landing page. The visual direction is a terminal-inspired portfolio: dark graphite surfaces, terminal green accents, monospace interface text, and restrained motion.
+
+Live at [https://www.meihuizen.ai](https://www.meihuizen.ai).
 
 ## What Is Included
 
@@ -10,23 +12,23 @@ The website is contained in `website/docs` and can be opened directly from the f
 
 - `index.html` is the home page. It contains the terminal-style hero, work list, contact form, social links, and footer.
 - `about.html` presents the professional background, technology stack, page navigation, social links, and footer.
-- `projects/project-one.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
-- `projects/project-two.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
-- `projects/project-three.html` documents the portfolio website itself, including its interface, functionality, implementation, and security practices. It remains inactive in the project sequence.
-- `projects/project-four.html` remains an inactive project-page template and is not linked from the active project sequence.
+- `projects/vegetarian-ecommerce-website.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
+- `projects/off-grid-ai-homestead.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
+- `projects/terminal-portfolio-website.html` is a case study on this site's own build — its interface, functionality, implementation, and security practices, written from the inside since Nico built it. It's not yet promoted to the home page's active work list.
+- `projects/project-four.html` is reserved for the next case study once a new project ships.
 - `projects/project-pages.css` provides the shared layout and visual system for all project pages.
 
 ### Assets
 
-Images are stored in `website/docs/images` and use descriptive filenames:
+Images are stored in `website/docs/images` and use descriptive filenames. The `project_one`/`project_two`/`project_three` folder names predate the page-slug renames above and were intentionally left alone — renaming them would mean updating every image `src` path across multiple HTML files for no real benefit. Each entry below is labeled by the page it supports, using the current filename:
 
 - `main/digital-nomad-logo.png` is the hero logo.
 - `main/ai-software-engineering-workspace.png` is the about-page image.
-- `project_three/homepage-screenshot.png`, `project_three/homepage-interactions-code.png`, and `project_three/lightbox-interactions-code.png` support the Project Three case study.
-- `project_one/buuf-louise-food.jpg`, `project_one/buuf-louise-logo.png`, `project_one/buuf-louise-package.jpg`, and `project_one/buuf-louise-project.jpg` support the Project One previews.
-- `project_two/birdbox-farm-campervan-scene.png`, `project_two/birdbox-station-system-diagram.png`, and `project_two/biodynamic-farming-calendar.png` support the Project Two gallery.
-- `project_two/birdbox-farm-campervan-scene.png` is used for the Project Two card on the home page.
-- `project_two/one-acre-project-overview.pdf` is available from Project Two as an openable and downloadable project document.
+- `project_three/homepage-screenshot.png`, `project_three/homepage-interactions-code.png`, and `project_three/lightbox-interactions-code.png` support `terminal-portfolio-website.html`.
+- `project_one/buuf-louise-food.jpg`, `project_one/buuf-louise-logo.png`, `project_one/buuf-louise-package.jpg`, and `project_one/buuf-louise-project.jpg` support `vegetarian-ecommerce-website.html`.
+- `project_two/birdbox-farm-campervan-scene.png`, `project_two/birdbox-station-system-diagram.png`, and `project_two/biodynamic-farming-calendar.png` support `off-grid-ai-homestead.html`.
+- `project_two/birdbox-farm-campervan-scene.png` is also used for the `off-grid-ai-homestead.html` card on the home page.
+- `project_two/one-acre-project-overview.pdf` is available from `off-grid-ai-homestead.html` as an openable and downloadable project document.
 - `project_two/pdf.png` is the visual thumbnail for the PDF download block.
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
@@ -69,19 +71,28 @@ The social links open GitHub, LinkedIn, and X in a new tab with `rel="noopener"`
 
 The response-header policy requires deployment support for `_headers`; GitHub Pages-style static hosting may require configuring the equivalent CSP in the hosting platform.
 
-## Applicable Coding Rules
+## Built With AI-Assisted Development
 
-The repository rules are defined in `agents.md`. The following rules apply to this static HTML/CSS/JavaScript website:
+This repo is set up for AI-assisted development: `agents.md` defines the conventions an AI agent (or any contributor) enforces on every change — PascalCase classes, camelCase functions/variables, kebab-case filenames, no `var`, no nested ternaries, no stray `console.log`, and short, specific comments over restated ones. `diagnostics.py` (see Audit below) turns the SEO, heading, image, and security rules into an automated check rather than a manual review.
 
-- Use `UPPER_CASE` for constants, PascalCase for classes and interfaces, camelCase for functions, methods, variables, and parameters, and kebab-case for filenames.
-- Do not use `console.log` in production code.
-- Do not use the JavaScript `var` keyword. Use `const` for values that are not reassigned and `let` for values that are reassigned.
-- Do not use nested ternary operators.
-- Use descriptive names instead of vague names such as `data`, `info`, `temp`, `Manager`, or `Helper`.
-- Keep comments short and specific. Do not leave unexplained placeholder comments or large dead code blocks without a clear restoration reason.
-- Keep changes focused and preserve existing public links, accessibility labels, and relative asset paths.
+The TypeScript/Jest-specific rules in `agents.md` don't apply here — this is a static HTML/CSS/JavaScript site with no build step or test suite.
 
-The TypeScript version, decorators, Jest, `jest.mock()`, coverage, and Jest snapshot rules in `agents.md` do not apply because this website contains no TypeScript or Jest test suite. The site's JavaScript follows the applicable naming and prohibition rules.
+## Audit
+
+`diagnostics.py` (repo root) is a dependency-free Python script that statically audits every page in `docs/` against the "Webpage SEO & Metadata", "Webpage Heading Hierarchy", "Webpage Images", and applicable "HTML and JavaScript Security Hardening" rules in `agents.md`. It checks, per page:
+
+- Canonical link, Open Graph, Twitter Card, and JSON-LD tags are present, absolute where required, and consistent with each other (e.g. `og:url` matches the canonical href), and appear in the order the rules specify (after `theme-color`/`robots`, before the CSP meta tag).
+- Exactly one `<h1>` per page with non-generic text, and no `div`/`span` styled as a section caption acting as the only heading for its section.
+- Every `<img>` has non-empty, sitewide-unique alt text, explicit `width`/`height` that matches (or has a reasonable aspect ratio to) the file's real pixel dimensions, `loading="lazy"` below the fold, and a WebP `<picture>` source where practical.
+- Every page ships a CSP meta tag without `unsafe-inline`/`unsafe-eval` in `script-src`, and site JavaScript avoids `innerHTML`/`document.write`, `eval`/`new Function`, unvalidated `postMessage` origins, and token-like values in `localStorage`/`sessionStorage`.
+
+Run it from the repo root:
+
+```sh
+python diagnostics.py
+```
+
+It prints one line per issue (`[ERROR]`, `[WARN]`, or `[INFO]`) with the file, line number, and rule, followed by a summary count. The process exits `1` if any `ERROR`-level issue is found, so it can be wired into CI.
 
 ## Validation
 
@@ -89,7 +100,7 @@ There is no package manager or build pipeline required for the current static si
 
 1. Serve `website/docs` locally and test homepage navigation, the session-scoped hero animation, the contact form, and all social links.
 2. Open `website/docs/about.html` and each project page and check that all images load.
-3. Test the Project One and Project Two active navigation sequence and confirm Projects Three and Four are not active destinations.
+3. Test the `vegetarian-ecommerce-website.html` and `off-grid-ai-homestead.html` active navigation sequence and confirm `terminal-portfolio-website.html` and `project-four.html` are not active destinations.
 4. Test project image cropping, full-size lightbox opening, and closing with the image, backdrop, close button, and Escape.
 5. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
 6. Extract and syntax-check inline scripts in `index.html` and the project pages with Node.js when JavaScript changes are made.
