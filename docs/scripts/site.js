@@ -1,6 +1,5 @@
 (function () {
   const target = document.getElementById('typeTarget');
-  const form = document.getElementById('contactForm');
 
   if (target) {
     // deduped glyph pool: letters, digits and symbols for the falling rain columns
@@ -128,40 +127,5 @@
 
     start();
     window.addEventListener('resize', start);
-  }
-
-  if (form) {
-    const nameField = document.getElementById('cf-name');
-    const emailField = document.getElementById('cf-email');
-    const messageField = document.getElementById('cf-message');
-    const honeypotField = form.querySelector('[name="_honey"]');
-    const emailPattern = /^[^\s@,]+@[^\s@,]+\.[^\s@,]{2,}$/;
-    const testAddressPattern = /^(test|example|demo)(?:[+._-].*)?$/i;
-    const contactAddress = 'nico.meihuizen@protonmail.com';
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const trimmedName = nameField.value.trim();
-      const trimmedEmail = emailField.value.trim();
-      const trimmedMessage = messageField.value.trim();
-      const emailLocalPart = trimmedEmail.split('@')[0];
-      const isNameValid = /^[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s.'-]{1,79}$/.test(trimmedName);
-      const isEmailValid = emailPattern.test(trimmedEmail) && !testAddressPattern.test(emailLocalPart);
-      const isMessageValid = trimmedMessage.length >= 10 && trimmedMessage.length <= 4000;
-
-      nameField.setCustomValidity(isNameValid ? '' : 'Enter a real name using letters, spaces, apostrophes, or hyphens.');
-      emailField.setCustomValidity(isEmailValid ? '' : 'Enter a valid, non-test email address.');
-      messageField.setCustomValidity(isMessageValid ? '' : 'Message must be between 10 and 4000 characters.');
-
-      if (honeypotField.value.trim() !== '' || !isNameValid || !isEmailValid || !isMessageValid) {
-        form.reportValidity();
-        return;
-      }
-
-      const subject = encodeURIComponent('Portfolio contact from ' + trimmedName);
-      const body = encodeURIComponent('Name: ' + trimmedName + '\nEmail: ' + trimmedEmail + '\n\n' + trimmedMessage);
-      window.location.href = 'mailto:' + contactAddress + '?subject=' + subject + '&body=' + body;
-    });
   }
 })();
