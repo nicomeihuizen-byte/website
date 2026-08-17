@@ -1,7 +1,7 @@
 // Posts the "Let's talk" form to the deployed contact-form serverless function.
 // Update ENDPOINT if the function is redeployed under a different URL.
-const ENDPOINT = "https://meihuizen-contact-function.vercel.app/api/send-email";
- 
+const ENDPOINT = "https://website-contact-function-4efp.vercel.app/api/send-email";
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   if (!form) return;
