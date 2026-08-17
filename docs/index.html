@@ -392,7 +392,11 @@
     color:var(--text-dim);
     max-width:none;
   }
-  .honeypot{ display:none; }
+  .honeypot{
+    position:absolute;
+    left:-9999px;
+    top:-9999px;
+  }
   .contact-links{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px; }
   .contact-links a{
     font-family:var(--font-mono);
