@@ -3,89 +3,131 @@
   const form = document.getElementById('contactForm');
 
   if (target) {
-    const buildSequence = () => {
-      const prefix = 'public abstract synchronized Future<Sleep> procrastinate(Deadline deadline) throws PanicAttack {';
-      const suffixes = [
-        ' if (systemsAwake) {',
-        ' return build();',
-        ' while (ideasFlow) {',
-        ' ship(workingPrototype);',
-        ' // build with intent',
-        ' solve(problem);',
-        ' }',
-        ' keepMomentum();'
-      ];
-
-      let text = prefix;
-      const minLength = 220 + Math.floor(Math.random() * 90);
-
-      while (text.length < minLength) {
-        text += ' ' + suffixes[Math.floor(Math.random() * suffixes.length)];
-      }
-
-      return text.trim() + ' $';
-    };
-
-    const sequence = [buildSequence()];
+    // deduped glyph pool: letters, digits and symbols for the falling rain columns
+    const glyphs = Array.from(new Set(
+      '7xK#m9!vQ$pB2@wZ&L*u9%tY6(xN1)zP5_eR8+qW3=jM4[vF]oK0{dX}pL~aG@4!mK9$xP2#zL6&Y*v1%uR3(bN7)wQ5_jW8+tX4=eM0[fF]kO7{sP}xI~q'.split('')
+    ));
+    const fontSize = 11;
+    const columnWidth = 9;
+    const rainColor = '#5FBF8E';
+    const bgColor = '#10121A';
+    const ctx = target.getContext('2d');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const sequencePlayedKey = 'homepageSequencePlayed';
-    let sequenceAlreadyPlayed = false;
 
-    try {
-      sequenceAlreadyPlayed = sessionStorage.getItem(sequencePlayedKey) === 'true';
-    } catch (error) {
-      sequenceAlreadyPlayed = false;
+    let rows = 0;
+    let columns = 0;
+    let landedGrid = [];
+    let fillHeight = [];
+    let dropRow = [];
+    let dropGlyph = [];
+    let dropDelay = [];
+    let intervalId = null;
+
+    function randomGlyph() {
+      return glyphs[Math.floor(Math.random() * glyphs.length)];
     }
 
-    let internalNavigation = false;
+    function resize() {
+      const rect = target.getBoundingClientRect();
+      target.width = rect.width;
+      target.height = rect.height;
+      columns = Math.max(1, Math.floor(target.width / columnWidth));
+      rows = Math.max(1, Math.floor(target.height / fontSize));
+      landedGrid = new Array(columns).fill(null).map(() => new Array(rows).fill(null));
+      fillHeight = new Array(columns).fill(0);
+      dropRow = new Array(columns).fill(null);
+      dropGlyph = new Array(columns).fill(null);
+      dropDelay = new Array(columns).fill(0).map(() => Math.floor(Math.random() * 20));
+    }
 
-    if (document.referrer) {
-      try {
-        internalNavigation = new URL(document.referrer, window.location.href).origin === window.location.origin;
-      } catch (error) {
-        internalNavigation = false;
+    function drawGrid() {
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(0, 0, target.width, target.height);
+      ctx.font = fontSize + 'px "Courier New", Courier, monospace';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = rainColor;
+
+      for (let column = 0; column < columns; column++) {
+        for (let row = 0; row < rows; row++) {
+          const glyph = landedGrid[column][row];
+          if (glyph) {
+            ctx.fillText(glyph, column * columnWidth, row * fontSize);
+          }
+        }
+
+        if (dropRow[column] !== null && dropRow[column] >= 0) {
+          ctx.fillText(dropGlyph[column], column * columnWidth, dropRow[column] * fontSize);
+        }
       }
     }
 
-    function appendCursor() {
-      const cursor = document.createElement('span');
-      cursor.className = 'cursor';
-      cursor.setAttribute('aria-hidden', 'true');
-      target.appendChild(cursor);
-    }
+    function tick() {
+      let allFilled = true;
 
-    function render(text) {
-      target.replaceChildren();
-      const sequenceText = document.createElement('span');
-      sequenceText.className = 'sequence-green';
-      sequenceText.textContent = text;
-      target.appendChild(sequenceText);
-      appendCursor();
-    }
+      for (let column = 0; column < columns; column++) {
+        if (fillHeight[column] >= rows) {
+          continue;
+        }
 
-    if (reduced || sequenceAlreadyPlayed || internalNavigation) {
-      render(sequence[0]);
-    } else {
-      try {
-        sessionStorage.setItem(sequencePlayedKey, 'true');
-      } catch (error) {
-        // storage may be blocked (e.g. mobile Safari with cookies disabled); still play the animation
-      }
+        allFilled = false;
 
-      let characterIndex = 0;
+        if (dropRow[column] === null) {
+          if (dropDelay[column] > 0) {
+            dropDelay[column] -= 1;
+            continue;
+          }
+          dropRow[column] = -1 - Math.floor(Math.random() * 6);
+          dropGlyph[column] = randomGlyph();
+          continue;
+        }
 
-      function tick() {
-        const fullText = sequence[0];
-        characterIndex += 1;
-        render(fullText.slice(0, characterIndex));
+        dropRow[column] += 1;
+        dropGlyph[column] = randomGlyph();
 
-        if (characterIndex < fullText.length) {
-          setTimeout(tick, 22);
+        const landingRow = rows - 1 - fillHeight[column];
+
+        if (dropRow[column] >= landingRow) {
+          landedGrid[column][landingRow] = dropGlyph[column];
+          fillHeight[column] += 1;
+          dropRow[column] = null;
+          dropDelay[column] = Math.floor(Math.random() * 8);
         }
       }
 
-      tick();
+      drawGrid();
+
+      if (allFilled) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
     }
+
+    function drawStaticFrame() {
+      for (let column = 0; column < columns; column++) {
+        for (let row = 0; row < rows; row++) {
+          landedGrid[column][row] = randomGlyph();
+        }
+      }
+      drawGrid();
+    }
+
+    function start() {
+      resize();
+
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+
+      if (reduced) {
+        drawStaticFrame();
+      } else {
+        intervalId = setInterval(tick, 50);
+      }
+    }
+
+    start();
+    window.addEventListener('resize', start);
   }
 
   if (form) {
