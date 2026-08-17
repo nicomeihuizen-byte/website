@@ -1,0 +1,6 @@
+name: "CodeQL config"
+
+# Excluded: local-only static audit script, not part of the deployed site.
+paths-ignore:
+  - diagnostics.py
+  - "**/__pycache__/**"
