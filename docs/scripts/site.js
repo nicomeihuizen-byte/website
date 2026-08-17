@@ -10,7 +10,7 @@
     const fontSize = 11;
     const columnWidth = 9;
     const rainColor = '#5FBF8E';
-    const bgColor = '#10121A';
+    const bgColor = '#171A24';
     const ctx = target.getContext('2d');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
