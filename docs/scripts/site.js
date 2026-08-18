@@ -91,9 +91,13 @@
       });
 
       // first-region columns (under the logo) fall twice as fast; the skyline region keeps its normal speed
+      // speeds are rows-per-tick tuned at the 300px baseline height; scaling by heightScale keeps the
+      // fall duration (in ticks) the same on short mobile canvases instead of collapsing to an instant pop-in
+      const scaledFirstRegionDropSpeed = 4 * heightScale;
+      const scaledSkylineDropSpeed = 2 * heightScale;
       dropSpeedPerColumn = new Array(columns).fill(0).map((_, column) => {
         const x = column * columnWidth + columnWidth / 2;
-        return x < scaledLogoClearWidthPx ? 4 : 2;
+        return x < scaledLogoClearWidthPx ? scaledFirstRegionDropSpeed : scaledSkylineDropSpeed;
       });
 
       landedGrid = new Array(columns).fill(null).map(() => new Array(rows).fill(null));
