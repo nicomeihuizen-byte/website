@@ -18,7 +18,6 @@
 <meta name="keywords" content="Nico Meihuizen, AI-native software engineer, software engineer, freelance software engineer, TypeScript developer, Python developer, React developer, LLM tooling, agentic workflows, career changer software engineer">
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#10121A">
 <link rel="canonical" href="https://www.meihuizen.ai/">
 <meta property="og:title" content="Nico Meihuizen | AI-Native Software Engineer">
 <meta property="og:description" content="Nico Meihuizen — AI-native software engineer. Former enterprise IT sales pro (IBM, Oracle) now building with TypeScript, Python, React &amp; LLM tooling.">
@@ -55,13 +54,14 @@
 }
 </script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
-<link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-<link rel="shortcut icon" href="favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-<link rel="manifest" href="favicon/site.webmanifest" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -329,6 +329,43 @@
     color:var(--text-dim);
   }
 
+  /* DOCUMENT DOWNLOAD */
+  .doc-download{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:18px;
+    color:inherit;
+    text-decoration:none;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .doc-download:hover,
+  .doc-download:focus-visible{ background:#1D2130; border-color:var(--accent-dim); }
+  .doc-download .doc-icon{
+    width:28px;
+    height:28px;
+    flex:none;
+    color:var(--text-dim);
+    transition:color .15s ease;
+  }
+  .doc-download:hover .doc-icon,
+  .doc-download:focus-visible .doc-icon{ color:var(--accent); }
+  .doc-download .info h3{
+    font-family:var(--font-mono);
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:4px;
+    color:#5FBF8E;
+  }
+  .doc-download .info p{
+    font-size:13.5px;
+    color:var(--text-muted);
+  }
+
   .stack{
     display:flex; flex-wrap:wrap; gap:8px;
     margin-top:20px;
@@ -502,10 +539,6 @@
          <p>Today I build AI-native software with TypeScript, Python, and React, working on LLM tooling and agentic workflows. From off-grid AI hardware projects to secure, production-ready web applications.</p>
         <br>
         </div>
-        <div class="hero-cta">
-          <a href="#work" class="btn primary">See the work</a>
-          <a href="#contact" class="btn ghost">Get in touch</a>
-        </div>
       </div>
     </div>
   </section>
@@ -543,12 +576,32 @@
     </div>
   </section>
 
+  <section class="section wrap" id="terms">
+    <div class="section-head">
+      <span class="idx">~/legal</span>
+      <h2>Terms of Business</h2>
+    </div>
+    <a class="doc-download" href="legal/terms-of-business.pdf" download rel="noopener">
+      <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
+        <path d="M15 2v5h5" stroke-linejoin="round"/>
+        <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
+      </svg>
+      <div class="info">
+        <h3>Terms of Business</h3>
+        <p>AI-assisted programming &amp; software engineering services. Scope, disclaimers, and liability terms.</p>
+      </div>
+      <span class="tag">PDF</span>
+    </a>
+  </section>
+
   <footer id="contact" class="wrap">
     <h2>Let's talk.</h2>
     <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Send a message directly through the contact form. Or reach me via Linkedin, GitHub or X.</p>
     <br>
     <p><strong class="legal-entity">Meihuizen.Ai LLC</strong> || TIN: LT173067779 || Registered in Lithuania || All rights reserved || <strong class="contact-email">info(at)meihuizen.ai</strong></p>
-</p>
+    <br>
+    <br>
 <form id="contact-form" class="contact-form" novalidate>
   <div class="field">
     <label for="cf-name">Name</label>

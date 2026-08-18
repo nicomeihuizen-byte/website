@@ -254,38 +254,50 @@ h1 {
   font-family: var(--font-mono);
   font-size: 11px;
 }
-.pdf-download {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+.doc-download {
   margin-top: 24px;
-}
-.pdf-thumbnail {
-  display: block;
-  width: min(100%, 182px);
+  background: var(--bg-raised);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--bg);
+  border-radius: 10px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease;
 }
-.pdf-thumbnail img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: 50% 50%;
-  transition: border-color .15s ease, transform .15s ease;
+.doc-download:hover,
+.doc-download:focus-visible { background: #1D2130; border-color: var(--accent-dim); }
+.doc-download .doc-icon {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  color: var(--text-dim);
+  transition: color .15s ease;
 }
-.pdf-thumbnail:hover,
-.pdf-thumbnail:focus-visible { border-color: var(--accent); }
-.pdf-thumbnail:hover img,
-.pdf-thumbnail:focus-visible img { transform: scale(1.02); }
-.pdf-caption {
-  color: var(--text-muted);
+.doc-download:hover .doc-icon,
+.doc-download:focus-visible .doc-icon { color: var(--accent); }
+.doc-download .info h3 {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16.5px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #5FBF8E;
+}
+.doc-download .info p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+.doc-download .tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 4px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 .project-nav {
   display: flex;
