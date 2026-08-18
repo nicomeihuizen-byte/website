@@ -219,7 +219,7 @@
     display:block;
     background:#10121A;
   }
-  .accent-word{ color:#5FBF8E; }
+  .accent-word{ color:#5FBF8E; font-weight:bold; }
 
   .hero-sub{
     margin-top:22px;
@@ -446,6 +446,16 @@
     color:var(--accent);
     flex-wrap:wrap; gap:10px;
   }
+  .legal-entity{
+    font-family:var(--font-body);
+    font-size:16px;
+    font-weight:bold;
+    color:var(--accent);
+  }
+  .contact-email{
+    font-weight:bold;
+    color:var(--accent);
+  }
 
   @media (max-width: 600px){
     .work-item{ grid-template-columns:1fr; gap:8px; }
@@ -484,7 +494,7 @@
           <canvas class="type-target" id="typeTarget" aria-hidden="true"></canvas>
         </div>
         <div class="hero-sub">
-         <h1 class="hero-headline">Nico Meihuizen &mdash; AI-Native Software Engineer</h1>
+         <h1 class="hero-headline">Nico Meihuizen &mdash; <span class="accent-word">AI</span>-Native Software Engineer</h1>
          <p>I'm a results-driven professional with a strong foundation in enterprise sales and technology solutions, I bring years of experience from leading organizations including IBM, SoftLayer, Oracle, and Minitab.</p>
          <br>
          <p>My career has been shaped by a deep understanding of data centers, cloud infrastructure, and IaaS/PaaS environments, combined with a proven ability to translate complex technical offerings into business value.</p>
@@ -536,7 +546,9 @@
   <footer id="contact" class="wrap">
     <h2>Let's talk.</h2>
     <p>Open to roles and freelance work where I can build with AI as part of the toolchain. Send a message directly through the contact form. Or reach me via Linkedin, GitHub or X.</p>
-
+    <br>
+    <p><strong class="legal-entity">Meihuizen.Ai LLC</strong> || TIN: LT173067779 || Registered in Lithuania || All rights reserved || <strong class="contact-email">info(at)meihuizen.ai</strong></p>
+</p>
 <form id="contact-form" class="contact-form" novalidate>
   <div class="field">
     <label for="cf-name">Name</label>
