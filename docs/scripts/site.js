@@ -10,6 +10,9 @@
     const columnWidth = 9;
     const rainColor = '#5FBF8E';
     const bgColor = '#171A24';
+    // layout constants below are tuned for this reference canvas size; resize() scales them to the actual (e.g. mobile) canvas size
+    const baseCanvasWidthPx = 722;
+    const baseCanvasHeightPx = 300;
     const baseCapPx = 168;
     const logoClearWidthPx = 190;
     const skylineRampEndPx = 420;
@@ -46,36 +49,51 @@
       columns = Math.max(1, Math.floor(target.width / columnWidth));
       rows = Math.max(1, Math.floor(target.height / fontSize));
 
-      const skylineMidPx = (skylineMinPx + skylineMaxPx) / 2;
-      const firstRegionMidPx = (firstRegionMinPx + baseCapPx) / 2;
-      const firstRegionAmplitudePx = (baseCapPx - firstRegionMinPx) / 2;
+      // scale the reference (722x300) layout constants to whatever size the canvas actually renders at (e.g. mobile)
+      const widthScale = target.width / baseCanvasWidthPx;
+      const heightScale = target.height / baseCanvasHeightPx;
+      const scaledLogoClearWidthPx = logoClearWidthPx * widthScale;
+      const scaledSkylineRampEndPx = skylineRampEndPx * widthScale;
+      const scaledWaveWavelengthPx = waveWavelengthPx * widthScale;
+      const scaledFirstRegionWavelengthPx = firstRegionWavelengthPx * widthScale;
+      const scaledBaseCapPx = baseCapPx * heightScale;
+      const scaledFirstRegionMinPx = firstRegionMinPx * heightScale;
+      const scaledSkylineMinPx = skylineMinPx * heightScale;
+      const scaledSkylineMaxPx = skylineMaxPx * heightScale;
+      const scaledWaveAmplitudePx = waveAmplitudePx * heightScale;
+      const scaledJitterAmplitudePx = jitterAmplitudePx * heightScale;
+      const scaledFirstRegionJitterPx = firstRegionJitterPx * heightScale;
 
-      // under the logo (x < logoClearWidthPx): its own spiked pattern, hard-capped at 140px;
-      // from there it ramps with a sine wave + jitter into the jagged 200-250px skyline
+      const skylineMidPx = (scaledSkylineMinPx + scaledSkylineMaxPx) / 2;
+      const firstRegionMidPx = (scaledFirstRegionMinPx + scaledBaseCapPx) / 2;
+      const firstRegionAmplitudePx = (scaledBaseCapPx - scaledFirstRegionMinPx) / 2;
+
+      // under the logo (x < scaledLogoClearWidthPx): its own spiked pattern, hard-capped at scaledBaseCapPx;
+      // from there it ramps with a sine wave + jitter into the jagged skyline
       maxFillRowsPerColumn = new Array(columns).fill(0).map((_, column) => {
         const x = column * columnWidth + columnWidth / 2;
 
-        if (x < logoClearWidthPx) {
-          const wave = Math.sin((x / firstRegionWavelengthPx) * Math.PI * 2) * firstRegionAmplitudePx;
-          const jitter = (Math.random() - 0.5) * 2 * firstRegionJitterPx;
+        if (x < scaledLogoClearWidthPx) {
+          const wave = Math.sin((x / scaledFirstRegionWavelengthPx) * Math.PI * 2) * firstRegionAmplitudePx;
+          const jitter = (Math.random() - 0.5) * 2 * scaledFirstRegionJitterPx;
           const targetPx = firstRegionMidPx + wave + jitter;
-          const clampedPx = Math.min(baseCapPx, Math.max(firstRegionMinPx, targetPx));
+          const clampedPx = Math.min(scaledBaseCapPx, Math.max(scaledFirstRegionMinPx, targetPx));
           return Math.min(rows, Math.max(1, Math.round(clampedPx / fontSize)));
         }
 
-        const rampProgress = Math.min(1, Math.max(0, (x - logoClearWidthPx) / (skylineRampEndPx - logoClearWidthPx)));
+        const rampProgress = Math.min(1, Math.max(0, (x - scaledLogoClearWidthPx) / (scaledSkylineRampEndPx - scaledLogoClearWidthPx)));
         const eased = rampProgress * rampProgress * (3 - 2 * rampProgress);
-        const wave = Math.sin((x / waveWavelengthPx) * Math.PI * 2) * waveAmplitudePx * eased;
-        const jitter = (Math.random() - 0.5) * 2 * jitterAmplitudePx * eased;
-        const targetPx = baseCapPx + eased * (skylineMidPx - baseCapPx) + wave + jitter;
-        const clampedPx = Math.min(skylineMaxPx, Math.max(baseCapPx, targetPx));
+        const wave = Math.sin((x / scaledWaveWavelengthPx) * Math.PI * 2) * scaledWaveAmplitudePx * eased;
+        const jitter = (Math.random() - 0.5) * 2 * scaledJitterAmplitudePx * eased;
+        const targetPx = scaledBaseCapPx + eased * (skylineMidPx - scaledBaseCapPx) + wave + jitter;
+        const clampedPx = Math.min(scaledSkylineMaxPx, Math.max(scaledBaseCapPx, targetPx));
         return Math.min(rows, Math.max(1, Math.round(clampedPx / fontSize)));
       });
 
       // first-region columns (under the logo) fall twice as fast; the skyline region keeps its normal speed
       dropSpeedPerColumn = new Array(columns).fill(0).map((_, column) => {
         const x = column * columnWidth + columnWidth / 2;
-        return x < logoClearWidthPx ? 4 : 2;
+        return x < scaledLogoClearWidthPx ? 4 : 2;
       });
 
       landedGrid = new Array(columns).fill(null).map(() => new Array(rows).fill(null));
