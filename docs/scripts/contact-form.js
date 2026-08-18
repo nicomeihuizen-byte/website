@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function setStatus(text, isError) {
     if (!status) return;
     status.textContent = text;
-    status.style.color = isError ? "#b91c1c" : "";
+    status.style.color = "#5FBF8E";
+    status.style.fontWeight = "bold";
   }
 });
  
