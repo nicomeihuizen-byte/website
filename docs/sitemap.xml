@@ -2,37 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.meihuizen.ai/</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-19T11:43:59+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0000</priority>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/about.html</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-19T11:28:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8000</priority>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/projects/vegetarian-ecommerce-website.html</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-18T20:16:44+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8000</priority>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/projects/off-grid-ai-homestead.html</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-18T20:16:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8000</priority>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/projects/terminal-portfolio-website.html</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6000</priority>
-  </url>
-  <url>
-    <loc>https://www.meihuizen.ai/projects/project-four.html</loc>
-    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-18T20:16:44+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6000</priority>
   </url>
