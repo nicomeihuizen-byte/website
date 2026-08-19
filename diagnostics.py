@@ -34,6 +34,9 @@ GENERIC_H1_TEXT = {
     "background", "overview", "content", "welcome",
 }
 CDN_SCRIPT_PATTERN = re.compile(r"^https?://", re.IGNORECASE)
+# Google serves gtag.js per-measurement-ID with content that can change without notice,
+# so a static SRI hash would break analytics the next time Google updates the script.
+SRI_EXEMPT_SCRIPT_HOSTS = re.compile(r"^https?://(?:www\.)?googletagmanager\.com/", re.IGNORECASE)
 UNSAFE_DOM_SINK = re.compile(
     r"\.innerHTML\s*=|\.outerHTML\s*=|insertAdjacentHTML\s*\(|document\.write\s*\("
 )
@@ -371,7 +374,9 @@ def check_images(path: str, root: Node, alt_registry: dict[str, list[tuple[str, 
             if declared:
                 asset_path = resolve_asset_path(path, src)
                 actual = get_image_dimensions(asset_path) if asset_path and os.path.isfile(asset_path) else None
-                if actual and actual != declared:
+                # data-crop="intentional" marks thumbnails deliberately cropped via CSS object-fit,
+                # where width/height are set to the rendered box, not the source file's aspect ratio.
+                if actual and actual != declared and img.attrs.get("data-crop") != "intentional":
                     declared_ratio = declared[0] / declared[1]
                     actual_ratio = actual[0] / actual[1]
                     if abs(declared_ratio - actual_ratio) > 0.02:
@@ -415,7 +420,12 @@ def check_html_security(path: str, root: Node) -> list[Issue]:
 
     for script in find_all(root, lambda n: n.tag == "script"):
         src = script.attrs.get("src", "")
-        if src and CDN_SCRIPT_PATTERN.match(src) and not script.attrs.get("integrity"):
+        if (
+            src
+            and CDN_SCRIPT_PATTERN.match(src)
+            and not script.attrs.get("integrity")
+            and not SRI_EXEMPT_SCRIPT_HOSTS.match(src)
+        ):
             issues.append(Issue(path, "ERROR", "sec-sri", f"External script '{src}' has no integrity (SRI) attribute.", script.line))
         if script.attrs.get("type") == "application/ld+json":
             continue
