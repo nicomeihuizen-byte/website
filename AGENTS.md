@@ -84,12 +84,12 @@ What it checks, so you write pages that pass on the first run:
 **Images**
 - Every `<img>` needs non-empty, non-duplicated `alt` text
 - Below-the-fold images need `loading="lazy"` (exempt: `hero` / `hero-logo` classes)
-- Explicit numeric `width`/`height` matching the file's real aspect ratio (>2% variance warns)
+- Explicit numeric `width`/`height` matching the file's real aspect ratio (>2% variance warns) — mark deliberately cropped thumbnails (fixed CSS box + `object-fit: cover`) with `data-crop="intentional"` to exempt them
 - Prefer `<picture>` with a WebP `<source>` over a bare `<img>`, except for SVGs
 
 **Security (see below for the full policy — diagnostics enforces the mechanical parts)**
 - CSP meta tag present; `script-src` may not include `unsafe-inline` or `unsafe-eval`
-- External `<script src="http...">` tags need an `integrity` attribute (SRI) — JSON-LD blocks are exempt
+- External `<script src="http...">` tags need an `integrity` attribute (SRI) — JSON-LD blocks are exempt, as is `googletagmanager.com/gtag/js` (Google serves it per-measurement-ID and rotates content without notice, so a static hash would break analytics on the next update)
 - No `.innerHTML =`, `.outerHTML =`, `insertAdjacentHTML(`, or `document.write(` anywhere (inline or in `docs/scripts/*.js`)
 - No `eval(`, `new Function(`, or string-form `setTimeout`/`setInterval`
 - No storing `token`/`auth`/`session_id`/`jwt`/`password`/`secret`-named keys in `localStorage`/`sessionStorage`
@@ -100,7 +100,7 @@ Manual checks diagnostics.py doesn't cover — do these too: click through navig
 
 ## Security conventions
 
-- Every page ships a restrictive CSP as a `<meta http-equiv="Content-Security-Policy">` tag. Keep `script-src` free of `unsafe-inline`/`unsafe-eval` — put JS in `docs/scripts/*.js`, not inline `<script>` blocks.
+- Every page ships a restrictive CSP as a `<meta http-equiv="Content-Security-Policy">` tag. Keep `script-src` free of `unsafe-inline`/`unsafe-eval` — put JS in `docs/scripts/*.js`, not inline `<script>` blocks. **One accepted exception:** the short gtag.js config snippet in `<head>` (`window.dataLayer = ...`, `gtag('js', ...)`, `gtag('config', ...)`) stays inline and is allow-listed via an exact SHA-256 hash in `script-src` (`'sha256-...'`) instead of being externalized. If that snippet is ever edited, regenerate the hash (`openssl dgst -sha256 -binary <file> | openssl base64`) and update the CSP meta tag on every page that uses it — a stale hash silently breaks the page under CSP with no visible error. This is a different mechanism from the SRI exemption above, which covers the *external* `<script src="https://www.googletagmanager.com/gtag/js?...">` tag that loads gtag.js itself, not this inline config block.
 - `docs/_headers` carries the response-level CSP (including `frame-ancestors 'none'`) for hosts that honor it. **GitHub Pages does not process `_headers`** — if this site ever moves off GitHub Pages (Vercel, Netlify, Cloudflare Pages), the response-header CSP needs to be configured at that platform, not assumed from this file.
 - Update DOM via `textContent`, never `innerHTML`/`outerHTML`/`insertAdjacentHTML`.
 - Image paths are static; never build an `<img src>` from user-controlled input.
