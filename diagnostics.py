@@ -271,6 +271,8 @@ def check_seo_metadata(path: str, root: Node, is_project_page: bool, is_noindex:
             expected_type = "Person"
         elif os.path.basename(path) == "about.html":
             expected_type = "ProfilePage"
+        elif os.path.basename(path) == "builds.html":
+            expected_type = "CollectionPage"
         for script in jsonld_scripts:
             try:
                 payload = json.loads(script.own_text())
@@ -499,7 +501,7 @@ def run(site_root: str) -> list[Issue]:
             (n for n in find_all(root, lambda n: n.tag == "meta") if n.attrs.get("name") == "robots"), None
         )
         is_noindex = bool(robots_meta and "noindex" in robots_meta.attrs.get("content", ""))
-        is_project_page = os.path.basename(full_path) not in ("index.html", "about.html")
+        is_project_page = os.path.basename(full_path) not in ("index.html", "about.html", "builds.html")
 
         issues += check_seo_metadata(relpath, root, is_project_page, is_noindex)
         issues += check_headings(relpath, root)

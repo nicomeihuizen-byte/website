@@ -13,6 +13,12 @@
     <priority>0.8000</priority>
   </url>
   <url>
+    <loc>https://www.meihuizen.ai/builds.html</loc>
+    <lastmod>2026-08-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8000</priority>
+  </url>
+  <url>
     <loc>https://www.meihuizen.ai/projects/vegetarian-ecommerce-website.html</loc>
     <lastmod>2026-08-18T20:16:44+00:00</lastmod>
     <changefreq>daily</changefreq>
