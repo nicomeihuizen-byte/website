@@ -99,6 +99,31 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 12px;
 }
+.lang-switch { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.lang-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 2px;
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity .15s ease, outline-color .15s ease;
+}
+.lang-flag svg { display: block; border-radius: 2px; }
+.lang-flag:hover { opacity: 1; }
+.lang-flag[aria-current="true"] { opacity: 1; outline: 1px solid var(--accent); outline-offset: 2px; }
+.lang-flag .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 .terminal-body { padding: 30px; }
 .project-kicker {
   color: var(--accent2);

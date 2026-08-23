@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BNWQ23V8KC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI-Off-Grid-Landwirtschaftsprojekt | One Acre, Zero Dependency — Nico Meihuizen</title>
+<meta name="description" content="Off-Grid-KI-Hofstelle: Raspberry-Pi-Boden- und Wettersensoren, LSTM-Solarprognose und ein LLM-Pflanzplaner basierend auf dem biodynamischen Kalender. Öffentlich aufgebaut 2026/2027.">
+<meta name="keywords" content="One Acre Zero Dependency, KI-Off-Grid-Landwirtschaft, KI-gesteuertes Wohnen, Raspberry-Pi-Bodensensoren, Wetterstationen, LSTM-Solarprognose, Batteriezustandsvorhersage, LLM-Pflanzplaner, biodynamische Landwirtschaft, Nico Meihuizen">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
+<meta property="og:title" content="One Acre, Zero Dependency | KI-Off-Grid-Landwirtschaft">
+<meta property="og:description" content="Off-Grid-KI-Hofstelle: Raspberry-Pi-Boden- und Wettersensoren, LSTM-Solarprognose und ein LLM-Pflanzplaner basierend auf dem biodynamischen Kalender.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png">
+<meta property="og:url" content="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One Acre, Zero Dependency | KI-Off-Grid-Landwirtschaft">
+<meta name="twitter:description" content="Off-Grid-KI-Hofstelle: Raspberry-Pi-Boden- und Wettersensoren, LSTM-Solarprognose und ein LLM-Pflanzplaner.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "One Acre, Zero Dependency",
+  "description": "Off-Grid-, KI-gesteuertes Hofstellenprojekt: Raspberry-Pi-Boden- und Wettersensoren, LSTM-Solarprognose und ein LLM-Pflanzplaner basierend auf dem biodynamischen Kalender.",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai"
+  },
+  "image": "https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png",
+  "keywords": "KI-Off-Grid-Landwirtschaft, LSTM-Solarprognose, LLM-Pflanzplaner, biodynamische Landwirtschaft, Raspberry-Pi-Bodensensoren",
+  "url": "https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html",
+  "datePublished": "2026-01-01"
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../projects/project-pages.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="back-link" href="../index.html">&lt; start</a>
+  </div>
+</header>
+<main class="page-wrap">
+  <article class="terminal">
+    <div class="terminal-bar">
+      <span></span><span></span><span></span>
+      <nav class="lang-switch" aria-label="Sprache der Website">
+        <a href="../../projects/off-grid-ai-homestead.html" class="lang-flag" lang="en" hreflang="en" title="English">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#00247D"/><path d="M0 0L20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0L20 14M20 0L0 14" stroke="#CF142B" stroke-width="1.2"/><path d="M10 0V14M0 7H20" stroke="#fff" stroke-width="4.5"/><path d="M10 0V14M0 7H20" stroke="#CF142B" stroke-width="2.4"/></svg>
+          <span class="sr-only">Diese Seite auf Englisch ansehen</span>
+        </a>
+        <a href="../../nl/projects/off-grid-ai-homestead.html" class="lang-flag" lang="nl" hreflang="nl" title="Nederlands">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#AE1C28"/><rect width="20" height="4.67" y="4.67" fill="#FFFFFF"/><rect width="20" height="4.67" y="9.33" fill="#21468B"/></svg>
+          <span class="sr-only">Diese Seite auf Niederländisch ansehen</span>
+        </a>
+        <a href="../../fr/projects/off-grid-ai-homestead.html" class="lang-flag" lang="fr" hreflang="fr" title="Français">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#0055A4"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#EF4135"/></svg>
+          <span class="sr-only">Diese Seite auf Französisch ansehen</span>
+        </a>
+        <a href="off-grid-ai-homestead.html" class="lang-flag" lang="de" hreflang="de" title="Deutsch" aria-current="true">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#000000"/><rect width="20" height="4.67" y="4.67" fill="#DD0000"/><rect width="20" height="4.67" y="9.33" fill="#FFCE00"/></svg>
+          <span class="sr-only">Deutsch (aktuelle Seite)</span>
+        </a>
+        <a href="../../it/projects/off-grid-ai-homestead.html" class="lang-flag" lang="it" hreflang="it" title="Italiano">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#009246"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#CE2B37"/></svg>
+          <span class="sr-only">Diese Seite auf Italienisch ansehen</span>
+        </a>
+        <a href="../../es/projects/off-grid-ai-homestead.html" class="lang-flag" lang="es" hreflang="es" title="Español">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect width="20" height="7" y="3.5" fill="#F1BF00"/></svg>
+          <span class="sr-only">Diese Seite auf Spanisch ansehen</span>
+        </a>
+      </nav>
+    </div>
+    <div class="terminal-body">
+      <h1>One Acre, Zero Dependency</h1>
+      <p class="project-summary">Ein Off-Grid-, KI-gesteuertes Hofstellenprojekt auf zwei Parzellen — eine im Sommer bewirtschaftet, eine im Winter — im Rhythmus der Jahreszeiten.</p>
+      <div class="project-gallery" aria-label="Vorschaubilder des Projekts One Acre Zero Dependency">
+        <a href="../../images/project_two/birdbox-station-system-diagram.png">
+          <img src="../../images/project_two/birdbox-station-system-diagram.png" alt="Systemdiagramm der Vogelhaus-Station" loading="lazy" width="545" height="457">
+        </a>
+        <a href="../../images/project_two/birdbox-farm-campervan-scene.png">
+          <img src="../../images/project_two/birdbox-farm-campervan-scene.png" alt="Vogelhaus-Hofstelle mit Wohnmobil" loading="lazy" width="545" height="415">
+        </a>
+        <a href="../../images/project_two/biodynamic-farming-calendar.png">
+          <img src="../../images/project_two/biodynamic-farming-calendar.png" alt="Biodynamischer Landwirtschaftskalender" loading="lazy" width="265" height="225">
+        </a>
+      </div>
+      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Projektbild in voller Größe" hidden>
+        <button class="image-lightbox-close" type="button" aria-label="Vollbild schließen">&times;</button>
+        <img src="" alt="">
+      </div>
+      <div class="project-grid">
+        <section class="project-copy">
+          <h2 class="section-label">// überblick</h2>
+          <h2>KI-gesteuerte Off-Grid-Landwirtschaft und Hofstelle</h2>
+          <p>Dieses Projekt begleitet zwei Parzellen durch die Jahreszeiten: eine wird im Sommer, eine im Winter bewirtschaftet, wobei Hardware, Code, Trainingsdaten und Fehlschläge bis 2026/2027 öffentlich dokumentiert werden.</p>
+          <p><strong>Warum dieses Projekt existiert.</strong> Die meisten "Smart-Farming"-Projekte setzen Netzstrom, Cloud-Konnektivität und ein Budget für kommerzielle Sensor-Kits voraus. Dieses Projekt geht von den gegenteiligen Einschränkungen aus: kein Stromnetz, lückenhafte Konnektivität und Hardware aus Teilen, die in ein Wohnmobil passen. Ziel ist es, eine einfache Frage zu beantworten: Wie viel der täglichen Entscheidungsfindung einer kleinen Farm kann eine wirklich netzunabhängige KI end-to-end übernehmen, vom Sensor bis zum Planer?</p>
+          <h2>Raspberry-Pi-Boden- und Wetterstationen</h2>
+          <p>Wetter- und Bodenstationen auf Raspberry-Pi-Basis sind in einem solarbetriebenen Vogelhaus auf einem Pfahl untergebracht. Verkabelte Bodensensoren messen Feuchtigkeit, Temperatur und Nährstoffe und senden die Messwerte über eine stromsparende lokale Verbindung zurück, statt sich auf eine Cloud-Verbindung zu verlassen.</p>
+          <h2>LSTM-Solarprognose und Batteriezustandsvorhersage</h2>
+          <p>Zeitreihen-Prognosemodelle nutzen LSTM-Techniken, um die Solarproduktion zu verfolgen und den Batteriezustand vorherzusagen, sodass das System energieintensive Aufgaben wie das Ausführen des Vision-Modells anhand der tatsächlichen Solarverfügbarkeit statt eines festen Zeitplans einplanen kann.</p>
+          <h2>LLM-Pflanzplaner für die biodynamische Landwirtschaft</h2>
+          <p>Ein LLM-gesteuerter Pflanzplaner kombiniert den biodynamischen Kalender mit globalen Boden- und Wetterdatensätzen und verwandelt Sensormesswerte und Kalenderpositionen in konkrete Pflanz- und Bewässerungsempfehlungen.</p>
+          <h2>Kompost-, Dünger- und Lebensmittelbestandsverfolgung</h2>
+          <p>Anomalieerkennung unterstützt das Timing von Kompost und Dünger, während ein schlankes Vision- und Empfehlungsmodell den Lebensmittelbestand verfolgt. Das System ist um klare Zustände und nützliches Feedback herum aufgebaut, während die Datenmenge wächst.</p>
+          <h2>Status und nächste Schritte</h2>
+          <p>Das Projekt wird bis 2026 und weiter bis 2027 öffentlich aufgebaut und dokumentiert, Parzelle für Parzelle und Saison für Saison. Geplante nächste Schritte umfassen das Schließen der Schleife zwischen den LSTM-Prognosen und dem LLM-Planer sowie die Veröffentlichung der Trainingsdaten nach Abschluss jeder Saison.</p>
+        </section>
+        <section>
+          <h2 class="section-label">// stack</h2>
+          <div class="stack">
+            <span>Raspberry Pi</span><span>Python</span><span>LSTM</span><span>LLM-Tools</span><span>Bodensensoren</span><span>Computer Vision</span>
+          </div>
+          <a class="doc-download" href="../../images/project_two/one-acre-project-overview.pdf" download rel="noopener">
+            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
+              <path d="M15 2v5h5" stroke-linejoin="round"/>
+              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
+            </svg>
+            <div class="info">
+              <h3>Projektübersicht</h3>
+              <p>One Acre, Zero Dependency. Vollständiger Projektbericht und technische Aufschlüsselung.</p>
+            </div>
+            <span class="tag">PDF</span>
+          </a>
+        </section>
+      </div>
+      <nav class="project-nav" aria-label="Projektnavigation">
+        <a class="nav-link" href="vegetarian-ecommerce-website.html"><span>&lt;- zurück</span><strong>Projekt 1</strong></a>
+        <a class="nav-link next" href="../index.html"><span>zurück zu -&gt;</span><strong>Start</strong></a>
+      </nav>
+    </div>
+  </article>
+</main>
+<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>02 / 02</span></footer>
+<script src="../../projects/scripts/project-lightbox.js" defer></script>
+</body>
+</html>
