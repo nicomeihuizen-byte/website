@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BNWQ23V8KC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitio Portfolio Inspirado en Terminal — Vanilla JS &amp; CSP | Nico Meihuizen</title>
+<meta name="description" content="Cómo construí un sitio de portafolio seguro inspirado en terminal con JavaScript vanilla, sin frameworks — formularios reforzados con CSP, galerías lightbox accesibles y una secuencia de escritura consciente de la sesión.">
+<meta name="keywords" content="sitio portafolio terminal, portafolio JavaScript vanilla, Content Security Policy, seguridad web CSP, galería lightbox accesible, HTML CSS semántico, Nico Meihuizen">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/es/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/terminal-portfolio-website.html">
+<meta property="og:title" content="Sitio Portfolio Inspirado en Terminal — Vanilla JS &amp; CSP | Nico Meihuizen">
+<meta property="og:description" content="Cómo construí un sitio de portafolio seguro inspirado en terminal con JavaScript vanilla, sin frameworks — formularios reforzados con CSP, galerías lightbox accesibles y una secuencia de escritura consciente de la sesión.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_three/homepage-screenshot.png">
+<meta property="og:url" content="https://www.meihuizen.ai/es/projects/terminal-portfolio-website.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sitio Portfolio Inspirado en Terminal — Vanilla JS &amp; CSP | Nico Meihuizen">
+<meta name="twitter:description" content="Un portafolio seguro inspirado en terminal construido con JavaScript vanilla — formularios reforzados con CSP y galerías lightbox accesibles.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_three/homepage-screenshot.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Sitio de portafolio",
+  "description": "Un portafolio responsivo inspirado en terminal, construido a partir de un pequeño stack estático, con un diseño de interacción práctico y controles de seguridad tratados como parte del producto.",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai/"
+  },
+  "image": "https://www.meihuizen.ai/images/project_three/homepage-screenshot.png",
+  "keywords": "sitio portafolio terminal, portafolio JavaScript vanilla, Content Security Policy, galería lightbox accesible",
+  "url": "https://www.meihuizen.ai/es/projects/terminal-portfolio-website.html"
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../projects/project-pages.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="back-link" href="../index.html">&lt; inicio</a>
+  </div>
+</header>
+<main class="page-wrap">
+  <article class="terminal">
+    <div class="terminal-bar">
+      <span></span><span></span><span></span>
+      <nav class="lang-switch" aria-label="Idioma del sitio">
+        <a href="../../projects/terminal-portfolio-website.html" class="lang-flag" lang="en" hreflang="en" title="English">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#00247D"/><path d="M0 0L20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0L20 14M20 0L0 14" stroke="#CF142B" stroke-width="1.2"/><path d="M10 0V14M0 7H20" stroke="#fff" stroke-width="4.5"/><path d="M10 0V14M0 7H20" stroke="#CF142B" stroke-width="2.4"/></svg>
+          <span class="sr-only">Ver esta página en inglés</span>
+        </a>
+        <a href="../../nl/projects/terminal-portfolio-website.html" class="lang-flag" lang="nl" hreflang="nl" title="Nederlands">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#AE1C28"/><rect width="20" height="4.67" y="4.67" fill="#FFFFFF"/><rect width="20" height="4.67" y="9.33" fill="#21468B"/></svg>
+          <span class="sr-only">Ver esta página en neerlandés</span>
+        </a>
+        <a href="../../fr/projects/terminal-portfolio-website.html" class="lang-flag" lang="fr" hreflang="fr" title="Français">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#0055A4"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#EF4135"/></svg>
+          <span class="sr-only">Ver esta página en francés</span>
+        </a>
+        <a href="../../de/projects/terminal-portfolio-website.html" class="lang-flag" lang="de" hreflang="de" title="Deutsch">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#000000"/><rect width="20" height="4.67" y="4.67" fill="#DD0000"/><rect width="20" height="4.67" y="9.33" fill="#FFCE00"/></svg>
+          <span class="sr-only">Ver esta página en alemán</span>
+        </a>
+        <a href="../../it/projects/terminal-portfolio-website.html" class="lang-flag" lang="it" hreflang="it" title="Italiano">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#009246"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#CE2B37"/></svg>
+          <span class="sr-only">Ver esta página en italiano</span>
+        </a>
+        <a href="terminal-portfolio-website.html" class="lang-flag" lang="es" hreflang="es" title="Español" aria-current="true">
+          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect width="20" height="7" y="3.5" fill="#F1BF00"/></svg>
+          <span class="sr-only">Español (página actual)</span>
+        </a>
+      </nav>
+    </div>
+    <div class="terminal-body">
+      <h1>Sitio de portafolio</h1>
+      <p class="project-summary">Un portafolio responsivo inspirado en terminal, construido a partir de un pequeño stack estático, con un diseño de interacción práctico y controles de seguridad tratados como parte del producto.</p>
+      <div class="project-gallery" aria-label="Capturas de pantalla de la implementación del sitio de portafolio">
+        <a href="../../images/project_three/homepage-screenshot.png">
+          <img src="../../images/project_three/homepage-screenshot.png" alt="Página de inicio del portafolio inspirado en terminal con animación de escritura consciente de la sesión y tarjetas de proyecto" loading="lazy" width="1367" height="899">
+        </a>
+        <a href="../../images/project_three/homepage-interactions-code.png">
+          <img src="../../images/project_three/homepage-interactions-code.png" alt="Código JavaScript vanilla que impulsa la secuencia de escritura y las interacciones de navegación de la página de inicio" loading="lazy" width="1227" height="883">
+        </a>
+        <a href="../../images/project_three/lightbox-interactions-code.png">
+          <img src="../../images/project_three/lightbox-interactions-code.png" alt="Código JavaScript para la lightbox de imágenes de proyecto, accesible y compatible con teclado" loading="lazy" width="1100" height="875">
+        </a>
+      </div>
+      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Imagen del proyecto a tamaño completo" hidden>
+        <button class="image-lightbox-close" type="button" aria-label="Cerrar imagen a tamaño completo">&times;</button>
+        <img src="" alt="Vista previa del proyecto tres">
+      </div>
+      <div class="project-grid">
+        <section class="project-copy">
+          <h2 class="section-label">// resumen</h2>
+          <h2>Interfaz de portafolio inspirada en terminal</h2>
+          <p>El sitio presenta la trayectoria profesional, los trabajos seleccionados, la información de contacto y la documentación de proyectos en una interfaz enfocada inspirada en terminal. La página de inicio incluye una secuencia de escritura consciente de la sesión, tarjetas de proyecto responsivas y navegación directa al trabajo activo.</p>
+          <h2>Pequeños comportamientos de JavaScript con límites claros</h2>
+          <p>JavaScript vanilla impulsa la secuencia de escritura, la validación de formularios, las lightbox de proyecto responsivas, la limpieza de imágenes, el cierre por teclado y el bloqueo del desplazamiento de la página. El comportamiento compartido reside en scripts externos del mismo origen en lugar de duplicarse entre páginas.</p>
+          <h2>Buenas prácticas de seguridad como funcionalidad</h2>
+          <p>Cada página lleva una Content Security Policy restrictiva, con una política de respuesta en el momento del despliegue en <code>_headers</code>. El sitio elimina los análisis de terceros no fijados, evita la construcción insegura de HTML, valida la entrada de contacto, rechaza los envíos de honeypot y utiliza un destino mailto fijo en lugar de un POST de formulario entre sitios.</p>
+          <h2>Presentación responsiva y accesible</h2>
+          <p>Los encabezados semánticos, las alternativas descriptivas de imágenes, las lightbox compatibles con teclado, los estados de enfoque visibles, los objetivos táctiles móviles y los recortes de imagen centrados con CSS mantienen la experiencia utilizable en todos los tamaños de pantalla.</p>
+        </section>
+        <section>
+          <h2 class="section-label">// stack</h2>
+          <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript vanilla</span><span>CSP</span><span>Accesibilidad</span><span>UI responsiva</span></div>
+          <p class="project-credit">Desarrollo asistido por IA: GitHub Copilot.</p>
+        </section>
+      </div>
+      <nav class="project-nav" aria-label="Navegación de proyectos">
+        <a class="nav-link" href="off-grid-ai-homestead.html"><span>&lt;- anterior</span><strong>Proyecto 2</strong></a>
+        <a class="nav-link next" href="vegetarian-ecommerce-website.html"><span>siguiente -&gt;</span><strong>Proyecto 1</strong></a>
+      </nav>
+    </div>
+  </article>
+</main>
+<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>03 / 03</span></footer>
+<script src="../../projects/scripts/project-lightbox.js" defer></script>
+</body>
+</html>

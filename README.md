@@ -10,7 +10,8 @@ The website is contained in `website/docs` and can be opened directly from the f
 
 ### Pages
 
-- `index.html` is the home page. It contains the terminal-style hero, work list, contact form, social links, and footer.
+- `index.html` is the home page. It contains the terminal-style hero, a short builds teaser linking to `builds.html`, contact form, social links, and footer.
+- `builds.html` is the recent-builds/work index page. It presents the same work list that used to live inline on the home page (project tags and image previews for each case study), plus links to about and contact.
 - `about.html` presents the professional background, technology stack, page navigation, social links, and footer.
 - `projects/vegetarian-ecommerce-website.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
 - `projects/off-grid-ai-homestead.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
@@ -49,11 +50,13 @@ The pages include a restrictive CSP meta policy. Deployments should also serve t
 
 The home page uses:
 
-- A sticky navigation bar with links to work, about, and contact.
+- A sticky navigation bar with links to builds, about, and contact.
 - A terminal window with a three-dot bar and an animated headline that plays once per browser session and skips on same-site returns.
-- A responsive work list with project tags and image previews.
+- A short builds teaser (one line plus a button) linking out to `builds.html`, which holds the full work list.
 - A contact form with client-side name, email, message, and honeypot validation that `fetch()`-POSTs to a separately deployed Vercel serverless function (see Third-Party Integrations).
 - Accessible inline GitHub, LinkedIn, and X SVG marks styled as green terminal controls.
+
+`builds.html` reuses the home page's terminal window pattern and holds the responsive work list (project tags and image previews) that used to live inline on the home page, as a standalone, indexable page of its own.
 
 The about and project pages reuse the same terminal window pattern, responsive spacing, typography, borders, and green/blue status colors. Project pages use a shared stylesheet rather than duplicating their CSS. Project previews use centered `cover` cropping inside responsive frames; clicking a preview opens the uncropped source image in a fixed in-page lightbox overlay, which closes through the image, backdrop, close button, or Escape.
 
