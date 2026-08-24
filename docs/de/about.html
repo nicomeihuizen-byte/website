@@ -120,15 +120,16 @@
     box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
   }
   .terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
-  .terminal-bar span{width:10px;height:10px;border-radius:50%;background:#3A3E4C;}
-  .terminal-bar span:nth-child(1){background:#AE1C28;}
-  .terminal-bar span:nth-child(2){background:#FFFFFF;}
-  .terminal-bar span:nth-child(3){background:#21468B;}
+  .terminal-bar > span{width:10px;height:10px;border-radius:50%;background:#3A3E4C;}
+  .terminal-bar > span:nth-child(1){background:#AE1C28;}
+  .terminal-bar > span:nth-child(2){background:#FFFFFF;}
+  .terminal-bar > span:nth-child(3){background:#21468B;}
   .lang-switch{display:flex;align-items:center;gap:6px;margin-left:auto;}
   .lang-flag{display:inline-flex;align-items:center;justify-content:center;padding:2px;border-radius:2px;text-decoration:none;opacity:0.55;transition:opacity .15s ease, outline-color .15s ease;}
-  .lang-flag svg{display:block;border-radius:2px;}
+  .lang-flag-code{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.5px;color:var(--text-muted);line-height:1;}
   .lang-flag:hover{opacity:1;}
-  .lang-flag[aria-current="true"]{opacity:1;outline:1px solid var(--accent);outline-offset:2px;}
+  .lang-flag[aria-current="true"]{opacity:1;}
+  .lang-flag:hover .lang-flag-code,.lang-flag[aria-current="true"] .lang-flag-code{font-weight:700;color:var(--accent);}
   .lang-flag .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   .terminal-body{padding:28px 28px 32px;}
   .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:32px;}
@@ -205,27 +206,27 @@
       <span></span><span></span><span></span>
       <nav class="lang-switch" aria-label="Sprache der Website">
         <a href="../about.html" class="lang-flag" lang="en" hreflang="en" title="English">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#00247D"/><path d="M0 0L20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0L20 14M20 0L0 14" stroke="#CF142B" stroke-width="1.2"/><path d="M10 0V14M0 7H20" stroke="#fff" stroke-width="4.5"/><path d="M10 0V14M0 7H20" stroke="#CF142B" stroke-width="2.4"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">GB</span>
           <span class="sr-only">Diese Seite auf Englisch ansehen</span>
         </a>
         <a href="../nl/about.html" class="lang-flag" lang="nl" hreflang="nl" title="Nederlands">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#AE1C28"/><rect width="20" height="4.67" y="4.67" fill="#FFFFFF"/><rect width="20" height="4.67" y="9.33" fill="#21468B"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">NL</span>
           <span class="sr-only">Diese Seite auf Niederländisch ansehen</span>
         </a>
         <a href="../fr/about.html" class="lang-flag" lang="fr" hreflang="fr" title="Français">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#0055A4"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#EF4135"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">FR</span>
           <span class="sr-only">Diese Seite auf Französisch ansehen</span>
         </a>
         <a href="about.html" class="lang-flag" lang="de" hreflang="de" title="Deutsch" aria-current="true">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="4.67" fill="#000000"/><rect width="20" height="4.67" y="4.67" fill="#DD0000"/><rect width="20" height="4.67" y="9.33" fill="#FFCE00"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">DE</span>
           <span class="sr-only">Deutsch (aktuelle Seite)</span>
         </a>
         <a href="../it/about.html" class="lang-flag" lang="it" hreflang="it" title="Italiano">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="6.67" height="14" fill="#009246"/><rect width="6.67" height="14" x="6.67" fill="#FFFFFF"/><rect width="6.67" height="14" x="13.33" fill="#CE2B37"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">IT</span>
           <span class="sr-only">Diese Seite auf Italienisch ansehen</span>
         </a>
         <a href="../es/about.html" class="lang-flag" lang="es" hreflang="es" title="Español">
-          <svg viewBox="0 0 20 14" width="18" height="13" aria-hidden="true"><rect width="20" height="14" fill="#AA151B"/><rect width="20" height="7" y="3.5" fill="#F1BF00"/></svg>
+          <span class="lang-flag-code" aria-hidden="true">ES</span>
           <span class="sr-only">Diese Seite auf Spanisch ansehen</span>
         </a>
       </nav>
