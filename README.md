@@ -34,6 +34,10 @@ Images are stored in `website/docs/images` and use descriptive filenames. The `p
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
 
+### Languages
+
+The site ships in seven languages: English (default, at the site root), Dutch (`nl/`), French (`fr/`), German (`de/`), Italian (`it/`), Spanish (`es/`), and Portuguese (`pt/`, European Portuguese). Each language directory mirrors the root page structure one-for-one — `index.html`, `about.html`, `builds.html`, and `projects/*.html` — with SEO metadata (title, description, keywords, Open Graph, Twitter Card, JSON-LD) translated per language rather than copied. Every page in every language carries a full set of `hreflang` alternate `<link>` tags (one per language plus `x-default`, pointing at the English root), and `index.html`, `about.html`, and `builds.html` additionally expose a `lang-switch` flag-picker widget in the terminal bar for in-page navigation between languages. Canonical URLs use the trailing-slash directory form for language home pages (e.g. `/es/`, `/pt/`), matching `docs/sitemap.xml`.
+
 ### SEO And Deployment Files
 
 - `docs/robots.txt` allows all crawlers and points to `docs/sitemap.xml`.
