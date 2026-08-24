@@ -24,6 +24,7 @@
 <link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/about.html">
 <link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/about.html">
 <link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/about.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/about.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/about.html">
 <meta property="og:title" content="meihuizen.ai | Da un IBM 5110 all'ingegnere IA-nativo">
 <meta property="og:description" content="Nico Meihuizen: programmazione dai 12 anni su un IBM 5110, carriera nelle vendite IT presso IBM e Oracle, poi ingegneria software IA-nativa.">
@@ -140,7 +141,6 @@
   .about-copy p:last-child{margin-bottom:0;}
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
-  .about-camper-image{display:block;width:68.6%;height:auto;margin:24px auto 0;}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -192,10 +192,10 @@
   <div class="navbar">
     <nav aria-label="Navigazione principale">
       <ul>
-        <li><a href="./">home</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="builds.html">progetti</a></li>
         <li><a href="about.html" aria-current="page">chi siamo</a></li>
-        <li><a href="./#contact">contatti</a></li>
+        <li><a href="index.html#contact">contatti</a></li>
       </ul>
     </nav>
   </div>
@@ -230,7 +230,11 @@
           <span class="lang-flag-code" aria-hidden="true">ES</span>
           <span class="sr-only">Visualizza questa pagina in spagnolo</span>
         </a>
-      </nav>
+              <a href="../pt/about.html" class="lang-flag" lang="pt" hreflang="pt" title="Português">
+          <span class="lang-flag-code" aria-hidden="true">PT</span>
+          <span class="sr-only">Visualizza questa pagina in portoghese</span>
+        </a>
+</nav>
     </div>
     <div class="terminal-body">
       <div class="section-head">
@@ -248,7 +252,6 @@
         <p><strong><i>"La misura dell'intelligenza è la capacità di cambiare."</i></strong> - Albert Einstein</p>
         <br>
         <p>Diamo valore al lavoro che sostiene la qualità della vita, la flessibilità e la libertà di operare alle nostre condizioni, anche come nomadi digitali. Restiamo vicini al panorama in evoluzione dello sviluppo software moderno. Si vede in ciò che costruiamo: strumenti pratici, pronti per la produzione, invece di demo eccessivamente elaborate.</p>
-        <img class="about-camper-image" src="../images/main/camper-van-green.png" alt="Illustrazione al tratto di un camper verde con un'icona di codice, una palma e un cammello sul pannello laterale, con la scritta meihuizen.ai" loading="lazy" width="982" height="598">
       </div>
       <div class="stack" aria-label="Stack tecnologico">
         <span>TypeScript</span>
@@ -259,8 +262,8 @@
         <span>Workflow agentici</span>
       </div>
       <nav class="page-links" aria-label="Link di pagina">
-        <a class="btn primary" href="./#work">Come costruiamo</a>
-        <a class="btn ghost" href="./#contact">Contattaci</a>
+        <a class="btn primary" href="index.html#work">Come costruiamo</a>
+        <a class="btn ghost" href="index.html#contact">Contattaci</a>
       </nav>
     </div>
   </article>
