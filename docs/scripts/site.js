@@ -194,7 +194,22 @@
       }
     }
 
+    // Mobile browsers fire 'resize' when the address bar hides/shows on scroll, which only
+    // changes the viewport height, not its width. Only replay the whole falling-rain animation
+    // when the width actually changes (a real resize or orientation change); otherwise leave the
+    // current frame alone so the effect plays once per page load instead of re-triggering on scroll.
+    let lastWidth = window.innerWidth;
+
+    function handleResize() {
+      const newWidth = window.innerWidth;
+      if (newWidth === lastWidth) {
+        return;
+      }
+      lastWidth = newWidth;
+      start();
+    }
+
     start();
-    window.addEventListener('resize', start);
+    window.addEventListener('resize', handleResize);
   }
 })();
