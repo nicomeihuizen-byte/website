@@ -16,7 +16,7 @@ The website is contained in `website/docs` and can be opened directly from the f
 - `projects/vegetarian-ecommerce-website.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
 - `projects/off-grid-ai-homestead.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
 - `projects/terminal-portfolio-website.html` is a case study on this site's own build, covering its interface, functionality, implementation, and security practices. It's written from the inside since Nico built it. It's not yet promoted to the home page's active work list.
-- `projects/ai-sales-deal-intelligence.html` presents AI Native Sales-Cycle Control, an AI-native sales intelligence tool that reasons about deal momentum and flags stalled or at-risk deals.
+- `projects/project-four.html` is reserved for the next case study once a new project ships.
 - `projects/project-pages.css` provides the shared layout and visual system for all project pages.
 
 ### Assets
@@ -31,13 +31,8 @@ Images are stored in `website/docs/images` and use descriptive filenames. The `p
 - `project_two/birdbox-farm-campervan-scene.png` is also used for the `off-grid-ai-homestead.html` card on the home page.
 - `project_two/one-acre-project-overview.pdf` is available from `off-grid-ai-homestead.html` as an openable and downloadable project document.
 - `project_two/pdf.png` is the visual thumbnail for the PDF download block.
-- `project_four/deals-overview.png`, `project_four/healthy-deal.png`, and `project_four/lost-deal-revisit.png` support `ai-sales-deal-intelligence.html`.
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
-
-### Languages
-
-The site ships in seven languages: English (default, at the site root), Dutch (`nl/`), French (`fr/`), German (`de/`), Italian (`it/`), Spanish (`es/`), and Portuguese (`pt/`, European Portuguese). Each language directory mirrors the root page structure one-for-one — `index.html`, `about.html`, `builds.html`, and `projects/*.html` — with SEO metadata (title, description, keywords, Open Graph, Twitter Card, JSON-LD) translated per language rather than copied. Every page in every language carries a full set of `hreflang` alternate `<link>` tags (one per language plus `x-default`, pointing at the English root), and `index.html`, `about.html`, and `builds.html` additionally expose a `lang-switch` flag-picker widget in the terminal bar for in-page navigation between languages. Canonical URLs use the trailing-slash directory form for language home pages (e.g. `/es/`, `/pt/`), matching `docs/sitemap.xml`.
 
 ### SEO And Deployment Files
 
@@ -130,7 +125,7 @@ There is no package manager or build pipeline required for the current static si
 
 1. Serve `website/docs` locally and test homepage navigation, the session-scoped hero animation, the contact form, and all social links.
 2. Open `website/docs/about.html` and each project page and check that all images load.
-3. Test the `vegetarian-ecommerce-website.html` and `off-grid-ai-homestead.html` active navigation sequence and confirm `terminal-portfolio-website.html` and `ai-sales-deal-intelligence.html` are not active destinations.
+3. Test the `vegetarian-ecommerce-website.html` and `off-grid-ai-homestead.html` active navigation sequence and confirm `terminal-portfolio-website.html` and `project-four.html` are not active destinations.
 4. Test project image cropping, full-size lightbox opening, and closing with the image, backdrop, close button, and Escape.
 5. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
 6. Extract and syntax-check inline scripts in `index.html` and the project pages with Node.js when JavaScript changes are made.
