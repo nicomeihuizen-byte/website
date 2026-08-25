@@ -32,7 +32,7 @@ website/
     │   ├── vegetarian-ecommerce-website.html
     │   ├── off-grid-ai-homestead.html
     │   ├── terminal-portfolio-website.html
-    │   ├── project-four.html        # reserved slot for the next case study
+    │   ├── ai-sales-deal-intelligence.html  # AI Native Sales-Cycle Control case study
     │   └── project-pages.css        # shared layout/visual system for project pages
     ├── images/
     │   ├── main/
@@ -118,7 +118,7 @@ Manual checks diagnostics.py doesn't cover — do these too: click through navig
 
 ## Adding a new project case study
 
-1. Copy `docs/projects/project-four.html` (the reserved template) rather than starting from scratch, so CSP, SEO tags, and JSON-LD are already wired correctly.
+1. Copy the most recently added page under `docs/projects/` (currently `ai-sales-deal-intelligence.html`) rather than starting from scratch, so CSP, SEO tags, and JSON-LD are already wired correctly.
 2. Add matching images under a new `docs/images/project_x/` folder.
 3. Link it from the homepage work list and, if relevant, from `docs/sitemap.xml`.
 4. Run `python diagnostics.py` before committing.
