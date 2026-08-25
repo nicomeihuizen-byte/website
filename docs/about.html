@@ -24,6 +24,7 @@
 <link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/about.html">
 <link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/about.html">
 <link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/about.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/about.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/about.html">
 <meta property="og:title" content="meihuizen.ai | From IBM 5110 to AI-Native Engineer">
 <meta property="og:description" content="Nico Meihuizen: coding since age 12 on an IBM 5110, an enterprise IT sales career at IBM and Oracle, then AI-native software engineering.">
@@ -139,8 +140,8 @@
   .about-copy p{margin-bottom:16px;color:var(--text-muted);font-size:15px;}
   .about-copy p:last-child{margin-bottom:0;}
   .about-copy strong{color:var(--text);font-weight:600;}
+  .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
-  .about-camper-image{display:block;width:68.6%;height:auto;margin:24px auto 0;}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -192,10 +193,10 @@
   <div class="navbar">
     <nav aria-label="Primary navigation">
       <ul>
-        <li><a href="./">home</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="builds.html">builds</a></li>
         <li><a href="about.html" aria-current="page">about</a></li>
-        <li><a href="./#contact">contact</a></li>
+        <li><a href="index.html#contact">contact</a></li>
       </ul>
     </nav>
   </div>
@@ -230,7 +231,11 @@
           <span class="lang-flag-code" aria-hidden="true">ES</span>
           <span class="sr-only">View this page in Spanish</span>
         </a>
-      </nav>
+              <a href="pt/about.html" class="lang-flag" lang="pt" hreflang="pt" title="Português">
+          <span class="lang-flag-code" aria-hidden="true">PT</span>
+          <span class="sr-only">View this page in Portuguese</span>
+        </a>
+</nav>
     </div>
     <div class="terminal-body">
       <div class="section-head">
@@ -239,16 +244,12 @@
       </div>
       <div class="about-copy">
         <img class="about-image" src="images/main/ai-software-engineering-workspace.png" alt="AI software engineering workspace" loading="lazy" width="800" height="800">
-        <p>Nico got his first computer at 12: an IBM 5110, a hand-me-down gift, years before "learn to code" was a marketing slogan. No tutorials, no bootcamp. Just a terminal and a manual. He taught himself the basics there, then HTML, then JavaScript, building frontend websites for fun because that's what the machine was for.</p>
-        <p>The hobby never really stopped. It ran alongside a full career on the other side of the table: years of enterprise IT sales at IBM, SoftLayer, Oracle, and Minitab, pitching data center, cloud, and SaaS solutions to technical buyers who could smell a shallow pitch in one sentence. (IBM again, decades later: the same company that gave him his first computer gave him his sales career too.) Web design and related freelance work stayed a paid side hustle the whole time, quietly compounding while the day job sold technology other people built.</p>
-        <p>Years of pitching complex technology built a habit that still shapes how we work today: understand a product from the inside out before you ever present it.</p>
-        <p>Then the deliberate pivot: retraining through Metana's AI Software Engineering program (AISE), structured and intensive, aimed at exactly one target. Nico now leads meihuizen.ai as an AI-native software engineer, stacking a childhood's worth of hands-on code, a career's worth of enterprise sales instinct, and a bootcamp's worth of focused AI engineering on top of each other. AI isn't a tool we reach for. It's how the work gets built, from the first line.</p>
-        <p>Here's the stack, if you're checking: TypeScript, Python, React, LLM tooling, agentic workflows. Shipped and monitored, not demoed once and left running on a laptop. No computer science degree behind it, and that's fine. Ask about a technical decision and get a straight answer, including the times something didn't work on the first try. What's on GitHub, what's on LinkedIn, and what's on this page all say the same thing.</p>
+        <p>Nico got his first computer at 12: an IBM 5110, no tutorials, just a terminal and a manual. He taught himself HTML and JavaScript there, building websites for fun. That hobby ran alongside a career in enterprise IT sales, pitching data center, cloud, and SaaS at IBM, SoftLayer, Oracle, and Minitab to buyers who could smell a shallow pitch instantly.</p>
+        <p>Years of pitching taught one habit: understand a product inside out before you present it. Then came the pivot, retraining through Metana's AI Software Engineering program. Nico now leads meihuizen.ai as an AI-native software engineer, stacking that coding background, sales instinct, and AI training on top of each other. AI isn't a feature here. It's how the work gets built.</p>
+        <p>The stack: TypeScript, Python, React, LLM tooling, agentic workflows, shipped and monitored, not demoed once and forgotten. No computer science degree, and that's fine. Ask about a decision and get a straight answer, including the ones that didn't work first try.</p>
+        <p>We build for quality of life and the freedom to work on our own terms, including as digital nomads. Small on purpose: close enough to actually understand what you're trying to accomplish, and quick to show up in person when it helps. No far-away delivery team in between.</p>
         <br>
-        <p><strong><i>"The measure of intelligence is the ability to change."</i></strong> - Albert Einstein</p>
-        <br>
-        <p>We value work that supports quality of life, flexibility, and the freedom to operate on our own terms, including as a digital nomad. We stay close to the evolving landscape of modern software development. It shows in what we build: practical, production-ready tools instead of over-engineered demos.</p>
-        <img class="about-camper-image" src="images/main/camper-van-green.png" alt="Line-art illustration of a green camper van with a coding icon, palm tree, and camel on its side panel, labeled meihuizen.ai" loading="lazy" width="982" height="598">
+        <p><strong><i class="quote-text">"The measure of intelligence is the ability to change."</i></strong> - Albert Einstein</p>
       </div>
       <div class="stack" aria-label="Technology stack">
         <span>TypeScript</span>
@@ -258,10 +259,6 @@
         <span>LLM tooling</span>
         <span>Agentic workflows</span>
       </div>
-      <nav class="page-links" aria-label="Page links">
-        <a class="btn primary" href="./#work">See how we build</a>
-        <a class="btn ghost" href="./#contact">Talk to us</a>
-      </nav>
     </div>
   </article>
 </main>
