@@ -228,3 +228,12 @@
     window.addEventListener('resize', handleResize);
   }
 })();
+
+(function () {
+  const refreshBtn = document.getElementById('heroVanRefreshBtn');
+
+  if (refreshBtn) {
+    // reload replays the falling-rain intro and the hero van animation
+    refreshBtn.addEventListener('click', () => window.location.reload());
+  }
+})();
