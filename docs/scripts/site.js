@@ -26,6 +26,15 @@
     const firstRegionJitterPx = 12;
     const ctx = target.getContext('2d');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // the rain should only fall once per browser session - after that (switching language,
+    // navigating back to home, or refreshing) it renders straight to the finished skyline
+    const RAIN_SESSION_KEY = 'meihuizenRainPlayed';
+    let rainAlreadyPlayed = false;
+    try {
+      rainAlreadyPlayed = sessionStorage.getItem(RAIN_SESSION_KEY) === '1';
+    } catch (e) {
+      // sessionStorage unavailable (e.g. private browsing) - fall back to always animating
+    }
 
     let rows = 0;
     let columns = 0;
@@ -187,14 +196,44 @@
         intervalId = null;
       }
 
-      if (reduced) {
+      if (reduced || rainAlreadyPlayed) {
         drawStaticFrame();
       } else {
+        rainAlreadyPlayed = true;
+        try {
+          sessionStorage.setItem(RAIN_SESSION_KEY, '1');
+        } catch (e) {
+          // sessionStorage unavailable - the animation will simply replay next load
+        }
         intervalId = setInterval(tick, 30);
       }
     }
 
+    // Mobile browsers fire 'resize' when the address bar hides/shows on scroll, which only
+    // changes the viewport height, not its width. Only replay the whole falling-rain animation
+    // when the width actually changes (a real resize or orientation change); otherwise leave the
+    // current frame alone so the effect plays once per page load instead of re-triggering on scroll.
+    let lastWidth = window.innerWidth;
+
+    function handleResize() {
+      const newWidth = window.innerWidth;
+      if (newWidth === lastWidth) {
+        return;
+      }
+      lastWidth = newWidth;
+      start();
+    }
+
     start();
-    window.addEventListener('resize', start);
+    window.addEventListener('resize', handleResize);
+  }
+})();
+
+(function () {
+  const refreshBtn = document.getElementById('heroVanRefreshBtn');
+
+  if (refreshBtn) {
+    // reload replays the falling-rain intro and the hero van animation
+    refreshBtn.addEventListener('click', () => window.location.reload());
   }
 })();

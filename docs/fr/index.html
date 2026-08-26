@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script>
+(function(){
+  try {
+    var navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+    var nav = navEntries && navEntries[0];
+    var isReload = nav ? nav.type === 'reload' : !!(window.performance && performance.navigation && performance.navigation.type === 1);
+    if (!isReload) {
+      document.documentElement.classList.add('van-static');
+    }
+  } catch (e) {}
+})();
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
 <script>
@@ -271,7 +283,204 @@
     max-width:56ch;
   }
   .hero-sub strong{ color:var(--accent); font-weight:600; }
-  .hero-camper-image{ display:block; width:48%; max-width:280px; height:auto; margin:24px auto 0; }
+  .hero-camper-image{ display:block; width:62.4%; max-width:364px; height:auto; margin:24px auto 0; }
+  .hero-van-refresh{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    width:62.4%; max-width:364px; margin:10px auto 0;
+    padding:6px 10px;
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:4px;
+    color:var(--accent);
+    font-family:var(--font-mono);
+    font-size:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .hero-van-refresh:hover, .hero-van-refresh:focus-visible{ color:#10121A; background:var(--accent); border-color:var(--accent); outline:none; }
+  .hero-van-refresh .prompt{ opacity:.7; }
+
+  .hero-van-scene{
+    position:relative;
+    aspect-ratio:796/433;
+    container-type:size;
+  }
+  .hero-van-scene .hero-van-bg{
+    position:absolute; inset:0; width:100%; height:100%;
+    display:block; user-select:none; pointer-events:none;
+  }
+  .hero-van-shadow{
+    position:absolute;
+    left:21.48%; top:81.29%;
+    width:7.54%; height:3.23%;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 75%);
+    border-radius:50%;
+    animation:heroVanShadow 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-right, .hero-van-dog-left{
+    position:absolute;
+    left:17.59%; top:59.58%;
+    width:15.33%; height:23.09%;
+    transform-origin:50% 100%;
+    animation:heroVanDogPos 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-right{ animation:heroVanDogPos 11s ease-in-out 1 forwards, heroVanDogOpacityRight 11s ease-in-out 1 forwards; }
+  .hero-van-dog-left{ animation:heroVanDogPos 11s ease-in-out 1 forwards, heroVanDogOpacityLeft 11s ease-in-out 1 forwards; }
+  .hero-van-dog-right img, .hero-van-dog-left img{ width:100%; height:100%; display:block; user-select:none; }
+  .hero-van-dog-left img{ transform:scaleX(-1); }
+  .hero-van-dog-sit{
+    position:absolute;
+    left:18.47%; top:56.12%;
+    width:13.57%; height:26.56%;
+    transform-origin:50% 100%;
+    animation:heroVanDogSit 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-sit img{ width:100%; height:100%; display:block; user-select:none; }
+  .hero-van-office-mask{
+    position:absolute; left:0; top:0; width:36.3%; height:100%;
+    background:#171A24;
+    animation: heroVanOfficeReveal 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-scene .hero-van-office-bg{
+    position:absolute; left:-4.77%; top:0; width:35.3%; height:100%;
+    display:block; user-select:none; pointer-events:none;
+    animation: heroVanOfficeReveal 11s ease-in-out 1 forwards;
+  }
+  /* fresh page loads (anything but an actual refresh) skip straight to the finished
+     business view - only hitting refresh replays the walk-to-office sequence */
+  .van-static .hero-van-office-mask,
+  .van-static .hero-van-office-bg{
+    animation:none;
+    opacity:1;
+  }
+  .van-static .hero-van-dog-right,
+  .van-static .hero-van-dog-left,
+  .van-static .hero-van-dog-sit,
+  .van-static .hero-van-shadow{
+    animation:none;
+    opacity:0;
+  }
+  @keyframes heroVanOfficeReveal {
+    0%   { opacity:0; }
+    88%  { opacity:0; }
+    92%  { opacity:1; }
+    100% { opacity:1; }
+  }
+
+  @keyframes heroVanDogPos {
+    0%   { transform: translate(0,0)        scale(1,1); }
+    6%   { transform: translate(0,-0.46cqh)     scale(1,1); }
+    8%   { transform: translate(-0.63cqw,-0.92cqh)  scale(1,1) rotate(-4deg); }
+    11%  { transform: translate(-3.14cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    14%  { transform: translate(-6.03cqw,-0.46cqh) scale(1,1) rotate(-4deg); }
+    17%  { transform: translate(-8.79cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    20%  { transform: translate(-11.31cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    22%  { transform: translate(-11.93cqw,0)    scale(1,1); }
+    25%  { transform: translate(-11.93cqw,-0.46cqh) scale(1,1); }
+    28%  { transform: translate(-10.05cqw,-1.39cqh) scale(1,1) rotate(4deg); }
+    31%  { transform: translate(-7.29cqw,-0.46cqh) scale(1,1) rotate(-3deg); }
+    34%  { transform: translate(-4.40cqw,-1.62cqh) scale(1,1) rotate(4deg); }
+    37%  { transform: translate(-1.51cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    40%  { transform: translate(0,0)        scale(1,1); }
+    44%  { transform: translate(0,-0.46cqh)     scale(1,1); }
+    46%  { transform: translate(-0.63cqw,-0.92cqh)  scale(1,1) rotate(-4deg); }
+    49%  { transform: translate(-3.14cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    52%  { transform: translate(-6.03cqw,-0.46cqh) scale(1,1) rotate(-4deg); }
+    55%  { transform: translate(-8.79cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    58%  { transform: translate(-11.31cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    60%  { transform: translate(-11.93cqw,0)    scale(1,1); }
+    63%  { transform: translate(-11.93cqw,-0.46cqh) scale(1,1); }
+    66%  { transform: translate(-10.05cqw,-1.39cqh) scale(1,1) rotate(4deg); }
+    69%  { transform: translate(-7.29cqw,-0.46cqh) scale(1,1) rotate(-3deg); }
+    72%  { transform: translate(-4.40cqw,-1.62cqh) scale(1,1) rotate(4deg); }
+    75%  { transform: translate(-1.51cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    78%  { transform: translate(0,0)        scale(1,1); }
+    81%  { transform: translate(0,0.69cqh)      scale(1,0.94); }
+    84%  { transform: translate(0,0.69cqh)      scale(1,0.9); }
+    100% { transform: translate(0,0.69cqh)      scale(1,0.9); }
+  }
+
+  @keyframes heroVanDogOpacityRight {
+    0%     { opacity: 1; }
+    7.5%   { opacity: 1; }
+    8.5%   { opacity: 0; }
+    27.5%  { opacity: 0; }
+    28.5%  { opacity: 1; }
+    45.5%  { opacity: 1; }
+    46.5%  { opacity: 0; }
+    65.5%  { opacity: 0; }
+    66.5%  { opacity: 1; }
+    83.5%  { opacity: 1; }
+    84%    { opacity: 0; }
+    100%   { opacity: 0; }
+  }
+  @keyframes heroVanDogOpacityLeft {
+    0%     { opacity: 0; }
+    7.5%   { opacity: 0; }
+    8.5%   { opacity: 1; }
+    27.5%  { opacity: 1; }
+    28.5%  { opacity: 0; }
+    45.5%  { opacity: 0; }
+    46.5%  { opacity: 1; }
+    65.5%  { opacity: 1; }
+    66.5%  { opacity: 0; }
+    100%   { opacity: 0; }
+  }
+
+  @keyframes heroVanDogSit {
+    0%   { transform: scale(1);        opacity: 0; }
+    83%  { transform: scale(0.9);      opacity: 0; }
+    85%  { transform: scale(1.05);     opacity: 1; }
+    87%  { transform: scale(1,1);      opacity: 1; }
+    89%  { transform: scale(1,1);      opacity: 1; }
+    91%  { transform: scale(1,1);      opacity: 0; }
+    100% { transform: scale(1,1);      opacity: 0; }
+  }
+
+  @keyframes heroVanShadow {
+    0%   { transform: translateX(0)     scale(1);        opacity: 0.4; }
+    6%   { transform: translateX(0)     scale(1);        opacity: 0.4; }
+    8%   { transform: translateX(-0.63cqw)  scale(1);         opacity: 0.4; }
+    11%  { transform: translateX(-3.14cqw) scale(0.92);      opacity: 0.35; }
+    14%  { transform: translateX(-6.03cqw) scale(0.88);      opacity: 0.32; }
+    17%  { transform: translateX(-8.79cqw) scale(0.88);      opacity: 0.32; }
+    20%  { transform: translateX(-11.31cqw) scale(0.9);       opacity: 0.35; }
+    22%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    25%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    28%  { transform: translateX(-10.05cqw) scale(0.9);       opacity: 0.34; }
+    31%  { transform: translateX(-7.29cqw) scale(0.9);       opacity: 0.34; }
+    34%  { transform: translateX(-4.40cqw) scale(0.88);      opacity: 0.32; }
+    37%  { transform: translateX(-1.51cqw) scale(0.92);      opacity: 0.36; }
+    40%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    44%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    46%  { transform: translateX(-0.63cqw)  scale(1);         opacity: 0.4; }
+    49%  { transform: translateX(-3.14cqw) scale(0.92);      opacity: 0.35; }
+    52%  { transform: translateX(-6.03cqw) scale(0.88);      opacity: 0.32; }
+    55%  { transform: translateX(-8.79cqw) scale(0.88);      opacity: 0.32; }
+    58%  { transform: translateX(-11.31cqw) scale(0.9);       opacity: 0.35; }
+    60%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    63%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    66%  { transform: translateX(-10.05cqw) scale(0.9);       opacity: 0.34; }
+    69%  { transform: translateX(-7.29cqw) scale(0.9);       opacity: 0.34; }
+    72%  { transform: translateX(-4.40cqw) scale(0.88);      opacity: 0.32; }
+    75%  { transform: translateX(-1.51cqw) scale(0.92);      opacity: 0.36; }
+    78%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    83%  { transform: translateX(0)     scale(1,0.9);     opacity: 0.38; }
+    85%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0.42; }
+    89%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0.42; }
+    91%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0; }
+    100% { transform: translateX(0)     scale(1,0.9);     opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-van-office-mask, .hero-van-office-bg{ animation:none; opacity:1; }
+    .hero-van-dog-right, .hero-van-dog-left, .hero-van-dog-sit, .hero-van-shadow{ animation:none; opacity:0; }
+  }
 
   .hero-cta{
     display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;
@@ -579,7 +788,18 @@
          <br>
          <p>Nous ne faisons pas non plus cela depuis un écran à des kilomètres de là. Nous disposons d'un bureau et d'un laboratoire mobiles qui peuvent se garer devant la porte de n'importe quel client dans l'UE en 48 heures. Niche et personnel, par choix. Quand nous disons pratique, nous le pensons : pas d'équipe de livraison délocalisée, pas de chargé de compte qui nous relaie vos notes. Vous avez directement les personnes qui construisent votre système, sur place, à observer comment votre équipe travaille réellement avant même qu'une ligne de code n'existe. Le travail bien fait, nous restons pour trinquer.</p>
          <br>
-         <img class="hero-camper-image" src="../images/main/mobile-office-van-green.png" alt="Illustration en ligne du van bureau mobile de meihuizen.ai, avec une icône de code et un emblème palmier-et-chameau sur son panneau latéral" loading="lazy" width="873" height="554">
+         <div class="hero-camper-image hero-van-scene" role="img" aria-label="Illustration en ligne du van bureau mobile de meihuizen.ai, avec une icône de code et un emblème palmier-et-chameau sur son panneau latéral, à côté d'une île aux palmiers avec un chien à lunettes de soleil au premier plan">
+          <img class="hero-van-bg" src="../images/main/hero-van-bg.png" alt="" aria-hidden="true" fetchpriority="high" width="796" height="433">
+          <div class="hero-van-office-mask" aria-hidden="true"></div>
+          <img class="hero-van-office-bg" src="../images/main/hero-van-office.png" alt="" aria-hidden="true" width="281" height="433">
+          <div class="hero-van-shadow" aria-hidden="true"></div>
+          <div class="hero-van-dog-right" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt=""></div>
+          <div class="hero-van-dog-left" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt=""></div>
+          <div class="hero-van-dog-sit" aria-hidden="true"><img src="../images/main/hero-van-dog-sit.png" alt=""></div>
+         </div>
+         <button type="button" id="heroVanRefreshBtn" class="hero-van-refresh" aria-label="Rejouer l'animation du bureau mobile de meihuizen.ai">
+          <span class="prompt" aria-hidden="true">$</span> actualiser --replay
+         </button>
          <br>
          <p>Besoin d'un partenaire d'implémentation IA qui livre un logiciel en production, pas une présentation ? C'est <strong>meihuizen.ai LLC</strong>.</p>
         </div>
@@ -593,7 +813,6 @@
       <h2>Réalisations récentes</h2>
     </div>
     <div class="work-teaser">
-      <p>Études de cas de réalisations IA natives et de projets web full-stack, d'une ferme autonome pilotée par IA à des sites ecommerce en production.</p>
       <a class="btn primary" href="builds.html">Voir toutes les réalisations &rarr;</a>
     </div>
   </section>
