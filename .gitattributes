@@ -1,0 +1,50 @@
+# Normalise line endings, once and for all.
+#
+# Git stores LF in the repository; each working tree gets whatever its platform
+# uses. Without this, an editor on Windows re-introduces CRLF and every touched
+# file shows as a full rewrite in `git status` with zero content change, which
+# buries real edits and ruins `git blame`.
+#
+# After changing this file, run:  git add --renormalize .
+
+* text=auto
+
+# Text, explicitly, so they normalise even where auto-detection hesitates.
+*.html         text
+*.css          text
+*.js           text
+*.mjs          text
+*.json         text
+*.jsonc        text
+*.md           text
+*.py           text
+*.yml          text
+*.yaml         text
+*.xml          text
+*.svg          text
+*.txt          text
+*.webmanifest  text
+_headers       text
+_redirects     text
+LICENSE        text
+
+# Always LF, regardless of platform: these break with CRLF.
+*.sh           text eol=lf
+
+# Binary. Never convert, never diff as text.
+*.png          binary
+*.jpg          binary
+*.jpeg         binary
+*.gif          binary
+*.webp         binary
+*.avif         binary
+*.ico          binary
+*.pdf          binary
+*.woff         binary
+*.woff2        binary
+*.ttf          binary
+*.otf          binary
+*.eot          binary
+*.mp4          binary
+*.webm         binary
+*.zip          binary
