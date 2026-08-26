@@ -26,6 +26,15 @@
     const firstRegionJitterPx = 12;
     const ctx = target.getContext('2d');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // the rain should only fall once per browser session - after that (switching language,
+    // navigating back to home, or refreshing) it renders straight to the finished skyline
+    const RAIN_SESSION_KEY = 'meihuizenRainPlayed';
+    let rainAlreadyPlayed = false;
+    try {
+      rainAlreadyPlayed = sessionStorage.getItem(RAIN_SESSION_KEY) === '1';
+    } catch (e) {
+      // sessionStorage unavailable (e.g. private browsing) - fall back to always animating
+    }
 
     let rows = 0;
     let columns = 0;
@@ -187,9 +196,15 @@
         intervalId = null;
       }
 
-      if (reduced) {
+      if (reduced || rainAlreadyPlayed) {
         drawStaticFrame();
       } else {
+        rainAlreadyPlayed = true;
+        try {
+          sessionStorage.setItem(RAIN_SESSION_KEY, '1');
+        } catch (e) {
+          // sessionStorage unavailable - the animation will simply replay next load
+        }
         intervalId = setInterval(tick, 30);
       }
     }
