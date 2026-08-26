@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script>
+(function(){
+  try {
+    var navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+    var nav = navEntries && navEntries[0];
+    var isReload = nav ? nav.type === 'reload' : !!(window.performance && performance.navigation && performance.navigation.type === 1);
+    if (!isReload) {
+      document.documentElement.classList.add('van-static');
+    }
+  } catch (e) {}
+})();
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
 <script>
@@ -272,6 +284,7 @@
   }
   .hero-sub strong{ color:var(--accent); font-weight:600; }
   .hero-camper-image{ display:block; width:62.4%; max-width:364px; height:auto; margin:24px auto 0; }
+  .hero-van-caption{ display:block; width:62.4%; max-width:364px; margin:10px auto 0; text-align:center; font-family:var(--font-mono); font-size:10px; color:var(--accent); }
 
   .hero-van-scene{
     position:relative;
@@ -322,6 +335,20 @@
     position:absolute; left:-4.77%; top:0; width:35.3%; height:100%;
     display:block; user-select:none; pointer-events:none;
     animation: heroVanOfficeReveal 11s ease-in-out 1 forwards;
+  }
+  /* fresh page loads (anything but an actual refresh) skip straight to the finished
+     business view - only hitting refresh replays the walk-to-office sequence */
+  .van-static .hero-van-office-mask,
+  .van-static .hero-van-office-bg{
+    animation:none;
+    opacity:1;
+  }
+  .van-static .hero-van-dog-right,
+  .van-static .hero-van-dog-left,
+  .van-static .hero-van-dog-sit,
+  .van-static .hero-van-shadow{
+    animation:none;
+    opacity:0;
   }
   @keyframes heroVanOfficeReveal {
     0%   { opacity:0; }
@@ -436,8 +463,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-van-dog-right, .hero-van-dog-left, .hero-van-dog-sit, .hero-van-shadow, .hero-van-office-bg{ animation:none; }
-    .hero-van-dog-left, .hero-van-dog-sit, .hero-van-office-bg{ opacity:0; }
+    .hero-van-office-mask, .hero-van-office-bg{ animation:none; opacity:1; }
+    .hero-van-dog-right, .hero-van-dog-left, .hero-van-dog-sit, .hero-van-shadow{ animation:none; opacity:0; }
   }
 
   .hero-cta{
@@ -747,14 +774,15 @@
          <p>Tampoco hacemos esto desde una pantalla muy muy lejana. Contamos con una oficina y un laboratorio móviles que pueden aparcar frente a la puerta de cualquier cliente en la UE en 48 horas. Nicho y personal, por diseño. Cuando decimos práctico, lo decimos en serio: sin equipo de entrega deslocalizado, sin gestor de cuentas que nos traslade sus notas. Tiene directamente a las personas que construyen su sistema, en el sitio, viendo cómo trabaja realmente su equipo antes de que exista una sola línea de código. Trabajo bien hecho, y nos quedamos para brindar.</p>
          <br>
          <div class="hero-camper-image hero-van-scene" role="img" aria-label="Ilustración de arte lineal de la furgoneta de oficina móvil de meihuizen.ai, con un icono de código y un emblema de palmera y camello en el panel lateral, junto a una isla con palmeras y un perro con gafas de sol en primer plano">
-          <img class="hero-van-bg" src="../images/main/hero-van-bg.png" alt="" aria-hidden="true" loading="lazy" width="796" height="433">
+          <img class="hero-van-bg" src="../images/main/hero-van-bg.png" alt="" aria-hidden="true" fetchpriority="high" width="796" height="433">
           <div class="hero-van-office-mask" aria-hidden="true"></div>
-          <img class="hero-van-office-bg" src="../images/main/hero-van-office.png" alt="" aria-hidden="true" loading="lazy" width="281" height="433">
+          <img class="hero-van-office-bg" src="../images/main/hero-van-office.png" alt="" aria-hidden="true" width="281" height="433">
           <div class="hero-van-shadow" aria-hidden="true"></div>
-          <div class="hero-van-dog-right" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt="" loading="lazy"></div>
-          <div class="hero-van-dog-left" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt="" loading="lazy"></div>
-          <div class="hero-van-dog-sit" aria-hidden="true"><img src="../images/main/hero-van-dog-sit.png" alt="" loading="lazy"></div>
+          <div class="hero-van-dog-right" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt=""></div>
+          <div class="hero-van-dog-left" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt=""></div>
+          <div class="hero-van-dog-sit" aria-hidden="true"><img src="../images/main/hero-van-dog-sit.png" alt=""></div>
          </div>
+         <p class="hero-van-caption">meihuizen.ai, work-hard / play-hard hit refresh!</p>
          <br>
          <p>¿Necesita un socio de implementación de IA que entregue software de producción en lugar de una presentación? Esa es <strong>meihuizen.ai LLC</strong>.</p>
         </div>
