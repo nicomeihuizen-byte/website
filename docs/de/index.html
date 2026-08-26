@@ -284,7 +284,21 @@
   }
   .hero-sub strong{ color:var(--accent); font-weight:600; }
   .hero-camper-image{ display:block; width:62.4%; max-width:364px; height:auto; margin:24px auto 0; }
-  .hero-van-caption{ display:block; width:62.4%; max-width:364px; margin:10px auto 0; text-align:center; font-family:var(--font-mono); font-size:10px; color:var(--accent); }
+  .hero-van-refresh{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    width:62.4%; max-width:364px; margin:10px auto 0;
+    padding:6px 10px;
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:4px;
+    color:var(--accent);
+    font-family:var(--font-mono);
+    font-size:10px;
+    cursor:pointer;
+    transition:border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .hero-van-refresh:hover, .hero-van-refresh:focus-visible{ color:#10121A; background:var(--accent); border-color:var(--accent); outline:none; }
+  .hero-van-refresh .prompt{ opacity:.7; }
 
   .hero-van-scene{
     position:relative;
@@ -782,7 +796,9 @@
           <div class="hero-van-dog-left" aria-hidden="true"><img src="../images/main/hero-van-dog-walk.png" alt=""></div>
           <div class="hero-van-dog-sit" aria-hidden="true"><img src="../images/main/hero-van-dog-sit.png" alt=""></div>
          </div>
-         <p class="hero-van-caption">meihuizen.ai, work-hard / play-hard hit refresh!</p>
+         <button type="button" id="heroVanRefreshBtn" class="hero-van-refresh" aria-label="Replay the meihuizen.ai mobile office animation">
+          <span class="prompt" aria-hidden="true">$</span> hit refresh --replay
+         </button>
          <br>
          <p>Sie brauchen einen KI-Implementierungspartner, der Produktionssoftware liefert statt einer Präsentation? Das ist <strong>meihuizen.ai LLC</strong>.</p>
         </div>
