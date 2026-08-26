@@ -1,4 +1,4 @@
-const triggerImages = document.querySelectorAll('.project-gallery a, .project-image');
+const triggerImages = document.querySelectorAll('.project-gallery a, .project-figure a, .project-image');
 const lightbox = document.querySelector('.image-lightbox');
 const lightboxImage = document.querySelector('.image-lightbox img');
 const closeButton = document.querySelector('.image-lightbox-close');
