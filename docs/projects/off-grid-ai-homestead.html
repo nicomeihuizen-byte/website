@@ -120,7 +120,7 @@
         <a href="../images/project_two/repo/architecture.svg">
           <img src="../images/project_two/repo/architecture.svg" alt="System architecture: a Pico 2 W field node sending readings over BLE or LoRa to a Python stack on a laptop that ingests, stores, models and schedules" width="940" height="520">
         </a>
-            <figcaption>Sensor to scheduler. The store is the seam: everything upstream writes to it, everything downstream reads from it. Drawn before the site survey, so the ingest box still names KNMI. That slot is DWD at Prora and ERA5-Land at Castelo Branco.</figcaption>
+            <figcaption>Sensor to scheduler. The store is the seam: everything upstream writes to it, everything downstream reads from it.</figcaption>
       </figure>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
@@ -208,12 +208,16 @@
           <h2 class="section-label">// the field node</h2>
           <h2>Why it is a Pico, not a Pi</h2>
           <p>The original argument for a small microcontroller was built on Dutch December sun. The real northern plot is worse than that. On the winter solstice Prora gets 7.0 hours of daylight and the sun never climbs higher than 12.2 degrees above the horizon, and low sun is not a small correction: it is most of the loss.</p>
+          <figure class="project-figure">
+            <a href="../images/project_two/repo/winter-sun.svg">
+              <img src="../images/project_two/repo/winter-sun.svg" alt="Winter solstice sun at the two plots: Prora 7.0 hours of daylight with the sun peaking at 12.2 degrees, Castelo Branco 9.2 hours at 26.7 degrees" loading="lazy" width="900" height="340">
+            </a>
+          </figure>
           <p>A Pi Zero 2 W idles at 0.4 to 0.6 W and still draws around 50 mA when halted. Against a Baltic December that means roughly a 60 W panel and 100 Wh of battery. A caravan installation bolted to a birdbox.</p>
           <figure class="project-figure">
             <a href="../images/project_two/repo/power-budget.svg">
               <img src="../images/project_two/repo/power-budget.svg" alt="Daily energy comparison: Pi always-on 14.4 Wh, Pi duty-cycled 2.4 Wh, Pico W duty-cycled 0.16 Wh" loading="lazy" width="900" height="360">
             </a>
-            <figcaption>Repo figure, drawn against Dutch December sun before the site survey. Prora is the harsher site, so the real margin is tighter than this shows.</figcaption>
           </figure>
           <p>The Pico 2 W wins on a mechanical detail more than on the chip. VSYS accepts 1.8 to 5.5 V, so a single LiFePO4 cell drives it directly. No boost stage, so no boost-converter quiescent current. Roughly sixty times smaller daily budget. A Pi still has a place in this project. It just is not in the field box.</p>
           <p>Castelo Branco is the easy site. Nine and a bit hours on the solstice, sun at 26.7 degrees, and a winter that mostly cooperates. It does not get a vote. The node is one design, built once and driven between the plots, so it is sized for the worse case and every decision in the power path is a Prora decision.</p>
@@ -232,7 +236,6 @@
             <a href="../images/project_two/repo/birdbox-build.svg">
               <img src="../images/project_two/repo/birdbox-build.svg" alt="Cross-section of the field node: birdbox shell over an IP66 box, vent and glands on the underside, radiation shield on a tail, panel at 65 degrees, soil probes at 10 and 30 cm" loading="lazy" width="940" height="620">
             </a>
-            <figcaption>Repo figure. The mounting-height note still cites KNMI comparability. The principle holds, the reference station does not.</figcaption>
           </figure>
           <p>Two failure modes will kill the node before any sensor does.</p>
           <p><strong>Condensation.</strong> A sealed box breathes. It warms in the day and pushes air out, cools at night and sucks damp air back in through every imperfection, and over weeks it pumps itself full of water. A tighter seal makes this worse. On a Baltic island, in a box that spends its winter in marine air, this is a certainty rather than a risk. Fit a Gore-type ePTFE pressure-equalisation vent, add indicating desiccant, conformal-coat the boards, put every gland and the vent on the underside, and drip-loop every cable. Three euros, and the highest-value three euros in the build.</p>
@@ -321,7 +324,6 @@
             <a href="../images/project_two/repo/roadmap.svg">
               <img src="../images/project_two/repo/roadmap.svg" alt="Roadmap from September 2026 to October 2027 across ten phases" loading="lazy" width="940" height="530">
             </a>
-            <figcaption>Repo figure. The phase dates hold. Its note about the first Dutch winter now means the first Baltic winter at Prora.</figcaption>
           </figure>
           <p>Nothing is done because code exists. Every phase has a done-when you can actually check.</p>
           <div class="phase-table-wrap">
