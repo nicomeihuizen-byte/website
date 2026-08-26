@@ -13,8 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Acre, Zero Dependency | meihuizen.ai LLC</title>
-<meta name="description" content="Ferme autonome pilotée par IA : capteurs de sol et météo Raspberry Pi, prévision solaire LSTM et un planificateur de plantation LLM biodynamique.">
-<meta name="keywords" content="One Acre Zero Dependency, agriculture IA hors réseau, habitat piloté par IA, capteurs de sol Raspberry Pi, stations météo, prévision solaire LSTM, prédiction de l'état de la batterie, planificateur de plantation LLM, agriculture biodynamique, Nico Meihuizen">
+<meta name="description" content="Agriculture autonome pilotée par l'IA sur deux parcelles à 2 256 km d'écart : Prora sur la Baltique l'été, Castelo Branco au Portugal l'hiver. Nœud Pico solaire, historiques DWD et ERA5-Land, calendrier Thun honnête, LLM local qui ne calcule jamais.">
+<meta name="keywords" content="agriculture autonome, ferme hors réseau, IA agricole, capteur de sol solaire, nœud de terrain Pico, prévision solaire, LSTM, données météo historiques, DWD, IPMA, ERA5-Land, calendrier Thun, biodynamie, LLM local, Prora, Castelo Branco, Nico Meihuizen">
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html">
@@ -27,29 +27,32 @@
 <link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
 <meta property="og:title" content="One Acre, Zero Dependency | meihuizen.ai LLC">
-<meta property="og:description" content="Ferme autonome pilotée par IA : capteurs de sol et météo Raspberry Pi, prévision solaire LSTM et un planificateur de plantation LLM biodynamique.">
-<meta property="og:image" content="https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png">
+<meta property="og:description" content="Agriculture autonome pilotée par l'IA sur deux parcelles à 2 256 km d'écart : Prora sur la Baltique l'été, Castelo Branco au Portugal l'hiver. Nœud Pico solaire, historiques DWD et ERA5-Land, calendrier Thun honnête, LLM local qui ne calcule jamais.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
 <meta property="og:url" content="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="One Acre, Zero Dependency | meihuizen.ai LLC">
-<meta name="twitter:description" content="Ferme autonome pilotée par IA : capteurs de sol et météo Raspberry Pi, prévision solaire LSTM et un planificateur de plantation LLM biodynamique.">
-<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png">
+<meta name="twitter:description" content="Agriculture autonome pilotée par l'IA sur deux parcelles à 2 256 km d'écart : Prora sur la Baltique l'été, Castelo Branco au Portugal l'hiver. Nœud Pico solaire, historiques DWD et ERA5-Land, calendrier Thun honnête, LLM local qui ne calcule jamais.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "name": "One Acre, Zero Dependency",
-  "description": "Projet de ferme autonome pilotée par IA : capteurs de sol et météo Raspberry Pi, prévision solaire LSTM et un planificateur de plantation LLM basé sur le calendrier biodynamique.",
+  "description": "Ferme autonome pilotée par l'IA sur deux parcelles européennes distantes de 2 256 km, cultivées en alternance selon la saison : Prora sur la côte baltique allemande l'été, Castelo Branco au centre du Portugal l'hiver. Nœud de terrain solaire, historiques météo DWD et ERA5-Land, prévision d'énergie et planificateur LLM local, documentés en public.",
   "author": {
     "@type": "Person",
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai"
   },
-  "image": "https://www.meihuizen.ai/images/project_two/birdbox-farm-campervan-scene.png",
-  "keywords": "agriculture IA hors réseau, prévision solaire LSTM, planificateur de plantation LLM, agriculture biodynamique, capteurs de sol Raspberry Pi",
+  "image": "https://www.meihuizen.ai/images/project_two/one-acre-og.png",
+  "keywords": "agriculture autonome, ferme hors réseau, IA agricole, capteur de sol solaire, nœud de terrain Pico, prévision solaire, LSTM, données météo historiques, DWD, IPMA, ERA5-Land, calendrier Thun, biodynamie, LLM local, Prora, Castelo Branco, Nico Meihuizen",
   "url": "https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html",
-  "datePublished": "2026-01-01"
+  "sameAs": "https://github.com/nicomeihuizen-byte/AI-Homestead",
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-08-26",
+  "inLanguage": "fr"
 }
 </script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
@@ -69,6 +72,10 @@
     <a class="back-link" href="../index.html">&lt; accueil</a>
   </div>
 </header>
+<a class="repo-dock" href="https://github.com/nicomeihuizen-byte/AI-Homestead" target="_blank" rel="noopener" aria-label="Ouvrir le dépôt One Acre, Zero Dependency sur GitHub">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
+  <span class="repo-dock-label"><span class="prompt" aria-hidden="true">$</span> ouvrir le dépôt</span>
+</a>
 <main class="page-wrap">
   <article class="terminal">
     <div class="terminal-bar">
@@ -105,19 +112,16 @@
 </nav>
     </div>
     <div class="terminal-body">
+      <!-- <div class="project-kicker">02_project / full-stack</div> -->
       <h1>One Acre, Zero Dependency</h1>
-      <p class="project-summary">Un projet de ferme autonome piloté par IA sur deux parcelles, l'une cultivée en été, l'autre en hiver, migrant au fil des saisons.</p>
-      <div class="project-gallery" aria-label="Aperçus du projet One Acre Zero Dependency">
-        <a href="../../images/project_two/birdbox-station-system-diagram.png">
-          <img src="../../images/project_two/birdbox-station-system-diagram.png" alt="Schéma du système de la station nichoir" loading="lazy" width="545" height="457">
+      <p class="project-summary">Agriculture off-grid pilotée par l’IA sur deux parcelles distantes de 2 256 km. Prora, sur la côte baltique allemande, pour l’été ; Castelo Branco, au centre du Portugal, pour l’hiver. Un nœud de terrain alimenté par le solaire relève le sol et la météo, un ordinateur portable fusionne cela avec des décennies de relevés de stations et de réanalyses et prévoit son propre budget solaire, et un LLM local en tire le plan du jour : quelle culture semer, dans quelle planche, dans quelle fenêtre, avec le type de jour Thun consigné à côté. Ce que ça vise est simple. Le plus de nourriture possible sur le plus petit bout de terrain.</p>
+      <p class="project-status">statut&nbsp;: phase 0. Rien n'est encore construit. Le plan, si.</p>
+      <figure class="project-figure project-figure-hero">
+        <a href="../../images/project_two/repo/architecture.svg">
+          <img src="../../images/project_two/repo/architecture.svg" alt="Architecture du système : un nœud de terrain Pico 2 W envoie ses relevés en BLE ou LoRa vers une pile Python sur un portable qui ingère, stocke, modélise et planifie" width="940" height="520">
         </a>
-        <a href="../../images/project_two/birdbox-farm-campervan-scene.png">
-          <img src="../../images/project_two/birdbox-farm-campervan-scene.png" alt="Scène de ferme avec camping-car et nichoir" loading="lazy" width="545" height="415">
-        </a>
-        <a href="../../images/project_two/biodynamic-farming-calendar.png">
-          <img src="../../images/project_two/biodynamic-farming-calendar.png" alt="Calendrier de l'agriculture biodynamique" loading="lazy" width="265" height="225">
-        </a>
-      </div>
+            <figcaption>Du capteur au planificateur. Le stockage est la couture&nbsp;: tout ce qui est en amont y écrit, tout ce qui est en aval y lit.</figcaption>
+      </figure>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Image du projet en taille réelle" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Fermer l'image en taille réelle">&times;</button>
         <img src="" alt="">
@@ -125,25 +129,28 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// aperçu</h2>
-          <h2>Agriculture et habitat autonomes pilotés par IA</h2>
-          <p>Ce projet suit deux parcelles au fil des saisons : l'une cultivée en été et l'autre en hiver, avec le matériel, le code, les données d'entraînement et les échecs documentés publiquement jusqu'en 2026/2027.</p>
-          <p><strong>Pourquoi ce projet existe.</strong> La plupart des projets d'"agriculture intelligente" supposent une alimentation sur le réseau, une connectivité cloud et un budget pour des kits de capteurs commerciaux. Celui-ci part des contraintes opposées : pas de réseau électrique, une connectivité intermittente et du matériel construit à partir de pièces qui tiennent dans un camping-car. L'objectif est de répondre à une question simple : quelle part de la prise de décision quotidienne d'une petite ferme une IA véritablement autonome peut-elle gérer de bout en bout, du capteur au planificateur ?</p>
-          <h2>Lire le terrain sans passer par le cloud</h2>
-          <p>Les stations météo et de sol alimentées par Raspberry Pi sont installées dans un nichoir solaire fixé sur un piquet. Des capteurs de sol filaires mesurent l'humidité, la température et les nutriments, renvoyant les relevés via une liaison locale à faible consommation plutôt que de dépendre d'une connectivité cloud.</p>
-          <h2>Planifier selon le soleil, pas selon l'horloge</h2>
-          <p>Des modèles de prévision de séries temporelles utilisent des techniques LSTM pour suivre la production solaire et prédire l'état de la batterie, afin que le système puisse planifier les tâches gourmandes en énergie, comme l'exécution du modèle de vision, en fonction de la disponibilité solaire réelle plutôt que d'un calendrier fixe.</p>
-          <h2>Des données de capteurs aux décisions de plantation</h2>
-          <p>Un planificateur de plantation piloté par LLM combine le calendrier biodynamique avec des ensembles de données mondiales sur le sol et la météo, transformant les relevés des capteurs et les positions du calendrier en recommandations concrètes de plantation et d'arrosage.</p>
-          <h2>Boucler la boucle entre déchets et stocks</h2>
-          <p>La détection d'anomalies aide à déterminer le moment du compost et des engrais, tandis qu'un modèle léger de vision et de recommandation suit les stocks alimentaires. Le système est conçu autour d'états clairs et d'un retour utile à mesure que les données s'accumulent.</p>
-          <h2>État d'avancement et prochaines étapes</h2>
-          <p>Le projet est construit et documenté publiquement jusqu'en 2026 et dans 2027, parcelle par parcelle et saison par saison. Les prochaines étapes prévues incluent la fermeture de la boucle entre les prévisions LSTM et le planificateur LLM, ainsi que la publication des données d'entraînement à la fin de chaque saison.</p>
+          <h2>La question</h2>
+          <blockquote class="project-quote">Quelle part des décisions quotidiennes d'une petite ferme une IA vraiment autonome peut-elle prendre en charge de bout en bout, du capteur au planificateur&#8239;?</blockquote>
+          <p>C'est tout le projet. Deux parcelles aux deux extrémités de l'Europe, l'une cultivée l'été et l'autre l'hiver, travaillées en alternance en faisant la route entre les deux. Matériel, code, données d'entraînement et échecs, documentés en public tout au long de 2026 et jusque dans 2027.</p>
+          <h2>Ce que le cadrage a changé</h2>
+          <p>La première version de cette page annonçait un Raspberry Pi, des sondes NPK de sol et un planificateur de semis fondé sur le calendrier biodynamique. Un cadrage sérieux a tué les trois.</p>
+          <p>Un Pi ne survit pas à un décembre néerlandais avec un panneau de nichoir. Les sondes NPK bon marché ne mesurent pas le NPK. Et le calendrier biodynamique est une hypothèse, pas une règle de planification.</p>
+          <p>Puis l'étude de site est revenue, et les deux parcelles se sont révélées distantes de 2&#8239;256 km, dans deux pays différents, ce qui a emporté le pipeline météo avec elle.</p>
+          <p>Rien de tout ça n'a rétréci le projet. Ça l'a rendu honnête.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
           <div class="stack">
-            <span>Raspberry Pi</span><span>Python</span><span>LSTM</span><span>Outils LLM</span><span>Capteurs de sol</span><span>Vision par ordinateur</span>
+            <span>Pico 2 W</span><span>MicroPython</span><span>Python 3.11</span><span>SQLite</span><span>skyfield</span><span>LSTM</span><span>Ollama</span><span>BLE / LoRa</span><span>DWD / IPMA</span><span>ERA5-Land</span>
           </div>
+          <a class="doc-download" href="https://github.com/nicomeihuizen-byte/AI-Homestead" target="_blank" rel="noopener">
+            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
+            <div class="info">
+              <h3>AI-Homestead</h3>
+              <p>Le dépôt. Plan de construction, ADR, sources de données, et les figures de cette page.</p>
+            </div>
+            <span class="tag">CODE</span>
+          </a>
           <a class="doc-download" href="../../images/project_two/one-acre-project-overview.pdf" download rel="noopener">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
@@ -151,13 +158,208 @@
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Aperçu du projet</h3>
-              <p>One Acre, Zero Dependency. Compte rendu complet du projet et détail technique.</p>
+              <h3>Document d'origine</h3>
+              <p>Le premier document de cadrage. Remplacé par le plan de construction dans le dépôt.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+
+      <div class="project-sections">
+        <section>
+          <h2 class="section-label">// où</h2>
+          <h2>Deux parcelles, 2&#8239;256 km d'écart</h2>
+          <p>L'étude de site est le seul livrable de la phase 0 qui débloque tout le reste, et la réponse est tombée. Les parcelles ne sont pas voisines. Elles sont séparées par 2&#8239;256 km et 14,6 degrés de latitude, et c'est bien l'idée&nbsp;: on suit la saison de croissance au lieu de lutter contre elle.</p>
+          <div class="site-cards">
+            <div class="site-card">
+              <h3>Prora <span class="site-season">été</span></h3>
+              <dl>
+                <div><dt>Où</dt><dd>R&uuml;gen, côte baltique allemande</dd></div>
+                <div><dt>Latitude</dt><dd>54,39 &deg;N</dd></div>
+                <div><dt>Référence</dt><dd>DWD Arkona, station 00183, 33 km au nord</dd></div>
+                <div><dt>Solstice d'hiver</dt><dd>7,0 h de jour, le soleil culmine à 12,2 &deg;</dd></div>
+              </dl>
+            </div>
+            <div class="site-card">
+              <h3>Castelo Branco <span class="site-season">hiver</span></h3>
+              <dl>
+                <div><dt>Où</dt><dd>Centre du Portugal, dans les terres</dd></div>
+                <div><dt>Latitude</dt><dd>39,82 &deg;N</dd></div>
+                <div><dt>Référence</dt><dd>Longues séries IPMA, plus ERA5-Land</dd></div>
+                <div><dt>Solstice d'hiver</dt><dd>9,2 h de jour, le soleil culmine à 26,7 &deg;</dd></div>
+              </dl>
+            </div>
+          </div>
+          <p>Ces chiffres de solstice relèvent de la géométrie, pas de la mesure, donc ils sont exacts et ce sont les seuls chiffres solaires de cette page qui n'ont pas besoin d'une étude de site pour tenir debout. Tout le reste attend des données réelles.</p>
+        </section>
+
+        <section>
+          <h2 class="section-label">// engagements</h2>
+          <h2>Trois choses que ce projet ne bradera pas</h2>
+          <ol class="commitments">
+            <li><strong>1 &middot; Autonome veut dire autonome.</strong> Pas de LLM cloud dans la boucle quotidienne. Le planificateur tourne sur un portable contre un modèle local. Le réseau va chercher des données historiques publiques à l'installation et lors d'un rafraîchissement occasionnel. Il n'est jamais une dépendance d'exécution d'une décision.</li>
+            <li><strong>2 &middot; Chaque nombre porte sa provenance et sa barre d'erreur.</strong> Un capteur à 30 &euro; qui annonce &plusmn;0,3 pH n'a pas le droit d'afficher un pH à une décimale.</li>
+            <li><strong>3 &middot; Le calendrier biodynamique est une hypothèse à l'épreuve, pas une règle de planification.</strong> Les données ne soutiennent pas l'effet trigone. Ce projet le calcule correctement, le journalise comme covariable, et le teste contre une analyse préenregistrée. Un résultat nul est un résultat valide. Peut-être le plus précieux.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 class="section-label">// le nœud de terrain</h2>
+          <h2>Pourquoi c'est un Pico, pas un Pi</h2>
+          <p>L'argument initial pour un petit microcontrôleur reposait sur le soleil néerlandais de décembre. La vraie parcelle nord est pire que ça. Au solstice d'hiver, Prora reçoit 7,0 heures de jour et le soleil ne monte jamais au-dessus de 12,2 degrés, et un soleil bas n'est pas une petite correction&nbsp;: c'est l'essentiel de la perte.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/winter-sun.svg">
+              <img src="../../images/project_two/repo/winter-sun.svg" alt="Soleil du solstice d'hiver sur les deux parcelles : Prora, 7,0 heures de jour avec un soleil culminant à 12,2 degrés, Castelo Branco, 9,2 heures à 26,7 degrés" loading="lazy" width="900" height="340">
+            </a>
+          </figure>
+          <p>Un Pi Zero 2 W consomme 0,4 à 0,6 W au repos et tire encore environ 50 mA une fois arrêté. Face à un décembre baltique, ça veut dire à peu près un panneau de 60 W et 100 Wh de batterie. Une installation de caravane boulonnée sur un nichoir.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/power-budget.svg">
+              <img src="../../images/project_two/repo/power-budget.svg" alt="Comparaison de l'énergie quotidienne : Pi toujours allumé 14,4 Wh, Pi en cycle de service 2,4 Wh, Pico W en cycle de service 0,16 Wh" loading="lazy" width="900" height="360">
+            </a>
+          </figure>
+          <p>Le Pico 2 W l'emporte sur un détail mécanique plus que sur la puce. VSYS accepte 1,8 à 5,5 V, donc une seule cellule LiFePO4 l'alimente directement. Pas d'étage élévateur, donc pas de courant de repos de convertisseur. Un budget quotidien environ soixante fois plus petit. Un Pi garde une place dans ce projet. Simplement pas dans le boîtier de terrain.</p>
+          <p>Castelo Branco est le site facile. Neuf heures et des poussières au solstice, un soleil à 26,7 degrés, et un hiver qui coopère à peu près. Castelo Branco n'a pas voix au chapitre. Le nœud est une seule conception, construite une fois et transportée d'une parcelle à l'autre, donc il est dimensionné pour le pire cas et chaque décision du chemin d'alimentation est une décision Prora.</p>
+          <p>Le piège qui mérite d'être répété&nbsp;: le courant de repos d'un régulateur de charge peut dépasser à lui seul toute la consommation d'un nœud bien conçu. Un gestionnaire solaire très répandu tire un peu moins de 30 mA au repos, soit 3,6 Wh par jour, quinze à quarante-cinq fois tout le budget du Pico. Choisissez le chemin d'alimentation avant de choisir le MCU.</p>
+
+          <h2>Ce que le matériel peut honnêtement mesurer</h2>
+          <p>Trois des capteurs qu'on achète par réflexe pour ce genre de montage ne mesurent pas ce que dit la fiche produit.</p>
+          <p><strong>Les voies NPK sont fabriquées de toutes pièces.</strong> Les sondes de sol RS485 7-en-1 bon marché mesurent la conductivité électrique globale et la multiplient par trois constantes fixes. Le fabricant l'écrit dans sa propre documentation. Donc N, P et K sont trois copies mises à l'échelle d'un même nombre, et elles bougent ensemble. Ajoutez de l'urée et regardez le phosphore «&nbsp;monter&nbsp;». Achetez la sonde pour l'humidité, la température et l'EC, qui sont réelles et vraiment utiles, et envoyez de la terre au labo deux fois par an pour la fertilité réelle. Ça coûte à peu près le prix du capteur et ça produit des nombres qui veulent dire quelque chose.</p>
+          <p><strong>Le pH en continu dans le sol n'est pas atteignable à ce budget.</strong> Le même sol se lit environ 1,5 unité pH plus haut en passant du sec à la capacité au champ, la relation dépend du type de sol, et sous environ 11 % d'humidité les lectures cessent d'être fiables. Une sonde de qualité labo coûte dans les 100 &euro; pour une durée de vie de deux ans et demi, plus une carte support, et elle exige que son bulbe de verre reste hydraté en permanence, ce qu'un sol de juillet ne fera pas. Faites le pH de la manière ennuyeuse&nbsp;: un échantillon à l'intérieur, 1:5 sol/CaCl&#8322;, un pH-mètre de paillasse étalonné, deux fois par an.</p>
+          <p><strong>L'humidité de sol capacitive est un indice relatif, pas du %VWC.</strong> Moins de 400 points bruts sur toute la plage du sec au saturé, et c'est l'étage analogique d'entrée qui limite, pas l'ADC, donc un convertisseur 16 bits n'y changerait rien. Ajoutez une forte sensibilité croisée à la température, un régulateur embarqué qui sort de ses spécifications sous 3,4 V, précisément là où vit le LiFePO4, et un masque d'encre qui lâche en moins d'un an s'il n'est pas noyé dans l'époxy. Journalisez la température du sol à côté de chaque sonde d'humidité et retirez-la par régression.</p>
+          <p><strong>Deux sont incontestablement bons.</strong> Le DS18B20 étanche pour la température du sol à 10 cm et 30 cm, où le déphasage entre les deux est réellement informatif et coûte 6 &euro;. Et les capteurs météo passifs à lame souple, pluie, anémomètre et girouette, qui ne consomment rien en veille. Antirebondissez le contact de pluie en logiciel, sinon vous gonflerez les cumuls de 10 à 30 % sans jamais le remarquer.</p>
+          <p><strong>Deux pièges de configuration qui produisent des données fausses d'allure plausible.</strong> Un BME280 en mode continu avec un fort suréchantillonnage s'auto-échauffe et biaise sa propre mesure de température de un à deux degrés. Utilisez le mode forcé, une lecture par minute, sommeil entre les deux, ce que le budget énergétique demande de toute façon. Et un capteur non abrité au soleil ne mesure pas la température de l'air&nbsp;: il se trompe jusqu'à 3 &deg;C, et un mauvais flux d'air comprime l'amplitude diurne au lieu de la décaler, ce qui paraît plausible et se révèle donc pire qu'un décalage constant.</p>
+
+          <h2>Comment le nœud s'assemble</h2>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/birdbox-build.svg">
+              <img src="../../images/project_two/repo/birdbox-build.svg" alt="Coupe du nœud de terrain : coque de nichoir sur un boîtier IP66, évent et presse-étoupes en sous-face, abri anti-rayonnement sur une potence, panneau à 65 degrés, sondes de sol à 10 et 30 cm" loading="lazy" width="940" height="620">
+            </a>
+          </figure>
+          <p>Deux modes de défaillance tueront le nœud avant n'importe quel capteur.</p>
+          <p><strong>La condensation.</strong> Un boîtier scellé respire. Il chauffe le jour et chasse l'air, refroidit la nuit et réaspire de l'air humide par le moindre défaut, et en quelques semaines il se remplit d'eau tout seul. Une étanchéité plus poussée aggrave le problème. Sur une île de la Baltique, dans un boîtier qui passe son hiver dans de l'air marin, c'est une certitude plutôt qu'un risque. Montez un évent d'équilibrage de pression en ePTFE type Gore, ajoutez un dessiccant à indicateur, vernissez les cartes, placez tous les presse-étoupes et l'évent en sous-face, et faites une boucle d'égouttement sur chaque câble. Trois euros, et les trois euros les plus rentables du montage.</p>
+          <p><strong>La charge à froid.</strong> Ne chargez jamais du LiFePO4 sous 0 &deg;C. Le lithium se dépose sur l'anode&nbsp;: un à cinq pour cent de perte de capacité permanente par épisode, irréversible, avec risque de dendrites. Beaucoup de cartes BMS 1S bon marché n'implémentent aucune coupure de charge à basse température. Vérifiez la fiche technique ou ajoutez vous-même une thermistance NTC et un MOSFET, puis testez au congélateur. Les matins de gel baltiques sont aussi les matins clairs et ensoleillés, donc la corrélation joue contre vous exactement quand le panneau a enfin quelque chose à donner. Enterrez ou isolez la cellule&nbsp;: à 30 cm, le sol descend à peine sous 3 ou 4 degrés.</p>
+          <p>Imprimez l'abri anti-rayonnement en ASA ou PETG, pas en PLA, qui perd vraiment de sa résistance dehors en moins d'un mois. Servez-vous du nichoir en bois comme coque décorative contre la pluie et le soleil, et mettez un vrai boîtier IP66 à l'intérieur. La lame d'air entre les deux amortit très bien les écarts thermiques.</p>
+
+          <h2>La liaison, mesurée avant d'être choisie</h2>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/link-decision.svg">
+              <img src="../../images/project_two/repo/link-decision.svg" alt="Choix de la liaison selon la distance : BLE sous 20 mètres, marginal de 20 à 50 mètres, LoRa au-delà de 50 mètres" loading="lazy" width="900" height="360">
+            </a>
+          </figure>
+          <p>La limite du BLE ici n'est pas le débit. La charge utile fait environ 10 bits par seconde contre un plancher de 235 kbps. Le problème, c'est le mode de défaillance&nbsp;: une connexion perdue échoue en silence, sans nouvelle tentative, donc vous perdez des données pendant exactement les épisodes météo que la station a été construite pour observer.</p>
+          <p>Sous 20 m en vue directe dégagée, le BLE convient. De vingt à cinquante, c'est marginal&nbsp;: ça marche en juillet et ça décroche dans un novembre humide. Au-delà, LoRa. La décision attend donc un mètre ruban. Dans tous les cas, le BLE reste l'interface de service en approche, parce que ce rôle-là il le remplit très bien et qu'il ne coûte presque rien.</p>
+          <p><code>ingest/</code> est la couture. Remplacer le BLE par LoRa touche un module et rien en aval. C'est toute la raison d'être de ce découpage en couches.</p>
+        </section>
+
+        <section>
+          <h2 class="section-label">// données</h2>
+          <h2>Deux parcelles, deux services météo, un écart assumé</h2>
+          <p>Le plan initial s'appuyait sur le KNMI, qui vous livre De Bilt au pas quotidien depuis 1901, avec le rayonnement global et l'évapotranspiration de référence dans le même fichier, gratuitement et sans clé d'API. C'était une hypothèse confortable sur laquelle bâtir. Aucune des deux parcelles n'est aux Pays-Bas, donc elle saute.</p>
+          <p><strong>Prora est bien servie.</strong> Le Climate Data Center du DWD publie des données ouvertes en simple HTTP, sans clé, en CC BY 4.0. Arkona, station 00183, se trouve 33 km au nord sur la même île, avec une série climatique quotidienne qui remonte à 1947. Mieux que ça&nbsp;: Arkona fait partie des 64 stations seulement du réseau solaire quotidien du DWD, donc la station qui donne la température et la pluie donne aussi le rayonnement global mesuré. Pour un projet dont la contrainte déterminante est le budget énergétique, un vrai relevé de rayonnement à 33 km du panneau est une chance qui mérite d'être dite tout haut.</p>
+          <p><strong>Castelo Branco, non.</strong> Le Portugal n'a pas de flux historique ouvert équivalent. L'API ouverte de l'IPMA sert des observations courantes et des prévisions plutôt qu'un historique profond, et les longues séries climatiques sont publiées sous forme de tableaux téléchargeables, sur une cinquantaine de stations du continent. Les deux parcelles ne sont donc pas également bien observées, et faire discrètement comme si c'était le cas serait exactement l'échec que ce projet existe pour éviter. À Castelo Branco, l'historique profond vient de la réanalyse ERA5-Land, jusqu'à 1950, avec l'IPMA comme contrôle de cohérence local. À Prora, c'est l'inverse&nbsp;: la station d'abord, la réanalyse ensuite.</p>
+          <p><strong>L'essentiel du pipeline a survécu au déménagement.</strong> ERA5-Land, le relevé d'irradiance observé par satellite et PVGIS sont continentaux ou mondiaux, donc ils se comportent de façon identique sur les deux sites. Ce qui n'a pas survécu, c'est l'hypothèse de station unique posée dessous.</p>
+          <p><strong>La prévision est asymétrique elle aussi.</strong> L'ICON-D2 du DWD tourne à 2 km et couvre R&uuml;gen. Rien à cette résolution n'atteint le Portugal, où ICON-EU à 7 km est le meilleur des modèles gratuits. Prora reçoit donc une prévision nettement plus fine que Castelo Branco, et toute comparaison de performance entre les deux parcelles doit en tenir compte avant de vouloir dire quoi que ce soit.</p>
+          <p><strong>Cinq pièges, tous producteurs de données fausses en silence.</strong> Le DWD marque les valeurs manquantes 9990.0, pas un blanc et pas un négatif, donc une moyenne naïve passe droit dessus et sort une absurdité. Le fichier climatique quotidien du DWD porte la durée d'ensoleillement mais absolument aucun rayonnement global, qui vit dans un jeu de données séparé et bien plus clairsemé, donc un pipeline écrit avec l'habitude KNMI du tout-dans-un-fichier produira sans bruit une colonne de rayonnement vide. L'évapotranspiration de référence est calculée par des formules différentes selon les services, donc ces séries ne doivent jamais être concaténées. L'archive de réanalyse et la prévision utilisent des tranches de profondeur de sol différentes et exigent une étape de correspondance explicite. Et les séries de stations, en général, ne conviennent pas à l'analyse de tendance à cause des déménagements et des changements d'instruments&nbsp;: correctes pour l'exploitation, fausses pour les tendances climatiques.</p>
+          <p><strong>Et un piège qui n'existe que parce qu'il y a deux parcelles.</strong> Deux réseaux, deux langues de métadonnées, deux fuseaux horaires, deux régimes solaires. Chaque ligne doit porter son site, rien n'est regroupé sans raison explicite, et un modèle entraîné sur une parcelle doit faire ses preuves sur l'autre au lieu qu'on suppose qu'il voyage.</p>
+        </section>
+
+        <section>
+          <h2 class="section-label">// le calendrier</h2>
+          <h2>Le calendrier Thun, fait honnêtement</h2>
+          <p>D'abord, ce n'est pas le calendrier de Steiner. Le Cours aux agriculteurs de 1924 contient l'idée de la ferme-organisme et les préparations numérotées. Il ne contient aucun schéma racine, feuille, fleur et fruit, et aucune correspondance constellation-organe. Ça vient de Franz Rulni à la fin des années quarante, puis de Maria Thun, publiée pour la première fois en 1963. Les essais sur radis de Thun ont d'ailleurs commencé comme une tentative de tester les affirmations de Rulni. Dire calendrier Thun ne coûte rien et préserve la crédibilité.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/thun-wheel.svg">
+              <img src="../../images/project_two/repo/thun-wheel.svg" alt="Diagramme en anneau du temps que la Lune passe dans chaque constellation sur un mois sidéral, coloré par type de jour Thun, avec Ophiuchus et les écarts hors zodiaque signalés" loading="lazy" width="940" height="724">
+            </a>
+          </figure>
+          <p>Chaque figure ici a été calculée à partir des éphémérides, par pas de trente minutes de 2026 à 2036, plutôt que recopiée de sources de seconde main. Ça a corrigé une affirmation très répandue&nbsp;: le fameux «&nbsp;Libra ne fait que 18&deg;&nbsp;» est faux. C'est Scorpius la courte, à 0,68 jour contre 3,30 pour Virgo.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/sidereal-vs-tropical.svg">
+              <img src="../../images/project_two/repo/sidereal-vs-tropical.svg" alt="Une bande de signes tropicaux au-dessus d'une bande de constellations décalée et inégale ; la même position de la Lune se lit Gemini en tropical et Taurus dans le ciel réel" loading="lazy" width="900" height="330">
+            </a>
+          </figure>
+          <p><strong>C'est sidéral, pas tropical.</strong> Le calendrier suit la Lune sur les constellations d'étoiles réelles. Les signes astrologiques tropicaux sont aujourd'hui décalés de 24 à 25 degrés, soit à peu près un signe entier. Ratez ça et chaque type de jour est faux.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/thun-frequencies.svg">
+              <img src="../../images/project_two/repo/thun-frequencies.svg" alt="Jours du calendrier 2027 par type : racine 107, fruit 97, feuille 94, fleur 67" loading="lazy" width="900" height="340">
+            </a>
+          </figure>
+          <p><strong>Les vraies limites IAU sont de longueurs inégales</strong>, donc les types de jours sont structurellement déséquilibrés. 2027 donne 107 jours racine contre 67 jours fleur. Toute analyse doit pondérer en conséquence, sinon elle trouvera un effet qui n'est que la forme du calendrier lui-même.</p>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/two-lunar-cycles.svg">
+              <img src="../../images/project_two/repo/two-lunar-cycles.svg" alt="Deux sinusoïdes de périodes 27,32 et 29,53 jours qui s'écartent, d'une demi-journée à la première crête à 2,8 jours à la seconde" loading="lazy" width="900" height="380">
+            </a>
+          </figure>
+          <p><strong>Montante et descendante, c'est la déclinaison</strong>, un cycle de 27,3 jours, totalement indépendant du cycle de croissance et de décroissance de 29,53 jours. Confondre les deux est le deuxième bug le plus fréquent dans les implémentations amateurs. En plus de ça, les passages aux nœuds, les éclipses et le périgée sont neutralisés avec une fenêtre de quelques heures de part et d'autre.</p>
+          <p>Deux subtilités n'apparaissent qu'une fois l'implémentation correcte. Les vraies limites IAU placent une tranche d'écliptique dans Ophiuchus, où la Lune passe environ 1,27 jour par mois sidéral, alors que le zodiaque de Thun est duodécimal. Repliez-la sur feuille, mais signalez-le en sortie. Et comme l'orbite de la Lune est inclinée d'environ cinq degrés, elle passe à peu près un jour par mois dans Orion, Sextans, Cetus, Auriga et même Corvus. Ne renvoyez rien et journalisez. Jamais de plantage, jamais de valeur par défaut silencieuse.</p>
+
+          <h2>Les preuves, dites simplement</h2>
+          <p>L'affirmation précise, selon laquelle la position de la Lune devant une constellation au semis modifie de façon mesurable le rendement de l'organe végétal correspondant, n'est pas étayée.</p>
+          <p>Hartmut Spiess a mené des essais systématiques sur radis de 1977 à 1986 à l'Institut de recherche biodynamique, depuis l'intérieur de la tradition, et n'a pas réussi à vérifier l'effet trigone. Mayoral et ses collègues le disent sans détour en 2020&nbsp;: il n'existe aucune preuve scientifique fiable d'une quelconque relation entre les phases lunaires et la physiologie végétale. La physique n'est pas tendre non plus. La force de marée lunaire sur un organisme de deux mètres est environ mille fois plus faible que celle d'une masse d'un kilo posée à un mètre. La seule recension favorable est une réanalyse contestée des propres données de Spiess, par un auteur non neutre.</p>
+          <p>À part ça, et honnêtement&nbsp;: il existe une science végétale crédible sur le clair de lune comme faible signal photopériodique. C'est une preuve à propos de photons, pas de constellations, et la première ne doit pas servir à blanchir la seconde.</p>
+          <p>Le calendrier est donc une covariable journalisée et jamais une contrainte dure. Le planificateur peut faire remonter «&nbsp;aujourd'hui est un jour feuille&nbsp;» comme contexte. Chaque plantation enregistre son type de jour. Au fil des saisons, ça se teste, depuis une position inhabituellement bonne, parce que le pipeline météo fournit précisément les covariables qui manquaient aux essais historiques. L'analyse est préenregistrée et gelée avant le premier semis, et avoir deux parcelles sous des climats vraiment différents fait un meilleur banc d'essai qu'une seule&nbsp;: le même type de jour tombe sur deux environnements de culture très différents, exactement le genre de facteur confondant que les essais historiques n'avaient aucun moyen de séparer. Et il n'existe aucun jeu de données ouvert et sous licence des jours Thun pour valider, donc la validation se fait de la manière lente&nbsp;: une édition imprimée, soixante à quatre-vingt-dix jours saisis à la main, gardés hors du dépôt.</p>
+        </section>
+
+        <section>
+          <h2 class="section-label">// modèles</h2>
+          <h2>Prévoir le soleil, pas l'horloge</h2>
+          <p>Prédire l'énergie récoltable de demain et l'état de batterie qui en découle, pour que les travaux gourmands en énergie soient planifiés dans le soleil plutôt que dans un créneau cron fixe.</p>
+          <p>Commencez par les références à battre&nbsp;: la persistance, c'est-à-dire demain égale aujourd'hui, et un modèle d'indice de ciel clair. Rapportez toute performance par rapport à elles. Un LSTM incapable de battre la persistance est un résultat, et un résultat honnête. Validation glissante uniquement. Un découpage aléatoire sur une série temporelle laisse fuiter le futur et produit des absurdités flatteuses.</p>
+          <p>La contrainte honnête, c'est un seul hiver de données. Un LSTM sur quatre-vingt-dix jours d'un signal fortement saisonnier va surapprendre. Soit vous pré-entraînez sur un historique reconstruit à ces coordonnées et affinez localement, soit vous acceptez qu'ici un modèle physique plus un petit régresseur de résidus batte un réseau avide de données, et vous journalisez ça comme résultat. Ne présentez pas un modèle profond comme meilleur qu'il n'est parce qu'il était plus amusant à construire.</p>
+          <p>Deux parcelles rendent ça plus dur, et plus intéressant. Un modèle ajusté sur un été baltique n'a rien à faire à prévoir un hiver portugais, et la prévision qui l'alimente est de toute façon plus fine à Prora qu'à Castelo Branco. Il y a donc ici deux problèmes de prévision, pas un, et le rapport honnête se fait par site, contre les références propres à ce site. Si un modèle finit par voyager de l'un à l'autre, c'est un vrai résultat, à dire tout haut plutôt qu'à supposer d'entrée.</p>
+
+          <h2>Le LLM propose, Python dispose</h2>
+          <p>Un modèle local sur le portable, de la classe Qwen ou Llama, dimensionné au matériel. Ça garde honnête la promesse d'autonomie et ça ne coûte rien par appel.</p>
+          <p><strong>Ce qu’il choisit vraiment.</strong> Pas « arroser la planche trois ». La décision qui mérite d’être automatisée, c’est ce qu’on met en terre et quand : cette culture ou celle-là, cette semaine ou dans trois, à la lecture de la température du sol à 10 et 30 cm, du déficit hydrique, des degrés-jours accumulés jusqu’ici, de ce que les prévisions annoncent pour la prochaine gelée, de l’énergie solaire disponible et de ce que cette planche a produit la saison dernière. Le type de jour issu du moteur calendaire entre dans le même bloc de contexte, clairement étiqueté comme covariable à l’essai et non comme règle, pour qu’il puisse teinter un choix sans jamais primer sur un choix agronomique.</p>
+          <p><strong>Et ce qu’il vise.</strong> Le rendement au mètre carré. Une petite parcelle bien travaillée bat une grande mal travaillée, et la raison de mettre un modèle dans la boucle, c’est qu’il tient plus de variables à la fois qu’une personne qui planifie le dimanche après-midi. Deux parcelles sous deux climats élargissent le choix au lieu de doubler le travail, parce qu’il y a toujours quelque chose de saison quelque part. Savoir si tout cela bat vraiment un jardinier compétent muni d’un carnet reste une question ouverte, et le projet est fait pour y répondre plutôt que pour le supposer. Les briefings sont datés, les entrées sont enregistrées, les désaccords sont consignés. À la fin d’une saison, il y a quelque chose à vérifier plutôt qu’une impression.</p>
+          <p><strong>Le LLM ne calcule jamais.</strong> Chaque nombre, degrés-jours, déficit d'humidité du sol, risque de gel, type de jour, budget PV, est calculé en Python testé et transmis sous forme de bloc de contexte structuré. Les seuls rôles du modèle sont la sélection, la priorisation et l'explication. Demandez à un modèle de langue de faire de l'arithmétique sur des données de capteurs et il produira des nombres assurés, plausibles, faux.</p>
+          <p>La sortie est du JSON validé par schéma&nbsp;: action, culture, parcelle, fenêtre, justification, confiance, et les entrées utilisées. C'est ce dernier champ qui rend une recommandation auditable trois mois plus tard. Une couche de contraintes déterministe s'exécute après le modèle et peut opposer un veto ou reporter. Gel cette nuit. Sol trop humide pour être travaillé. Budget d'eau épuisé. Planche déjà plantée.</p>
+          <p>Chaque sortie enregistre le hash du prompt, pour que, quand le conseil change, vous sachiez si c'est le monde qui a changé ou le prompt. La note quotidienne atterrit dans un fichier markdown daté. Et quand vous n'êtes pas d'accord avec une recommandation, vous écrivez pourquoi, dans un fichier qui est le véritable produit de recherche de ce projet.</p>
+        </section>
+
+        <section>
+          <h2 class="section-label">// feuille de route</h2>
+          <h2>Dix phases, et ce que «&nbsp;terminé&nbsp;» veut vraiment dire</h2>
+          <figure class="project-figure">
+            <a href="../../images/project_two/repo/roadmap.svg">
+              <img src="../../images/project_two/repo/roadmap.svg" alt="Feuille de route de septembre 2026 à octobre 2027 sur dix phases" loading="lazy" width="940" height="530">
+            </a>
+          </figure>
+          <p>Rien n'est terminé parce que du code existe. Chaque phase a un critère de fin réellement vérifiable.</p>
+          <div class="phase-table-wrap">
+            <table class="phase-table">
+              <thead><tr><th scope="col">Phase</th><th scope="col">Terminé quand</th></tr></thead>
+              <tbody>
+                <tr><td>0 &middot; Dépôt et étude de site</td><td>ADR tranchés, coordonnées réelles et distance de liaison mesurée notées, tests qui passent proprement</td></tr>
+                <tr><td>1 &middot; Nœud sur établi</td><td>Une lecture complète et plausible toutes les 60 secondes pendant une heure sans une seule exception, et dix basculements manuels de l'auget lus exactement dix</td></tr>
+                <tr><td>2 &middot; La liaison</td><td>Bluetooth coupé 20 minutes, rallumé, et chaque lecture du trou atterrit dans la base avec le bon horodatage</td></tr>
+                <tr><td>3 &middot; Alimentation et déploiement</td><td>Quatorze jours dehors sans trou et sans intervention, puis quatorze de plus couvrant une semaine vraiment bouchée</td></tr>
+                <tr><td>4 &middot; Étalonnage</td><td>Une ligne brute devient une ligne physique, et chaque voie porte à côté d'elle une barre d'erreur défendable</td></tr>
+                <tr><td>5 &middot; Météo et historique</td><td>Une série continue rétro-remplie par parcelle avec un rapport de trous explicite, et des relevés locaux qui se superposent visiblement au relevé de référence de cette parcelle</td></tr>
+                <tr><td>6 &middot; Moteur biodynamique</td><td>Ophiuchus est replié et signalé, les constellations hors zodiaque ne renvoient rien, et les désaccords de validation se regroupent sur les trois causes connues</td></tr>
+                <tr><td>7 &middot; Prévision solaire</td><td>Les wattheures des 24 prochaines heures avec un intervalle annoncé, et une fiche de modèle rapportant la performance contre les deux références sur un découpage glissant</td></tr>
+                <tr><td>8 &middot; Planificateur LLM</td><td>Sept notes datées consécutives, chacune traçable jusqu'à ses entrées, et au moins un désaccord journalisé</td></tr>
+                <tr><td>9 &middot; Vision et anomalies</td><td>Comptage d'articles à partir de photos d'étagères. Conditionné à une saison complète de données.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Les phases 0 à 3 sont séquentielles. La phase 5 n'a besoin d'aucun matériel, donc elle démarre au premier soir de pluie, pendant que les colis sont encore en transit.</p>
+
+          <h2>Ce qui va probablement mal tourner</h2>
+          <ul class="risk-list">
+            <li><strong>Le BLE n'est pas fiable à la distance réelle.</strong> Perte de données silencieuse par mauvais temps. Mesuré en phase 0, et la couture d'ingestion fait de LoRa un changement d'un seul module.</li>
+            <li><strong>La condensation tue le nœud.</strong> Quasi certain sans évent. Un nœud mort en février, pour cinq euros d'évent, de dessiccant et de vernis.</li>
+            <li><strong>Les données sont plausibles mais fausses.</strong> Auto-échauffement, pas d'abri anti-rayonnement, rebond du contact. C'est le résultat par défaut, et il coûte des mois d'analyse fausse menée avec assurance. Quatre tests sur établi en phase 1, recoupés avec le relevé de référence de chaque parcelle en phase 4.</li>
+            <li><strong>Le LSTM surapprend un seul hiver.</strong> Un modèle impressionnant qui ne prévoit rien. Les références d'abord, glissant uniquement.</li>
+            <li><strong>Le LLM fait de l'arithmétique.</strong> Certain si on le laisse faire. Tous les nombres en Python, à chaque fois.</li>
+            <li><strong>La dérive de périmètre vers la vision</strong>, parce que c'est la partie amusante, et du coup la boucle centrale ne se referme jamais. La phase 9 est conditionnée à une saison complète. Tenez la ligne.</li>
+          </ul>
+          <p class="project-credit">MIT pour le code. Données météo du DWD (CC BY 4.0), de l'IPMA et d'Open-Meteo (CC-BY-4.0). Éphémérides du JPL via skyfield. Aucune donnée de calendrier sous droit d'auteur n'est redistribuée.</p>
+        </section>
+      </div>
+
       <nav class="project-nav" aria-label="Navigation des projets">
         <a class="nav-link" href="../index.html"><span>&lt;- retour à</span><strong>Accueil</strong></a>
         <div class="project-nav-socials">
