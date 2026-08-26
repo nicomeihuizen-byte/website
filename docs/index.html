@@ -271,7 +271,174 @@
     max-width:56ch;
   }
   .hero-sub strong{ color:var(--accent); font-weight:600; }
-  .hero-camper-image{ display:block; width:48%; max-width:280px; height:auto; margin:24px auto 0; }
+  .hero-camper-image{ display:block; width:62.4%; max-width:364px; height:auto; margin:24px auto 0; }
+
+  .hero-van-scene{
+    position:relative;
+    aspect-ratio:796/433;
+    container-type:size;
+  }
+  .hero-van-scene .hero-van-bg{
+    position:absolute; inset:0; width:100%; height:100%;
+    display:block; user-select:none; pointer-events:none;
+  }
+  .hero-van-shadow{
+    position:absolute;
+    left:21.48%; top:81.29%;
+    width:7.54%; height:3.23%;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 75%);
+    border-radius:50%;
+    animation:heroVanShadow 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-right, .hero-van-dog-left{
+    position:absolute;
+    left:17.59%; top:59.58%;
+    width:15.33%; height:23.09%;
+    transform-origin:50% 100%;
+    animation:heroVanDogPos 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-right{ animation:heroVanDogPos 11s ease-in-out 1 forwards, heroVanDogOpacityRight 11s ease-in-out 1 forwards; }
+  .hero-van-dog-left{ animation:heroVanDogPos 11s ease-in-out 1 forwards, heroVanDogOpacityLeft 11s ease-in-out 1 forwards; }
+  .hero-van-dog-right img, .hero-van-dog-left img{ width:100%; height:100%; display:block; user-select:none; }
+  .hero-van-dog-left img{ transform:scaleX(-1); }
+  .hero-van-dog-sit{
+    position:absolute;
+    left:18.47%; top:56.12%;
+    width:13.57%; height:26.56%;
+    transform-origin:50% 100%;
+    animation:heroVanDogSit 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-dog-sit img{ width:100%; height:100%; display:block; user-select:none; }
+  .hero-van-office-mask{
+    position:absolute; left:0; top:0; width:36.3%; height:100%;
+    background:#171A24;
+    animation: heroVanOfficeReveal 11s ease-in-out 1 forwards;
+    pointer-events:none;
+  }
+  .hero-van-scene .hero-van-office-bg{
+    position:absolute; left:-4.77%; top:0; width:35.3%; height:100%;
+    display:block; user-select:none; pointer-events:none;
+    animation: heroVanOfficeReveal 11s ease-in-out 1 forwards;
+  }
+  @keyframes heroVanOfficeReveal {
+    0%   { opacity:0; }
+    88%  { opacity:0; }
+    92%  { opacity:1; }
+    100% { opacity:1; }
+  }
+
+  @keyframes heroVanDogPos {
+    0%   { transform: translate(0,0)        scale(1,1); }
+    6%   { transform: translate(0,-0.46cqh)     scale(1,1); }
+    8%   { transform: translate(-0.63cqw,-0.92cqh)  scale(1,1) rotate(-4deg); }
+    11%  { transform: translate(-3.14cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    14%  { transform: translate(-6.03cqw,-0.46cqh) scale(1,1) rotate(-4deg); }
+    17%  { transform: translate(-8.79cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    20%  { transform: translate(-11.31cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    22%  { transform: translate(-11.93cqw,0)    scale(1,1); }
+    25%  { transform: translate(-11.93cqw,-0.46cqh) scale(1,1); }
+    28%  { transform: translate(-10.05cqw,-1.39cqh) scale(1,1) rotate(4deg); }
+    31%  { transform: translate(-7.29cqw,-0.46cqh) scale(1,1) rotate(-3deg); }
+    34%  { transform: translate(-4.40cqw,-1.62cqh) scale(1,1) rotate(4deg); }
+    37%  { transform: translate(-1.51cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    40%  { transform: translate(0,0)        scale(1,1); }
+    44%  { transform: translate(0,-0.46cqh)     scale(1,1); }
+    46%  { transform: translate(-0.63cqw,-0.92cqh)  scale(1,1) rotate(-4deg); }
+    49%  { transform: translate(-3.14cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    52%  { transform: translate(-6.03cqw,-0.46cqh) scale(1,1) rotate(-4deg); }
+    55%  { transform: translate(-8.79cqw,-1.62cqh) scale(1,1) rotate(3deg); }
+    58%  { transform: translate(-11.31cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    60%  { transform: translate(-11.93cqw,0)    scale(1,1); }
+    63%  { transform: translate(-11.93cqw,-0.46cqh) scale(1,1); }
+    66%  { transform: translate(-10.05cqw,-1.39cqh) scale(1,1) rotate(4deg); }
+    69%  { transform: translate(-7.29cqw,-0.46cqh) scale(1,1) rotate(-3deg); }
+    72%  { transform: translate(-4.40cqw,-1.62cqh) scale(1,1) rotate(4deg); }
+    75%  { transform: translate(-1.51cqw,-0.69cqh) scale(1,1) rotate(-2deg); }
+    78%  { transform: translate(0,0)        scale(1,1); }
+    81%  { transform: translate(0,0.69cqh)      scale(1,0.94); }
+    84%  { transform: translate(0,0.69cqh)      scale(1,0.9); }
+    100% { transform: translate(0,0.69cqh)      scale(1,0.9); }
+  }
+
+  @keyframes heroVanDogOpacityRight {
+    0%     { opacity: 1; }
+    7.5%   { opacity: 1; }
+    8.5%   { opacity: 0; }
+    27.5%  { opacity: 0; }
+    28.5%  { opacity: 1; }
+    45.5%  { opacity: 1; }
+    46.5%  { opacity: 0; }
+    65.5%  { opacity: 0; }
+    66.5%  { opacity: 1; }
+    83.5%  { opacity: 1; }
+    84%    { opacity: 0; }
+    100%   { opacity: 0; }
+  }
+  @keyframes heroVanDogOpacityLeft {
+    0%     { opacity: 0; }
+    7.5%   { opacity: 0; }
+    8.5%   { opacity: 1; }
+    27.5%  { opacity: 1; }
+    28.5%  { opacity: 0; }
+    45.5%  { opacity: 0; }
+    46.5%  { opacity: 1; }
+    65.5%  { opacity: 1; }
+    66.5%  { opacity: 0; }
+    100%   { opacity: 0; }
+  }
+
+  @keyframes heroVanDogSit {
+    0%   { transform: scale(1);        opacity: 0; }
+    83%  { transform: scale(0.9);      opacity: 0; }
+    85%  { transform: scale(1.05);     opacity: 1; }
+    87%  { transform: scale(1,1);      opacity: 1; }
+    89%  { transform: scale(1,1);      opacity: 1; }
+    91%  { transform: scale(1,1);      opacity: 0; }
+    100% { transform: scale(1,1);      opacity: 0; }
+  }
+
+  @keyframes heroVanShadow {
+    0%   { transform: translateX(0)     scale(1);        opacity: 0.4; }
+    6%   { transform: translateX(0)     scale(1);        opacity: 0.4; }
+    8%   { transform: translateX(-0.63cqw)  scale(1);         opacity: 0.4; }
+    11%  { transform: translateX(-3.14cqw) scale(0.92);      opacity: 0.35; }
+    14%  { transform: translateX(-6.03cqw) scale(0.88);      opacity: 0.32; }
+    17%  { transform: translateX(-8.79cqw) scale(0.88);      opacity: 0.32; }
+    20%  { transform: translateX(-11.31cqw) scale(0.9);       opacity: 0.35; }
+    22%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    25%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    28%  { transform: translateX(-10.05cqw) scale(0.9);       opacity: 0.34; }
+    31%  { transform: translateX(-7.29cqw) scale(0.9);       opacity: 0.34; }
+    34%  { transform: translateX(-4.40cqw) scale(0.88);      opacity: 0.32; }
+    37%  { transform: translateX(-1.51cqw) scale(0.92);      opacity: 0.36; }
+    40%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    44%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    46%  { transform: translateX(-0.63cqw)  scale(1);         opacity: 0.4; }
+    49%  { transform: translateX(-3.14cqw) scale(0.92);      opacity: 0.35; }
+    52%  { transform: translateX(-6.03cqw) scale(0.88);      opacity: 0.32; }
+    55%  { transform: translateX(-8.79cqw) scale(0.88);      opacity: 0.32; }
+    58%  { transform: translateX(-11.31cqw) scale(0.9);       opacity: 0.35; }
+    60%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    63%  { transform: translateX(-11.93cqw) scale(1);         opacity: 0.4; }
+    66%  { transform: translateX(-10.05cqw) scale(0.9);       opacity: 0.34; }
+    69%  { transform: translateX(-7.29cqw) scale(0.9);       opacity: 0.34; }
+    72%  { transform: translateX(-4.40cqw) scale(0.88);      opacity: 0.32; }
+    75%  { transform: translateX(-1.51cqw) scale(0.92);      opacity: 0.36; }
+    78%  { transform: translateX(0)     scale(1);         opacity: 0.4; }
+    83%  { transform: translateX(0)     scale(1,0.9);     opacity: 0.38; }
+    85%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0.42; }
+    89%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0.42; }
+    91%  { transform: translateX(0)     scale(1.2,0.75);  opacity: 0; }
+    100% { transform: translateX(0)     scale(1,0.9);     opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-van-dog-right, .hero-van-dog-left, .hero-van-dog-sit, .hero-van-shadow, .hero-van-office-bg{ animation:none; }
+    .hero-van-dog-left, .hero-van-dog-sit, .hero-van-office-bg{ opacity:0; }
+  }
 
   .hero-cta{
     display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;
@@ -569,7 +736,15 @@
          <br>
          <p>We don't do this from a screen far far away either. We run a mobile office and lab that can be parked outside any client's door in the EU within 48 hours. Niche and personal by design. When we say hands-on, we mean it: no offshore delivery team, no account manager relaying your notes back to us. You get the people building your system, on-site, watching how your team actually works before a line of code exists. Job done right, we're still there for the drinks.</p>
          <br>
-         <img class="hero-camper-image" src="images/main/mobile-office-van-green.png" alt="Line-art illustration of the meihuizen.ai mobile office van, with a code icon and palm-and-camel emblem on its side panel, parked beside a palm-tree island with a dog wearing sunglasses in the foreground" loading="lazy" width="796" height="433">
+         <div class="hero-camper-image hero-van-scene" role="img" aria-label="Line-art illustration of the meihuizen.ai mobile office van, with a code icon and palm-and-camel emblem on its side panel, parked beside a palm-tree island with a dog wearing sunglasses in the foreground">
+          <img class="hero-van-bg" src="images/main/hero-van-bg.png" alt="" aria-hidden="true" loading="lazy" width="796" height="433">
+          <div class="hero-van-office-mask" aria-hidden="true"></div>
+          <img class="hero-van-office-bg" src="images/main/hero-van-office.png" alt="" aria-hidden="true" loading="lazy" width="281" height="433">
+          <div class="hero-van-shadow" aria-hidden="true"></div>
+          <div class="hero-van-dog-right" aria-hidden="true"><img src="images/main/hero-van-dog-walk.png" alt="" loading="lazy"></div>
+          <div class="hero-van-dog-left" aria-hidden="true"><img src="images/main/hero-van-dog-walk.png" alt="" loading="lazy"></div>
+          <div class="hero-van-dog-sit" aria-hidden="true"><img src="images/main/hero-van-dog-sit.png" alt="" loading="lazy"></div>
+         </div>
          <br>
          <p>Need an AI implementation partner who ships production software, not a pitch deck? That's <strong>meihuizen.ai LLC</strong>.</p>
         </div>
