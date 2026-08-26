@@ -13,8 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Acre, Zero Dependency | meihuizen.ai LLC</title>
-<meta name="description" content="Off-grid AI farming near Utrecht: a solar-powered Pico field node, 125 years of KNMI weather, an honest Thun calendar implementation, and a local LLM scheduler that never does arithmetic.">
-<meta name="keywords" content="One Acre Zero Dependency, off-grid AI farming, AI homesteading, Raspberry Pi Pico field node, LiFePO4 solar node, KNMI weather data, Open-Meteo, LSTM solar forecasting, local LLM scheduler, Thun biodynamic calendar, skyfield, Nico Meihuizen">
+<meta name="description" content="Off-grid AI farming on two plots 2,256 km apart: Prora on the German Baltic through summer, Castelo Branco in Portugal through winter. Solar-powered Pico node, DWD and ERA5-Land history, an honest Thun calendar, and a local LLM that never does arithmetic.">
+<meta name="keywords" content="One Acre Zero Dependency, off-grid AI farming, AI homesteading, Prora Ruegen, Castelo Branco Portugal, Raspberry Pi Pico field node, LiFePO4 solar node, DWD Climate Data Center, IPMA, ERA5-Land, Open-Meteo, LSTM solar forecasting, local LLM scheduler, Thun biodynamic calendar, skyfield, Nico Meihuizen">
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
@@ -27,27 +27,27 @@
 <link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
 <meta property="og:title" content="One Acre, Zero Dependency | meihuizen.ai LLC">
-<meta property="og:description" content="Off-grid AI farming near Utrecht: a solar-powered Pico field node, 125 years of KNMI weather, an honest Thun calendar implementation, and a local LLM scheduler that never does arithmetic.">
+<meta property="og:description" content="Off-grid AI farming on two plots 2,256 km apart: Prora on the German Baltic through summer, Castelo Branco in Portugal through winter. Solar-powered Pico node, DWD and ERA5-Land history, an honest Thun calendar, and a local LLM that never does arithmetic.">
 <meta property="og:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
 <meta property="og:url" content="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="One Acre, Zero Dependency | meihuizen.ai LLC">
-<meta name="twitter:description" content="Off-grid AI farming near Utrecht: a solar-powered Pico field node, 125 years of KNMI weather, an honest Thun calendar implementation, and a local LLM scheduler that never does arithmetic.">
+<meta name="twitter:description" content="Off-grid AI farming on two plots 2,256 km apart: Prora on the German Baltic through summer, Castelo Branco in Portugal through winter. Solar-powered Pico node, DWD and ERA5-Land history, an honest Thun calendar, and a local LLM that never does arithmetic.">
 <meta name="twitter:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "name": "One Acre, Zero Dependency",
-  "description": "Off-grid, AI-driven farming on two seasonal plots near Utrecht: a solar-powered Pico 2 W field node, a Python stack over 125 years of KNMI weather, a from-first-principles Thun calendar engine, and a local LLM scheduler.",
+  "description": "Off-grid, AI-driven farming on two seasonal plots 2,256 km apart, Prora on the German Baltic coast and Castelo Branco in central Portugal: a solar-powered Pico 2 W field node, a Python stack over DWD station records and ERA5-Land reanalysis, a from-first-principles Thun calendar engine, and a local LLM scheduler.",
   "author": {
     "@type": "Person",
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai"
   },
   "image": "https://www.meihuizen.ai/images/project_two/one-acre-og.png",
-  "keywords": "off-grid AI farming, Pico 2 W field node, LSTM solar forecasting, local LLM scheduler, Thun biodynamic calendar, KNMI weather data",
+  "keywords": "off-grid AI farming, Pico 2 W field node, LSTM solar forecasting, local LLM scheduler, Thun biodynamic calendar, DWD Climate Data Center, ERA5-Land",
   "url": "https://www.meihuizen.ai/projects/off-grid-ai-homestead.html",
   "sameAs": "https://github.com/nicomeihuizen-byte/AI-Homestead",
   "datePublished": "2026-01-01",
@@ -114,13 +114,13 @@
     <div class="terminal-body">
       <!-- <div class="project-kicker">02_project / full-stack</div> -->
       <h1>One Acre, Zero Dependency</h1>
-      <p class="project-summary">Off-grid, AI-driven farming on two seasonal plots near Utrecht. One cultivated through summer, one through winter. A solar-powered field node reads soil and weather, and a laptop merges that with 125 years of Dutch records, forecasts its own solar budget, and asks a local LLM what to do today.</p>
+      <p class="project-summary">Off-grid, AI-driven farming on two plots 2,256 km apart. Prora on the German Baltic coast through summer, Castelo Branco in central Portugal through winter. A solar-powered field node reads soil and weather, and a laptop merges that with decades of station and reanalysis records, forecasts its own solar budget, and asks a local LLM what to do today.</p>
       <p class="project-status">status: phase 0. Nothing is built yet. The plan is.</p>
       <figure class="project-figure project-figure-hero">
         <a href="../images/project_two/repo/architecture.svg">
           <img src="../images/project_two/repo/architecture.svg" alt="System architecture: a Pico 2 W field node sending readings over BLE or LoRa to a Python stack on a laptop that ingests, stores, models and schedules" width="940" height="520">
         </a>
-        <figcaption>Sensor to scheduler. The store is the seam: everything upstream writes to it, everything downstream reads from it.</figcaption>
+            <figcaption>Sensor to scheduler. The store is the seam: everything upstream writes to it, everything downstream reads from it. Drawn before the site survey, so the ingest box still names KNMI. That slot is DWD at Prora and ERA5-Land at Castelo Branco.</figcaption>
       </figure>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
@@ -131,16 +131,17 @@
           <h2 class="section-label">// overview</h2>
           <h2>The question</h2>
           <blockquote class="project-quote">How much of a small farm's daily decision-making can genuinely off-grid AI handle end to end, from sensor to scheduler?</blockquote>
-          <p>That is the whole project. Two plots near Utrecht, one farmed through summer and one through winter. Hardware, code, training data and failures, documented in public through 2026 and into 2027.</p>
+          <p>That is the whole project. Two plots at opposite ends of Europe, one farmed through summer and one through winter, worked in alternation by driving between them. Hardware, code, training data and failures, documented in public through 2026 and into 2027.</p>
           <h2>What scoping it changed</h2>
           <p>The first version of this page said Raspberry Pi, soil NPK sensors, and a planting scheduler built on the biodynamic calendar. Scoping it properly killed all three.</p>
           <p>A Pi cannot survive a Dutch December on a birdbox panel. The cheap NPK probes do not measure NPK. And the biodynamic calendar is a hypothesis, not a scheduling rule.</p>
+          <p>Then the site survey came back, and the two plots turned out to be 2,256 km apart in two different countries, which took the weather pipeline with it.</p>
           <p>None of that made the project smaller. It made it honest.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
           <div class="stack">
-            <span>Pico 2 W</span><span>MicroPython</span><span>Python 3.11</span><span>SQLite</span><span>skyfield</span><span>LSTM</span><span>Ollama</span><span>BLE / LoRa</span>
+            <span>Pico 2 W</span><span>MicroPython</span><span>Python 3.11</span><span>SQLite</span><span>skyfield</span><span>LSTM</span><span>Ollama</span><span>BLE / LoRa</span><span>DWD / IPMA</span><span>ERA5-Land</span>
           </div>
           <a class="doc-download" href="https://github.com/nicomeihuizen-byte/AI-Homestead" target="_blank" rel="noopener">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
@@ -167,6 +168,33 @@
 
       <div class="project-sections">
         <section>
+          <h2 class="section-label">// where</h2>
+          <h2>Two plots, 2,256 km apart</h2>
+          <p>The site survey is the one Phase 0 deliverable that unblocks everything else, and it is now answered. The plots are not neighbours. They are 2,256 km and 14.6 degrees of latitude apart, which is the whole point: you follow the growing season instead of fighting it.</p>
+          <div class="site-cards">
+            <div class="site-card">
+              <h3>Prora <span class="site-season">summer</span></h3>
+              <dl>
+                <div><dt>Where</dt><dd>R&uuml;gen, German Baltic coast</dd></div>
+                <div><dt>Latitude</dt><dd>54.39 &deg;N</dd></div>
+                <div><dt>Reference</dt><dd>DWD Arkona, station 00183, 33 km north</dd></div>
+                <div><dt>Winter solstice</dt><dd>7.0 h of daylight, sun peaks at 12.2 &deg;</dd></div>
+              </dl>
+            </div>
+            <div class="site-card">
+              <h3>Castelo Branco <span class="site-season">winter</span></h3>
+              <dl>
+                <div><dt>Where</dt><dd>Central Portugal, inland</dd></div>
+                <div><dt>Latitude</dt><dd>39.82 &deg;N</dd></div>
+                <div><dt>Reference</dt><dd>IPMA long series, plus ERA5-Land</dd></div>
+                <div><dt>Winter solstice</dt><dd>9.2 h of daylight, sun peaks at 26.7 &deg;</dd></div>
+              </dl>
+            </div>
+          </div>
+          <p>Those solstice figures are geometry, not measurements, so they are exact and they are the only solar numbers on this page that do not need a site survey to stand up. Everything else waits for real data.</p>
+        </section>
+
+        <section>
           <h2 class="section-label">// commitments</h2>
           <h2>Three things this project will not trade away</h2>
           <ol class="commitments">
@@ -179,19 +207,16 @@
         <section>
           <h2 class="section-label">// the field node</h2>
           <h2>Why it is a Pico, not a Pi</h2>
-          <p>De Bilt averages about 200 W/m&sup2; over 24 hours in June, and about 20 in December. A factor of ten.</p>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/dutch-irradiance.svg">
-              <img src="../images/project_two/repo/dutch-irradiance.svg" alt="De Bilt 24-hour mean irradiance: 200 W per square metre in June against 20 in December, a factor of ten" loading="lazy" width="900" height="300">
-            </a>
-          </figure>
-          <p>A Pi Zero 2 W idles at 0.4 to 0.6 W and still draws around 50 mA when halted. At half a peak-sun-hour in December that means roughly a 60 W panel and 100 Wh of battery. A caravan installation bolted to a birdbox.</p>
+          <p>The original argument for a small microcontroller was built on Dutch December sun. The real northern plot is worse than that. On the winter solstice Prora gets 7.0 hours of daylight and the sun never climbs higher than 12.2 degrees above the horizon, and low sun is not a small correction: it is most of the loss.</p>
+          <p>A Pi Zero 2 W idles at 0.4 to 0.6 W and still draws around 50 mA when halted. Against a Baltic December that means roughly a 60 W panel and 100 Wh of battery. A caravan installation bolted to a birdbox.</p>
           <figure class="project-figure">
             <a href="../images/project_two/repo/power-budget.svg">
               <img src="../images/project_two/repo/power-budget.svg" alt="Daily energy comparison: Pi always-on 14.4 Wh, Pi duty-cycled 2.4 Wh, Pico W duty-cycled 0.16 Wh" loading="lazy" width="900" height="360">
             </a>
+            <figcaption>Repo figure, drawn against Dutch December sun before the site survey. Prora is the harsher site, so the real margin is tighter than this shows.</figcaption>
           </figure>
           <p>The Pico 2 W wins on a mechanical detail more than on the chip. VSYS accepts 1.8 to 5.5 V, so a single LiFePO4 cell drives it directly. No boost stage, so no boost-converter quiescent current. Roughly sixty times smaller daily budget. A Pi still has a place in this project. It just is not in the field box.</p>
+          <p>Castelo Branco is the easy site. Nine and a bit hours on the solstice, sun at 26.7 degrees, and a winter that mostly cooperates. It does not get a vote. The node is one design, built once and driven between the plots, so it is sized for the worse case and every decision in the power path is a Prora decision.</p>
           <p>The trap worth repeating: a charge controller's own quiescent current can exceed a well-designed node's entire consumption. One popular solar power manager draws under 30 mA idle, which is 3.6 Wh a day, or fifteen to forty-five times the whole Pico budget. Pick the power path before you pick the MCU.</p>
 
           <h2>What the hardware can honestly measure</h2>
@@ -207,10 +232,11 @@
             <a href="../images/project_two/repo/birdbox-build.svg">
               <img src="../images/project_two/repo/birdbox-build.svg" alt="Cross-section of the field node: birdbox shell over an IP66 box, vent and glands on the underside, radiation shield on a tail, panel at 65 degrees, soil probes at 10 and 30 cm" loading="lazy" width="940" height="620">
             </a>
+            <figcaption>Repo figure. The mounting-height note still cites KNMI comparability. The principle holds, the reference station does not.</figcaption>
           </figure>
           <p>Two failure modes will kill the node before any sensor does.</p>
-          <p><strong>Condensation.</strong> A sealed box breathes. It warms in the day and pushes air out, cools at night and sucks damp air back in through every imperfection, and over weeks it pumps itself full of water. A tighter seal makes this worse. In the Dutch climate this is a certainty, not a risk. Fit a Gore-type ePTFE pressure-equalisation vent, add indicating desiccant, conformal-coat the boards, put every gland and the vent on the underside, and drip-loop every cable. Three euros, and the highest-value three euros in the build.</p>
-          <p><strong>Cold charging.</strong> Never charge LiFePO4 below 0 &deg;C. Lithium plates on the anode: one to five percent permanent capacity loss per event, irreversible, with dendrite risk. Plenty of cheap 1S BMS boards do not implement a low-temperature charge cutoff. Verify the datasheet or add an NTC and a MOSFET yourself, then test it in a freezer. Dutch frost mornings are also the clear sunny ones, so the correlation works against you. Bury or insulate the cell: soil at 30 cm barely drops below 3 or 4 degrees.</p>
+          <p><strong>Condensation.</strong> A sealed box breathes. It warms in the day and pushes air out, cools at night and sucks damp air back in through every imperfection, and over weeks it pumps itself full of water. A tighter seal makes this worse. On a Baltic island, in a box that spends its winter in marine air, this is a certainty rather than a risk. Fit a Gore-type ePTFE pressure-equalisation vent, add indicating desiccant, conformal-coat the boards, put every gland and the vent on the underside, and drip-loop every cable. Three euros, and the highest-value three euros in the build.</p>
+          <p><strong>Cold charging.</strong> Never charge LiFePO4 below 0 &deg;C. Lithium plates on the anode: one to five percent permanent capacity loss per event, irreversible, with dendrite risk. Plenty of cheap 1S BMS boards do not implement a low-temperature charge cutoff. Verify the datasheet or add an NTC and a MOSFET yourself, then test it in a freezer. Baltic frost mornings are also the clear sunny ones, so the correlation works against you exactly when the panel finally has something to give. Bury or insulate the cell: soil at 30 cm barely drops below 3 or 4 degrees.</p>
           <p>Print the radiation shield in ASA or PETG, not PLA, which loses real strength outdoors within a month. Use the wooden birdbox as the decorative rain-and-sun shell and put a proper IP66 box inside it. The air gap between the two buffers thermal swings nicely.</p>
 
           <h2>The link, measured before it is chosen</h2>
@@ -226,10 +252,14 @@
 
         <section>
           <h2 class="section-label">// data</h2>
-          <h2>Weather, and 125 years of it</h2>
-          <p>KNMI's script service gives De Bilt, station 260, about 6 km from Utrecht, daily from 1 January 1901, with global radiation and reference evapotranspiration included. No API key. That is the ground truth.</p>
-          <p>Open-Meteo adds what a weather station cannot measure: ERA5-Land back to 1950 for soil moisture and temperature at depth, KNMI's own Harmonie AROME at 2 km for the forecast, and satellite-observed irradiance projected onto the panel's actual tilt and azimuth, which removes a whole transposition step from the PV model. PVGIS sizes the system once and is then put away.</p>
-          <p>Four traps, all of which produce silently wrong data. KNMI values are integer-scaled, and a -1 in humidity or sunshine means "less than 0.05", not minus one. KNMI's EV24 is Makkink and Open-Meteo's et0 is FAO-56 Penman-Monteith, so they will never agree and must never share a series. The Open-Meteo archive and forecast use different soil depth bins, so they cannot be concatenated without an explicit mapping step. And KNMI states plainly that its station series are unsuitable for trend analysis: fine operationally, wrong for climate trending.</p>
+          <h2>Two plots, two weather services, one honest gap</h2>
+          <p>The original plan leaned on KNMI, which hands you De Bilt daily from 1901 with global radiation and reference evapotranspiration in the same file, free and without an API key. That was a comfortable assumption to build on. Neither plot is in the Netherlands, so it is gone.</p>
+          <p><strong>Prora is well served.</strong> The DWD Climate Data Center publishes open data over plain HTTP, no key, CC BY 4.0. Arkona, station 00183, sits 33 km north on the same island with a daily climate series running from 1947. Better than that: Arkona is one of only 64 stations in DWD's daily solar network, so the station that gives temperature and rainfall also gives measured global radiation. For a project whose binding constraint is the power budget, a real radiation record 33 km from the panel is luck worth naming out loud.</p>
+          <p><strong>Castelo Branco is not.</strong> Portugal has no equivalent open historical feed. IPMA's open-data API serves current observations and forecasts rather than deep history, and the long climate series are published as downloadable tables across roughly fifty mainland stations. So the two plots are not equally well observed, and quietly pretending otherwise would be exactly the failure this project exists to avoid. At Castelo Branco the deep history comes from ERA5-Land reanalysis, back to 1950, with IPMA as the local sanity check. At Prora it runs the other way round: station first, reanalysis second.</p>
+          <p><strong>Most of the pipeline survived the move.</strong> ERA5-Land, the satellite-observed irradiance record, and PVGIS are continental or global, so they behave identically at both sites. What did not survive was the single-station assumption sitting underneath them.</p>
+          <p><strong>The forecast is asymmetric too.</strong> DWD's ICON-D2 runs at 2 km and covers R&uuml;gen. Nothing at that resolution reaches Portugal, where ICON-EU at 7 km is the best of the free models. Prora therefore gets a materially sharper forecast than Castelo Branco, and any skill comparison between the two plots has to account for that before it means anything at all.</p>
+          <p><strong>Five traps, all of which produce silently wrong data.</strong> DWD marks missing values as 9990.0, not as a blank and not as a negative, so a naive mean sails straight past it and comes out absurd. DWD's daily climate file carries sunshine duration but no global radiation whatsoever, which lives in a separate and far sparser dataset, so a pipeline written with the KNMI habit of one-file-has-everything will quietly produce an empty radiation column. Reference evapotranspiration is computed by different formulas at different services, so those series must never be concatenated. The reanalysis archive and the forecast use different soil depth bins and need an explicit mapping step. And station series in general are unsuitable for trend analysis because of relocations and instrument changes: fine operationally, wrong for climate trending.</p>
+          <p><strong>And one trap that exists only because there are two plots.</strong> Two networks, two languages of metadata, two timezones, two solar regimes. Every row has to carry its site, nothing gets pooled without a stated reason, and a model trained on one plot has to prove itself on the other rather than being assumed to travel.</p>
         </section>
 
         <section>
@@ -266,7 +296,7 @@
           <p>The specific claim, that the Moon's position against a constellation at sowing measurably changes yield in the corresponding plant organ, is not supported.</p>
           <p>Hartmut Spiess ran systematic radish trials from 1977 to 1986 at the Institute for Biodynamic Research, from inside the tradition, and failed to verify the trigon effect. Mayoral and colleagues put it flatly in 2020: there is no reliable, science-based evidence for any relationship between lunar phases and plant physiology. The physics is unkind too. Lunar tidal force on a two-metre organism is about a thousand times smaller than that of a one-kilo mass sitting a metre away. The one favourable review is a contested reanalysis of Spiess's own data by a non-neutral author.</p>
           <p>Separately, and honestly: there is credible plant science on moonlight as a weak photoperiodic cue. That is evidence about photons, not constellations, and the first should not be used to launder the second.</p>
-          <p>So the calendar is a logged covariate and never a hard constraint. The scheduler may surface "today is a leaf day" as context. Every planting records its day type. Over seasons it gets tested, from an unusually good position, because the weather pipeline supplies exactly the covariates the historical trials lacked. The analysis is pre-registered and frozen before the first sowing. And there is no open licensed dataset of Thun days to validate against, so validation is done the slow way: one printed edition, sixty to ninety days hand-keyed, kept out of the repo.</p>
+          <p>So the calendar is a logged covariate and never a hard constraint. The scheduler may surface "today is a leaf day" as context. Every planting records its day type. Over seasons it gets tested, from an unusually good position, because the weather pipeline supplies exactly the covariates the historical trials lacked. The analysis is pre-registered and frozen before the first sowing, and having two plots in genuinely different climates is a better test bed than one: the same day type lands on two very different growing environments, which is the sort of confound the historical trials had no way to separate. And there is no open licensed dataset of Thun days to validate against, so validation is done the slow way: one printed edition, sixty to ninety days hand-keyed, kept out of the repo.</p>
         </section>
 
         <section>
@@ -275,6 +305,7 @@
           <p>Predict tomorrow's harvestable energy and the resulting battery state, so the power-hungry work gets scheduled into the sun instead of into a fixed cron slot.</p>
           <p>Start with the baselines you have to beat: persistence, meaning tomorrow equals today, and a clear-sky-index model. Report all skill relative to those. An LSTM that cannot beat persistence is a finding, and an honest one. Walk-forward validation only. A random split on a time series leaks the future and produces flattering nonsense.</p>
           <p>The honest constraint is one winter of data. An LSTM on ninety days of a strongly seasonal signal will overfit. Either pre-train on reconstructed history at these coordinates and fine-tune locally, or accept that a physical model plus a small residual regressor beats a data-hungry network here, and log that as the result. Do not report a deep model as better than it is because it was more fun to build.</p>
+          <p>Two plots make this harder, and more interesting. A model fitted to a Baltic summer has no business forecasting a Portuguese winter, and the forecast feeding it is sharper at Prora than at Castelo Branco anyway. So there are two forecasting problems here, not one, and the honest reporting is per site, against that site's own baselines. If one model does turn out to travel between them, that is a real result and worth saying out loud rather than assuming from the start.</p>
 
           <h2>The LLM proposes, Python disposes</h2>
           <p>A local model on the laptop, Qwen or Llama class, sized to the hardware. That keeps the off-grid claim honest and costs nothing per call.</p>
@@ -290,6 +321,7 @@
             <a href="../images/project_two/repo/roadmap.svg">
               <img src="../images/project_two/repo/roadmap.svg" alt="Roadmap from September 2026 to October 2027 across ten phases" loading="lazy" width="940" height="530">
             </a>
+            <figcaption>Repo figure. The phase dates hold. Its note about the first Dutch winter now means the first Baltic winter at Prora.</figcaption>
           </figure>
           <p>Nothing is done because code exists. Every phase has a done-when you can actually check.</p>
           <div class="phase-table-wrap">
@@ -301,7 +333,7 @@
                 <tr><td>2 &middot; The link</td><td>Bluetooth off for 20 minutes, back on, and every reading from the gap lands in the database with the right timestamp</td></tr>
                 <tr><td>3 &middot; Power and deployment</td><td>Fourteen days outdoors with no gaps and no intervention, then fourteen more spanning a genuinely overcast week</td></tr>
                 <tr><td>4 &middot; Calibration</td><td>A raw row becomes a physical row, and every channel has a defensible error bar written next to it</td></tr>
-                <tr><td>5 &middot; Weather and history</td><td>A continuous backfilled series with an explicit gap report, and local readings visibly overlaying De Bilt</td></tr>
+                <tr><td>5 &middot; Weather and history</td><td>A continuous backfilled series per plot with an explicit gap report, and local readings visibly overlaying that plot&rsquo;s reference record</td></tr>
                 <tr><td>6 &middot; Biodynamic engine</td><td>Ophiuchus folds and is flagged, strays return nothing, and validation mismatches cluster on the three known causes</td></tr>
                 <tr><td>7 &middot; Solar forecast</td><td>Next-24h watt-hours with a stated interval, and a model card reporting skill against both baselines on a walk-forward split</td></tr>
                 <tr><td>8 &middot; LLM scheduler</td><td>Seven consecutive dated briefs, each traceable to its inputs, and at least one logged disagreement</td></tr>
@@ -315,12 +347,12 @@
           <ul class="risk-list">
             <li><strong>BLE is unreliable at the real distance.</strong> Silent data loss in bad weather. Measured in Phase 0, and the ingest seam makes LoRa a one-module change.</li>
             <li><strong>Condensation kills the node.</strong> Near-certain without a vent. A dead node in February, for the sake of five euros of vent, desiccant and coating.</li>
-            <li><strong>The data is plausible but wrong.</strong> Self-heating, no radiation shield, reed bounce. This is the default outcome, and it costs months of confidently wrong analysis. Four bench tests in Phase 1, cross-checked against De Bilt in Phase 4.</li>
+            <li><strong>The data is plausible but wrong.</strong> Self-heating, no radiation shield, reed bounce. This is the default outcome, and it costs months of confidently wrong analysis. Four bench tests in Phase 1, cross-checked against each plot&rsquo;s reference record in Phase 4.</li>
             <li><strong>The LSTM overfits one winter.</strong> An impressive model that forecasts nothing. Baselines first, walk-forward only.</li>
             <li><strong>The LLM does arithmetic.</strong> Certain if allowed. All numbers in Python, every time.</li>
             <li><strong>Scope creep into the vision side</strong>, because it is the fun part, and then the core loop never closes. Phase 9 is gated behind a full season. Hold the line.</li>
           </ul>
-          <p class="project-credit">MIT for the code. Weather data from KNMI and Open-Meteo (CC-BY-4.0). Ephemerides from JPL via skyfield. No copyrighted calendar data is redistributed.</p>
+          <p class="project-credit">MIT for the code. Weather data from DWD (CC BY 4.0), IPMA, and Open-Meteo (CC-BY-4.0). Ephemerides from JPL via skyfield. No copyrighted calendar data is redistributed.</p>
         </section>
       </div>
 
