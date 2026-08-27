@@ -2,7 +2,7 @@
   const target = document.getElementById('typeTarget');
 
   if (target) {
-    // deduped glyph pool: letters, digits and symbols for the falling rain columns
+    // deduped glyph pool: letters, digits and symbols that make up the skyline
     const glyphs = Array.from(new Set(
       '7xK#m9!vQ$pB2@wZ&L*u9%tY6(xN1)zP5_eR8+qW3=jM4[vF]oK0{dX}pL~aG@4!mK9$xP2#zL6&Y*v1%uR3(bN7)wQ5_jW8+tX4=eM0[fF]kO7{sP}xI~q'.split('')
     ));
@@ -25,27 +25,11 @@
     const firstRegionWavelengthPx = 45;
     const firstRegionJitterPx = 12;
     const ctx = target.getContext('2d');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // the rain should only fall once per browser session - after that (switching language,
-    // navigating back to home, or refreshing) it renders straight to the finished skyline
-    const RAIN_SESSION_KEY = 'meihuizenRainPlayed';
-    let rainAlreadyPlayed = false;
-    try {
-      rainAlreadyPlayed = sessionStorage.getItem(RAIN_SESSION_KEY) === '1';
-    } catch (e) {
-      // sessionStorage unavailable (e.g. private browsing) - fall back to always animating
-    }
 
     let rows = 0;
     let columns = 0;
     let maxFillRowsPerColumn = [];
-    let dropSpeedPerColumn = [];
     let landedGrid = [];
-    let fillHeight = [];
-    let dropRow = [];
-    let dropGlyph = [];
-    let dropDelay = [];
-    let intervalId = null;
 
     function randomGlyph() {
       return glyphs[Math.floor(Math.random() * glyphs.length)];
@@ -99,21 +83,7 @@
         return Math.min(rows, Math.max(1, Math.round(clampedPx / fontSize)));
       });
 
-      // first-region columns (under the logo) fall twice as fast; the skyline region keeps its normal speed
-      // speeds are rows-per-tick tuned at the 300px baseline height; scaling by heightScale keeps the
-      // fall duration (in ticks) the same on short mobile canvases instead of collapsing to an instant pop-in
-      const scaledFirstRegionDropSpeed = 4 * heightScale;
-      const scaledSkylineDropSpeed = 2 * heightScale;
-      dropSpeedPerColumn = new Array(columns).fill(0).map((_, column) => {
-        const x = column * columnWidth + columnWidth / 2;
-        return x < scaledLogoClearWidthPx ? scaledFirstRegionDropSpeed : scaledSkylineDropSpeed;
-      });
-
       landedGrid = new Array(columns).fill(null).map(() => new Array(rows).fill(null));
-      fillHeight = new Array(columns).fill(0);
-      dropRow = new Array(columns).fill(null);
-      dropGlyph = new Array(columns).fill(null);
-      dropDelay = new Array(columns).fill(0).map(() => Math.floor(Math.random() * 20));
     }
 
     function drawGrid() {
@@ -130,89 +100,30 @@
             ctx.fillText(glyph, column * columnWidth, row * fontSize);
           }
         }
-
-        if (dropRow[column] !== null && dropRow[column] >= 0) {
-          ctx.fillText(dropGlyph[column], column * columnWidth, dropRow[column] * fontSize);
-        }
       }
     }
 
-    function tick() {
-      let allFilled = true;
+    // The skyline is painted straight into its finished position. There is no falling
+    // animation: every load of every index page draws the completed shape once.
+    // resize() re-rolls the per-column jitter and randomGlyph() re-rolls the characters,
+    // so each page shows a slightly different skyline. That variation is deliberate.
+    function render() {
+      resize();
 
-      for (let column = 0; column < columns; column++) {
-        if (fillHeight[column] >= maxFillRowsPerColumn[column]) {
-          continue;
-        }
-
-        allFilled = false;
-
-        if (dropRow[column] === null) {
-          if (dropDelay[column] > 0) {
-            dropDelay[column] -= 1;
-            continue;
-          }
-          dropRow[column] = -1 - Math.floor(Math.random() * 6);
-          dropGlyph[column] = randomGlyph();
-          continue;
-        }
-
-        dropRow[column] += dropSpeedPerColumn[column];
-        dropGlyph[column] = randomGlyph();
-
-        const landingRow = rows - 1 - fillHeight[column];
-
-        if (dropRow[column] >= landingRow) {
-          landedGrid[column][landingRow] = dropGlyph[column];
-          fillHeight[column] += 1;
-          dropRow[column] = null;
-          dropDelay[column] = Math.floor(Math.random() * 8);
-        }
-      }
-
-      drawGrid();
-
-      if (allFilled) {
-        clearInterval(intervalId);
-        intervalId = null;
-      }
-    }
-
-    function drawStaticFrame() {
       for (let column = 0; column < columns; column++) {
         const capRows = maxFillRowsPerColumn[column];
         for (let row = rows - capRows; row < rows; row++) {
           landedGrid[column][row] = randomGlyph();
         }
       }
+
       drawGrid();
     }
 
-    function start() {
-      resize();
-
-      if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-      }
-
-      if (reduced || rainAlreadyPlayed) {
-        drawStaticFrame();
-      } else {
-        rainAlreadyPlayed = true;
-        try {
-          sessionStorage.setItem(RAIN_SESSION_KEY, '1');
-        } catch (e) {
-          // sessionStorage unavailable - the animation will simply replay next load
-        }
-        intervalId = setInterval(tick, 30);
-      }
-    }
-
     // Mobile browsers fire 'resize' when the address bar hides/shows on scroll, which only
-    // changes the viewport height, not its width. Only replay the whole falling-rain animation
-    // when the width actually changes (a real resize or orientation change); otherwise leave the
-    // current frame alone so the effect plays once per page load instead of re-triggering on scroll.
+    // changes the viewport height, not its width. Only redraw when the width actually changes
+    // (a real resize or orientation change); otherwise leave the current frame alone, so the
+    // skyline does not visibly re-roll its glyphs every time the address bar moves.
     let lastWidth = window.innerWidth;
 
     function handleResize() {
@@ -221,10 +132,10 @@
         return;
       }
       lastWidth = newWidth;
-      start();
+      render();
     }
 
-    start();
+    render();
     window.addEventListener('resize', handleResize);
   }
 })();
@@ -233,7 +144,7 @@
   const refreshBtn = document.getElementById('heroVanRefreshBtn');
 
   if (refreshBtn) {
-    // reload replays the falling-rain intro and the hero van animation
+    // reload replays the hero van animation
     refreshBtn.addEventListener('click', () => window.location.reload());
   }
 })();
