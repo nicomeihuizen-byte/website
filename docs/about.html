@@ -137,6 +137,15 @@
   .section-head .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent2);}
   h1{font-family:var(--font-mono);font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.5;color:var(--accent);}
   .about-copy{max-width:56ch;margin-top:22px;padding-top:22px;border-top:1px solid var(--line);}
+  .about-copy h2{
+    font-family:var(--font-mono);
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--accent);
+    margin:26px 0 10px;
+  }
+  .about-copy h2:first-of-type{ margin-top:0; }
   .about-copy p{margin-bottom:16px;color:var(--text-muted);font-size:15px;}
   .about-copy p:last-child{margin-bottom:0;}
   .about-copy strong{color:var(--text);font-weight:600;}
@@ -193,7 +202,7 @@
   <div class="navbar">
     <nav aria-label="Primary navigation">
       <ul>
-        <li><a href="index.html">home</a></li>
+        <li><a href="/">home</a></li>
         <li><a href="builds.html">builds</a></li>
         <li><a href="about.html" aria-current="page">about</a></li>
         <li><a href="index.html#contact">contact</a></li>
@@ -244,9 +253,13 @@
       </div>
       <div class="about-copy">
         <img class="about-image" src="images/main/ai-software-engineering-workspace.png" alt="AI software engineering workspace" loading="lazy" width="800" height="800">
+        <h2>From an IBM 5110 to enterprise IT</h2>
         <p>I got my first computer at 12: an IBM 5110, no tutorials, just a terminal and a manual. I taught myself HTML and JavaScript there, building websites for fun. That hobby ran alongside a career in enterprise IT sales, pitching data center, cloud, and SaaS at IBM, SoftLayer, Oracle, and Minitab to buyers who could smell a shallow pitch instantly.</p>
+        <h2>The pivot to AI-native engineering</h2>
         <p>Years of pitching taught one habit: understand a product inside out before you present it. Then came the pivot, retraining through Metana's AI Software Engineering program. I now lead meihuizen.ai as an AI-native software engineer, stacking that coding background, sales instinct, and AI training on top of each other. AI isn't a feature here. It's how the work gets built.</p>
+        <h2>The stack</h2>
         <p>The stack: TypeScript, Python, React, LLM tooling, agentic workflows, shipped and monitored, not demoed once and forgotten. No computer science degree, and that's fine. Ask about a decision and get a straight answer, including the ones that didn't work first try.</p>
+        <h2>Small on purpose</h2>
         <p>I build for quality of life and the freedom to work on my own terms, including as a digital nomad. Small on purpose: close enough to actually understand what you're trying to accomplish, and quick to show up in person when it helps. No far-away delivery team in between.</p>
         <br>
         <p><strong><i class="quote-text">"The measure of intelligence is the ability to change."</i></strong> - Albert Einstein</p>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page not found | meihuizen.ai</title>
+<meta name="description" content="That page does not exist on meihuizen.ai. Head back to the homepage, the builds, or the about page.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0E121A">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#10121A; --bg-raised:#171A24; --line:#262A38;
+    --text:#ECEDF3; --text-muted:#8B90A3; --accent:#5FBF8E;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--font-body);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(232,179,74,0.07),transparent 60%);
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .terminal{
+    width:100%; max-width:780px; background:var(--bg-raised);
+    border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  }
+  .terminal-bar{
+    display:flex; gap:8px; align-items:center; padding:12px 16px;
+    border-bottom:1px solid var(--line);
+  }
+  .terminal-bar span{width:11px;height:11px;border-radius:50%;background:var(--line);display:block;}
+  .terminal-body{padding:32px 28px;}
+  .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent);display:block;margin-bottom:10px;}
+  h1{font-family:var(--font-display);font-size:clamp(24px,5vw,34px);line-height:1.2;margin-bottom:16px;}
+  p{color:var(--text-muted);font-size:15px;margin-bottom:14px;max-width:56ch;}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .links a{
+    font-family:var(--font-mono); font-size:14px; text-decoration:none;
+    color:var(--text); border:1px solid var(--line); border-radius:6px;
+    padding:9px 16px; transition:border-color .2s,color .2s;
+  }
+  .links a:hover,.links a:focus-visible{border-color:var(--accent);color:var(--accent);}
+</style>
+</head>
+<body>
+<main class="terminal">
+  <div class="terminal-bar"><span></span><span></span><span></span></div>
+  <div class="terminal-body">
+    <span class="idx">~/404</span>
+    <h1>That page doesn't exist.</h1>
+    <p>The URL you followed is broken, retired, or was never here. Nothing was lost on your end.</p>
+    <p>Try one of these instead:</p>
+    <nav class="links" aria-label="Recovery links">
+      <a href="/">&larr; homepage</a>
+      <a href="/builds.html">builds</a>
+      <a href="/about.html">about</a>
+      <a href="/#contact">contact</a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>
