@@ -123,6 +123,20 @@ Manual checks diagnostics.py doesn't cover — do these too: click through navig
 3. Link it from the homepage work list and, if relevant, from `docs/sitemap.xml`.
 4. Run `python diagnostics.py` before committing.
 
+## The crew roster on the about page
+
+`about.html` (and its six translations) carries a section listing one human and the agents actually
+in use, each with a one-line function. Two rules for anyone editing it:
+
+- **It lists tools genuinely in the rotation.** If a tool stops being used, remove its card. These
+  are the only claims on that page nobody outside the business can verify, on a site whose whole
+  argument is that unverifiable claims are what agents get wrong. Nothing will flag a stale entry.
+- **No vendor logos, ever.** Anthropic, OpenAI, Google and Microsoft all restrict logo use that
+  implies partnership or endorsement, and a roster headed like this is the strongest possible
+  implication of exactly that. The heads are ASCII, drawn in CSS via `.crew .c-*::before`, kept out
+  of the markup so they do not pollute the text layer that agents read. The note under the roster
+  states the position in one line and should stay.
+
 ## Deployment
 
 Pushing to `main` publishes via GitHub Pages (custom domain from `docs/CNAME`). CodeQL runs automatically on push. There is no staging environment — treat `main` as production and validate locally (`http.server` + `diagnostics.py`) before pushing.

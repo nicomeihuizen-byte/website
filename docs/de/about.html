@@ -153,12 +153,19 @@
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
   .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
   .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
-  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
+  .crew .is-human::before{color:var(--accent);}
+  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
+  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
+  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
+  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
+  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
+  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
+  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
   .crew figcaption{display:flex;flex-direction:column;gap:3px;}
   .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
   .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
   .crew .is-human{border-color:var(--accent-dim);}
-  .crew .is-human pre{color:var(--accent);}
   .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
@@ -280,54 +287,33 @@
         <h2>Die Crew</h2>
         <p>Dreißig Mitarbeiter braucht es nicht mehr. Eine Person mit Agents hat die Reichweite, für die früher eine Abteilung nötig war, und so zu tun, als wäre es anders, ist das alte Organigramm mit besserem Marketing. Also hier die vollständige Besetzung.</p>
         <div class="crew">
-          <figure class="is-human">
-            <pre aria-hidden="true">┌─────┐
-│ * * │
-│  v  │
-└─────┘</pre>
-            <figcaption><b>Nico</b><span>denkt nach, wägt ab, entscheidet, prüft und unterschreibt</span></figcaption>
+          <figure class="is-human c-nico">
+            <figcaption><b>Nico</b>
+            <span>denkt nach, wägt ab, entscheidet, prüft und unterschreibt</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ o o │
-│  ─  │
-└─────┘</pre>
-            <figcaption><b>Claude</b><span>baut, schreibt und widerspricht</span></figcaption>
+          <figure class="c-claude">
+            <figcaption><b>Claude</b>
+            <span>baut, schreibt und widerspricht</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ - - │
-│  ~  │
-└─────┘</pre>
-            <figcaption><b>ChatGPT</b><span>Zweitmeinung, und Register A in einem Scan</span></figcaption>
+          <figure class="c-chatgpt">
+            <figcaption><b>ChatGPT</b>
+            <span>Zweitmeinung, und Register A in einem Scan</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ + + │
-│  .  │
-└─────┘</pre>
-            <figcaption><b>Gemini</b><span>dritte Lesung derselben Seite</span></figcaption>
+          <figure class="c-gemini">
+            <figcaption><b>Gemini</b>
+            <span>dritte Lesung derselben Seite</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ ? ? │
-│  o  │
-└─────┘</pre>
-            <figcaption><b>Perplexity</b><span>Retrieval, und woher eine Behauptung stammt</span></figcaption>
+          <figure class="c-perplexity">
+            <figcaption><b>Perplexity</b>
+            <span>Retrieval, und woher eine Behauptung stammt</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ ^ ^ │
-│  _  │
-└─────┘</pre>
-            <figcaption><b>Kimi</b><span>langer Kontext, und Neugier</span></figcaption>
+          <figure class="c-kimi">
+            <figcaption><b>Kimi</b>
+            <span>langer Kontext, und Neugier</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ = = │
-│  =  │
-└─────┘</pre>
-            <figcaption><b>Copilot</b><span>Inline-Vervollständigung im Editor</span></figcaption>
+          <figure class="c-copilot">
+            <figcaption><b>Copilot</b>
+            <span>Inline-Vervollständigung im Editor</span></figcaption>
           </figure>
         </div>
         <p class="crew-note">Tool-Namen stehen hier, um zu sagen, welche Tools. Keine Verbindung, Partnerschaft oder Empfehlung impliziert.</p>

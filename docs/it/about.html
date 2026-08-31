@@ -153,12 +153,19 @@
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
   .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
   .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
-  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
+  .crew .is-human::before{color:var(--accent);}
+  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
+  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
+  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
+  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
+  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
+  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
+  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
   .crew figcaption{display:flex;flex-direction:column;gap:3px;}
   .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
   .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
   .crew .is-human{border-color:var(--accent-dim);}
-  .crew .is-human pre{color:var(--accent);}
   .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
@@ -280,54 +287,33 @@
         <h2>La squadra</h2>
         <p>Trenta dipendenti non servono più. Una persona con degli agent ha la portata che una volta richiedeva un reparto, e fingere il contrario è il vecchio organigramma con un marketing migliore. Ecco quindi l'organico al completo.</p>
         <div class="crew">
-          <figure class="is-human">
-            <pre aria-hidden="true">┌─────┐
-│ * * │
-│  v  │
-└─────┘</pre>
-            <figcaption><b>Nico</b><span>pensa, riflette, decide, verifica e firma</span></figcaption>
+          <figure class="is-human c-nico">
+            <figcaption><b>Nico</b>
+            <span>pensa, riflette, decide, verifica e firma</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ o o │
-│  ─  │
-└─────┘</pre>
-            <figcaption><b>Claude</b><span>costruisce, scrive e ribatte</span></figcaption>
+          <figure class="c-claude">
+            <figcaption><b>Claude</b>
+            <span>costruisce, scrive e ribatte</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ - - │
-│  ~  │
-└─────┘</pre>
-            <figcaption><b>ChatGPT</b><span>seconda opinione, e registro A in una scansione</span></figcaption>
+          <figure class="c-chatgpt">
+            <figcaption><b>ChatGPT</b>
+            <span>seconda opinione, e registro A in una scansione</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ + + │
-│  .  │
-└─────┘</pre>
-            <figcaption><b>Gemini</b><span>terza lettura della stessa pagina</span></figcaption>
+          <figure class="c-gemini">
+            <figcaption><b>Gemini</b>
+            <span>terza lettura della stessa pagina</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ ? ? │
-│  o  │
-└─────┘</pre>
-            <figcaption><b>Perplexity</b><span>retrieval, e da dove viene un'affermazione</span></figcaption>
+          <figure class="c-perplexity">
+            <figcaption><b>Perplexity</b>
+            <span>retrieval, e da dove viene un'affermazione</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ ^ ^ │
-│  _  │
-└─────┘</pre>
-            <figcaption><b>Kimi</b><span>contesto lungo, e curiosità</span></figcaption>
+          <figure class="c-kimi">
+            <figcaption><b>Kimi</b>
+            <span>contesto lungo, e curiosità</span></figcaption>
           </figure>
-          <figure>
-            <pre aria-hidden="true">┌─────┐
-│ = = │
-│  =  │
-└─────┘</pre>
-            <figcaption><b>Copilot</b><span>completamento inline nell'editor</span></figcaption>
+          <figure class="c-copilot">
+            <figcaption><b>Copilot</b>
+            <span>completamento inline nell'editor</span></figcaption>
           </figure>
         </div>
         <p class="crew-note">I nomi dei tool dicono quali tool. Nessuna affiliazione, partnership o approvazione implicita.</p>
