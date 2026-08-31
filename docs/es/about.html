@@ -151,6 +151,22 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
+  .crew .is-human::before{color:var(--accent);}
+  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
+  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
+  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
+  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
+  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
+  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
+  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -261,6 +277,53 @@
         <p>El stack: TypeScript, Python, React, herramientas LLM, flujos de trabajo agénticos, entregado y monitorizado, no demostrado una vez y olvidado. Sin título en informática, y eso está bien. Pregunte por una decisión y obtendrá una respuesta honesta, incluidas las veces en que no funcionó a la primera.</p>
         <h2>Pequeños por decisión</h2>
         <p>Trabajo por la calidad de vida y la libertad de operar en mis propios términos, incluso como nómada digital. Pequeño a propósito: lo bastante cerca para entender de verdad lo que quiere lograr, y rápido para presentarme en persona cuando ayuda. Sin un equipo de entrega lejano de por medio.</p>
+        <h2>Sin oficina. A propósito.</h2>
+        <p>No hay oficina que visitar, porque no existe. El trabajo pasa donde está el trabajo: en su mesa, por teléfono, o en la furgoneta, equipada para construir en cualquier sitio con corriente y cobertura. Dos parcelas sostienen los experimentos de IA aislada de la red, una en el Báltico alemán en verano y otra en Portugal en invierno. No es un folleto de estilo de vida. Es donde el build de la homestead se pone a prueba de verdad.</p>
+        <p>Ámsterdam es la dirección donde nos vemos. Cruquiuskade 251, un espacio compartido con salas reservables. El correo se gestiona y se escanea allí.</p>
+        <h2>"Nosotros" somos mis agents y yo</h2>
+        <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot y yo. Ese es el equipo, y prefiero decirlo a dejar que imagine una fila de ingenieros que no existe.</p>
+        <p>En cada build trabajan dos: alguien con una carrera en IT empresarial a sus espaldas, y un modelo que lee más rápido que él y se equivoca con más aplomo. El trabajo es lo que cada uno pilla al otro haciendo.</p>
+        <p>Cuatro de ellos son también los agents a los que consulto cuando escaneo un sitio. Sé cómo leen una página porque los veo leer la mía todo el día.</p>
+        <h2>El equipo</h2>
+        <p>Treinta empleados ya no hacen falta. Una persona con agents tiene el alcance que antes exigía un departamento, y fingir lo contrario es el viejo organigrama con mejor marketing. Así que esta es la plantilla completa.</p>
+        <div class="crew">
+          <figure class="is-human c-nico">
+            <figcaption><b>Nico</b>
+            <span>piensa, sopesa, decide, verifica y firma</span></figcaption>
+          </figure>
+          <figure class="c-claude">
+            <figcaption><b>Claude</b>
+            <span>construye, escribe y replica</span></figcaption>
+          </figure>
+          <figure class="c-chatgpt">
+            <figcaption><b>ChatGPT</b>
+            <span>segunda opinión, y registro A en un escaneo</span></figcaption>
+          </figure>
+          <figure class="c-gemini">
+            <figcaption><b>Gemini</b>
+            <span>tercera lectura de la misma página</span></figcaption>
+          </figure>
+          <figure class="c-perplexity">
+            <figcaption><b>Perplexity</b>
+            <span>recuperación, y de dónde sale una afirmación</span></figcaption>
+          </figure>
+          <figure class="c-kimi">
+            <figcaption><b>Kimi</b>
+            <span>contexto largo, y curiosidad</span></figcaption>
+          </figure>
+          <figure class="c-copilot">
+            <figcaption><b>Copilot</b>
+            <span>autocompletado en el editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Los nombres de las herramientas dicen qué herramientas. Sin afiliación, colaboración ni respaldo implícitos.</p>
+        <h2>En qué punto está la empresa</h2>
+        <p>Todavía sin registrar. A propósito.</p>
+        <p>Darse de alta como autónomo lleva unas horas, así que ocurrirá la semana en que se firme el primer encargo, no el año anterior. Registrar una empresa vacía para parecer establecido es justo lo que señalaría en el sitio de un cliente: una afirmación sin nada detrás. Cuando hay cliente, hay empresa, y el número va al pie de página, donde usted puede comprobarlo.</p>
+        <p>Hasta entonces tiene mi nombre, mi dirección, mi teléfono, mi correo y código público en GitHub. Compruebe lo que quiera.</p>
+        <h2>Lo que le diré sobre su propio sitio</h2>
+        <p>Second Audience es el escaneo que hago en los sitios de otros: qué puede leer, hacer y malinterpretar de verdad un agent de IA en su dominio. Lo pasé primero por este. Encontró cosas.</p>
+        <p><a href="projects/second-audience.html">Second Audience &rarr;</a></p>
         <br>
         <p><strong><i class="quote-text">"La medida de la inteligencia es la capacidad de cambiar."</i></strong> - Albert Einstein</p>
       </div>

@@ -151,6 +151,22 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
+  .crew .is-human::before{color:var(--accent);}
+  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
+  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
+  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
+  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
+  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
+  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
+  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -261,6 +277,53 @@
         <p>De stack: TypeScript, Python, React, LLM-tooling, agentic workflows, uitgeleverd en gemonitord, niet één keer gedemonstreerd en dan vergeten. Geen informatica-diploma, en dat is prima. Vraag naar een keuze en krijg een eerlijk antwoord, ook over de keren dat het niet in één keer werkte.</p>
         <h2>Bewust klein</h2>
         <p>Ik werk voor levenskwaliteit en de vrijheid om op eigen voorwaarden te werken, ook als digital nomad. Klein met opzet: dicht genoeg bij om echt te begrijpen wat u wilt bereiken, en snel ter plaatse als dat helpt. Geen ver weg deliveryteam ertussen.</p>
+        <h2>Geen kantoor. Bewust.</h2>
+        <p>Er is geen kantoor om te bezoeken, want dat is er niet. Het werk gebeurt waar het werk is: bij u aan tafel, aan de telefoon, of in de bus, ingericht om te bouwen overal waar stroom en bereik is. Twee percelen draaien de off-grid AI-experimenten, een aan de Duitse Oostzee in de zomer, een in Portugal in de winter. Dat is geen lifestylefolder. Daar wordt de homestead-build echt getest.</p>
+        <p>Amsterdam is het adres waar u mij ontmoet. Cruquiuskade 251, een gedeelde werkplek met ruimtes die u kunt boeken. Post wordt daar afgehandeld en gescand.</p>
+        <h2>"Wij" is ik en mijn agents</h2>
+        <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot en ik. Dat is het team, en ik zeg het liever dan u te laten denken aan een rij engineers die niet bestaat.</p>
+        <p>Aan elke build werken er twee: iemand met een carrière in enterprise IT achter zich, en een model dat sneller leest dan hij en zich zelfverzekerder vergist. Het werk is wat ze elkaar zien doen.</p>
+        <p>Vier daarvan zijn ook de agents die ik bevraag als ik een website scan. Ik weet hoe ze een pagina lezen omdat ik ze de hele dag de mijne zie lezen.</p>
+        <h2>De crew</h2>
+        <p>Dertig medewerkers zijn niet meer nodig. Eén persoon met agents heeft het bereik waar vroeger een afdeling voor nodig was, en doen alsof dat anders is, is het oude organigram met betere marketing. Dus hier is de hele bezetting.</p>
+        <div class="crew">
+          <figure class="is-human c-nico">
+            <figcaption><b>Nico</b>
+            <span>denkt, weegt af, beslist, controleert en tekent ervoor</span></figcaption>
+          </figure>
+          <figure class="c-claude">
+            <figcaption><b>Claude</b>
+            <span>bouwt, schrijft en spreekt tegen</span></figcaption>
+          </figure>
+          <figure class="c-chatgpt">
+            <figcaption><b>ChatGPT</b>
+            <span>second opinion, en register A in een scan</span></figcaption>
+          </figure>
+          <figure class="c-gemini">
+            <figcaption><b>Gemini</b>
+            <span>derde lezing van dezelfde pagina</span></figcaption>
+          </figure>
+          <figure class="c-perplexity">
+            <figcaption><b>Perplexity</b>
+            <span>retrieval, en waar een claim vandaan komt</span></figcaption>
+          </figure>
+          <figure class="c-kimi">
+            <figcaption><b>Kimi</b>
+            <span>lange context, en nieuwsgierigheid</span></figcaption>
+          </figure>
+          <figure class="c-copilot">
+            <figcaption><b>Copilot</b>
+            <span>inline completion in de editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Toolnamen staan er om te zeggen welke tools. Geen affiliatie, partnerschap of endorsement geïmpliceerd.</p>
+        <h2>Waar het bedrijf staat</h2>
+        <p>Nog niet ingeschreven. Bewust.</p>
+        <p>Een eenmanszaak opzetten kost een paar uur, dus dat gebeurt in de week dat een eerste opdracht wordt getekend, niet het jaar ervoor. Een leeg bedrijf inschrijven om gevestigd te lijken is precies wat ik op de site van een klant zou aanmerken: een claim met niets erachter. Als er een klant is, is er een bedrijf, en dan staat het nummer in de footer waar u het kunt controleren.</p>
+        <p>Tot die tijd heeft u mijn naam, mijn adres, mijn telefoonnummer, mijn e-mailadres en publieke code op GitHub. Controleer er gerust op los.</p>
+        <h2>Wat ik u over uw eigen site vertel</h2>
+        <p>Second Audience is de scan die ik op websites van anderen uitvoer: wat een AI-agent op uw domein echt kan lezen, kan doen, en verkeerd begrijpt. Ik heb hem eerst op deze site losgelaten. Er kwam wat uit.</p>
+        <p><a href="projects/second-audience.html">Second Audience &rarr;</a></p>
         <br>
         <p><strong><i class="quote-text">"De maatstaf van intelligentie is het vermogen te veranderen."</i></strong> - Albert Einstein</p>
       </div>
