@@ -151,6 +151,22 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
+  .crew .is-human::before{color:var(--accent);}
+  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
+  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
+  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
+  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
+  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
+  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
+  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -261,6 +277,53 @@
         <p>Lo stack: TypeScript, Python, React, strumenti LLM, workflow agentici, consegnato e monitorato, non dimostrato una volta e dimenticato. Nessuna laurea in informatica dietro, e va bene così. Chiedi di una decisione e ricevi una risposta onesta, incluse le volte in cui non ha funzionato al primo tentativo.</p>
         <h2>Piccoli per scelta</h2>
         <p>Lavoro per la qualità della vita e la libertà di operare alle mie condizioni, anche come nomade digitale. Piccolo di proposito: abbastanza vicino da capire davvero cosa vuoi ottenere, e rapido a presentarmi di persona quando serve. Nessun team di delivery lontano di mezzo.</p>
+        <h2>Nessun ufficio. Di proposito.</h2>
+        <p>Non c'è un ufficio da visitare, perché non esiste. Il lavoro si fa dove si trova il lavoro: al vostro tavolo, al telefono, o nel van, attrezzato per costruire ovunque ci sia corrente e segnale. Due appezzamenti portano avanti gli esperimenti di IA off-grid, uno sul Baltico tedesco d'estate, uno in Portogallo d'inverno. Non è una brochure lifestyle. È lì che il build della homestead viene davvero messo alla prova.</p>
+        <p>Amsterdam è l'indirizzo dove ci si incontra. Cruquiuskade 251, uno spazio condiviso con sale prenotabili. La posta viene gestita e scansionata lì.</p>
+        <h2>"Noi" vuol dire io e i miei agent</h2>
+        <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot e io. Questo è il team, e preferisco dirlo piuttosto che lasciarvi immaginare una fila di ingegneri che non esiste.</p>
+        <p>Su ogni build lavorano in due: qualcuno con una carriera nell'IT aziendale alle spalle, e un modello che legge più in fretta di lui e sbaglia con più sicurezza. Il lavoro è quello che ciascuno coglie nell'altro.</p>
+        <p>Quattro di loro sono anche gli agent che interrogo quando scansiono un sito. So come leggono una pagina perché li guardo leggere la mia tutto il giorno.</p>
+        <h2>La squadra</h2>
+        <p>Trenta dipendenti non servono più. Una persona con degli agent ha la portata che una volta richiedeva un reparto, e fingere il contrario è il vecchio organigramma con un marketing migliore. Ecco quindi l'organico al completo.</p>
+        <div class="crew">
+          <figure class="is-human c-nico">
+            <figcaption><b>Nico</b>
+            <span>pensa, riflette, decide, verifica e firma</span></figcaption>
+          </figure>
+          <figure class="c-claude">
+            <figcaption><b>Claude</b>
+            <span>costruisce, scrive e ribatte</span></figcaption>
+          </figure>
+          <figure class="c-chatgpt">
+            <figcaption><b>ChatGPT</b>
+            <span>seconda opinione, e registro A in una scansione</span></figcaption>
+          </figure>
+          <figure class="c-gemini">
+            <figcaption><b>Gemini</b>
+            <span>terza lettura della stessa pagina</span></figcaption>
+          </figure>
+          <figure class="c-perplexity">
+            <figcaption><b>Perplexity</b>
+            <span>retrieval, e da dove viene un'affermazione</span></figcaption>
+          </figure>
+          <figure class="c-kimi">
+            <figcaption><b>Kimi</b>
+            <span>contesto lungo, e curiosità</span></figcaption>
+          </figure>
+          <figure class="c-copilot">
+            <figcaption><b>Copilot</b>
+            <span>completamento inline nell'editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">I nomi dei tool dicono quali tool. Nessuna affiliazione, partnership o approvazione implicita.</p>
+        <h2>A che punto è l'azienda</h2>
+        <p>Non ancora registrata. Di proposito.</p>
+        <p>Una ditta individuale si apre in poche ore, quindi succederà la settimana in cui si firma il primo incarico, non l'anno prima. Registrare una società vuota per sembrare affermati è esattamente la mossa che segnalerei sul sito di un cliente: un'affermazione senza nulla dietro. Quando c'è un cliente, c'è una società, e il numero finisce nel footer dove potete verificarlo.</p>
+        <p>Fino ad allora avete il mio nome, il mio indirizzo, il mio telefono, la mia email e codice pubblico su GitHub. Verificate quello che volete.</p>
+        <h2>Cosa vi dirò del vostro sito</h2>
+        <p>Second Audience è la scansione che eseguo sui siti degli altri: cosa un agent IA riesce davvero a leggere, a fare, e a fraintendere sul vostro dominio. L'ho passata prima su questo. Ha trovato qualcosa.</p>
+        <p><a href="projects/second-audience.html">Second Audience &rarr;</a></p>
         <br>
         <p><strong><i class="quote-text">"La misura dell'intelligenza è la capacità di cambiare."</i></strong> - Albert Einstein</p>
       </div>
