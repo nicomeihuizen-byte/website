@@ -316,7 +316,8 @@ h1 {
   color: #5FBF8E;
 }
 .doc-download .info p {
-  font-size: 13.5px;
+  font-size: 12px;
+  line-height: 1.45;
   color: var(--text-muted);
 }
 .doc-download .tag {
