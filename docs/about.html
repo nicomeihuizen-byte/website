@@ -151,6 +151,15 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew .is-human pre{color:var(--accent);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -268,6 +277,60 @@
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot, and me. That's the team, and I'd rather say it than let you assume a bench of engineers that doesn't exist.</p>
         <p>Every build has two workers on it: someone with a career in enterprise IT behind him, and a model that reads faster than he does and is wrong more confidently. The work is what each one catches the other doing.</p>
         <p>Four of them are also the agents I query when I scan someone's website. I know how they read a page because I watch them read mine all day.</p>
+        <h2>The crew</h2>
+        <p>You don't need thirty employees any more. One person with agents has the reach that used to take a department, and pretending otherwise is just the old org chart with better marketing. So here is the whole roster.</p>
+        <div class="crew">
+          <figure class="is-human">
+            <pre aria-hidden="true">┌─────┐
+│ * * │
+│  v  │
+└─────┘</pre>
+            <figcaption><b>Nico</b><span>thinks, contemplates, decides, verifies, and signs it</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ o o │
+│  ─  │
+└─────┘</pre>
+            <figcaption><b>Claude</b><span>builds, writes, and argues back</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ - - │
+│  ~  │
+└─────┘</pre>
+            <figcaption><b>ChatGPT</b><span>second opinion, and register A in a scan</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ + + │
+│  .  │
+└─────┘</pre>
+            <figcaption><b>Gemini</b><span>third read on the same page</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ? ? │
+│  o  │
+└─────┘</pre>
+            <figcaption><b>Perplexity</b><span>retrieval, and where a claim came from</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ^ ^ │
+│  _  │
+└─────┘</pre>
+            <figcaption><b>Kimi</b><span>long context, and curiosity</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ = = │
+│  =  │
+└─────┘</pre>
+            <figcaption><b>Copilot</b><span>inline completion in the editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Tool names are used to say which tools. No affiliation, partnership or endorsement implied.</p>
         <h2>Where the company is</h2>
         <p>Not registered yet. Deliberately.</p>
         <p>An eenmanszaak takes a few hours to set up, so it happens the week a first engagement is signed, not the year before. Registering an empty company to look established is exactly the move I'd flag on a client's site: a claim with nothing behind it. When there's a client, there's a company, and the number goes in the footer where you can check it.</p>

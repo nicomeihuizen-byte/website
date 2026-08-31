@@ -151,6 +151,15 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew .is-human pre{color:var(--accent);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -268,6 +277,60 @@
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot e io. Questo è il team, e preferisco dirlo piuttosto che lasciarvi immaginare una fila di ingegneri che non esiste.</p>
         <p>Su ogni build lavorano in due: qualcuno con una carriera nell'IT aziendale alle spalle, e un modello che legge più in fretta di lui e sbaglia con più sicurezza. Il lavoro è quello che ciascuno coglie nell'altro.</p>
         <p>Quattro di loro sono anche gli agent che interrogo quando scansiono un sito. So come leggono una pagina perché li guardo leggere la mia tutto il giorno.</p>
+        <h2>La squadra</h2>
+        <p>Trenta dipendenti non servono più. Una persona con degli agent ha la portata che una volta richiedeva un reparto, e fingere il contrario è il vecchio organigramma con un marketing migliore. Ecco quindi l'organico al completo.</p>
+        <div class="crew">
+          <figure class="is-human">
+            <pre aria-hidden="true">┌─────┐
+│ * * │
+│  v  │
+└─────┘</pre>
+            <figcaption><b>Nico</b><span>pensa, riflette, decide, verifica e firma</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ o o │
+│  ─  │
+└─────┘</pre>
+            <figcaption><b>Claude</b><span>costruisce, scrive e ribatte</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ - - │
+│  ~  │
+└─────┘</pre>
+            <figcaption><b>ChatGPT</b><span>seconda opinione, e registro A in una scansione</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ + + │
+│  .  │
+└─────┘</pre>
+            <figcaption><b>Gemini</b><span>terza lettura della stessa pagina</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ? ? │
+│  o  │
+└─────┘</pre>
+            <figcaption><b>Perplexity</b><span>retrieval, e da dove viene un'affermazione</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ^ ^ │
+│  _  │
+└─────┘</pre>
+            <figcaption><b>Kimi</b><span>contesto lungo, e curiosità</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ = = │
+│  =  │
+└─────┘</pre>
+            <figcaption><b>Copilot</b><span>completamento inline nell'editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">I nomi dei tool dicono quali tool. Nessuna affiliazione, partnership o approvazione implicita.</p>
         <h2>A che punto è l'azienda</h2>
         <p>Non ancora registrata. Di proposito.</p>
         <p>Una ditta individuale si apre in poche ore, quindi succederà la settimana in cui si firma il primo incarico, non l'anno prima. Registrare una società vuota per sembrare affermati è esattamente la mossa che segnalerei sul sito di un cliente: un'affermazione senza nulla dietro. Quando c'è un cliente, c'è una società, e il numero finisce nel footer dove potete verificarlo.</p>

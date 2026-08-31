@@ -151,6 +151,15 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew .is-human pre{color:var(--accent);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -268,6 +277,60 @@
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot et moi. Voilà l'équipe, et je préfère le dire que vous laisser imaginer une rangée d'ingénieurs qui n'existe pas.</p>
         <p>Sur chaque build il y a deux ouvriers : quelqu'un avec une carrière en IT d'entreprise derrière lui, et un modèle qui lit plus vite que lui et se trompe avec plus d'assurance. Le travail, c'est ce que chacun surprend chez l'autre.</p>
         <p>Quatre d'entre eux sont aussi les agents que j'interroge quand je scanne un site. Je sais comment ils lisent une page parce que je les regarde lire la mienne toute la journée.</p>
+        <h2>L'équipe</h2>
+        <p>Trente employés ne sont plus nécessaires. Une personne avec des agents a la portée qui demandait autrefois un département, et prétendre le contraire, c'est l'ancien organigramme avec un meilleur marketing. Voici donc l'effectif complet.</p>
+        <div class="crew">
+          <figure class="is-human">
+            <pre aria-hidden="true">┌─────┐
+│ * * │
+│  v  │
+└─────┘</pre>
+            <figcaption><b>Nico</b><span>réfléchit, soupèse, décide, vérifie et signe</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ o o │
+│  ─  │
+└─────┘</pre>
+            <figcaption><b>Claude</b><span>construit, rédige et conteste</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ - - │
+│  ~  │
+└─────┘</pre>
+            <figcaption><b>ChatGPT</b><span>deuxième avis, et registre A dans un scan</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ + + │
+│  .  │
+└─────┘</pre>
+            <figcaption><b>Gemini</b><span>troisième lecture de la même page</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ? ? │
+│  o  │
+└─────┘</pre>
+            <figcaption><b>Perplexity</b><span>recherche, et d'où vient une affirmation</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ^ ^ │
+│  _  │
+└─────┘</pre>
+            <figcaption><b>Kimi</b><span>contexte long, et curiosité</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ = = │
+│  =  │
+└─────┘</pre>
+            <figcaption><b>Copilot</b><span>complétion inline dans l'éditeur</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Les noms d'outils indiquent quels outils. Aucune affiliation, aucun partenariat ni aval sous-entendu.</p>
         <h2>Où en est l'entreprise</h2>
         <p>Pas encore immatriculée. Volontairement.</p>
         <p>Une entreprise individuelle se crée en quelques heures, donc cela se fera la semaine où une première mission est signée, pas l'année d'avant. Immatriculer une société vide pour paraître établi, c'est exactement ce que je signalerais sur le site d'un client : une affirmation sans rien derrière. Quand il y a un client, il y a une société, et le numéro va dans le pied de page où vous pourrez le vérifier.</p>

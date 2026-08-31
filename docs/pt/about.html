@@ -151,6 +151,15 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew .is-human pre{color:var(--accent);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -268,6 +277,60 @@
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot e eu. É esta a equipa, e prefiro dizê-lo a deixá-lo imaginar uma fila de engenheiros que não existe.</p>
         <p>Em cada build trabalham dois: alguém com uma carreira em IT empresarial atrás de si, e um modelo que lê mais depressa do que ele e se engana com mais confiança. O trabalho é aquilo que cada um apanha o outro a fazer.</p>
         <p>Quatro deles são também os agents que consulto quando faço o scan de um site. Sei como leem uma página porque os vejo ler a minha o dia inteiro.</p>
+        <h2>A equipa</h2>
+        <p>Trinta funcionários já não são precisos. Uma pessoa com agents tem o alcance que antes exigia um departamento, e fingir o contrário é o velho organigrama com melhor marketing. Aqui fica o elenco completo.</p>
+        <div class="crew">
+          <figure class="is-human">
+            <pre aria-hidden="true">┌─────┐
+│ * * │
+│  v  │
+└─────┘</pre>
+            <figcaption><b>Nico</b><span>pensa, pondera, decide, verifica e assina</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ o o │
+│  ─  │
+└─────┘</pre>
+            <figcaption><b>Claude</b><span>constrói, escreve e contesta</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ - - │
+│  ~  │
+└─────┘</pre>
+            <figcaption><b>ChatGPT</b><span>segunda opinião, e registo A num scan</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ + + │
+│  .  │
+└─────┘</pre>
+            <figcaption><b>Gemini</b><span>terceira leitura da mesma página</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ? ? │
+│  o  │
+└─────┘</pre>
+            <figcaption><b>Perplexity</b><span>retrieval, e de onde vem uma afirmação</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ^ ^ │
+│  _  │
+└─────┘</pre>
+            <figcaption><b>Kimi</b><span>contexto longo, e curiosidade</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ = = │
+│  =  │
+└─────┘</pre>
+            <figcaption><b>Copilot</b><span>conclusão inline no editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Os nomes das ferramentas dizem quais ferramentas. Sem afiliação, parceria ou aval implícitos.</p>
         <h2>Em que ponto está a empresa</h2>
         <p>Ainda não registada. De propósito.</p>
         <p>Abrir uma atividade em nome individual leva algumas horas, por isso acontecerá na semana em que o primeiro trabalho for assinado, não no ano anterior. Registar uma empresa vazia para parecer estabelecido é exatamente o que eu assinalaria no site de um cliente: uma afirmação sem nada por trás. Quando há cliente, há empresa, e o número vai para o rodapé, onde o pode verificar.</p>

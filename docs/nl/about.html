@@ -151,6 +151,15 @@
   .about-copy strong{color:var(--text);font-weight:600;}
   .about-copy .quote-text{color:var(--accent);}
   .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
+  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
+  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
+  .crew pre{margin:0 0 10px;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);white-space:pre;}
+  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
+  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
+  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
+  .crew .is-human{border-color:var(--accent-dim);}
+  .crew .is-human pre{color:var(--accent);}
+  .crew-note{font-size:12px;color:var(--text-dim);}
   .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
   .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
   .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
@@ -268,6 +277,60 @@
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Copilot en ik. Dat is het team, en ik zeg het liever dan u te laten denken aan een rij engineers die niet bestaat.</p>
         <p>Aan elke build werken er twee: iemand met een carrière in enterprise IT achter zich, en een model dat sneller leest dan hij en zich zelfverzekerder vergist. Het werk is wat ze elkaar zien doen.</p>
         <p>Vier daarvan zijn ook de agents die ik bevraag als ik een website scan. Ik weet hoe ze een pagina lezen omdat ik ze de hele dag de mijne zie lezen.</p>
+        <h2>De crew</h2>
+        <p>Dertig medewerkers zijn niet meer nodig. Eén persoon met agents heeft het bereik waar vroeger een afdeling voor nodig was, en doen alsof dat anders is, is het oude organigram met betere marketing. Dus hier is de hele bezetting.</p>
+        <div class="crew">
+          <figure class="is-human">
+            <pre aria-hidden="true">┌─────┐
+│ * * │
+│  v  │
+└─────┘</pre>
+            <figcaption><b>Nico</b><span>denkt, weegt af, beslist, controleert en tekent ervoor</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ o o │
+│  ─  │
+└─────┘</pre>
+            <figcaption><b>Claude</b><span>bouwt, schrijft en spreekt tegen</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ - - │
+│  ~  │
+└─────┘</pre>
+            <figcaption><b>ChatGPT</b><span>second opinion, en register A in een scan</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ + + │
+│  .  │
+└─────┘</pre>
+            <figcaption><b>Gemini</b><span>derde lezing van dezelfde pagina</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ? ? │
+│  o  │
+└─────┘</pre>
+            <figcaption><b>Perplexity</b><span>retrieval, en waar een claim vandaan komt</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ ^ ^ │
+│  _  │
+└─────┘</pre>
+            <figcaption><b>Kimi</b><span>lange context, en nieuwsgierigheid</span></figcaption>
+          </figure>
+          <figure>
+            <pre aria-hidden="true">┌─────┐
+│ = = │
+│  =  │
+└─────┘</pre>
+            <figcaption><b>Copilot</b><span>inline completion in de editor</span></figcaption>
+          </figure>
+        </div>
+        <p class="crew-note">Toolnamen staan er om te zeggen welke tools. Geen affiliatie, partnerschap of endorsement geïmpliceerd.</p>
         <h2>Waar het bedrijf staat</h2>
         <p>Nog niet ingeschreven. Bewust.</p>
         <p>Een eenmanszaak opzetten kost een paar uur, dus dat gebeurt in de week dat een eerste opdracht wordt getekend, niet het jaar ervoor. Een leeg bedrijf inschrijven om gevestigd te lijken is precies wat ik op de site van een klant zou aanmerken: een claim met niets erachter. Als er een klant is, is er een bedrijf, en dan staat het nummer in de footer waar u het kunt controleren.</p>
