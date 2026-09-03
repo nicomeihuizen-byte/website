@@ -27,13 +27,13 @@
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
 <meta property="og:title" content="KI-Deal-Intelligence für den Vertrieb | meihuizen.ai">
 <meta property="og:description" content="KI-natives Sales-Intelligence-Tool, das die Dynamik eines Deals über die gesamte Notizhistorie analysiert und stockende oder gefährdete Deals erkennt.">
-<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <meta property="og:url" content="https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KI-Deal-Intelligence für den Vertrieb | meihuizen.ai">
 <meta name="twitter:description" content="KI-natives Sales-Intelligence-Tool, das die Dynamik eines Deals über die gesamte Notizhistorie analysiert und stockende oder gefährdete Deals erkennt.">
-<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai"
   },
-  "image": "https://www.meihuizen.ai/images/project_four/healthy-deal.png",
+  "image": "https://www.meihuizen.ai/images/project_four/deal-management-workspace.png",
   "keywords": "Sales Intelligence, Erkennung stockender Deals, Deal-Momentum-KI, structured tool use, Next.js, Supabase, Anthropic API",
   "url": "https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html",
   "datePublished": "2026-08-24"
@@ -137,22 +137,22 @@
       <h1>AI Native Sales-Cycle Control</h1>
       <p class="project-summary">Ein fokussiertes Sales-Intelligence-Tool mit einer einzigen Funktion, das die Dynamik über die gesamte Notizhistorie eines Deals hinweg analysiert, Deals erkennt, die still geworden sind, und in klarer Sprache erklärt, warum, statt die Notizen nur zusammenzufassen.</p>
       <div class="project-gallery" aria-label="Vorschaubilder des Projekts AI Native Sales-Cycle Control">
-        <a href="../../images/project_four/deals-overview.png">
+        <a href="../images/project_four/deal-management-workspace.png">
           <picture>
-            <source srcset="../../images/project_four/deals-overview.webp" type="image/webp">
-            <img src="../../images/project_four/deals-overview.png" alt="Deal-Liste mit sechs Pipeline-Deals in den Status offen, verloren und gewonnen, darunter Core Banking Platform Migration und Renewal FY26" loading="lazy" width="1505" height="902" data-crop="intentional">
+            <source srcset="../images/project_four/deal-management-workspace.webp" type="image/webp">
+            <img src="../images/project_four/deal-management-workspace.png" alt="Deal-Management-Arbeitsfläche: Pipeline-Gesundheit, offener und gewonnener Wert sowie durchschnittliche Dauer oben, darunter Unternehmen, Kontakte und Deals in drei Bereichen" loading="lazy" width="1262" height="827" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/healthy-deal.png">
+        <a href="../images/project_four/deal-momentum-next-steps.png">
           <picture>
-            <source srcset="../../images/project_four/healthy-deal.webp" type="image/webp">
-            <img src="../../images/project_four/healthy-deal.png" alt="Momentum-Panel bei einem offenen Deal mit einer positiven Einschätzung, mit Begründung unter Verweis auf die jüngste Vertragsweiterleitung und CFO-Unterschriftsmeilensteine" loading="lazy" width="1407" height="903" data-crop="intentional">
+            <source srcset="../images/project_four/deal-momentum-next-steps.webp" type="image/webp">
+            <img src="../images/project_four/deal-momentum-next-steps.png" alt="Momentum-Panel eines offenen Deals mit dem Urteil stalling, einer Begründung, die die Vier-Tage-Lücken und den fehlenden Folgetermin benennt, und vier konkreten nächsten Schritten" loading="lazy" width="1257" height="897" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/lost-deal-revisit.png">
+        <a href="../images/project_four/contact-email-draft.png">
           <picture>
-            <source srcset="../../images/project_four/lost-deal-revisit.webp" type="image/webp">
-            <img src="../../images/project_four/lost-deal-revisit.png" alt="Verlustanalyse-Panel bei einem verlorenen Deal mit der Einschätzung „lohnt sich zu überdenken“, mit Begründung, die den ungelösten Preiseinwand benennt" loading="lazy" width="1375" height="897" data-crop="intentional">
+            <source srcset="../images/project_four/contact-email-draft.webp" type="image/webp">
+            <img src="../images/project_four/contact-email-draft.png" alt="Eine Kontaktkarte mit einer entworfenen Folge-E-Mail auf Basis der Notizhistorie des Deals, daneben die zwei jüngsten Aktualisierungen zu diesem Deal" loading="lazy" width="1267" height="902" data-crop="intentional">
           </picture>
         </a>
       </div>
@@ -172,8 +172,14 @@
           <p>Ein offener Deal erhält eine Momentum-Einschätzung: gesund, stockend oder gefährdet. Ein bereits als verloren markierter Deal erhält stattdessen eine andere Frage, eine Verlust-Analyse, die entweder bestätigt, dass der Verlust endgültig war, oder einen konkreten, ungelösten Einwand benennt, der sich zu überdenken lohnt. Ein gewonnener Deal erhält eine Erfolgsanalyse: welches Muster zum Abschluss geführt hat und was sich für einen künftigen Deal wiederholen lässt. Drei tatsächlich unterschiedliche Prompts und Schemas, gesteuert über eine einzige Route je nach Status des Deals.</p>
           <h2>Für realistische Verkaufszyklen gebaut</h2>
           <p>Die Seed-Daten enthalten zwei Deals im Enterprise-Maßstab, modelliert nach B2B-Zyklen über mehrere Quartale, mit jeweils 50 oder mehr zeitgestempelten Notizen über mehr als ein Jahr hinweg, einschließlich abgehender Champions, stockender Quartale und Erholungsphasen, um die Analyse an etwas zu testen, das einem echten Oracle- oder IBM-großen Deal näherkommt als eine Fünf-Notizen-Demo.</p>
+          <h2>Ein Bildschirm, kein CRM</h2>
+          <p>Alles läuft auf einer Seite: Unternehmen links, die Menschen dieses Unternehmens in der Mitte, seine Deals rechts und die Historie des gewählten Deals darunter. Oben stehen die vier Zahlen, für die man eine Pipeline überhaupt öffnet: wie gesund sie ist, was offen ist, was gewonnen wurde und wie lange offen bis gewonnen dauert.</p>
+          <h2>Es sagt, was zu tun ist, nicht nur, was war</h2>
+          <p>Jede Analyse endet in zwei bis vier konkreten nächsten Schritten, abgeleitet aus der Historie genau dieses Deals und so formuliert, dass man sie diese Woche tun kann. Die Begründung sagt, was los ist; die Schritte sagen, was man dagegen tut.</p>
+          <h2>Die Folge-E-Mail, schon geschrieben</h2>
+          <p>Einen Kontakt öffnen und das Werkzeug entwirft die E-Mail für diesen Deal im aktuellen Stand, mit den Notizen als Briefing. Kopieren und senden, oder ignorieren und selbst schreiben. Es wird nie etwas für Sie versendet.</p>
           <h2>Status</h2>
-          <p>Wird aktiv öffentlich gebaut, Phase für Phase: Authentifizierung, Kern-CRUD, die KI-Analysefunktion und Seed-Daten sind alle live. Jeder Commit liefert einen funktionierenden, vorführbaren Zustand statt Teilarbeit.</p>
+          <p>Wird öffentlich gebaut, Phase für Phase. Auth, CRUD, die statusabhängigen KI-Analysen, Pipeline-Kennzahlen, Kontakte und der E-Mail-Entwurf sind live. Dieselbe Codebasis betreibt die öffentliche Demo und die Kopie, mit der tatsächlich verkauft wird, was von beidem der ehrlichere Test ist.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>

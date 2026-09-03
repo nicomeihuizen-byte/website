@@ -27,13 +27,13 @@
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
 <meta property="og:title" content="Deal intelligence IA per le vendite | meihuizen.ai">
 <meta property="og:description" content="Strumento di sales intelligence IA-nativo che analizza il momentum di una trattativa lungo l'intera cronologia delle note e segnala quelle a rischio.">
-<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <meta property="og:url" content="https://www.meihuizen.ai/it/projects/ai-sales-deal-intelligence.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deal intelligence IA per le vendite | meihuizen.ai">
 <meta name="twitter:description" content="Strumento di sales intelligence IA-nativo che analizza il momentum di una trattativa lungo l'intera cronologia delle note e segnala quelle a rischio.">
-<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai"
   },
-  "image": "https://www.meihuizen.ai/images/project_four/healthy-deal.png",
+  "image": "https://www.meihuizen.ai/images/project_four/deal-management-workspace.png",
   "keywords": "sales intelligence, rilevamento trattative bloccate, momentum delle trattative IA, structured tool use, Next.js, Supabase, Anthropic API",
   "url": "https://www.meihuizen.ai/it/projects/ai-sales-deal-intelligence.html",
   "datePublished": "2026-08-24"
@@ -137,22 +137,22 @@
       <h1>AI Native Sales-Cycle Control</h1>
       <p class="project-summary">Uno strumento di sales intelligence mirato, a funzione unica, che analizza il momentum lungo l'intera cronologia delle note di una trattativa, segnala le trattative rimaste silenziose, e spiega perché in linguaggio semplice invece di limitarsi a riassumere le note.</p>
       <div class="project-gallery" aria-label="Anteprime del progetto AI Native Sales-Cycle Control">
-        <a href="../../images/project_four/deals-overview.png">
+        <a href="../images/project_four/deal-management-workspace.png">
           <picture>
-            <source srcset="../../images/project_four/deals-overview.webp" type="image/webp">
-            <img src="../../images/project_four/deals-overview.png" alt="Elenco delle trattative che mostra sei trattative in pipeline con stato aperta, persa e vinta, tra cui Core Banking Platform Migration e Renewal FY26" loading="lazy" width="1505" height="902" data-crop="intentional">
+            <source srcset="../images/project_four/deal-management-workspace.webp" type="image/webp">
+            <img src="../images/project_four/deal-management-workspace.png" alt="Area di lavoro Deal Management: salute della pipeline, valore aperto e vinto e durata media in alto, con aziende, contatti e trattative in tre riquadri sotto" loading="lazy" width="1262" height="827" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/healthy-deal.png">
+        <a href="../images/project_four/deal-momentum-next-steps.png">
           <picture>
-            <source srcset="../../images/project_four/healthy-deal.webp" type="image/webp">
-            <img src="../../images/project_four/healthy-deal.png" alt="Pannello del momentum su una trattativa aperta che mostra un giudizio positivo, con motivazione che cita il recente instradamento del contratto e i traguardi di firma del CFO" loading="lazy" width="1407" height="903" data-crop="intentional">
+            <source srcset="../images/project_four/deal-momentum-next-steps.webp" type="image/webp">
+            <img src="../images/project_four/deal-momentum-next-steps.png" alt="Pannello momentum su una trattativa aperta con verdetto stalling, il ragionamento che cita gli intervalli di quattro giorni e la data di follow-up mancante, e quattro passi successivi concreti" loading="lazy" width="1257" height="897" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/lost-deal-revisit.png">
+        <a href="../images/project_four/contact-email-draft.png">
           <picture>
-            <source srcset="../../images/project_four/lost-deal-revisit.webp" type="image/webp">
-            <img src="../../images/project_four/lost-deal-revisit.png" alt="Pannello di analisi della perdita su una trattativa persa che mostra un giudizio 'da riconsiderare', con motivazione che indica l'obiezione di prezzo irrisolta" loading="lazy" width="1375" height="897" data-crop="intentional">
+            <source srcset="../images/project_four/contact-email-draft.webp" type="image/webp">
+            <img src="../images/project_four/contact-email-draft.png" alt="Una scheda contatto con un'e-mail di follow-up redatta a partire dallo storico delle note della trattativa, accanto ai due aggiornamenti più recenti" loading="lazy" width="1267" height="902" data-crop="intentional">
           </picture>
         </a>
       </div>
@@ -172,8 +172,14 @@
           <p>Una trattativa aperta riceve una lettura del momentum: positiva, in stallo o a rischio. Una trattativa già segnata come persa riceve invece una domanda diversa: un'analisi post-mortem della perdita che conferma che la perdita è stata definitiva oppure indica un'obiezione specifica e irrisolta che vale la pena riconsiderare. Una trattativa vinta riceve un'analisi del successo: quale schema ha portato alla chiusura e cosa è ripetibile in una futura trattativa. Tre prompt e schemi realmente diversi, gestiti da un'unica route in base allo stato della trattativa stessa.</p>
           <h2>Costruito per cicli di vendita realistici</h2>
           <p>I dati iniziali includono due trattative su scala enterprise, modellate su cicli B2B di più trimestri, ciascuna con 50 o più note con timestamp distribuite su oltre un anno, comprese uscite di champion, trimestri in stallo e riprese, per mettere alla prova il ragionamento con qualcosa di più vicino a una trattativa delle dimensioni di Oracle o IBM che a una demo di cinque note.</p>
+          <h2>Una schermata, non un CRM</h2>
+          <p>Tutto sta in una pagina: le aziende a sinistra, le persone di quell'azienda al centro, le sue trattative a destra e lo storico della trattativa scelta sotto. In alto ci sono i quattro numeri per cui una pipeline si apre davvero: quanto è sana, cosa è aperto, cosa è stato vinto e quanto dura il passaggio da aperto a vinto.</p>
+          <h2>Dice cosa fare, non solo cosa è successo</h2>
+          <p>Ogni lettura si chiude con due o quattro passi concreti, ricavati dallo storico di quella trattativa e formulati come cose da fare questa settimana. Il ragionamento dice cosa sta succedendo; i passi dicono cosa farci.</p>
+          <h2>Il follow-up, già scritto</h2>
+          <p>Apri un contatto e lo strumento redige l'e-mail per quella trattativa nello stato attuale, usando le note come briefing. Copiala e inviala, oppure ignorala e scrivi la tua. Niente viene mai inviato al posto tuo.</p>
           <h2>Stato</h2>
-          <p>In costruzione attiva e pubblica, fase dopo fase: autenticazione, CRUD di base, la funzione di analisi IA e i dati iniziali sono tutti live. Ogni commit rilascia uno stato funzionante e dimostrabile invece di lavoro parziale.</p>
+          <p>Costruito in pubblico, fase per fase. Autenticazione, CRUD, le letture AI in base allo stato, le metriche di pipeline, i contatti e la redazione delle e-mail sono live. La stessa codebase fa girare la demo pubblica e la copia usata davvero per vendere, che fra le due è la prova più onesta.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
