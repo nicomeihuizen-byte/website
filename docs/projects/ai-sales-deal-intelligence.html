@@ -27,13 +27,13 @@
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
 <meta property="og:title" content="AI Sales Deal Intelligence | meihuizen.ai">
 <meta property="og:description" content="AI-native sales intelligence tool that reasons about deal momentum across a note history, flags stalled and at-risk deals, and explains why in plain English.">
-<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <meta property="og:url" content="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Sales Deal Intelligence | meihuizen.ai">
 <meta name="twitter:description" content="AI-native sales intelligence tool that reasons about deal momentum across a note history, flags stalled and at-risk deals, and explains why in plain English.">
-<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai/"
   },
-  "image": "https://www.meihuizen.ai/images/project_four/healthy-deal.png",
+  "image": "https://www.meihuizen.ai/images/project_four/deal-management-workspace.png",
   "keywords": "sales intelligence, stalled deal detection, deal momentum AI, structured tool use, Next.js, Supabase, Anthropic API",
   "url": "https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html",
   "datePublished": "2026-08-24"
@@ -139,22 +139,22 @@
       <h1>AI Native Sales-Cycle Control</h1>
       <p class="project-summary">A focused, single-feature sales intelligence tool that reasons about momentum across a deal's entire note history, flags deals that have gone quiet, and explains why in plain English instead of just summarizing the notes.</p>
       <div class="project-gallery" aria-label="AI Native Sales-Cycle Control project previews">
-        <a href="../images/project_four/deals-overview.png">
+        <a href="../images/project_four/deal-management-workspace.png">
           <picture>
-            <source srcset="../images/project_four/deals-overview.webp" type="image/webp">
-            <img src="../images/project_four/deals-overview.png" alt="Deals list showing six pipeline deals spanning open, lost, and won statuses, including Core Banking Platform Migration and Renewal FY26" loading="lazy" width="1505" height="902" data-crop="intentional">
+            <source srcset="../images/project_four/deal-management-workspace.webp" type="image/webp">
+            <img src="../images/project_four/deal-management-workspace.png" alt="Deal Management workspace: pipeline health, open and won value and average open-to-won time across the top, with companies, contacts and deals in three panes below" loading="lazy" width="1262" height="827" data-crop="intentional">
           </picture>
         </a>
-        <a href="../images/project_four/healthy-deal.png">
+        <a href="../images/project_four/deal-momentum-next-steps.png">
           <picture>
-            <source srcset="../images/project_four/healthy-deal.webp" type="image/webp">
-            <img src="../images/project_four/healthy-deal.png" alt="Momentum panel on an open deal showing a healthy verdict, with reasoning citing the recent contract routing and CFO signature milestones" loading="lazy" width="1407" height="903" data-crop="intentional">
+            <source srcset="../images/project_four/deal-momentum-next-steps.webp" type="image/webp">
+            <img src="../images/project_four/deal-momentum-next-steps.png" alt="Momentum panel on an open deal showing a stalling verdict, the reasoning citing the four-day note gaps and the missing follow-up date, and four concrete next steps" loading="lazy" width="1257" height="897" data-crop="intentional">
           </picture>
         </a>
-        <a href="../images/project_four/lost-deal-revisit.png">
+        <a href="../images/project_four/contact-email-draft.png">
           <picture>
-            <source srcset="../images/project_four/lost-deal-revisit.webp" type="image/webp">
-            <img src="../images/project_four/lost-deal-revisit.png" alt="Loss review panel on a lost deal showing a worth revisiting verdict, with reasoning naming the unresolved pricing objection" loading="lazy" width="1375" height="897" data-crop="intentional">
+            <source srcset="../images/project_four/contact-email-draft.webp" type="image/webp">
+            <img src="../images/project_four/contact-email-draft.png" alt="A contact card with a drafted follow-up email built from the deal's note history, alongside the two most recent updates on that deal" loading="lazy" width="1267" height="902" data-crop="intentional">
           </picture>
         </a>
       </div>
@@ -174,8 +174,14 @@
           <p>An open deal gets a momentum read: healthy, stalling, or at risk. A deal already marked lost gets a different question instead, a loss post-mortem that either confirms the loss was final or names a specific unaddressed objection worth revisiting. A won deal gets a win analysis: what pattern made it close, and what's repeatable in a future deal. Three genuinely different prompts and schemas, dispatched from one route based on the deal's own status.</p>
           <h2>Built for realistic sales cycles</h2>
           <p>Seed data includes two enterprise-scale deals modeled on multi-quarter B2B cycles, each with 50 or more timestamped notes spanning over a year, champion departures, stalled quarters, and recoveries included, to stress-test the reasoning against something closer to a real Oracle- or IBM-sized deal than a five-note demo.</p>
+          <h2>One screen, not a CRM</h2>
+          <p>Everything runs from a single page: companies on the left, that company's people in the middle, its deals on the right, and the selected deal's history underneath. Across the top sit the four figures a pipeline actually gets opened for: how healthy it is, what is open, what has been won, and how long open to won takes.</p>
+          <h2>It says what to do, not just what happened</h2>
+          <p>Every read ends in two to four concrete next steps, drawn from that deal's own history and phrased as things you could do this week. The reasoning tells you what is happening; the steps tell you what to do about it.</p>
+          <h2>The follow-up, already written</h2>
+          <p>Open a contact and the tool drafts the email for that deal in its current state, using the note history as the brief. Copy it and send it, or ignore it and write your own. Nothing is ever sent for you.</p>
           <h2>Status</h2>
-          <p>Actively being built in public, phase by phase: auth, core CRUD, the AI insight feature, and seed data are all live. Every commit ships a working, demoable state rather than partial work.</p>
+          <p>Built in public, phase by phase. Auth, core CRUD, the status-aware AI reads, pipeline metrics, contacts and email drafting are all live. The same codebase runs the public demo and the copy actually used to sell with, which is the more honest test of the two.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>

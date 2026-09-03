@@ -27,13 +27,13 @@
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
 <meta property="og:title" content="Deal intelligence com IA para vendas | meihuizen.ai">
 <meta property="og:description" content="Ferramenta de inteligência de vendas nativa em IA que analisa o momentum de um negócio ao longo do histórico de notas e sinaliza os que estão em risco.">
-<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <meta property="og:url" content="https://www.meihuizen.ai/pt/projects/ai-sales-deal-intelligence.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deal intelligence com IA para vendas | meihuizen.ai">
 <meta name="twitter:description" content="Ferramenta de inteligência de vendas nativa em IA que analisa o momentum de um negócio ao longo do histórico de notas e sinaliza os que estão em risco.">
-<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/healthy-deal.png">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@
     "name": "Nico Meihuizen",
     "url": "https://www.meihuizen.ai"
   },
-  "image": "https://www.meihuizen.ai/images/project_four/healthy-deal.png",
+  "image": "https://www.meihuizen.ai/images/project_four/deal-management-workspace.png",
   "keywords": "inteligência de vendas, deteção de negócios estagnados, momentum de negócios com IA, structured tool use, Next.js, Supabase, Anthropic API",
   "url": "https://www.meihuizen.ai/pt/projects/ai-sales-deal-intelligence.html",
   "datePublished": "2026-08-24"
@@ -137,22 +137,22 @@
       <h1>AI Native Sales-Cycle Control</h1>
       <p class="project-summary">Uma ferramenta de inteligência de vendas focada, de função única, que analisa o momentum ao longo de todo o histórico de notas de um negócio, sinaliza negócios que ficaram silenciosos, e explica porquê em linguagem simples em vez de apenas resumir as notas.</p>
       <div class="project-gallery" aria-label="Pré-visualizações do projeto AI Native Sales-Cycle Control">
-        <a href="../../images/project_four/deals-overview.png">
+        <a href="../images/project_four/deal-management-workspace.png">
           <picture>
-            <source srcset="../../images/project_four/deals-overview.webp" type="image/webp">
-            <img src="../../images/project_four/deals-overview.png" alt="Lista de negócios a mostrar seis negócios do pipeline com estados aberto, perdido e ganho, incluindo Core Banking Platform Migration e Renewal FY26" loading="lazy" width="1505" height="902" data-crop="intentional">
+            <source srcset="../images/project_four/deal-management-workspace.webp" type="image/webp">
+            <img src="../images/project_four/deal-management-workspace.png" alt="Área de gestão de negócios: saúde do pipeline, valor em aberto e ganho e duração média no topo, com empresas, contactos e negócios em três painéis abaixo" loading="lazy" width="1262" height="827" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/healthy-deal.png">
+        <a href="../images/project_four/deal-momentum-next-steps.png">
           <picture>
-            <source srcset="../../images/project_four/healthy-deal.webp" type="image/webp">
-            <img src="../../images/project_four/healthy-deal.png" alt="Painel de momentum num negócio aberto a mostrar um veredito saudável, com raciocínio que cita o encaminhamento recente do contrato e os marcos de assinatura do CFO" loading="lazy" width="1407" height="903" data-crop="intentional">
+            <source srcset="../images/project_four/deal-momentum-next-steps.webp" type="image/webp">
+            <img src="../images/project_four/deal-momentum-next-steps.png" alt="Painel de momentum num negócio aberto com veredicto stalling, o raciocínio a citar os intervalos de quatro dias e a falta de data de seguimento, e quatro próximos passos concretos" loading="lazy" width="1257" height="897" data-crop="intentional">
           </picture>
         </a>
-        <a href="../../images/project_four/lost-deal-revisit.png">
+        <a href="../images/project_four/contact-email-draft.png">
           <picture>
-            <source srcset="../../images/project_four/lost-deal-revisit.webp" type="image/webp">
-            <img src="../../images/project_four/lost-deal-revisit.png" alt="Painel de análise de perda num negócio perdido a mostrar um veredito de 'vale a pena reconsiderar', com raciocínio que identifica a objeção de preço não resolvida" loading="lazy" width="1375" height="897" data-crop="intentional">
+            <source srcset="../images/project_four/contact-email-draft.webp" type="image/webp">
+            <img src="../images/project_four/contact-email-draft.png" alt="Um cartão de contacto com um e-mail de seguimento redigido a partir do histórico de notas do negócio, ao lado das duas atualizações mais recentes" loading="lazy" width="1267" height="902" data-crop="intentional">
           </picture>
         </a>
       </div>
@@ -172,8 +172,14 @@
           <p>Um negócio aberto recebe uma leitura de momentum: saudável, estagnado ou em risco. Um negócio já marcado como perdido recebe uma pergunta diferente: uma análise pós-morte da perda que confirma que a perda foi definitiva ou identifica uma objeção específica não resolvida que vale a pena reconsiderar. Um negócio ganho recebe uma análise de sucesso: que padrão levou ao fecho, e o que é repetível num futuro negócio. Três prompts e esquemas genuinamente diferentes, geridos a partir de uma única rota consoante o próprio estado do negócio.</p>
           <h2>Concebido para ciclos de vendas realistas</h2>
           <p>Os dados iniciais incluem dois negócios à escala empresarial, modelados segundo ciclos B2B de vários trimestres, cada um com 50 ou mais notas com registo temporal ao longo de mais de um ano, incluindo saídas de champions, trimestres estagnados e recuperações, para testar o raciocínio contra algo mais próximo de um negócio à escala da Oracle ou da IBM do que uma demonstração de cinco notas.</p>
+          <h2>Um ecrã, não um CRM</h2>
+          <p>Tudo funciona a partir de uma página: as empresas à esquerda, as pessoas dessa empresa ao centro, os seus negócios à direita e o histórico do negócio escolhido por baixo. No topo estão os quatro números pelos quais se abre um pipeline: a sua saúde, o que está em aberto, o que foi ganho e quanto demora de aberto a ganho.</p>
+          <h2>Diz o que fazer, não só o que aconteceu</h2>
+          <p>Cada leitura termina em dois a quatro próximos passos concretos, retirados do histórico daquele negócio e escritos como algo que pode fazer esta semana. O raciocínio diz o que se passa; os passos dizem o que fazer quanto a isso.</p>
+          <h2>O seguimento, já escrito</h2>
+          <p>Abra um contacto e a ferramenta redige o e-mail para aquele negócio no estado atual, usando as notas como briefing. Copie e envie, ou ignore e escreva o seu. Nunca é enviado nada por si.</p>
           <h2>Estado</h2>
-          <p>Em construção ativa e pública, fase a fase: autenticação, CRUD principal, a funcionalidade de análise por IA e os dados iniciais estão todos em produção. Cada commit entrega um estado funcional e demonstrável em vez de trabalho parcial.</p>
+          <p>Construído em público, fase a fase. Autenticação, CRUD, as leituras de IA consoante o estado, as métricas de pipeline, os contactos e a redação de e-mails estão no ar. A mesma base de código corre a demo pública e a cópia realmente usada para vender, que das duas é o teste mais honesto.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
