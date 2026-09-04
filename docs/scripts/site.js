@@ -140,11 +140,3 @@
   }
 })();
 
-(function () {
-  const refreshBtn = document.getElementById('heroVanRefreshBtn');
-
-  if (refreshBtn) {
-    // reload replays the hero van animation
-    refreshBtn.addEventListener('click', () => window.location.reload());
-  }
-})();
