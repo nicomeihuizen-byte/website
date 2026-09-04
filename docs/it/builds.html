@@ -247,6 +247,23 @@
     .work-item:focus-visible .image .slot-quiet{ animation:none; }
     .work-item .image .sa-echo{ transition:none; }
   }
+
+  .work-item:hover .image .acre-summer,
+  .work-item:focus-visible .image .acre-summer{ animation:acre-season 4s ease-in-out infinite; }
+  .work-item:hover .image .acre-winter,
+  .work-item:focus-visible .image .acre-winter{ animation:acre-season 4s ease-in-out infinite reverse; }
+  @keyframes acre-season{ 0%,20%{ opacity:1; } 50%,70%{ opacity:.32; } 100%{ opacity:1; } }
+  .work-item:hover .image .pf-caret,
+  .work-item:focus-visible .image .pf-caret{ animation:pf-blink 1.1s steps(1,end) infinite; }
+  @keyframes pf-blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .acre-summer,
+    .work-item:focus-visible .image .acre-summer,
+    .work-item:hover .image .acre-winter,
+    .work-item:focus-visible .image .acre-winter,
+    .work-item:hover .image .pf-caret,
+    .work-item:focus-visible .image .pf-caret{ animation:none; }
+  }
 </style>
 </head>
 <body>
@@ -325,7 +342,7 @@
           <span class="tag">AI / SaaS</span>
         </a>
         <a class="work-item" href="projects/off-grid-ai-homestead.html">
-          <img class="image" src="../images/project_two/repo/thun-wheel.svg" alt="Grafico ad anello del tempo che la Luna trascorre in ogni costellazione in un mese siderale, colorato per tipo di giorno Thun" loading="lazy" width="120" height="70" data-crop="intentional">
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="One Acre: two plots covering opposite halves of the year"><rect x="14" y="22" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="14" y="38" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="38" y="22" width="54" height="10" rx="4" fill="#5fbf8e" class="acre-summer"/><rect x="14" y="38" width="28" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/><rect x="84" y="38" width="22" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/></svg>
           <div class="info">
             <h2>One Acre Zero Dependency</h2>
             <p>Progetto di fattoria off-grid guidato dall'IA.</p>
@@ -333,7 +350,7 @@
           <span class="tag">IA / hardware</span>
         </a>
         <a class="work-item" href="projects/terminal-portfolio-website.html">
-          <picture><source srcset="../images/project_three/homepage-screenshot.webp" type="image/webp"><img class="image" src="../images/project_three/homepage-screenshot.png" alt="Screenshot della homepage del sito portfolio ispirato al terminale" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Portfolio: a terminal window"><rect x="13" y="13" width="94" height="44" rx="6" fill="none" stroke="#5fbf8e" stroke-width="1.5"/><path d="M13 26 H107" stroke="#5fbf8e" stroke-width="1.5"/><circle cx="22" cy="19.5" r="2.4" fill="#AE1C28"/><circle cx="30" cy="19.5" r="2.4" fill="#8b90a3"/><circle cx="38" cy="19.5" r="2.4" fill="#21468B"/><rect x="24" y="35" width="46" height="4" rx="2" fill="#8b90a3" opacity="0.75"/><rect x="24" y="45" width="30" height="4" rx="2" fill="#8b90a3" opacity="0.5"/><rect x="58" y="44.5" width="5" height="5.5" rx="1" fill="#5fbf8e" class="pf-caret"/></svg>
           <div class="info">
             <h2>Sito portfolio</h2>
             <p>Sito web statico sicuro e responsive.</p>
