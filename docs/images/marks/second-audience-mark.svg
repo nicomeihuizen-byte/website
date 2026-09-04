@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Second Audience">
+  <title>Second Audience</title>
+  <path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/>
+  <path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/>
+  <rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/>
+  <rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/>
+  <rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/>
+</svg>

@@ -132,9 +132,9 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <h1>Second Audience</h1>
+      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false" style="flex-shrink:0;"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
       <p class="project-summary">Tu web tiene ahora dos tipos de visitante. Uno tiene ojos. El otro es agentic AI: nunca ejecuta tu JavaScript, solo lee lo que envía tu servidor, y luego responde preguntas sobre ti a sus propios visitantes, que jamás abren tu página. Second Audience mide lo que ese segundo visitante puede hacer realmente.</p>
-      <p class="project-summary">Desde agosto de 2026 el escaneo también mide qué hacen de cuatro a cinco agentes con ese vacío en la práctica, en sesiones nuevas, bajo cinco reglas que impiden que la respuesta de un agente se convierta ella misma en el hallazgo.</p>
+      <p class="project-summary">Un servicio, no una herramienta. El escaneo lo realizan una persona y un modelo trabajando sobre el mismo caso, porque lo que se vende es la afirmaci&oacute;n de que las m&aacute;quinas leen con seguridad y se equivocan en los hechos, y esa no es una afirmaci&oacute;n que una m&aacute;quina pueda certificar sobre s&iacute; misma.</p>
       <div class="project-gallery" aria-label="Vistas previas del proyecto Second Audience">
         <a href="../../images/project_five/second-audience-cover.png">
           <picture>
@@ -162,18 +162,19 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// resumen</h2>
-          <h2>Qué mide esto</h2>
-          <p>Un agente como ChatGPT, Claude, Gemini o Perplexity obtiene una página, se salta el JavaScript, y responde preguntas sobre un negocio con sus propias palabras. Second Audience mide lo que ese agente puede leer realmente, lo que puede hacer realmente, y luego nombra el cambio más pequeño que cierra el vacío.</p>
-          <h2>Cinco capas, un veredicto por tarea</h2>
-          <p>Renderizado: la página obtenida con y sin JavaScript, comparada. Legibilidad: dónde vive realmente un hecho, en texto, en marcado, en una imagen, o en ninguna parte. Permiso: la intención de robots.txt frente a su efecto medido. Usabilidad: si un agente termina la tarea para la que vino un visitante, y de qué página procede la respuesta. Prueba: de treinta a noventa días de log de servidor clasificado, una capa contra la que aconsejamos más a menudo que a favor. Cada tarea recibe un veredicto con nombre en lugar de una puntuación sobre cien, porque una puntuación invita a manipular precisamente lo que dice medir.</p>
-          <h2>Siete pasos, y los agentes van al final</h2>
-          <p>Identificar el objeto que realmente sostiene el ingreso, extraer los hechos que un comprador necesita antes de comprometerse, buscar una segunda versión del mismo hecho redactada de otra forma en algún otro lugar del dominio, comprobar si sobrevive como texto o solo como imagen o palabra de escape como "desde", mapear lo que ya dicen terceros al respecto, contrastar el hallazgo con resoluciones publicadas de reguladores, y solo entonces preguntar a los agentes, con la predicción escrita primero.</p>
-          <h2>Cómo es un hallazgo</h2>
-          <p>El título de página de un banco privado afirmaba "desde 1804"; su propia cronología publicada decía 1881. La habitación más cara de un museo decía solo "desde 299 €"; nueve respuestas de agentes dieron cinco precios distintos, y ninguna dio la tarifa de fin de semana por la que realmente se reserva la habitación. Un gestor regulado nunca publicó su inversión mínima; cinco agentes proporcionaron igualmente una cifra, sin que se lo pidieran.</p>
-          <h2>Cinco reglas para la capa de agentes</h2>
-          <p>La respuesta del agente nunca es el hallazgo, solo una ilustración junto a un fragmento de texto de la página que se puede volver a obtener. Cada afirmación recibe la misma pregunta de seguimiento: ¿en qué URL exacta aparece eso? Las sesiones empiezan limpias con la predicción escrita primero, nuestro propio modelo se sienta en la misma mesa sin excepción, y nuestras propias predicciones fallidas se publican junto a los aciertos.</p>
+          <h2>Siete pasos, en este orden, y los agentes van los &uacute;ltimos</h2>
+          <p>El orden es el producto. Un escaneo que empieza por los agentes encuentra imperfecciones t&eacute;cnicas y ning&uacute;n dinero. Cada hallazgo fuerte de este a&ntilde;o sali&oacute; del paso tres: &iquest;aparece el mismo dato en otro sitio del dominio, redactado de otra forma? En unas FAQ, una traducci&oacute;n caducada, una p&aacute;gina hu&eacute;rfana, una nota de prensa de hace cuatro a&ntilde;os.</p>
+          <h2>C&oacute;mo es un hallazgo</h2>
+          <p>La mejor habitaci&oacute;n de un museo cuesta 299 euros entre semana y 325 el fin de semana. Su propia p&aacute;gina dice solo "desde 299 euros". Nueve respuestas de cuatro agentes dieron 235, 264,50, 277,50 y 299 euros, y "entre 150 y 350 euros". Ninguna dio la tarifa de fin de semana.</p>
+          <p>El t&iacute;tulo de p&aacute;gina de una banca privada dice desde 1804. Su propia cronolog&iacute;a dice 1881. Ese 1804 pertenece al negocio textil de la familia, no al banco. Una m&aacute;quina que se lleva el t&iacute;tulo hace al banco setenta y siete a&ntilde;os m&aacute;s viejo de lo que es.</p>
+          <h2>Publicamos nuestros propios fallos</h2>
+          <p>Dieciocho predicciones escritas antes de preguntar a un solo agente. Nueve de ellas equivocadas. Eso est&aacute; en el informe, con el motivo. Un informe que solo ense&ntilde;a los aciertos es un documento comercial y se lee como tal.</p>
+          <h2>Una persona y un modelo sobre el mismo caso</h2>
+          <p>La m&aacute;quina hace el volumen: cada p&aacute;gina descargada dos veces y comparada, cada dato de negocio contrastado con todas sus otras apariciones en el dominio, cada documento citado abierto para ver si su capa de texto sostiene lo que la cita afirma. Una persona toma las tres decisiones que ning&uacute;n bucle produce: qu&eacute; objeto lleva los ingresos, qu&eacute; dato merece perseguirse y si una cita se sostiene de verdad. Ambos se equivocan con regularidad. Cada uno responde ante el otro antes de que salga nada.</p>
+          <h2>No se queda arreglado</h2>
+          <p>Los motores se actualizan, las p&aacute;ginas cambian y una afirmaci&oacute;n que usted retir&oacute; se sigue respondiendo durante meses. De ese efecto exacto hay una medici&oacute;n fechada en este dominio. As&iacute; que el trabajo se repite: las mismas consultas a una semana, un mes y tres meses, sobre las mismas p&aacute;ginas.</p>
           <h2>Estado</h2>
-          <p>Siete escaneos completados a fecha de agosto de 2026: un museo, una red de expertos, un gestor de patrimonio regulado, un banco privado, una cervecera global, un banco minorista y un bootcamp de programación. La capa de log de servidor existe, pero aconsejamos en su contra más a menudo que a favor.</p>
+          <p>Siete escaneos completados. Dos de ellos son ya clientes de pago que llegaron como escaneo gratuito. Los informes se entregan en neerland&eacute;s e ingl&eacute;s, con un anexo de dos p&aacute;ginas sobre alcance, datos, derechos y RGPD en cada uno.</p>
         </section>
         <section>
           <h2 class="section-label">// método</h2>
