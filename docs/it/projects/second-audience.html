@@ -135,25 +135,86 @@
       <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false" style="flex-shrink:0;"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
       <p class="project-summary">Il tuo sito ha ora due tipi di visitatore. Uno ha gli occhi. L'altro è agentic AI: non esegue mai il tuo JavaScript, legge solo ciò che il tuo server invia, e poi risponde a domande su di te per i suoi visitatori, che non aprono mai la tua pagina. Second Audience misura ciò che questo secondo visitatore può davvero fare.</p>
       <p class="project-summary">Un servizio, non uno strumento. La scansione &egrave; svolta da una persona e da un modello sullo stesso caso, perch&eacute; ci&ograve; che si vende &egrave; l'affermazione che le macchine leggono con sicurezza e sbagliano i fatti, e non &egrave; un'affermazione che una macchina possa certificare su se stessa.</p>
-      <div class="project-gallery" aria-label="Anteprime del progetto Second Audience">
-        <a href="../../images/project_five/second-audience-cover.png">
-          <picture>
-            <source srcset="../../images/project_five/second-audience-cover.webp" type="image/webp">
-            <img src="../../images/project_five/second-audience-cover.png" alt="Copertina della panoramica del progetto Second Audience: cosa fa un agente IA del tuo sito, e quanto costa" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
-        <a href="../../images/project_five/second-audience-problem.png">
-          <picture>
-            <source srcset="../../images/project_five/second-audience-problem.webp" type="image/webp">
-            <img src="../../images/project_five/second-audience-problem.png" alt="Pagina del report che spiega perché la maggior parte dei crawler IA non esegue JavaScript, cosicché i contenuti che appaiono solo nel browser non esistono per loro" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
-        <a href="../../images/project_five/second-audience-scans.png">
-          <picture>
-            <source srcset="../../images/project_five/second-audience-scans.webp" type="image/webp">
-            <img src="../../images/project_five/second-audience-scans.png" alt="Pagina del report che riassume quattro risultati di scansione, tra cui la cronologia contraddittoria di una banca privata e cinque prezzi diversi citati dagli agenti per un museo" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
+      <div class="project-figures">
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa1t">
+          <title id="sa1t">The same page fetched twice, the second time missing most of its content</title>
+          <rect x="30" y="42" width="140" height="216" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <g fill="#8b90a3">
+          <rect x="48" y="70" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="90" width="80" height="9" rx="4.5"/>
+          <rect x="48" y="120" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="140" width="92" height="9" rx="4.5"/>
+          <rect x="48" y="170" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="190" width="68" height="9" rx="4.5"/>
+          <rect x="48" y="220" width="88" height="9" rx="4.5"/>
+          </g>
+          <path d="M186 150 H214" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <path d="M206 143 L214 150 L206 157" stroke="#565b6e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="230" y="42" width="140" height="216" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
+          <g fill="#8b90a3">
+          <rect x="248" y="70" width="104" height="9" rx="4.5"/>
+          <rect x="248" y="120" width="104" height="9" rx="4.5"/>
+          </g>
+          <g fill="#565b6e" opacity="0.22">
+          <rect x="248" y="90" width="80" height="9" rx="4.5"/>
+          <rect x="248" y="140" width="92" height="9" rx="4.5"/>
+          <rect x="248" y="170" width="104" height="9" rx="4.5"/>
+          <rect x="248" y="190" width="68" height="9" rx="4.5"/>
+          <rect x="248" y="220" width="88" height="9" rx="4.5"/>
+          </g>
+          </svg>
+          <figcaption><strong>Scaricata due volte</strong><span>La stessa pagina con e senza JavaScript. Ci&ograve; che sparisce &egrave; esattamente quello che un crawler che non renderizza non vede mai.</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa2t">
+          <title id="sa2t">One published fact, and four agents returning four different values</title>
+          <rect x="30" y="34" width="340" height="62" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <rect x="50" y="52" width="60" height="8" rx="4" fill="#565b6e"/>
+          <rect x="50" y="70" width="104" height="12" rx="6" fill="#5fbf8e"/>
+          <path d="M200 104 V126" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <g>
+          <circle cx="52" cy="152" r="7" fill="#565b6e"/><rect x="72" y="146" width="72" height="12" rx="6" fill="#d9a441"/>
+          <circle cx="52" cy="188" r="7" fill="#565b6e"/><rect x="72" y="182" width="132" height="12" rx="6" fill="#d9a441"/>
+          <circle cx="52" cy="224" r="7" fill="#565b6e"/><rect x="72" y="218" width="104" height="12" rx="6" fill="#5fbf8e"/>
+          <circle cx="52" cy="260" r="7" fill="#565b6e"/><rect x="72" y="254" width="188" height="12" rx="6" fill="#d9a441"/>
+          </g>
+          </svg>
+          <figcaption><strong>Un dato, quattro risposte</strong><span>Un prezzo pubblicato una volta sola, in una forma che invita a completare il resto. Quattro agent, quattro numeri, uno solo giusto.</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa3t">
+          <title id="sa3t">A written prediction, then eighteen results of which nine are wrong</title>
+          <rect x="30" y="34" width="340" height="84" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
+          <g fill="#8b90a3" opacity="0.8">
+          <rect x="50" y="56" width="180" height="9" rx="4.5"/>
+          <rect x="50" y="76" width="248" height="9" rx="4.5"/>
+          <rect x="50" y="96" width="140" height="9" rx="4.5"/>
+          </g>
+          <path d="M200 126 V148" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <g>
+          <rect x="30" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="88" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="146" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="204" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="262" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="320" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="30" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="88" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="146" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="204" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="262" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="320" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="30" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="88" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="146" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="204" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="262" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="320" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          </g>
+          </svg>
+          <figcaption><strong>Previsioni scritte prima</strong><span>Diciotto annotate prima di chiedere qualsiasi cosa a un agent. Nove sbagliate, e questo &egrave; nel rapporto.</span></figcaption>
+        </figure>
       </div>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Immagine del progetto a piena grandezza" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Chiudi immagine a piena grandezza">&times;</button>

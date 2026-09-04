@@ -235,6 +235,18 @@
     .work-item .image{ width:100%; height:150px; aspect-ratio:auto; }
     footer{padding:0 18px 28px;}
   }
+
+  .work-item .image .sa-echo{ opacity:0; transition:opacity .25s ease; }
+  .work-item:hover .image .sa-echo,
+  .work-item:focus-visible .image .sa-echo{ opacity:.9; }
+  .work-item:hover .image .slot-quiet,
+  .work-item:focus-visible .image .slot-quiet{ animation:slot-goes-quiet 2.6s ease-in-out infinite; }
+  @keyframes slot-goes-quiet{ 0%,55%{ fill:#5FBF8E; } 70%,84%{ fill:#D9A441; } 100%{ fill:#5FBF8E; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .slot-quiet,
+    .work-item:focus-visible .image .slot-quiet{ animation:none; }
+    .work-item .image .sa-echo{ transition:none; }
+  }
 </style>
 </head>
 <body>
@@ -297,7 +309,7 @@
       </div>
       <div class="work-list">
         <a class="work-item" href="projects/second-audience.html">
-          <picture><source srcset="../images/project_five/aiagent.webp" type="image/webp"><img class="image" src="../images/project_five/aiagent.png" alt="Illustration eines KI-Agenten, dem Thema des Second-Audience-Projekts" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Second Audience: the same content read twice"><path d="M32 16 H22 V54 H32" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><path d="M88 16 H98 V54 H88" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><rect x="38" y="24" width="44" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="34" width="30" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="44" width="37" height="5" rx="2.5" fill="#2e6b52"/><g class="sa-echo"><rect x="38" y="34" width="44" height="5" rx="2.5" fill="#d9a441"/></g></svg>
           <div class="info">
             <h2>Second Audience</h2>
             <p>Wiederkehrende Audit dessen, was KI-Agenten lesen und falsch verstehen.</p>
@@ -305,7 +317,7 @@
           <span class="tag">KI / agentic web</span>
         </a>
         <a class="work-item" href="projects/ai-sales-deal-intelligence.html">
-          <picture><source srcset="../images/project_four/sales_cycle.webp" type="image/webp"><img class="image" src="../images/project_four/sales_cycle.png" alt="Symbol eines Umsatzzyklus: kreisende Pfeile um ein Balkendiagramm und ein Dollarzeichen" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Five: three slots worked, two free"><rect x="16" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="35" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="54" y="16" width="12" height="38" rx="3" class="slot-quiet" fill="#5fbf8e"/><rect x="73.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/><rect x="92.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/></svg>
           <div class="info">
             <h2>Five</h2>
             <p>F&uuml;nf Deals pro Woche. Sie merken es, wenn einer verstummt.</p>
