@@ -235,6 +235,35 @@
     .work-item .image{ width:100%; height:150px; aspect-ratio:auto; }
     footer{padding:0 18px 28px;}
   }
+
+  .work-item .image .sa-echo{ opacity:0; transition:opacity .25s ease; }
+  .work-item:hover .image .sa-echo,
+  .work-item:focus-visible .image .sa-echo{ opacity:.9; }
+  .work-item:hover .image .slot-quiet,
+  .work-item:focus-visible .image .slot-quiet{ animation:slot-goes-quiet 2.6s ease-in-out infinite; }
+  @keyframes slot-goes-quiet{ 0%,55%{ fill:#5FBF8E; } 70%,84%{ fill:#D9A441; } 100%{ fill:#5FBF8E; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .slot-quiet,
+    .work-item:focus-visible .image .slot-quiet{ animation:none; }
+    .work-item .image .sa-echo{ transition:none; }
+  }
+
+  .work-item:hover .image .acre-summer,
+  .work-item:focus-visible .image .acre-summer{ animation:acre-season 4s ease-in-out infinite; }
+  .work-item:hover .image .acre-winter,
+  .work-item:focus-visible .image .acre-winter{ animation:acre-season 4s ease-in-out infinite reverse; }
+  @keyframes acre-season{ 0%,20%{ opacity:1; } 50%,70%{ opacity:.32; } 100%{ opacity:1; } }
+  .work-item:hover .image .pf-caret,
+  .work-item:focus-visible .image .pf-caret{ animation:pf-blink 1.1s steps(1,end) infinite; }
+  @keyframes pf-blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .acre-summer,
+    .work-item:focus-visible .image .acre-summer,
+    .work-item:hover .image .acre-winter,
+    .work-item:focus-visible .image .acre-winter,
+    .work-item:hover .image .pf-caret,
+    .work-item:focus-visible .image .pf-caret{ animation:none; }
+  }
 </style>
 </head>
 <body>
@@ -297,7 +326,7 @@
       </div>
       <div class="work-list">
         <a class="work-item" href="projects/second-audience.html">
-          <picture><source srcset="../images/project_five/aiagent.webp" type="image/webp"><img class="image" src="../images/project_five/aiagent.png" alt="Illustration d'un agent IA, le sujet du projet Second Audience" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Second Audience: the same content read twice"><path d="M32 16 H22 V54 H32" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><path d="M88 16 H98 V54 H88" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><rect x="38" y="24" width="44" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="34" width="30" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="44" width="37" height="5" rx="2.5" fill="#2e6b52"/><g class="sa-echo"><rect x="38" y="34" width="44" height="5" rx="2.5" fill="#d9a441"/></g></svg>
           <div class="info">
             <h2>Second Audience</h2>
             <p>Audit récurrent de ce que les agents IA lisent et interprètent mal.</p>
@@ -305,15 +334,15 @@
           <span class="tag">IA / agentic web</span>
         </a>
         <a class="work-item" href="projects/ai-sales-deal-intelligence.html">
-          <picture><source srcset="../images/project_four/sales_cycle.webp" type="image/webp"><img class="image" src="../images/project_four/sales_cycle.png" alt="Icône d'un cycle de revenus : flèches circulaires autour d'un graphique à barres et d'un signe dollar" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Five: three slots worked, two free"><rect x="16" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="35" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="54" y="16" width="12" height="38" rx="3" class="slot-quiet" fill="#5fbf8e"/><rect x="73.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/><rect x="92.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/></svg>
           <div class="info">
-            <h2>AI Native Sales-Cycle Control</h2>
-            <p>Détection IA-native des affaires bloquées pour les équipes commerciales.</p>
+            <h2>Five</h2>
+            <p>Cinq affaires par semaine. Vous saurez quand l'une d'elles s'&eacute;teint.</p>
           </div>
           <span class="tag">AI / SaaS</span>
         </a>
         <a class="work-item" href="projects/off-grid-ai-homestead.html">
-          <img class="image" src="../images/project_two/repo/thun-wheel.svg" alt="Diagramme en anneau du temps que la Lune passe dans chaque constellation sur un mois sidéral, coloré par type de jour Thun" loading="lazy" width="120" height="70" data-crop="intentional">
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="One Acre: two plots covering opposite halves of the year"><rect x="14" y="22" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="14" y="38" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="38" y="22" width="54" height="10" rx="4" fill="#5fbf8e" class="acre-summer"/><rect x="14" y="38" width="28" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/><rect x="84" y="38" width="22" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/></svg>
           <div class="info">
             <h2>One Acre Zero Dependency</h2>
             <p>Projet de ferme autonome pilotée par IA.</p>
@@ -321,7 +350,7 @@
           <span class="tag">AI / hardware</span>
         </a>
         <a class="work-item" href="projects/terminal-portfolio-website.html">
-          <picture><source srcset="../images/project_three/homepage-screenshot.webp" type="image/webp"><img class="image" src="../images/project_three/homepage-screenshot.png" alt="Capture d'écran de la page d'accueil du site portfolio inspiré d'un terminal" loading="lazy" width="120" height="70" data-crop="intentional"></picture>
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Portfolio: a terminal window"><rect x="13" y="13" width="94" height="44" rx="6" fill="none" stroke="#5fbf8e" stroke-width="1.5"/><path d="M13 26 H107" stroke="#5fbf8e" stroke-width="1.5"/><circle cx="22" cy="19.5" r="2.4" fill="#AE1C28"/><circle cx="30" cy="19.5" r="2.4" fill="#8b90a3"/><circle cx="38" cy="19.5" r="2.4" fill="#21468B"/><rect x="24" y="35" width="46" height="4" rx="2" fill="#8b90a3" opacity="0.75"/><rect x="24" y="45" width="30" height="4" rx="2" fill="#8b90a3" opacity="0.5"/><rect x="58" y="44.5" width="5" height="5.5" rx="1" fill="#5fbf8e" class="pf-caret"/></svg>
           <div class="info">
             <h2>Site portfolio</h2>
             <p>Site statique sécurisé et responsive.</p>

@@ -93,7 +93,7 @@
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a class="back-link" href="/">&lt; home</a>
+    <a class="back-link" href="/builds.html">&lt; builds</a>
   </div>
 </header>
 <main class="page-wrap">
@@ -132,28 +132,89 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <h1>Second Audience</h1>
+      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false" style="flex-shrink:0;"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
       <p class="project-summary">Your website has two kinds of visitor now. One has eyes. The other is agentic AI: it never runs your JavaScript, reads only what your server sends, and then answers questions about you for its visitors, who never open your page. Second Audience measures what that second visitor can actually do.</p>
-      <p class="project-summary">Since August 2026 the scan also measures what four to five agents make of the gap in practice, in fresh sessions, under five rules that keep the agent's answer from ever becoming the finding itself.</p>
-      <div class="project-gallery" aria-label="Second Audience project previews">
-        <a href="../images/project_five/second-audience-cover.png">
-          <picture>
-            <source srcset="../images/project_five/second-audience-cover.webp" type="image/webp">
-            <img src="../images/project_five/second-audience-cover.png" alt="Cover page of the Second Audience project overview: what an AI agent makes of your website, and what that costs" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
-        <a href="../images/project_five/second-audience-problem.png">
-          <picture>
-            <source srcset="../images/project_five/second-audience-problem.webp" type="image/webp">
-            <img src="../images/project_five/second-audience-problem.png" alt="Report page explaining why most AI crawlers do not run JavaScript, so content drawn only in the browser does not exist for them" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
-        <a href="../images/project_five/second-audience-scans.png">
-          <picture>
-            <source srcset="../images/project_five/second-audience-scans.webp" type="image/webp">
-            <img src="../images/project_five/second-audience-scans.png" alt="Report page summarising four scan findings, including a private bank's contradicting timeline and a museum's five different agent-quoted prices" loading="lazy" width="1488" height="2105" data-crop="intentional">
-          </picture>
-        </a>
+      <p class="project-summary">A service, not a tool. The scan is run by a person and a model working the same case, because the claim being sold is that machines read confidently and get facts wrong, and that is not a claim a machine can certify about itself.</p>
+      <div class="project-figures">
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa1t">
+          <title id="sa1t">The same page fetched twice, the second time missing most of its content</title>
+          <rect x="30" y="42" width="140" height="216" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <g fill="#8b90a3">
+          <rect x="48" y="70" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="90" width="80" height="9" rx="4.5"/>
+          <rect x="48" y="120" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="140" width="92" height="9" rx="4.5"/>
+          <rect x="48" y="170" width="104" height="9" rx="4.5"/>
+          <rect x="48" y="190" width="68" height="9" rx="4.5"/>
+          <rect x="48" y="220" width="88" height="9" rx="4.5"/>
+          </g>
+          <path d="M186 150 H214" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <path d="M206 143 L214 150 L206 157" stroke="#565b6e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="230" y="42" width="140" height="216" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
+          <g fill="#8b90a3">
+          <rect x="248" y="70" width="104" height="9" rx="4.5"/>
+          <rect x="248" y="120" width="104" height="9" rx="4.5"/>
+          </g>
+          <g fill="#565b6e" opacity="0.22">
+          <rect x="248" y="90" width="80" height="9" rx="4.5"/>
+          <rect x="248" y="140" width="92" height="9" rx="4.5"/>
+          <rect x="248" y="170" width="104" height="9" rx="4.5"/>
+          <rect x="248" y="190" width="68" height="9" rx="4.5"/>
+          <rect x="248" y="220" width="88" height="9" rx="4.5"/>
+          </g>
+          </svg>
+          <figcaption><strong>Fetched twice</strong><span>The same page with JavaScript and without. What disappears is what a non-rendering crawler never sees.</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa2t">
+          <title id="sa2t">One published fact, and four agents returning four different values</title>
+          <rect x="30" y="34" width="340" height="62" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <rect x="50" y="52" width="60" height="8" rx="4" fill="#565b6e"/>
+          <rect x="50" y="70" width="104" height="12" rx="6" fill="#5fbf8e"/>
+          <path d="M200 104 V126" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <g>
+          <circle cx="52" cy="152" r="7" fill="#565b6e"/><rect x="72" y="146" width="72" height="12" rx="6" fill="#d9a441"/>
+          <circle cx="52" cy="188" r="7" fill="#565b6e"/><rect x="72" y="182" width="132" height="12" rx="6" fill="#d9a441"/>
+          <circle cx="52" cy="224" r="7" fill="#565b6e"/><rect x="72" y="218" width="104" height="12" rx="6" fill="#5fbf8e"/>
+          <circle cx="52" cy="260" r="7" fill="#565b6e"/><rect x="72" y="254" width="188" height="12" rx="6" fill="#d9a441"/>
+          </g>
+          </svg>
+          <figcaption><strong>One fact, four answers</strong><span>A price published once, in a form that invites filling in the rest. Four agents, four numbers, one of them right.</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa3t">
+          <title id="sa3t">A written prediction, then eighteen results of which nine are wrong</title>
+          <rect x="30" y="34" width="340" height="84" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
+          <g fill="#8b90a3" opacity="0.8">
+          <rect x="50" y="56" width="180" height="9" rx="4.5"/>
+          <rect x="50" y="76" width="248" height="9" rx="4.5"/>
+          <rect x="50" y="96" width="140" height="9" rx="4.5"/>
+          </g>
+          <path d="M200 126 V148" stroke="#565b6e" stroke-width="2" fill="none"/>
+          <g>
+          <rect x="30" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="88" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="146" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="204" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="262" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="320" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="30" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="88" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="146" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="204" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="262" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="320" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="30" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="88" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="146" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="204" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          <rect x="262" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
+          <rect x="320" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
+          </g>
+          </svg>
+          <figcaption><strong>Predictions written first</strong><span>Eighteen written down before an agent was asked anything. Nine of them wrong, and that is in the report.</span></figcaption>
+        </figure>
       </div>
       <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
         <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
@@ -162,18 +223,19 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// overview</h2>
-          <h2>What this measures</h2>
-          <p>An agent such as ChatGPT, Claude, Gemini or Perplexity fetches a page, skips the JavaScript, and answers questions about a business in its own words. Second Audience measures what that agent can actually read, what it can actually do, and then names the smallest change that fixes the gap.</p>
-          <h2>Five layers, one verdict per task</h2>
-          <p>Rendering: the page fetched with and without JavaScript, compared. Readability: where a fact actually lives, in text, in markup, in an image, or nowhere. Permission: the intent of robots.txt against its measured effect. Usability: whether an agent finishes the task a visitor came to do, and whose page the answer came from. Proof: thirty to ninety days of classified server log, a layer we advise against more often than for. Every task gets a named verdict instead of a score out of a hundred, because a score invites gaming the very thing it claims to measure.</p>
-          <h2>Seven steps, and the agents come last</h2>
-          <p>Identify the object that actually carries the revenue, extract the facts a buyer needs before committing, hunt for a second version of the same fact worded differently elsewhere on the domain, check whether it survives as text or only as an image or an escape word like "from", map what third parties already say about it, test the finding against published regulator rulings, and only then ask the agents, with the prediction written down first.</p>
+          <h2>Seven steps, in this order, and the agents come last</h2>
+          <p>The order is the product. A scan that starts at the agents finds technical imperfections and no money. Every strong finding this year came out of step three: does the same fact appear somewhere else on the domain, worded differently. An FAQ, a stale translation, an orphan page, a press release from four years ago.</p>
           <h2>What a finding looks like</h2>
-          <p>A private bank's page title claimed "since 1804"; its own published timeline said 1881. A museum's most expensive room said only "from €299"; nine agent answers produced five different prices, and not one gave the weekend rate the room is actually booked on. A regulated manager never published its minimum investment; five agents supplied a figure anyway, unprompted.</p>
-          <h2>Five rules for the agent layer</h2>
-          <p>The agent's answer is never the finding, only ever illustration beside a fetchable piece of text on the page. Every claim gets the same follow-up: at exactly which URL does that appear? Sessions start fresh with the prediction written down first, our own model sits in the same table with no exemption, and our own wrong predictions are published alongside the hits.</p>
+          <p>A museum's best room costs &euro;299 on weekdays and &euro;325 at the weekend. Its own page says only "from &euro;299". Nine answers from four agents gave &euro;235, &euro;264.50, &euro;277.50, &euro;299 and "between &euro;150 and &euro;350". Not one gave the weekend rate.</p>
+          <p>A private bank's page title says since 1804. Its own timeline says 1881. The 1804 belongs to the family's textile business, not to the bank. A machine that carries the title away makes the bank seventy-seven years older than it is.</p>
+          <h2>We publish our own misses</h2>
+          <p>Eighteen predictions written down before a single agent was asked. Nine of them wrong. That is in the report, with the reason. A report that shows only the hits is a sales document and gets read as one.</p>
+          <h2>A person and a model, working the same case</h2>
+          <p>The machine does the volume: every page fetched twice and compared, every business fact diffed against every other instance of itself on the domain, every cited document opened to see whether its text layer holds what the citation claims. A person makes the three decisions no loop produces: which object carries the revenue, which fact is worth chasing, and whether a citation actually holds. Both are wrong regularly. Each has to answer to the other before anything ships.</p>
+          <h2>It does not stay fixed</h2>
+          <p>Engines update, pages change, and a claim you have removed keeps being answered for months afterwards. There is a dated measurement of exactly that on this domain. So the work repeats: the same prompts at one week, one month and three months, against the same pages.</p>
           <h2>Status</h2>
-          <p>Seven scans completed as of August 2026: a museum, an expert network, a regulated asset manager, a private bank, a global brewer, a retail bank, and a coding bootcamp. The server-log layer exists but is recommended against more often than for.</p>
+          <p>Seven scans completed. Two of them are now paying clients who arrived as free scans. Reports ship in Dutch and English, with a two-page annex on scope, data, rights and GDPR attached to every one.</p>
         </section>
         <section>
           <h2 class="section-label">// method</h2>
