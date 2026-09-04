@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import subprocess
 import re
 import struct
 import sys
@@ -483,6 +484,117 @@ def collect_alt_duplicates(alt_registry: dict[str, list[tuple[str, str]]]) -> li
     return issues
 
 
+# ---------------------------------------------------------------- identifiers
+
+# Every legal identifier on this site has to come from a document a registry
+# issued. None may be generated, inferred, or filled in with something that
+# looks right.
+#
+# This check exists because it happened. The published Terms of Business named
+# "Meihuizen.Ai LLC" with TIN LT173067779: a correctly formatted Lithuanian tax
+# number, for a company that did not exist, on a contract downloadable from the
+# home page in seven languages. The number appeared nowhere else in this
+# repository, so nothing copied it from anywhere. Something produced it, and it
+# passed every review because it was the right shape in the right field.
+#
+# Shape is not evidence. So: any identifier-shaped string found in anything this
+# site publishes is an ERROR until it is listed below with a note saying which
+# document it came from. Adding an entry takes ten seconds and forces the one
+# question that would have caught this.
+
+IDENTIFIER_ALLOWLIST: dict[str, str] = {
+    # "LT100012345678": "VAT certificate, MB Meihuizen AI, issued 2026-09-__",
+}
+
+# Tier A: EU VAT numbers. A two-letter country code followed by a run of
+# digits is close to unambiguous and is what bit us.
+VAT_PATTERN = re.compile(
+    r"\b(?:AT|BE|BG|CY|CZ|DE|DK|EE|EL|ES|FI|FR|HR|HU|IE|IT|LT|LU|LV|MT|NL|PL|"
+    r"PT|RO|SE|SI|SK)[0-9]{8,12}[A-Z]?\b"
+)
+
+# Tier B: a bare run of digits is only suspicious next to a word that means
+# "this is a registration". Eight to twelve digits on its own is a phone
+# number, a price, a date range or a pixel size, and flagging those would
+# train everyone to ignore this check.
+REGISTRY_WORDS = (
+    "vat", "btw", "tin", "kvk", "company code", "company number", "registration "
+    "number", "reg. no", "handelsregister", "umsatzsteuer", "steuernummer",
+    "nif", "cif", "partita iva", "codice fiscale", "numero de tva", "tva",
+    "chamber of commerce", "imones kodas", "pvm",
+)
+DIGIT_RUN = re.compile(r"\b[0-9]{8,12}\b")
+CONTEXT_WINDOW = 70
+
+
+def _line_of(text: str, index: int) -> int:
+    return text.count("\n", 0, index) + 1
+
+
+def check_identifiers(path: str, text: str, has_lines: bool = True) -> list[Issue]:
+    """Flag anything shaped like a legal or tax identifier that is not
+    allowlisted with a source."""
+    issues: list[Issue] = []
+    seen: set[str] = set()
+    lowered = text.lower()
+
+    for match in VAT_PATTERN.finditer(text):
+        token = match.group(0)
+        if token in IDENTIFIER_ALLOWLIST or token in seen:
+            continue
+        seen.add(token)
+        issues.append(Issue(
+            path, "ERROR", "identifier",
+            f"'{token}' is shaped like an EU VAT number. If a registry issued "
+            f"it, add it to IDENTIFIER_ALLOWLIST in diagnostics.py with the "
+            f"document it came from. If nothing issued it, it must not be "
+            f"published.",
+            _line_of(text, match.start()) if has_lines else None,
+        ))
+
+    for match in DIGIT_RUN.finditer(text):
+        token = match.group(0)
+        if token in IDENTIFIER_ALLOWLIST or token in seen:
+            continue
+        start = max(0, match.start() - CONTEXT_WINDOW)
+        window = lowered[start:match.end() + CONTEXT_WINDOW]
+        hit = next((w for w in REGISTRY_WORDS if w in window), None)
+        if not hit:
+            continue
+        seen.add(token)
+        issues.append(Issue(
+            path, "ERROR", "identifier",
+            f"'{token}' sits next to '{hit}' and looks like a registration "
+            f"number. Allowlist it with its source document, or remove it.",
+            _line_of(text, match.start()) if has_lines else None,
+        ))
+
+    return issues
+
+
+def extract_pdf_text(full_path: str) -> str | None:
+    """Best effort. Returns None when nothing on this machine can read a PDF,
+    which the caller reports rather than silently skipping: an unscanned
+    published PDF is exactly the gap this check was written for."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        pass
+    else:
+        try:
+            return "\n".join(page.extract_text() or "" for page in PdfReader(full_path).pages)
+        except Exception:
+            return None
+
+    try:
+        result = subprocess.run(["pdftotext", full_path, "-"],
+                                capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    return result.stdout if result.returncode == 0 else None
+
+
+
 def run(site_root: str) -> list[Issue]:
     issues: list[Issue] = []
     alt_registry: dict[str, list[tuple[str, str]]] = {}
@@ -520,6 +632,31 @@ def run(site_root: str) -> list[Issue]:
     for full_path in js_files:
         relpath = os.path.relpath(full_path, REPO_ROOT)
         issues += check_js_file(full_path, relpath)
+
+    # Identifier sweep over everything the site actually serves, PDFs included.
+    # The one that got published was in a PDF, so scanning only markup would
+    # have missed it again.
+    text_suffixes = (".html", ".js", ".md", ".txt", ".xml", ".json", ".webmanifest")
+    for dirpath, _dirnames, filenames in os.walk(site_root):
+        for filename in sorted(filenames):
+            full_path = os.path.join(dirpath, filename)
+            relpath = os.path.relpath(full_path, REPO_ROOT)
+            if filename.endswith(text_suffixes):
+                try:
+                    body = open(full_path, encoding="utf-8", errors="replace").read()
+                except OSError:
+                    continue
+                issues += check_identifiers(relpath, body)
+            elif filename.endswith(".pdf"):
+                body = extract_pdf_text(full_path)
+                if body is None:
+                    issues.append(Issue(
+                        relpath, "WARN", "identifier",
+                        "Published PDF could not be read, so it was not checked "
+                        "for identifiers. Install pypdf or poppler-utils.",
+                    ))
+                else:
+                    issues += check_identifiers(relpath, body, has_lines=False)
 
     return issues
 
