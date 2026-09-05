@@ -687,3 +687,258 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- Five: product lockup, verdict quote, pricing ----
+   The lockup's flex used to be an inline style attribute on the div. This
+   page's own CSP sets style-src without 'unsafe-inline', which blocks
+   style attributes as well as <style> blocks, so that rule was almost
+   certainly never applying. It lives here now, where it works. */
+.five-lockup { display: flex; align-items: center; gap: 18px; }
+.five-lockup svg { flex: none; }
+.five-lockup h1 { max-width: none; margin: 0; }
+.five-lockup-sub {
+  margin: 7px 0 0;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+/* The verdict is the only thing on this page that shows rather than tells,
+   so it is set apart from the prose rather than folded into it. */
+.verdict {
+  max-width: 52ch;
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent-dim);
+  border-radius: 0 8px 8px 0;
+  background: var(--bg-raised);
+}
+.verdict p {
+  max-width: none;
+  margin: 0;
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.verdict cite {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-style: normal;
+}
+
+.pricing {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+.pricing-tier {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised);
+}
+/* The tier the product is actually built for, marked with a border rather
+   than a "most popular" badge. Nothing has been sold yet, so a popularity
+   claim would be a lie on a page whose whole argument is candour. */
+.pricing-tier.is-lead { border-color: var(--accent-dim); }
+.pricing-tier h3 {
+  margin: 0;
+  color: var(--accent2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.pricing-price {
+  margin: 14px 0 2px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+.pricing-price span {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+}
+.pricing-seats {
+  margin: 0 0 15px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.pricing-tier ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pricing-tier li {
+  position: relative;
+  padding-left: 15px;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.pricing-tier li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  background: var(--accent-dim);
+}
+.pricing-note {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+.pricing-note strong { color: var(--text); font-weight: 500; }
+/* --text-muted, not --text-dim. This line carries VAT, the annual discount
+   and the trial length, which is the small print a buyer actually has to
+   read; --text-dim on this background is 2.58:1 and fails badly. Dim is
+   for decoration, not for terms. */
+.pricing-terms {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 8px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.pricing-cta:hover,
+.pricing-cta:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #10121A;
+}
+@media (max-width: 760px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Five vs the category ----
+   Not a tick grid. A tick grid asks the reader to count, and against
+   Salesforce that count is roughly forty to four. These are four axes
+   where the difference is structural rather than a matter of how much
+   was built, plus an admission underneath, which is the part that makes
+   the other four believable. */
+.compare {
+  width: 100%;
+  margin-top: 26px;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.compare caption {
+  margin-bottom: 10px;
+  color: var(--accent2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: left;
+}
+.compare th,
+.compare td {
+  padding: 9px 10px 9px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.compare thead th {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+.compare thead th.is-five { color: var(--accent); }
+.compare tbody th {
+  width: 26%;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.compare td {
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+/* The subject of the table, not a winner's column: brighter text and a
+   hairline, no highlight fill and no ticks. */
+.compare td.is-five {
+  padding-left: 10px;
+  border-left: 1px solid var(--accent-dim);
+  color: var(--text);
+}
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td { border-bottom: 0; }
+.compare-admission {
+  max-width: 48ch;
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.compare-admission strong { color: var(--text); font-weight: 500; }
+
+/* Below the two-column break the table has the full width back, but the
+   first column of labels is what runs out of room, so it goes above its
+   row instead of beside it. */
+@media (max-width: 650px) {
+  .compare thead { display: none; }
+  .compare tbody tr {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .compare tbody tr:last-child { border-bottom: 0; }
+  .compare tbody th {
+    display: block;
+    width: auto;
+    padding: 0 0 8px;
+    border: 0;
+  }
+  .compare tbody td {
+    display: block;
+    padding: 3px 0 3px 10px;
+    border: 0;
+    border-left: 1px solid var(--line);
+  }
+  .compare tbody td::before {
+    content: attr(data-label) " ";
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+  .compare tbody td.is-five { border-left-color: var(--accent-dim); }
+}

@@ -136,7 +136,7 @@
     </div>
     <div class="terminal-body">
       <!-- <div class="project-kicker">04_project / AI / SaaS</div> -->
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Five deals a week. You will know when one goes quiet. Deal management for one to five sellers, built by someone who carried a bag for fourteen years.</p>
       <div class="project-figures">
         <figure>
@@ -231,17 +231,55 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// overview</h2>
-          <h2>You already own a CRM</h2>
-          <p>Be honest about the last time anyone filled it in. This is not that. There are five slots, because five is a week's work. You write a line after each call. It reads the history and tells you which deal has stopped moving, and why.</p>
-          <h2>What it actually says</h2>
-          <p>"Both contacts gave a positive buying signal and want implementation, but the deal is blocked on an administrative gap: no entity, VAT or company number, so the local office cannot raise a purchase order. There is a plan, a rep flying out on the 26th, but that is over three weeks away with no interim step."</p>
-          <p>That is not a summary of your notes. That is a read on the deal, which is what a good sales manager does in a pipeline review. Most teams this size have never had one.</p>
-          <h2>Three things, and no more</h2>
-          <p>Pick five. Write what happened. Get told what is dying. The cap is the feature: a list of everything is a filing cabinet, and five is a week's work.</p>
-          <h2>Built by someone who carried a bag</h2>
-          <p>Fourteen years selling enterprise software at IBM, Oracle and Minitab, then building the tool I wished I had had. The same codebase runs the public demo and the copy I actually sell with, which is the more honest test of the two.</p>
-          <h2>Under it</h2>
-          <p>Next.js 16 and Postgres, with row level security so a tenant's data is isolated at the database rather than by a filter someone can forget. Claude reasons over your own note history and never over anyone else's. Deployed as your own instance on European infrastructure in Finland, so customer notes never leave the EU. Light and dark as standard, your brand on request.</p>
+          <p>You already own a CRM. Be honest about the last time anyone filled it in. Five Deal Management is not that: five slots, because five is a week's work, and one line written after each call. It reads the history and tells you which deal has stopped moving and why, which is what a good sales manager does in a pipeline review and what most teams this size have never had. Built by someone who carried a bag for fourteen years at IBM, Oracle and Minitab, and run as your own instance in Frankfurt.</p>
+          <blockquote class="verdict">
+            <p>"Both contacts gave a positive buying signal and want implementation, but the deal is blocked on an administrative gap: no entity, VAT or company number, so the local office cannot raise a purchase order. There is a plan, a rep flying out on the 26th, but that is over three weeks away with no interim step."</p>
+            <cite>A real verdict, anonymised. Not a summary of the notes.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// how it differs</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">On your desk</th>
+                <td class="is-five" data-label="Five">Five prospects, capped</td>
+                <td data-label="Pipedrive">Everything you own</td>
+                <td data-label="Salesforce">Everything you own</td>
+              </tr>
+              <tr>
+                <th scope="row">What it hands you</th>
+                <td class="is-five" data-label="Five">A verdict on one deal, in prose, with its reasoning</td>
+                <td data-label="Pipedrive">Fields and a pipeline view</td>
+                <td data-label="Salesforce">Scores and dashboards</td>
+              </tr>
+              <tr>
+                <th scope="row">What the AI costs</th>
+                <td class="is-five" data-label="Five">Included, nothing per action</td>
+                <td data-label="Pipedrive">Bundled into the seat</td>
+                <td data-label="Salesforce">Per action, in credits</td>
+              </tr>
+              <tr>
+                <th scope="row">Where notes sit</th>
+                <td class="is-five" data-label="Five">Your own database, in Frankfurt</td>
+                <td data-label="Pipedrive">Their cloud</td>
+                <td data-label="Salesforce">Their cloud</td>
+              </tr>
+              <tr>
+                <th scope="row">Getting data out</th>
+                <td class="is-five" data-label="Five">Your own Postgres. Power BI and Excel connect straight to it</td>
+                <td data-label="Pipedrive">Exports and an API</td>
+                <td data-label="Salesforce">Exports and an API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Everything else on their lists, they have and this does not.</strong> Forecasting, marketing, territories, an app marketplace. Reporting is absent on purpose: the database is yours on Team and Private, and Power BI and Excel read Postgres natively, which beats a dashboard I would have to build twice.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -258,20 +296,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Download the project overview as a PDF">
+          <a class="doc-download" href="../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Download the Five product sheet as a PDF">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Project overview</h3>
-              <p>Two-page brief. The quiet-deal problem, the three status-aware questions, and why the schema is the point.</p>
+              <h3>Product sheet</h3>
+              <p>Four pages. What it does, how the analysis actually works, the technical specification and the pricing.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// pricing</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">&euro;39 <span>/ month</span></p>
+            <p class="pricing-seats">one seller</p>
+            <ul>
+              <li>Shared instance in Frankfurt, your rows isolated at the database</li>
+              <li>Unlimited analyses and drafts</li>
+              <li>Light and dark as standard</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">&euro;129 <span>/ month</span></p>
+            <p class="pricing-seats">up to three sellers</p>
+            <ul>
+              <li>Your own database, on shared infrastructure in Frankfurt</li>
+              <li>Unlimited analyses and drafts</li>
+              <li>Everything in Solo</li>
+              <li>Read-only SQL connection for Power BI and Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">&euro;299 <span>/ month</span></p>
+            <p class="pricing-seats">up to five sellers</p>
+            <ul>
+              <li>Your own instance and your own database, on your own subdomain</li>
+              <li>Unlimited analyses and drafts, or bring your own model key</li>
+              <li>Signed data processing agreement</li>
+              <li>Your brand on request</li>
+              <li>Read-only SQL connection for Power BI and Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>The list stops at five sellers, and that is not an oversight.</strong> There are no roll-up views, no deal ownership and no territories, because a tool built on a cap of five has no business pretending to run a sales floor. Are you bigger than that? Ask anyway, because there are custom options.</p>
+        <p class="pricing-terms">Prices excl. VAT. Pay yearly and get twelve months for ten. Thirty days to try it, because the reading needs a note history before it has anything worth saying. Hosted in Frankfurt by default; Stockholm on request for Nordic customers.</p>
+        <a class="pricing-cta" href="/#contact">$ talk to me about an instance</a>
+      </section>
+
       <nav class="project-nav" aria-label="Project navigation">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- previous</span><strong>Project two</strong></a>
         <div class="project-nav-socials">

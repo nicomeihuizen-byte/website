@@ -134,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Cinque trattative a settimana. Saprete quando una si spegne. Gestione delle trattative per uno a cinque venditori, costruita da chi ha venduto per quattordici anni.</p>
       <div class="project-figures">
         <figure>
@@ -229,17 +229,55 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// panoramica</h2>
-          <h2>Avete gi&agrave; un CRM</h2>
-          <p>Siate onesti su quando qualcuno lo ha compilato l'ultima volta. Questo non &egrave; quello. Ci sono cinque posti, perch&eacute; cinque &egrave; una settimana di lavoro. Scrivete una riga dopo ogni conversazione. Lo strumento legge lo storico e vi dice quale trattativa si &egrave; fermata, e perch&eacute;.</p>
-          <h2>Che cosa dice davvero</h2>
-          <p>"Entrambi i referenti hanno dato un segnale d'acquisto positivo e vogliono partire, ma la trattativa &egrave; bloccata su un vuoto amministrativo: nessuna entit&agrave;, nessuna partita IVA, nessun numero di impresa, quindi l'ufficio locale non pu&ograve; emettere un ordine. C'&egrave; un piano, un collega arriva il 26, ma mancano pi&ugrave; di tre settimane e non c'&egrave; alcun passaggio intermedio."</p>
-          <p>Non &egrave; un riassunto delle vostre note. &Egrave; una lettura della trattativa, quello che fa un buon direttore vendite in una revisione di pipeline. La maggior parte dei team di questa dimensione non ne ha mai avuto uno.</p>
-          <h2>Tre cose, non una di pi&ugrave;</h2>
-          <p>Sceglietene cinque. Scrivete che cosa &egrave; successo. Fatevi dire che cosa sta morendo. Il limite &egrave; la funzione: un elenco di tutto &egrave; uno schedario, e cinque &egrave; una settimana.</p>
-          <h2>Costruita da chi ha portato un budget</h2>
-          <p>Quattordici anni a vendere software enterprise in IBM, Oracle e Minitab, e poi la costruzione dello strumento che avrei voluto avere. Lo stesso codice muove la demo pubblica e la versione con cui vendo davvero, che delle due &egrave; la prova pi&ugrave; onesta.</p>
-          <h2>Che cosa c'&egrave; sotto</h2>
-          <p>Next.js 16 e Postgres, con row level security: i dati di un cliente sono isolati a livello di database e non da un filtro che qualcuno pu&ograve; dimenticare. Claude ragiona sul vostro storico di note e mai su quello di altri. Distribuito come vostra istanza su infrastruttura europea in Finlandia, cos&igrave; le note dei clienti non lasciano mai l'UE. Chiaro e scuro di serie, il vostro marchio su richiesta.</p>
+          <p>Avete gi&agrave; un CRM. Siate onesti su quando qualcuno lo ha compilato l'ultima volta. Five Deal Management non &egrave; quello: cinque posti, perch&eacute; cinque &egrave; una settimana di lavoro, e una riga scritta dopo ogni conversazione. Legge lo storico e vi dice quale trattativa si &egrave; fermata e perch&eacute;, cio&egrave; quello che fa un buon direttore vendite in una revisione di pipeline e che i team di questa dimensione non hanno mai avuto. Costruito da chi ha venduto in prima persona per quattordici anni in IBM, Oracle e Minitab, e gestito come la vostra istanza in Francoforte.</p>
+          <blockquote class="verdict">
+            <p>"Entrambi i referenti hanno dato un segnale d'acquisto positivo e vogliono partire, ma la trattativa &egrave; bloccata su un vuoto amministrativo: nessuna entit&agrave;, nessuna partita IVA, nessun numero di impresa, quindi l'ufficio locale non pu&ograve; emettere un ordine. C'&egrave; un piano, un collega arriva il 26, ma mancano pi&ugrave; di tre settimane e non c'&egrave; alcun passaggio intermedio."</p>
+            <cite>Un verdetto reale, reso anonimo. Non un riassunto delle note.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// in che cosa si distingue</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Sulla vostra scrivania</th>
+                <td class="is-five" data-label="Five">Cinque trattative, con un limite</td>
+                <td data-label="Pipedrive">Tutto quello che avete</td>
+                <td data-label="Salesforce">Tutto quello che avete</td>
+              </tr>
+              <tr>
+                <th scope="row">Che cosa vi consegna</th>
+                <td class="is-five" data-label="Five">Un verdetto su una trattativa, in chiaro, con il ragionamento</td>
+                <td data-label="Pipedrive">Campi e una vista pipeline</td>
+                <td data-label="Salesforce">Punteggi e dashboard</td>
+              </tr>
+              <tr>
+                <th scope="row">Quanto costa l'IA</th>
+                <td class="is-five" data-label="Five">Incluso, nulla per azione</td>
+                <td data-label="Pipedrive">Incluso nella licenza utente</td>
+                <td data-label="Salesforce">Per azione, in crediti</td>
+              </tr>
+              <tr>
+                <th scope="row">Dove stanno le note</th>
+                <td class="is-five" data-label="Five">Il vostro database, in Francoforte</td>
+                <td data-label="Pipedrive">Il loro cloud</td>
+                <td data-label="Salesforce">Il loro cloud</td>
+              </tr>
+              <tr>
+                <th scope="row">Portare fuori i dati</th>
+                <td class="is-five" data-label="Five">Il vostro Postgres. Power BI ed Excel si collegano direttamente</td>
+                <td data-label="Pipedrive">Esportazioni e una API</td>
+                <td data-label="Salesforce">Esportazioni e una API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Tutto il resto dei loro elenchi ce l'hanno loro e non questo.</strong> Previsioni, marketing, territori, un marketplace di app. La reportistica manca di proposito: su Team e Private il database &egrave; vostro, e Power BI ed Excel leggono Postgres in modo nativo, meglio di una dashboard che dovrei costruire due volte.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Scarica la panoramica del progetto in PDF">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Scarica la scheda prodotto Five in PDF">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Panoramica del progetto</h3>
-              <p>Sintesi di due pagine. Il problema delle trattative silenziose, le tre domande in base allo stato e perch&eacute; conta lo schema.</p>
+              <h3>Scheda prodotto</h3>
+              <p>Quattro pagine. Che cosa fa, come funziona davvero l'analisi, la specifica tecnica e i prezzi.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// prezzi</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">39&nbsp;&euro; <span>/ mese</span></p>
+            <p class="pricing-seats">un venditore</p>
+            <ul>
+              <li>Istanza condivisa in Francoforte, le vostre righe isolate a livello di database</li>
+              <li>Analisi e bozze illimitate</li>
+              <li>Chiaro e scuro di serie</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">129&nbsp;&euro; <span>/ mese</span></p>
+            <p class="pricing-seats">fino a tre venditori</p>
+            <ul>
+              <li>Il vostro database, su infrastruttura condivisa in Francoforte</li>
+              <li>Analisi e bozze illimitate</li>
+              <li>Tutto quello che c'&egrave; in Solo</li>
+              <li>Connessione SQL in sola lettura per Power BI ed Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">299&nbsp;&euro; <span>/ mese</span></p>
+            <p class="pricing-seats">fino a cinque venditori</p>
+            <ul>
+              <li>La vostra istanza e il vostro database, sul vostro sottodominio</li>
+              <li>Analisi illimitate, o la vostra chiave del modello</li>
+              <li>Accordo sul trattamento dei dati firmato</li>
+              <li>Il vostro marchio su richiesta</li>
+              <li>Connessione SQL in sola lettura per Power BI ed Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>L'elenco si ferma a cinque venditori, e non &egrave; una dimenticanza.</strong> Non ci sono viste aggregate, non c'&egrave; la titolarit&agrave; delle trattative e non ci sono territori, perch&eacute; uno strumento costruito su un limite di cinque non deve fingere di governare una forza vendita. Siete pi&ugrave; grandi di cos&igrave;? Chiedete lo stesso, perch&eacute; esistono opzioni su misura.</p>
+        <p class="pricing-terms">Prezzi IVA esclusa. Pagamento annuale: dodici mesi al prezzo di dieci. Trenta giorni di prova, perch&eacute; l'analisi ha bisogno di uno storico di note prima di avere qualcosa da dire. Ospitato a Francoforte per impostazione predefinita; Stoccolma su richiesta per i paesi nordici.</p>
+        <a class="pricing-cta" href="/#contact">$ parliamo di un'istanza</a>
+      </section>
+
       <nav class="project-nav" aria-label="Navigazione dei progetti">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- precedente</span><strong>Progetto 2</strong></a>
         <div class="project-nav-socials">

@@ -134,7 +134,7 @@
       </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Cinco neg&oacute;cios por semana. Saber&aacute; quando um deles fica em sil&ecirc;ncio. Gest&atilde;o de neg&oacute;cios para um a cinco vendedores, constru&iacute;da por quem vendeu durante catorze anos.</p>
       <div class="project-figures">
         <figure>
@@ -229,17 +229,55 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// resumo</h2>
-          <h2>J&aacute; tem um CRM</h2>
-          <p>Seja honesto sobre a &uacute;ltima vez que algu&eacute;m o preencheu. Isto n&atilde;o &eacute; isso. H&aacute; cinco lugares, porque cinco &eacute; uma semana de trabalho. Escreve uma linha depois de cada conversa. A ferramenta l&ecirc; o hist&oacute;rico e diz-lhe qual o neg&oacute;cio que deixou de andar, e porqu&ecirc;.</p>
-          <h2>O que diz na verdade</h2>
-          <p>"Ambos os contactos deram um sinal de compra positivo e querem avan&ccedil;ar, mas o neg&oacute;cio est&aacute; bloqueado numa lacuna administrativa: sem entidade, sem n&uacute;mero de IVA e sem n&uacute;mero de empresa, o escrit&oacute;rio local n&atilde;o pode emitir uma ordem de compra. H&aacute; um plano, um colega viaja no dia 26, mas isso &eacute; daqui a mais de tr&ecirc;s semanas e sem qualquer passo interm&eacute;dio."</p>
-          <p>Isto n&atilde;o &eacute; um resumo das suas notas. &Eacute; uma leitura do neg&oacute;cio, que &eacute; o que um bom director comercial faz numa revis&atilde;o de pipeline. A maioria das equipas desta dimens&atilde;o nunca teve um.</p>
-          <h2>Tr&ecirc;s coisas, e mais nenhuma</h2>
-          <p>Escolha cinco. Escreva o que aconteceu. Deixe que lhe digam o que est&aacute; a morrer. O limite &eacute; a funcionalidade: uma lista com tudo &eacute; um arquivo, e cinco &eacute; uma semana.</p>
-          <h2>Constru&iacute;da por quem carregou um objectivo</h2>
-          <p>Catorze anos a vender software empresarial na IBM, Oracle e Minitab, e depois a construir a ferramenta que gostaria de ter tido. O mesmo c&oacute;digo corre a demonstra&ccedil;&atilde;o p&uacute;blica e a vers&atilde;o com que vendo a s&eacute;rio, que das duas &eacute; o teste mais honesto.</p>
-          <h2>O que est&aacute; por baixo</h2>
-          <p>Next.js 16 e Postgres, com row level security para que os dados de um cliente fiquem isolados na base de dados e n&atilde;o por um filtro que algu&eacute;m possa esquecer. O Claude raciocina sobre o seu pr&oacute;prio hist&oacute;rico de notas e nunca sobre o de outra pessoa. Implementado como a sua pr&oacute;pria inst&acirc;ncia em infraestrutura europeia na Finl&acirc;ndia, para que as notas de clientes nunca saiam da UE. Claro e escuro de origem, a sua marca a pedido.</p>
+          <p>J&aacute; tem um CRM. Seja honesto sobre a &uacute;ltima vez que algu&eacute;m o preencheu. O Five Deal Management n&atilde;o &eacute; isso: cinco lugares, porque cinco &eacute; uma semana de trabalho, e uma linha escrita depois de cada conversa. L&ecirc; o hist&oacute;rico e diz-lhe qual o neg&oacute;cio que deixou de andar e porqu&ecirc;, que &eacute; o que faz um bom diretor comercial numa revis&atilde;o de pipeline e o que as equipas desta dimens&atilde;o nunca tiveram. Feito por quem vendeu durante catorze anos na IBM, na Oracle e na Minitab, e operado como a sua pr&oacute;pria inst&acirc;ncia na Frankfurt.</p>
+          <blockquote class="verdict">
+            <p>"Ambos os contactos deram um sinal de compra positivo e querem avan&ccedil;ar, mas o neg&oacute;cio est&aacute; bloqueado numa lacuna administrativa: sem entidade, sem n&uacute;mero de IVA e sem n&uacute;mero de empresa, o escrit&oacute;rio local n&atilde;o pode emitir uma ordem de compra. H&aacute; um plano, um colega viaja no dia 26, mas isso &eacute; daqui a mais de tr&ecirc;s semanas e sem qualquer passo interm&eacute;dio."</p>
+            <cite>Um veredicto real, anonimizado. N&atilde;o &eacute; um resumo das notas.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// em que se distingue</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Na sua secret&aacute;ria</th>
+                <td class="is-five" data-label="Five">Cinco neg&oacute;cios, com limite</td>
+                <td data-label="Pipedrive">Tudo o que tem</td>
+                <td data-label="Salesforce">Tudo o que tem</td>
+              </tr>
+              <tr>
+                <th scope="row">O que lhe entrega</th>
+                <td class="is-five" data-label="Five">Um veredicto sobre um neg&oacute;cio, em texto, com o racioc&iacute;nio</td>
+                <td data-label="Pipedrive">Campos e uma vista de pipeline</td>
+                <td data-label="Salesforce">Pontua&ccedil;&otilde;es e dashboards</td>
+              </tr>
+              <tr>
+                <th scope="row">Quanto custa a IA</th>
+                <td class="is-five" data-label="Five">Inclu&iacute;da, nada por a&ccedil;&atilde;o</td>
+                <td data-label="Pipedrive">Inclu&iacute;da na licen&ccedil;a</td>
+                <td data-label="Salesforce">Por a&ccedil;&atilde;o, em cr&eacute;ditos</td>
+              </tr>
+              <tr>
+                <th scope="row">Onde ficam as notas</th>
+                <td class="is-five" data-label="Five">A sua pr&oacute;pria base de dados, na Frankfurt</td>
+                <td data-label="Pipedrive">A nuvem deles</td>
+                <td data-label="Salesforce">A nuvem deles</td>
+              </tr>
+              <tr>
+                <th scope="row">Tirar os dados</th>
+                <td class="is-five" data-label="Five">O seu pr&oacute;prio Postgres. O Power BI e o Excel ligam-se diretamente</td>
+                <td data-label="Pipedrive">Exporta&ccedil;&otilde;es e uma API</td>
+                <td data-label="Salesforce">Exporta&ccedil;&otilde;es e uma API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Tudo o resto das listas deles, eles t&ecirc;m e isto n&atilde;o tem.</strong> Previs&otilde;es, marketing, territ&oacute;rios, um mercado de aplica&ccedil;&otilde;es. Os relat&oacute;rios faltam de prop&oacute;sito: no Team e no Private a base de dados &eacute; sua, e o Power BI e o Excel leem Postgres nativamente, o que &eacute; melhor do que um painel que eu teria de construir duas vezes.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Descarregar a vis&atilde;o geral do projeto em PDF">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Descarregar a ficha de produto Five em PDF">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Vis&atilde;o geral do projeto</h3>
-              <p>Resumo de duas p&aacute;ginas. O problema dos neg&oacute;cios silenciosos, as tr&ecirc;s perguntas conforme o estado e por que o esquema &eacute; o que importa.</p>
+              <h3>Ficha de produto</h3>
+              <p>Quatro p&aacute;ginas. O que faz, como funciona realmente a an&aacute;lise, a especifica&ccedil;&atilde;o t&eacute;cnica e os pre&ccedil;os.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// pre&ccedil;os</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">39&nbsp;&euro; <span>/ m&ecirc;s</span></p>
+            <p class="pricing-seats">um vendedor</p>
+            <ul>
+              <li>Inst&acirc;ncia partilhada na Frankfurt, as suas linhas isoladas na base de dados</li>
+              <li>An&aacute;lises e rascunhos ilimitados</li>
+              <li>Claro e escuro de s&eacute;rie</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">129&nbsp;&euro; <span>/ m&ecirc;s</span></p>
+            <p class="pricing-seats">at&eacute; tr&ecirc;s vendedores</p>
+            <ul>
+              <li>A sua pr&oacute;pria base de dados, em infraestrutura partilhada na Frankfurt</li>
+              <li>An&aacute;lises e rascunhos ilimitados</li>
+              <li>Tudo o que est&aacute; no Solo</li>
+              <li>Liga&ccedil;&atilde;o SQL apenas de leitura para o Power BI e o Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">299&nbsp;&euro; <span>/ m&ecirc;s</span></p>
+            <p class="pricing-seats">at&eacute; cinco vendedores</p>
+            <ul>
+              <li>A sua pr&oacute;pria inst&acirc;ncia e base de dados, no seu subdom&iacute;nio</li>
+              <li>An&aacute;lises ilimitadas, ou a sua pr&oacute;pria chave de modelo</li>
+              <li>Contrato de subcontrata&ccedil;&atilde;o assinado</li>
+              <li>A sua marca a pedido</li>
+              <li>Liga&ccedil;&atilde;o SQL apenas de leitura para o Power BI e o Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>A lista termina nos cinco vendedores, e isso n&atilde;o &eacute; um lapso.</strong> N&atilde;o h&aacute; vistas agregadas, n&atilde;o h&aacute; propriedade de neg&oacute;cios e n&atilde;o h&aacute; territ&oacute;rios, porque uma ferramenta constru&iacute;da sobre um limite de cinco n&atilde;o tem de fingir que gere uma for&ccedil;a de vendas. &Eacute; maior do que isso? Pergunte na mesma, porque h&aacute; op&ccedil;&otilde;es &agrave; medida.</p>
+        <p class="pricing-terms">Pre&ccedil;os sem IVA. Pagamento anual: doze meses por dez. Trinta dias para experimentar, porque a an&aacute;lise precisa de um hist&oacute;rico de notas antes de ter algo a dizer. Alojado em Frankfurt por predefini&ccedil;&atilde;o; Estocolmo a pedido para os pa&iacute;ses n&oacute;rdicos.</p>
+        <a class="pricing-cta" href="/#contact">$ falemos de uma inst&acirc;ncia</a>
+      </section>
+
       <nav class="project-nav" aria-label="Navegação de projetos">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- anterior</span><strong>Projeto 2</strong></a>
         <div class="project-nav-socials">
