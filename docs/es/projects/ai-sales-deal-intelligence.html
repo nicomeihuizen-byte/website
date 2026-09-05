@@ -134,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Cinco operaciones por semana. Sabr&aacute; cuando una se queda en silencio. Gesti&oacute;n de operaciones para uno a cinco comerciales, creada por alguien que vendi&oacute; durante catorce a&ntilde;os.</p>
       <div class="project-figures">
         <figure>
@@ -229,17 +229,55 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// resumen</h2>
-          <h2>Ya tiene un CRM</h2>
-          <p>Sea sincero sobre la &uacute;ltima vez que alguien lo rellen&oacute;. Esto no es eso. Hay cinco huecos, porque cinco es una semana de trabajo. Usted escribe una l&iacute;nea despu&eacute;s de cada conversaci&oacute;n. La herramienta lee el historial y le dice qu&eacute; operaci&oacute;n ha dejado de moverse, y por qu&eacute;.</p>
-          <h2>Lo que dice en realidad</h2>
-          <p>"Ambos contactos dieron una se&ntilde;al de compra positiva y quieren implantar, pero la operaci&oacute;n est&aacute; bloqueada por un hueco administrativo: sin entidad, sin NIF-IVA y sin n&uacute;mero de empresa, la oficina local no puede emitir un pedido. Hay un plan, un compa&ntilde;ero viaja el 26, pero eso es dentro de m&aacute;s de tres semanas y sin ning&uacute;n paso intermedio."</p>
-          <p>Eso no es un resumen de sus notas. Es una lectura de la operaci&oacute;n, que es lo que hace un buen director comercial en una revisi&oacute;n de pipeline. La mayor&iacute;a de los equipos de este tama&ntilde;o nunca han tenido uno.</p>
-          <h2>Tres cosas, y ninguna m&aacute;s</h2>
-          <p>Elija cinco. Escriba lo que pas&oacute;. Deje que le digan qu&eacute; se est&aacute; muriendo. El l&iacute;mite es la funci&oacute;n: una lista con todo es un archivador, y cinco es una semana.</p>
-          <h2>Creada por alguien que llev&oacute; un objetivo</h2>
-          <p>Catorce a&ntilde;os vendiendo software empresarial en IBM, Oracle y Minitab, y despu&eacute;s construir la herramienta que me habr&iacute;a gustado tener. El mismo c&oacute;digo mueve la demo p&uacute;blica y la versi&oacute;n con la que vendo de verdad, que de las dos es la prueba m&aacute;s honesta.</p>
-          <h2>Lo que hay debajo</h2>
-          <p>Next.js 16 y Postgres, con row level security para que los datos de un cliente queden aislados en la base de datos y no por un filtro que alguien puede olvidar. Claude razona sobre su propio historial de notas y nunca sobre el de otro. Desplegado como su propia instancia en infraestructura europea en Finlandia, de modo que las notas de clientes nunca salen de la UE. Claro y oscuro de serie, su marca bajo petici&oacute;n.</p>
+          <p>Ya tiene un CRM. Sea sincero sobre la &uacute;ltima vez que alguien lo rellen&oacute;. Five Deal Management no es eso: cinco huecos, porque cinco es una semana de trabajo, y una l&iacute;nea escrita despu&eacute;s de cada conversaci&oacute;n. Lee el historial y le dice qu&eacute; operaci&oacute;n ha dejado de moverse y por qu&eacute;, que es lo que hace un buen director comercial en una revisi&oacute;n de pipeline y lo que los equipos de este tama&ntilde;o nunca han tenido. Creado por alguien que vendi&oacute; durante catorce a&ntilde;os en IBM, Oracle y Minitab, y operado como su propia instancia en Fr&aacute;ncfort.</p>
+          <blockquote class="verdict">
+            <p>"Ambos contactos dieron una se&ntilde;al de compra positiva y quieren implantar, pero la operaci&oacute;n est&aacute; bloqueada por un hueco administrativo: sin entidad, sin NIF-IVA y sin n&uacute;mero de empresa, la oficina local no puede emitir un pedido. Hay un plan, un compa&ntilde;ero viaja el 26, pero eso es dentro de m&aacute;s de tres semanas y sin ning&uacute;n paso intermedio."</p>
+            <cite>Un veredicto real, anonimizado. No es un resumen de las notas.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// en qu&eacute; se diferencia</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">En su mesa</th>
+                <td class="is-five" data-label="Five">Cinco operaciones, con l&iacute;mite</td>
+                <td data-label="Pipedrive">Todo lo que tiene</td>
+                <td data-label="Salesforce">Todo lo que tiene</td>
+              </tr>
+              <tr>
+                <th scope="row">Qu&eacute; le entrega</th>
+                <td class="is-five" data-label="Five">Un veredicto sobre una operaci&oacute;n, en claro, con su razonamiento</td>
+                <td data-label="Pipedrive">Campos y una vista de pipeline</td>
+                <td data-label="Salesforce">Puntuaciones y cuadros de mando</td>
+              </tr>
+              <tr>
+                <th scope="row">Qu&eacute; cuesta la IA</th>
+                <td class="is-five" data-label="Five">Incluida, nada por acci&oacute;n</td>
+                <td data-label="Pipedrive">Incluida en la licencia</td>
+                <td data-label="Salesforce">Por acci&oacute;n, en cr&eacute;ditos</td>
+              </tr>
+              <tr>
+                <th scope="row">D&oacute;nde est&aacute;n las notas</th>
+                <td class="is-five" data-label="Five">Su propia base de datos, en Fr&aacute;ncfort</td>
+                <td data-label="Pipedrive">Su nube</td>
+                <td data-label="Salesforce">Su nube</td>
+              </tr>
+              <tr>
+                <th scope="row">Sacar los datos</th>
+                <td class="is-five" data-label="Five">Su propio Postgres. Power BI y Excel se conectan directamente</td>
+                <td data-label="Pipedrive">Exportaciones y una API</td>
+                <td data-label="Salesforce">Exportaciones y una API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Todo lo dem&aacute;s de sus listas lo tienen ellos y esto no.</strong> Previsiones, marketing, territorios, un mercado de aplicaciones. Los informes faltan a prop&oacute;sito: en Team y Private la base de datos es suya, y Power BI y Excel leen Postgres de forma nativa, lo que supera a un cuadro de mando que yo tendr&iacute;a que construir dos veces.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Descargar el resumen del proyecto en PDF">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Descargar la ficha de producto de Five en PDF">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Resumen del proyecto</h3>
-              <p>Resumen de dos p&aacute;ginas. El problema de las operaciones silenciosas, las tres preguntas seg&uacute;n el estado y por qu&eacute; el esquema es lo que importa.</p>
+              <h3>Ficha de producto</h3>
+              <p>Cuatro p&aacute;ginas. Qu&eacute; hace, c&oacute;mo funciona realmente el an&aacute;lisis, la especificaci&oacute;n t&eacute;cnica y los precios.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// precios</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">39&nbsp;&euro; <span>/ mes</span></p>
+            <p class="pricing-seats">un comercial</p>
+            <ul>
+              <li>Instancia compartida en Fr&aacute;ncfort, sus filas aisladas en la base de datos</li>
+              <li>An&aacute;lisis y borradores ilimitados</li>
+              <li>Claro y oscuro de serie</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">129&nbsp;&euro; <span>/ mes</span></p>
+            <p class="pricing-seats">hasta tres comerciales</p>
+            <ul>
+              <li>Su propia base de datos, en infraestructura compartida en Fr&aacute;ncfort</li>
+              <li>An&aacute;lisis y borradores ilimitados</li>
+              <li>Todo lo de Solo</li>
+              <li>Conexi&oacute;n SQL de solo lectura para Power BI y Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">299&nbsp;&euro; <span>/ mes</span></p>
+            <p class="pricing-seats">hasta cinco comerciales</p>
+            <ul>
+              <li>Su propia instancia y base de datos, en su propio subdominio</li>
+              <li>An&aacute;lisis ilimitados, o su propia clave de modelo</li>
+              <li>Contrato de encargo de tratamiento firmado</li>
+              <li>Su marca a petici&oacute;n</li>
+              <li>Conexi&oacute;n SQL de solo lectura para Power BI y Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>La lista termina en cinco comerciales, y no es un descuido.</strong> No hay vistas agregadas, no hay propiedad de operaciones y no hay territorios, porque una herramienta construida sobre un l&iacute;mite de cinco no tiene por qu&eacute; fingir que dirige un equipo de ventas. &iquest;Es usted m&aacute;s grande que eso? Preg&uacute;ntelo igualmente, porque hay opciones a medida.</p>
+        <p class="pricing-terms">Precios sin IVA. Pago anual: doce meses por diez. Treinta d&iacute;as de prueba, porque el an&aacute;lisis necesita un historial de notas antes de tener algo que decir. Alojado en Fr&aacute;ncfort por defecto; Estocolmo a petici&oacute;n para los pa&iacute;ses n&oacute;rdicos.</p>
+        <a class="pricing-cta" href="/#contact">$ hablemos de una instancia</a>
+      </section>
+
       <nav class="project-nav" aria-label="Navegación de proyectos">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- anterior</span><strong>Proyecto 2</strong></a>
         <div class="project-nav-socials">

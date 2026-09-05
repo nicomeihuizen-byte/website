@@ -134,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Vijf deals per week. U weet het wanneer er een stil valt. Dealmanagement voor een tot vijf verkopers, gebouwd door iemand die veertien jaar zelf verkocht heeft.</p>
       <div class="project-figures">
         <figure>
@@ -229,17 +229,55 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// overzicht</h2>
-          <h2>U heeft al een CRM</h2>
-          <p>Wees eerlijk over de laatste keer dat iemand het invulde. Dit is dat niet. Er zijn vijf plekken, want vijf is een werkweek. U schrijft na elk gesprek een regel. Het leest de geschiedenis en vertelt u welke deal niet meer beweegt, en waarom.</p>
-          <h2>Wat het werkelijk zegt</h2>
-          <p>"Beide contactpersonen gaven een positief koopsignaal en willen implementeren, maar de deal ligt stil op een administratieve horde: geen entiteit, geen btw-nummer, geen KvK-nummer, dus het lokale kantoor kan geen inkooporder aanmaken. Er is een plan, een collega die op de 26e langsgaat, maar dat is over drie weken en er is geen tussenstap."</p>
-          <p>Dat is geen samenvatting van uw notities. Dat is een oordeel over de deal, precies wat een goede salesmanager doet in een pipelinebespreking. De meeste teams van deze omvang hebben er nooit een gehad.</p>
-          <h2>Drie dingen, en niet meer</h2>
-          <p>Kies vijf. Schrijf op wat er gebeurd is. Laat u vertellen wat doodbloedt. De limiet is de functie: een lijst met alles is een archiefkast, en vijf is een werkweek.</p>
-          <h2>Gebouwd door iemand die zelf verkocht heeft</h2>
-          <p>Veertien jaar enterprisesoftware verkopen bij IBM, Oracle en Minitab, en daarna de tool bouwen die ik zelf had willen hebben. Dezelfde codebase draait de publieke demo en de versie waarmee ik echt verkoop, wat van de twee de eerlijkste test is.</p>
-          <h2>Wat eronder zit</h2>
-          <p>Next.js 16 en Postgres, met row level security zodat de data van een klant op databaseniveau gescheiden is en niet door een filter dat iemand kan vergeten. Claude redeneert over uw eigen notitiegeschiedenis en nooit over die van een ander. Uitgerold als uw eigen instantie op Europese infrastructuur in Finland, zodat klantnotities de EU nooit verlaten. Licht en donker standaard, uw eigen huisstijl op verzoek.</p>
+          <p>U heeft al een CRM. Wees eerlijk over de laatste keer dat iemand het invulde. Five Deal Management is dat niet: vijf plekken, want vijf is een werkweek, en &eacute;&eacute;n regel na elk gesprek. Het leest de geschiedenis en vertelt u welke deal niet meer beweegt en waarom, precies wat een goede salesmanager doet in een pipelinebespreking en wat de meeste teams van deze omvang nooit gehad hebben. Gebouwd door iemand die veertien jaar zelf verkocht bij IBM, Oracle en Minitab, en draaiend als uw eigen instantie in Frankfurt.</p>
+          <blockquote class="verdict">
+            <p>"Beide contactpersonen gaven een positief koopsignaal en willen implementeren, maar de deal ligt stil op een administratieve horde: geen entiteit, geen btw-nummer, geen KvK-nummer, dus het lokale kantoor kan geen inkooporder aanmaken. Er is een plan, een collega die op de 26e langsgaat, maar dat is over drie weken en er is geen tussenstap."</p>
+            <cite>Een echt oordeel, geanonimiseerd. Geen samenvatting van de notities.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// waarin het verschilt</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Op uw bureau</th>
+                <td class="is-five" data-label="Five">Vijf prospects, gelimiteerd</td>
+                <td data-label="Pipedrive">Alles wat u heeft</td>
+                <td data-label="Salesforce">Alles wat u heeft</td>
+              </tr>
+              <tr>
+                <th scope="row">Wat u krijgt</th>
+                <td class="is-five" data-label="Five">Een oordeel over &eacute;&eacute;n deal, in woorden, met de redenering</td>
+                <td data-label="Pipedrive">Velden en een pipelineweergave</td>
+                <td data-label="Salesforce">Scores en dashboards</td>
+              </tr>
+              <tr>
+                <th scope="row">Wat de AI kost</th>
+                <td class="is-five" data-label="Five">Inbegrepen, niets per actie</td>
+                <td data-label="Pipedrive">Inbegrepen in de seat</td>
+                <td data-label="Salesforce">Per actie, in credits</td>
+              </tr>
+              <tr>
+                <th scope="row">Waar notities staan</th>
+                <td class="is-five" data-label="Five">Uw eigen database, in Frankfurt</td>
+                <td data-label="Pipedrive">Hun cloud</td>
+                <td data-label="Salesforce">Hun cloud</td>
+              </tr>
+              <tr>
+                <th scope="row">Data eruit halen</th>
+                <td class="is-five" data-label="Five">Uw eigen Postgres. Power BI en Excel maken er rechtstreeks verbinding mee</td>
+                <td data-label="Pipedrive">Exports en een API</td>
+                <td data-label="Salesforce">Exports en een API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Al het andere op hun lijst hebben zij wel en dit niet.</strong> Forecasting, marketing, territoria, een app-marktplaats. Rapportage ontbreekt met opzet: op Team en Private is de database van u, en Power BI en Excel lezen Postgres van huis uit, wat beter is dan een dashboard dat ik twee keer zou moeten bouwen.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Download het projectoverzicht als pdf">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Download het Five-productblad als pdf">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Projectoverzicht</h3>
-              <p>Beknopte pdf van twee pagina's. Het probleem van stille deals, de drie statusafhankelijke vragen, en waarom het schema het verschil maakt.</p>
+              <h3>Productblad</h3>
+              <p>Vier pagina's. Wat het doet, hoe de analyse werkelijk werkt, de technische specificatie en de prijzen.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// prijzen</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">&euro;39 <span>/ maand</span></p>
+            <p class="pricing-seats">&eacute;&eacute;n verkoper</p>
+            <ul>
+              <li>Gedeelde instantie in Frankfurt, uw rijen gescheiden op databaseniveau</li>
+              <li>Onbeperkt analyses en concepten</li>
+              <li>Licht en donker standaard</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">&euro;129 <span>/ maand</span></p>
+            <p class="pricing-seats">tot drie verkopers</p>
+            <ul>
+              <li>Uw eigen database, op gedeelde infrastructuur in Frankfurt</li>
+              <li>Onbeperkt analyses en concepten</li>
+              <li>Alles uit Solo</li>
+              <li>Alleen-lezen SQL-verbinding voor Power BI en Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">&euro;299 <span>/ maand</span></p>
+            <p class="pricing-seats">tot vijf verkopers</p>
+            <ul>
+              <li>Uw eigen instantie en database, op uw eigen subdomein</li>
+              <li>Onbeperkt analyses en concepten, of uw eigen model-key</li>
+              <li>Ondertekende verwerkersovereenkomst</li>
+              <li>Uw huisstijl op verzoek</li>
+              <li>Alleen-lezen SQL-verbinding voor Power BI en Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>De lijst stopt bij vijf verkopers, en dat is geen omissie.</strong> Er zijn geen roll-upweergaven, geen deal-eigenaarschap en geen territoria, want een tool gebouwd op een limiet van vijf hoort niet te doen alsof hij een salesafdeling aanstuurt. Bent u groter dan dat? Vraag het toch, want er zijn maatwerkopties.</p>
+        <p class="pricing-terms">Prijzen excl. btw. Betaal per jaar en krijg twaalf maanden voor tien. Dertig dagen om het te proberen, want de analyse heeft een notitiegeschiedenis nodig voordat ze iets zinnigs kan zeggen. Standaard gehost in Frankfurt; Stockholm op verzoek voor Scandinavi&euml;.</p>
+        <a class="pricing-cta" href="/#contact">$ praat met mij over een instantie</a>
+      </section>
+
       <nav class="project-nav" aria-label="Projectnavigatie">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- vorige</span><strong>Project 2</strong></a>
         <div class="project-nav-socials">

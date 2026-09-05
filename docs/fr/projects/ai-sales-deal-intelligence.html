@@ -134,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">Cinq affaires par semaine. Vous saurez quand l'une d'elles s'&eacute;teint. Gestion des affaires pour un &agrave; cinq commerciaux, con&ccedil;ue par quelqu'un qui a vendu pendant quatorze ans.</p>
       <div class="project-figures">
         <figure>
@@ -228,18 +228,56 @@
       </div>
       <div class="project-grid">
         <section class="project-copy">
-          <h2 class="section-label">// aperçu</h2>
-          <h2>Vous avez d&eacute;j&agrave; un CRM</h2>
-          <p>Soyez honn&ecirc;te sur la derni&egrave;re fois que quelqu'un l'a rempli. Ceci n'est pas cela. Il y a cinq places, parce que cinq, c'est une semaine de travail. Vous &eacute;crivez une ligne apr&egrave;s chaque &eacute;change. L'outil lit l'historique et vous dit quelle affaire n'avance plus, et pourquoi.</p>
-          <h2>Ce qu'il dit r&eacute;ellement</h2>
-          <p>"Les deux interlocuteurs ont donn&eacute; un signal d'achat positif et veulent d&eacute;marrer, mais l'affaire est bloqu&eacute;e sur un point administratif : pas d'entit&eacute;, pas de num&eacute;ro de TVA, pas de num&eacute;ro d'entreprise, donc le bureau local ne peut pas &eacute;mettre de bon de commande. Il existe un plan, un collaborateur se d&eacute;place le 26, mais c'est dans plus de trois semaines et sans &eacute;tape interm&eacute;diaire."</p>
-          <p>Ce n'est pas un r&eacute;sum&eacute; de vos notes. C'est une lecture de l'affaire, ce que fait un bon directeur commercial en revue de pipeline. La plupart des &eacute;quipes de cette taille n'en ont jamais eu.</p>
-          <h2>Trois choses, pas une de plus</h2>
-          <p>Choisissez-en cinq. &Eacute;crivez ce qui s'est pass&eacute;. Laissez-vous dire ce qui est en train de mourir. La limite est la fonctionnalit&eacute; : une liste de tout est une armoire &agrave; dossiers, et cinq, c'est une semaine.</p>
-          <h2>Con&ccedil;u par quelqu'un qui a port&eacute; un quota</h2>
-          <p>Quatorze ans &agrave; vendre des logiciels d'entreprise chez IBM, Oracle et Minitab, puis la construction de l'outil que j'aurais voulu avoir. La m&ecirc;me base de code fait tourner la d&eacute;mo publique et la version avec laquelle je vends vraiment, ce qui est le plus honn&ecirc;te des deux tests.</p>
-          <h2>Ce qu'il y a dessous</h2>
-          <p>Next.js 16 et Postgres, avec row level security : les donn&eacute;es d'un client sont isol&eacute;es au niveau de la base, pas par un filtre que quelqu'un peut oublier. Claude raisonne sur votre propre historique de notes et jamais sur celui d'un autre. D&eacute;ploy&eacute; comme votre propre instance sur une infrastructure europ&eacute;enne en Finlande, afin que les notes clients ne quittent jamais l'UE. Clair et sombre en standard, votre identit&eacute; visuelle sur demande.</p>
+          <h2 class="section-label">// aper&ccedil;u</h2>
+          <p>Vous avez d&eacute;j&agrave; un CRM. Soyez honn&ecirc;te sur la derni&egrave;re fois que quelqu'un l'a rempli. Five Deal Management n'est pas cela&NonBreakingSpace;: cinq places, parce que cinq, c'est une semaine de travail, et une ligne &eacute;crite apr&egrave;s chaque &eacute;change. L'outil lit l'historique et vous dit quelle affaire n'avance plus et pourquoi, ce que fait un bon directeur commercial dans une revue de pipeline et ce que la plupart des &eacute;quipes de cette taille n'ont jamais eu. Con&ccedil;u par quelqu'un qui a port&eacute; le sac pendant quatorze ans chez IBM, Oracle et Minitab, et exploit&eacute; comme votre propre instance en Francfort.</p>
+          <blockquote class="verdict">
+            <p>"Les deux interlocuteurs ont donn&eacute; un signal d'achat positif et veulent d&eacute;marrer, mais l'affaire est bloqu&eacute;e sur un point administratif : pas d'entit&eacute;, pas de num&eacute;ro de TVA, pas de num&eacute;ro d'entreprise, donc le bureau local ne peut pas &eacute;mettre de bon de commande. Il existe un plan, un collaborateur se d&eacute;place le 26, mais c'est dans plus de trois semaines et sans &eacute;tape interm&eacute;diaire."</p>
+            <cite>Un verdict r&eacute;el, anonymis&eacute;. Pas un r&eacute;sum&eacute; des notes.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// ce qui le distingue</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Sur votre bureau</th>
+                <td class="is-five" data-label="Five">Cinq affaires, plafonn&eacute;es</td>
+                <td data-label="Pipedrive">Tout ce que vous avez</td>
+                <td data-label="Salesforce">Tout ce que vous avez</td>
+              </tr>
+              <tr>
+                <th scope="row">Ce qu'il vous donne</th>
+                <td class="is-five" data-label="Five">Un verdict sur une affaire, en clair, avec son raisonnement</td>
+                <td data-label="Pipedrive">Des champs et une vue pipeline</td>
+                <td data-label="Salesforce">Des scores et des tableaux de bord</td>
+              </tr>
+              <tr>
+                <th scope="row">Ce que co&ucirc;te l'IA</th>
+                <td class="is-five" data-label="Five">Inclus, rien par action</td>
+                <td data-label="Pipedrive">Inclus dans le si&egrave;ge</td>
+                <td data-label="Salesforce">Par action, en cr&eacute;dits</td>
+              </tr>
+              <tr>
+                <th scope="row">O&ugrave; sont vos notes</th>
+                <td class="is-five" data-label="Five">Votre propre base de donn&eacute;es, en Francfort</td>
+                <td data-label="Pipedrive">Leur cloud</td>
+                <td data-label="Salesforce">Leur cloud</td>
+              </tr>
+              <tr>
+                <th scope="row">Sortir vos donn&eacute;es</th>
+                <td class="is-five" data-label="Five">Votre propre base Postgres. Power BI et Excel s'y connectent directement</td>
+                <td data-label="Pipedrive">Des exports et une API</td>
+                <td data-label="Salesforce">Des exports et une API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Tout le reste de leurs listes, ils l'ont et pas ceci.</strong> Pr&eacute;visions, marketing, territoires, une place de march&eacute; d'applications. Le reporting est absent volontairement : sur Team et Private la base de donn&eacute;es est la v&ocirc;tre, et Power BI et Excel lisent Postgres nativement, ce qui vaut mieux qu'un tableau de bord que je devrais construire deux fois.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="T&eacute;l&eacute;charger la pr&eacute;sentation du projet en PDF">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="T&eacute;l&eacute;charger la fiche produit Five en PDF">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Pr&eacute;sentation du projet</h3>
-              <p>Note de deux pages. Le probl&egrave;me des affaires silencieuses, les trois questions selon le statut, et pourquoi le sch&eacute;ma fait la diff&eacute;rence.</p>
+              <h3>Fiche produit</h3>
+              <p>Quatre pages. Ce qu'il fait, comment l'analyse fonctionne r&eacute;ellement, la sp&eacute;cification technique et les tarifs.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// tarifs</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">39&nbsp;&euro; <span>/ mois</span></p>
+            <p class="pricing-seats">un commercial</p>
+            <ul>
+              <li>Instance partag&eacute;e en Francfort, vos lignes isol&eacute;es au niveau de la base</li>
+              <li>Analyses et brouillons illimit&eacute;s</li>
+              <li>Clair et sombre en standard</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">129&nbsp;&euro; <span>/ mois</span></p>
+            <p class="pricing-seats">jusqu'&agrave; trois commerciaux</p>
+            <ul>
+              <li>Votre propre base de donn&eacute;es, sur infrastructure partag&eacute;e en Francfort</li>
+              <li>Analyses et brouillons illimit&eacute;s</li>
+              <li>Tout ce que contient Solo</li>
+              <li>Connexion SQL en lecture seule pour Power BI et Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">299&nbsp;&euro; <span>/ mois</span></p>
+            <p class="pricing-seats">jusqu'&agrave; cinq commerciaux</p>
+            <ul>
+              <li>Votre propre instance et base de donn&eacute;es, sur votre sous-domaine</li>
+              <li>Analyses illimit&eacute;es, ou votre propre cl&eacute; de mod&egrave;le</li>
+              <li>Contrat de sous-traitance sign&eacute;</li>
+              <li>Votre marque sur demande</li>
+              <li>Connexion SQL en lecture seule pour Power BI et Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>La liste s'arr&ecirc;te &agrave; cinq commerciaux, et ce n'est pas un oubli.</strong> Il n'y a pas de vues consolid&eacute;es, pas de propri&eacute;t&eacute; des affaires et pas de territoires, car un outil b&acirc;ti sur un plafond de cinq n'a pas &agrave; pr&eacute;tendre piloter une force de vente. Vous &ecirc;tes plus grand que cela&NonBreakingSpace;? Demandez quand m&ecirc;me, car il existe des options sur mesure.</p>
+        <p class="pricing-terms">Prix HT. Paiement annuel&NonBreakingSpace;: douze mois pour dix. Trente jours d'essai, car l'analyse a besoin d'un historique de notes avant d'avoir quelque chose &agrave; dire. H&eacute;berg&eacute; &agrave; Francfort par d&eacute;faut ; Stockholm sur demande pour les pays nordiques.</p>
+        <a class="pricing-cta" href="/#contact">$ parlons d'une instance</a>
+      </section>
+
       <nav class="project-nav" aria-label="Navigation des projets">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- précédent</span><strong>Projet 2</strong></a>
         <div class="project-nav-socials">

@@ -134,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false" style="flex-shrink:0;"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><h1>Five</h1></div>
+      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
       <p class="project-summary">F&uuml;nf Deals pro Woche. Sie merken es, wenn einer verstummt. Deal-Management f&uuml;r ein bis f&uuml;nf Vertriebler, gebaut von jemandem, der vierzehn Jahre selbst verkauft hat.</p>
       <div class="project-figures">
         <figure>
@@ -228,18 +228,56 @@
       </div>
       <div class="project-grid">
         <section class="project-copy">
-          <h2 class="section-label">// überblick</h2>
-          <h2>Sie haben bereits ein CRM</h2>
-          <p>Seien Sie ehrlich: Wann hat es zuletzt jemand gepflegt? Das hier ist etwas anderes. Es gibt f&uuml;nf Pl&auml;tze, denn f&uuml;nf sind eine Arbeitswoche. Sie schreiben nach jedem Gespr&auml;ch eine Zeile. Es liest die Historie und sagt Ihnen, welcher Deal sich nicht mehr bewegt, und warum.</p>
-          <h2>Was es tats&auml;chlich sagt</h2>
-          <p>"Beide Ansprechpartner gaben ein positives Kaufsignal und wollen implementieren, aber der Deal h&auml;ngt an einer administrativen L&uuml;cke: keine Gesellschaft, keine USt-IdNr., keine Handelsregisternummer, deshalb kann das lokale B&uuml;ro keine Bestellung ausl&ouml;sen. Es gibt einen Plan, ein Kollege fliegt am 26. hin, aber das ist &uuml;ber drei Wochen hin, ohne Zwischenschritt."</p>
-          <p>Das ist keine Zusammenfassung Ihrer Notizen. Das ist eine Einsch&auml;tzung des Deals, genau das, was ein guter Vertriebsleiter im Pipeline-Review tut. Die meisten Teams dieser Gr&ouml;&szlig;e hatten nie einen.</p>
-          <h2>Drei Dinge, mehr nicht</h2>
-          <p>F&uuml;nf ausw&auml;hlen. Aufschreiben, was passiert ist. Sich sagen lassen, was gerade stirbt. Die Begrenzung ist die Funktion: eine Liste mit allem ist ein Aktenschrank, und f&uuml;nf sind eine Arbeitswoche.</p>
-          <h2>Gebaut von jemandem, der selbst verkauft hat</h2>
-          <p>Vierzehn Jahre Enterprise-Software bei IBM, Oracle und Minitab, und danach das Werkzeug gebaut, das ich mir damals gew&uuml;nscht h&auml;tte. Dieselbe Codebasis betreibt die &ouml;ffentliche Demo und die Version, mit der ich tats&auml;chlich verkaufe. Das ist von beidem der ehrlichere Test.</p>
-          <h2>Was darunter l&auml;uft</h2>
-          <p>Next.js 16 und Postgres, mit Row Level Security, sodass die Daten eines Mandanten auf Datenbankebene getrennt sind und nicht durch einen Filter, den jemand vergessen kann. Claude arbeitet ausschlie&szlig;lich mit Ihrer eigenen Notizhistorie. Ausgeliefert als Ihre eigene Instanz auf europ&auml;ischer Infrastruktur in Finnland, sodass Kundennotizen die EU nie verlassen. Hell und dunkel standardm&auml;&szlig;ig, Ihr Branding auf Wunsch.</p>
+          <h2 class="section-label">// &uuml;berblick</h2>
+          <p>Sie haben bereits ein CRM. Seien Sie ehrlich: Wann hat es zuletzt jemand gepflegt? Five Deal Management ist etwas anderes: f&uuml;nf Pl&auml;tze, denn f&uuml;nf sind eine Arbeitswoche, und eine Zeile nach jedem Gespr&auml;ch. Es liest die Historie und sagt Ihnen, welcher Deal sich nicht mehr bewegt und warum, also genau das, was ein guter Vertriebsleiter in einer Pipeline-Besprechung tut und was Teams dieser Gr&ouml;&szlig;e nie hatten. Gebaut von jemandem, der vierzehn Jahre lang selbst verkauft hat, bei IBM, Oracle und Minitab, und betrieben als Ihre eigene Instanz in Frankfurt.</p>
+          <blockquote class="verdict">
+            <p>"Beide Ansprechpartner gaben ein positives Kaufsignal und wollen implementieren, aber der Deal h&auml;ngt an einer administrativen L&uuml;cke: keine Gesellschaft, keine USt-IdNr., keine Handelsregisternummer, deshalb kann das lokale B&uuml;ro keine Bestellung ausl&ouml;sen. Es gibt einen Plan, ein Kollege fliegt am 26. hin, aber das ist &uuml;ber drei Wochen hin, ohne Zwischenschritt."</p>
+            <cite>Ein echtes Urteil, anonymisiert. Keine Zusammenfassung der Notizen.</cite>
+          </blockquote>
+          <table class="compare">
+            <caption>// worin es sich unterscheidet</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="is-five">Five</th>
+                <th scope="col">Pipedrive</th>
+                <th scope="col">Salesforce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Auf Ihrem Tisch</th>
+                <td class="is-five" data-label="Five">F&uuml;nf Prospects, begrenzt</td>
+                <td data-label="Pipedrive">Alles, was Sie haben</td>
+                <td data-label="Salesforce">Alles, was Sie haben</td>
+              </tr>
+              <tr>
+                <th scope="row">Was Sie bekommen</th>
+                <td class="is-five" data-label="Five">Ein Urteil zu einem Deal, im Klartext, mit Begr&uuml;ndung</td>
+                <td data-label="Pipedrive">Felder und eine Pipeline-Ansicht</td>
+                <td data-label="Salesforce">Scores und Dashboards</td>
+              </tr>
+              <tr>
+                <th scope="row">Was die KI kostet</th>
+                <td class="is-five" data-label="Five">Enthalten, nichts pro Aktion</td>
+                <td data-label="Pipedrive">Im Seat enthalten</td>
+                <td data-label="Salesforce">Pro Aktion, in Credits</td>
+              </tr>
+              <tr>
+                <th scope="row">Wo Notizen liegen</th>
+                <td class="is-five" data-label="Five">Ihre eigene Datenbank, in Frankfurt</td>
+                <td data-label="Pipedrive">Deren Cloud</td>
+                <td data-label="Salesforce">Deren Cloud</td>
+              </tr>
+              <tr>
+                <th scope="row">Daten herausholen</th>
+                <td class="is-five" data-label="Five">Ihre eigene Postgres-Datenbank. Power BI und Excel verbinden sich direkt</td>
+                <td data-label="Pipedrive">Exporte und eine API</td>
+                <td data-label="Salesforce">Exporte und eine API</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-admission"><strong>Alles andere auf deren Listen haben sie, und dies hier nicht.</strong> Forecasting, Marketing, Gebiete, ein App-Marktplatz. Reporting fehlt mit Absicht: bei Team und Private geh&ouml;rt die Datenbank Ihnen, und Power BI und Excel lesen Postgres von Haus aus, was besser ist als ein Dashboard, das ich zweimal bauen m&uuml;sste.</p>
         </section>
         <section>
           <h2 class="section-label">// stack</h2>
@@ -256,20 +294,62 @@
             </div>
             <span class="tag">LIVE</span>
           </a>
-          <a class="doc-download" href="../../images/project_four/ai-sales-cycle-control-overview.pdf" download rel="noopener" aria-label="Die Projekt&uuml;bersicht als PDF herunterladen">
+          <a class="doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Das Five-Produktblatt als PDF herunterladen">
             <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
               <path d="M15 2v5h5" stroke-linejoin="round"/>
               <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
             </svg>
             <div class="info">
-              <h3>Projekt&uuml;bersicht</h3>
-              <p>Zweiseitiges Kurzdossier. Das Problem der stillen Deals, die drei statusabh&auml;ngigen Fragen und warum das Schema entscheidend ist.</p>
+              <h3>Produktblatt</h3>
+              <p>Vier Seiten. Was es tut, wie die Analyse wirklich funktioniert, die technische Spezifikation und die Preise.</p>
             </div>
             <span class="tag">PDF</span>
           </a>
         </section>
       </div>
+      <section class="pricing" aria-labelledby="pricing-heading">
+        <h2 class="section-label" id="pricing-heading">// preise</h2>
+        <div class="pricing-grid">
+          <div class="pricing-tier">
+            <h3>Solo</h3>
+            <p class="pricing-price">39&nbsp;&euro; <span>/ Monat</span></p>
+            <p class="pricing-seats">ein Verk&auml;ufer</p>
+            <ul>
+              <li>Geteilte Instanz in Frankfurt, Ihre Zeilen auf Datenbankebene getrennt</li>
+              <li>Unbegrenzte Analysen und Entw&uuml;rfe</li>
+              <li>Hell und dunkel standardm&auml;&szlig;ig</li>
+            </ul>
+          </div>
+          <div class="pricing-tier">
+            <h3>Team</h3>
+            <p class="pricing-price">129&nbsp;&euro; <span>/ Monat</span></p>
+            <p class="pricing-seats">bis zu drei Verk&auml;ufer</p>
+            <ul>
+              <li>Ihre eigene Datenbank, auf geteilter Infrastruktur in Frankfurt</li>
+              <li>Unbegrenzte Analysen und Entw&uuml;rfe</li>
+              <li>Alles aus Solo</li>
+              <li>Nur-Lese-SQL-Zugang f&uuml;r Power BI und Excel</li>
+            </ul>
+          </div>
+          <div class="pricing-tier is-lead">
+            <h3>Private</h3>
+            <p class="pricing-price">299&nbsp;&euro; <span>/ Monat</span></p>
+            <p class="pricing-seats">bis zu f&uuml;nf Verk&auml;ufer</p>
+            <ul>
+              <li>Ihre eigene Instanz und Datenbank, auf Ihrer eigenen Subdomain</li>
+              <li>Unbegrenzte Analysen und Entw&uuml;rfe, oder Ihr eigener Modell-Key</li>
+              <li>Unterzeichneter Auftragsverarbeitungsvertrag</li>
+              <li>Ihre Marke auf Wunsch</li>
+              <li>Nur-Lese-SQL-Zugang f&uuml;r Power BI und Excel</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note"><strong>Die Liste endet bei f&uuml;nf Verk&auml;ufern, und das ist kein Versehen.</strong> Es gibt keine Roll-up-Ansichten, keine Deal-Zust&auml;ndigkeiten und keine Gebiete, denn ein Werkzeug mit einer Grenze von f&uuml;nf hat nicht so zu tun, als f&uuml;hre es einen Vertriebsbereich. Sind Sie gr&ouml;&szlig;er? Fragen Sie trotzdem, denn es gibt ma&szlig;geschneiderte Optionen.</p>
+        <p class="pricing-terms">Preise zzgl. MwSt. Jahreszahlung: zw&ouml;lf Monate zum Preis von zehn. Drei&szlig;ig Tage zum Ausprobieren, denn die Analyse braucht erst eine Notizhistorie, bevor sie etwas Brauchbares sagen kann. Standardm&auml;&szlig;ig in Frankfurt gehostet; Stockholm auf Wunsch f&uuml;r Skandinavien.</p>
+        <a class="pricing-cta" href="/#contact">$ sprechen Sie mich auf eine Instanz an</a>
+      </section>
+
       <nav class="project-nav" aria-label="Projektnavigation">
         <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- zurück</span><strong>Projekt 2</strong></a>
         <div class="project-nav-socials">
