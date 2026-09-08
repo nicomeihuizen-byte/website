@@ -372,7 +372,7 @@
     border-top:1px solid var(--line);
     font-family:var(--font-body);
     font-size:15.5px;
-    color:var(--text-muted);
+    color:var(--text);
     max-width:56ch;
   }
   .hero-sub strong{ color:var(--accent); font-weight:600; }
@@ -496,6 +496,36 @@
     .work-item:focus-visible .image .pf-caret{ animation:none; }
   }
 
+  /* Three blocks with a mono label each, in place of five paragraphs held
+     apart by <br>. The labels use the same ~/path form as the section
+     heads and stay English in every locale, like the rest of them. */
+  .hero-points{ display:grid; gap:22px; margin-top:26px; }
+  .point-label{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--accent2);
+    margin-bottom:6px;
+  }
+  .hero-points p{ color:var(--text); }
+
+  /* Footer contact, one quiet line instead of three stacked rows. */
+  .contact-line{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .contact-line a{ text-decoration:underline; text-decoration-color:var(--line); }
+  .contact-line a:hover{ color:var(--accent); text-decoration-color:var(--accent); }
+  .entity-line{
+    font-size:12.5px;
+    color:var(--text-dim);
+    max-width:64ch;
+    margin-bottom:14px;
+  }
+  .entity-line a{ color:var(--accent); text-decoration:underline; text-decoration-color:var(--accent-dim); }
+
   /* WORK TEASER */
   .work-teaser{ margin-top:20px; }
   .work-teaser p{
@@ -503,43 +533,6 @@
     font-size:15px;
     max-width:56ch;
     margin-bottom:20px;
-  }
-
-  /* DOCUMENT DOWNLOAD */
-  .doc-download{
-    background:var(--bg-raised);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:22px;
-    display:grid;
-    grid-template-columns:auto 1fr auto;
-    align-items:center;
-    gap:18px;
-    color:inherit;
-    text-decoration:none;
-    transition:background .15s ease, border-color .15s ease;
-  }
-  .doc-download:hover,
-  .doc-download:focus-visible{ background:var(--raised-hover); border-color:var(--accent-dim); }
-  .doc-download .doc-icon{
-    width:28px;
-    height:28px;
-    flex:none;
-    color:var(--text-dim);
-    transition:color .15s ease;
-  }
-  .doc-download:hover .doc-icon,
-  .doc-download:focus-visible .doc-icon{ color:var(--accent); }
-  .doc-download .info h3{
-    font-family:var(--font-mono);
-    font-size:16.5px;
-    font-weight:600;
-    margin-bottom:4px;
-    color:var(--accent);
-  }
-  .doc-download .info p{
-    font-size:13.5px;
-    color:var(--text-muted);
   }
 
   .stack{
@@ -626,15 +619,6 @@
     left:-9999px;
     top:-9999px;
   }
-  .contact-info{ display:flex; align-items:flex-start; gap:8px; }
-  .contact-info svg{ width:16px; height:16px; fill:var(--accent); flex:none; margin-top:4px; }
-  .contact-info a{
-    color:inherit;
-    text-decoration:underline;
-    text-decoration-color:var(--line);
-    transition:color .15s ease, text-decoration-color .15s ease;
-  }
-  .contact-info a:hover{ color:var(--accent); text-decoration-color:var(--accent); }
   .contact-links{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px; }
   .contact-links a{
     font-family:var(--font-mono);
@@ -789,21 +773,31 @@
         </div>
         <div class="hero-sub">
          <h1 class="hero-headline">meihuizen.ai: <span class="accent-word">Agentic AI</span> Software That Ships, Not Just Demos</h1>
-         <p>We build AI-native, agentic systems. Software that acts on your workflows, not chatbots waiting for a prompt. Not AI bolted onto something old.</p>
-         <br>
-         <p>Most "AI-native" software still isn't. It's a wrapper. A chatbot stapled onto a product that already existed. We build the other way: AI is the architecture, not a feature. Systems that reason across your data and act, autonomously, on defined tasks, and get sharper as the models improve.</p>
-         <br>
-         <p>meihuizen.ai draws on many years of commercial and technical experience gained at IBM, SoftLayer, Oracle and Minitab. We understand what is at play on both sides of the table.</p>
-         <br>
-         <p>We run a mobile office and lab that can be parked outside any client's door in the EU within 48 hours. Niche and personal by design. When we say hands-on, we mean it: no offshore delivery team, no account manager relaying your notes back to us.</p>
-         <br>
-         <p>You get the people building your system, on-site, watching how your team actually works before a line of code exists. When the job is done, we're happy to stay for drinks.</p>
-         <br>
+         <p>We build AI-native software: systems that act on your workflows, not chatbots waiting for a prompt.</p>
+
+         <div class="hero-points">
+           <div class="point">
+             <span class="point-label">~/what we build</span>
+             <p>AI as the architecture, not a chatbot stapled to something that already existed. Systems that reason across your data and act on it.</p>
+           </div>
+           <div class="point">
+             <span class="point-label">~/who you get</span>
+             <p>The people writing the code, on your side of the table. Years of it spent at IBM, SoftLayer, Oracle and Minitab, on the other side.</p>
+           </div>
+           <div class="point">
+             <span class="point-label">~/how we work</span>
+             <p>A mobile office and lab, parked outside your door anywhere in the EU within 48 hours. No offshore team, no account manager relaying your notes.</p>
+           </div>
+         </div>
+
          <img class="hero-camper-image" src="images/main/van-with-logo2.png"
           alt="Line-art illustration of the meihuizen.ai mobile office van, with a code icon and palm-and-camel emblem on its side panel"
           width="982" height="598" fetchpriority="high">
-         <br>
-         <p>Need an AI implementation partner who ships production software, not a pitch deck? That's <strong>meihuizen.ai</strong>.</p>
+
+         <div class="hero-cta">
+           <a class="btn primary" href="#contact">Talk to us</a>
+           <a class="btn ghost" href="#work">See the builds</a>
+         </div>
         </div>
       </div>
     </div>
@@ -845,44 +839,11 @@
     </div>
   </section>
 
-  <section class="section wrap" id="terms">
-    <div class="section-head">
-      <span class="idx">~/legal</span>
-      <h2>Terms of Business</h2>
-    </div>
-    <a class="doc-download" href="legal/terms-of-business.pdf" download rel="noopener">
-      <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-        <path d="M15 2v5h5" stroke-linejoin="round"/>
-        <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-      </svg>
-      <div class="info">
-        <h3>Terms of Business</h3>
-        <p>AI-assisted programming &amp; software engineering services. Scope, disclaimers, and liability terms.</p>
-      </div>
-      <span class="tag">PDF</span>
-    </a>
-  </section>
 
   <footer id="contact" class="wrap">
     <h2>Let's talk.</h2>
-    <p>Open to projects and partnerships where we build with AI as part of the toolchain. Send a message directly through the contact form, or reach us via LinkedIn, GitHub, or X.</p>
-    <br>
-    <p><strong class="legal-entity">meihuizen.ai</strong> || All rights reserved</p>
-    <br>
-    <p class="contact-info">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.21Z"/></svg>
-      <span>Phone: +31850601641</span>
-    </p>
-    <p class="contact-info">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-      <a href="https://www.google.com/maps/search/?api=1&query=Cruquiuskade+251%2C+1018AM+Amsterdam%2C+The+Netherlands" target="_blank" rel="noopener">Postal Address: Cruquiuskade 251, 1018AM, Amsterdam, The Netherlands</a>
-    </p>
-    <p class="contact-info">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.01L12 12l8-5.99V6H4Zm16 12V8.24l-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16Z"/></svg>
-      <span>Email: <a href="mailto:info@meihuizen.ai">info@meihuizen.ai</a></span>
-    </p>
-    <br>
+    <p>Open to projects and partnerships where we build with AI as part of the toolchain. The form reaches us directly.</p>
+
 <form id="contact-form" class="contact-form" novalidate
   data-msg-required="Please fill in your name, email, and message."
   data-msg-sending="Sending&hellip;"
@@ -929,9 +890,12 @@
         <span class="sr-only">X</span>
       </a>
     </div>
+    <p class="contact-line"><a href="mailto:info@meihuizen.ai">info@meihuizen.ai</a> &middot; <a href="tel:+31850601641">+31 85 060 1641</a> &middot; Cruquiuskade 251, 1018 AM Amsterdam</p>
+    <p class="entity-line">meihuizen.ai is a Lithuanian MB in formation. The company code and VAT number appear on the <a href="credentials.html">credentials page</a> the day they are issued, not the day they were applied for.</p>
     <div class="foot-meta">
-      <span>© 2026 meihuizen.ai</span>
-      <!-- <span>European Union</span> -->
+      <span>&copy; 2026 meihuizen.ai</span>
+      <span aria-hidden="true">&middot;</span>
+      <span><a href="legal/terms-of-business.pdf" download rel="noopener">Terms of Business (PDF)</a></span>
     </div>
   </footer>
 </main>
