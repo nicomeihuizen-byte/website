@@ -45,9 +45,12 @@
   function wire() {
     paintBrowserChrome();
 
+    // The buttons are in the markup already, visible, hidden by a
+    // <noscript> rule when there is nothing here to drive them. This used
+    // to reveal them instead, which meant a script that did not run left a
+    // nav separator with nothing after it and no clue why.
     var buttons = document.querySelectorAll('.theme-toggle');
     for (var i = 0; i < buttons.length; i++) {
-      buttons[i].hidden = false;
       buttons[i].addEventListener('click', function () {
         var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);

@@ -334,7 +334,8 @@
      are the flag's own colours and stay put in both themes. */
   :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
 </style>
-<script src="/scripts/theme.js"></script>
+<script src="../scripts/theme.js"></script>
+<noscript><style>.theme-toggle,.nav-sep{display:none;}</style></noscript>
 </head>
 <body>
 <header>
@@ -347,7 +348,7 @@
         <li><a href="credentials.html">credentials</a></li>
         <li><a href="index.html#contact">contatti</a></li>
         <li aria-hidden="true" class="nav-sep">|</li>
-        <li><button type="button" class="theme-toggle" hidden aria-label="Switch between the light and dark theme"><span class="theme-label-dark">light</span><span class="theme-label-light">dark</span></button></li>
+        <li><button type="button" class="theme-toggle" aria-label="Switch between the light and dark theme"><span class="theme-label-dark">light</span><span class="theme-label-light">dark</span></button></li>
       </ul>
     </nav>
   </div>
