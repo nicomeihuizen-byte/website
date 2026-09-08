@@ -104,8 +104,8 @@
   /* Theme toggle. The button says where it will take you, not where you
      are, and both words sit in the markup with CSS hiding one, so the
      label is right in the first paint and cannot lag the attribute. It
-     starts hidden and scripts/theme.js reveals it: a control that does
-     nothing without JavaScript should not be drawn without JavaScript. */
+     ships visible and a <noscript> rule hides it, along with its
+     separator, when there is no JavaScript here to drive it. */
   .theme-toggle{
     font-family:var(--font-mono);
     font-size:13px;
