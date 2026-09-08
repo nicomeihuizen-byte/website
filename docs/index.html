@@ -629,8 +629,22 @@
      within a few points of #1F7D55, the light accent, so one filter does
      the job of a second set of PNGs that would then have to be kept in
      step with the first. */
-  :root:not([data-theme="dark"]) .hero-logo,
   :root:not([data-theme="dark"]) .hero-camper-image{ filter:brightness(.62) saturate(1.5); }
+
+  /* The hero keeps its screen in the light theme.
+     The skyline is glyphs and nothing else: on graphite it reads as a
+     skyline, on white it reads as noise, because what makes it a shape is
+     the dark behind it. So the intro row keeps the ground it was drawn
+     for, the same call as the project figures and the builds thumbnails.
+     A terminal screen sitting in a white card is also the plainest way to
+     say what this site is. The logo goes back on dark with it, which is
+     why it is not in the correction below. */
+  :root:not([data-theme="dark"]) .hero-intro-row{
+    background:var(--figure-bg);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
 </style>
 <script src="/scripts/theme.js"></script>
 </head>
