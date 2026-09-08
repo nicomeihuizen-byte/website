@@ -236,6 +236,8 @@
     padding:18px 24px;
     max-width:var(--max-w); margin:0 auto;
   }
+  /* Wordmark. A business site says whose it is in the top left, and that
+     name goes home. It was in the markup all along, commented out. */
   .brand{
     font-family:var(--font-mono);
     font-size:14px; font-weight:500;
@@ -415,7 +417,87 @@
     color:var(--accent);
   }
 
+  /* RECENT BUILDS */
+  .work-list{ display:flex; flex-direction:column; gap:1px; background:var(--line); border-radius:10px; overflow:hidden; border:1px solid var(--line); margin-top:32px; }
+  .work-item{
+    background:var(--bg-raised);
+    padding:22px 22px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:18px;
+    transition:background .15s ease;
+  }
+  a.work-item{ color:inherit; text-decoration:none; }
+  .work-item:hover{ background:var(--raised-hover); }
+  .work-item .info h2{
+    font-family:var(--font-mono);
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:4px;
+    color:var(--accent);
+  }
+  .work-item .info p{
+    font-size:13.5px;
+    color:var(--text-muted);
+  }
+  /* The thumbnails are inline SVG drawn fill-by-fill in the dark palette,
+     so they keep their own ground in both themes rather than being
+     recoloured in four files x seven locales. A drawing on its own mat is
+     what a thumbnail is anyway. */
+  .work-item .image{
+    display:block;
+    width:120px;
+    height:70px;
+    aspect-ratio:12 / 7;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background-color:var(--figure-bg);
+    object-fit:cover;
+    object-position:50% 50%;
+    overflow:hidden;
+  }
+  .tag{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--accent);
+    border:1px solid var(--accent-dim);
+    padding:4px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+
+  .work-item .image .sa-echo{ opacity:0; transition:opacity .25s ease; }
+  .work-item:hover .image .sa-echo,
+  .work-item:focus-visible .image .sa-echo{ opacity:.9; }
+  .work-item:hover .image .slot-quiet,
+  .work-item:focus-visible .image .slot-quiet{ animation:slot-goes-quiet 2.6s ease-in-out infinite; }
+  @keyframes slot-goes-quiet{ 0%,55%{ fill:#5FBF8E; } 70%,84%{ fill:#D9A441; } 100%{ fill:#5FBF8E; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .slot-quiet,
+    .work-item:focus-visible .image .slot-quiet{ animation:none; }
+    .work-item .image .sa-echo{ transition:none; }
+  }
+
+  .work-item:hover .image .acre-summer,
+  .work-item:focus-visible .image .acre-summer{ animation:acre-season 4s ease-in-out infinite; }
+  .work-item:hover .image .acre-winter,
+  .work-item:focus-visible .image .acre-winter{ animation:acre-season 4s ease-in-out infinite reverse; }
+  @keyframes acre-season{ 0%,20%{ opacity:1; } 50%,70%{ opacity:.32; } 100%{ opacity:1; } }
+  .work-item:hover .image .pf-caret,
+  .work-item:focus-visible .image .pf-caret{ animation:pf-blink 1.1s steps(1,end) infinite; }
+  @keyframes pf-blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .work-item:hover .image .acre-summer,
+    .work-item:focus-visible .image .acre-summer,
+    .work-item:hover .image .acre-winter,
+    .work-item:focus-visible .image .acre-winter,
+    .work-item:hover .image .pf-caret,
+    .work-item:focus-visible .image .pf-caret{ animation:none; }
+  }
+
   /* WORK TEASER */
+  .work-teaser{ margin-top:20px; }
   .work-teaser p{
     color:var(--text-muted);
     font-size:15px;
@@ -616,8 +698,8 @@
   /* Theme toggle. The button says where it will take you, not where you
      are, and both words sit in the markup with CSS hiding one, so the
      label is right in the first paint and cannot lag the attribute. It
-     starts hidden and scripts/theme.js reveals it: a control that does
-     nothing without JavaScript should not be drawn without JavaScript. */
+     ships visible and a <noscript> rule hides it, along with its
+     separator, when there is no JavaScript here to drive it. */
   .theme-toggle{
     font-family:var(--font-mono);
     font-size:13px;
@@ -641,6 +723,16 @@
      step with the first. */
   :root:not([data-theme="dark"]) .hero-logo,
   :root:not([data-theme="dark"]) .hero-camper-image{ filter:brightness(.62) saturate(1.5); }
+  /* The nav has six items, a wordmark and a theme toggle. On a phone that
+     is wider than the phone, and it was pushing the whole page sideways
+     before the wordmark was ever added. Let it wrap instead. */
+  @media (max-width: 600px){
+    .navbar{ flex-wrap:wrap; gap:12px; padding:14px 24px; }
+    nav ul{ flex-wrap:wrap; gap:14px 18px; }
+    /* Wrapped, the divider ends up alone at the start of a line, which
+       reads as a stray character rather than a divider. */
+    .nav-sep{ display:none; }
+  }
 </style>
 <script src="../scripts/theme.js"></script>
 <noscript><style>.theme-toggle,.nav-sep{display:none;}</style></noscript>
@@ -649,7 +741,7 @@
 
 <header>
   <div class="navbar">
-    <!-- <div class="brand"><span class="dot"></span> nico.meihuizen</div> -->
+    <a class="brand" href="/nl/"><span class="dot"></span> meihuizen.ai</a>
     <nav aria-label="Hoofdnavigatie">
       <ul>
         <li><a href="/nl/" aria-current="page">start</a></li>
@@ -732,8 +824,34 @@
       <span class="idx">~/builds</span>
       <h2>Recente projecten</h2>
     </div>
+    <div class="work-list">
+        <a class="work-item" href="projects/second-audience.html">
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Second Audience: the same content read twice"><path d="M32 16 H22 V54 H32" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><path d="M88 16 H98 V54 H88" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><rect x="38" y="24" width="44" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="34" width="30" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="44" width="37" height="5" rx="2.5" fill="#2e6b52"/><g class="sa-echo"><rect x="38" y="34" width="44" height="5" rx="2.5" fill="#d9a441"/></g></svg>
+          <div class="info">
+            <h2>Second Audience</h2>
+            <p>Terugkerende audit van wat AI-agents lezen en verkeerd doen.</p>
+          </div>
+          <span class="tag">AI / agentic web</span>
+        </a>
+        <a class="work-item" href="projects/ai-sales-deal-intelligence.html">
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Five: three slots worked, two free"><rect x="16" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="35" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="54" y="16" width="12" height="38" rx="3" class="slot-quiet" fill="#5fbf8e"/><rect x="73.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/><rect x="92.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/></svg>
+          <div class="info">
+            <h2>Five</h2>
+            <p>Vijf deals per week. U weet het wanneer er een stil valt.</p>
+          </div>
+          <span class="tag">AI / SaaS</span>
+        </a>
+        <a class="work-item" href="projects/off-grid-ai-homestead.html">
+          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="One Acre: two plots covering opposite halves of the year"><rect x="14" y="22" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="14" y="38" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="38" y="22" width="54" height="10" rx="4" fill="#5fbf8e" class="acre-summer"/><rect x="14" y="38" width="28" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/><rect x="84" y="38" width="22" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/></svg>
+          <div class="info">
+            <h2>One Acre Zero Dependency</h2>
+            <p>AI-gestuurd off-grid boerderijproject.</p>
+          </div>
+          <span class="tag">AI / hardware</span>
+        </a>
+    </div>
     <div class="work-teaser">
-      <a class="btn primary" href="builds.html">Bekijk alle projecten &rarr;</a>
+      <a class="btn ghost" href="builds.html">Bekijk alle projecten &rarr;</a>
     </div>
   </section>
 

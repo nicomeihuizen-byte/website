@@ -144,6 +144,19 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
+  /* Wordmark. A business site says whose it is in the top left, and that
+     name goes home. This was in the markup all along, commented out. */
+  .brand{
+    font-family:var(--font-mono);
+    font-size:14px; font-weight:500;
+    color:var(--text);
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 8px var(--accent);
+  }
   .navbar{
     display:flex;
     align-items:center;
@@ -261,8 +274,8 @@
   /* Theme toggle. The button says where it will take you, not where you
      are, and both words sit in the markup with CSS hiding one, so the
      label is right in the first paint and cannot lag the attribute. It
-     starts hidden and scripts/theme.js reveals it: a control that does
-     nothing without JavaScript should not be drawn without JavaScript. */
+     ships visible and a <noscript> rule hides it, along with its
+     separator, when there is no JavaScript here to drive it. */
   .theme-toggle{
     font-family:var(--font-mono);
     font-size:13px;
@@ -278,6 +291,16 @@
   /* The white traffic light is white on white without this. Red and blue
      are the flag's own colours and stay put in both themes. */
   :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
+  /* The nav has six items, a wordmark and a theme toggle. On a phone that
+     is wider than the phone, and it was pushing the whole page sideways
+     before the wordmark was ever added. Let it wrap instead. */
+  @media (max-width: 600px){
+    .navbar{ flex-wrap:wrap; gap:12px; padding:14px 24px; }
+    nav ul{ flex-wrap:wrap; gap:14px 18px; }
+    /* Wrapped, the divider ends up alone at the start of a line, which
+       reads as a stray character rather than a divider. */
+    .nav-sep{ display:none; }
+  }
 </style>
 <script src="../scripts/theme.js"></script>
 <noscript><style>.theme-toggle,.nav-sep{display:none;}</style></noscript>
@@ -285,6 +308,7 @@
 <body>
 <header>
   <div class="navbar">
+    <a class="brand" href="/de/"><span class="dot"></span> meihuizen.ai</a>
     <nav aria-label="Hauptnavigation">
       <ul>
         <li><a href="/de/">start</a></li>
