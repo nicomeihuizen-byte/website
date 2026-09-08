@@ -497,8 +497,10 @@
   }
 
   /* Three blocks with a mono label each, in place of five paragraphs held
-     apart by <br>. The labels use the same ~/path form as the section
-     heads and stay English in every locale, like the rest of them. */
+     apart by <br>. They borrow the ~/path form of the section heads, but
+     they are prose, not paths: ~/builds is the name of a page and stays
+     English everywhere, while these are a sentence and get translated. An
+     English label over a Dutch paragraph reads as copy nobody finished. */
   .hero-points{ display:grid; gap:22px; margin-top:26px; }
   .point-label{
     display:block;
@@ -787,15 +789,15 @@
 
          <div class="hero-points">
            <div class="point">
-             <span class="point-label">~/what we build</span>
+             <span class="point-label">~/o que construímos</span>
              <p>IA como arquitetura, não um chatbot agrafado a algo que já existia. Sistemas que raciocinam sobre os seus dados e agem sobre eles.</p>
            </div>
            <div class="point">
-             <span class="point-label">~/who you get</span>
+             <span class="point-label">~/com quem trabalha</span>
              <p>As pessoas que escrevem o código, do seu lado da mesa. Depois de anos do outro lado, na IBM, SoftLayer, Oracle e Minitab.</p>
            </div>
            <div class="point">
-             <span class="point-label">~/how we work</span>
+             <span class="point-label">~/como trabalhamos</span>
              <p>Um escritório e laboratório móveis, à sua porta em qualquer ponto da UE em 48 horas. Sem equipa offshore, sem gestor de conta a transmitir as suas notas.</p>
            </div>
          </div>
