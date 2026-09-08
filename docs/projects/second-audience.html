@@ -89,11 +89,13 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0E121A">
 <link rel="stylesheet" href="project-pages.css">
+<script src="/scripts/theme.js"></script>
 </head>
 <body>
 <header class="site-header">
   <div class="header-inner">
     <a class="back-link" href="/builds.html">&lt; builds</a>
+    <button type="button" class="theme-toggle" hidden aria-label="Switch between the light and dark theme"><span class="theme-label-dark">light</span><span class="theme-label-light">dark</span></button>
   </div>
 </header>
 <main class="page-wrap">
@@ -132,7 +134,7 @@
 </nav>
     </div>
     <div class="terminal-body">
-      <div style="display:flex;align-items:center;gap:18px;"><svg viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false" style="flex-shrink:0;"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
+      <div style="display:flex;align-items:center;gap:18px;"><svg class="project-title-mark" viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false" style="flex-shrink:0;"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
       <p class="project-summary">Your website has two kinds of visitor now. One has eyes. The other is agentic AI: it never runs your JavaScript, reads only what your server sends, and then answers questions about you for its visitors, who never open your page. Second Audience measures what that second visitor can actually do.</p>
       <p class="project-summary">A service, not a tool. The scan is run by a person and a model working the same case, because the claim being sold is that machines read confidently and get facts wrong, and that is not a claim a machine can certify about itself.</p>
       <div class="project-figures">

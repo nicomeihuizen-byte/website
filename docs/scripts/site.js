@@ -8,8 +8,18 @@
     ));
     const fontSize = 11;
     const columnWidth = 9;
-    const rainColor = '#5FBF8E';
-    const bgColor = '#171A24';
+    /*
+     * The skyline is painted, not styled, so it cannot inherit the theme
+     * the way everything else does. It reads the same two custom
+     * properties the CSS uses instead of holding its own copy of the
+     * palette, and re-reads them whenever the theme changes.
+     */
+    function themeColor(name, fallback) {
+      const value = getComputedStyle(document.documentElement)
+        .getPropertyValue(name)
+        .trim();
+      return value || fallback;
+    }
     // layout constants below are tuned for this reference canvas size; resize() scales them to the actual (e.g. mobile) canvas size
     const baseCanvasWidthPx = 722;
     const baseCanvasHeightPx = 300;
@@ -87,11 +97,14 @@
     }
 
     function drawGrid() {
-      ctx.fillStyle = bgColor;
-      ctx.fillRect(0, 0, target.width, target.height);
+      // Cleared rather than filled with the card colour. On the dark theme
+      // the two are the same pixel, and on the light theme a filled
+      // rectangle is a black slab sitting in a white card: the glyphs are
+      // the shape here, not the block behind them.
+      ctx.clearRect(0, 0, target.width, target.height);
       ctx.font = fontSize + 'px "Courier New", Courier, monospace';
       ctx.textBaseline = 'top';
-      ctx.fillStyle = rainColor;
+      ctx.fillStyle = themeColor('--accent', '#5FBF8E');
 
       for (let column = 0; column < columns; column++) {
         for (let row = 0; row < rows; row++) {
@@ -137,6 +150,12 @@
 
     render();
     window.addEventListener('resize', handleResize);
+
+    // Repaint in the new accent when the toggle flips. drawGrid() alone,
+    // not render(): re-rolling the glyphs would make the skyline change
+    // shape every time someone tries the other theme, which reads as the
+    // page redrawing itself rather than changing colour.
+    document.addEventListener('themechange', drawGrid);
   }
 })();
 
