@@ -17,7 +17,7 @@
 <meta name="description" content="meihuizen.ai entwickelt KI-native Software: LLM-Tools, agentische Workflows und produktionsreife Webanwendungen für moderne Teams.">
 <meta name="author" content="Nico Meihuizen">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0E121A">
+<meta name="theme-color" content="#F4F6F8">
 <link rel="canonical" href="https://www.meihuizen.ai/de/">
 <link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/">
 <link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/">
@@ -133,21 +133,65 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* --- THEME -----------------------------------------------------------
+       Two palettes, one set of names. Light is on the bare :root so a page
+       paints light before scripts/theme.js has run: the flash you get
+       otherwise is the wrong-theme flash every static site has. Dark is a
+       values swap under [data-theme="dark"], which the script stamps on
+       <html> from localStorage. Values are the two palettes measured for
+       Five (sales-intel), so the app and the site are one product.
+       --------------------------------------------------------------- */
   :root{
-    --bg: #10121A;
-    --bg-raised: #171A24;
-    --line: #262A38;
-    --text: #ECEDF3;
-    --text-muted: #8B90A3;
-    --text-dim: #565B6E;
-    --accent: #5FBF8E;
-    --accent-dim: #2E6B52;
-    --accent2: #5FA8D3;
+    color-scheme:light;
+    --bg:#F4F6F8;
+    --bg-raised:#FFFFFF;
+    --line:#DFE3EA;
+    --text:#14161C;
+    --text-muted:#596074;
+    --text-dim:#666D80;
+    --accent:#1F7D55;
+    --accent-dim:#9FC4B1;
+    --accent2:#2B6F9C;
+    --accent-hover:#186344;
+    --on-accent:#FFFFFF;
+    --raised-hover:#EDF1F4;
+    --header-bg:rgba(244,246,248,0.85);
+    --dot-idle:#C7CDD8;
+    --figure-bg:#10121A;
+    --warn:#A84D08;
+    --danger:#C02626;
+    --glow-a:rgba(232,179,74,0.14);
+    --glow-b:rgba(95,168,211,0.12);
+    --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     --max-w: 780px;
   }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#10121A;
+    --bg-raised:#171A24;
+    --line:#262A38;
+    --text:#ECEDF3;
+    --text-muted:#8B90A3;
+    --text-dim:#565B6E;
+    --accent:#5FBF8E;
+    --accent-dim:#2E6B52;
+    --accent2:#5FA8D3;
+    --accent-hover:#7AD0A4;
+    --on-accent:#181205;
+    --raised-hover:#1D2130;
+    --header-bg:rgba(16,18,26,0.82);
+    --dot-idle:#3A3E4C;
+    --figure-bg:#10121A;
+    --warn:#E8B34A;
+    --danger:#D8734A;
+    --glow-a:rgba(232,179,74,0.07);
+    --glow-b:rgba(95,168,211,0.06);
+    --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+
 
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
@@ -164,13 +208,13 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     background-image:
-      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(232,179,74,0.07), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(95,168,211,0.06), transparent 60%);
+      radial-gradient(ellipse 900px 500px at 15% -10%, var(--glow-a), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, var(--glow-b), transparent 60%);
   }
 
   a{ color:inherit; text-decoration:none; }
 
-  ::selection{ background:var(--accent); color:#10121A; }
+  ::selection{ background:var(--accent); color:var(--bg); }
 
   :focus-visible{
     outline:2px solid var(--accent);
@@ -183,7 +227,7 @@
   /* NAV */
   header{
     position:sticky; top:0; z-index:20;
-    background:rgba(16,18,26,0.82);
+    background:var(--header-bg);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -219,7 +263,7 @@
     border:1px solid var(--line);
     border-radius:10px;
     overflow:hidden;
-    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+    box-shadow:var(--shadow-card);
   }
   .terminal-bar{
     display:flex; align-items:center; gap:8px;
@@ -228,7 +272,7 @@
   }
   .terminal-bar > span{
     width:10px; height:10px; border-radius:50%;
-    background:#3A3E4C;
+    background:var(--dot-idle);
   }
   .terminal-bar > span:nth-child(1){ background:#AE1C28; }
   .terminal-bar > span:nth-child(2){ background:#FFFFFF; }
@@ -316,9 +360,9 @@
     aspect-ratio:722 / 300;
     height:auto;
     display:block;
-    background:#10121A;
+    background:transparent;
   }
-  .accent-word{ color:#5FBF8E; font-weight:bold; }
+  .accent-word{ color:var(--accent); font-weight:bold; }
 
   .hero-sub{
     margin-top:22px;
@@ -345,11 +389,11 @@
   }
   .btn.primary{
     background:var(--accent);
-    color:#181205;
+    color:var(--on-accent);
     border-color:var(--accent);
     font-weight:600;
   }
-  .btn.primary:hover{ background:#7ad0a4; }
+  .btn.primary:hover{ background:var(--accent-hover); }
   .btn.ghost{ color:var(--text-muted); }
   .btn.ghost:hover{ color:var(--text); border-color:var(--text-dim); }
 
@@ -368,7 +412,7 @@
     font-family:var(--font-mono);
     font-size:22px;
     font-weight:600;
-    color:#5FBF8E;
+    color:var(--accent);
   }
 
   /* WORK TEASER */
@@ -394,7 +438,7 @@
     transition:background .15s ease, border-color .15s ease;
   }
   .doc-download:hover,
-  .doc-download:focus-visible{ background:#1D2130; border-color:var(--accent-dim); }
+  .doc-download:focus-visible{ background:var(--raised-hover); border-color:var(--accent-dim); }
   .doc-download .doc-icon{
     width:28px;
     height:28px;
@@ -409,7 +453,7 @@
     font-size:16.5px;
     font-weight:600;
     margin-bottom:4px;
-    color:#5FBF8E;
+    color:var(--accent);
   }
   .doc-download .info p{
     font-size:13.5px;
@@ -449,7 +493,7 @@
     font-size:26px;
     font-weight:600;
     margin-bottom:10px;
-    color:#5FBF8E;
+    color:var(--accent);
   }
   footer p{
     color:var(--text-muted);
@@ -532,7 +576,7 @@
     border-radius:4px;
     transition:color .15s ease, border-color .15s ease, background .15s ease;
   }
-  .contact-links a:hover{ color:#10121A; border-color:var(--accent); background:var(--accent); }
+  .contact-links a:hover{ color:var(--bg); border-color:var(--accent); background:var(--accent); }
   .contact-links svg{ width:16px; height:16px; fill:currentColor; flex:none; }
   .contact-links .sr-only{
     position:absolute;
@@ -568,7 +612,37 @@
     .hero{ padding:56px 0 44px; }
   }
 
+
+  /* Theme toggle. The button says where it will take you, not where you
+     are, and both words sit in the markup with CSS hiding one, so the
+     label is right in the first paint and cannot lag the attribute. It
+     starts hidden and scripts/theme.js reveals it: a control that does
+     nothing without JavaScript should not be drawn without JavaScript. */
+  .theme-toggle{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-muted);
+    background:none; border:0; padding:0;
+    cursor:pointer;
+    transition:color .15s ease;
+  }
+  .theme-toggle:hover{ color:var(--accent); }
+  .nav-sep{ color:var(--line); user-select:none; }
+  :root[data-theme="dark"] .theme-label-light{ display:none; }
+  :root:not([data-theme="dark"]) .theme-label-dark{ display:none; }
+  /* The white traffic light is white on white without this. Red and blue
+     are the flag's own colours and stay put in both themes. */
+  :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
+
+  /* The logo and the van are single-colour line art in the terminal green,
+     which goes chalky on white. brightness(.62) saturate(1.5) lands them
+     within a few points of #1F7D55, the light accent, so one filter does
+     the job of a second set of PNGs that would then have to be kept in
+     step with the first. */
+  :root:not([data-theme="dark"]) .hero-logo,
+  :root:not([data-theme="dark"]) .hero-camper-image{ filter:brightness(.62) saturate(1.5); }
 </style>
+<script src="/scripts/theme.js"></script>
 </head>
 <body>
 
@@ -582,6 +656,8 @@
         <li><a href="about.html">über uns</a></li>
         <li><a href="credentials.html">credentials</a></li>
         <li><a href="#contact">kontakt</a></li>
+        <li aria-hidden="true" class="nav-sep">|</li>
+        <li><button type="button" class="theme-toggle" hidden aria-label="Switch between the light and dark theme"><span class="theme-label-dark">light</span><span class="theme-label-light">dark</span></button></li>
       </ul>
     </nav>
   </div>

@@ -6,7 +6,7 @@
 <title>404 — Page not found | meihuizen.ai</title>
 <meta name="description" content="That page does not exist on meihuizen.ai. Head back to the homepage, the builds, or the about page.">
 <meta name="robots" content="noindex, follow">
-<meta name="theme-color" content="#0E121A">
+<meta name="theme-color" content="#F4F6F8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; form-action 'self';">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -15,18 +15,69 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* --- THEME -----------------------------------------------------------
+       Two palettes, one set of names. Light is on the bare :root so a page
+       paints light before scripts/theme.js has run: the flash you get
+       otherwise is the wrong-theme flash every static site has. Dark is a
+       values swap under [data-theme="dark"], which the script stamps on
+       <html> from localStorage. Values are the two palettes measured for
+       Five (sales-intel), so the app and the site are one product.
+       --------------------------------------------------------------- */
   :root{
-    --bg:#10121A; --bg-raised:#171A24; --line:#262A38;
-    --text:#ECEDF3; --text-muted:#8B90A3; --accent:#5FBF8E;
+    color-scheme:light;
+    --bg:#F4F6F8;
+    --bg-raised:#FFFFFF;
+    --line:#DFE3EA;
+    --text:#14161C;
+    --text-muted:#596074;
+    --text-dim:#666D80;
+    --accent:#1F7D55;
+    --accent-dim:#9FC4B1;
+    --accent2:#2B6F9C;
+    --accent-hover:#186344;
+    --on-accent:#FFFFFF;
+    --raised-hover:#EDF1F4;
+    --header-bg:rgba(244,246,248,0.85);
+    --dot-idle:#C7CDD8;
+    --figure-bg:#10121A;
+    --warn:#A84D08;
+    --danger:#C02626;
+    --glow-a:rgba(232,179,74,0.14);
+    --glow-b:rgba(95,168,211,0.12);
+    --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
     --font-display:'Space Grotesk',sans-serif;
     --font-body:'Inter',sans-serif;
     --font-mono:'JetBrains Mono',monospace;
   }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#10121A;
+    --bg-raised:#171A24;
+    --line:#262A38;
+    --text:#ECEDF3;
+    --text-muted:#8B90A3;
+    --text-dim:#565B6E;
+    --accent:#5FBF8E;
+    --accent-dim:#2E6B52;
+    --accent2:#5FA8D3;
+    --accent-hover:#7AD0A4;
+    --on-accent:#181205;
+    --raised-hover:#1D2130;
+    --header-bg:rgba(16,18,26,0.82);
+    --dot-idle:#3A3E4C;
+    --figure-bg:#10121A;
+    --warn:#E8B34A;
+    --danger:#D8734A;
+    --glow-a:rgba(232,179,74,0.07);
+    --glow-b:rgba(95,168,211,0.06);
+    --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     background:var(--bg); color:var(--text); font-family:var(--font-body);
     line-height:1.6; -webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(ellipse 900px 500px at 15% -10%,rgba(232,179,74,0.07),transparent 60%);
+    background-image:radial-gradient(ellipse 900px 500px at 15% -10%,var(--glow-a),transparent 60%);
     min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
   }
   .terminal{
@@ -49,7 +100,29 @@
     padding:9px 16px; transition:border-color .2s,color .2s;
   }
   .links a:hover,.links a:focus-visible{border-color:var(--accent);color:var(--accent);}
+
+  /* Theme toggle. The button says where it will take you, not where you
+     are, and both words sit in the markup with CSS hiding one, so the
+     label is right in the first paint and cannot lag the attribute. It
+     starts hidden and scripts/theme.js reveals it: a control that does
+     nothing without JavaScript should not be drawn without JavaScript. */
+  .theme-toggle{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-muted);
+    background:none; border:0; padding:0;
+    cursor:pointer;
+    transition:color .15s ease;
+  }
+  .theme-toggle:hover{ color:var(--accent); }
+  .nav-sep{ color:var(--line); user-select:none; }
+  :root[data-theme="dark"] .theme-label-light{ display:none; }
+  :root:not([data-theme="dark"]) .theme-label-dark{ display:none; }
+  /* The white traffic light is white on white without this. Red and blue
+     are the flag's own colours and stay put in both themes. */
+  :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
 </style>
+<script src="/scripts/theme.js"></script>
 </head>
 <body>
 <main class="terminal">

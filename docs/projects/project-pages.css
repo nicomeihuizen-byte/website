@@ -1,18 +1,62 @@
-:root {
-  --bg: #10121A;
-  --bg-raised: #171A24;
-  --line: #262A38;
-  --text: #ECEDF3;
-  --text-muted: #8B90A3;
-  --text-dim: #565B6E;
-  --accent: #5FBF8E;
-  --accent-dim: #2E6B52;
-  --accent2: #5FA8D3;
+/* --- THEME -----------------------------------------------------------
+     Two palettes, one set of names. Light is on the bare :root so a page
+     paints light before scripts/theme.js has run: the flash you get
+     otherwise is the wrong-theme flash every static site has. Dark is a
+     values swap under [data-theme="dark"], which the script stamps on
+     <html> from localStorage. Values are the two palettes measured for
+     Five (sales-intel), so the app and the site are one product.
+     --------------------------------------------------------------- */
+:root{
+  color-scheme:light;
+  --bg:#F4F6F8;
+  --bg-raised:#FFFFFF;
+  --line:#DFE3EA;
+  --text:#14161C;
+  --text-muted:#596074;
+  --text-dim:#666D80;
+  --accent:#1F7D55;
+  --accent-dim:#9FC4B1;
+  --accent2:#2B6F9C;
+  --accent-hover:#186344;
+  --on-accent:#FFFFFF;
+  --raised-hover:#EDF1F4;
+  --header-bg:rgba(244,246,248,0.85);
+  --dot-idle:#C7CDD8;
+  --figure-bg:#10121A;
+  --warn:#A84D08;
+  --danger:#C02626;
+  --glow-a:rgba(232,179,74,0.14);
+  --glow-b:rgba(95,168,211,0.12);
+  --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --max-width: 880px;
 }
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10121A;
+  --bg-raised:#171A24;
+  --line:#262A38;
+  --text:#ECEDF3;
+  --text-muted:#8B90A3;
+  --text-dim:#565B6E;
+  --accent:#5FBF8E;
+  --accent-dim:#2E6B52;
+  --accent2:#5FA8D3;
+  --accent-hover:#7AD0A4;
+  --on-accent:#181205;
+  --raised-hover:#1D2130;
+  --header-bg:rgba(16,18,26,0.82);
+  --dot-idle:#3A3E4C;
+  --figure-bg:#10121A;
+  --warn:#E8B34A;
+  --danger:#D8734A;
+  --glow-a:rgba(232,179,74,0.07);
+  --glow-b:rgba(95,168,211,0.06);
+  --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
+}
+
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -20,8 +64,8 @@ body {
   min-height: 100vh;
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(232,179,74,0.07), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(95,168,211,0.06), transparent 60%);
+    radial-gradient(ellipse 900px 500px at 15% -10%, var(--glow-a), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, var(--glow-b), transparent 60%);
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -29,14 +73,14 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
-::selection { background: var(--accent); color: #10121A; }
+::selection { background: var(--accent); color:var(--bg); }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 2;
   border-bottom: 1px solid var(--line);
-  background: rgba(16,18,26,0.86);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
 }
 .header-inner {
@@ -75,7 +119,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--bg-raised);
-  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow-card);
 }
 .terminal-bar {
   display: flex;
@@ -88,7 +132,7 @@ a { color: inherit; text-decoration: none; }
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #3A3E4C;
+  background:var(--dot-idle);
 }
 .terminal-bar > span:nth-child(1) { background: #AE1C28; }
 .terminal-bar > span:nth-child(2) { background: #FFFFFF; }
@@ -203,7 +247,7 @@ h1 {
   padding: 40px;
   overflow-y: auto;
   border: 0;
-  background: rgba(16, 18, 26, 0.94);
+  background: var(--overlay-bg);
 }
 .image-lightbox[hidden] { display: none; }
 .image-lightbox img {
@@ -298,7 +342,7 @@ h1 {
   transition: background .15s ease, border-color .15s ease;
 }
 .doc-download:hover,
-.doc-download:focus-visible { background: #1D2130; border-color: var(--accent-dim); }
+.doc-download:focus-visible { background:var(--raised-hover); border-color: var(--accent-dim); }
 .doc-download .doc-icon {
   width: 28px;
   height: 28px;
@@ -313,7 +357,7 @@ h1 {
   font-size: 16.5px;
   font-weight: 600;
   margin-bottom: 4px;
-  color: #5FBF8E;
+  color:var(--accent);
 }
 .doc-download .info p {
   font-size: 12px;
@@ -381,9 +425,9 @@ h1 {
   border: 1px solid var(--accent-dim);
   border-right: 0;
   border-radius: 8px 0 0 8px;
-  background: rgba(23,26,36,0.92);
+  background: var(--dock-bg);
   backdrop-filter: blur(8px);
-  box-shadow: -10px 0 26px -14px rgba(0,0,0,0.85);
+  box-shadow: -10px 0 26px -14px var(--shadow-color);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 12px;
@@ -394,7 +438,7 @@ h1 {
 .repo-dock:focus-visible {
   background: var(--accent);
   border-color: var(--accent);
-  color: #10121A;
+  color:var(--bg);
   padding-right: 13px;
 }
 .repo-dock svg { width: 17px; height: 17px; flex: none; fill: currentColor; }
@@ -434,7 +478,7 @@ h1 {
   padding: 14px 18px;
   border-left: 2px solid var(--accent);
   border-radius: 0 8px 8px 0;
-  background: rgba(95,191,142,0.07);
+  background: var(--accent-wash);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 14px;
@@ -609,7 +653,7 @@ h1 {
     border-right: 1px solid var(--accent-dim);
     border-radius: 999px;
     transform: none;
-    box-shadow: 0 10px 26px -12px rgba(0,0,0,0.85);
+    box-shadow: 0 10px 26px -12px var(--shadow-color);
   }
   .repo-dock:hover,
   .repo-dock:focus-visible { border-color: var(--accent); padding-right: 15px; }
@@ -666,7 +710,12 @@ h1 {
   height: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--bg);
+  /* The diagrams are drawn fill by fill in the dark palette, inside the
+     markup, in four pages x seven locales. They keep the ground they were
+     drawn for instead: a figure on its own dark mat is how a screenshot or
+     a code sample sits on a light page anyway, and it beats 1,600 fill
+     attributes that would then disagree with each other. */
+  background: var(--figure-bg);
 }
 .project-figures figcaption {
   margin-top: 12px;
@@ -841,7 +890,7 @@ h1 {
 .pricing-cta:focus-visible {
   background: var(--accent);
   border-color: var(--accent);
-  color: #10121A;
+  color:var(--bg);
 }
 @media (max-width: 760px) {
   .pricing-grid { grid-template-columns: 1fr; }
@@ -942,3 +991,44 @@ h1 {
   }
   .compare tbody td.is-five { border-left-color: var(--accent-dim); }
 }
+
+/* Tokens used only by these pages. Declaration order does not matter for
+   custom properties: they resolve where they are used, not where they are
+   set, so keeping them together beats threading them into the block above. */
+:root{
+  --overlay-bg:rgba(244,246,248,0.96);
+  --dock-bg:rgba(255,255,255,0.94);
+  --shadow-color:rgba(20,22,28,0.35);
+  --accent-wash:rgba(31,125,85,0.08);
+}
+:root[data-theme="dark"]{
+  --overlay-bg:rgba(16,18,26,0.94);
+  --dock-bg:rgba(23,26,36,0.92);
+  --shadow-color:rgba(0,0,0,0.85);
+  --accent-wash:rgba(95,191,142,0.07);
+}
+
+/* Theme toggle, in the project header beside the back link. Same button as
+   the main pages: the label names its destination, both words are in the
+   markup and CSS hides one, and it stays hidden until theme.js reveals it. */
+.theme-toggle{
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color .15s ease;
+}
+.theme-toggle:hover { color: var(--accent); }
+:root[data-theme="dark"] .theme-label-light { display: none; }
+:root:not([data-theme="dark"]) .theme-label-dark { display: none; }
+:root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2) { border: 1px solid var(--line); }
+
+/* The page-title lockups are inline SVG in the dark palette's green, too
+   small to earn a mat of their own and too pale on white to leave alone.
+   Same correction as the logo on the home page: brightness(.62)
+   saturate(1.5) lands terminal green within a few points of #1F7D55. */
+:root:not([data-theme="dark"]) .five-lockup > svg,
+:root:not([data-theme="dark"]) .project-title-mark{ filter: brightness(.62) saturate(1.5); }
