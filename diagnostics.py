@@ -659,7 +659,32 @@ def run(site_root: str) -> list[Issue]:
                 else:
                     issues += check_identifiers(relpath, body, has_lines=False)
 
+    issues += check_fritz_knowledge()
     return issues
+
+
+def check_fritz_knowledge() -> list[Issue]:
+    """Agent Fritz answers from docs/ask/knowledge.json and nothing else. A page
+    edited without rebuilding that file means Fritz tells visitors the old
+    version, confidently. That is the exact failure Second Audience sells
+    against, so it is an error, not a warning."""
+    try:
+        sys.path.insert(0, os.path.join(REPO_ROOT, "tools"))
+        import build_knowledge  # noqa: E402
+    except ImportError:
+        return [Issue("tools/build_knowledge.py", "WARN", "fritz-knowledge",
+                      "Could not import the knowledge builder, so Fritz's knowledge was not checked.")]
+    fresh = build_knowledge.build()
+    try:
+        with open(build_knowledge.OUT, encoding="utf-8") as fh:
+            current = json.load(fh)
+    except (OSError, ValueError):
+        current = {}
+    if current.get("version") != fresh["version"]:
+        return [Issue("docs/ask/knowledge.json", "ERROR", "fritz-knowledge",
+                      "Page content changed since Fritz's knowledge was built. "
+                      "Run: python tools/build_knowledge.py")]
+    return []
 
 
 def main() -> int:
