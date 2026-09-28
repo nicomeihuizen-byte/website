@@ -41,14 +41,12 @@ website/
     ├── index.html
     ├── about.html
     ├── projects/
-    │   ├── vegetarian-ecommerce-website.html
     │   ├── off-grid-ai-homestead.html
     │   ├── terminal-portfolio-website.html
     │   ├── ai-sales-deal-intelligence.html  # AI Native Sales-Cycle Control case study
     │   └── project-pages.css        # shared layout/visual system for project pages
     ├── images/
     │   ├── main/
-    │   ├── project_one/    # vegetarian ecommerce
     │   ├── project_two/    # off-grid AI
     │   └── project_three/  # terminal portfolio
     ├── scripts/

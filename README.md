@@ -13,7 +13,6 @@ The website is contained in `website/docs` and can be opened directly from the f
 - `index.html` is the home page. It contains the terminal-style hero, a short builds teaser linking to `builds.html`, contact form, social links, and footer.
 - `builds.html` is the recent-builds/work index page. It presents the same work list that used to live inline on the home page (project tags and image previews for each case study), plus links to about and contact.
 - `about.html` presents the professional background, technology stack, page navigation, social links, and footer.
-- `projects/vegetarian-ecommerce-website.html` presents the completed vegetarian ecommerce project and links into the active project sequence.
 - `projects/off-grid-ai-homestead.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
 - `projects/terminal-portfolio-website.html` is a case study on this site's own build, covering its interface, functionality, implementation, and security practices. It's written from the inside since Nico built it. It's not yet promoted to the home page's active work list.
 - `projects/ai-sales-deal-intelligence.html` presents AI Native Sales-Cycle Control, an AI-native sales intelligence tool that reasons about deal momentum and flags stalled or at-risk deals.
@@ -21,12 +20,11 @@ The website is contained in `website/docs` and can be opened directly from the f
 
 ### Assets
 
-Images are stored in `website/docs/images` and use descriptive filenames. The `project_one`/`project_two`/`project_three` folder names predate the page-slug renames above and were intentionally left alone. Renaming them would mean updating every image `src` path across multiple HTML files for no real benefit. Each entry below is labeled by the page it supports, using the current filename:
+Images are stored in `website/docs/images` and use descriptive filenames. The `project_two`/`project_three` folder names predate the page-slug renames above and were intentionally left alone. Renaming them would mean updating every image `src` path across multiple HTML files for no real benefit. Each entry below is labeled by the page it supports, using the current filename:
 
 - `main/digital-nomad-logo.png` is the hero logo.
 - `main/ai-software-engineering-workspace.png` is the about-page image.
 - `project_three/homepage-screenshot.png`, `project_three/homepage-interactions-code.png`, and `project_three/lightbox-interactions-code.png` support `terminal-portfolio-website.html`.
-- `project_one/buuf-louise-food.jpg`, `project_one/buuf-louise-logo.png`, `project_one/buuf-louise-package.jpg`, and `project_one/buuf-louise-project.jpg` support `vegetarian-ecommerce-website.html`.
 - `project_two/birdbox-farm-campervan-scene.png`, `project_two/birdbox-station-system-diagram.png`, and `project_two/biodynamic-farming-calendar.png` support `off-grid-ai-homestead.html`.
 - `project_two/birdbox-farm-campervan-scene.png` is also used for the `off-grid-ai-homestead.html` card on the home page.
 - `project_two/one-acre-project-overview.pdf` is available from `off-grid-ai-homestead.html` as an openable and downloadable project document.
@@ -130,7 +128,7 @@ There is no package manager or build pipeline required for the current static si
 
 1. Serve `website/docs` locally and test homepage navigation, the session-scoped hero animation, the contact form, and all social links.
 2. Open `website/docs/about.html` and each project page and check that all images load.
-3. Test the `vegetarian-ecommerce-website.html` and `off-grid-ai-homestead.html` active navigation sequence and confirm `terminal-portfolio-website.html` and `ai-sales-deal-intelligence.html` are not active destinations.
+3. Test the `off-grid-ai-homestead.html` active navigation sequence and confirm `terminal-portfolio-website.html` and `ai-sales-deal-intelligence.html` are not active destinations.
 4. Test project image cropping, full-size lightbox opening, and closing with the image, backdrop, close button, and Escape.
 5. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
 6. Extract and syntax-check inline scripts in `index.html` and the project pages with Node.js when JavaScript changes are made.

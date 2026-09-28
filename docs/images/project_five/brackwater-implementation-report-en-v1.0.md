@@ -1448,8 +1448,8 @@ the same six things in the same order.
 
 ---
 
-**meihuizen.ai · info@meihuizen.ai · +31 85 060 1641**
-**Cruquiuskade 251, 1018 AM Amsterdam**
+**meihuizen.ai · info@meihuizen.ai**
+**MB Meihuizen AI · Laisvės al. 110, LT-44253 Kaunas, Lithuania**
 
 Questions on this document: **report@meihuizen.ai**, with the domain in the subject line.
 
