@@ -573,7 +573,12 @@
           });
         }
         return pump();
-      }, function () { throw new Error('network'); });
+      }, function () {
+        // The browser cannot tell a dead connection from a server that is not
+        // answering (a missing route fails the same way). Only blame the
+        // visitor's connection when the browser says it is actually offline.
+        throw new Error(navigator.onLine === false ? 'network' : 'offline');
+      });
     }
   }
 
