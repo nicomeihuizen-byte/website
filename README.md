@@ -16,6 +16,7 @@ The website is contained in `website/docs` and can be opened directly from the f
 - `projects/off-grid-ai-homestead.html` presents the active One Acre, Zero Dependency off-grid farming project, including SEO metadata, project galleries, and image lightboxes.
 - `projects/terminal-portfolio-website.html` is a case study on this site's own build, covering its interface, functionality, implementation, and security practices. It's written from the inside since Nico built it. It's not yet promoted to the home page's active work list.
 - `projects/ai-sales-deal-intelligence.html` presents AI Native Sales-Cycle Control, an AI-native sales intelligence tool that reasons about deal momentum and flags stalled or at-risk deals.
+- `projects/agent-fritz.html` presents Agent Fritz, the chat in the corner of every page, as a product meihuizen.ai sells: a site agent that answers only from the client's own pages. Its "try it" buttons open Fritz and ask a question live.
 - `projects/project-pages.css` provides the shared layout and visual system for all project pages.
 
 ### Assets
@@ -30,6 +31,8 @@ Images are stored in `website/docs/images` and use descriptive filenames. The `p
 - `project_two/one-acre-project-overview.pdf` is available from `off-grid-ai-homestead.html` as an openable and downloadable project document.
 - `project_two/pdf.png` is the visual thumbnail for the PDF download block.
 - `project_four/deals-overview.png`, `project_four/healthy-deal.png`, and `project_four/lost-deal-revisit.png` support `ai-sales-deal-intelligence.html`.
+- `project_six/agent-fritz-og.png` is the social preview image for `agent-fritz.html`.
+- `ask/ask.js` and `ask/ask.css` are the Agent Fritz chat window, loaded on every page. `ask/knowledge.json` is everything Fritz knows, built from the English pages by `tools/build_knowledge.py`.
 
 All image references are relative so the pages work without a build step. External Google Fonts are loaded for Space Grotesk, JetBrains Mono, and Inter.
 
@@ -70,6 +73,7 @@ The inline scripts provide these behaviors:
 1. The hero animation in `index.html` types two lines in sequence, highlights `AI Native` in green, respects `prefers-reduced-motion`, and shows the final headline immediately when reduced motion or same-site navigation applies.
 2. The contact form in `index.html` (via `docs/scripts/contact-form.js`) trims and validates the name, email, and message fields and rejects honeypot submissions. Valid submissions are `fetch()`-POSTed as JSON to the Vercel-hosted `send-email` endpoint, showing a bold green success message or a bold red error message inline.
 3. The project pages use hidden fixed overlays for full-size image previews and restore page scrolling when the lightbox is closed.
+4. Agent Fritz (`docs/ask/ask.js`) adds the `~/ask fritz` button and chat window to every page. It streams each answer from the chat route, shows every step the agent takes (which page it reads, the scan form, the scan request) and lists the pages it read under the answer. It works in all seven languages, full screen on phones in both orientations, and keeps the conversation in `sessionStorage` so it survives moving between pages and disappears when the tab closes. The window never opens by itself.
 
 The social links open GitHub, LinkedIn, and X in a new tab with `rel="noopener"`. SVG paths are hidden from assistive technology while each link retains an accessible `aria-label`.
 
@@ -77,10 +81,10 @@ The social links open GitHub, LinkedIn, and X in a new tab with `rel="noopener"`
 
 - Every HTML page includes a restrictive Content Security Policy meta tag. The deployable `docs/_headers` file adds the response-level policy, including `frame-ancestors 'none'` for hosts that support header configuration.
 - Inline executable JavaScript was moved to same-origin files under `website/docs/scripts`, and the unpinned Google Tag Manager dependency was removed.
-- The contact form's cross-origin POST target is pinned to a single origin via the CSP `connect-src` directive (`https://website-contact-function-4efp.vercel.app`), and the receiving function enforces its own `ALLOWED_ORIGIN` allowlist server-side. It validates name, email, message length, and the honeypot field client-side before sending.
-- Dynamic page content is created with DOM APIs and `textContent`; user input is never inserted through `innerHTML`, `eval`, or dynamically generated code.
+- The contact form and Agent Fritz both POST to a single pinned origin via the CSP `connect-src` directive (`https://website-contact-function-4efp.vercel.app`), and the receiving functions enforce their own `ALLOWED_ORIGIN` allowlist server-side. The contact form validates name, email, message length, and the honeypot field client-side before sending.
+- Dynamic page content is created with DOM APIs and `textContent`; user input is never inserted through `innerHTML`, `eval`, or dynamically generated code. That includes Fritz's answers: model text is rendered node by node, and the only links it can produce point to this site or to info@meihuizen.ai.
 - Image lightboxes use static, relative asset paths from page markup. They do not accept URLs from query parameters or other user-controlled sources.
-- External links use HTTPS and `rel="noopener"` when opened in a new tab. No cookies, authentication tokens, or sensitive values are stored in browser storage.
+- External links use HTTPS and `rel="noopener"` when opened in a new tab. No cookies or authentication tokens are stored in browser storage; the only thing stored is the Fritz conversation, in `sessionStorage`, which the browser deletes when the tab closes.
 - The site has no file uploads, redirects based on user input, database requests, `postMessage` handlers, or server-side state-changing endpoints.
 
 The response-header policy requires deployment support for `_headers`; GitHub Pages-style static hosting may require configuring the equivalent CSP in the hosting platform.
@@ -93,7 +97,11 @@ Every page loads `gtag.js` (measurement ID `G-BNWQ23V8KC`) directly after `<head
 
 ### Contact Form Backend (Vercel)
 
-The home page contact form does not send email itself. `docs/scripts/contact-form.js` POSTs the validated form fields as JSON to a Node.js serverless function deployed separately on Vercel (`https://website-contact-function-4efp.vercel.app/api/send-email`), which sends the message over SMTP with nodemailer. That function lives in the sibling `contact-form/` repo, not this one. It's deployed and configured independently, with SMTP credentials and the `ALLOWED_ORIGIN` CORS allowlist set as Vercel environment variables and never committed to source control. Only `index.html`, the only page with the form, includes this origin in its `connect-src` CSP directive.
+The home page contact form does not send email itself. `docs/scripts/contact-form.js` POSTs the validated form fields as JSON to a Node.js serverless function deployed separately on Vercel (`https://website-contact-function-4efp.vercel.app/api/send-email`), which sends the message over SMTP with nodemailer. That function lives in the sibling `contact-form/` repo, not this one. It's deployed and configured independently, with SMTP credentials and the `ALLOWED_ORIGIN` CORS allowlist set as Vercel environment variables and never committed to source control. Every page includes this origin in its `connect-src` CSP directive, because Agent Fritz runs on every page.
+
+### Agent Fritz (Anthropic API via Vercel)
+
+The chat route lives in the same `contact-form/` repo as `api/chat.js`, with the rules Fritz follows in `lib/fritz-prompt.js`. It calls Claude Haiku through the Anthropic API with the key kept as a Vercel environment variable. Fritz gets an index of this site's pages and must call `read_page` to read one before stating anything; its knowledge is fetched from the live `docs/ask/knowledge.json`, so a site push updates what it knows. It has two actions: `open_scan_form` (the free scan form in the chat input) and `request_scan` (emails the confirmed request, refused by the server if the visitor did not type the address themselves). Only counts are logged, no message content. The test questions in `contact-form/evals/` run automatically against every Vercel deployment; see that repo's README.
 
 ## Continuous Integration
 
@@ -133,6 +141,8 @@ There is no package manager or build pipeline required for the current static si
 5. Run the VS Code diagnostics for every HTML and CSS file under `website/docs`.
 6. Extract and syntax-check inline scripts in `index.html` and the project pages with Node.js when JavaScript changes are made.
 7. Verify that all referenced image files still exist after renaming or moving assets.
+8. After changing any page's text, run `python tools/build_knowledge.py` so Agent Fritz knows the new version. `diagnostics.py` fails with a `fritz-knowledge` error until you do.
+9. Open Agent Fritz on a page, ask one question, and check that it answers and lists the page it read.
 
 ```sh
 python -m http.server 8000 --directory website/docs
