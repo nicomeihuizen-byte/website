@@ -29,6 +29,7 @@
 
   const T = {
     en: {
+      scanIntro: 'I can help you request a free Second Audience scan. I\u2019ll need the following things to complete your request:', scanForm: ['Requester:', 'Domain to scan:', 'Phone:', 'Email:'],
       launch: 'ask fritz', tip: 'Questions about meihuizen.ai? Fritz reads the site so you don’t have to.',
       status: 'online · answers from this site only', down: 'asleep · email info@meihuizen.ai',
       boot: ['{n} pages indexed', 'answers only from what the pages say', 'can file a free scan request for you'],
@@ -41,6 +42,7 @@
       foot: 'Answers come only from this site’s pages. AI can still be wrong, so check the source. Don’t share sensitive data.', how: 'How Fritz works'
     },
     nl: {
+      scanIntro: 'Ik kan u helpen een gratis Second Audience-scan aan te vragen. Ik heb de volgende gegevens nodig om uw aanvraag af te ronden:', scanForm: ['Aanvrager:', 'Te scannen domein:', 'Telefoon:', 'E-mail:'],
       launch: 'vraag fritz', tip: 'Vragen over meihuizen.ai? Fritz leest de site, dan hoeft u dat niet.',
       status: 'online · antwoordt alleen vanuit deze site', down: 'slaapt · mail info@meihuizen.ai',
       boot: ['{n} pagina’s geïndexeerd', 'antwoordt alleen met wat de pagina’s zeggen', 'kan een gratis scan voor u aanvragen'],
@@ -53,6 +55,7 @@
       foot: 'Antwoorden komen alleen van de pagina’s van deze site. AI kan zich nog steeds vergissen, dus controleer de bron. Deel geen gevoelige gegevens.', how: 'Hoe Fritz werkt'
     },
     de: {
+      scanIntro: 'Ich kann Ihnen helfen, einen kostenlosen Second-Audience-Scan anzufragen. Für Ihre Anfrage brauche ich Folgendes:', scanForm: ['Anfragender:', 'Zu scannende Domain:', 'Telefon:', 'E-Mail:'],
       launch: 'frag fritz', tip: 'Fragen zu meihuizen.ai? Fritz liest die Website, damit Sie es nicht müssen.',
       status: 'online · antwortet nur aus dieser Website', down: 'schläft · info@meihuizen.ai',
       boot: ['{n} Seiten indexiert', 'antwortet nur mit dem, was auf den Seiten steht', 'kann für Sie einen kostenlosen Scan anfragen'],
@@ -65,6 +68,7 @@
       foot: 'Antworten stammen nur von den Seiten dieser Website. KI kann sich trotzdem irren, prüfen Sie also die Quelle. Teilen Sie keine sensiblen Daten.', how: 'So arbeitet Fritz'
     },
     fr: {
+      scanIntro: 'Je peux vous aider à demander un scan Second Audience gratuit. Pour finaliser votre demande, il me faut\u00a0:', scanForm: ['Demandeur\u00a0:', 'Domaine à scanner\u00a0:', 'Téléphone\u00a0:', 'E-mail\u00a0:'],
       launch: 'demander à fritz', tip: 'Des questions sur meihuizen.ai ? Fritz lit le site pour vous.',
       status: 'en ligne · répond uniquement à partir de ce site', down: 'endormi · info@meihuizen.ai',
       boot: ['{n} pages indexées', 'répond uniquement avec ce que disent les pages', 'peut demander un scan gratuit pour vous'],
@@ -77,6 +81,7 @@
       foot: 'Les réponses viennent uniquement des pages de ce site. L’IA peut tout de même se tromper, vérifiez donc la source. Ne partagez pas de données sensibles.', how: 'Comment Fritz fonctionne'
     },
     es: {
+      scanIntro: 'Puedo ayudarle a solicitar un escaneo gratuito de Second Audience. Para completar su solicitud necesito lo siguiente:', scanForm: ['Solicitante:', 'Dominio a escanear:', 'Teléfono:', 'Correo:'],
       launch: 'pregunta a fritz', tip: '¿Preguntas sobre meihuizen.ai? Fritz lee el sitio por usted.',
       status: 'en línea · responde solo a partir de este sitio', down: 'dormido · info@meihuizen.ai',
       boot: ['{n} páginas indexadas', 'responde solo con lo que dicen las páginas', 'puede solicitar un escaneo gratuito por usted'],
@@ -89,6 +94,7 @@
       foot: 'Las respuestas salen solo de las páginas de este sitio. La IA aún puede equivocarse, así que compruebe la fuente. No comparta datos sensibles.', how: 'Cómo funciona Fritz'
     },
     it: {
+      scanIntro: 'Posso aiutarvi a richiedere una scansione gratuita Second Audience. Per completare la richiesta mi servono i seguenti dati:', scanForm: ['Richiedente:', 'Dominio da scansionare:', 'Telefono:', 'Email:'],
       launch: 'chiedi a fritz', tip: 'Domande su meihuizen.ai? Fritz legge il sito al posto vostro.',
       status: 'online · risponde solo da questo sito', down: 'dorme · info@meihuizen.ai',
       boot: ['{n} pagine indicizzate', 'risponde solo con ciò che dicono le pagine', 'può richiedere per voi una scansione gratuita'],
@@ -101,6 +107,7 @@
       foot: 'Le risposte vengono solo dalle pagine di questo sito. L’IA può comunque sbagliare, quindi controllate la fonte. Non condividete dati sensibili.', how: 'Come funziona Fritz'
     },
     pt: {
+      scanIntro: 'Posso ajudá-lo a pedir uma análise gratuita Second Audience. Para concluir o pedido preciso do seguinte:', scanForm: ['Requerente:', 'Domínio a analisar:', 'Telefone:', 'Email:'],
       launch: 'pergunte ao fritz', tip: 'Perguntas sobre a meihuizen.ai? O Fritz lê o site por si.',
       status: 'online · responde apenas a partir deste site', down: 'a dormir · info@meihuizen.ai',
       boot: ['{n} páginas indexadas', 'responde apenas com o que as páginas dizem', 'pode pedir uma análise gratuita por si'],
@@ -162,7 +169,7 @@
   // stay on this site. Built node by node; model text never becomes HTML.
   let LIST_RE = /^\s*(?:[-*•]|\d+[.)])\s+/;
   function renderText(text, parent) {
-    let blocks = text.replace(/\r/g, '').split(/\n{2,}/);
+    let blocks = text.replace(/\r/g, '').replace(/ +,/g, ',').split(/\n{2,}/);
     blocks.forEach(function (block) {
       let lines = block.split('\n');
       let list = null, para = null;
@@ -273,7 +280,11 @@
     form.appendChild(input); form.appendChild(sendBtn);
     form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); });
     input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); ask(input.value); }
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+        e.preventDefault();
+        if (formMode && nextFormLine()) { return; }
+        ask(input.value);
+      }
     });
     input.addEventListener('input', onType);
 
@@ -440,6 +451,29 @@
     count.classList.toggle('warn', n > MAX_CHARS);
   }
 
+  // The scan form lives in the input itself: one line per field, caret on
+  // the first. Enter moves to the next line instead of sending, until the
+  // last line, so nobody sends a half-filled form by habit.
+  let formMode = false;
+  function fillForm() {
+    input.value = t.scanForm.map(function (l) { return l + ' '; }).join('\n');
+    formMode = true;
+    onType();
+    const firstEnd = t.scanForm[0].length + 1;
+    input.focus();
+    input.setSelectionRange(firstEnd, firstEnd);
+  }
+  function nextFormLine() {
+    const v = input.value;
+    const pos = input.selectionStart;
+    const nl = v.indexOf('\n', pos);
+    if (nl === -1) { return false; }
+    const end = v.indexOf('\n', nl + 1);
+    const target = end === -1 ? v.length : end;
+    input.setSelectionRange(target, target);
+    return true;
+  }
+
   function setBusy(on) {
     busy = on;
     sendBtn.disabled = on;
@@ -463,7 +497,7 @@
     let q = (raw || '').trim();
     if (!q || busy) { return; }
     if (q.length > MAX_CHARS) { onType(); return; }
-    input.value = ''; onType();
+    input.value = ''; formMode = false; onType();
     suggest.hidden = true;
 
     let userItem = { type: 'user', text: q };
@@ -480,6 +514,7 @@
     save();
 
     let queued = false;
+    let pendingForm = false;
     function paint() {
       if (queued) { return; }
       queued = true;
@@ -504,6 +539,9 @@
         }
       } else if (event === 'sources') {
         bot.sources = data.pages || [];
+      } else if (event === 'form') {
+        bot.segs.push({ kind: 'text', text: t.scanIntro });
+        pendingForm = true;
       } else if (event === 'action') {
         bot.action = { domain: data.domain };
       } else if (event === 'error') {
@@ -521,6 +559,7 @@
       state.history.push({ role: 'assistant', content: answer });
       setDown(false);
       live.textContent = answer;
+      if (pendingForm) { fillForm(); }
     }).catch(function (err) {
       let code = String(err && err.message || 'network');
       if (!t.err[code]) { code = 'network'; }
@@ -543,7 +582,16 @@
       return fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: state.history, lang: LANG, page: location.pathname })
+        body: JSON.stringify({
+          messages: state.history, lang: LANG, page: location.pathname,
+          // The history sent is capped, so an offer made ten questions ago
+          // falls out of it. The window keeps the whole conversation and
+          // says so outright.
+          scanOffered: state.items.some(function (it) {
+            return it.type === 'bot' && it.segs.some(function (sg) { return sg.kind === 'text' && /\?\s*$/.test(sg.text.trim()) && /scan|análise|escaneo|scansione/i.test(sg.text.trim().split(/\n/).pop()); });
+          }),
+          scanDone: state.items.some(function (it) { return it.type === 'bot' && !!it.action; })
+        })
       }).then(function (res) {
         if (!res.ok) {
           return res.json().catch(function () { return {}; }).then(function (j) {
