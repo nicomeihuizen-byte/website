@@ -584,6 +584,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: state.history, lang: LANG, page: location.pathname,
+          browserLang: (navigator.language || '').slice(0, 2).toLowerCase(),
           // The history sent is capped, so an offer made ten questions ago
           // falls out of it. The window keeps the whole conversation and
           // says so outright.
