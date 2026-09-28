@@ -41,6 +41,7 @@ website/
     ├── index.html
     ├── about.html
     ├── projects/
+    │   ├── agent-fritz.html         # Agent Fritz, the site chat, sold as a product
     │   ├── off-grid-ai-homestead.html
     │   ├── terminal-portfolio-website.html
     │   ├── ai-sales-deal-intelligence.html  # AI Native Sales-Cycle Control case study
@@ -132,6 +133,20 @@ Manual checks diagnostics.py doesn't cover — do these too: click through navig
 2. Add matching images under a new `docs/images/project_x/` folder.
 3. Link it from the homepage work list and, if relevant, from `docs/sitemap.xml`.
 4. Run `python diagnostics.py` before committing.
+
+## Agent Fritz (the chat in the corner)
+
+Every page loads `docs/ask/ask.css` and `docs/ask/ask.js`: the chat window. The agent itself runs in the
+`website-contact-function` Vercel project (`api/chat.js`) and answers only from `docs/ask/knowledge.json`.
+
+- **After changing any page's text, run `python tools/build_knowledge.py`.** Otherwise Fritz keeps telling
+  visitors the old version. `diagnostics.py` fails with a `fritz-knowledge` error until you do.
+- A new page gets Fritz by adding `<link rel="stylesheet" href="/ask/ask.css">` in `<head>`,
+  `<script src="/ask/ask.js" defer></script>` before `</body>`, and the chat endpoint
+  (`https://website-contact-function-4efp.vercel.app`) in the CSP `connect-src`.
+- A new project page belongs in `PAGES` in `tools/build_knowledge.py` automatically (everything under
+  `docs/projects/`); other new top-level pages must be added to that list by hand.
+- Any element with `data-fritz-ask="question"` opens Fritz and asks that question.
 
 ## The crew roster on the about page
 
