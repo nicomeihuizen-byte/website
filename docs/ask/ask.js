@@ -645,7 +645,10 @@
     // Page count for the boot line, from the same file Fritz answers from.
     fetch('/ask/knowledge.json').then(function (r) { return r.ok ? r.json() : null; })
       .then(function (k) { if (k && k.pages) { pagesCount = k.pages.length; } }).catch(function () {});
-    if (state.open) { setOpen(true); }
+    // The conversation survives a page change; the open window does not. A
+    // window that springs open on every page load covers the page someone
+    // just navigated to, and on a phone that is the whole screen.
+    state.open = false;
     if (!state.tipped) {
       setTimeout(function () {
         if (state.open || state.tipped) { return; }
