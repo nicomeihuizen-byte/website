@@ -1034,3 +1034,9 @@ h1 {
    saturate(1.5) lands terminal green within a few points of #1F7D55. */
 :root:not([data-theme="dark"]) .five-lockup > svg,
 :root:not([data-theme="dark"]) .project-title-mark{ filter: brightness(.62) saturate(1.5); }
+
+/* Mark and title on one line. This used to be an inline style attribute,
+   which the project pages' CSP blocks, so the mark sat above the title. */
+.project-title-row { display: flex; align-items: center; gap: 18px; }
+.project-title-row .project-title-mark { flex-shrink: 0; }
+.stack + h2.section-label { margin-top: 28px; }
