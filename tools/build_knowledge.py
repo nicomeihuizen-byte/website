@@ -25,7 +25,7 @@ DOCS = ROOT / "docs"
 OUT = DOCS / "ask" / "knowledge.json"
 SITE = "https://www.meihuizen.ai/"
 
-PAGES = ["index.html", "about.html", "builds.html", "credentials.html", "privacy.html"]
+PAGES = ["index.html", "about.html", "builds.html", "credentials.html", "privacy.html", "status.html"]
 PAGES += sorted(p.relative_to(DOCS).as_posix() for p in (DOCS / "projects").glob("*.html"))
 
 SKIP_TAGS = {"script", "style", "svg", "noscript", "template", "button", "head", "nav", "form"}
