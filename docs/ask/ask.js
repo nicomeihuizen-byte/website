@@ -29,6 +29,12 @@
 
   const T = {
     en: {
+      book: "Rather talk right away? Pick a time →",
+      contactIntro: "That’s not on the site, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Leave your details and he’ll get back to you personally:",
+      contactForm: ["Name:", "Company:", "Email:", "Phone:"],
+      contact: ["request passed on", "Nico has it in his inbox and will reach out personally. A confirmation is on its way to you."],
+      proof: ["where does it say so?", "hide", ""],
+      pages: {"fritz": {"ready": "You’re on my own page. Want to try to trip me up?", "s": ["What can’t you answer?", "How do you know you’re right?", "Can I get you for my own website?"]}, "five": {"ready": "You’re looking at Five. Ask me anything about it.", "s": ["What does Five cost?", "Who is Five for?", "Can Five run on a private server?"]}, "sa": {"s": ["What does a scan find?", "How does the free scan work?", "I’d like a free scan"]}, "cred": {"s": ["Is meihuizen.ai a registered company?", "What did Nico do before this?", "What is the VAT number?"]}},
       scanIntro: 'I can help you request a free Second Audience scan. I\u2019ll need the following things to complete your request:', scanForm: ['Requester:', 'Domain to scan:', 'Phone:', 'Email:'],
       launch: 'ask fritz', tip: 'Questions about meihuizen.ai? Fritz reads the site so you don’t have to.',
       status: 'online · answers from this site only', down: 'asleep · email info@meihuizen.ai',
@@ -36,12 +42,18 @@
       ready: 'Ready. What do you want to know?',
       placeholder: 'Ask about meihuizen.ai…', send: 'Send', reset: 'New conversation', close: 'Close', open: 'Open Agent Fritz, the chat assistant',
       thinking: 'sniffing through the pages…', miss: 'not on this site', sources: 'read', you: 'you',
-      scan: ['scan request filed', 'Nico has it in his inbox.'],
+      scan: ['scan request filed', 'Nico has it in his inbox. A confirmation is on its way to you.'],
       err: { offline: 'Fritz is asleep right now. Email info@meihuizen.ai.', rate: 'That’s a lot of questions. Give Fritz a minute.', timeout: 'That took too long. Try again, or email info@meihuizen.ai.', network: 'Can’t reach Fritz. Check your connection, or email info@meihuizen.ai.', input: 'Keep it under 800 characters.', upstream: 'Something went wrong on Fritz’s side. Try again, or email info@meihuizen.ai.' },
       suggest: ['What does meihuizen.ai build?', 'Is meihuizen.ai a registered company?', 'What is Second Audience?', 'I’d like a free scan'],
       foot: 'Answers come only from this site’s pages. AI can still be wrong, so check the source. Don’t share sensitive data.', how: 'How Fritz works'
     },
     nl: {
+      book: "Liever meteen praten? Kies een moment →",
+      contactIntro: "Dat staat niet op de site, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:",
+      contactForm: ["Naam:", "Bedrijf:", "E-mail:", "Telefoon:"],
+      contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op. Er is een bevestiging naar u onderweg."],
+      proof: ["waar staat dat?", "verbergen", "uit de Engelse pagina"],
+      pages: {"fritz": {"ready": "U bent op mijn eigen pagina. Zin om me op een fout te betrappen?", "s": ["Wat kun je niet beantwoorden?", "Hoe weet je dat je gelijk hebt?", "Kan ik jou op mijn eigen website krijgen?"]}, "five": {"ready": "U kijkt naar Five. Vraag me er alles over.", "s": ["Wat kost Five?", "Voor wie is Five?", "Kan Five op een eigen server draaien?"]}, "sa": {"s": ["Wat vindt een scan?", "Hoe werkt de gratis scan?", "Ik wil een gratis scan"]}, "cred": {"s": ["Is meihuizen.ai een ingeschreven bedrijf?", "Wat deed Nico hiervoor?", "Wat is het btw-nummer?"]}},
       scanIntro: 'Ik kan u helpen een gratis Second Audience-scan aan te vragen. Ik heb de volgende gegevens nodig om uw aanvraag af te ronden:', scanForm: ['Aanvrager:', 'Te scannen domein:', 'Telefoon:', 'E-mail:'],
       launch: 'vraag fritz', tip: 'Vragen over meihuizen.ai? Fritz leest de site, dan hoeft u dat niet.',
       status: 'online · antwoordt alleen vanuit deze site', down: 'slaapt · mail info@meihuizen.ai',
@@ -49,12 +61,18 @@
       ready: 'Klaar. Wat wilt u weten?',
       placeholder: 'Vraag iets over meihuizen.ai…', send: 'Versturen', reset: 'Nieuw gesprek', close: 'Sluiten', open: 'Open Agent Fritz, de chatassistent',
       thinking: 'snuffelt door de pagina’s…', miss: 'staat niet op deze site', sources: 'gelezen', you: 'u',
-      scan: ['scanaanvraag verstuurd', 'Nico heeft hem in zijn inbox.'],
+      scan: ['scanaanvraag verstuurd', 'Nico heeft hem in zijn inbox. Er is een bevestiging naar u onderweg.'],
       err: { offline: 'Fritz slaapt even. Mail info@meihuizen.ai.', rate: 'Dat zijn veel vragen. Geef Fritz een minuut.', timeout: 'Dat duurde te lang. Probeer het opnieuw of mail info@meihuizen.ai.', network: 'Fritz is niet bereikbaar. Controleer uw verbinding of mail info@meihuizen.ai.', input: 'Houd het onder de 800 tekens.', upstream: 'Er ging iets mis aan de kant van Fritz. Probeer het opnieuw of mail info@meihuizen.ai.' },
       suggest: ['Wat bouwt meihuizen.ai?', 'Is meihuizen.ai een ingeschreven bedrijf?', 'Wat is Second Audience?', 'Ik wil een gratis scan'],
       foot: 'Antwoorden komen alleen van de pagina’s van deze site. AI kan zich nog steeds vergissen, dus controleer de bron. Deel geen gevoelige gegevens.', how: 'Hoe Fritz werkt'
     },
     de: {
+      book: "Lieber gleich sprechen? Termin wählen →",
+      contactIntro: "Das steht nicht auf der Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:",
+      contactForm: ["Name:", "Unternehmen:", "E-Mail:", "Telefon:"],
+      contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich. Eine Bestätigung ist auf dem Weg zu Ihnen."],
+      proof: ["wo steht das?", "ausblenden", "aus der englischen Seite"],
+      pages: {"fritz": {"ready": "Sie sind auf meiner eigenen Seite. Lust, mich bei einem Fehler zu erwischen?", "s": ["Was kannst du nicht beantworten?", "Woher weißt du, dass du recht hast?", "Kann ich dich für meine eigene Website bekommen?"]}, "five": {"ready": "Sie sehen sich Five an. Fragen Sie mich alles dazu.", "s": ["Was kostet Five?", "Für wen ist Five?", "Kann Five auf einem eigenen Server laufen?"]}, "sa": {"s": ["Was findet ein Scan?", "Wie funktioniert der kostenlose Scan?", "Ich möchte einen kostenlosen Scan"]}, "cred": {"s": ["Ist meihuizen.ai ein eingetragenes Unternehmen?", "Was hat Nico vorher gemacht?", "Wie lautet die USt-IdNr.?"]}},
       scanIntro: 'Ich kann Ihnen helfen, einen kostenlosen Second-Audience-Scan anzufragen. Für Ihre Anfrage brauche ich Folgendes:', scanForm: ['Anfragender:', 'Zu scannende Domain:', 'Telefon:', 'E-Mail:'],
       launch: 'frag fritz', tip: 'Fragen zu meihuizen.ai? Fritz liest die Website, damit Sie es nicht müssen.',
       status: 'online · antwortet nur aus dieser Website', down: 'schläft · info@meihuizen.ai',
@@ -62,12 +80,18 @@
       ready: 'Bereit. Was möchten Sie wissen?',
       placeholder: 'Fragen Sie etwas zu meihuizen.ai…', send: 'Senden', reset: 'Neues Gespräch', close: 'Schließen', open: 'Agent Fritz öffnen, den Chat-Assistenten',
       thinking: 'schnüffelt durch die Seiten…', miss: 'nicht auf dieser Website', sources: 'gelesen', you: 'Sie',
-      scan: ['Scan-Anfrage gesendet', 'Nico hat sie im Postfach.'],
+      scan: ['Scan-Anfrage gesendet', 'Nico hat sie im Postfach. Eine Bestätigung ist auf dem Weg zu Ihnen.'],
       err: { offline: 'Fritz schläft gerade. Schreiben Sie an info@meihuizen.ai.', rate: 'Das sind viele Fragen. Geben Sie Fritz eine Minute.', timeout: 'Das hat zu lange gedauert. Versuchen Sie es erneut oder schreiben Sie an info@meihuizen.ai.', network: 'Fritz ist nicht erreichbar. Prüfen Sie Ihre Verbindung oder schreiben Sie an info@meihuizen.ai.', input: 'Bitte unter 800 Zeichen bleiben.', upstream: 'Bei Fritz ist etwas schiefgegangen. Versuchen Sie es erneut oder schreiben Sie an info@meihuizen.ai.' },
       suggest: ['Was baut meihuizen.ai?', 'Ist meihuizen.ai ein eingetragenes Unternehmen?', 'Was ist Second Audience?', 'Ich möchte einen kostenlosen Scan'],
       foot: 'Antworten stammen nur von den Seiten dieser Website. KI kann sich trotzdem irren, prüfen Sie also die Quelle. Teilen Sie keine sensiblen Daten.', how: 'So arbeitet Fritz'
     },
     fr: {
+      book: "Envie d’en parler tout de suite ? Choisir un créneau →",
+      contactIntro: "Ce n’est pas sur le site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :",
+      contactForm: ["Nom :", "Entreprise :", "E-mail :", "Téléphone :"],
+      contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement. Une confirmation est en route."],
+      proof: ["où est-ce écrit ?", "masquer", "extrait de la page anglaise"],
+      pages: {"fritz": {"ready": "Vous êtes sur ma propre page. Envie de me prendre en défaut ?", "s": ["À quoi ne peux-tu pas répondre ?", "Comment sais-tu que tu as raison ?", "Puis-je t’avoir sur mon propre site ?"]}, "five": {"ready": "Vous regardez Five. Posez-moi toutes vos questions.", "s": ["Combien coûte Five ?", "À qui s’adresse Five ?", "Five peut-il tourner sur un serveur privé ?"]}, "sa": {"s": ["Que trouve un scan ?", "Comment fonctionne le scan gratuit ?", "Je voudrais un scan gratuit"]}, "cred": {"s": ["meihuizen.ai est-elle une société immatriculée ?", "Que faisait Nico avant ?", "Quel est le numéro de TVA ?"]}},
       scanIntro: 'Je peux vous aider à demander un scan Second Audience gratuit. Pour finaliser votre demande, il me faut\u00a0:', scanForm: ['Demandeur\u00a0:', 'Domaine à scanner\u00a0:', 'Téléphone\u00a0:', 'E-mail\u00a0:'],
       launch: 'demander à fritz', tip: 'Des questions sur meihuizen.ai ? Fritz lit le site pour vous.',
       status: 'en ligne · répond uniquement à partir de ce site', down: 'endormi · info@meihuizen.ai',
@@ -75,12 +99,18 @@
       ready: 'Prêt. Que voulez-vous savoir ?',
       placeholder: 'Posez une question sur meihuizen.ai…', send: 'Envoyer', reset: 'Nouvelle conversation', close: 'Fermer', open: 'Ouvrir Agent Fritz, l’assistant de chat',
       thinking: 'flaire les pages…', miss: 'absent de ce site', sources: 'lu', you: 'vous',
-      scan: ['demande de scan envoyée', 'Nico l’a dans sa boîte de réception.'],
+      scan: ['demande de scan envoyée', 'Nico l’a dans sa boîte de réception. Une confirmation est en route.'],
       err: { offline: 'Fritz dort pour l’instant. Écrivez à info@meihuizen.ai.', rate: 'Cela fait beaucoup de questions. Laissez une minute à Fritz.', timeout: 'C’était trop long. Réessayez ou écrivez à info@meihuizen.ai.', network: 'Impossible de joindre Fritz. Vérifiez votre connexion ou écrivez à info@meihuizen.ai.', input: 'Restez sous 800 caractères.', upstream: 'Un problème est survenu du côté de Fritz. Réessayez ou écrivez à info@meihuizen.ai.' },
       suggest: ['Que construit meihuizen.ai ?', 'meihuizen.ai est-elle une société immatriculée ?', 'Qu’est-ce que Second Audience ?', 'Je voudrais un scan gratuit'],
       foot: 'Les réponses viennent uniquement des pages de ce site. L’IA peut tout de même se tromper, vérifiez donc la source. Ne partagez pas de données sensibles.', how: 'Comment Fritz fonctionne'
     },
     es: {
+      book: "¿Prefiere hablar ya? Elija una hora →",
+      contactIntro: "Eso no está en el sitio, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. Déjeme sus datos y se pondrá en contacto con usted:",
+      contactForm: ["Nombre:", "Empresa:", "Correo:", "Teléfono:"],
+      contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente. Le llega una confirmación."],
+      proof: ["¿dónde lo dice?", "ocultar", "de la página en inglés"],
+      pages: {"fritz": {"ready": "Está en mi propia página. ¿Se anima a pillarme en un error?", "s": ["¿Qué no puedes responder?", "¿Cómo sabes que tienes razón?", "¿Puedo tenerte en mi propio sitio web?"]}, "five": {"ready": "Está viendo Five. Pregúnteme lo que quiera.", "s": ["¿Cuánto cuesta Five?", "¿Para quién es Five?", "¿Puede Five funcionar en un servidor privado?"]}, "sa": {"s": ["¿Qué encuentra un escaneo?", "¿Cómo funciona el escaneo gratuito?", "Quiero un escaneo gratuito"]}, "cred": {"s": ["¿Es meihuizen.ai una empresa registrada?", "¿Qué hacía Nico antes?", "¿Cuál es el número de IVA?"]}},
       scanIntro: 'Puedo ayudarle a solicitar un escaneo gratuito de Second Audience. Para completar su solicitud necesito lo siguiente:', scanForm: ['Solicitante:', 'Dominio a escanear:', 'Teléfono:', 'Correo:'],
       launch: 'pregunta a fritz', tip: '¿Preguntas sobre meihuizen.ai? Fritz lee el sitio por usted.',
       status: 'en línea · responde solo a partir de este sitio', down: 'dormido · info@meihuizen.ai',
@@ -88,12 +118,18 @@
       ready: 'Listo. ¿Qué quiere saber?',
       placeholder: 'Pregunte sobre meihuizen.ai…', send: 'Enviar', reset: 'Nueva conversación', close: 'Cerrar', open: 'Abrir Agent Fritz, el asistente de chat',
       thinking: 'olfateando las páginas…', miss: 'no está en este sitio', sources: 'leído', you: 'usted',
-      scan: ['solicitud de escaneo enviada', 'Nico la tiene en su bandeja de entrada.'],
+      scan: ['solicitud de escaneo enviada', 'Nico la tiene en su bandeja de entrada. Le llega una confirmación.'],
       err: { offline: 'Fritz está durmiendo. Escriba a info@meihuizen.ai.', rate: 'Son muchas preguntas. Dele un minuto a Fritz.', timeout: 'Tardó demasiado. Inténtelo de nuevo o escriba a info@meihuizen.ai.', network: 'No se puede contactar con Fritz. Compruebe su conexión o escriba a info@meihuizen.ai.', input: 'Menos de 800 caracteres, por favor.', upstream: 'Algo falló del lado de Fritz. Inténtelo de nuevo o escriba a info@meihuizen.ai.' },
       suggest: ['¿Qué construye meihuizen.ai?', '¿Es meihuizen.ai una empresa registrada?', '¿Qué es Second Audience?', 'Quiero un escaneo gratuito'],
       foot: 'Las respuestas salen solo de las páginas de este sitio. La IA aún puede equivocarse, así que compruebe la fuente. No comparta datos sensibles.', how: 'Cómo funciona Fritz'
     },
     it: {
+      book: "Preferite parlarne subito? Scegliete un orario →",
+      contactIntro: "Questo non è sul sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Lasciate i vostri dati e vi ricontatterà personalmente:",
+      contactForm: ["Nome:", "Azienda:", "Email:", "Telefono:"],
+      contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente. Una conferma è in arrivo."],
+      proof: ["dove c’è scritto?", "nascondi", "dalla pagina inglese"],
+      pages: {"fritz": {"ready": "Siete sulla mia pagina. Volete provare a cogliermi in fallo?", "s": ["A cosa non sai rispondere?", "Come sai di avere ragione?", "Posso averti sul mio sito?"]}, "five": {"ready": "State guardando Five. Chiedetemi tutto.", "s": ["Quanto costa Five?", "Per chi è Five?", "Five può girare su un server privato?"]}, "sa": {"s": ["Cosa trova una scansione?", "Come funziona la scansione gratuita?", "Vorrei una scansione gratuita"]}, "cred": {"s": ["meihuizen.ai è una società registrata?", "Cosa faceva Nico prima?", "Qual è la partita IVA?"]}},
       scanIntro: 'Posso aiutarvi a richiedere una scansione gratuita Second Audience. Per completare la richiesta mi servono i seguenti dati:', scanForm: ['Richiedente:', 'Dominio da scansionare:', 'Telefono:', 'Email:'],
       launch: 'chiedi a fritz', tip: 'Domande su meihuizen.ai? Fritz legge il sito al posto vostro.',
       status: 'online · risponde solo da questo sito', down: 'dorme · info@meihuizen.ai',
@@ -101,12 +137,18 @@
       ready: 'Pronto. Cosa volete sapere?',
       placeholder: 'Chiedete qualcosa su meihuizen.ai…', send: 'Invia', reset: 'Nuova conversazione', close: 'Chiudi', open: 'Apri Agent Fritz, l’assistente in chat',
       thinking: 'annusa tra le pagine…', miss: 'non è su questo sito', sources: 'letto', you: 'voi',
-      scan: ['richiesta di scansione inviata', 'Nico l’ha nella sua casella di posta.'],
+      scan: ['richiesta di scansione inviata', 'Nico l’ha nella sua casella di posta. Una conferma è in arrivo.'],
       err: { offline: 'Fritz sta dormendo. Scrivete a info@meihuizen.ai.', rate: 'Sono tante domande. Date un minuto a Fritz.', timeout: 'Ci è voluto troppo. Riprovate o scrivete a info@meihuizen.ai.', network: 'Fritz non è raggiungibile. Controllate la connessione o scrivete a info@meihuizen.ai.', input: 'Restate sotto gli 800 caratteri.', upstream: 'Qualcosa è andato storto dal lato di Fritz. Riprovate o scrivete a info@meihuizen.ai.' },
       suggest: ['Cosa costruisce meihuizen.ai?', 'meihuizen.ai è una società registrata?', 'Cos’è Second Audience?', 'Vorrei una scansione gratuita'],
       foot: 'Le risposte vengono solo dalle pagine di questo sito. L’IA può comunque sbagliare, quindi controllate la fonte. Non condividete dati sensibili.', how: 'Come funziona Fritz'
     },
     pt: {
+      book: "Prefere falar já? Escolha uma hora →",
+      contactIntro: "Isso não está no site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Deixe os seus dados e ele entrará em contacto consigo:",
+      contactForm: ["Nome:", "Empresa:", "Email:", "Telefone:"],
+      contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente. Vai receber uma confirmação."],
+      proof: ["onde diz isso?", "esconder", "da página em inglês"],
+      pages: {"fritz": {"ready": "Está na minha própria página. Quer tentar apanhar-me num erro?", "s": ["O que é que não consegues responder?", "Como sabes que tens razão?", "Posso ter-te no meu próprio site?"]}, "five": {"ready": "Está a ver o Five. Pergunte-me o que quiser.", "s": ["Quanto custa o Five?", "Para quem é o Five?", "O Five pode correr num servidor privado?"]}, "sa": {"s": ["O que encontra uma análise?", "Como funciona a análise gratuita?", "Quero uma análise gratuita"]}, "cred": {"s": ["A meihuizen.ai é uma empresa registada?", "O que fazia o Nico antes?", "Qual é o número de IVA?"]}},
       scanIntro: 'Posso ajudá-lo a pedir uma análise gratuita Second Audience. Para concluir o pedido preciso do seguinte:', scanForm: ['Requerente:', 'Domínio a analisar:', 'Telefone:', 'Email:'],
       launch: 'pergunte ao fritz', tip: 'Perguntas sobre a meihuizen.ai? O Fritz lê o site por si.',
       status: 'online · responde apenas a partir deste site', down: 'a dormir · info@meihuizen.ai',
@@ -114,7 +156,7 @@
       ready: 'Pronto. O que quer saber?',
       placeholder: 'Pergunte sobre a meihuizen.ai…', send: 'Enviar', reset: 'Nova conversa', close: 'Fechar', open: 'Abrir o Agent Fritz, o assistente de chat',
       thinking: 'a farejar as páginas…', miss: 'não está neste site', sources: 'lido', you: 'você',
-      scan: ['pedido de análise enviado', 'O Nico já o tem na caixa de entrada.'],
+      scan: ['pedido de análise enviado', 'O Nico já o tem na caixa de entrada. Vai receber uma confirmação.'],
       err: { offline: 'O Fritz está a dormir. Escreva para info@meihuizen.ai.', rate: 'São muitas perguntas. Dê um minuto ao Fritz.', timeout: 'Demorou demasiado. Tente de novo ou escreva para info@meihuizen.ai.', network: 'Não é possível contactar o Fritz. Verifique a ligação ou escreva para info@meihuizen.ai.', input: 'Menos de 800 caracteres, por favor.', upstream: 'Algo correu mal do lado do Fritz. Tente de novo ou escreva para info@meihuizen.ai.' },
       suggest: ['O que constrói a meihuizen.ai?', 'A meihuizen.ai é uma empresa registada?', 'O que é o Second Audience?', 'Quero uma análise gratuita'],
       foot: 'As respostas vêm apenas das páginas deste site. A IA pode mesmo assim enganar-se, por isso confirme a fonte. Não partilhe dados sensíveis.', how: 'Como funciona o Fritz'
@@ -125,6 +167,13 @@
   if (!T[LANG]) { LANG = 'en'; }
   let t = T[LANG];
   let PREFIX = LANG === 'en' ? '/' : '/' + LANG + '/';
+  // Which page the visitor is on decides the opening line and the first
+  // suggestions: on the Five page, questions about Five.
+  const PAGE_KEY = {
+    'projects/agent-fritz.html': 'fritz', 'projects/ai-sales-deal-intelligence.html': 'five',
+    'projects/second-audience.html': 'sa', 'credentials.html': 'cred'
+  }[location.pathname.replace(/^\/(nl|de|fr|es|it|pt)(\/|$)/, '/').replace(/^\//, '')];
+  const PAGE = (PAGE_KEY && t.pages[PAGE_KEY]) || {};
   let PAGE_NAMES = {
     'index.html': 'home', 'projects/second-audience.html': 'second audience',
     'projects/ai-sales-deal-intelligence.html': 'five', 'projects/off-grid-ai-homestead.html': 'one acre',
@@ -261,7 +310,7 @@
     log.tabIndex = 0;
 
     suggest = el('div', 'fritz-suggest');
-    t.suggest.forEach(function (q) {
+    (PAGE.s || t.suggest).forEach(function (q) {
       let b = el('button', null, q); b.type = 'button';
       b.addEventListener('click', function () { ask(q); });
       suggest.appendChild(b);
@@ -325,6 +374,9 @@
   function reset() {
     if (busy) { return; }
     state.items = []; state.history = [];
+    // A fresh conversation starts with an empty input, not with a scan form
+    // left over from the one before.
+    input.value = ''; formMode = false; onType();
     save();
     renderAll(false);
     input.focus();
@@ -339,7 +391,7 @@
         if (pagesCount) { lines.push(['ok', l.replace('{n}', pagesCount)]); }
       } else { lines.push(['ok', l]); }
     });
-    lines.push(['ready', t.ready]);
+    lines.push(['ready', PAGE.ready || t.ready]);
     let reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!animate || reduce) {
       lines.forEach(function (l) { box.appendChild(el('div', l[0], l[1])); });
@@ -365,12 +417,12 @@
   function renderAll(animateBoot) {
     log.textContent = '';
     log.appendChild(bootBlock(animateBoot));
-    state.items.forEach(function (item) { log.appendChild(renderItem(item, false)); });
+    state.items.forEach(function (item, i) { log.appendChild(renderItem(item, false, i === state.items.length - 1)); });
     suggest.hidden = state.items.length > 0;
     scrollDown(true);
   }
 
-  function renderItem(item, streaming) {
+  function renderItem(item, streaming, isLast) {
     if (item.type === 'user') {
       let u = el('div', 'fritz-msg user');
       u.appendChild(el('div', 'fritz-who', t.you + ' ›'));
@@ -381,11 +433,22 @@
       return el('div', 'fritz-error', t.err[item.code] || t.err.upstream);
     }
     let b = el('div', 'fritz-msg bot');
-    fillBot(b, item, streaming);
+    fillBot(b, item, streaming, isLast);
     return b;
   }
 
-  function fillBot(node, item, streaming) {
+  // A quote links to the English page it came from, scrolled to and
+  // highlighted: browsers that support text fragments mark the sentence.
+  function proofHref(page, quote) {
+    const words = quote.replace(/[.,;:]+$/, '').split(/\s+/);
+    const enc = function (x) { return encodeURIComponent(x).replace(/-/g, '%2D').replace(/,/g, '%2C'); };
+    const frag = words.length > 12
+      ? enc(words.slice(0, 5).join(' ')) + ',' + enc(words.slice(-4).join(' '))
+      : enc(words.join(' '));
+    return '/' + (page === 'index.html' ? '' : page) + '#:~:text=' + frag;
+  }
+
+  function fillBot(node, item, streaming, isLast) {
     node.textContent = '';
     node.appendChild(el('div', 'fritz-who', 'fritz ›'));
     let steps = null, lastText = null;
@@ -422,8 +485,20 @@
     }
     if (item.action) {
       let card = el('div', 'fritz-action');
-      card.appendChild(el('b', null, '✓ ' + t.scan[0] + ' · ' + item.action.domain));
-      card.appendChild(el('span', null, t.scan[1]));
+      if (item.action.type === 'contact_requested') {
+        card.appendChild(el('b', null, '✓ ' + t.contact[0]));
+        card.appendChild(el('span', null, t.contact[1]));
+      } else {
+        card.appendChild(el('b', null, '✓ ' + t.scan[0] + ' · ' + item.action.domain));
+        card.appendChild(el('span', null, t.scan[1]));
+      }
+      // Nico's Proton booking page, straight after the lead is captured:
+      // who and why first, the calendar second.
+      if (item.action.booking && /^https:\/\/calendar\.proton\.me\/bookings/.test(item.action.booking)) {
+        let bk = el('a', 'fritz-book', t.book);
+        bk.href = item.action.booking; bk.target = '_blank'; bk.rel = 'noopener';
+        card.appendChild(bk);
+      }
       node.appendChild(card);
     }
     if (!streaming && item.sources && item.sources.length) {
@@ -434,7 +509,35 @@
         a.href = PREFIX + (p === 'index.html' ? '' : p);
         src.appendChild(a);
       });
+      if (item.evidence && item.evidence.length) {
+        let tog = el('button', 'fritz-proof-toggle', (item.showProof ? '▾ ' : '▸ ') + (item.showProof ? t.proof[1] : t.proof[0]));
+        tog.type = 'button';
+        tog.setAttribute('aria-expanded', String(!!item.showProof));
+        tog.addEventListener('click', function () { item.showProof = !item.showProof; save(); fillBot(node, item, false, isLast); });
+        src.appendChild(tog);
+      }
       node.appendChild(src);
+    }
+    if (!streaming && item.showProof && item.evidence && item.evidence.length) {
+      let proof = el('div', 'fritz-proof');
+      item.evidence.forEach(function (ev) {
+        let q = el('a', 'fritz-quote');
+        q.href = proofHref(ev.page, ev.quote);
+        q.appendChild(el('mark', null, '\u201c' + ev.quote + '\u201d'));
+        proof.appendChild(q);
+        let meta = el('div', 'fritz-quote-meta', (PAGE_NAMES[ev.page] || ev.page.replace(/^.*\//, '').replace(/\.html$/, '').replace(/-/g, ' ')) + (t.proof[2] ? ' · ' + t.proof[2] : ''));
+        proof.appendChild(meta);
+      });
+      node.appendChild(proof);
+    }
+    if (!streaming && isLast && item.next && item.next.length) {
+      let nx = el('div', 'fritz-next');
+      item.next.forEach(function (q) {
+        let b = el('button', null, q); b.type = 'button';
+        b.addEventListener('click', function () { ask(q); });
+        nx.appendChild(b);
+      });
+      node.appendChild(nx);
     }
   }
 
@@ -455,11 +558,12 @@
   // the first. Enter moves to the next line instead of sending, until the
   // last line, so nobody sends a half-filled form by habit.
   let formMode = false;
-  function fillForm() {
-    input.value = t.scanForm.map(function (l) { return l + ' '; }).join('\n');
+  function fillForm(kind) {
+    const fields = kind === 'contact' ? t.contactForm : t.scanForm;
+    input.value = fields.map(function (l) { return l + ' '; }).join('\n');
     formMode = true;
     onType();
-    const firstEnd = t.scanForm[0].length + 1;
+    const firstEnd = fields[0].length + 1;
     input.focus();
     input.setSelectionRange(firstEnd, firstEnd);
   }
@@ -506,7 +610,9 @@
     state.history.push({ role: 'user', content: q });
     while (state.history.length > MAX_HISTORY) { state.history.splice(0, 2); }
 
-    let bot = { type: 'bot', segs: [], sources: [], action: null };
+    let bot = { type: 'bot', segs: [], sources: [], action: null, evidence: [], next: [] };
+    // Only the newest answer offers follow-up questions.
+    Array.prototype.forEach.call(log.querySelectorAll('.fritz-next'), function (n) { n.remove(); });
     let node = renderItem(bot, true);
     log.appendChild(node);
     scrollDown(true);
@@ -518,7 +624,7 @@
     function paint() {
       if (queued) { return; }
       queued = true;
-      requestAnimationFrame(function () { queued = false; fillBot(node, bot, busy); scrollDown(); });
+      requestAnimationFrame(function () { queued = false; fillBot(node, bot, busy, true); scrollDown(); });
     }
 
     function handle(event, data) {
@@ -540,10 +646,14 @@
       } else if (event === 'sources') {
         bot.sources = data.pages || [];
       } else if (event === 'form') {
-        bot.segs.push({ kind: 'text', text: t.scanIntro });
-        pendingForm = true;
+        pendingForm = data.type === 'contact' ? 'contact' : 'scan';
+        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? t.contactIntro : t.scanIntro });
+      } else if (event === 'evidence') {
+        bot.evidence = data.items || [];
+      } else if (event === 'next') {
+        bot.next = data.questions || [];
       } else if (event === 'action') {
-        bot.action = { domain: data.domain };
+        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null };
       } else if (event === 'error') {
         throw new Error(data.code || 'upstream');
       }
@@ -559,7 +669,7 @@
       state.history.push({ role: 'assistant', content: answer });
       setDown(false);
       live.textContent = answer;
-      if (pendingForm) { fillForm(); }
+      if (pendingForm) { fillForm(pendingForm); }
     }).catch(function (err) {
       let code = String(err && err.message || 'network');
       if (!t.err[code]) { code = 'network'; }
@@ -573,7 +683,7 @@
       live.textContent = t.err[code];
     }).then(function () {
       setBusy(false);
-      if (node.isConnected) { fillBot(node, bot, false); }
+      if (node.isConnected) { fillBot(node, bot, false, true); }
       save();
       scrollDown();
     });
@@ -584,13 +694,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: state.history, lang: LANG, page: location.pathname,
+          browserLang: (navigator.language || '').slice(0, 2).toLowerCase(),
           // The history sent is capped, so an offer made ten questions ago
           // falls out of it. The window keeps the whole conversation and
           // says so outright.
           scanOffered: state.items.some(function (it) {
             return it.type === 'bot' && it.segs.some(function (sg) { return sg.kind === 'text' && /\?\s*$/.test(sg.text.trim()) && /scan|análise|escaneo|scansione/i.test(sg.text.trim().split(/\n/).pop()); });
           }),
-          scanDone: state.items.some(function (it) { return it.type === 'bot' && !!it.action; })
+          scanDone: state.items.some(function (it) { return it.type === 'bot' && !!it.action && it.action.type !== 'contact_requested'; })
         })
       }).then(function (res) {
         if (!res.ok) {
