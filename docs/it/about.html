@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BNWQ23V8KC');
-</script>
+<script src="../scripts/consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>meihuizen.ai | Da un IBM 5110 all'ingegnere IA-nativo</title>
@@ -25,6 +17,7 @@
 <link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/about.html">
 <link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/about.html">
 <link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/about.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/about.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/about.html">
 <meta property="og:title" content="meihuizen.ai | Da un IBM 5110 all'ingegnere IA-nativo">
 <meta property="og:description" content="Nico Meihuizen: programmazione dai 12 anni su un IBM 5110, carriera nelle vendite IT presso IBM e Oracle, poi ingegneria software IA-nativa.">
@@ -48,7 +41,7 @@
   }
 }
 </script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -56,9 +49,7 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   /* --- THEME -----------------------------------------------------------
        Two palettes, one set of names. Light is on the bare :root so a page
@@ -221,6 +212,7 @@
   .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
   .crew .c-mistral::before{content:"┌─────┐\A│ ~ ~ │\A│  u  │\A└─────┘";}
   .crew .c-bigml::before{content:"┌─────┐\A│ : : │\A│  +  │\A└─────┘";}
+  .crew .c-fritz::before{content:"┌▼───▼┐\A│ • • │\A│  ω  │\A└─────┘";}
   .crew figcaption{display:flex;flex-direction:column;gap:3px;}
   .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
   .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
@@ -357,6 +349,10 @@
           <span class="lang-flag-code" aria-hidden="true">PT</span>
           <span class="sr-only">Visualizza questa pagina in portoghese</span>
         </a>
+        <a href="../lt/about.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
+          <span class="lang-flag-code" aria-hidden="true">LT</span>
+          <span class="sr-only">Visualizza questa pagina in lituano</span>
+        </a>
 </nav>
     </div>
     <div class="terminal-body">
@@ -375,8 +371,7 @@
         <h2>Piccoli per scelta</h2>
         <p>Lavoro per la qualità della vita e la libertà di operare alle mie condizioni, anche come nomade digitale. Piccolo di proposito: abbastanza vicino da capire davvero cosa vuoi ottenere, e rapido a presentarmi di persona quando serve. Nessun team di delivery lontano di mezzo.</p>
         <h2>Nessun ufficio. Di proposito.</h2>
-        <p>Non c'è un ufficio da visitare, perché non esiste. Il lavoro si fa dove si trova il lavoro: al vostro tavolo, al telefono, o nel van, attrezzato per costruire ovunque ci sia corrente e segnale. Due appezzamenti portano avanti gli esperimenti di IA off-grid, uno sul Baltico tedesco d'estate, uno in Portogallo d'inverno. Non è una brochure lifestyle. È lì che il build della homestead viene davvero messo alla prova.</p>
-        <p>Sulla carta, la società ha sede in Laisvės al. 110 a Kaunas, in Lituania. In pratica, vedi sopra.</p>
+        <p>Non c'è un ufficio da visitare, perché non esiste. Il lavoro si fa dove si trova il lavoro: al vostro tavolo, al telefono, o nel van, attrezzato per costruire ovunque.</p>
         <h2>"Noi" vuol dire io e i miei agent</h2>
         <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Mistral, Copilot, BigML e io. Questo è il team, e preferisco dirlo piuttosto che lasciarvi immaginare una fila di ingegneri che non esiste.</p>
         <p>Su ogni build lavorano in due: qualcuno con una carriera nell'IT aziendale alle spalle, e un modello che legge più in fretta di lui e sbaglia con più sicurezza. Il lavoro è quello che ciascuno coglie nell'altro.</p>
@@ -419,6 +414,10 @@
           <figure class="c-bigml">
             <figcaption><b>BigML</b>
             <span>modelli predittivi, appena arrivato</span></figcaption>
+          </figure>
+          <figure class="c-fritz">
+            <figcaption><b>Fritz</b>
+            <span>risponde solo da queste pagine, e riporta i lead</span></figcaption>
           </figure>
         </div>
         <p class="crew-note">I nomi dei tool dicono quali tool. Nessuna affiliazione, partnership o approvazione implicita.</p>

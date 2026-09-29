@@ -12,8 +12,8 @@ Live at [https://www.meihuizen.ai](https://www.meihuizen.ai), deployed via GitHu
 
 - **Markup/styling:** HTML5 (semantic), CSS3 with custom properties (`--bg`, `--bg-raised`, `--line`, `--text-muted`, accent green) — every colour is a token, in two palettes (see Theming)
 - **Scripting:** Vanilla JavaScript only — no frameworks, no bundler
-- **Fonts:** Google Fonts — Space Grotesk, JetBrains Mono, Inter
-- **Analytics:** Google Analytics 4 (`gtag.js`, measurement ID `G-BNWQ23V8KC`)
+- **Fonts:** Space Grotesk, JetBrains Mono, Inter, **self-hosted** in `docs/fonts/` (woff2 from @fontsource, OFL). No Google Fonts: do not add `fonts.googleapis.com` back, it sends every visitor's IP to Google
+- **Analytics:** Google Analytics 4 (measurement ID `G-BNWQ23V8KC`), loaded **only after consent** by `docs/scripts/consent.js` (see Privacy below)
 - **Contact form backend:** Vercel serverless function (`POST https://website-contact-function-4efp.vercel.app/api/send-email`), SMTP via nodemailer. SMTP credentials live only as Vercel environment variables — never commit them.
 - **Hosting:** GitHub Pages, custom domain via `docs/CNAME`
 - **CI:** GitHub CodeQL security analysis runs on every push (`.github/workflows/codeql.yml`)
@@ -111,7 +111,8 @@ Manual checks diagnostics.py doesn't cover — do these too: click through navig
 
 ## Security conventions
 
-- Every page ships a restrictive CSP as a `<meta http-equiv="Content-Security-Policy">` tag. Keep `script-src` free of `unsafe-inline`/`unsafe-eval` — put JS in `docs/scripts/*.js`, not inline `<script>` blocks. **One accepted exception:** the short gtag.js config snippet in `<head>` (`window.dataLayer = ...`, `gtag('js', ...)`, `gtag('config', ...)`) stays inline and is allow-listed via an exact SHA-256 hash in `script-src` (`'sha256-...'`) instead of being externalized. If that snippet is ever edited, regenerate the hash (`openssl dgst -sha256 -binary <file> | openssl base64`) and update the CSP meta tag on every page that uses it — a stale hash silently breaks the page under CSP with no visible error. This is a different mechanism from the SRI exemption above, which covers the *external* `<script src="https://www.googletagmanager.com/gtag/js?...">` tag that loads gtag.js itself, not this inline config block.
+- Every page ships a restrictive CSP as a `<meta http-equiv="Content-Security-Policy">` tag. Keep `script-src` free of `unsafe-inline`/`unsafe-eval` and free of hashes: there are **no inline scripts** on the site any more. Put JS in `docs/scripts/*.js`. (The old inline gtag snippet and its `'sha256-...'` hash were removed on 2026-09-29 when `consent.js` took over.)
+- **Privacy / consent:** `docs/scripts/consent.js` is the first thing in every `<head>`, without `defer`, at the page's relative depth (`scripts/`, `../scripts/`, `../../scripts/`). It shows the cookie banner (eight languages), loads `gtag.js` only after "Accept", keeps the choice in `localStorage` (`mz-consent`), deletes `_ga` cookies on a later reject, and adds a "Cookie settings" button to the footer. Its stylesheet `consent.css` is loaded by the script itself, because project pages do not allow inline `<style>`. Never add Google or any other third party back as a direct `<script>` or `<link>` tag: it would run before consent.
 - `docs/_headers` carries the response-level CSP (including `frame-ancestors 'none'`) for hosts that honor it. **GitHub Pages does not process `_headers`** — if this site ever moves off GitHub Pages (Vercel, Netlify, Cloudflare Pages), the response-header CSP needs to be configured at that platform, not assumed from this file.
 - Update DOM via `textContent`, never `innerHTML`/`outerHTML`/`insertAdjacentHTML`.
 - Image paths are static; never build an `<img src>` from user-controlled input.

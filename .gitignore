@@ -1,1 +1,4 @@
 _to_delete/
+__pycache__/
+*.pyc
+_lt_work/

@@ -30,7 +30,8 @@
   const T = {
     en: {
       book: "Rather talk right away? Pick a time →",
-      contactIntro: "That’s not on the site, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Leave your details and he’ll get back to you personally:",
+      contactIntro: "That information is not on our website, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Leave your details and he’ll get back to you personally:",
+      contactIntros: { via_nico: "This one goes through Nico himself. Leave your details and he’ll get back to you personally:", fit: "Whether it fits your business is Nico’s call, not mine. Leave your details and he’ll get back to you personally:", off_topic: "I only answer questions about meihuizen.ai. Nico might still be able to help you further, though. Fill in your details below and I’ll make sure he gets the message:" },
       contactForm: ["Name:", "Company:", "Email:", "Phone:"],
       contact: ["request passed on", "Nico has it in his inbox and will reach out personally. A confirmation is on its way to you."],
       proof: ["where does it say so?", "hide", ""],
@@ -41,7 +42,7 @@
       boot: ['{n} pages indexed', 'answers only from what the pages say', 'can file a free scan request for you'],
       ready: 'Ready. What do you want to know?',
       placeholder: 'Ask about meihuizen.ai…', send: 'Send', reset: 'New conversation', close: 'Close', open: 'Open Agent Fritz, the chat assistant',
-      thinking: 'sniffing through the pages…', miss: 'not on this site', sources: 'read', you: 'you',
+      thinking: 'sniffing through the pages…', miss: 'not on our website', sources: 'read', you: 'you',
       scan: ['scan request filed', 'Nico has it in his inbox. A confirmation is on its way to you.'],
       err: { offline: 'Fritz is asleep right now. Email info@meihuizen.ai.', rate: 'That’s a lot of questions. Give Fritz a minute.', timeout: 'That took too long. Try again, or email info@meihuizen.ai.', network: 'Can’t reach Fritz. Check your connection, or email info@meihuizen.ai.', input: 'Keep it under 800 characters.', upstream: 'Something went wrong on Fritz’s side. Try again, or email info@meihuizen.ai.' },
       suggest: ['What does meihuizen.ai build?', 'Is meihuizen.ai a registered company?', 'What is Second Audience?', 'I’d like a free scan'],
@@ -49,7 +50,8 @@
     },
     nl: {
       book: "Liever meteen praten? Kies een moment →",
-      contactIntro: "Dat staat niet op de site, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:",
+      contactIntro: "Die informatie staat niet op onze website, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:",
+      contactIntros: { via_nico: "Deze loopt via Nico zelf. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:", fit: "Of het bij uw bedrijf past, beoordeelt Nico, niet ik. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:", off_topic: "Ik beantwoord alleen vragen over meihuizen.ai. Misschien kan Nico u wel verder helpen. Vul hieronder uw gegevens in, dan zorg ik dat hij uw bericht krijgt:" },
       contactForm: ["Naam:", "Bedrijf:", "E-mail:", "Telefoon:"],
       contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op. Er is een bevestiging naar u onderweg."],
       proof: ["waar staat dat?", "verbergen", "uit de Engelse pagina"],
@@ -60,7 +62,7 @@
       boot: ['{n} pagina’s geïndexeerd', 'antwoordt alleen met wat de pagina’s zeggen', 'kan een gratis scan voor u aanvragen'],
       ready: 'Klaar. Wat wilt u weten?',
       placeholder: 'Vraag iets over meihuizen.ai…', send: 'Versturen', reset: 'Nieuw gesprek', close: 'Sluiten', open: 'Open Agent Fritz, de chatassistent',
-      thinking: 'snuffelt door de pagina’s…', miss: 'staat niet op deze site', sources: 'gelezen', you: 'u',
+      thinking: 'snuffelt door de pagina’s…', miss: 'staat niet op onze website', sources: 'gelezen', you: 'u',
       scan: ['scanaanvraag verstuurd', 'Nico heeft hem in zijn inbox. Er is een bevestiging naar u onderweg.'],
       err: { offline: 'Fritz slaapt even. Mail info@meihuizen.ai.', rate: 'Dat zijn veel vragen. Geef Fritz een minuut.', timeout: 'Dat duurde te lang. Probeer het opnieuw of mail info@meihuizen.ai.', network: 'Fritz is niet bereikbaar. Controleer uw verbinding of mail info@meihuizen.ai.', input: 'Houd het onder de 800 tekens.', upstream: 'Er ging iets mis aan de kant van Fritz. Probeer het opnieuw of mail info@meihuizen.ai.' },
       suggest: ['Wat bouwt meihuizen.ai?', 'Is meihuizen.ai een ingeschreven bedrijf?', 'Wat is Second Audience?', 'Ik wil een gratis scan'],
@@ -68,7 +70,8 @@
     },
     de: {
       book: "Lieber gleich sprechen? Termin wählen →",
-      contactIntro: "Das steht nicht auf der Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:",
+      contactIntro: "Diese Information steht nicht auf unserer Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:",
+      contactIntros: { via_nico: "Das läuft über Nico persönlich. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:", fit: "Ob es zu Ihrem Unternehmen passt, entscheidet Nico, nicht ich. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:", off_topic: "Ich beantworte nur Fragen zu meihuizen.ai. Vielleicht kann Nico Ihnen trotzdem weiterhelfen. Tragen Sie unten Ihre Daten ein, dann sorge ich dafür, dass er Ihre Nachricht bekommt:" },
       contactForm: ["Name:", "Unternehmen:", "E-Mail:", "Telefon:"],
       contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich. Eine Bestätigung ist auf dem Weg zu Ihnen."],
       proof: ["wo steht das?", "ausblenden", "aus der englischen Seite"],
@@ -79,7 +82,7 @@
       boot: ['{n} Seiten indexiert', 'antwortet nur mit dem, was auf den Seiten steht', 'kann für Sie einen kostenlosen Scan anfragen'],
       ready: 'Bereit. Was möchten Sie wissen?',
       placeholder: 'Fragen Sie etwas zu meihuizen.ai…', send: 'Senden', reset: 'Neues Gespräch', close: 'Schließen', open: 'Agent Fritz öffnen, den Chat-Assistenten',
-      thinking: 'schnüffelt durch die Seiten…', miss: 'nicht auf dieser Website', sources: 'gelesen', you: 'Sie',
+      thinking: 'schnüffelt durch die Seiten…', miss: 'nicht auf unserer Website', sources: 'gelesen', you: 'Sie',
       scan: ['Scan-Anfrage gesendet', 'Nico hat sie im Postfach. Eine Bestätigung ist auf dem Weg zu Ihnen.'],
       err: { offline: 'Fritz schläft gerade. Schreiben Sie an info@meihuizen.ai.', rate: 'Das sind viele Fragen. Geben Sie Fritz eine Minute.', timeout: 'Das hat zu lange gedauert. Versuchen Sie es erneut oder schreiben Sie an info@meihuizen.ai.', network: 'Fritz ist nicht erreichbar. Prüfen Sie Ihre Verbindung oder schreiben Sie an info@meihuizen.ai.', input: 'Bitte unter 800 Zeichen bleiben.', upstream: 'Bei Fritz ist etwas schiefgegangen. Versuchen Sie es erneut oder schreiben Sie an info@meihuizen.ai.' },
       suggest: ['Was baut meihuizen.ai?', 'Ist meihuizen.ai ein eingetragenes Unternehmen?', 'Was ist Second Audience?', 'Ich möchte einen kostenlosen Scan'],
@@ -87,7 +90,8 @@
     },
     fr: {
       book: "Envie d’en parler tout de suite ? Choisir un créneau →",
-      contactIntro: "Ce n’est pas sur le site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :",
+      contactIntro: "Cette information ne figure pas sur notre site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :",
+      contactIntros: { via_nico: "Celle-ci passe par Nico lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :", fit: "Savoir si cela convient à votre entreprise, c’est à Nico d’en juger, pas à moi. Laissez vos coordonnées et il reviendra vers vous personnellement :", off_topic: "Je ne réponds qu’aux questions sur meihuizen.ai. Nico pourra peut-être quand même vous aider. Indiquez vos coordonnées ci-dessous et je veillerai à ce qu’il reçoive votre message :" },
       contactForm: ["Nom :", "Entreprise :", "E-mail :", "Téléphone :"],
       contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement. Une confirmation est en route."],
       proof: ["où est-ce écrit ?", "masquer", "extrait de la page anglaise"],
@@ -98,7 +102,7 @@
       boot: ['{n} pages indexées', 'répond uniquement avec ce que disent les pages', 'peut demander un scan gratuit pour vous'],
       ready: 'Prêt. Que voulez-vous savoir ?',
       placeholder: 'Posez une question sur meihuizen.ai…', send: 'Envoyer', reset: 'Nouvelle conversation', close: 'Fermer', open: 'Ouvrir Agent Fritz, l’assistant de chat',
-      thinking: 'flaire les pages…', miss: 'absent de ce site', sources: 'lu', you: 'vous',
+      thinking: 'flaire les pages…', miss: 'absent de notre site', sources: 'lu', you: 'vous',
       scan: ['demande de scan envoyée', 'Nico l’a dans sa boîte de réception. Une confirmation est en route.'],
       err: { offline: 'Fritz dort pour l’instant. Écrivez à info@meihuizen.ai.', rate: 'Cela fait beaucoup de questions. Laissez une minute à Fritz.', timeout: 'C’était trop long. Réessayez ou écrivez à info@meihuizen.ai.', network: 'Impossible de joindre Fritz. Vérifiez votre connexion ou écrivez à info@meihuizen.ai.', input: 'Restez sous 800 caractères.', upstream: 'Un problème est survenu du côté de Fritz. Réessayez ou écrivez à info@meihuizen.ai.' },
       suggest: ['Que construit meihuizen.ai ?', 'meihuizen.ai est-elle une société immatriculée ?', 'Qu’est-ce que Second Audience ?', 'Je voudrais un scan gratuit'],
@@ -106,7 +110,8 @@
     },
     es: {
       book: "¿Prefiere hablar ya? Elija una hora →",
-      contactIntro: "Eso no está en el sitio, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. Déjeme sus datos y se pondrá en contacto con usted:",
+      contactIntro: "Esa información no está en nuestro sitio web, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. Déjeme sus datos y se pondrá en contacto con usted:",
+      contactIntros: { via_nico: "Esto pasa por Nico personalmente. Déjeme sus datos y se pondrá en contacto con usted:", fit: "Si encaja con su empresa lo decide Nico, no yo. Déjeme sus datos y se pondrá en contacto con usted:", off_topic: "Solo respondo preguntas sobre meihuizen.ai. Aun así, puede que Nico pueda ayudarle. Deje sus datos abajo y me aseguraré de que reciba su mensaje:" },
       contactForm: ["Nombre:", "Empresa:", "Correo:", "Teléfono:"],
       contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente. Le llega una confirmación."],
       proof: ["¿dónde lo dice?", "ocultar", "de la página en inglés"],
@@ -117,7 +122,7 @@
       boot: ['{n} páginas indexadas', 'responde solo con lo que dicen las páginas', 'puede solicitar un escaneo gratuito por usted'],
       ready: 'Listo. ¿Qué quiere saber?',
       placeholder: 'Pregunte sobre meihuizen.ai…', send: 'Enviar', reset: 'Nueva conversación', close: 'Cerrar', open: 'Abrir Agent Fritz, el asistente de chat',
-      thinking: 'olfateando las páginas…', miss: 'no está en este sitio', sources: 'leído', you: 'usted',
+      thinking: 'olfateando las páginas…', miss: 'no está en nuestro sitio web', sources: 'leído', you: 'usted',
       scan: ['solicitud de escaneo enviada', 'Nico la tiene en su bandeja de entrada. Le llega una confirmación.'],
       err: { offline: 'Fritz está durmiendo. Escriba a info@meihuizen.ai.', rate: 'Son muchas preguntas. Dele un minuto a Fritz.', timeout: 'Tardó demasiado. Inténtelo de nuevo o escriba a info@meihuizen.ai.', network: 'No se puede contactar con Fritz. Compruebe su conexión o escriba a info@meihuizen.ai.', input: 'Menos de 800 caracteres, por favor.', upstream: 'Algo falló del lado de Fritz. Inténtelo de nuevo o escriba a info@meihuizen.ai.' },
       suggest: ['¿Qué construye meihuizen.ai?', '¿Es meihuizen.ai una empresa registrada?', '¿Qué es Second Audience?', 'Quiero un escaneo gratuito'],
@@ -125,7 +130,8 @@
     },
     it: {
       book: "Preferite parlarne subito? Scegliete un orario →",
-      contactIntro: "Questo non è sul sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Lasciate i vostri dati e vi ricontatterà personalmente:",
+      contactIntro: "Questa informazione non è sul nostro sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Lasciate i vostri dati e vi ricontatterà personalmente:",
+      contactIntros: { via_nico: "Questa passa direttamente da Nico. Lasciate i vostri dati e vi ricontatterà personalmente:", fit: "Se è adatto alla vostra azienda lo valuta Nico, non io. Lasciate i vostri dati e vi ricontatterà personalmente:", off_topic: "Rispondo solo a domande su meihuizen.ai. Forse però Nico può aiutarvi. Inserite qui sotto i vostri dati e farò in modo che riceva il messaggio:" },
       contactForm: ["Nome:", "Azienda:", "Email:", "Telefono:"],
       contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente. Una conferma è in arrivo."],
       proof: ["dove c’è scritto?", "nascondi", "dalla pagina inglese"],
@@ -136,7 +142,7 @@
       boot: ['{n} pagine indicizzate', 'risponde solo con ciò che dicono le pagine', 'può richiedere per voi una scansione gratuita'],
       ready: 'Pronto. Cosa volete sapere?',
       placeholder: 'Chiedete qualcosa su meihuizen.ai…', send: 'Invia', reset: 'Nuova conversazione', close: 'Chiudi', open: 'Apri Agent Fritz, l’assistente in chat',
-      thinking: 'annusa tra le pagine…', miss: 'non è su questo sito', sources: 'letto', you: 'voi',
+      thinking: 'annusa tra le pagine…', miss: 'non è sul nostro sito', sources: 'letto', you: 'voi',
       scan: ['richiesta di scansione inviata', 'Nico l’ha nella sua casella di posta. Una conferma è in arrivo.'],
       err: { offline: 'Fritz sta dormendo. Scrivete a info@meihuizen.ai.', rate: 'Sono tante domande. Date un minuto a Fritz.', timeout: 'Ci è voluto troppo. Riprovate o scrivete a info@meihuizen.ai.', network: 'Fritz non è raggiungibile. Controllate la connessione o scrivete a info@meihuizen.ai.', input: 'Restate sotto gli 800 caratteri.', upstream: 'Qualcosa è andato storto dal lato di Fritz. Riprovate o scrivete a info@meihuizen.ai.' },
       suggest: ['Cosa costruisce meihuizen.ai?', 'meihuizen.ai è una società registrata?', 'Cos’è Second Audience?', 'Vorrei una scansione gratuita'],
@@ -144,7 +150,8 @@
     },
     pt: {
       book: "Prefere falar já? Escolha uma hora →",
-      contactIntro: "Isso não está no site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Deixe os seus dados e ele entrará em contacto consigo:",
+      contactIntro: "Essa informação não está no nosso site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:",
+      contactIntros: { via_nico: "Esta passa pelo próprio Nico. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:", fit: "Se encaixa na sua empresa é o Nico que avalia, não eu. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:", off_topic: "Só respondo a perguntas sobre a meihuizen.ai. Ainda assim, o Nico talvez o possa ajudar. Preencha os seus dados abaixo e eu garanto que ele recebe a mensagem:" },
       contactForm: ["Nome:", "Empresa:", "Email:", "Telefone:"],
       contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente. Vai receber uma confirmação."],
       proof: ["onde diz isso?", "esconder", "da página em inglês"],
@@ -155,11 +162,42 @@
       boot: ['{n} páginas indexadas', 'responde apenas com o que as páginas dizem', 'pode pedir uma análise gratuita por si'],
       ready: 'Pronto. O que quer saber?',
       placeholder: 'Pergunte sobre a meihuizen.ai…', send: 'Enviar', reset: 'Nova conversa', close: 'Fechar', open: 'Abrir o Agent Fritz, o assistente de chat',
-      thinking: 'a farejar as páginas…', miss: 'não está neste site', sources: 'lido', you: 'você',
+      thinking: 'a farejar as páginas…', miss: 'não está no nosso site', sources: 'lido', you: 'você',
       scan: ['pedido de análise enviado', 'O Nico já o tem na caixa de entrada. Vai receber uma confirmação.'],
       err: { offline: 'O Fritz está a dormir. Escreva para info@meihuizen.ai.', rate: 'São muitas perguntas. Dê um minuto ao Fritz.', timeout: 'Demorou demasiado. Tente de novo ou escreva para info@meihuizen.ai.', network: 'Não é possível contactar o Fritz. Verifique a ligação ou escreva para info@meihuizen.ai.', input: 'Menos de 800 caracteres, por favor.', upstream: 'Algo correu mal do lado do Fritz. Tente de novo ou escreva para info@meihuizen.ai.' },
       suggest: ['O que constrói a meihuizen.ai?', 'A meihuizen.ai é uma empresa registada?', 'O que é o Second Audience?', 'Quero uma análise gratuita'],
       foot: 'As respostas vêm apenas das páginas deste site. A IA pode mesmo assim enganar-se, por isso confirme a fonte. Não partilhe dados sensíveis.', how: 'Como funciona o Fritz'
+    },
+    lt: {
+      book: "Norite pasikalbėti iš karto? Pasirinkite laiką →",
+      contactIntro: "Šios informacijos mūsų svetainėje nėra, todėl nieko nežadu. Bet būtent į tokius klausimus Nico atsako pats. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:",
+      contactIntros: {"via_nico": "Šis klausimas sprendžiamas tiesiogiai su Nico. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:", "fit": "Ar tai tinka jūsų įmonei, sprendžia Nico, ne aš. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:", "off_topic": "Atsakau tik į klausimus apie meihuizen.ai. Vis dėlto Nico gali jums padėti. Įveskite savo duomenis žemiau, ir pasirūpinsiu, kad jis gautų jūsų žinutę:"},
+      contactForm: ["Vardas:", "Įmonė:", "El. paštas:", "Telefonas:"],
+      contact: ["užklausa perduota", "Nico ją gavo ir susisieks su jumis asmeniškai. Patvirtinimas jau siunčiamas jums."],
+      proof: ["kur tai parašyta?", "slėpti", ""],
+      pages: {"fritz": {"ready": "Esate mano paties puslapyje. Norite pabandyti mane suklaidinti?", "s": ["Į ką negalite atsakyti?", "Iš kur žinote, kad esate teisus?", "Ar galiu jus gauti savo svetainei?"]}, "five": {"ready": "Žiūrite į Five. Klauskite apie jį ko tik norite.", "s": ["Kiek kainuoja Five?", "Kam skirtas Five?", "Ar Five gali veikti privačiame serveryje?"]}, "sa": {"s": ["Ką randa patikrinimas?", "Kaip veikia nemokamas patikrinimas?", "Norėčiau nemokamo patikrinimo"]}, "cred": {"s": ["Ar meihuizen.ai yra registruota įmonė?", "Ką Nico veikė anksčiau?", "Koks PVM mokėtojo kodas?"]}},
+      scanIntro: "Galiu padėti jums užsakyti nemokamą Second Audience patikrinimą. Užklausai užbaigti man reikės šių duomenų:",
+      scanForm: ["Užsakovas:", "Tikrinamas domenas:", "Telefonas:", "El. paštas:"],
+      launch: "klauskite fritz",
+      tip: "Klausimų apie meihuizen.ai? Fritz perskaito svetainę, kad jums nereikėtų.",
+      status: "prisijungęs · atsako tik pagal šią svetainę",
+      down: "miega · rašykite info@meihuizen.ai",
+      boot: ["suindeksuota puslapių: {n}", "atsako tik pagal tai, kas parašyta puslapiuose", "gali už jus pateikti nemokamo patikrinimo užklausą"],
+      ready: "Pasiruošęs. Ką norite sužinoti?",
+      placeholder: "Klauskite apie meihuizen.ai…",
+      send: "Siųsti",
+      reset: "Naujas pokalbis",
+      close: "Uždaryti",
+      open: "Atidaryti Agent Fritz, pokalbių asistentą",
+      thinking: "uostinėja puslapius…",
+      miss: "mūsų svetainėje nėra",
+      sources: "perskaityta",
+      you: "Jūs",
+      scan: ["patikrinimo užklausa pateikta", "Nico ją gavo. Patvirtinimas jau siunčiamas jums."],
+      err: {"offline": "Fritz šiuo metu miega. Rašykite info@meihuizen.ai.", "rate": "Labai daug klausimų. Duokite Fritzui minutę.", "timeout": "Užtruko per ilgai. Bandykite dar kartą arba rašykite info@meihuizen.ai.", "network": "Nepavyksta pasiekti Fritzo. Patikrinkite ryšį arba rašykite info@meihuizen.ai.", "input": "Neviršykite 800 simbolių.", "upstream": "Fritzo pusėje kažkas nutiko. Bandykite dar kartą arba rašykite info@meihuizen.ai."},
+      suggest: ["Ką kuria meihuizen.ai?", "Ar meihuizen.ai yra registruota įmonė?", "Kas yra Second Audience?", "Norėčiau nemokamo patikrinimo"],
+      foot: "Atsakymai pateikiami tik pagal šios svetainės puslapius. DI vis tiek gali klysti, todėl patikrinkite šaltinį. Nesidalykite jautriais duomenimis.",
+      how: "Kaip veikia Fritz"
     }
   };
 
@@ -172,7 +210,7 @@
   const PAGE_KEY = {
     'projects/agent-fritz.html': 'fritz', 'projects/ai-sales-deal-intelligence.html': 'five',
     'projects/second-audience.html': 'sa', 'credentials.html': 'cred'
-  }[location.pathname.replace(/^\/(nl|de|fr|es|it|pt)(\/|$)/, '/').replace(/^\//, '')];
+  }[location.pathname.replace(/^\/(nl|de|fr|es|it|pt|lt)(\/|$)/, '/').replace(/^\//, '')];
   const PAGE = (PAGE_KEY && t.pages[PAGE_KEY]) || {};
   let PAGE_NAMES = {
     'index.html': 'home', 'projects/second-audience.html': 'second audience',
@@ -647,7 +685,7 @@
         bot.sources = data.pages || [];
       } else if (event === 'form') {
         pendingForm = data.type === 'contact' ? 'contact' : 'scan';
-        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? t.contactIntro : t.scanIntro });
+        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? ((t.contactIntros || {})[data.reason] || t.contactIntro) : t.scanIntro });
       } else if (event === 'evidence') {
         bot.evidence = data.items || [];
       } else if (event === 'next') {
@@ -699,7 +737,7 @@
           // falls out of it. The window keeps the whole conversation and
           // says so outright.
           scanOffered: state.items.some(function (it) {
-            return it.type === 'bot' && it.segs.some(function (sg) { return sg.kind === 'text' && /\?\s*$/.test(sg.text.trim()) && /scan|análise|escaneo|scansione/i.test(sg.text.trim().split(/\n/).pop()); });
+            return it.type === 'bot' && it.segs.some(function (sg) { return sg.kind === 'text' && /\?\s*$/.test(sg.text.trim()) && /scan|análise|escaneo|scansione|patikrinim/i.test(sg.text.trim().split(/\n/).pop()); });
           }),
           scanDone: state.items.some(function (it) { return it.type === 'bot' && !!it.action && it.action.type !== 'contact_requested'; })
         })

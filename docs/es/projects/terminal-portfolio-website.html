@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNWQ23V8KC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BNWQ23V8KC');
-</script>
+<script src="../../scripts/consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sitio de portafolio | meihuizen.ai</title>
@@ -24,6 +16,7 @@
 <link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/terminal-portfolio-website.html">
 <link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/terminal-portfolio-website.html">
 <link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/terminal-portfolio-website.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/terminal-portfolio-website.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/terminal-portfolio-website.html">
 <meta property="og:title" content="Sitio de portafolio | meihuizen.ai">
 <meta property="og:description" content="Un sitio portafolio seguro inspirado en terminal, con JavaScript vanilla: formularios reforzados con CSP, galerías lightbox accesibles.">
@@ -76,7 +69,7 @@
   ]
 }
 </script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-VwD0fB/pEkZFZIzYaKnbwoKIh0lbTLp9rX5Sftp+SeA=' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -133,11 +126,15 @@
           <span class="lang-flag-code" aria-hidden="true">PT</span>
           <span class="sr-only">Ver esta página en portugués</span>
         </a>
+        <a href="../../lt/projects/terminal-portfolio-website.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
+          <span class="lang-flag-code" aria-hidden="true">LT</span>
+          <span class="sr-only">Ver esta página en lituano</span>
+        </a>
 </nav>
     </div>
     <div class="terminal-body">
       <h1>Sitio de portafolio</h1>
-      <p class="project-summary">Un portafolio responsivo inspirado en terminal, construido a partir de un pequeño stack estático, con un diseño de interacción práctico y controles de seguridad tratados como parte del producto.</p>
+      <p class="project-summary">No está a la venta: es nuestro escaparate. Lo que muestra no es el diseño sino la estructura: un sitio hecho para que lo lean bien las personas y los agentes de IA que hoy responden preguntas sobre él.</p>
       <div class="project-figures">
         <figure>
           <svg viewBox="0 0 400 300" role="img" aria-labelledby="pf1t">
@@ -213,12 +210,18 @@
       <div class="project-grid">
         <section class="project-copy">
           <h2 class="section-label">// resumen</h2>
+          <h2>No el diseño. La second audience.</h2>
+          <p>Un buen diseñador puede hacer que cualquier sitio se vea bien. Esa es la mitad que ven las personas. La otra mitad es lo que lee un agente cuando alguien pregunta a ChatGPT, Gemini o Perplexity por usted: qué datos hay, con qué claridad están dichos, si pueden malinterpretarse. La mayoría de los sitios solo pagó la primera mitad. Este está hecho para las dos: datos dichos con claridad en siete idiomas, datos estructurados que dicen lo mismo que la página, y una <a href="../credentials.html">página de credenciales</a> que sustituye las afirmaciones desfasadas que aún circulan.</p>
+          <h2>Pruébelo</h2>
+          <p>Pregunte a ChatGPT qué hace meihuizen.ai y quién está detrás. Después pregunte lo mismo sobre su propia empresa, y compare. Donde los agentes se equivocan con nosotros, lo decimos: nuestros fallos están publicados en la página de <a href="second-audience.html">Second Audience</a>.</p>
+          <h2>¿Quiere esto para su sitio?</h2>
+          <p>El sitio no está a la venta. El enfoque, sí. Cuéntele a Nico qué tiene que decir bien su sitio, para ambos públicos, y él se pondrá en contacto con usted. O pregúntele a Agent Fritz, en la esquina; él se lo hará llegar.</p>
           <h2>Interfaz de portafolio inspirada en terminal</h2>
           <p>El sitio presenta la trayectoria profesional, los trabajos seleccionados, la información de contacto y la documentación de proyectos en una interfaz enfocada inspirada en terminal. La página de inicio incluye una secuencia de escritura consciente de la sesión, tarjetas de proyecto responsivas y navegación directa al trabajo activo.</p>
           <h2>Pequeños comportamientos de JavaScript con límites claros</h2>
           <p>JavaScript vanilla impulsa la secuencia de escritura, la validación de formularios, las lightbox de proyecto responsivas, la limpieza de imágenes, el cierre por teclado y el bloqueo del desplazamiento de la página. El comportamiento compartido reside en scripts externos del mismo origen en lugar de duplicarse entre páginas.</p>
           <h2>Buenas prácticas de seguridad como funcionalidad</h2>
-          <p>Cada página lleva una Content Security Policy restrictiva, con una política de respuesta en el momento del despliegue en <code>_headers</code>. El sitio elimina los análisis de terceros no fijados, evita la construcción insegura de HTML, valida la entrada de contacto, rechaza los envíos de honeypot y utiliza un destino mailto fijo en lugar de un POST de formulario entre sitios.</p>
+          <p>Cada página lleva una Content Security Policy estricta como etiqueta meta, porque GitHub Pages no envía cabeceras propias. El único script de terceros es Google Analytics. El sitio evita construir HTML de forma insegura, y el formulario de contacto valida la entrada, rechaza los envíos honeypot y envía a través de una función serverless con límite de peticiones.</p>
           <h2>Presentación responsiva y accesible</h2>
           <p>Los encabezados semánticos, las alternativas descriptivas de imágenes, las lightbox compatibles con teclado, los estados de enfoque visibles, los objetivos táctiles móviles y los recortes de imagen centrados con CSS mantienen la experiencia utilizable en todos los tamaños de pantalla.</p>
         </section>
