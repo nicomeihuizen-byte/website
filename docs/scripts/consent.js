@@ -4,8 +4,9 @@
  * Replaces the inline Google tag that used to sit at the top of every page.
  * Nothing from Google loads, and no analytics cookie is set, until the
  * visitor clicks "Accept". Reject is exactly as easy. The choice is kept in
- * localStorage on this device only, and "Cookie settings" in the footer
- * reopens the banner, so a yes can become a no at any time.
+ * localStorage on this device only. Every footer gets a "Privacy" link, and the
+ * "Cookie settings" button on the privacy page reopens the banner, so a yes
+ * can become a no at any time.
  *
  * Loaded in <head> without defer, like theme.js: it is 'self', so the CSP
  * needs no hash for it. Its stylesheet sits next to it (consent.css) and is
@@ -103,12 +104,23 @@
   }
 
   function settingsLink() {
-    var host = document.querySelector('.foot-meta, .footer-meta, footer') || document.body;
-    var btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'mz-consent-settings'; btn.textContent = t[4];
-    btn.addEventListener('click', show);
-    host.appendChild(btn);
+    // A plain "Privacy" link in the footer row, styled by the footer itself.
+    // The cookie choice is changed from the privacy page ([data-consent-open]).
+    var host = document.querySelector('.foot-meta, .footer-meta, .site-footer');
+    if (host) {
+      var sep = document.createElement('span');
+      sep.setAttribute('aria-hidden', 'true'); sep.textContent = '\u00b7';
+      var wrap = document.createElement('span');
+      var a = document.createElement('a');
+      a.href = privacyHref; a.textContent = t[3];
+      wrap.appendChild(a);
+      host.appendChild(sep); host.appendChild(wrap);
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-consent-open]'), function (b) {
+      b.addEventListener('click', show);
+    });
   }
+
 
   var css = document.createElement('link');
   css.rel = 'stylesheet'; css.href = root + 'scripts/consent.css';
