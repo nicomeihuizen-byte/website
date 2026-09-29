@@ -1,6 +1,6 @@
 {
  "site": "https://www.meihuizen.ai/",
- "version": "5b3d3b0f3134756b",
+ "version": "51f494c3d268ad1f",
  "pages": [
   {
    "path": "index.html",
@@ -42,7 +42,7 @@
    "url": "https://www.meihuizen.ai/status.html",
    "title": "meihuizen.ai | Status",
    "description": "Live status of meihuizen.ai services (website, Agent Fritz, contact form, Five, Second Audience scans) and the vendors they run on, checked every minute.",
-   "text": "meihuizen.ai\n~/status\n# Is it us, or upstream?\nOur services first, then the vendors they run on. Our own monitor checks every minute. Vendor lights and descriptions come from each vendor's public status page, linked in every row, so you can check them yourself.\noperational degraded or delayed down unknown\nOur status monitor cannot be reached right now. It runs on Vercel, like Agent Fritz and the contact form, so those may be down too. The vendor pages below still work. For anything urgent: info@meihuizen.ai.\n~/our-services\nFive services are monitored: the website (runs on GitHub Pages), Agent Fritz (Anthropic Claude API, Vercel, GitHub Pages), the contact form and requests (Vercel, Proton Mail), Five (Supabase, Vercel, UpCloud, Frankfurt region) and Second Audience scans (OpenAI, Anthropic, Google Gemini, Perplexity; a vendor outage can delay a report, not break it). The live lights load here from our monitor.\n~/vendors\nTheir own status pages: GitHub · Vercel · Anthropic · Proton · Supabase · UpCloud · OpenAI · Google Cloud · Perplexity\nprivacy → about\n© 2026 Nico Meihuizen"
+   "text": "meihuizen.ai\n~/status\n# Is it us, or upstream?\nOur services first, then the vendors they run on. Our own monitor checks every minute. Vendor lights and descriptions come from each vendor's public status page, linked in every row, so you can check them yourself.\noperational degraded or delayed down unknown\n~/our-services\nFive services are monitored: the website (runs on GitHub Pages), Agent Fritz (Anthropic Claude API, Vercel, GitHub Pages), the contact form and requests (Vercel, Proton Mail), Five (Supabase, Vercel, UpCloud, Frankfurt region) and Second Audience scans (OpenAI, Anthropic, Google Gemini, Perplexity; a vendor outage can delay a report, not break it). The live lights load here from our monitor.\n~/vendors\nTheir own status pages: GitHub · Vercel · Anthropic · Proton · Supabase · UpCloud · OpenAI · Google Cloud · Perplexity\nprivacy → about\n© 2026 Nico Meihuizen"
   },
   {
    "path": "projects/agent-fritz.html",

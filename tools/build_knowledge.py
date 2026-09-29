@@ -57,7 +57,7 @@ class Extract(HTMLParser):
                 self.out.append("\n")
             return
         classes = set((a.get("class") or "").split())
-        skipping = tag in SKIP_TAGS or bool(classes & SKIP_CLASSES) or a.get("aria-hidden") == "true"
+        skipping = tag in SKIP_TAGS or bool(classes & SKIP_CLASSES) or a.get("aria-hidden") == "true" or "hidden" in a
         self.stack.append(skipping)
         if skipping:
             self.skip_depth += 1
