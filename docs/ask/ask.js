@@ -31,7 +31,7 @@
     en: {
       book: "Rather talk right away? Pick a time →",
       contactIntro: "That information is not on our website, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Can I get your name and a way he can reach you, email or phone?",
-      contactIntros: { via_nico: "This one goes through Nico himself. Can I get your name and a way he can reach you, email or phone?", fit: "Whether it fits your business is Nico’s call, not mine. Can I get your name and a way he can reach you, email or phone?", off_topic: "I only answer questions about meihuizen.ai. Nico might still be able to help you further, though. Can I get your name and a way he can reach you, email or phone?" },
+      contactIntros: { via_nico: "Can I get your name and a way Nico can reach you, email or phone?", fit: "Whether it fits your business is Nico’s call, not mine. Can I get your name and a way he can reach you, email or phone?", off_topic: "I only answer questions about meihuizen.ai. Nico might still be able to help you further, though. Can I get your name and a way he can reach you, email or phone?" },
       contactForm: ["Name:", "Company:", "Email:", "Phone:"],
       contact: ["request passed on", "Nico has it in his inbox and will reach out personally.", "A confirmation is on its way to you."], contactHint: "Your name, and an email or phone number",
       proof: ["where does it say so?", "hide", ""],
@@ -51,7 +51,7 @@
     nl: {
       book: "Liever meteen praten? Kies een moment →",
       contactIntro: "Die informatie staat niet op onze website, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?",
-      contactIntros: { via_nico: "Deze loopt via Nico zelf. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?", fit: "Of het bij uw bedrijf past, beoordeelt Nico, niet ik. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?", off_topic: "Ik beantwoord alleen vragen over meihuizen.ai. Misschien kan Nico u wel verder helpen. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?" },
+      contactIntros: { via_nico: "Mag ik uw naam en een manier waarop Nico u kan bereiken, e-mail of telefoon?", fit: "Of het bij uw bedrijf past, beoordeelt Nico, niet ik. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?", off_topic: "Ik beantwoord alleen vragen over meihuizen.ai. Misschien kan Nico u wel verder helpen. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?" },
       contactForm: ["Naam:", "Bedrijf:", "E-mail:", "Telefoon:"],
       contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op.", "Er is een bevestiging naar u onderweg."], contactHint: "Uw naam, en een e-mailadres of telefoonnummer",
       proof: ["waar staat dat?", "verbergen", "uit de Engelse pagina"],
@@ -71,7 +71,7 @@
     de: {
       book: "Lieber gleich sprechen? Termin wählen →",
       contactIntro: "Diese Information steht nicht auf unserer Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?",
-      contactIntros: { via_nico: "Das läuft über Nico persönlich. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?", fit: "Ob es zu Ihrem Unternehmen passt, entscheidet Nico, nicht ich. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?", off_topic: "Ich beantworte nur Fragen zu meihuizen.ai. Vielleicht kann Nico Ihnen trotzdem weiterhelfen. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?" },
+      contactIntros: { via_nico: "Verraten Sie mir Ihren Namen und wie Nico Sie erreichen kann, per E-Mail oder Telefon?", fit: "Ob es zu Ihrem Unternehmen passt, entscheidet Nico, nicht ich. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?", off_topic: "Ich beantworte nur Fragen zu meihuizen.ai. Vielleicht kann Nico Ihnen trotzdem weiterhelfen. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?" },
       contactForm: ["Name:", "Unternehmen:", "E-Mail:", "Telefon:"],
       contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich.", "Eine Bestätigung ist auf dem Weg zu Ihnen."], contactHint: "Ihr Name und eine E-Mail-Adresse oder Telefonnummer",
       proof: ["wo steht das?", "ausblenden", "aus der englischen Seite"],
@@ -91,7 +91,7 @@
     fr: {
       book: "Envie d’en parler tout de suite ? Choisir un créneau →",
       contactIntro: "Cette information ne figure pas sur notre site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?",
-      contactIntros: { via_nico: "Celle-ci passe par Nico lui-même. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?", fit: "Savoir si cela convient à votre entreprise, c’est à Nico d’en juger, pas à moi. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?", off_topic: "Je ne réponds qu’aux questions sur meihuizen.ai. Nico pourra peut-être quand même vous aider. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?" },
+      contactIntros: { via_nico: "Puis-je avoir votre nom et un moyen pour Nico de vous joindre, e-mail ou téléphone ?", fit: "Savoir si cela convient à votre entreprise, c’est à Nico d’en juger, pas à moi. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?", off_topic: "Je ne réponds qu’aux questions sur meihuizen.ai. Nico pourra peut-être quand même vous aider. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?" },
       contactForm: ["Nom :", "Entreprise :", "E-mail :", "Téléphone :"],
       contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement.", "Une confirmation est en route."], contactHint: "Votre nom, et un e-mail ou un numéro de téléphone",
       proof: ["où est-ce écrit ?", "masquer", "extrait de la page anglaise"],
@@ -111,7 +111,7 @@
     es: {
       book: "¿Prefiere hablar ya? Elija una hora →",
       contactIntro: "Esa información no está en nuestro sitio web, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?",
-      contactIntros: { via_nico: "Esto pasa por Nico personalmente. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?", fit: "Si encaja con su empresa lo decide Nico, no yo. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?", off_topic: "Solo respondo preguntas sobre meihuizen.ai. Aun así, puede que Nico pueda ayudarle. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?" },
+      contactIntros: { via_nico: "¿Me deja su nombre y una forma de que Nico le contacte, correo o teléfono?", fit: "Si encaja con su empresa lo decide Nico, no yo. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?", off_topic: "Solo respondo preguntas sobre meihuizen.ai. Aun así, puede que Nico pueda ayudarle. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?" },
       contactForm: ["Nombre:", "Empresa:", "Correo:", "Teléfono:"],
       contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente.", "Le llega una confirmación."], contactHint: "Su nombre y un correo o un teléfono",
       proof: ["¿dónde lo dice?", "ocultar", "de la página en inglés"],
@@ -131,7 +131,7 @@
     it: {
       book: "Preferite parlarne subito? Scegliete un orario →",
       contactIntro: "Questa informazione non è sul nostro sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Posso avere il vostro nome e un modo per contattarvi, email o telefono?",
-      contactIntros: { via_nico: "Questa passa direttamente da Nico. Posso avere il vostro nome e un modo per contattarvi, email o telefono?", fit: "Se è adatto alla vostra azienda lo valuta Nico, non io. Posso avere il vostro nome e un modo per contattarvi, email o telefono?", off_topic: "Rispondo solo a domande su meihuizen.ai. Forse però Nico può aiutarvi. Posso avere il vostro nome e un modo per contattarvi, email o telefono?" },
+      contactIntros: { via_nico: "Posso avere il vostro nome e un modo in cui Nico possa contattarvi, email o telefono?", fit: "Se è adatto alla vostra azienda lo valuta Nico, non io. Posso avere il vostro nome e un modo per contattarvi, email o telefono?", off_topic: "Rispondo solo a domande su meihuizen.ai. Forse però Nico può aiutarvi. Posso avere il vostro nome e un modo per contattarvi, email o telefono?" },
       contactForm: ["Nome:", "Azienda:", "Email:", "Telefono:"],
       contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente.", "Una conferma è in arrivo."], contactHint: "Il vostro nome e un’email o un numero di telefono",
       proof: ["dove c’è scritto?", "nascondi", "dalla pagina inglese"],
@@ -151,7 +151,7 @@
     pt: {
       book: "Prefere falar já? Escolha uma hora →",
       contactIntro: "Essa informação não está no nosso site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?",
-      contactIntros: { via_nico: "Esta passa pelo próprio Nico. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?", fit: "Se encaixa na sua empresa é o Nico que avalia, não eu. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?", off_topic: "Só respondo a perguntas sobre a meihuizen.ai. Ainda assim, o Nico talvez o possa ajudar. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?" },
+      contactIntros: { via_nico: "Pode deixar-me o seu nome e uma forma de o Nico o contactar, email ou telefone?", fit: "Se encaixa na sua empresa é o Nico que avalia, não eu. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?", off_topic: "Só respondo a perguntas sobre a meihuizen.ai. Ainda assim, o Nico talvez o possa ajudar. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?" },
       contactForm: ["Nome:", "Empresa:", "Email:", "Telefone:"],
       contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente.", "Vai receber uma confirmação."], contactHint: "O seu nome e um email ou número de telefone",
       proof: ["onde diz isso?", "esconder", "da página em inglês"],
@@ -171,7 +171,7 @@
     lt: {
       book: "Norite pasikalbėti iš karto? Pasirinkite laiką →",
       contactIntro: "Šios informacijos mūsų svetainėje nėra, todėl nieko nežadu. Bet būtent į tokius klausimus Nico atsako pats. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?",
-      contactIntros: {"via_nico": "Šis klausimas sprendžiamas tiesiogiai su Nico. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?", "fit": "Ar tai tinka jūsų įmonei, sprendžia Nico, ne aš. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?", "off_topic": "Atsakau tik į klausimus apie meihuizen.ai. Vis dėlto Nico gali jums padėti. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?"},
+      contactIntros: {"via_nico": "Ar galiu gauti jūsų vardą ir kontaktą, kaip Nico galėtų su jumis susisiekti: el. paštą arba telefoną?", "fit": "Ar tai tinka jūsų įmonei, sprendžia Nico, ne aš. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?", "off_topic": "Atsakau tik į klausimus apie meihuizen.ai. Vis dėlto Nico gali jums padėti. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?"},
       contactForm: ["Vardas:", "Įmonė:", "El. paštas:", "Telefonas:"],
       contact: ["užklausa perduota", "Nico ją gavo ir susisieks su jumis asmeniškai.", "Patvirtinimas jau siunčiamas jums."], contactHint: "Jūsų vardas ir el. paštas arba telefono numeris",
       proof: ["kur tai parašyta?", "slėpti", ""],
