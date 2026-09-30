@@ -1,10 +1,13 @@
 /*
  * status.js: fills status.html from our monitor (api/status on Vercel).
  * One call, refreshed every minute. The page's static vendor links stay
- * useful even when the monitor itself cannot be reached.
+ * useful even when the monitor itself cannot be reached. The last good
+ * answer is kept in this browser and painted first, so a returning visitor
+ * sees the lights at once; its own "Checked" time says how old it is.
  */
 (function () {
   var URL_ = 'https://website-contact-function-4efp.vercel.app/api/status';
+  var KEY = 'st-last';
   var WORD = { green: 'operational', amber: 'degraded', red: 'down', unknown: 'unknown' };
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text != null) { e.textContent = text; } return e; }
   function when(iso) {
@@ -40,14 +43,15 @@
     document.getElementById('st-down').hidden = true;
   }
   function load() {
-    fetch(URL_, { cache: 'no-store' })
+    fetch(URL_)
       .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
-      .then(render)
+      .then(function (d) { render(d); try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} })
       .catch(function () {
         document.getElementById('st-down').hidden = false;
         document.getElementById('st-checked').textContent = 'Last attempt ' + when(new Date().toISOString()) + '.';
       });
   }
+  try { var last = JSON.parse(localStorage.getItem(KEY)); if (last) { render(last); } } catch (e) {}
   load();
   setInterval(load, 60000);
 })();
