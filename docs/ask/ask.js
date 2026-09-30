@@ -743,6 +743,8 @@
         body: JSON.stringify({
           messages: state.history, lang: LANG, page: location.pathname,
           browserLang: (navigator.language || '').slice(0, 2).toLowerCase(),
+          // Lets Fritz say "09:00 your time" instead of making the visitor convert from Kaunas.
+          tz: (function () { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || null; } catch (e) { return null; } })(),
           // The history sent is capped, so an offer made ten questions ago
           // falls out of it. The window keeps the whole conversation and
           // says so outright.
