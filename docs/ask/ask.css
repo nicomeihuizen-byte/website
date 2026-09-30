@@ -129,6 +129,9 @@
 .fritz-who { font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; margin-bottom: 4px; }
 .fritz-msg.user .fritz-who { color: var(--f-blue); }
 .fritz-msg.bot .fritz-who { color: var(--f-green); }
+.fritz-msg.nico .fritz-who { color: var(--f-amber); }
+.fritz-sys { font-family: var(--f-mono); font-size: 11px; color: var(--f-muted); margin: 0 0 16px; }
+.fritz-sys::before { content: "· "; color: var(--f-dim); }
 .fritz-msg.user .fritz-body {
   font-size: 14px; line-height: 1.55; color: var(--f-text);
   padding-left: 12px; border-left: 2px solid rgba(95,168,211,.4);
