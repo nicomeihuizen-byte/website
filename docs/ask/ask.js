@@ -30,10 +30,10 @@
   const T = {
     en: {
       book: "Rather talk right away? Pick a time →",
-      contactIntro: "That information is not on our website, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Leave your details and he’ll get back to you personally:",
-      contactIntros: { via_nico: "This one goes through Nico himself. Leave your details and he’ll get back to you personally:", fit: "Whether it fits your business is Nico’s call, not mine. Leave your details and he’ll get back to you personally:", off_topic: "I only answer questions about meihuizen.ai. Nico might still be able to help you further, though. Fill in your details below and I’ll make sure he gets the message:" },
+      contactIntro: "That information is not on our website, so I won’t promise anything. But it’s exactly the kind of question Nico answers himself. Can I get your name and a way he can reach you, email or phone?",
+      contactIntros: { via_nico: "This one goes through Nico himself. Can I get your name and a way he can reach you, email or phone?", fit: "Whether it fits your business is Nico’s call, not mine. Can I get your name and a way he can reach you, email or phone?", off_topic: "I only answer questions about meihuizen.ai. Nico might still be able to help you further, though. Can I get your name and a way he can reach you, email or phone?" },
       contactForm: ["Name:", "Company:", "Email:", "Phone:"],
-      contact: ["request passed on", "Nico has it in his inbox and will reach out personally. A confirmation is on its way to you."],
+      contact: ["request passed on", "Nico has it in his inbox and will reach out personally.", "A confirmation is on its way to you."], contactHint: "Your name, and an email or phone number",
       proof: ["where does it say so?", "hide", ""],
       pages: {"fritz": {"ready": "You’re on my own page. Want to try to trip me up?", "s": ["What can’t you answer?", "How do you know you’re right?", "Can I get you for my own website?"]}, "five": {"ready": "You’re looking at Five. Ask me anything about it.", "s": ["What does Five cost?", "Who is Five for?", "Can Five run on a private server?"]}, "sa": {"s": ["What does a scan find?", "How does the free scan work?", "I’d like a free scan"]}, "cred": {"s": ["Is meihuizen.ai a registered company?", "What did Nico do before this?", "What is the VAT number?"]}, "about": {"s": ["What did Nico do before this?", "What stack do you build with?", "Can you come to us in person?"]}, "builds": {"s": ["What is Second Audience?", "How does Five work?", "Can I get Fritz on my own website?"]}, "privacy": {"s": ["Does Fritz store my conversation?", "Which cookies does this site set?", "How do I get my data deleted?"]}, "status": {"s": ["What do the colours mean?", "What does Agent Fritz run on?", "Where do the vendor lights come from?"]}, "acre": {"s": ["Why two plots?", "What does the field module measure?", "Is anything built yet?"]}, "portfolio": {"s": ["What is the second audience?", "Is this website for sale?", "Can you build a site like this for me?"]}},
       scanIntro: 'I can help you request a free Second Audience scan. I\u2019ll need the following things to complete your request:', scanForm: ['Requester:', 'Domain to scan:', 'Phone:', 'Email:'],
@@ -50,10 +50,10 @@
     },
     nl: {
       book: "Liever meteen praten? Kies een moment →",
-      contactIntro: "Die informatie staat niet op onze website, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:",
-      contactIntros: { via_nico: "Deze loopt via Nico zelf. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:", fit: "Of het bij uw bedrijf past, beoordeelt Nico, niet ik. Laat uw gegevens achter, dan neemt hij persoonlijk contact met u op:", off_topic: "Ik beantwoord alleen vragen over meihuizen.ai. Misschien kan Nico u wel verder helpen. Vul hieronder uw gegevens in, dan zorg ik dat hij uw bericht krijgt:" },
+      contactIntro: "Die informatie staat niet op onze website, dus ik beloof niets. Maar het is precies het soort vraag dat Nico zelf beantwoordt. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?",
+      contactIntros: { via_nico: "Deze loopt via Nico zelf. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?", fit: "Of het bij uw bedrijf past, beoordeelt Nico, niet ik. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?", off_topic: "Ik beantwoord alleen vragen over meihuizen.ai. Misschien kan Nico u wel verder helpen. Mag ik uw naam en een manier waarop hij u kan bereiken, e-mail of telefoon?" },
       contactForm: ["Naam:", "Bedrijf:", "E-mail:", "Telefoon:"],
-      contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op. Er is een bevestiging naar u onderweg."],
+      contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op.", "Er is een bevestiging naar u onderweg."], contactHint: "Uw naam, en een e-mailadres of telefoonnummer",
       proof: ["waar staat dat?", "verbergen", "uit de Engelse pagina"],
       pages: {"fritz": {"ready": "U bent op mijn eigen pagina. Zin om me op een fout te betrappen?", "s": ["Wat kun je niet beantwoorden?", "Hoe weet je dat je gelijk hebt?", "Kan ik jou op mijn eigen website krijgen?"]}, "five": {"ready": "U kijkt naar Five. Vraag me er alles over.", "s": ["Wat kost Five?", "Voor wie is Five?", "Kan Five op een eigen server draaien?"]}, "sa": {"s": ["Wat vindt een scan?", "Hoe werkt de gratis scan?", "Ik wil een gratis scan"]}, "cred": {"s": ["Is meihuizen.ai een ingeschreven bedrijf?", "Wat deed Nico hiervoor?", "Wat is het btw-nummer?"]}, "about": {"s": ["Wat deed Nico hiervoor?", "Met welke stack bouwen jullie?", "Kunnen jullie bij ons langskomen?"]}, "builds": {"s": ["Wat is Second Audience?", "Hoe werkt Five?", "Kan ik Fritz op mijn eigen website krijgen?"]}, "privacy": {"s": ["Slaat Fritz mijn gesprek op?", "Welke cookies zet deze site?", "Hoe laat ik mijn gegevens verwijderen?"]}, "status": {"s": ["Wat betekenen de kleuren?", "Waar draait Agent Fritz op?", "Waar komen de lampjes van de leveranciers vandaan?"]}, "acre": {"s": ["Waarom twee percelen?", "Wat meet de veldmodule?", "Is er al iets gebouwd?"]}, "portfolio": {"s": ["Wat is de second audience?", "Is deze website te koop?", "Kunnen jullie zo’n site voor mij bouwen?"]}},
       scanIntro: 'Ik kan u helpen een gratis Second Audience-scan aan te vragen. Ik heb de volgende gegevens nodig om uw aanvraag af te ronden:', scanForm: ['Aanvrager:', 'Te scannen domein:', 'Telefoon:', 'E-mail:'],
@@ -70,10 +70,10 @@
     },
     de: {
       book: "Lieber gleich sprechen? Termin wählen →",
-      contactIntro: "Diese Information steht nicht auf unserer Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:",
-      contactIntros: { via_nico: "Das läuft über Nico persönlich. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:", fit: "Ob es zu Ihrem Unternehmen passt, entscheidet Nico, nicht ich. Hinterlassen Sie Ihre Daten, dann meldet er sich persönlich bei Ihnen:", off_topic: "Ich beantworte nur Fragen zu meihuizen.ai. Vielleicht kann Nico Ihnen trotzdem weiterhelfen. Tragen Sie unten Ihre Daten ein, dann sorge ich dafür, dass er Ihre Nachricht bekommt:" },
+      contactIntro: "Diese Information steht nicht auf unserer Website, also verspreche ich nichts. Aber genau solche Fragen beantwortet Nico selbst. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?",
+      contactIntros: { via_nico: "Das läuft über Nico persönlich. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?", fit: "Ob es zu Ihrem Unternehmen passt, entscheidet Nico, nicht ich. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?", off_topic: "Ich beantworte nur Fragen zu meihuizen.ai. Vielleicht kann Nico Ihnen trotzdem weiterhelfen. Verraten Sie mir Ihren Namen und wie er Sie erreichen kann, per E-Mail oder Telefon?" },
       contactForm: ["Name:", "Unternehmen:", "E-Mail:", "Telefon:"],
-      contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich. Eine Bestätigung ist auf dem Weg zu Ihnen."],
+      contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich.", "Eine Bestätigung ist auf dem Weg zu Ihnen."], contactHint: "Ihr Name und eine E-Mail-Adresse oder Telefonnummer",
       proof: ["wo steht das?", "ausblenden", "aus der englischen Seite"],
       pages: {"fritz": {"ready": "Sie sind auf meiner eigenen Seite. Lust, mich bei einem Fehler zu erwischen?", "s": ["Was kannst du nicht beantworten?", "Woher weißt du, dass du recht hast?", "Kann ich dich für meine eigene Website bekommen?"]}, "five": {"ready": "Sie sehen sich Five an. Fragen Sie mich alles dazu.", "s": ["Was kostet Five?", "Für wen ist Five?", "Kann Five auf einem eigenen Server laufen?"]}, "sa": {"s": ["Was findet ein Scan?", "Wie funktioniert der kostenlose Scan?", "Ich möchte einen kostenlosen Scan"]}, "cred": {"s": ["Ist meihuizen.ai ein eingetragenes Unternehmen?", "Was hat Nico vorher gemacht?", "Wie lautet die USt-IdNr.?"]}, "about": {"s": ["Was hat Nico vorher gemacht?", "Mit welchem Stack wird gebaut?", "Können Sie zu uns vor Ort kommen?"]}, "builds": {"s": ["Was ist Second Audience?", "Wie funktioniert Five?", "Kann ich Fritz für meine eigene Website bekommen?"]}, "privacy": {"s": ["Speichert Fritz mein Gespräch?", "Welche Cookies setzt diese Website?", "Wie lasse ich meine Daten löschen?"]}, "status": {"s": ["Was bedeuten die Farben?", "Worauf läuft Agent Fritz?", "Woher kommen die Ampeln der Anbieter?"]}, "acre": {"s": ["Warum zwei Grundstücke?", "Was misst das Feldmodul?", "Ist schon etwas gebaut?"]}, "portfolio": {"s": ["Was ist die Second Audience?", "Steht diese Website zum Verkauf?", "Können Sie so eine Website für mich bauen?"]}},
       scanIntro: 'Ich kann Ihnen helfen, einen kostenlosen Second-Audience-Scan anzufragen. Für Ihre Anfrage brauche ich Folgendes:', scanForm: ['Anfragender:', 'Zu scannende Domain:', 'Telefon:', 'E-Mail:'],
@@ -90,10 +90,10 @@
     },
     fr: {
       book: "Envie d’en parler tout de suite ? Choisir un créneau →",
-      contactIntro: "Cette information ne figure pas sur notre site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :",
-      contactIntros: { via_nico: "Celle-ci passe par Nico lui-même. Laissez vos coordonnées et il reviendra vers vous personnellement :", fit: "Savoir si cela convient à votre entreprise, c’est à Nico d’en juger, pas à moi. Laissez vos coordonnées et il reviendra vers vous personnellement :", off_topic: "Je ne réponds qu’aux questions sur meihuizen.ai. Nico pourra peut-être quand même vous aider. Indiquez vos coordonnées ci-dessous et je veillerai à ce qu’il reçoive votre message :" },
+      contactIntro: "Cette information ne figure pas sur notre site, donc je ne promets rien. Mais c’est exactement le genre de question à laquelle Nico répond lui-même. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?",
+      contactIntros: { via_nico: "Celle-ci passe par Nico lui-même. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?", fit: "Savoir si cela convient à votre entreprise, c’est à Nico d’en juger, pas à moi. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?", off_topic: "Je ne réponds qu’aux questions sur meihuizen.ai. Nico pourra peut-être quand même vous aider. Puis-je avoir votre nom et un moyen de vous joindre, e-mail ou téléphone ?" },
       contactForm: ["Nom :", "Entreprise :", "E-mail :", "Téléphone :"],
-      contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement. Une confirmation est en route."],
+      contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement.", "Une confirmation est en route."], contactHint: "Votre nom, et un e-mail ou un numéro de téléphone",
       proof: ["où est-ce écrit ?", "masquer", "extrait de la page anglaise"],
       pages: {"fritz": {"ready": "Vous êtes sur ma propre page. Envie de me prendre en défaut ?", "s": ["À quoi ne peux-tu pas répondre ?", "Comment sais-tu que tu as raison ?", "Puis-je t’avoir sur mon propre site ?"]}, "five": {"ready": "Vous regardez Five. Posez-moi toutes vos questions.", "s": ["Combien coûte Five ?", "À qui s’adresse Five ?", "Five peut-il tourner sur un serveur privé ?"]}, "sa": {"s": ["Que trouve un scan ?", "Comment fonctionne le scan gratuit ?", "Je voudrais un scan gratuit"]}, "cred": {"s": ["meihuizen.ai est-elle une société immatriculée ?", "Que faisait Nico avant ?", "Quel est le numéro de TVA ?"]}, "about": {"s": ["Que faisait Nico avant ?", "Avec quelle stack travaillez-vous ?", "Pouvez-vous venir chez nous ?"]}, "builds": {"s": ["Qu’est-ce que Second Audience ?", "Comment fonctionne Five ?", "Puis-je avoir Fritz sur mon propre site ?"]}, "privacy": {"s": ["Fritz enregistre-t-il ma conversation ?", "Quels cookies ce site dépose-t-il ?", "Comment faire supprimer mes données ?"]}, "status": {"s": ["Que signifient les couleurs ?", "Sur quoi tourne Agent Fritz ?", "D’où viennent les voyants des fournisseurs ?"]}, "acre": {"s": ["Pourquoi deux terrains ?", "Que mesure le module de terrain ?", "Y a-t-il déjà quelque chose de construit ?"]}, "portfolio": {"s": ["Qu’est-ce que la second audience ?", "Ce site est-il à vendre ?", "Pouvez-vous me construire un site comme celui-ci ?"]}},
       scanIntro: 'Je peux vous aider à demander un scan Second Audience gratuit. Pour finaliser votre demande, il me faut\u00a0:', scanForm: ['Demandeur\u00a0:', 'Domaine à scanner\u00a0:', 'Téléphone\u00a0:', 'E-mail\u00a0:'],
@@ -110,10 +110,10 @@
     },
     es: {
       book: "¿Prefiere hablar ya? Elija una hora →",
-      contactIntro: "Esa información no está en nuestro sitio web, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. Déjeme sus datos y se pondrá en contacto con usted:",
-      contactIntros: { via_nico: "Esto pasa por Nico personalmente. Déjeme sus datos y se pondrá en contacto con usted:", fit: "Si encaja con su empresa lo decide Nico, no yo. Déjeme sus datos y se pondrá en contacto con usted:", off_topic: "Solo respondo preguntas sobre meihuizen.ai. Aun así, puede que Nico pueda ayudarle. Deje sus datos abajo y me aseguraré de que reciba su mensaje:" },
+      contactIntro: "Esa información no está en nuestro sitio web, así que no prometo nada. Pero es justo el tipo de pregunta que Nico responde personalmente. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?",
+      contactIntros: { via_nico: "Esto pasa por Nico personalmente. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?", fit: "Si encaja con su empresa lo decide Nico, no yo. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?", off_topic: "Solo respondo preguntas sobre meihuizen.ai. Aun así, puede que Nico pueda ayudarle. ¿Me deja su nombre y una forma de contactarle, correo o teléfono?" },
       contactForm: ["Nombre:", "Empresa:", "Correo:", "Teléfono:"],
-      contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente. Le llega una confirmación."],
+      contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente.", "Le llega una confirmación."], contactHint: "Su nombre y un correo o un teléfono",
       proof: ["¿dónde lo dice?", "ocultar", "de la página en inglés"],
       pages: {"fritz": {"ready": "Está en mi propia página. ¿Se anima a pillarme en un error?", "s": ["¿Qué no puedes responder?", "¿Cómo sabes que tienes razón?", "¿Puedo tenerte en mi propio sitio web?"]}, "five": {"ready": "Está viendo Five. Pregúnteme lo que quiera.", "s": ["¿Cuánto cuesta Five?", "¿Para quién es Five?", "¿Puede Five funcionar en un servidor privado?"]}, "sa": {"s": ["¿Qué encuentra un escaneo?", "¿Cómo funciona el escaneo gratuito?", "Quiero un escaneo gratuito"]}, "cred": {"s": ["¿Es meihuizen.ai una empresa registrada?", "¿Qué hacía Nico antes?", "¿Cuál es el número de IVA?"]}, "about": {"s": ["¿Qué hacía Nico antes?", "¿Con qué stack trabajan?", "¿Pueden venir a vernos en persona?"]}, "builds": {"s": ["¿Qué es Second Audience?", "¿Cómo funciona Five?", "¿Puedo tener a Fritz en mi propio sitio web?"]}, "privacy": {"s": ["¿Guarda Fritz mi conversación?", "¿Qué cookies usa este sitio?", "¿Cómo pido que borren mis datos?"]}, "status": {"s": ["¿Qué significan los colores?", "¿Sobre qué funciona Agent Fritz?", "¿De dónde salen los indicadores de los proveedores?"]}, "acre": {"s": ["¿Por qué dos terrenos?", "¿Qué mide el módulo de campo?", "¿Ya hay algo construido?"]}, "portfolio": {"s": ["¿Qué es la second audience?", "¿Está a la venta este sitio web?", "¿Pueden construirme un sitio así?"]}},
       scanIntro: 'Puedo ayudarle a solicitar un escaneo gratuito de Second Audience. Para completar su solicitud necesito lo siguiente:', scanForm: ['Solicitante:', 'Dominio a escanear:', 'Teléfono:', 'Correo:'],
@@ -130,10 +130,10 @@
     },
     it: {
       book: "Preferite parlarne subito? Scegliete un orario →",
-      contactIntro: "Questa informazione non è sul nostro sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Lasciate i vostri dati e vi ricontatterà personalmente:",
-      contactIntros: { via_nico: "Questa passa direttamente da Nico. Lasciate i vostri dati e vi ricontatterà personalmente:", fit: "Se è adatto alla vostra azienda lo valuta Nico, non io. Lasciate i vostri dati e vi ricontatterà personalmente:", off_topic: "Rispondo solo a domande su meihuizen.ai. Forse però Nico può aiutarvi. Inserite qui sotto i vostri dati e farò in modo che riceva il messaggio:" },
+      contactIntro: "Questa informazione non è sul nostro sito, quindi non prometto nulla. Ma è proprio il tipo di domanda a cui Nico risponde di persona. Posso avere il vostro nome e un modo per contattarvi, email o telefono?",
+      contactIntros: { via_nico: "Questa passa direttamente da Nico. Posso avere il vostro nome e un modo per contattarvi, email o telefono?", fit: "Se è adatto alla vostra azienda lo valuta Nico, non io. Posso avere il vostro nome e un modo per contattarvi, email o telefono?", off_topic: "Rispondo solo a domande su meihuizen.ai. Forse però Nico può aiutarvi. Posso avere il vostro nome e un modo per contattarvi, email o telefono?" },
       contactForm: ["Nome:", "Azienda:", "Email:", "Telefono:"],
-      contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente. Una conferma è in arrivo."],
+      contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente.", "Una conferma è in arrivo."], contactHint: "Il vostro nome e un’email o un numero di telefono",
       proof: ["dove c’è scritto?", "nascondi", "dalla pagina inglese"],
       pages: {"fritz": {"ready": "Siete sulla mia pagina. Volete provare a cogliermi in fallo?", "s": ["A cosa non sai rispondere?", "Come sai di avere ragione?", "Posso averti sul mio sito?"]}, "five": {"ready": "State guardando Five. Chiedetemi tutto.", "s": ["Quanto costa Five?", "Per chi è Five?", "Five può girare su un server privato?"]}, "sa": {"s": ["Cosa trova una scansione?", "Come funziona la scansione gratuita?", "Vorrei una scansione gratuita"]}, "cred": {"s": ["meihuizen.ai è una società registrata?", "Cosa faceva Nico prima?", "Qual è la partita IVA?"]}, "about": {"s": ["Cosa faceva Nico prima?", "Con quale stack lavorate?", "Potete venire da noi di persona?"]}, "builds": {"s": ["Cos’è Second Audience?", "Come funziona Five?", "Posso avere Fritz sul mio sito?"]}, "privacy": {"s": ["Fritz salva la mia conversazione?", "Quali cookie usa questo sito?", "Come faccio a far cancellare i miei dati?"]}, "status": {"s": ["Cosa significano i colori?", "Su cosa gira Agent Fritz?", "Da dove vengono le spie dei fornitori?"]}, "acre": {"s": ["Perché due terreni?", "Cosa misura il modulo sul campo?", "C’è già qualcosa di costruito?"]}, "portfolio": {"s": ["Cos’è la second audience?", "Questo sito è in vendita?", "Potete costruirmi un sito così?"]}},
       scanIntro: 'Posso aiutarvi a richiedere una scansione gratuita Second Audience. Per completare la richiesta mi servono i seguenti dati:', scanForm: ['Richiedente:', 'Dominio da scansionare:', 'Telefono:', 'Email:'],
@@ -150,10 +150,10 @@
     },
     pt: {
       book: "Prefere falar já? Escolha uma hora →",
-      contactIntro: "Essa informação não está no nosso site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:",
-      contactIntros: { via_nico: "Esta passa pelo próprio Nico. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:", fit: "Se encaixa na sua empresa é o Nico que avalia, não eu. Deixe os seus dados e ele entrará em contacto consigo pessoalmente:", off_topic: "Só respondo a perguntas sobre a meihuizen.ai. Ainda assim, o Nico talvez o possa ajudar. Preencha os seus dados abaixo e eu garanto que ele recebe a mensagem:" },
+      contactIntro: "Essa informação não está no nosso site, por isso não prometo nada. Mas é exatamente o tipo de pergunta a que o Nico responde pessoalmente. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?",
+      contactIntros: { via_nico: "Esta passa pelo próprio Nico. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?", fit: "Se encaixa na sua empresa é o Nico que avalia, não eu. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?", off_topic: "Só respondo a perguntas sobre a meihuizen.ai. Ainda assim, o Nico talvez o possa ajudar. Pode deixar-me o seu nome e uma forma de o contactar, email ou telefone?" },
       contactForm: ["Nome:", "Empresa:", "Email:", "Telefone:"],
-      contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente. Vai receber uma confirmação."],
+      contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente.", "Vai receber uma confirmação."], contactHint: "O seu nome e um email ou número de telefone",
       proof: ["onde diz isso?", "esconder", "da página em inglês"],
       pages: {"fritz": {"ready": "Está na minha própria página. Quer tentar apanhar-me num erro?", "s": ["O que é que não consegues responder?", "Como sabes que tens razão?", "Posso ter-te no meu próprio site?"]}, "five": {"ready": "Está a ver o Five. Pergunte-me o que quiser.", "s": ["Quanto custa o Five?", "Para quem é o Five?", "O Five pode correr num servidor privado?"]}, "sa": {"s": ["O que encontra uma análise?", "Como funciona a análise gratuita?", "Quero uma análise gratuita"]}, "cred": {"s": ["A meihuizen.ai é uma empresa registada?", "O que fazia o Nico antes?", "Qual é o número de IVA?"]}, "about": {"s": ["O que fazia o Nico antes?", "Com que stack trabalham?", "Podem vir ter connosco pessoalmente?"]}, "builds": {"s": ["O que é o Second Audience?", "Como funciona o Five?", "Posso ter o Fritz no meu próprio site?"]}, "privacy": {"s": ["O Fritz guarda a minha conversa?", "Que cookies usa este site?", "Como peço para apagarem os meus dados?"]}, "status": {"s": ["O que significam as cores?", "Em que corre o Agent Fritz?", "De onde vêm os indicadores dos fornecedores?"]}, "acre": {"s": ["Porquê dois terrenos?", "O que mede o módulo de campo?", "Já há alguma coisa construída?"]}, "portfolio": {"s": ["O que é a second audience?", "Este site está à venda?", "Podem construir-me um site assim?"]}},
       scanIntro: 'Posso ajudá-lo a pedir uma análise gratuita Second Audience. Para concluir o pedido preciso do seguinte:', scanForm: ['Requerente:', 'Domínio a analisar:', 'Telefone:', 'Email:'],
@@ -170,10 +170,10 @@
     },
     lt: {
       book: "Norite pasikalbėti iš karto? Pasirinkite laiką →",
-      contactIntro: "Šios informacijos mūsų svetainėje nėra, todėl nieko nežadu. Bet būtent į tokius klausimus Nico atsako pats. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:",
-      contactIntros: {"via_nico": "Šis klausimas sprendžiamas tiesiogiai su Nico. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:", "fit": "Ar tai tinka jūsų įmonei, sprendžia Nico, ne aš. Palikite savo duomenis, ir jis su jumis susisieks asmeniškai:", "off_topic": "Atsakau tik į klausimus apie meihuizen.ai. Vis dėlto Nico gali jums padėti. Įveskite savo duomenis žemiau, ir pasirūpinsiu, kad jis gautų jūsų žinutę:"},
+      contactIntro: "Šios informacijos mūsų svetainėje nėra, todėl nieko nežadu. Bet būtent į tokius klausimus Nico atsako pats. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?",
+      contactIntros: {"via_nico": "Šis klausimas sprendžiamas tiesiogiai su Nico. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?", "fit": "Ar tai tinka jūsų įmonei, sprendžia Nico, ne aš. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?", "off_topic": "Atsakau tik į klausimus apie meihuizen.ai. Vis dėlto Nico gali jums padėti. Ar galiu gauti jūsų vardą ir kontaktą, kaip jis galėtų su jumis susisiekti: el. paštą arba telefoną?"},
       contactForm: ["Vardas:", "Įmonė:", "El. paštas:", "Telefonas:"],
-      contact: ["užklausa perduota", "Nico ją gavo ir susisieks su jumis asmeniškai. Patvirtinimas jau siunčiamas jums."],
+      contact: ["užklausa perduota", "Nico ją gavo ir susisieks su jumis asmeniškai.", "Patvirtinimas jau siunčiamas jums."], contactHint: "Jūsų vardas ir el. paštas arba telefono numeris",
       proof: ["kur tai parašyta?", "slėpti", ""],
       pages: {"fritz": {"ready": "Esate mano paties puslapyje. Norite pabandyti mane suklaidinti?", "s": ["Į ką negalite atsakyti?", "Iš kur žinote, kad esate teisus?", "Ar galiu jus gauti savo svetainei?"]}, "five": {"ready": "Žiūrite į Five. Klauskite apie jį ko tik norite.", "s": ["Kiek kainuoja Five?", "Kam skirtas Five?", "Ar Five gali veikti privačiame serveryje?"]}, "sa": {"s": ["Ką randa patikrinimas?", "Kaip veikia nemokamas patikrinimas?", "Norėčiau nemokamo patikrinimo"]}, "cred": {"s": ["Ar meihuizen.ai yra registruota įmonė?", "Ką Nico veikė anksčiau?", "Koks PVM mokėtojo kodas?"]}, "about": {"s": ["Ką Nico veikė anksčiau?", "Kokias technologijas naudojate?", "Ar galite atvykti pas mus?"]}, "builds": {"s": ["Kas yra Second Audience?", "Kaip veikia Five?", "Ar galiu turėti Fritz savo svetainėje?"]}, "privacy": {"s": ["Ar Fritz išsaugo mano pokalbį?", "Kokius slapukus naudoja ši svetainė?", "Kaip ištrinti mano duomenis?"]}, "status": {"s": ["Ką reiškia spalvos?", "Kokiomis paslaugomis veikia Agent Fritz?", "Iš kur gaunama tiekėjų būsena?"]}, "acre": {"s": ["Kodėl du sklypai?", "Ką matuoja lauko modulis?", "Ar jau kas nors pastatyta?"]}, "portfolio": {"s": ["Kas yra second audience?", "Ar ši svetainė parduodama?", "Ar galite man sukurti tokią svetainę?"]}},
       scanIntro: "Galiu padėti jums užsakyti nemokamą Second Audience patikrinimą. Užklausai užbaigti man reikės šių duomenų:",
@@ -530,7 +530,7 @@
       let at = T[item.action.lang] || t;
       if (item.action.type === 'contact_requested') {
         card.appendChild(el('b', null, '✓ ' + at.contact[0]));
-        card.appendChild(el('span', null, at.contact[1]));
+        card.appendChild(el('span', null, item.action.confirm === false || !at.contact[2] ? at.contact[1] : at.contact[1] + ' ' + at.contact[2]));
       } else {
         card.appendChild(el('b', null, '✓ ' + at.scan[0] + ' · ' + item.action.domain));
         card.appendChild(el('span', null, at.scan[1]));
@@ -603,6 +603,13 @@
   let formMode = false;
   function fillForm(kind, lt) {
     lt = lt || t;
+    // Contact details are asked for in plain words: the visitor types a name
+    // and an email or phone however they like, Fritz reads it back.
+    if (kind === 'contact') {
+      input.placeholder = lt.contactHint || t.placeholder;
+      input.focus();
+      return;
+    }
     const fields = kind === 'contact' ? lt.contactForm : lt.scanForm;
     input.value = fields.map(function (l) { return l + ' '; }).join('\n');
     formMode = true;
@@ -646,6 +653,7 @@
     if (!q || busy) { return; }
     if (q.length > MAX_CHARS) { onType(); return; }
     input.value = ''; formMode = false; onType();
+    input.placeholder = t.placeholder;
     suggest.hidden = true;
 
     let userItem = { type: 'user', text: q };
@@ -701,7 +709,7 @@
       } else if (event === 'next') {
         bot.next = data.questions || [];
       } else if (event === 'action') {
-        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null, lang: T[data.lang] ? data.lang : null };
+        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null, lang: T[data.lang] ? data.lang : null, confirm: data.confirm !== false };
       } else if (event === 'error') {
         throw new Error(data.code || 'upstream');
       }
