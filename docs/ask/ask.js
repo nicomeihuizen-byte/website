@@ -533,7 +533,7 @@
         let when = '';
         let d = item.action.start ? new Date(item.action.start) : null;
         if (d && !isNaN(d.getTime())) {
-          try { when = d.toLocaleString(item.action.lang || LANG, { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }); } catch (e) { when = ''; }
+          try { when = bookedWhen(d, item.action.lang || LANG); } catch (e) { when = ''; }
         }
         card.appendChild(el('b', null, '✓ ' + at.booked[0] + (when ? ' · ' + when : '')));
         card.appendChild(el('span', null, at.booked[1]));
@@ -609,6 +609,20 @@
   // The scan form lives in the input itself: one line per field, caret on
   // the first. Enter moves to the next line instead of sending, until the
   // last line, so nobody sends a half-filled form by habit.
+  // "Thursday 1st of October, 09:00" in English (how Nico writes dates), each
+  // other language its own way; always 24-hour, on the visitor's own clock.
+  function bookedWhen(d, lang) {
+    const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+    if (lang !== 'en') {
+      return d.toLocaleDateString(lang, { weekday: 'long', day: 'numeric', month: 'long' }) + ', ' + time;
+    }
+    const n = d.getDate();
+    const suffix = (n % 100 >= 11 && n % 100 <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th');
+    const weekday = d.toLocaleDateString('en-GB', { weekday: 'long' });
+    const month = d.toLocaleDateString('en-GB', { month: 'long' });
+    return weekday + ' ' + n + suffix + ' of ' + month + ', ' + time;
+  }
+
   let formMode = false;
   function fillForm(kind, lt) {
     lt = lt || t;
