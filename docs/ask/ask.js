@@ -35,7 +35,7 @@
       contactForm: ["Name:", "Company:", "Email:", "Phone:"],
       contact: ["request passed on", "Nico has it in his inbox and will reach out personally. A confirmation is on its way to you."],
       proof: ["where does it say so?", "hide", ""],
-      pages: {"fritz": {"ready": "You’re on my own page. Want to try to trip me up?", "s": ["What can’t you answer?", "How do you know you’re right?", "Can I get you for my own website?"]}, "five": {"ready": "You’re looking at Five. Ask me anything about it.", "s": ["What does Five cost?", "Who is Five for?", "Can Five run on a private server?"]}, "sa": {"s": ["What does a scan find?", "How does the free scan work?", "I’d like a free scan"]}, "cred": {"s": ["Is meihuizen.ai a registered company?", "What did Nico do before this?", "What is the VAT number?"]}},
+      pages: {"fritz": {"ready": "You’re on my own page. Want to try to trip me up?", "s": ["What can’t you answer?", "How do you know you’re right?", "Can I get you for my own website?"]}, "five": {"ready": "You’re looking at Five. Ask me anything about it.", "s": ["What does Five cost?", "Who is Five for?", "Can Five run on a private server?"]}, "sa": {"s": ["What does a scan find?", "How does the free scan work?", "I’d like a free scan"]}, "cred": {"s": ["Is meihuizen.ai a registered company?", "What did Nico do before this?", "What is the VAT number?"]}, "about": {"s": ["What did Nico do before this?", "What stack do you build with?", "Can you come to us in person?"]}, "builds": {"s": ["What is Second Audience?", "How does Five work?", "Can I get Fritz on my own website?"]}, "privacy": {"s": ["Does Fritz store my conversation?", "Which cookies does this site set?", "How do I get my data deleted?"]}, "status": {"s": ["What do the colours mean?", "What does Agent Fritz run on?", "Where do the vendor lights come from?"]}, "acre": {"s": ["Why two plots?", "What does the field module measure?", "Is anything built yet?"]}, "portfolio": {"s": ["What is the second audience?", "Is this website for sale?", "Can you build a site like this for me?"]}},
       scanIntro: 'I can help you request a free Second Audience scan. I\u2019ll need the following things to complete your request:', scanForm: ['Requester:', 'Domain to scan:', 'Phone:', 'Email:'],
       launch: 'ask fritz', tip: 'Questions about meihuizen.ai? Fritz reads the site so you don’t have to.',
       status: 'online · answers from this site only', down: 'asleep · email info@meihuizen.ai',
@@ -55,7 +55,7 @@
       contactForm: ["Naam:", "Bedrijf:", "E-mail:", "Telefoon:"],
       contact: ["verzoek doorgegeven", "Nico heeft het in zijn inbox en neemt persoonlijk contact op. Er is een bevestiging naar u onderweg."],
       proof: ["waar staat dat?", "verbergen", "uit de Engelse pagina"],
-      pages: {"fritz": {"ready": "U bent op mijn eigen pagina. Zin om me op een fout te betrappen?", "s": ["Wat kun je niet beantwoorden?", "Hoe weet je dat je gelijk hebt?", "Kan ik jou op mijn eigen website krijgen?"]}, "five": {"ready": "U kijkt naar Five. Vraag me er alles over.", "s": ["Wat kost Five?", "Voor wie is Five?", "Kan Five op een eigen server draaien?"]}, "sa": {"s": ["Wat vindt een scan?", "Hoe werkt de gratis scan?", "Ik wil een gratis scan"]}, "cred": {"s": ["Is meihuizen.ai een ingeschreven bedrijf?", "Wat deed Nico hiervoor?", "Wat is het btw-nummer?"]}},
+      pages: {"fritz": {"ready": "U bent op mijn eigen pagina. Zin om me op een fout te betrappen?", "s": ["Wat kun je niet beantwoorden?", "Hoe weet je dat je gelijk hebt?", "Kan ik jou op mijn eigen website krijgen?"]}, "five": {"ready": "U kijkt naar Five. Vraag me er alles over.", "s": ["Wat kost Five?", "Voor wie is Five?", "Kan Five op een eigen server draaien?"]}, "sa": {"s": ["Wat vindt een scan?", "Hoe werkt de gratis scan?", "Ik wil een gratis scan"]}, "cred": {"s": ["Is meihuizen.ai een ingeschreven bedrijf?", "Wat deed Nico hiervoor?", "Wat is het btw-nummer?"]}, "about": {"s": ["Wat deed Nico hiervoor?", "Met welke stack bouwen jullie?", "Kunnen jullie bij ons langskomen?"]}, "builds": {"s": ["Wat is Second Audience?", "Hoe werkt Five?", "Kan ik Fritz op mijn eigen website krijgen?"]}, "privacy": {"s": ["Slaat Fritz mijn gesprek op?", "Welke cookies zet deze site?", "Hoe laat ik mijn gegevens verwijderen?"]}, "status": {"s": ["Wat betekenen de kleuren?", "Waar draait Agent Fritz op?", "Waar komen de lampjes van de leveranciers vandaan?"]}, "acre": {"s": ["Waarom twee percelen?", "Wat meet de veldmodule?", "Is er al iets gebouwd?"]}, "portfolio": {"s": ["Wat is de second audience?", "Is deze website te koop?", "Kunnen jullie zo’n site voor mij bouwen?"]}},
       scanIntro: 'Ik kan u helpen een gratis Second Audience-scan aan te vragen. Ik heb de volgende gegevens nodig om uw aanvraag af te ronden:', scanForm: ['Aanvrager:', 'Te scannen domein:', 'Telefoon:', 'E-mail:'],
       launch: 'vraag fritz', tip: 'Vragen over meihuizen.ai? Fritz leest de site, dan hoeft u dat niet.',
       status: 'online · antwoordt alleen vanuit deze site', down: 'slaapt · mail info@meihuizen.ai',
@@ -75,7 +75,7 @@
       contactForm: ["Name:", "Unternehmen:", "E-Mail:", "Telefon:"],
       contact: ["Anfrage weitergeleitet", "Nico hat sie im Postfach und meldet sich persönlich. Eine Bestätigung ist auf dem Weg zu Ihnen."],
       proof: ["wo steht das?", "ausblenden", "aus der englischen Seite"],
-      pages: {"fritz": {"ready": "Sie sind auf meiner eigenen Seite. Lust, mich bei einem Fehler zu erwischen?", "s": ["Was kannst du nicht beantworten?", "Woher weißt du, dass du recht hast?", "Kann ich dich für meine eigene Website bekommen?"]}, "five": {"ready": "Sie sehen sich Five an. Fragen Sie mich alles dazu.", "s": ["Was kostet Five?", "Für wen ist Five?", "Kann Five auf einem eigenen Server laufen?"]}, "sa": {"s": ["Was findet ein Scan?", "Wie funktioniert der kostenlose Scan?", "Ich möchte einen kostenlosen Scan"]}, "cred": {"s": ["Ist meihuizen.ai ein eingetragenes Unternehmen?", "Was hat Nico vorher gemacht?", "Wie lautet die USt-IdNr.?"]}},
+      pages: {"fritz": {"ready": "Sie sind auf meiner eigenen Seite. Lust, mich bei einem Fehler zu erwischen?", "s": ["Was kannst du nicht beantworten?", "Woher weißt du, dass du recht hast?", "Kann ich dich für meine eigene Website bekommen?"]}, "five": {"ready": "Sie sehen sich Five an. Fragen Sie mich alles dazu.", "s": ["Was kostet Five?", "Für wen ist Five?", "Kann Five auf einem eigenen Server laufen?"]}, "sa": {"s": ["Was findet ein Scan?", "Wie funktioniert der kostenlose Scan?", "Ich möchte einen kostenlosen Scan"]}, "cred": {"s": ["Ist meihuizen.ai ein eingetragenes Unternehmen?", "Was hat Nico vorher gemacht?", "Wie lautet die USt-IdNr.?"]}, "about": {"s": ["Was hat Nico vorher gemacht?", "Mit welchem Stack wird gebaut?", "Können Sie zu uns vor Ort kommen?"]}, "builds": {"s": ["Was ist Second Audience?", "Wie funktioniert Five?", "Kann ich Fritz für meine eigene Website bekommen?"]}, "privacy": {"s": ["Speichert Fritz mein Gespräch?", "Welche Cookies setzt diese Website?", "Wie lasse ich meine Daten löschen?"]}, "status": {"s": ["Was bedeuten die Farben?", "Worauf läuft Agent Fritz?", "Woher kommen die Ampeln der Anbieter?"]}, "acre": {"s": ["Warum zwei Grundstücke?", "Was misst das Feldmodul?", "Ist schon etwas gebaut?"]}, "portfolio": {"s": ["Was ist die Second Audience?", "Steht diese Website zum Verkauf?", "Können Sie so eine Website für mich bauen?"]}},
       scanIntro: 'Ich kann Ihnen helfen, einen kostenlosen Second-Audience-Scan anzufragen. Für Ihre Anfrage brauche ich Folgendes:', scanForm: ['Anfragender:', 'Zu scannende Domain:', 'Telefon:', 'E-Mail:'],
       launch: 'frag fritz', tip: 'Fragen zu meihuizen.ai? Fritz liest die Website, damit Sie es nicht müssen.',
       status: 'online · antwortet nur aus dieser Website', down: 'schläft · info@meihuizen.ai',
@@ -95,7 +95,7 @@
       contactForm: ["Nom :", "Entreprise :", "E-mail :", "Téléphone :"],
       contact: ["demande transmise", "Nico l’a dans sa boîte de réception et vous contactera personnellement. Une confirmation est en route."],
       proof: ["où est-ce écrit ?", "masquer", "extrait de la page anglaise"],
-      pages: {"fritz": {"ready": "Vous êtes sur ma propre page. Envie de me prendre en défaut ?", "s": ["À quoi ne peux-tu pas répondre ?", "Comment sais-tu que tu as raison ?", "Puis-je t’avoir sur mon propre site ?"]}, "five": {"ready": "Vous regardez Five. Posez-moi toutes vos questions.", "s": ["Combien coûte Five ?", "À qui s’adresse Five ?", "Five peut-il tourner sur un serveur privé ?"]}, "sa": {"s": ["Que trouve un scan ?", "Comment fonctionne le scan gratuit ?", "Je voudrais un scan gratuit"]}, "cred": {"s": ["meihuizen.ai est-elle une société immatriculée ?", "Que faisait Nico avant ?", "Quel est le numéro de TVA ?"]}},
+      pages: {"fritz": {"ready": "Vous êtes sur ma propre page. Envie de me prendre en défaut ?", "s": ["À quoi ne peux-tu pas répondre ?", "Comment sais-tu que tu as raison ?", "Puis-je t’avoir sur mon propre site ?"]}, "five": {"ready": "Vous regardez Five. Posez-moi toutes vos questions.", "s": ["Combien coûte Five ?", "À qui s’adresse Five ?", "Five peut-il tourner sur un serveur privé ?"]}, "sa": {"s": ["Que trouve un scan ?", "Comment fonctionne le scan gratuit ?", "Je voudrais un scan gratuit"]}, "cred": {"s": ["meihuizen.ai est-elle une société immatriculée ?", "Que faisait Nico avant ?", "Quel est le numéro de TVA ?"]}, "about": {"s": ["Que faisait Nico avant ?", "Avec quelle stack travaillez-vous ?", "Pouvez-vous venir chez nous ?"]}, "builds": {"s": ["Qu’est-ce que Second Audience ?", "Comment fonctionne Five ?", "Puis-je avoir Fritz sur mon propre site ?"]}, "privacy": {"s": ["Fritz enregistre-t-il ma conversation ?", "Quels cookies ce site dépose-t-il ?", "Comment faire supprimer mes données ?"]}, "status": {"s": ["Que signifient les couleurs ?", "Sur quoi tourne Agent Fritz ?", "D’où viennent les voyants des fournisseurs ?"]}, "acre": {"s": ["Pourquoi deux terrains ?", "Que mesure le module de terrain ?", "Y a-t-il déjà quelque chose de construit ?"]}, "portfolio": {"s": ["Qu’est-ce que la second audience ?", "Ce site est-il à vendre ?", "Pouvez-vous me construire un site comme celui-ci ?"]}},
       scanIntro: 'Je peux vous aider à demander un scan Second Audience gratuit. Pour finaliser votre demande, il me faut\u00a0:', scanForm: ['Demandeur\u00a0:', 'Domaine à scanner\u00a0:', 'Téléphone\u00a0:', 'E-mail\u00a0:'],
       launch: 'demander à fritz', tip: 'Des questions sur meihuizen.ai ? Fritz lit le site pour vous.',
       status: 'en ligne · répond uniquement à partir de ce site', down: 'endormi · info@meihuizen.ai',
@@ -115,7 +115,7 @@
       contactForm: ["Nombre:", "Empresa:", "Correo:", "Teléfono:"],
       contact: ["solicitud enviada", "Nico la tiene en su bandeja de entrada y se pondrá en contacto personalmente. Le llega una confirmación."],
       proof: ["¿dónde lo dice?", "ocultar", "de la página en inglés"],
-      pages: {"fritz": {"ready": "Está en mi propia página. ¿Se anima a pillarme en un error?", "s": ["¿Qué no puedes responder?", "¿Cómo sabes que tienes razón?", "¿Puedo tenerte en mi propio sitio web?"]}, "five": {"ready": "Está viendo Five. Pregúnteme lo que quiera.", "s": ["¿Cuánto cuesta Five?", "¿Para quién es Five?", "¿Puede Five funcionar en un servidor privado?"]}, "sa": {"s": ["¿Qué encuentra un escaneo?", "¿Cómo funciona el escaneo gratuito?", "Quiero un escaneo gratuito"]}, "cred": {"s": ["¿Es meihuizen.ai una empresa registrada?", "¿Qué hacía Nico antes?", "¿Cuál es el número de IVA?"]}},
+      pages: {"fritz": {"ready": "Está en mi propia página. ¿Se anima a pillarme en un error?", "s": ["¿Qué no puedes responder?", "¿Cómo sabes que tienes razón?", "¿Puedo tenerte en mi propio sitio web?"]}, "five": {"ready": "Está viendo Five. Pregúnteme lo que quiera.", "s": ["¿Cuánto cuesta Five?", "¿Para quién es Five?", "¿Puede Five funcionar en un servidor privado?"]}, "sa": {"s": ["¿Qué encuentra un escaneo?", "¿Cómo funciona el escaneo gratuito?", "Quiero un escaneo gratuito"]}, "cred": {"s": ["¿Es meihuizen.ai una empresa registrada?", "¿Qué hacía Nico antes?", "¿Cuál es el número de IVA?"]}, "about": {"s": ["¿Qué hacía Nico antes?", "¿Con qué stack trabajan?", "¿Pueden venir a vernos en persona?"]}, "builds": {"s": ["¿Qué es Second Audience?", "¿Cómo funciona Five?", "¿Puedo tener a Fritz en mi propio sitio web?"]}, "privacy": {"s": ["¿Guarda Fritz mi conversación?", "¿Qué cookies usa este sitio?", "¿Cómo pido que borren mis datos?"]}, "status": {"s": ["¿Qué significan los colores?", "¿Sobre qué funciona Agent Fritz?", "¿De dónde salen los indicadores de los proveedores?"]}, "acre": {"s": ["¿Por qué dos terrenos?", "¿Qué mide el módulo de campo?", "¿Ya hay algo construido?"]}, "portfolio": {"s": ["¿Qué es la second audience?", "¿Está a la venta este sitio web?", "¿Pueden construirme un sitio así?"]}},
       scanIntro: 'Puedo ayudarle a solicitar un escaneo gratuito de Second Audience. Para completar su solicitud necesito lo siguiente:', scanForm: ['Solicitante:', 'Dominio a escanear:', 'Teléfono:', 'Correo:'],
       launch: 'pregunta a fritz', tip: '¿Preguntas sobre meihuizen.ai? Fritz lee el sitio por usted.',
       status: 'en línea · responde solo a partir de este sitio', down: 'dormido · info@meihuizen.ai',
@@ -135,7 +135,7 @@
       contactForm: ["Nome:", "Azienda:", "Email:", "Telefono:"],
       contact: ["richiesta inoltrata", "Nico l’ha nella sua casella di posta e vi ricontatterà personalmente. Una conferma è in arrivo."],
       proof: ["dove c’è scritto?", "nascondi", "dalla pagina inglese"],
-      pages: {"fritz": {"ready": "Siete sulla mia pagina. Volete provare a cogliermi in fallo?", "s": ["A cosa non sai rispondere?", "Come sai di avere ragione?", "Posso averti sul mio sito?"]}, "five": {"ready": "State guardando Five. Chiedetemi tutto.", "s": ["Quanto costa Five?", "Per chi è Five?", "Five può girare su un server privato?"]}, "sa": {"s": ["Cosa trova una scansione?", "Come funziona la scansione gratuita?", "Vorrei una scansione gratuita"]}, "cred": {"s": ["meihuizen.ai è una società registrata?", "Cosa faceva Nico prima?", "Qual è la partita IVA?"]}},
+      pages: {"fritz": {"ready": "Siete sulla mia pagina. Volete provare a cogliermi in fallo?", "s": ["A cosa non sai rispondere?", "Come sai di avere ragione?", "Posso averti sul mio sito?"]}, "five": {"ready": "State guardando Five. Chiedetemi tutto.", "s": ["Quanto costa Five?", "Per chi è Five?", "Five può girare su un server privato?"]}, "sa": {"s": ["Cosa trova una scansione?", "Come funziona la scansione gratuita?", "Vorrei una scansione gratuita"]}, "cred": {"s": ["meihuizen.ai è una società registrata?", "Cosa faceva Nico prima?", "Qual è la partita IVA?"]}, "about": {"s": ["Cosa faceva Nico prima?", "Con quale stack lavorate?", "Potete venire da noi di persona?"]}, "builds": {"s": ["Cos’è Second Audience?", "Come funziona Five?", "Posso avere Fritz sul mio sito?"]}, "privacy": {"s": ["Fritz salva la mia conversazione?", "Quali cookie usa questo sito?", "Come faccio a far cancellare i miei dati?"]}, "status": {"s": ["Cosa significano i colori?", "Su cosa gira Agent Fritz?", "Da dove vengono le spie dei fornitori?"]}, "acre": {"s": ["Perché due terreni?", "Cosa misura il modulo sul campo?", "C’è già qualcosa di costruito?"]}, "portfolio": {"s": ["Cos’è la second audience?", "Questo sito è in vendita?", "Potete costruirmi un sito così?"]}},
       scanIntro: 'Posso aiutarvi a richiedere una scansione gratuita Second Audience. Per completare la richiesta mi servono i seguenti dati:', scanForm: ['Richiedente:', 'Dominio da scansionare:', 'Telefono:', 'Email:'],
       launch: 'chiedi a fritz', tip: 'Domande su meihuizen.ai? Fritz legge il sito al posto vostro.',
       status: 'online · risponde solo da questo sito', down: 'dorme · info@meihuizen.ai',
@@ -155,7 +155,7 @@
       contactForm: ["Nome:", "Empresa:", "Email:", "Telefone:"],
       contact: ["pedido enviado", "O Nico já o tem na caixa de entrada e entrará em contacto pessoalmente. Vai receber uma confirmação."],
       proof: ["onde diz isso?", "esconder", "da página em inglês"],
-      pages: {"fritz": {"ready": "Está na minha própria página. Quer tentar apanhar-me num erro?", "s": ["O que é que não consegues responder?", "Como sabes que tens razão?", "Posso ter-te no meu próprio site?"]}, "five": {"ready": "Está a ver o Five. Pergunte-me o que quiser.", "s": ["Quanto custa o Five?", "Para quem é o Five?", "O Five pode correr num servidor privado?"]}, "sa": {"s": ["O que encontra uma análise?", "Como funciona a análise gratuita?", "Quero uma análise gratuita"]}, "cred": {"s": ["A meihuizen.ai é uma empresa registada?", "O que fazia o Nico antes?", "Qual é o número de IVA?"]}},
+      pages: {"fritz": {"ready": "Está na minha própria página. Quer tentar apanhar-me num erro?", "s": ["O que é que não consegues responder?", "Como sabes que tens razão?", "Posso ter-te no meu próprio site?"]}, "five": {"ready": "Está a ver o Five. Pergunte-me o que quiser.", "s": ["Quanto custa o Five?", "Para quem é o Five?", "O Five pode correr num servidor privado?"]}, "sa": {"s": ["O que encontra uma análise?", "Como funciona a análise gratuita?", "Quero uma análise gratuita"]}, "cred": {"s": ["A meihuizen.ai é uma empresa registada?", "O que fazia o Nico antes?", "Qual é o número de IVA?"]}, "about": {"s": ["O que fazia o Nico antes?", "Com que stack trabalham?", "Podem vir ter connosco pessoalmente?"]}, "builds": {"s": ["O que é o Second Audience?", "Como funciona o Five?", "Posso ter o Fritz no meu próprio site?"]}, "privacy": {"s": ["O Fritz guarda a minha conversa?", "Que cookies usa este site?", "Como peço para apagarem os meus dados?"]}, "status": {"s": ["O que significam as cores?", "Em que corre o Agent Fritz?", "De onde vêm os indicadores dos fornecedores?"]}, "acre": {"s": ["Porquê dois terrenos?", "O que mede o módulo de campo?", "Já há alguma coisa construída?"]}, "portfolio": {"s": ["O que é a second audience?", "Este site está à venda?", "Podem construir-me um site assim?"]}},
       scanIntro: 'Posso ajudá-lo a pedir uma análise gratuita Second Audience. Para concluir o pedido preciso do seguinte:', scanForm: ['Requerente:', 'Domínio a analisar:', 'Telefone:', 'Email:'],
       launch: 'pergunte ao fritz', tip: 'Perguntas sobre a meihuizen.ai? O Fritz lê o site por si.',
       status: 'online · responde apenas a partir deste site', down: 'a dormir · info@meihuizen.ai',
@@ -175,7 +175,7 @@
       contactForm: ["Vardas:", "Įmonė:", "El. paštas:", "Telefonas:"],
       contact: ["užklausa perduota", "Nico ją gavo ir susisieks su jumis asmeniškai. Patvirtinimas jau siunčiamas jums."],
       proof: ["kur tai parašyta?", "slėpti", ""],
-      pages: {"fritz": {"ready": "Esate mano paties puslapyje. Norite pabandyti mane suklaidinti?", "s": ["Į ką negalite atsakyti?", "Iš kur žinote, kad esate teisus?", "Ar galiu jus gauti savo svetainei?"]}, "five": {"ready": "Žiūrite į Five. Klauskite apie jį ko tik norite.", "s": ["Kiek kainuoja Five?", "Kam skirtas Five?", "Ar Five gali veikti privačiame serveryje?"]}, "sa": {"s": ["Ką randa patikrinimas?", "Kaip veikia nemokamas patikrinimas?", "Norėčiau nemokamo patikrinimo"]}, "cred": {"s": ["Ar meihuizen.ai yra registruota įmonė?", "Ką Nico veikė anksčiau?", "Koks PVM mokėtojo kodas?"]}},
+      pages: {"fritz": {"ready": "Esate mano paties puslapyje. Norite pabandyti mane suklaidinti?", "s": ["Į ką negalite atsakyti?", "Iš kur žinote, kad esate teisus?", "Ar galiu jus gauti savo svetainei?"]}, "five": {"ready": "Žiūrite į Five. Klauskite apie jį ko tik norite.", "s": ["Kiek kainuoja Five?", "Kam skirtas Five?", "Ar Five gali veikti privačiame serveryje?"]}, "sa": {"s": ["Ką randa patikrinimas?", "Kaip veikia nemokamas patikrinimas?", "Norėčiau nemokamo patikrinimo"]}, "cred": {"s": ["Ar meihuizen.ai yra registruota įmonė?", "Ką Nico veikė anksčiau?", "Koks PVM mokėtojo kodas?"]}, "about": {"s": ["Ką Nico veikė anksčiau?", "Kokias technologijas naudojate?", "Ar galite atvykti pas mus?"]}, "builds": {"s": ["Kas yra Second Audience?", "Kaip veikia Five?", "Ar galiu turėti Fritz savo svetainėje?"]}, "privacy": {"s": ["Ar Fritz išsaugo mano pokalbį?", "Kokius slapukus naudoja ši svetainė?", "Kaip ištrinti mano duomenis?"]}, "status": {"s": ["Ką reiškia spalvos?", "Kokiomis paslaugomis veikia Agent Fritz?", "Iš kur gaunama tiekėjų būsena?"]}, "acre": {"s": ["Kodėl du sklypai?", "Ką matuoja lauko modulis?", "Ar jau kas nors pastatyta?"]}, "portfolio": {"s": ["Kas yra second audience?", "Ar ši svetainė parduodama?", "Ar galite man sukurti tokią svetainę?"]}},
       scanIntro: "Galiu padėti jums užsakyti nemokamą Second Audience patikrinimą. Užklausai užbaigti man reikės šių duomenų:",
       scanForm: ["Užsakovas:", "Tikrinamas domenas:", "Telefonas:", "El. paštas:"],
       launch: "klauskite fritz",
@@ -209,7 +209,9 @@
   // suggestions: on the Five page, questions about Five.
   const PAGE_KEY = {
     'projects/agent-fritz.html': 'fritz', 'projects/ai-sales-deal-intelligence.html': 'five',
-    'projects/second-audience.html': 'sa', 'credentials.html': 'cred'
+    'projects/second-audience.html': 'sa', 'credentials.html': 'cred',
+    'about.html': 'about', 'builds.html': 'builds', 'privacy.html': 'privacy', 'status.html': 'status',
+    'projects/off-grid-ai-homestead.html': 'acre', 'projects/terminal-portfolio-website.html': 'portfolio'
   }[location.pathname.replace(/^\/(nl|de|fr|es|it|pt|lt)(\/|$)/, '/').replace(/^\//, '')];
   const PAGE = (PAGE_KEY && t.pages[PAGE_KEY]) || {};
   let PAGE_NAMES = {
@@ -395,7 +397,7 @@
 
   // --- open / close -------------------------------------------------------
   let booted = false;
-  function setOpen(open) {
+  function setOpen(open, quiet) {
     state.open = open;
     root.classList.toggle('is-open', open);
     document.documentElement.classList.toggle('fritz-lock', open);
@@ -404,8 +406,10 @@
     state.tipped = true;
     save();
     if (open) {
-      if (!booted) { booted = true; renderAll(state.items.length === 0); }
-      setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); } }, 60);
+      if (!booted) { booted = true; renderAll(!quiet && state.items.length === 0); }
+      // Reopened by a page change: the visitor is reading the new page, so
+      // the caret stays where it was instead of jumping into the chat.
+      if (!quiet) { setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); } }, 60); }
     }
   }
 
@@ -523,17 +527,18 @@
     }
     if (item.action) {
       let card = el('div', 'fritz-action');
+      let at = T[item.action.lang] || t;
       if (item.action.type === 'contact_requested') {
-        card.appendChild(el('b', null, '✓ ' + t.contact[0]));
-        card.appendChild(el('span', null, t.contact[1]));
+        card.appendChild(el('b', null, '✓ ' + at.contact[0]));
+        card.appendChild(el('span', null, at.contact[1]));
       } else {
-        card.appendChild(el('b', null, '✓ ' + t.scan[0] + ' · ' + item.action.domain));
-        card.appendChild(el('span', null, t.scan[1]));
+        card.appendChild(el('b', null, '✓ ' + at.scan[0] + ' · ' + item.action.domain));
+        card.appendChild(el('span', null, at.scan[1]));
       }
       // Nico's Proton booking page, straight after the lead is captured:
       // who and why first, the calendar second.
       if (item.action.booking && /^https:\/\/calendar\.proton\.me\/bookings/.test(item.action.booking)) {
-        let bk = el('a', 'fritz-book', t.book);
+        let bk = el('a', 'fritz-book', at.book);
         bk.href = item.action.booking; bk.target = '_blank'; bk.rel = 'noopener';
         card.appendChild(bk);
       }
@@ -596,8 +601,9 @@
   // the first. Enter moves to the next line instead of sending, until the
   // last line, so nobody sends a half-filled form by habit.
   let formMode = false;
-  function fillForm(kind) {
-    const fields = kind === 'contact' ? t.contactForm : t.scanForm;
+  function fillForm(kind, lt) {
+    lt = lt || t;
+    const fields = kind === 'contact' ? lt.contactForm : lt.scanForm;
     input.value = fields.map(function (l) { return l + ' '; }).join('\n');
     formMode = true;
     onType();
@@ -659,6 +665,7 @@
 
     let queued = false;
     let pendingForm = false;
+    let formT = t;
     function paint() {
       if (queued) { return; }
       queued = true;
@@ -684,14 +691,17 @@
       } else if (event === 'sources') {
         bot.sources = data.pages || [];
       } else if (event === 'form') {
+        // In the language Fritz is replying in, which is not always the
+        // page's: a Dutch visitor on an English page gets a Dutch form.
         pendingForm = data.type === 'contact' ? 'contact' : 'scan';
-        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? ((t.contactIntros || {})[data.reason] || t.contactIntro) : t.scanIntro });
+        formT = T[data.lang] || t;
+        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? ((formT.contactIntros || {})[data.reason] || formT.contactIntro) : formT.scanIntro });
       } else if (event === 'evidence') {
         bot.evidence = data.items || [];
       } else if (event === 'next') {
         bot.next = data.questions || [];
       } else if (event === 'action') {
-        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null };
+        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null, lang: T[data.lang] ? data.lang : null };
       } else if (event === 'error') {
         throw new Error(data.code || 'upstream');
       }
@@ -707,7 +717,7 @@
       state.history.push({ role: 'assistant', content: answer });
       setDown(false);
       live.textContent = answer;
-      if (pendingForm) { fillForm(pendingForm); }
+      if (pendingForm) { fillForm(pendingForm, formT); }
     }).catch(function (err) {
       let code = String(err && err.message || 'network');
       if (!t.err[code]) { code = 'network'; }
@@ -794,10 +804,14 @@
     // Page count for the boot line, from the same file Fritz answers from.
     fetch('/ask/knowledge.json').then(function (r) { return r.ok ? r.json() : null; })
       .then(function (k) { if (k && k.pages) { pagesCount = k.pages.length; } }).catch(function () {});
-    // The conversation survives a page change; the open window does not. A
-    // window that springs open on every page load covers the page someone
-    // just navigated to, and on a phone that is the whole screen.
+    // The conversation survives a page change, and so does an open window,
+    // until the visitor closes it. Except on a phone or a short window, where
+    // the chat covers the whole page someone just navigated to: there it
+    // waits closed, with the conversation intact, one tap away.
+    const wasOpen = state.open;
+    const small = window.matchMedia && window.matchMedia('(max-width: 600px), (max-height: 500px)').matches;
     state.open = false;
+    if (wasOpen && !small) { setOpen(true, true); }
     if (!state.tipped) {
       setTimeout(function () {
         if (state.open || state.tipped) { return; }
