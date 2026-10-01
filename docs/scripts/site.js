@@ -162,50 +162,24 @@
 
 // Live Kaunas clock in the contact section. The hours are fixed text on the
 // page (that is what Agent Fritz cites); this only adds the time and whether
-// the office is open right now. The calendar mirrors lib/fritz-time.js in
-// the contact-form repo: change the hours or holidays there and here.
+// the office is open right now. The calendar itself lives in
+// scripts/theme.js (window.mhOffice), which also sets the theme from it.
 (function () {
   const el = document.querySelector('[data-kaunas-clock]');
-  if (!el || typeof Intl === 'undefined') {
+  if (!el || !window.mhOffice) {
     return;
   }
-  const TZ = 'Europe/Vilnius';
-  const OPEN = 10 * 60;
-  const CLOSE = 18 * 60;
-  const FIXED = ['1-1', '2-16', '3-11', '5-1', '6-24', '7-6', '8-15', '11-1', '11-2', '12-24', '12-25', '12-26'];
-
-  function easterMonday(y) {
-    const a = y % 19, b = Math.floor(y / 100), c = y % 100;
-    const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
-    const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
-    const i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7;
-    const m = Math.floor((a + 11 * h + 22 * l) / 451);
-    const month = Math.floor((h + l - 7 * m + 114) / 31);
-    const day = ((h + l - 7 * m + 114) % 31) + 1;
-    const monday = new Date(Date.UTC(y, month - 1, day + 1));
-    return (monday.getUTCMonth() + 1) + '-' + monday.getUTCDate();
-  }
-
-  const fmt = new Intl.DateTimeFormat('en-GB', {
-    timeZone: TZ, hourCycle: 'h23', weekday: 'short',
-    year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
-  });
-
   function tick() {
-    const p = {};
-    fmt.formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
-    const md = Number(p.month) + '-' + Number(p.day);
-    const holiday = FIXED.indexOf(md) !== -1 || md === easterMonday(Number(p.year));
-    const weekend = p.weekday === 'Sat' || p.weekday === 'Sun';
-    const minutes = Number(p.hour) * 60 + Number(p.minute);
-    const open = !holiday && !weekend && minutes >= OPEN && minutes < CLOSE;
+    const o = window.mhOffice.now();
+    if (!o) {
+      return;
+    }
     el.textContent = el.dataset.format
-      .replace('{time}', p.hour + ':' + p.minute)
-      .replace('{state}', open ? el.dataset.open : el.dataset.closed);
-    el.dataset.state = open ? 'open' : 'closed';
+      .replace('{time}', o.time)
+      .replace('{state}', o.open ? el.dataset.open : el.dataset.closed);
+    el.dataset.state = o.open ? 'open' : 'closed';
     el.hidden = false;
   }
-
   tick();
   setInterval(tick, 30000);
 })();
