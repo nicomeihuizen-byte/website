@@ -854,6 +854,12 @@
         if (data.status === 'start') {
           bot.segs.push({ kind: 'step', id: data.id, tool: data.tool, status: 'run', t0: Date.now() });
         } else {
+          // A quiet step is one the server turned back for a reason the
+          // visitor need not see (details not read back yet): no red cross
+          // right before Fritz asks them to confirm.
+          if (data.quiet) {
+            bot.segs = bot.segs.filter(function (s) { return !(s.kind === 'step' && s.id === data.id); });
+          }
           for (let i = 0; i < bot.segs.length; i++) {
             let s = bot.segs[i];
             if (s.kind === 'step' && s.id === data.id) {
