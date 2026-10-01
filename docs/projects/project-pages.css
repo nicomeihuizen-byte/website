@@ -1041,3 +1041,30 @@ h1 {
 .project-title-row { display: flex; align-items: center; gap: 18px; }
 .project-title-row .project-title-mark { flex-shrink: 0; }
 .stack + h2.section-label { margin-top: 28px; }
+
+/* Agent Fritz: real conversations as a strip of screenshots. Scrolls
+   sideways on any width, one card snapped at a time on a phone. */
+.fritz-gallery { margin: 30px 0 6px; }
+.fritz-gallery-intro { color: var(--text-dim); font-size: 14px; margin: 4px 0 14px; }
+.fritz-shots {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+.fritz-shot { flex: 0 0 236px; margin: 0; scroll-snap-align: start; }
+.fritz-shot a { display: block; }
+.fritz-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color .15s ease;
+}
+.fritz-shot a:hover img,
+.fritz-shot a:focus-visible img { border-color: var(--accent); }
+.fritz-shot figcaption { margin-top: 8px; color: var(--text-dim); font-size: 12.5px; line-height: 1.45; }
+@media (max-width: 560px) { .fritz-shot { flex-basis: 74%; } }
