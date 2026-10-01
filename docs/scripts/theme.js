@@ -91,3 +91,59 @@
   }
   setInterval(apply, 30000);
 })();
+
+/*
+ * The visitor's own language, on their first visit.
+ *
+ * The site is static, so there is no server to read where a visitor is, and
+ * location is the wrong signal anyway: a Dutch reader in Kaunas wants Dutch.
+ * The browser's language preference is the right one. On an English page,
+ * a visitor whose first supported preference is another of the site's
+ * languages goes straight to that version of the same page (the page's own
+ * hreflang links say where it is). Runs here, in <head>, before anything
+ * paints, so nobody sees the English page flash first.
+ *
+ * A choice beats a guess: clicking a language in the switcher is remembered,
+ * and from then on the site stays in that language, English included.
+ * Crawlers are left alone: they get the page they asked for.
+ */
+(function () {
+  var KEY = 'mh-lang';
+  var SITE = ['nl', 'de', 'fr', 'it', 'es', 'pt', 'lt'];
+  var html = document.documentElement;
+  var here = (html.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
+
+  function stored() {
+    try { var v = localStorage.getItem(KEY); return v === 'en' || SITE.indexOf(v) !== -1 ? v : null; } catch (e) { return null; }
+  }
+  function remember(lang) {
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  // The language the browser asks for first, of the ones this site has.
+  function preferred() {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+    for (var i = 0; i < list.length; i++) {
+      var l = String(list[i]).slice(0, 2).toLowerCase();
+      if (l === 'en') { return 'en'; }
+      if (SITE.indexOf(l) !== -1) { return l; }
+    }
+    return 'en';
+  }
+
+  // Remember a language the visitor picked themselves.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a.lang-flag[hreflang]') : null;
+    if (a) { remember(a.getAttribute('hreflang')); }
+  });
+
+  if (here !== 'en' || /bot|crawl|spider|slurp|preview/i.test(navigator.userAgent || '')) { return; }
+  var want = stored() || preferred();
+  if (want === 'en') { return; }
+  var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+  if (!alt) { return; }
+  var target = alt.getAttribute('href');
+  if (!/^https:\/\/www\.meihuizen\.ai\//.test(target)) { return; }
+  // Same page in their language, keeping any #section they came for.
+  var url = target.replace(/^https:\/\/www\.meihuizen\.ai/, '') + (location.hash || '');
+  if (url !== location.pathname + location.hash) { location.replace(url); }
+})();
