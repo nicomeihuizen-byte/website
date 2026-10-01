@@ -148,6 +148,7 @@ Every page loads `docs/ask/ask.css` and `docs/ask/ask.js`: the chat window. The 
 - A new project page belongs in `PAGES` in `tools/build_knowledge.py` automatically (everything under
   `docs/projects/`); other new top-level pages must be added to that list by hand.
 - Any element with `data-fritz-ask="question"` opens Fritz and asks that question.
+- **Documents Fritz can share** are the download cards on the English pages (`<a class="doc-download">` pointing at a file, not a page). `build_knowledge.py` lists them under `documents` in `knowledge.json`, titled after the page ("Five · Product sheet"). A product sheet that is not in a card does not exist for Fritz: to give him one, add the card and rebuild.
 
 ## The crew roster on the about page
 

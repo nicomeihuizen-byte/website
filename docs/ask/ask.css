@@ -204,6 +204,18 @@
 }
 .fritz-action b { color: var(--f-green); font-weight: 500; }
 .fritz-action span { color: var(--f-muted); display: block; }
+/* A document Fritz shared: a link card, the file opens in a new tab. */
+.fritz-doc {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  margin-top: 10px; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--f-blue); text-decoration: none;
+  font-family: var(--f-mono); font-size: 12px; line-height: 1.5;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.fritz-doc b { color: var(--f-text); font-weight: 500; }
+.fritz-doc span { color: var(--f-muted); border: 1px solid var(--f-dim); border-radius: 20px; padding: 1px 7px; font-size: 10.5px; }
+.fritz-doc:hover { transform: translateY(-1px); }
+.fritz-doc:focus-visible { outline: 2px solid var(--f-blue); outline-offset: 2px; }
 
 .fritz-error { font-family: var(--f-mono); font-size: 12px; color: var(--f-amber); margin: 0 0 16px; }
 .fritz-error::before { content: "! "; }

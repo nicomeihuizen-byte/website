@@ -10,6 +10,10 @@ content change and publishing what Fritz knows are the same push.
 English pages only: every translation says the same thing, and Fritz answers
 in the visitor's language anyway. What is on a page is what Fritz may say.
 If a fact is not on the site, Fritz does not know it, and that is the point.
+
+Documents work the same way: Fritz can share a product sheet or an example
+report only if a page offers it as a download card (<a class="doc-download">).
+No card, no document, however often a visitor asks.
 """
 from __future__ import annotations
 
@@ -18,7 +22,8 @@ import json
 import re
 import sys
 from html.parser import HTMLParser
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+from posixpath import normpath
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -97,8 +102,72 @@ class Extract(HTMLParser):
         return "\n".join(lines)
 
 
+class Docs(HTMLParser):
+    """The download cards on a page: link, title, one line, file type."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.docs: list[dict] = []
+        self.cur: dict | None = None
+        self.field: str | None = None
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "a" and "doc-download" in (a.get("class") or "").split():
+            self.cur = {"href": a.get("href", ""), "title": "", "description": "", "type": ""}
+        elif self.cur is not None:
+            if tag == "h3":
+                self.field = "title"
+            elif tag == "p":
+                self.field = "description"
+            elif tag == "span" and "tag" in (a.get("class") or "").split():
+                self.field = "type"
+
+    def handle_endtag(self, tag):
+        if self.cur is None:
+            return
+        if tag in {"h3", "p", "span"}:
+            self.field = None
+        if tag == "a":
+            self.docs.append(self.cur)
+            self.cur = None
+
+    def handle_data(self, data):
+        if self.cur is not None and self.field:
+            self.cur[self.field] += data
+
+
+def documents(rel: str, html: str, page_title: str) -> list[dict]:
+    # "Product sheet" on its own says nothing on a card: name what it is about,
+    # from the page's own title ("Five | Deal management" -> "Five").
+    subject = re.split(r"\s*[:|]\s*", page_title, maxsplit=1)[0].strip()
+    parser = Docs()
+    parser.feed(html)
+    out = []
+    for d in parser.docs:
+        href = d["href"].split("#")[0]
+        if not href or href.startswith(("http:", "https:", "mailto:")) or href.endswith(".html"):
+            continue  # documents only: a link to another page is not one
+        path = normpath(str(PurePosixPath(rel).parent / href))
+        if path.startswith("..") or not (DOCS / path).is_file():
+            continue
+        title = re.sub(r"\s+", " ", d["title"]).strip()
+        if subject and subject.lower() not in title.lower():
+            title = f"{subject} · {title}"
+        out.append({
+            "id": PurePosixPath(path).stem,
+            "title": title,
+            "description": re.sub(r"\s+", " ", d["description"]).strip(),
+            "type": d["type"].strip(),
+            "url": SITE + path,
+            "page": rel,
+        })
+    return out
+
+
 def build() -> dict:
     pages = []
+    docs: dict[str, dict] = {}
     for rel in PAGES:
         html = (DOCS / rel).read_text(encoding="utf-8")
         body = html.split("<body", 1)[1] if "<body" in html else html
@@ -112,8 +181,11 @@ def build() -> dict:
             "description": head.description.strip(),
             "text": text,
         })
-    digest = hashlib.sha256(json.dumps(pages, ensure_ascii=False).encode()).hexdigest()[:16]
-    return {"site": SITE, "version": digest, "pages": pages}
+        for d in documents(rel, html, head.title.strip()):
+            docs.setdefault(d["id"], d)
+    documents_ = list(docs.values())
+    digest = hashlib.sha256(json.dumps([pages, documents_], ensure_ascii=False).encode()).hexdigest()[:16]
+    return {"site": SITE, "version": digest, "pages": pages, "documents": documents_}
 
 
 def main() -> int:
@@ -132,7 +204,7 @@ def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     total = sum(len(p["text"]) for p in data["pages"])
-    print(f"wrote {OUT.relative_to(ROOT)}: {len(data['pages'])} pages, {total:,} chars, version {data['version']}")
+    print(f"wrote {OUT.relative_to(ROOT)}: {len(data['pages'])} pages, {len(data['documents'])} documents, {total:,} chars, version {data['version']}")
     return 0
 
 
