@@ -569,6 +569,7 @@ h1 {
   font-family: var(--font-mono);
 }
 .risk-list strong { color: var(--text); font-weight: 600; }
+.risk-list + p { margin-top: 16px; }
 
 .site-cards {
   display: grid;
