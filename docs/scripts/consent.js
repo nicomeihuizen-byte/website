@@ -104,18 +104,9 @@
   }
 
   function settingsLink() {
-    // A plain "Privacy" link in the footer row, styled by the footer itself.
-    // The cookie choice is changed from the privacy page ([data-consent-open]).
-    var host = document.querySelector('.foot-meta, .footer-meta, .site-footer');
-    if (host) {
-      var sep = document.createElement('span');
-      sep.setAttribute('aria-hidden', 'true'); sep.textContent = '\u00b7';
-      var wrap = document.createElement('span');
-      var a = document.createElement('a');
-      a.href = privacyHref; a.textContent = t[3];
-      wrap.appendChild(a);
-      host.appendChild(sep); host.appendChild(wrap);
-    }
+    // No footer link: the privacy page is reached from the contact page and
+    // from the cookie banner. The cookie choice is changed from the privacy
+    // page ([data-consent-open]).
     Array.prototype.forEach.call(document.querySelectorAll('[data-consent-open]'), function (b) {
       b.addEventListener('click', show);
     });

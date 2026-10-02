@@ -136,7 +136,6 @@
     <nav class="site-nav" aria-label="Main">
       <ul>
         <li><a href="./" aria-current="page">home</a></li>
-        <li><a href="projects/second-audience.html">products</a></li>
         <li><a href="builds.html">builds</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="credentials.html">credentials</a></li>
@@ -238,9 +237,19 @@
     <a href="projects/agent-fritz.html" class="card card-dark s2 r2 fritz-card">
       <span class="chip" style="align-self:flex-start">AI / agents</span>
       <h3 class="h3" style="font-size:28px">Agent Fritz</h3>
-      <p>The chat in the corner. Answers from this site, or says it can't. Then books the call.</p>
+      <p>Ask Fritz anything about meihuizen.ai. It reads the pages it needs and answers from what they say. Fritz is configured as a sales assistant: it qualifies leads and does real pre-sales and inside sales work. That is our version.</p>
+      <p class="fritz-label">tech stack</p>
+      <div class="chips"><span class="chip-term">Claude Haiku 4.5</span><span class="chip-term">Anthropic API</span><span class="chip-term">Vercel · Frankfurt</span><span class="chip-term">Upstash Redis</span><span class="chip-term">Telegram Bot API</span><span class="chip-term">Google Calendar + Meet</span><span class="chip-term">Proton Mail</span><span class="chip-term">GitHub Actions evals</span></div>
       <figure><img src="images/main/hero-van-dog-walk.png" alt="Fritz the dog, walking" width="514" height="422" loading="lazy"></figure>
-      <div class="chips"><span class="chip-term">SPIN</span><span class="chip-term">Challenger</span><span class="chip-term">MEDDPICC</span></div>
+      <p class="fritz-label">what it does</p>
+      <ul class="fritz-caps">
+        <li><b>Sells by method</b> SPIN, Challenger, MEDDPICC</li>
+        <li><b>Three-way chat</b> brings Nico in live, takes his tasks</li>
+        <li><b>Fetches documents</b> product sheets, example reports</li>
+        <li><b>Plans meetings</b> real free times, invite sent</li>
+        <li><b>Passes leads on</b> with the whole conversation</li>
+        <li><b>Knows the time</b> Kaunas office hours, never over-promises</li>
+      </ul>
     </a>
 
     <a href="projects/ai-sales-deal-intelligence.html" class="card s2">
@@ -272,16 +281,16 @@
 
 <section id="how" class="section section-raised">
   <div class="wrap">
-    <div style="max-width:640px;margin-bottom:48px">
-      <p class="idx">~/how buying works</p>
-      <h2 class="h2">Four steps. You decide after each one.</h2>
-      <p class="body-l">No package to pick and no long commitment up front. Every case is priced on what it is worth to you, before the work starts.</p>
+    <div class="lead-wrap mb48">
+      <p class="idx">~/how we like to work</p>
+      <h2 class="h2">Small steps. A decision after every one.</h2>
+      <p class="body-l">Not packages to choose from: four steps that build on each other. After each one you decide whether we continue. No long commitment up front, no surprises halfway.</p>
     </div>
     <ol class="steps">
-      <li><div class="step-head"><span class="step-n">01</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">free · €0</div><h3>Free scan</h3><p>What AI agents read on your domain, and where they get it wrong.</p></li>
-      <li><div class="step-head"><span class="step-n">02</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">priced on the case</div><h3>Report, two prices</h3><p>Every finding explained in money terms. Fix it yourself, or we do it end to end.</p></li>
-      <li><div class="step-head"><span class="step-n">03</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">priced on the case</div><h3>Build or fix</h3><p>The fixes, Fritz on your own domain, or a custom build around your workflow.</p></li>
-      <li><div class="step-head"><span class="step-n">04</span><span class="step-line"></span></div><div class="step-price">ongoing</div><h3>Monitor and re-scan</h3><p>Re-scans after every change, so the fix still holds next quarter.</p></li>
+      <li><div class="step-head"><span class="step-n">01</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">understand</div><h3>Map the problem</h3><p>We sit with the people who do the work, write down the constraints, and agree what success looks like. You get a short foundation to build on.</p></li>
+      <li><div class="step-head"><span class="step-n">02</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">prototype</div><h3>A working version</h3><p>Something you can click, test and show around, built on the one journey that matters most. Not slides.</p></li>
+      <li><div class="step-head"><span class="step-n">03</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">production</div><h3>Built to run</h3><p>Tests, a security check, monitoring and a real deployment. AI writes fast; this is where the brakes go on.</p></li>
+      <li><div class="step-head"><span class="step-n">04</span><span class="step-line"></span></div><div class="step-price">ongoing</div><h3>Kept and improved</h3><p>New features, maintenance and re-checks, for as long as it earns its place in your business.</p></li>
     </ol>
   </div>
 </section>
@@ -366,7 +375,7 @@ u</pre>Mistral</li>
         <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
         <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
       </ul>
-      <p class="foot-meta"><span>© 2026 meihuizen.ai</span></p>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign by Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
     </div>
   </div>
 </footer>

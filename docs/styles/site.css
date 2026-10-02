@@ -221,8 +221,13 @@ img{max-width:100%;height:auto}
 .readout .k{color:var(--t-text)}
 .readout .c-ok{color:var(--t-green)}.readout .c-warn{color:var(--t-amber)}.readout .c-bad{color:var(--t-red)}.readout .c-dim{color:var(--t-dim)}
 .fritz-card{display:flex;flex-direction:column}
-.fritz-card figure{flex:1;display:flex;align-items:flex-end;justify-content:center;margin:0;padding:22px 0 10px}
-.fritz-card img{width:78%;max-width:230px}
+.fritz-card figure{display:flex;justify-content:center;margin:0;padding:18px 0 4px}
+.fritz-card img{width:52%;max-width:150px}
+.fritz-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--t-blue) !important;margin:18px 0 8px !important}
+.fritz-caps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--t-muted)}
+.fritz-caps li{padding-left:18px;position:relative;line-height:1.4}
+.fritz-caps li::before{content:'✓';position:absolute;left:0;color:var(--t-green);font-family:var(--font-mono)}
+.fritz-caps b{display:block;color:var(--t-text);font-weight:600;font-size:14px}
 .bars{display:flex;gap:8px;align-items:flex-end;height:64px;margin-top:22px}
 .bars i{flex:1;border-radius:6px;background:var(--accent);display:block}
 .bars i.quiet{background:transparent;border:1.5px dashed var(--text-muted)}
@@ -570,6 +575,7 @@ img{max-width:100%;height:auto}
 .dl p{font-size:14px;color:var(--text-muted);margin:0}
 .dl span.d{font-size:14px;color:var(--text-muted)}
 .mb28{margin-bottom:28px}
+.mb48{margin-bottom:48px}
 .mt0{margin-top:0}
 /* Fritz */
 .chat-panel{padding:18px;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
@@ -639,3 +645,59 @@ img{max-width:100%;height:auto}
   .cmp th,.cmp td{padding:10px 8px;font-size:12px}
 }
 .pt0{padding-top:0}
+
+/* ---- builds + status --------------------------------------------------------- */
+.hero-short{padding-bottom:56px}
+.lead-wide{max-width:720px}
+.build{display:flex;flex-direction:column}
+.build p{flex:1}
+.build-go{margin-top:18px}
+.builds-note{max-width:420px;margin:0}
+.card-dashed{border-style:dashed}
+.st-banner{margin-top:36px;border-radius:18px;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;background:var(--bg-raised);border:1px solid var(--line)}
+.st-banner[data-state="amber"]{background:rgba(217,160,48,.10);border-color:#D9A030}
+.st-banner[data-state="red"]{background:rgba(216,87,58,.10);border-color:#D8573A}
+.st-banner-main{display:flex;gap:16px;align-items:center}
+.st-banner .st-light{width:14px;height:14px}
+.st-banner-title{font-family:var(--font-display);font-size:26px;font-weight:600;margin:0}
+.st-banner-sub{margin:0;color:var(--text-muted);font-size:15px}
+.st-checked{font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);margin:0}
+.st-legend{display:flex;flex-wrap:wrap;gap:18px;margin:16px 0 0;font-family:var(--font-mono);font-size:12px;color:var(--text-muted)}
+.st-legend > span{display:inline-flex;align-items:center;gap:6px}
+.st-alert{margin-top:16px;padding:16px 18px;border-radius:12px;background:var(--diff-red);font-size:15px}
+.st-alert[hidden]{display:none}
+.st-fallback{color:var(--text-muted);margin:0}
+.st-fallback a{color:var(--accent)}
+.st-rows{display:flex;flex-direction:column;gap:12px}
+.st-row{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:16px;padding:18px 22px;border:1px solid var(--line);border-radius:16px;background:var(--bg-raised)}
+.section-raised .st-row{background:var(--bg)}
+.st-k{display:flex;align-items:center;gap:12px}
+.st-name{font-family:var(--font-display);font-weight:600;font-size:18px}
+.st-v{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.st-word{font-family:var(--font-mono);font-size:13px;font-weight:600}
+.st-note{width:100%;color:var(--text-muted);font-size:14.5px}
+.st-meta{font-family:var(--font-mono);font-size:11.5px;color:var(--text-muted)}
+.st-src{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.st-light{display:inline-block;width:11px;height:11px;border-radius:50%;flex:none;background:#8B90A3}
+.st-green{background:#2E9E68}.st-amber{background:#D9A030}.st-red{background:#D8573A}.st-unknown{background:#8B90A3}
+.st-green-text{color:#2E9E68}.st-amber-text{color:#B7841E}.st-red-text{color:#D8573A}.st-unknown-text{color:var(--text-muted)}
+:root[data-theme="dark"] .st-amber-text{color:#E8B34A}
+@media (max-width:900px){
+  .st-row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .st-banner-title{font-size:21px}
+}
+
+/* ---- One Acre page ---------------------------------------------------- */
+.project-figure{margin:0}
+.project-figure img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
+.project-figure figcaption{font-size:13.5px;color:var(--text-muted);margin-top:8px}
+.gallery-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.oa-draw svg.fig{width:100%;height:auto;display:block;margin-bottom:14px}
+.oa-draw h3{margin:0 0 6px;font-size:17px}
+@media (max-width:900px){.gallery-2{grid-template-columns:minmax(0,1fr)}}
+.vision-p + .vision-p{margin-top:14px}
+.credit{display:inline-flex;align-items:center;gap:6px}
+.credit-mark{color:var(--accent);flex:none}
+.priv-wrap{padding-bottom:80px}
+.basis{display:block;margin-top:8px;font-family:var(--font-mono);font-size:12px;color:var(--accent2)}
+.kv dd .chip-warn{display:inline-block;margin-top:4px}

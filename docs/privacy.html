@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="How meihuizen.ai handles personal data: every flow, processor and retention period, analytics only with consent, and how to reach us about your data.">
 <meta name="twitter:image" content="https://www.meihuizen.ai/images/main/ai-software-engineering-workspace.png">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Privacy", "url": "https://www.meihuizen.ai/privacy.html", "inLanguage": "en", "dateModified": "2026-09-30",
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Privacy", "url": "https://www.meihuizen.ai/privacy.html", "inLanguage": "en", "dateModified": "2026-10-02",
  "publisher": {"@type": "Organization", "name": "MB Meihuizen AI", "legalName": "Mažoji bendrija Meihuizen AI", "url": "https://www.meihuizen.ai/", "email": "dpo@meihuizen.ai"}}
 </script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
@@ -34,404 +34,154 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="fonts/fonts.css">
-<style>
-  /* --- THEME -----------------------------------------------------------
-       Two palettes, one set of names. Light is on the bare :root so a page
-       paints light before scripts/theme.js has run: the flash you get
-       otherwise is the wrong-theme flash every static site has. Dark is a
-       values swap under [data-theme="dark"], which the script stamps on
-       <html> from localStorage. Values are the two palettes measured for
-       Five (sales-intel), so the app and the site are one product.
-       --------------------------------------------------------------- */
-  :root{
-    color-scheme:light;
-    --bg:#F4F6F8;
-    --bg-raised:#FFFFFF;
-    --line:#DFE3EA;
-    --text:#14161C;
-    --text-muted:#596074;
-    --text-dim:#666D80;
-    --accent:#1F7D55;
-    --accent-dim:#9FC4B1;
-    --accent2:#2B6F9C;
-    --accent-hover:#186344;
-    --on-accent:#FFFFFF;
-    --raised-hover:#EDF1F4;
-    --header-bg:rgba(244,246,248,0.85);
-    --dot-idle:#C7CDD8;
-    --figure-bg:#10121A;
-    --warn:#A84D08;
-    --danger:#C02626;
-    --glow-a:rgba(232,179,74,0.14);
-    --glow-b:rgba(95,168,211,0.12);
-    --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
-    --font-body:'Inter', sans-serif;
-    --font-mono:'JetBrains Mono', monospace;
-    --max-w:780px;
-  }
-  :root[data-theme="dark"]{
-    color-scheme:dark;
-    --bg:#10121A;
-    --bg-raised:#171A24;
-    --line:#262A38;
-    --text:#ECEDF3;
-    --text-muted:#8B90A3;
-    --text-dim:#565B6E;
-    --accent:#5FBF8E;
-    --accent-dim:#2E6B52;
-    --accent2:#5FA8D3;
-    --accent-hover:#7AD0A4;
-    --on-accent:#181205;
-    --raised-hover:#1D2130;
-    --header-bg:rgba(16,18,26,0.82);
-    --dot-idle:#3A3E4C;
-    --figure-bg:#10121A;
-    --warn:#E8B34A;
-    --danger:#D8734A;
-    --glow-a:rgba(232,179,74,0.07);
-    --glow-b:rgba(95,168,211,0.06);
-    --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
-  }
-
-
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    min-height:100vh;
-    background:var(--bg);
-    background-image:
-      radial-gradient(ellipse 900px 500px at 15% -10%, var(--glow-a), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, var(--glow-b), transparent 60%);
-    color:var(--text);
-    font-family:var(--font-body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--accent);color:var(--bg);}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-
-  header{
-    position:sticky;
-    top:0;
-    z-index:20;
-    background:var(--header-bg);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  /* Wordmark. A business site says whose it is in the top left, and that
-     name goes home. This was in the markup all along, commented out. */
-  .brand{
-    font-family:var(--font-mono);
-    font-size:14px; font-weight:500;
-    color:var(--text);
-    display:flex; align-items:center; gap:8px;
-  }
-  .brand .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 8px var(--accent);
-  }
-  .navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:var(--max-w);
-    margin:0 auto;
-    padding:18px 24px;
-  }
-  nav ul{list-style:none;display:flex;gap:28px;}
-  nav a{font-family:var(--font-mono);font-size:13px;color:var(--text-muted);transition:color .15s ease;}
-  nav a:hover{color:var(--accent);}
-
-  .page{max-width:var(--max-w);margin:0 auto;padding:88px 24px 64px;}
-  .terminal{
-    overflow:hidden;
-    background:var(--bg-raised);
-    border:1px solid var(--line);
-    border-radius:10px;
-    box-shadow:var(--shadow-card);
-  }
-  .terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
-  .terminal-bar > span{width:10px;height:10px;border-radius:50%;background:var(--dot-idle);}
-  .terminal-bar > span:nth-child(1){background:#AE1C28;}
-  .terminal-bar > span:nth-child(2){background:#FFFFFF;}
-  .terminal-bar > span:nth-child(3){background:#21468B;}
-  .lang-switch{display:flex;align-items:center;gap:6px;margin-left:auto;}
-  .lang-flag{display:inline-flex;align-items:center;justify-content:center;padding:2px;border-radius:2px;text-decoration:none;opacity:0.55;transition:opacity .15s ease, outline-color .15s ease;}
-  .lang-flag-code{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.5px;color:var(--text-muted);line-height:1;}
-  .lang-flag:hover{opacity:1;}
-  .lang-flag[aria-current="true"]{opacity:1;}
-  .lang-flag:hover .lang-flag-code,.lang-flag[aria-current="true"] .lang-flag-code{font-weight:700;color:var(--accent);}
-  .lang-flag .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .terminal-body{padding:28px 28px 32px;}
-  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:32px;}
-  .section-head .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent2);}
-  h1{font-family:var(--font-mono);font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.5;color:var(--accent);}
-  .about-copy{max-width:56ch;margin-top:22px;padding-top:22px;border-top:1px solid var(--line);}
-  .about-copy h2{
-    font-family:var(--font-mono);
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:0.02em;
-    color:var(--accent);
-    margin:26px 0 10px;
-  }
-  .about-copy h2:first-of-type{ margin-top:0; }
-  .about-copy p{margin-bottom:16px;color:var(--text-muted);font-size:15px;}
-  .about-copy p:last-child{margin-bottom:0;}
-  .about-copy strong{color:var(--text);font-weight:600;}
-  .about-copy .quote-text{color:var(--accent);}
-  .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
-  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
-  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
-  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
-  .crew .is-human::before{color:var(--accent);}
-  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
-  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
-  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
-  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
-  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
-  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
-  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
-  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
-  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
-  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
-  .crew .is-human{border-color:var(--accent-dim);}
-  .crew-note{font-size:12px;color:var(--text-dim);}
-  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-  .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
-  .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
-  .btn{padding:11px 18px;border:1px solid var(--line);border-radius:6px;font-family:var(--font-mono);font-size:13px;}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600;}
-  .btn.ghost{color:var(--text-muted);}
-  .btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .btn.primary:hover{background:var(--accent-hover);color:var(--on-accent);border-color:var(--accent);}
-  footer{max-width:var(--max-w);margin:0 auto;padding:0 24px 40px;color:var(--text-dim);font-family:var(--font-mono);font-size:11.5px;}
-  .social-links{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;}
-  .social-links a{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:7px 10px;
-    border:1px solid var(--accent-dim);
-    border-radius:4px;
-    color:var(--accent);
-    font-size:13.5px;
-    transition:color .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .social-links a:hover{color:var(--bg);border-color:var(--accent);background:var(--accent);}
-  .social-links svg{width:16px;height:16px;fill:currentColor;flex:none;}
-  .social-links .sr-only{
-    position:absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-    border:0;
-  }
-  .footer-meta{display:flex;justify-content:flex-start;gap:10px;color:var(--accent);}
-
-  @media (max-width:600px){
-    .navbar{padding:16px 18px;}
-    nav ul{gap:16px;}
-    .page{padding:56px 18px 44px;}
-    .terminal-body{padding:22px 18px 26px;}
-    .about-image{float:none;width:240px;max-width:100%;height:auto;max-height:180px;margin:0 auto 20px;object-position:center;}
-    footer{padding:0 18px 28px;}
-  }
-
-  /* ---- credentials page ---- */
-  .cred-lede{max-width:58ch;color:var(--text-muted);font-size:15px;padding-top:18px;border-top:1px solid var(--line);}
-  .cred-block{margin-top:38px;padding-top:24px;border-top:1px solid var(--line);}
-  .cred-label{font-family:var(--font-mono);font-size:13px;color:var(--accent2);margin-bottom:6px;}
-  .cred-note{max-width:60ch;color:var(--text-dim);font-size:13.5px;margin-bottom:20px;}
-  .cred-note b{font-family:var(--font-mono);font-size:12.5px;font-weight:500;color:var(--accent);}
-  .cred-rows{display:flex;flex-direction:column;}
-  .cred-row{display:grid;grid-template-columns:150px 1fr;gap:4px 20px;padding:12px 0;border-top:1px solid var(--line);}
-  .cred-row:first-child{border-top:none;}
-  .cred-k{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);padding-top:3px;font-variant-numeric:tabular-nums;}
-  .cred-v{min-width:0;color:var(--text);font-size:14.5px;}
-  .cred-v a{color:var(--accent);border-bottom:1px solid var(--accent-dim);}
-  .cred-v a:hover{border-bottom-color:var(--accent);}
-  .cred-check{display:block;font-family:var(--font-mono);font-size:11.5px;color:var(--text-dim);margin-top:6px;word-break:break-word;}
-  .cred-check::before{content:"verify ";color:var(--accent);}
-  .cred-check.basis::before{content:none;}
-  .cred-when{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);padding-top:3px;font-variant-numeric:tabular-nums;}
-  .cred-what{font-family:var(--font-mono);font-size:14px;font-weight:500;color:var(--text);}
-  .cred-what span{font-family:var(--font-body);font-weight:400;color:var(--text-muted);}
-  .cred-desc{color:var(--text-muted);font-size:14px;margin-top:4px;}
-  .cred-flag{font-family:var(--font-mono);font-size:11.5px;color:var(--warn);letter-spacing:0.04em;}
-  .cred-corr{padding:16px 0;border-top:1px solid var(--line);}
-  .cred-corr:first-of-type{border-top:none;}
-  .cred-corr h2{font-family:var(--font-mono);font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:6px;}
-  .cred-corr h2::before{content:"! ";color:var(--danger);}
-  .cred-corr p{color:var(--text-muted);font-size:14.5px;max-width:64ch;}
-  .cred-corr strong{color:var(--text);font-weight:600;}
-  pre.cred-code{font-family:var(--font-mono);font-size:11.5px;line-height:1.75;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:16px 18px;overflow-x:auto;color:var(--text-muted);}
-  pre.cred-code b{color:var(--accent);font-weight:500;}
-  @media (max-width:600px){
-    .cred-row{grid-template-columns:1fr;gap:2px;}
-    .cred-k,.cred-when{padding-top:0;}
-  }
-
-  /* Theme toggle. The button says where it will take you, not where you
-     are, and both words sit in the markup with CSS hiding one, so the
-     label is right in the first paint and cannot lag the attribute. It
-     ships visible and a <noscript> rule hides it, along with its
-     separator, when there is no JavaScript here to drive it. */
-  .theme-toggle{
-    font-family:var(--font-mono);
-    font-size:13px;
-    color:var(--text-muted);
-    background:none; border:0; padding:0;
-    cursor:pointer;
-    transition:color .15s ease;
-  }
-  .theme-toggle:hover{ color:var(--accent); }
-  .nav-sep{ color:var(--line); user-select:none; }
-  :root[data-theme="dark"] .theme-label-light{ display:none; }
-  :root:not([data-theme="dark"]) .theme-label-dark{ display:none; }
-  /* The white traffic light is white on white without this. Red and blue
-     are the flag's own colours and stay put in both themes. */
-  :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
-  /* The nav has six items, a wordmark and a theme toggle. On a phone that
-     is wider than the phone, and it was pushing the whole page sideways
-     before the wordmark was ever added. Let it wrap instead. */
-  @media (max-width: 600px){
-    .navbar{ flex-wrap:wrap; gap:12px; padding:14px 24px; }
-    nav ul{ flex-wrap:wrap; gap:14px 18px; }
-    /* Wrapped, the divider ends up alone at the start of a line, which
-       reads as a stray character rather than a divider. */
-    .nav-sep{ display:none; }
-  }
-</style>
+<link rel="stylesheet" href="styles/site.css">
 <script src="scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
-<header>
-  <div class="navbar">
-    <a class="brand" href="/"><span class="dot"></span> meihuizen.ai</a>
-    <nav aria-label="Primary navigation">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="./" class="brand" aria-label="meihuizen.ai home"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Main">
       <ul>
-        <li><a href="/">home</a></li>
+        <li><a href="./">home</a></li>
         <li><a href="builds.html">builds</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="credentials.html">credentials</a></li>
-        <li><a href="status.html">status</a></li>
-        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Site language">
+        <a href="privacy.html" lang="en" hreflang="en" aria-current="true">EN</a>
+        <a href="lt/" lang="lt" hreflang="lt">LT</a>
+      </nav>
+      <button type="button" class="ask-pill" data-fritz-ask="Hi Fritz, what can you do for me?">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="9" r="2.2"/><circle cx="10" cy="5.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"/></svg>~/ask fritz</button>
+    </div>
   </div>
 </header>
 
-<main class="page">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span><b>privacy</b></span>
+    <span class="wide" aria-hidden="true">│</span>
+    <span class="wide">every flow named</span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero hero-short">
+  <div class="wrap">
+    <p class="idx">~/privacy</p>
+    <h1 class="h1 h1-p">What happens to your data here, <span class="grad">every flow named.</span></h1>
+    <p class="lead lead-wide">Most privacy pages are written to be skipped. This one is written to be checked: every place your data comes in, where it goes, who processes it and how long it stays. If something on this site does not match this page, this page is wrong, and we want to hear it.</p>
+    <div class="btn-row"><a href="mailto:dpo@meihuizen.ai" class="btn btn-p">dpo@meihuizen.ai <span aria-hidden="true">→</span></a><button type="button" class="btn btn-g" data-consent-open>Cookie settings</button></div>
+  </div>
+</section>
+
+<div class="wrap priv-wrap">
+  <div class="layout">
+    <nav class="toc" aria-label="On this page">
+      <p>The record</p>
+      <a href="#short-version">~/short-version</a><a href="#who-we-are">~/who-we-are</a><a href="#every-flow">~/every-flow</a><a href="#processors">~/processors</a><a href="#your-rights">~/your-rights</a><a href="#changes">~/changes</a>
+    </nav>
+    <div>
+      <section id="short-version" class="rec">
+        <p class="idx">~/short-version</p><h2 class="h2">The short version.</h2>
+        <dl class="kv">
+          <dt>analytics</dt><dd>Google Analytics loads only after you click "Accept". Until then nothing from Google loads and no analytics cookie is set.</dd>
+          <dt>fonts</dt><dd>Served from this site. No request to Google Fonts.</dd>
+          <dt>agent fritz</dt><dd>Your conversation is processed to answer you, not stored. The server keeps counts, not content, unless you send a request.</dd>
+          <dt>requests</dt><dd>What you type into a scan or contact form reaches our mailbox and stays there for six months, unless it turns into a working relationship.</dd>
+          <dt>never</dt><dd>No advertising cookies, no selling or sharing of data, no profiling.</dd>
+        </dl>
+      </section>
+
+      <section id="who-we-are" class="rec">
+        <p class="idx">~/who-we-are</p><h2 class="h2">Who is responsible.</h2>
+        <dl class="kv">
+          <dt>controller</dt><dd>MB Meihuizen AI (Mažoji bendrija Meihuizen AI), company code 308157412, Laisvės al. 110, LT-44253 Kaunas, Lithuania.</dd>
+          <dt>privacy contact</dt><dd><a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a> for every request about your data: access, correction, deletion, objection. General questions: <a href="mailto:info@meihuizen.ai">info@meihuizen.ai</a>.</dd>
+          <dt>scope</dt><dd>This page covers meihuizen.ai, Agent Fritz on this site, the contact form and Second Audience scans. Five, our sales app, gets its own privacy notice before it takes paying customers.</dd>
+        </dl>
+      </section>
+
+      <section id="every-flow" class="rec">
+        <p class="idx">~/every-flow</p><h2 class="h2">Every flow, one row each.</h2>
+        <p class="body-l">One row per flow: what is collected, where it goes, how long it stays, and why we are allowed to.</p>
+        <dl class="kv">
+          <dt>visiting a page</dt><dd>Your IP address, browser and the page you ask for reach GitHub Pages, which hosts the site and keeps server logs under its own terms.<span class="basis">basis: legitimate interest (running and securing the site)</span></dd>
+          <dt>your choices</dt><dd>Your light/dark theme and your cookie choice are stored in your own browser (localStorage). They never leave your device.<span class="basis">basis: needed for what you asked for</span></dd>
+          <dt>analytics</dt><dd>Only after "Accept": Google Analytics 4 sets <code>_ga</code> cookies and sends page views to Google. IP addresses are not logged or stored by Google Analytics 4. Google keeps the data for <span class="chip chip-warn">[check: retention period set in the GA4 property]</span>. Change your mind any time: <button type="button" class="mz-consent-settings" data-consent-open>Cookie settings</button>. A later reject deletes the cookies.<span class="basis">basis: your consent</span></dd>
+          <dt>agent fritz</dt><dd>Each question and the conversation so far go to our function on Vercel, region Frankfurt, and from there to the Anthropic API (model Claude Haiku) to write the answer. Our server logs counts (language, page, timing), never the text. Anthropic deletes API inputs and outputs within 30 days, or keeps them up to 2 years if its safety systems flag a conversation. The conversation itself lives in your browser tab (sessionStorage) and is gone when you close it. Your IP address is held briefly in memory to limit abuse and is never written anywhere.<span class="basis">basis: legitimate interest (answering the question you asked)</span></dd>
+          <dt>scan and contact requests</dt><dd>What you type (name, company, email, phone, domain) and the chat that led to it are emailed to our mailbox at Proton, and you get a confirmation email. A short version (your details, your first question, the page you were on and your local time) also goes to Nico's phone as a Telegram message, so he sees it straight away. We keep both for six months. If it turns into a working relationship, it becomes part of that and is kept as long as the relationship needs.<span class="basis">basis: steps you asked for before a contract</span></dd>
+          <dt>live chat with nico</dt><dd>If Agent Fritz offers to bring Nico into the chat and you say yes, Nico gets a Telegram message with the last few messages of your chat. While he is in, what you type goes to his phone through Telegram, and what he types comes back to you. The messages are held in our store (Upstash, region Frankfurt) only while the chat lasts and are deleted automatically within a day; the Telegram copies follow the same rule as other requests.<span class="basis">basis: steps you asked for before a contract</span></dd>
+          <dt>contact form</dt><dd>Name, email and message are sent through a Vercel function to our Proton mailbox. Kept for six months, same rule as above.<span class="basis">basis: legitimate interest (answering you)</span></dd>
+          <dt>second audience scan</dt><dd>The scan reads your public web pages, which is business content, not personal data. After a free scan we keep only the report and delete the raw captures. For paying clients we keep the raw captures for as long as the engagement needs them for re-scans.<span class="basis">basis: steps you asked for before a contract, then the contract</span></dd>
+          <dt>booking a call</dt><dd>If Agent Fritz books a call for you, your name, email address and the time go into Nico's Google Calendar (Google Workspace), which sends you the invite with a Google Meet link. Nico's phone gets a short Telegram message about it, as with other requests. The appointment stays in the calendar as the record of the call.<span class="basis">basis: steps you asked for before a contract</span></dd>
+        </dl>
+      </section>
+
+      <section id="processors" class="rec">
+        <p class="idx">~/processors</p><h2 class="h2">Who processes it, and where.</h2>
+        <p class="body-l">Every company that processes personal data for this site, and where.</p>
+        <dl class="kv">
+          <dt>GitHub</dt><dd>Hosting (GitHub Pages). GitHub Inc., United States.</dd>
+          <dt>Vercel</dt><dd>Functions for Agent Fritz and the contact form, run in Frankfurt. Vercel Inc., United States.</dd>
+          <dt>Anthropic</dt><dd>The model behind Agent Fritz. Anthropic PBC, United States.</dd>
+          <dt>Proton</dt><dd>Email. Proton AG, Switzerland.</dd>
+          <dt>Upstash</dt><dd>Short-lived storage for live chats with Nico, deleted within a day. Upstash Inc., United States; data stored in Frankfurt (EU).</dd>
+          <dt>Telegram</dt><dd>Notifications of scan and contact requests, and live chats, on Nico's phone. Telegram Messenger Inc., British Virgin Islands; for accounts registered in the EEA, Telegram stores the data in the Netherlands.</dd>
+          <dt>Google</dt><dd>Calendar and Google Meet for calls booked through Agent Fritz (Google Workspace), and analytics, only with your consent. Google Ireland Ltd, with processing in the United States.</dd>
+        </dl>
+<p class="body-l">Transfers outside the EU rely on the EU-US Data Privacy Framework or the European Commission's standard contractual clauses, and for Switzerland on the Commission's adequacy decision. Telegram is the exception: it offers no data processing agreement for messages sent through a bot. That is why we use it only here, for Nico's own notifications, and never in what we build for clients. <span class="chip chip-warn">[check: each processor's DPA and transfer basis]</span></p>
+      </section>
+
+      <section id="your-rights" class="rec">
+        <p class="idx">~/your-rights</p><h2 class="h2">What you can ask for.</h2>
+        <dl class="kv">
+          <dt>ask</dt><dd>You can ask what we hold about you, have it corrected or deleted, restrict or object to its use, or get it in a portable format. Email <a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a>; we answer within one month.</dd>
+          <dt>withdraw</dt><dd>Consent for analytics can be withdrawn at any time with the Cookie settings button above, reachable from the contact page and the cookie banner.</dd>
+          <dt>complain</dt><dd>To the Lithuanian State Data Protection Inspectorate (Valstybinė duomenų apsaugos inspekcija), L. Sapiegos g. 17, 10312 Vilnius, <a href="https://vdai.lrv.lt/" rel="noopener">vdai.lrv.lt</a>, or to the authority where you live.</dd>
+          <dt>no automation</dt><dd>Nothing on this site makes decisions about you. Agent Fritz answers questions; a person reads every request.</dd>
+        </dl>
+      </section>
+
+      <section id="changes" class="rec">
+        <p class="idx">~/changes</p><h2 class="h2">When this page changes.</h2>
+        <p class="body-l">Last updated 2 October 2026. When a flow changes, this page changes with it, and the date moves.</p>
+      </section>
     </div>
-    <div class="terminal-body">
-      <div class="section-head">
-        <span class="idx">~/privacy</span>
-        <h1>What happens to your data here, every flow named.</h1>
-      </div>
-      <p class="cred-lede">Most privacy pages are written to be skipped. This one is written to be checked: every place your data comes in, where it goes, who processes it and how long it stays. If something on this site does not match this page, this page is wrong, and we want to hear it.</p>
+  </div>
+</div>
 
-      <section class="cred-block">
-        <p class="cred-label">~/short-version</p>
-        <div class="cred-rows">
-          <div class="cred-row"><div class="cred-k">analytics</div><div class="cred-v">Google Analytics loads only after you click "Accept". Until then nothing from Google loads and no analytics cookie is set.</div></div>
-          <div class="cred-row"><div class="cred-k">fonts</div><div class="cred-v">Served from this site. No request to Google Fonts.</div></div>
-          <div class="cred-row"><div class="cred-k">agent fritz</div><div class="cred-v">Your conversation is processed to answer you, not stored. The server keeps counts, not content, unless you send a request.</div></div>
-          <div class="cred-row"><div class="cred-k">requests</div><div class="cred-v">What you type into a scan or contact form reaches our mailbox and stays there for six months, unless it turns into a working relationship.</div></div>
-          <div class="cred-row"><div class="cred-k">never</div><div class="cred-v">No advertising cookies, no selling or sharing of data, no profiling.</div></div>
-        </div>
-      </section>
-
-      <section class="cred-block">
-        <p class="cred-label">~/who-we-are</p>
-        <div class="cred-rows">
-          <div class="cred-row"><div class="cred-k">controller</div><div class="cred-v">MB Meihuizen AI (Mažoji bendrija Meihuizen AI), company code 308157412, Laisvės al. 110, LT-44253 Kaunas, Lithuania.</div></div>
-          <div class="cred-row"><div class="cred-k">privacy contact</div><div class="cred-v"><a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a> for every request about your data: access, correction, deletion, objection. General questions: <a href="mailto:info@meihuizen.ai">info@meihuizen.ai</a>.</div></div>
-          <div class="cred-row"><div class="cred-k">scope</div><div class="cred-v">This page covers meihuizen.ai, Agent Fritz on this site, the contact form and Second Audience scans. Five, our sales app, gets its own privacy notice before it takes paying customers.</div></div>
-        </div>
-      </section>
-
-      <section class="cred-block">
-        <p class="cred-label">~/every-flow</p>
-        <p class="cred-note">One row per flow: what is collected, where it goes, how long it stays, and why we are allowed to.</p>
-        <div class="cred-rows">
-          <div class="cred-row"><div class="cred-k">visiting a page</div><div class="cred-v">Your IP address, browser and the page you ask for reach GitHub Pages, which hosts the site and keeps server logs under its own terms.<span class="cred-check basis">basis: legitimate interest (running and securing the site)</span></div></div>
-          <div class="cred-row"><div class="cred-k">your choices</div><div class="cred-v">Your light/dark theme and your cookie choice are stored in your own browser (localStorage). They never leave your device.<span class="cred-check basis">basis: needed for what you asked for</span></div></div>
-          <div class="cred-row"><div class="cred-k">analytics</div><div class="cred-v">Only after "Accept": Google Analytics 4 sets <code>_ga</code> cookies and sends page views to Google. IP addresses are not logged or stored by Google Analytics 4. Google keeps the data for <span class="cred-flag">[check: retention period set in the GA4 property]</span>. Change your mind any time: <button type="button" class="mz-consent-settings" data-consent-open>Cookie settings</button>. A later reject deletes the cookies.<span class="cred-check basis">basis: your consent</span></div></div>
-          <div class="cred-row"><div class="cred-k">agent fritz</div><div class="cred-v">Each question and the conversation so far go to our function on Vercel, region Frankfurt, and from there to the Anthropic API (model Claude Haiku) to write the answer. Our server logs counts (language, page, timing), never the text. Anthropic deletes API inputs and outputs within 30 days, or keeps them up to 2 years if its safety systems flag a conversation. The conversation itself lives in your browser tab (sessionStorage) and is gone when you close it. Your IP address is held briefly in memory to limit abuse and is never written anywhere.<span class="cred-check basis">basis: legitimate interest (answering the question you asked)</span></div></div>
-          <div class="cred-row"><div class="cred-k">scan and contact requests</div><div class="cred-v">What you type (name, company, email, phone, domain) and the chat that led to it are emailed to our mailbox at Proton, and you get a confirmation email. A short version (your details, your first question, the page you were on and your local time) also goes to Nico's phone as a Telegram message, so he sees it straight away. We keep both for six months. If it turns into a working relationship, it becomes part of that and is kept as long as the relationship needs.<span class="cred-check basis">basis: steps you asked for before a contract</span></div></div>
-          <div class="cred-row"><div class="cred-k">live chat with nico</div><div class="cred-v">If Agent Fritz offers to bring Nico into the chat and you say yes, Nico gets a Telegram message with the last few messages of your chat. While he is in, what you type goes to his phone through Telegram, and what he types comes back to you. The messages are held in our store (Upstash, region Frankfurt) only while the chat lasts and are deleted automatically within a day; the Telegram copies follow the same rule as other requests.<span class="cred-check basis">basis: steps you asked for before a contract</span></div></div>
-          <div class="cred-row"><div class="cred-k">contact form</div><div class="cred-v">Name, email and message are sent through a Vercel function to our Proton mailbox. Kept for six months, same rule as above.<span class="cred-check basis">basis: legitimate interest (answering you)</span></div></div>
-          <div class="cred-row"><div class="cred-k">second audience scan</div><div class="cred-v">The scan reads your public web pages, which is business content, not personal data. After a free scan we keep only the report and delete the raw captures. For paying clients we keep the raw captures for as long as the engagement needs them for re-scans.<span class="cred-check basis">basis: steps you asked for before a contract, then the contract</span></div></div>
-          <div class="cred-row"><div class="cred-k">booking a call</div><div class="cred-v">If Agent Fritz books a call for you, your name, email address and the time go into Nico's Google Calendar (Google Workspace), which sends you the invite with a Google Meet link. Nico's phone gets a short Telegram message about it, as with other requests. The appointment stays in the calendar as the record of the call.<span class="cred-check basis">basis: steps you asked for before a contract</span></div></div>
-        </div>
-      </section>
-
-      <section class="cred-block">
-        <p class="cred-label">~/processors</p>
-        <p class="cred-note">Every company that processes personal data for this site, and where.</p>
-        <div class="cred-rows">
-          <div class="cred-row"><div class="cred-k">GitHub</div><div class="cred-v">Hosting (GitHub Pages). GitHub Inc., United States.</div></div>
-          <div class="cred-row"><div class="cred-k">Vercel</div><div class="cred-v">Functions for Agent Fritz and the contact form, run in Frankfurt. Vercel Inc., United States.</div></div>
-          <div class="cred-row"><div class="cred-k">Anthropic</div><div class="cred-v">The model behind Agent Fritz. Anthropic PBC, United States.</div></div>
-          <div class="cred-row"><div class="cred-k">Proton</div><div class="cred-v">Email. Proton AG, Switzerland.</div></div>
-          <div class="cred-row"><div class="cred-k">Upstash</div><div class="cred-v">Short-lived storage for live chats with Nico, deleted within a day. Upstash Inc., United States; data stored in Frankfurt (EU).</div></div>
-          <div class="cred-row"><div class="cred-k">Telegram</div><div class="cred-v">Notifications of scan and contact requests, and live chats, on Nico's phone. Telegram Messenger Inc., British Virgin Islands; for accounts registered in the EEA, Telegram stores the data in the Netherlands.</div></div>
-          <div class="cred-row"><div class="cred-k">Google</div><div class="cred-v">Calendar and Google Meet for calls booked through Agent Fritz (Google Workspace), and analytics, only with your consent. Google Ireland Ltd, with processing in the United States.</div></div>
-        </div>
-        <p class="cred-note">Transfers outside the EU rely on the EU-US Data Privacy Framework or the European Commission's standard contractual clauses, and for Switzerland on the Commission's adequacy decision. Telegram is the exception: it offers no data processing agreement for messages sent through a bot. That is why we use it only here, for Nico's own notifications, and never in what we build for clients. <span class="cred-flag">[check: each processor's DPA and transfer basis]</span></p>
-      </section>
-
-      <section class="cred-block">
-        <p class="cred-label">~/your-rights</p>
-        <div class="cred-rows">
-          <div class="cred-row"><div class="cred-k">ask</div><div class="cred-v">You can ask what we hold about you, have it corrected or deleted, restrict or object to its use, or get it in a portable format. Email <a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a>; we answer within one month.</div></div>
-          <div class="cred-row"><div class="cred-k">withdraw</div><div class="cred-v">Consent for analytics can be withdrawn at any time with the Cookie settings button above, reachable from the Privacy link in every footer.</div></div>
-          <div class="cred-row"><div class="cred-k">complain</div><div class="cred-v">To the Lithuanian State Data Protection Inspectorate (Valstybinė duomenų apsaugos inspekcija), L. Sapiegos g. 17, 10312 Vilnius, <a href="https://vdai.lrv.lt/" rel="noopener">vdai.lrv.lt</a>, or to the authority where you live.</div></div>
-          <div class="cred-row"><div class="cred-k">no automation</div><div class="cred-v">Nothing on this site makes decisions about you. Agent Fritz answers questions; a person reads every request.</div></div>
-        </div>
-      </section>
-
-      <section class="cred-block">
-        <p class="cred-label">~/changes</p>
-        <p class="cred-note">Last updated 30 September 2026. When a flow changes, this page changes with it, and the date moves.</p>
-      </section>
-
-      <div class="page-links">
-        <a class="btn primary" href="credentials.html">credentials &rarr;</a>
-        <a class="btn ghost" href="about.html">about</a>
-      </div>
-    </div>
-  </article>
 </main>
 
-<footer>
-  <div class="social-links" aria-label="Social links">
-    <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-      <span class="sr-only">github</span>
-    </a>
-    <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg>
-      <span class="sr-only">linkedin</span>
-    </a>
-    <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg>
-      <span class="sr-only">X</span>
-    </a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai since 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="legal/terms-of-business.pdf">terms</a></li>
+        <li><a href="credentials.html">credentials</a></li>
+        <li><a href="status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign by Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
   </div>
-  <div class="footer-meta"><span>&copy; 2026 Nico Meihuizen</span><!-- <span>European Union</span> --></div>
 </footer>
+<script src="scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>

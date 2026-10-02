@@ -57,7 +57,17 @@
   var STATUS_URL = 'https://website-contact-function-4efp.vercel.app/api/status';
   var fritzEl = document.querySelector('[data-status-fritz]');
   var allEl = document.querySelector('[data-status-all]');
-  if (fritzEl || allEl) {
+  var banner = document.querySelector('[data-status-banner]');
+  function setBanner(state, title, sub) {
+    if (!banner) { return; }
+    banner.setAttribute('data-state', state);
+    var light = banner.querySelector('.st-light');
+    if (light) { light.className = 'st-light st-' + state + (state === 'green' ? ' pulse' : ''); }
+    var t = banner.querySelector('[data-status-title]'), s = banner.querySelector('[data-status-sub]');
+    if (t) { t.textContent = title; }
+    if (s) { s.textContent = sub; }
+  }
+  if (fritzEl || allEl || banner) {
     fetch(STATUS_URL).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
       .then(function (d) {
         var services = (d && d.services) || [];
@@ -70,21 +80,54 @@
           var bad = services.filter(function (s) { return s.light !== 'green'; }).length;
           allEl.textContent = bad ? bad + ' service' + (bad > 1 ? 's' : '') + ' degraded →' : 'all systems green →';
         }
-      }).catch(function () { /* keep the neutral wording */ });
+        if (services.length) {
+          var down = services.filter(function (s) { return s.light === 'red'; }).length;
+          var slow = services.filter(function (s) { return s.light !== 'green' && s.light !== 'red'; }).length;
+          if (!down && !slow) { setBanner('green', 'All services operational', 'Every service green. Details per service and vendor below.'); }
+          else { setBanner(down ? 'red' : 'amber', (down + slow) + ' of ' + services.length + ' services affected', 'See which one below, and whether the vendor it runs on reports a problem.'); }
+        }
+      }).catch(function () {
+        setBanner('unknown', 'Our monitor cannot be reached', 'The vendor pages below still work.');
+      });
   }
 
   // ---- 3. hero chat replay --------------------------------------------------
   var chat = document.querySelector('[data-chat]');
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (chat && !reduced) {
-    var steps = [
+    // The script is rebuilt at the start of every replay, because the last
+    // scene depends on the clock: Fritz only brings Nico into the chat when
+    // the office is open. Outside hours he does what he really does then.
+    var base = [
       { k: 'user', t: 'Is this a real company?' },
       { k: 'tool', t: '↳ read_page  credentials.html' },
       { k: 'fritz', t: 'Yes. MB Meihuizen AI, company code 308157412, a Lithuanian legal entity. You can check it yourself at Registrų centras.', src: 'credentials.html' },
       { k: 'user', t: 'What would Fritz cost for our site?' },
       { k: 'tool', t: '↳ read_page  projects/agent-fritz.html' },
-      { k: 'fritz', price: true, src: 'agent-fritz.html' }
+      { k: 'fritz', price: true, src: 'agent-fritz.html' },
+      { k: 'user', t: 'Can I talk to Nico directly?' }
     ];
+    var live = [
+      { k: 'fritz', t: 'He is in. Want me to bring him into this chat?' },
+      { k: 'user', t: 'yes please' },
+      { k: 'ok', t: '✓ Nico’s phone is ringing' },
+      { k: 'nico', t: 'Hi, Nico here. Happy to talk numbers. @Fritz share the Fritz product sheet.' },
+      { k: 'tool', t: '↳ share_document  agent-fritz-product-sheet.pdf' },
+      { k: 'ok', t: '✓ product sheet shared · floor back to Nico' }
+    ];
+    var later = [
+      { k: 'fritz', closed: true },
+      { k: 'ok', t: '✓ request sent to Nico’s phone, with this chat' }
+    ];
+    var steps = base;
+    function script() {
+      var o = window.mhOffice && window.mhOffice.now();
+      steps = base.concat(o && !o.open ? later : live);
+    }
+    function closedLine() {
+      var o = window.mhOffice && window.mhOffice.now();
+      return 'It is ' + (o ? o.time : 'after hours') + ' in Kaunas, so Nico is off. I am sending your question and this chat to his phone now; you get a ' + replyText(false) + '.';
+    }
     function priceLine() {
       var o = window.mhOffice && window.mhOffice.now();
       var base = 'Priced per case: Fritz is a custom build, not a wrapper. ';
@@ -96,7 +139,14 @@
     function node(s) {
       var d = document.createElement('div');
       d.className = 'msg msg-' + s.k;
-      d.textContent = s.price ? priceLine() : s.t;
+      if (s.k === 'nico') {
+        var who = document.createElement('small');
+        who.textContent = 'nico · from his phone';
+        d.appendChild(who);
+        d.appendChild(document.createTextNode(s.t));
+      } else {
+        d.textContent = s.price ? priceLine() : (s.closed ? closedLine() : s.t);
+      }
       if (s.src) {
         var src = document.createElement('div');
         src.className = 'msg-src';
@@ -116,16 +166,16 @@
     function next() {
       if (typing.parentNode) { typing.parentNode.removeChild(typing); }
       if (i >= steps.length) {
-        setTimeout(function () { chat.textContent = ''; i = 0; next(); }, 6000);
+        setTimeout(function () { chat.textContent = ''; i = 0; script(); next(); }, 7000);
         return;
       }
       chat.appendChild(node(steps[i]));
       i += 1;
-      if (i < steps.length && steps[i].k !== 'user') { chat.appendChild(typing); }
+      if (i < steps.length && (steps[i].k === 'fritz' || steps[i].k === 'tool')) { chat.appendChild(typing); }
       setTimeout(next, steps[i - 1].k === 'fritz' ? 3200 : 1500);
     }
     // Let the static first exchange be read before the replay starts over.
-    setTimeout(function () { chat.textContent = ''; next(); }, 5000);
+    setTimeout(function () { chat.textContent = ''; script(); next(); }, 5000);
   }
 
   // ---- 4. hero box hands over to the real Fritz -----------------------------
