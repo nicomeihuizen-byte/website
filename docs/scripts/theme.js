@@ -1,15 +1,16 @@
 /*
- * The site keeps office hours, and so does its light.
+ * The site keeps Kaunas time, and so does its light.
  *
- * Open (Monday to Friday, 10:00 to 18:00 Kaunas time, not on a Lithuanian
- * public holiday): light. Closed: dark. There is no toggle; the theme says
- * whether Nico is at work, the way a shop window does.
+ * Dark from 00:00 to 07:00 Kaunas time, light the rest of the day, every
+ * day. There is no toggle. Office hours (Monday to Friday, 10:00 to 18:00,
+ * not on a Lithuanian public holiday) still drive the office dot and the
+ * reply times; they no longer decide the theme.
  *
  * This tag sits in <head> without defer because it has to run before the
  * first paint: the CSS is light by default, and a closed office would
  * otherwise flash white first. It is small and same-origin, so the cost of
  * blocking is a cache hit. It checks again every 30 seconds, so a page left
- * open at 18:00 goes dark by itself.
+ * open at midnight goes dark by itself.
  *
  * The calendar mirrors lib/fritz-time.js in the contact-form repo, and the
  * Kaunas clock in scripts/site.js reads it from here (window.mhOffice):
@@ -42,7 +43,10 @@
     });
   } catch (e) { fmt = null; }
 
-  // { time: "18:07", open: false } for this moment in Kaunas, or null when
+  // Dark before this minute of the day, Kaunas time (07:00).
+  var NIGHT_END = 7 * 60;
+
+  // { time: "18:07", open: false, night: false } for this moment in Kaunas, or null when
   // the browser cannot tell (then the page stays light, its default).
   function now() {
     if (!fmt) { return null; }
@@ -52,7 +56,7 @@
     var holiday = FIXED.indexOf(md) !== -1 || md === easterMonday(Number(p.year));
     var weekend = p.weekday === 'Sat' || p.weekday === 'Sun';
     var minutes = Number(p.hour) * 60 + Number(p.minute);
-    return { time: p.hour + ':' + p.minute, open: !holiday && !weekend && minutes >= OPEN && minutes < CLOSE };
+    return { time: p.hour + ':' + p.minute, open: !holiday && !weekend && minutes >= OPEN && minutes < CLOSE, night: minutes < NIGHT_END };
   }
   window.mhOffice = { now: now };
 
@@ -69,7 +73,7 @@
 
   function apply() {
     var o = now();
-    var next = o && !o.open ? 'dark' : 'light';
+    var next = o && o.night ? 'dark' : 'light';
     if (root.getAttribute('data-theme') === next) { return; }
     root.setAttribute('data-theme', next);
     if (document.readyState !== 'loading') {

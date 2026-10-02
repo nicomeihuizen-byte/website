@@ -879,7 +879,13 @@
         // page's: a Dutch visitor on an English page gets a Dutch form.
         pendingForm = data.type === 'contact' ? 'contact' : 'scan';
         formT = T[data.lang] || t;
-        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? ((formT.contactIntros || {})[data.reason] || formT.contactIntro) : formT.scanIntro });
+        // When Fritz already said something himself in this answer (often
+        // that it is not on the site), the long fixed intro would say it a
+        // second time. Then only the short ask for name and contact follows.
+        let intros = formT.contactIntros || {};
+        let wrote = bot.segs.some(function (s) { return s.kind === 'text' && String(s.text || '').trim(); });
+        let intro = wrote && intros.via_nico ? intros.via_nico : (intros[data.reason] || formT.contactIntro);
+        bot.segs.push({ kind: 'text', text: pendingForm === 'contact' ? intro : formT.scanIntro });
       } else if (event === 'doc') {
         if (typeof data.url === 'string' && DOC_RE.test(data.url)) {
           bot.docs.push({ title: String(data.title || '').slice(0, 120), url: data.url, type: String(data.type || '').slice(0, 8) });
