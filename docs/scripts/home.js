@@ -168,4 +168,30 @@
       }
     }, 1100);
   }
+  // ---- 6. demo tabs (product pages) ------------------------------------------
+  // [data-tabs] holds role="tab" buttons and role="tabpanel" panels. Classes
+  // and the hidden attribute only: project pages allow no inline styles.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tabs]'), function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var p = document.getElementById(t.getAttribute('aria-controls'));
+        if (p) { p.hidden = !on; }
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1;
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!n) { return; }
+        e.preventDefault();
+        var next = tabs[(i + n + tabs.length) % tabs.length];
+        select(next); next.focus();
+      });
+    });
+  });
 })();

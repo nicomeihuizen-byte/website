@@ -73,270 +73,212 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0E121A">
-<link rel="stylesheet" href="project-pages.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../styles/site.css">
 <script src="../scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <a class="brand" href="/"><span class="brand-dot"></span> meihuizen.ai</a>
-      <a class="back-link" href="/builds.html">&lt; builds</a>
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai home"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">home</a></li>
+        <li><a href="second-audience.html" aria-current="page">products</a></li>
+        <li><a href="../builds.html">builds</a></li>
+        <li><a href="../about.html">about</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Site language">
+        <a href="ai-sales-deal-intelligence.html" lang="en" hreflang="en" aria-current="true">EN</a>
+        <a href="../lt/projects/ai-sales-deal-intelligence.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+      <button type="button" class="ask-pill" data-fritz-ask="Hi Fritz, what can you do for me?">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="9" r="2.2"/><circle cx="10" cy="5.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"/></svg>~/ask fritz</button>
     </div>
   </div>
 </header>
-<a class="repo-dock" href="https://github.com/nicomeihuizen-byte/sales-intel" target="_blank" rel="noopener" aria-label="Open the Five repository on GitHub">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-  <span class="repo-dock-label"><span class="prompt" aria-hidden="true">$</span> open the repo</span>
-</a>
-<main class="page-wrap">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span><!-- <span class="label">~/projects/sales-intelligence</span> -->
-      <nav class="lang-switch" aria-label="Site language">
-        <a href="ai-sales-deal-intelligence.html" class="lang-flag" lang="en" hreflang="en" title="English" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">English (current page)</span>
-        </a>
-        <a href="../lt/projects/ai-sales-deal-intelligence.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">View this page in Lithuanian</span>
-        </a>
-</nav>
-    </div>
-    <div class="terminal-body">
-      <!-- <div class="project-kicker">04_project / AI / SaaS</div> -->
-      <div class="five-lockup"><svg viewBox="0 0 96 96" width="44" height="44" aria-hidden="true" focusable="false"><rect x="4" y="4" width="88" height="88" rx="20" fill="#5fbf8e"/><rect x="24" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="43.5" y="26" width="9" height="44" rx="2.25" fill="#10121a"/><rect x="63" y="26" width="9" height="44" rx="2.25" fill="#10121a"/></svg><div><h1>Five</h1><p class="five-lockup-sub">Deal Management</p></div></div>
-      <p class="project-summary">Five deals a week. You will know when one goes quiet. Deal management for one to five sellers, built by someone who carried a bag for fourteen years.</p>
-      <div class="project-figures">
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="fig1t">
-          <title id="fig1t">A long company list on the left, five slots on the right</title>
-          <g fill="#565b6e">
-          <rect x="34" y="46" width="96" height="11" rx="3" opacity="0.85"/>
-          <rect x="34" y="65" width="96" height="11" rx="3" opacity="0.78"/>
-          <rect x="34" y="84" width="96" height="11" rx="3" opacity="0.71"/>
-          <rect x="34" y="103" width="96" height="11" rx="3" opacity="0.64"/>
-          <rect x="34" y="122" width="96" height="11" rx="3" opacity="0.57"/>
-          <rect x="34" y="141" width="96" height="11" rx="3" opacity="0.5"/>
-          <rect x="34" y="160" width="96" height="11" rx="3" opacity="0.43"/>
-          <rect x="34" y="179" width="96" height="11" rx="3" opacity="0.36"/>
-          <rect x="34" y="198" width="96" height="11" rx="3" opacity="0.29"/>
-          <rect x="34" y="217" width="96" height="11" rx="3" opacity="0.22"/>
-          <rect x="34" y="236" width="96" height="11" rx="3" opacity="0.15"/>
-          </g>
-          <path d="M156 150 H196" stroke="#5fbf8e" stroke-width="2" fill="none"/>
-          <path d="M188 143 L196 150 L188 157" stroke="#5fbf8e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="222" y="76" width="144" height="26" rx="5" fill="#5fbf8e"/>
-          <rect x="222" y="112" width="144" height="26" rx="5" fill="#5fbf8e"/>
-          <rect x="222" y="148" width="144" height="26" rx="5" fill="#5fbf8e"/>
-          <rect x="223" y="185" width="142" height="24" rx="4" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <rect x="223" y="221" width="142" height="24" rx="4" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          </svg>
-          <figcaption><strong>Pick five</strong><span>Everything you have ever spoken to on one side. Five on the desk, because five is a week's work.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="fig2t">
-          <title id="fig2t">Short notes landing at intervals along a timeline</title>
-          <path d="M34 214 H366" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g stroke="#565b6e" stroke-width="1.5">
-          <path d="M62 214 V178"/><path d="M112 214 V154"/><path d="M158 214 V190"/>
-          <path d="M214 214 V166"/><path d="M268 214 V142"/><path d="M322 214 V182"/>
-          </g>
-          <g fill="#5fbf8e">
-          <circle cx="62" cy="214" r="5"/><circle cx="112" cy="214" r="5"/><circle cx="158" cy="214" r="5"/>
-          <circle cx="214" cy="214" r="5"/><circle cx="268" cy="214" r="5"/><circle cx="322" cy="214" r="5"/>
-          </g>
-          <g fill="#8b90a3">
-          <rect x="40" y="164" width="44" height="9" rx="4.5"/>
-          <rect x="88" y="140" width="48" height="9" rx="4.5"/>
-          <rect x="138" y="176" width="40" height="9" rx="4.5"/>
-          <rect x="190" y="152" width="48" height="9" rx="4.5"/>
-          <rect x="244" y="128" width="48" height="9" rx="4.5"/>
-          <rect x="300" y="168" width="44" height="9" rx="4.5"/>
-          </g>
-          <g fill="#565b6e" opacity="0.55">
-          <rect x="40" y="178" width="30" height="6" rx="3"/>
-          <rect x="88" y="154" width="34" height="6" rx="3"/>
-          <rect x="190" y="166" width="30" height="6" rx="3"/>
-          <rect x="244" y="142" width="36" height="6" rx="3"/>
-          </g>
-          </svg>
-          <figcaption><strong>Write what happened</strong><span>One line after each call. That is the whole input, and it is the only thing asked of you.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="fig3t">
-          <title id="fig3t">Notes stop, a long gap opens, and a verdict is returned</title>
-          <path d="M34 126 H366" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g stroke="#565b6e" stroke-width="1.5">
-          <path d="M58 126 V96"/><path d="M96 126 V80"/><path d="M138 126 V100"/><path d="M172 126 V86"/>
-          </g>
-          <g fill="#5fbf8e">
-          <circle cx="58" cy="126" r="5"/><circle cx="96" cy="126" r="5"/>
-          <circle cx="138" cy="126" r="5"/><circle cx="172" cy="126" r="5"/>
-          </g>
-          <g fill="#8b90a3">
-          <rect x="38" y="82" width="40" height="8" rx="4"/>
-          <rect x="76" y="66" width="42" height="8" rx="4"/>
-          <rect x="118" y="86" width="38" height="8" rx="4"/>
-          <rect x="152" y="72" width="42" height="8" rx="4"/>
-          </g>
-          <path d="M172 148 H352" stroke="#d9a441" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
-          <path d="M172 142 V154" stroke="#d9a441" stroke-width="2"/>
-          <path d="M352 142 V154" stroke="#d9a441" stroke-width="2"/>
-          <rect x="34" y="188" width="332" height="82" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <rect x="52" y="208" width="58" height="12" rx="6" fill="#d9a441"/>
-          <g fill="#8b90a3" opacity="0.8">
-          <rect x="52" y="234" width="296" height="8" rx="4"/>
-          <rect x="52" y="250" width="228" height="8" rx="4"/>
-          </g>
-          </svg>
-          <figcaption><strong>Get told what is dying</strong><span>It reads the gaps and the wording, and names the deal that stopped moving, and why.</span></figcaption>
-        </figure>
-      </div>
-      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
-        <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
-        <img alt="">
-      </div>
-      <div class="project-grid">
-        <section class="project-copy">
-          <h2 class="section-label">// overview</h2>
-          <p>You already own a CRM. Be honest about the last time anyone filled it in. Five Deal Management is not that: five slots, because five is a week's work, and one line written after each call. It reads the history and tells you which deal has stopped moving and why, which is what a good sales manager does in a pipeline review and what most teams this size have never had. Built by someone who carried a bag for fourteen years at IBM, Oracle and Minitab, and run as your own instance in Frankfurt.</p>
-          <blockquote class="verdict">
-            <p>"Both contacts gave a positive buying signal and want implementation, but the deal is blocked on an administrative gap: no entity, VAT or company number, so the local office cannot raise a purchase order. There is a plan, a rep flying out on the 26th, but that is over three weeks away with no interim step."</p>
-            <cite>A real verdict, anonymised. Not a summary of the notes.</cite>
-          </blockquote>
-          <table class="compare">
-            <caption>// how it differs</caption>
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col" class="is-five">Five</th>
-                <th scope="col">Pipedrive</th>
-                <th scope="col">Salesforce</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">On your desk</th>
-                <td class="is-five" data-label="Five">Five prospects, capped</td>
-                <td data-label="Pipedrive">Everything you own</td>
-                <td data-label="Salesforce">Everything you own</td>
-              </tr>
-              <tr>
-                <th scope="row">What it hands you</th>
-                <td class="is-five" data-label="Five">A verdict on one deal, in prose, with its reasoning</td>
-                <td data-label="Pipedrive">Fields and a pipeline view</td>
-                <td data-label="Salesforce">Scores and dashboards</td>
-              </tr>
-              <tr>
-                <th scope="row">What the AI costs</th>
-                <td class="is-five" data-label="Five">Included, nothing per action</td>
-                <td data-label="Pipedrive">Bundled into the seat</td>
-                <td data-label="Salesforce">Per action, in credits</td>
-              </tr>
-              <tr>
-                <th scope="row">Where notes sit</th>
-                <td class="is-five" data-label="Five">Your own database, in Frankfurt</td>
-                <td data-label="Pipedrive">Their cloud</td>
-                <td data-label="Salesforce">Their cloud</td>
-              </tr>
-              <tr>
-                <th scope="row">Getting data out</th>
-                <td class="is-five" data-label="Five">Your own Postgres. Power BI and Excel connect straight to it</td>
-                <td data-label="Pipedrive">Exports and an API</td>
-                <td data-label="Salesforce">Exports and an API</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="compare-admission"><strong>Everything else on their lists, they have and this does not.</strong> Forecasting, marketing, territories, an app marketplace. Reporting is absent on purpose: the database is yours on Team and Private, and Power BI and Excel read Postgres natively, which beats a dashboard I would have to build twice.</p>
-        </section>
-        <section>
-          <h2 class="section-label">// stack</h2>
-          <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Row Level Security</span><span>Anthropic API</span><span>Structured tool use</span><span>Tailwind CSS</span></div>
-          <a class="doc-download" href="https://sales-intel-rho.vercel.app/api/demo-login" target="_blank" rel="noopener noreferrer">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15 3h6v6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M10 14 21 3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="info">
-              <h3>Live demo</h3>
-              <p>Opens straight inside a company with a year of notes behind it. Press Analyze and read what it says about the deal.</p>
-            </div>
-            <span class="tag">LIVE</span>
-          </a>
-          <a class="doc-download" href="../images/project_four/five-deal-management-product-sheet.pdf" download rel="noopener" aria-label="Download the Five product sheet as a PDF">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Product sheet</h3>
-              <p>Four pages. What it does, how the analysis actually works, the technical specification and the pricing.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-        </section>
-      </div>
-      <section class="pricing" aria-labelledby="pricing-heading">
-        <h2 class="section-label" id="pricing-heading">// pricing</h2>
-        <div class="pricing-grid">
-          <div class="pricing-tier">
-            <h3>Solo</h3>
-            <p class="pricing-price">&euro;39 <span>/ month</span></p>
-            <p class="pricing-seats">one seller</p>
-            <ul>
-              <li>Shared instance in Frankfurt, your rows isolated at the database</li>
-              <li>Unlimited analyses and drafts</li>
-              <li>Light and dark as standard</li>
-            </ul>
-          </div>
-          <div class="pricing-tier">
-            <h3>Team</h3>
-            <p class="pricing-price">&euro;129 <span>/ month</span></p>
-            <p class="pricing-seats">up to three sellers</p>
-            <ul>
-              <li>Your own database, on shared infrastructure in Frankfurt</li>
-              <li>Unlimited analyses and drafts</li>
-              <li>Everything in Solo</li>
-              <li>Read-only SQL connection for Power BI and Excel</li>
-            </ul>
-          </div>
-          <div class="pricing-tier is-lead">
-            <h3>Private</h3>
-            <p class="pricing-price">&euro;299 <span>/ month</span></p>
-            <p class="pricing-seats">up to five sellers</p>
-            <ul>
-              <li>Your own instance and your own database, on your own subdomain</li>
-              <li>Unlimited analyses and drafts, or bring your own model key</li>
-              <li>Signed data processing agreement</li>
-              <li>Your brand on request</li>
-              <li>Read-only SQL connection for Power BI and Excel</li>
-            </ul>
-          </div>
-        </div>
-        <p class="pricing-note"><strong>The list stops at five sellers, and that is not an oversight.</strong> There are no roll-up views, no deal ownership and no territories, because a tool built on a cap of five has no business pretending to run a sales floor. Are you bigger than that? Ask anyway, because there are custom options.</p>
-        <p class="pricing-terms">Prices excl. VAT. Pay yearly and get twelve months for ten. Thirty days to try it, because the reading needs a note history before it has anything worth saying. Hosted in Frankfurt by default; Stockholm on request for Nordic customers.</p>
-        <a class="pricing-cta" href="/#contact">$ talk to me about an instance</a>
-      </section>
 
-      <nav class="project-nav" aria-label="Project navigation">
-        <a class="nav-link" href="terminal-portfolio-website.html"><span>&lt;- previous</span><strong>Project two</strong></a>
-        <div class="project-nav-socials">
-          <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg></a>
-          <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg></a>
-        </div>
-        <a class="nav-link next" href="second-audience.html"><span>next -&gt;</span><strong>Project four</strong></a>
-      </nav>
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>products › <b>Five</b></span>
+    <span class="wide" aria-hidden="true">│</span>
+    <span class="wide">from €39 / month</span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">AI / SaaS</span><span class="chip chip-ok">from €39 / month</span></div>
+      <h1 class="h1 h1-p">Five deals a week. <span class="grad">You will know when one goes quiet.</span></h1>
+      <p class="lead lead-p">Deal management for one to five sellers, built by someone who carried a bag for fourteen years at IBM, Oracle and Minitab. Run as your own instance in Frankfurt.</p>
+      <div class="btn-row">
+        <a href="https://sales-intel-rho.vercel.app/api/demo-login" class="btn btn-p" rel="noopener">Open the live demo <span aria-hidden="true">↗</span></a>
+        <a href="#pricing" class="btn btn-g">Pricing</a>
+      </div>
     </div>
-  </article>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>five · this week</span>
+        <div class="tabs" role="tablist" aria-label="Five in two views">
+          <button type="button" class="tab" role="tab" id="t-desk" aria-controls="p-desk" aria-selected="true">your five</button>
+          <button type="button" class="tab" role="tab" id="t-verdict" aria-controls="p-verdict" aria-selected="false">analyze deal 4</button>
+        </div>
+      </div>
+      <div class="panel" id="p-desk" role="tabpanel" aria-labelledby="t-desk">
+        <ol class="desk">
+          <li class="deal"><span class="n">01</span><div><b>Northwind Logistics</b><small>yesterday · pricing call, asked for references</small></div><em>moving</em></li>
+          <li class="deal"><span class="n">02</span><div><b>Halden Medical</b><small>3 days ago · demo booked for Tuesday</small></div><em>moving</em></li>
+          <li class="deal"><span class="n">03</span><div><b>Brackwater Institute</b><small>this week · legal reviewing terms</small></div><em>moving</em></li>
+          <li class="deal quiet"><span class="n">04</span><div><b>Vesta Foods</b><small>23 days ago · waiting on purchase order</small></div><em>gone quiet</em></li>
+          <li class="deal"><span class="n">05</span><div><b>Kestrel Energy</b><small>5 days ago · second stakeholder joined</small></div><em>moving</em></li>
+        </ol>
+        <p class="panel-note">example companies</p>
+      </div>
+      <div class="panel verdict" id="p-verdict" role="tabpanel" aria-labelledby="t-verdict" hidden>
+        <p class="mono"><span class="term-live">▸</span> reading the note history</p>
+        <p class="mono v-label">verdict · stalled</p>
+        <blockquote>"Both contacts gave a positive buying signal and want implementation, but the deal is blocked on an administrative gap: no entity, VAT or company number, so the local office cannot raise a purchase order. There is a plan, a rep flying out on the 26th, but that is over three weeks away with no interim step."</blockquote>
+        <small>a real verdict, anonymised · not a summary of the notes</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0" aria-label="How it works">
+  <div class="three">
+    <div class="card stat-card"><div class="stat-n">5</div><h3>Pick five</h3><p>Everything you have ever spoken to on one side. Five on the desk, because five is a week's work.</p></div>
+    <div class="card stat-card"><div class="stat-n">1 line</div><h3>Write what happened</h3><p>One line after each call. That is the whole input, and the only thing asked of you.</p></div>
+    <div class="card stat-card"><div class="stat-n">why</div><h3>Get told what is dying</h3><p>It reads the gaps and the wording, and names the deal that stopped moving, and why.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap method">
+    <div><p class="idx">~/overview</p><h2 class="h2">You already own a CRM.</h2><p class="body-l">Be honest about the last time anyone filled it in.</p></div>
+    <div>
+      <p class="vision-p">Five is not that. Five slots, because five is a week's work, and one line written after each call. It reads the history and tells you which deal has stopped moving and why.</p>
+      <p class="vision-p cols-gap">That is what a good sales manager does in a pipeline review, and what most teams this size have never had.</p>
+      <p class="claim"><b>Nico runs his own pipeline in it, daily.</b> <span class="muted">The one-line note was designed by someone who hated filling in CRMs for fourteen years.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/how it differs</p><h2 class="h2">Less on purpose.</h2></div>
+      <p class="vision-p">Everything else on their lists, they have and this does not. Forecasting, marketing, territories, an app marketplace. Reporting is absent on purpose: your Postgres, read straight from Power BI and Excel, beats a dashboard built twice.</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr-only">Compared on</span></th><th scope="col" class="c-five">Five</th><th scope="col">Pipedrive</th><th scope="col">Salesforce</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">on your desk</th><td class="c-five">Five prospects, capped</td><td>Everything you own</td><td>Everything you own</td></tr>
+          <tr><th scope="row">what it hands you</th><td class="c-five">A verdict on one deal, in prose, with its reasoning</td><td>Fields and a pipeline view</td><td>Scores and dashboards</td></tr>
+          <tr><th scope="row">what the AI costs</th><td class="c-five">Included, nothing per action</td><td>Bundled into the seat</td><td>Per action, in credits</td></tr>
+          <tr><th scope="row">where notes sit</th><td class="c-five">Your own database, in Frankfurt</td><td>Their cloud</td><td>Their cloud</td></tr>
+          <tr><th scope="row">getting data out</th><td class="c-five">Your own Postgres. Power BI and Excel connect straight to it</td><td>Exports and an API</td><td>Exports and an API</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two">
+    <div class="card"><p class="label">your data</p><h3 class="h3">Your own database, in Frankfurt.</h3><p>Row level security on the shared instance; your own Postgres on Team and Private. Stockholm on request for Nordic customers.</p></div>
+    <div class="card"><p class="label">stack</p><div class="stack"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Row Level Security</span><span class="chip">Anthropic API</span><span class="chip">Structured tool use</span><span class="chip">Tailwind CSS</span></div></div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/pricing</p><h2 class="h2">Three plans. The list stops at five.</h2></div>
+      <p class="vision-p">No roll-up views, no deal ownership, no territories: a tool built on a cap of five has no business pretending to run a sales floor. Bigger than that? Ask anyway, there are custom options.</p>
+    </div>
+    <div class="routes r3">
+      <div class="route"><h3>Solo</h3><div class="big">€39 <small>/ month</small></div><div class="price">one seller</div><hr><ul class="ticks"><li>Shared instance in Frankfurt, your rows isolated at the database</li><li>Unlimited analyses and drafts</li><li>Light and dark as standard</li></ul></div>
+      <div class="route key"><span class="flag">own database</span><h3>Team</h3><div class="big">€129 <small>/ month</small></div><div class="price">up to three sellers</div><hr><ul class="ticks"><li>Your own database, on shared infrastructure in Frankfurt</li><li>Unlimited analyses and drafts</li><li>Everything in Solo</li><li>Read-only SQL for Power BI and Excel</li></ul></div>
+      <div class="route"><h3>Private</h3><div class="big">€299 <small>/ month</small></div><div class="price">up to five sellers</div><hr><ul class="ticks"><li>Your own instance and database, on your own subdomain</li><li>Unlimited analyses, or bring your own model key</li><li>Signed data processing agreement</li><li>Your brand on request</li><li>Read-only SQL for Power BI and Excel</li></ul></div>
+    </div>
+    <p class="fine">Prices excl. VAT. Pay yearly, get twelve months for ten. Thirty days to try it, because the reading needs a note history before it has anything worth saying.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap method">
+    <div><p class="idx">~/questions buyers ask</p><h2 class="h2">Asked by sellers.</h2><p class="body-l">Fritz knows this page too, if you'd rather ask him.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>Why only five?</summary><p>Because five is a week's work. Everything you have ever spoken to stays on one side; five sit on the desk. It is a choice for focus.</p></details>
+      <details class="qa"><summary>What do I have to type?</summary><p>One line after each call, saying what happened. That is the whole input.</p></details>
+      <details class="qa"><summary>Does the AI cost extra?</summary><p>No. Analyses and drafts are unlimited and included. On Private you can bring your own model key.</p></details>
+      <details class="qa"><summary>Where is my data, and can I get it out?</summary><p>In Frankfurt by default, Stockholm on request. On Team and Private it is your own Postgres, and Power BI and Excel connect straight to it.</p></details>
+      <details class="qa"><summary>We are bigger than five sellers.</summary><p>The plans stop at five on purpose. Ask anyway: there are custom options.</p></details>
+      <details class="qa"><summary>Can I try it first?</summary><p>Thirty days. The reading needs a note history before it has anything worth saying.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Try it before you read about it.</h2>
+  <div class="two">
+    <a class="card dl doc-download" href="https://sales-intel-rho.vercel.app/api/demo-login" rel="noopener" aria-label="Live demo"><span class="chip tag chip-ok">LIVE</span><h3>Live demo</h3><p>Opens inside a company with a year of notes behind it. Press Analyze and read what it says about the deal.</p></a>
+    <a class="card dl doc-download" href="../images/project_four/five-deal-management-product-sheet.pdf" download aria-label="Download Product sheet as a PDF"><span class="chip tag">PDF</span><h3>Product sheet</h3><p>Four pages: what it does, how the analysis works, the technical specification and the pricing.</p></a>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/your instance</p>
+        <h2>Which of your deals<br><span class="grad">went quiet?</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html#write" class="btn btn-p btn-wide">Talk to Nico about an instance <span aria-hidden="true">→</span></a>
+        <a href="https://sales-intel-rho.vercel.app/api/demo-login" class="btn btn-g btn-wide" rel="noopener">Open the live demo <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>04 / 04</span></footer>
-<script src="scripts/project-lightbox.js" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai since 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../legal/terms-of-business.pdf">terms</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>
