@@ -37,7 +37,7 @@
   "url": "https://www.meihuizen.ai/projects/off-grid-ai-homestead.html",
   "sameAs": "https://github.com/nicomeihuizen-byte/AI-Homestead",
   "datePublished": "2026-01-01",
-  "dateModified": "2026-08-27"
+  "dateModified": "2026-10-02"
 }
 </script>
 <script type="application/ld+json">
@@ -75,55 +75,67 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0E121A">
-<link rel="stylesheet" href="project-pages.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../styles/site.css">
 <script src="../scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <a class="brand" href="/"><span class="brand-dot"></span> meihuizen.ai</a>
-      <a class="back-link" href="/builds.html">&lt; builds</a>
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai home"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">home</a></li>
+        <li><a href="../builds.html" aria-current="page">builds</a></li>
+        <li><a href="../about.html">about</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Site language">
+        <a href="off-grid-ai-homestead.html" lang="en" hreflang="en" aria-current="true">EN</a>
+        <a href="../lt/projects/off-grid-ai-homestead.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+      <button type="button" class="ask-pill" data-fritz-ask="Hi Fritz, what can you do for me?">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="9" r="2.2"/><circle cx="10" cy="5.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"/></svg>~/ask fritz</button>
     </div>
   </div>
 </header>
-<a class="repo-dock" href="https://github.com/nicomeihuizen-byte/AI-Homestead" target="_blank" rel="noopener" aria-label="Open the One Acre, Zero Dependency repository on GitHub">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-  <span class="repo-dock-label"><span class="prompt" aria-hidden="true">$</span> open the repo</span>
-</a>
-<main class="page-wrap">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
-      <nav class="lang-switch" aria-label="Site language">
-        <a href="off-grid-ai-homestead.html" class="lang-flag" lang="en" hreflang="en" title="English" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">English (current page)</span>
-        </a>
-        <a href="../lt/projects/off-grid-ai-homestead.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">View this page in Lithuanian</span>
-        </a>
-</nav>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>builds › <b>One Acre, Zero Dependency</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">AI / hardware</span><span class="chip chip-warn">phase 0 · the plan is built, the farm is not</span></div>
+      <h1 class="h1 h1-p">One Acre, <span class="grad">Zero Dependency.</span></h1>
+      <p class="lead lead-p">Off-grid, AI-driven farming on two plots 2,256 km apart: Prora through summer, Castelo Branco through winter. One question: how much of a small farm's daily decisions can genuinely off-grid AI handle, from sensor to scheduler?</p>
+      <div class="btn-row">
+        <a href="https://github.com/nicomeihuizen-byte/AI-Homestead" class="btn btn-p" rel="noopener">Open the repo <span aria-hidden="true">→</span></a>
+        <a href="../images/project_two/one-acre-brief.pdf" class="btn btn-g" download>Project brief (PDF)</a>
+      </div>
     </div>
-    <div class="terminal-body">
-      <!-- <div class="project-kicker">02_project / full-stack</div> -->
-      <h1>One Acre, Zero Dependency</h1>
-      <p class="project-summary">Off-grid, AI-driven farming on two plots 2,256 km apart: Prora through summer, Castelo Branco through winter.</p>
-      <p class="project-summary">A solar-powered field module (Birdbox) collects soil and local weather data. Through the Open-Meteo historical archive API (2006-2026) we bring in twenty years of regional weather history. Eurostat Agriculture Statistics adds regional yield figures, coarse ones though: annual, per hectare and per region, not per bed. The Thun calendar supplies a planting and harvesting calendar based on the position of the moon. This project computes it correctly and tests it, instead of assuming it.</p>
-      <p class="project-summary">The calculations run in Python. A locally running model (ML/LLM) lays the results side by side and predicts which vegetables and crops give the best yield per planting, when to sow them, and which rotations work best on a small field of 4,000 m&sup2;.</p>
-      <p class="project-summary">The aim of this project is to give farmers, hobby growers and families something to hold on to, so they can grow organically at small and large scale, responsibly and successfully, on modern technique and age-old concepts that protect the earth.</p>
-      <p class="project-status">status: phase 0. Nothing is built yet. The plan is.</p>
-      <figure class="project-figure project-figure-hero">
-        <a href="../images/project_two/repo/architecture.svg">
-          <img src="../images/project_two/repo/architecture.svg" alt="System architecture: a Pico 2 W field node sending readings over BLE or LoRa to a Python stack on a laptop that ingests, stores, models and schedules" width="940" height="520">
-        </a>
-        <figcaption>From sensor to scheduler. Storage is the seam.</figcaption>
-      </figure>
-      <div class="project-figures">
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="oa1t">
+    <div>
+      <figure class="project-figure"><a href="../images/project_two/repo/architecture.svg"><img src="../images/project_two/repo/architecture.svg" alt="System architecture: a Pico 2 W field node sending readings over BLE or LoRa to a Python stack on a laptop that ingests, stores, models and schedules" width="940" height="520"></a><figcaption>From sensor to scheduler. Storage is the seam.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0" aria-label="How it works">
+  <div class="three">
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa1t">
           <title id="oa1t">Two plots covering opposite halves of the year, so one is always growing</title>
           <g fill="#565b6e" opacity="0.35">
           <rect x="30" y="96" width="340" height="44" rx="6"/>
@@ -147,11 +159,8 @@
           <rect x="50" y="241" width="86" height="5" rx="2.5"/>
           <rect x="50" y="265" width="118" height="5" rx="2.5"/>
           </g>
-          </svg>
-          <figcaption><strong>Two plots, one season</strong><span>Prora runs through the summer, Castelo Branco through the winter. Between them there is never a month with nothing growing.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="oa2t">
+          </svg><h3>Two plots, one season</h3><p>Prora runs through the summer, Castelo Branco through the winter. Between them there is never a month with nothing growing.</p></div>
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa2t">
           <title id="oa2t">Sun to sensor to laptop to schedule, with nothing leaving the site</title>
           <circle cx="58" cy="76" r="18" fill="none" stroke="#d9a441" stroke-width="2"/>
           <g stroke="#d9a441" stroke-width="2" stroke-linecap="round">
@@ -179,11 +188,8 @@
           <g stroke="#d9a441" stroke-width="2.5" stroke-linecap="round">
           <path d="M180 268 L196 284"/><path d="M196 268 L180 284"/>
           </g>
-          </svg>
-          <figcaption><strong>Nothing leaves the acre</strong><span>Sun to sensor to laptop to schedule. The model runs locally, which is the only way the off-grid claim survives contact with a bill.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="oa3t">
+          </svg><h3>Nothing leaves the acre</h3><p>Sun to sensor to laptop to schedule. The model runs locally, which is the only way the off-grid claim survives contact with a bill.</p></div>
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa3t">
           <title id="oa3t">Three proposals from a model, filtered by rules, two accepted and one rejected</title>
           <rect x="24" y="112" width="76" height="76" rx="10" fill="none" stroke="#5fa8d3" stroke-width="2"/>
           <g fill="#5fa8d3" opacity="0.8">
@@ -211,184 +217,153 @@
           <rect x="276" y="134" width="96" height="32" rx="7"/>
           </g>
           <rect x="276" y="206" width="96" height="32" rx="7" fill="none" stroke="#d9a441" stroke-width="2" opacity="0.6"/>
-          </svg>
-          <figcaption><strong>The model proposes, Python disposes</strong><span>Every suggestion passes a deterministic rule set before it becomes a task. What fails the rules is dropped, and the drop is logged.</span></figcaption>
-        </figure>
+          </svg><h3>The model proposes, Python disposes</h3><p>Every suggestion passes a deterministic rule set before it becomes a task. What fails the rules is dropped, and the drop is logged.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what it does</p><h2 class="h2">Sensor, history, calendar, model.</h2></div>
+      <div>
+        <p class="vision-p">A solar-powered field module (Birdbox) collects soil and local weather data. The Open-Meteo historical archive adds twenty years of regional weather. Eurostat adds regional yield figures, coarse ones: annual, per hectare, per region, not per bed. The Thun calendar supplies a moon-based planting calendar, which this project computes correctly and tests instead of assuming.</p>
+        <p class="vision-p">The calculations run in Python. A local model lays the results side by side and proposes which crops give the best yield per planting, when to sow, and which rotations work on 4,000 m&sup2;.</p>
+        <p class="vision-p">The aim: something farmers, hobby growers and families can hold on to, to grow organically at any scale, on modern technique and age-old concepts that protect the earth.</p>
       </div>
-      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
-        <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
-        <img alt="">
-      </div>
-      <div class="project-grid">
-        <section class="project-copy">
-          <h2 class="section-label">// overview</h2>
-          <h2>The question</h2>
-          <blockquote class="project-quote">How much of a small farm's daily decision-making can genuinely off-grid AI handle end to end, from sensor to scheduler?</blockquote>
-          <p>That is the whole project. Two plots on opposite sides of Europe, worked in alternation, documented publicly through 2026 and 2027. The full write-up, the ADRs and the data sources are in the repo.</p>
-        </section>
-        <section>
-          <h2 class="section-label">// stack</h2>
-          <div class="stack">
-            <span>Pico 2 W</span><span>MicroPython</span><span>Python 3.11</span><span>SQLite</span><span>skyfield</span><span>LSTM</span><span>Ollama</span><span>BLE / LoRa</span><span>DWD / IPMA</span><span>ERA5-Land</span>
-          </div>
-          <a class="doc-download" href="https://github.com/nicomeihuizen-byte/AI-Homestead" target="_blank" rel="noopener">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-            <div class="info">
-              <h3>AI-Homestead</h3>
-              <p>The repo. Build plan, ADRs, data sources, and the figures on this page.</p>
-            </div>
-            <span class="tag">CODE</span>
-          </a>
-          <a class="doc-download" href="../images/project_two/one-acre-brief.pdf" download rel="noopener" aria-label="Download the project overview as a PDF">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Project overview</h3>
-              <p>Short brief. The two plots, the three commitments, and what each data source can and cannot claim.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-        </section>
-      </div>
-
-      <div class="project-sections">
-        <section>
-          <h2 class="section-label">// where</h2>
-          <h2>Two plots, 2,256 km apart</h2>
-          <p>14.6 degrees of latitude apart. You follow the growing season instead of fighting it.</p>
-          <div class="site-cards">
-          <div class="site-card">
-          <h3>Prora <span class="site-season">summer</span></h3>
-          <dl>
-          <div><dt>Where</dt><dd>R&uuml;gen, German Baltic coast</dd></div>
-          <div><dt>Latitude</dt><dd>54.39 &deg;N</dd></div>
-          <div><dt>Reference</dt><dd>DWD Arkona, station 00183, 33 km north</dd></div>
-          <div><dt>Winter solstice</dt><dd>7.0 h of daylight, sun peaks at 12.2 &deg;</dd></div>
-          </dl>
-          </div>
-          <div class="site-card">
-          <h3>Castelo Branco <span class="site-season">winter</span></h3>
-          <dl>
-          <div><dt>Where</dt><dd>Central Portugal, inland</dd></div>
-          <div><dt>Latitude</dt><dd>39.82 &deg;N</dd></div>
-          <div><dt>Reference</dt><dd>IPMA long series, plus ERA5-Land</dd></div>
-          <div><dt>Winter solstice</dt><dd>9.2 h of daylight, sun peaks at 26.7 &deg;</dd></div>
-          </dl>
-          </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="section-label">// commitments</h2>
-          <h2>Three things this project does not compromise on</h2>
-          <ol class="commitments">
-            <li><strong>1 &middot; Off-grid means off-grid.</strong> No cloud LLM in the daily loop.</li>
-            <li><strong>2 &middot; Every number carries its provenance and its error bars.</strong> A &euro;30 sensor claiming &plusmn;0.3 pH does not get to report pH to one decimal.</li>
-            <li><strong>3 &middot; The biodynamic calendar is a hypothesis under test</strong>, not a scheduling rule.</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2 class="section-label">// the field node</h2>
-          <h2>A Pico, not a Pi</h2>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/winter-sun.svg">
-              <img src="../images/project_two/repo/winter-sun.svg" alt="Winter solstice sun at the two plots: Prora 7.0 hours of daylight with the sun peaking at 12.2 degrees, Castelo Branco 9.2 hours at 26.7 degrees" loading="lazy" width="900" height="340">
-            </a>
-            <figcaption>Prora gets 7.0 hours of daylight at the solstice, sun at 12.2 degrees. That is what the node is sized for.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/power-budget.svg">
-              <img src="../images/project_two/repo/power-budget.svg" alt="Daily energy comparison: Pi always-on 14.4 Wh, Pi duty-cycled 2.4 Wh, Pico W duty-cycled 0.16 Wh" loading="lazy" width="900" height="360">
-            </a>
-            <figcaption>A duty-cycled Pico runs on roughly sixty times less than an always-on Pi.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/birdbox-build.svg">
-              <img src="../images/project_two/repo/birdbox-build.svg" alt="Cross-section of the field node: birdbox shell over an IP66 box, vent and glands on the underside, radiation shield on a tail, panel at 65 degrees, soil probes at 10 and 30 cm" loading="lazy" width="940" height="620">
-            </a>
-            <figcaption>Two failure modes kill the node sooner than any sensor: condensation, and charging below zero.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/link-decision.svg">
-              <img src="../images/project_two/repo/link-decision.svg" alt="Link choice by distance: BLE under 20 metres, marginal from 20 to 50 metres, LoRa beyond 50 metres" loading="lazy" width="900" height="360">
-            </a>
-            <figcaption>Under 20 metres BLE, above that LoRa. The ingest layer makes that a one-module change.</figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h2 class="section-label">// data</h2>
-          <h2>Two plots, two weather services</h2>
-          <p>Prora leans on DWD Arkona, 33 km away, with measured radiation from 1947. Castelo Branco has no equivalent open history and leans on ERA5-Land. That asymmetry is not papered over.</p>
-        </section>
-
-        <section>
-          <h2 class="section-label">// the calendar</h2>
-          <h2>The Thun calendar, honestly implemented</h2>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/thun-wheel.svg">
-              <img src="../images/project_two/repo/thun-wheel.svg" alt="Ring chart of the time the Moon spends in each constellation over one sidereal month, coloured by Thun day-type, with Ophiuchus and non-zodiacal strays marked" loading="lazy" width="940" height="724">
-            </a>
-            <figcaption>Computed from the ephemeris in thirty-minute steps. Sidereal, not tropical.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/sidereal-vs-tropical.svg">
-              <img src="../images/project_two/repo/sidereal-vs-tropical.svg" alt="A tropical sign band above a shifted, unequal constellation band; the same Moon position reads as Gemini tropically and Taurus in the real sky" loading="lazy" width="900" height="330">
-            </a>
-            <figcaption>Tropical signs sit 24 to 25 degrees off the real constellations. Get this wrong and every day type is wrong.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/thun-frequencies.svg">
-              <img src="../images/project_two/repo/thun-frequencies.svg" alt="2027 calendar days by type: root 107, fruit 97, leaf 94, flower 67" loading="lazy" width="900" height="340">
-            </a>
-            <figcaption>Real IAU boundaries are unequal, so 2027 comes out at 107 root days against 67 flower days.</figcaption>
-          </figure>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/two-lunar-cycles.svg">
-              <img src="../images/project_two/repo/two-lunar-cycles.svg" alt="Two sine waves at 27.32 and 29.53 day periods drifting apart, from half a day at the first crest to 2.8 days at the second" loading="lazy" width="900" height="380">
-            </a>
-            <figcaption>Ascending and descending is a 27.3-day cycle, entirely separate from waxing and waning at 29.53.</figcaption>
-          </figure>
-          <p>The evidence does not support the trigon effect. The calendar is therefore logged as a covariate and tested, never used as a rule.</p>
-        </section>
-
-        <section>
-          <h2 class="section-label">// models</h2>
-          <h2>The LLM proposes, Python disposes</h2>
-          <p>Every number is computed in tested Python. The model selects, prioritises and explains, and returns JSON validated against a schema. What it is aimed at: yield per square metre.</p>
-        </section>
-
-        <section>
-          <h2 class="section-label">// roadmap</h2>
-          <h2>Ten phases</h2>
-          <figure class="project-figure">
-            <a href="../images/project_two/repo/roadmap.svg">
-              <img src="../images/project_two/repo/roadmap.svg" alt="Roadmap from September 2026 to October 2027 across ten phases" loading="lazy" width="940" height="530">
-            </a>
-            <figcaption>September 2026 to October 2027. Every phase has a done-when you can actually check.</figcaption>
-          </figure>
-          <p class="project-credit">MIT for the code. Weather data from DWD (CC BY 4.0), IPMA, and Open-Meteo (CC-BY-4.0). Ephemerides from JPL via skyfield. No copyrighted calendar data is redistributed.</p>
-        </section>
-      </div>
-
-      <nav class="project-nav" aria-label="Project navigation">
-        <a class="nav-link" href="/"><span>&lt;- back to</span><strong>Home</strong></a>
-        <div class="project-nav-socials">
-          <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg></a>
-          <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg></a>
-        </div>
-        <a class="nav-link next" href="terminal-portfolio-website.html"><span>next -&gt;</span><strong>Project two</strong></a>
-      </nav>
     </div>
-  </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/where</p><h2 class="h2">Two plots, 2,256 km apart.</h2>
+    <p class="body-l">14.6 degrees of latitude apart. You follow the growing season instead of fighting it.</p>
+    <div class="two cols-gap">
+      <div><h3 class="h3">Prora <span class="chip">summer</span></h3><dl class="kv">
+        <dt>where</dt><dd>R&uuml;gen, German Baltic coast</dd>
+        <dt>latitude</dt><dd>54.39 &deg;N</dd>
+        <dt>reference</dt><dd>DWD Arkona, station 00183, 33 km north</dd>
+        <dt>winter solstice</dt><dd>7.0 h of daylight, sun peaks at 12.2 &deg;</dd>
+      </dl></div>
+      <div><h3 class="h3">Castelo Branco <span class="chip">winter</span></h3><dl class="kv">
+        <dt>where</dt><dd>Central Portugal, inland</dd>
+        <dt>latitude</dt><dd>39.82 &deg;N</dd>
+        <dt>reference</dt><dd>IPMA long series, plus ERA5-Land</dd>
+        <dt>winter solstice</dt><dd>9.2 h of daylight, sun peaks at 26.7 &deg;</dd>
+      </dl></div>
+    </div>
+    <p class="body-l cols-gap">Prora leans on DWD Arkona, with measured radiation from 1947. Castelo Branco has no equivalent open history and leans on ERA5-Land. That asymmetry is not papered over.</p>
+  </div>
+</section>
+
+<section class="section section-raised" aria-label="Commitments">
+  <div class="wrap">
+    <p class="idx">~/commitments</p><h2 class="h2 mb28">Three things it does not compromise on.</h2>
+    <div class="three">
+      <div class="card stat-card"><div class="stat-n">01</div><h3>Off-grid means off-grid.</h3><p>No cloud LLM in the daily loop.</p></div>
+      <div class="card stat-card"><div class="stat-n">02</div><h3>Every number carries its error bars.</h3><p>A &euro;30 sensor claiming &plusmn;0.3 pH does not get to report pH to one decimal.</p></div>
+      <div class="card stat-card"><div class="stat-n">03</div><h3>The calendar is a hypothesis.</h3><p>The biodynamic calendar is under test, not a scheduling rule.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/the field node</p><h2 class="h2">A Pico, not a Pi.</h2>
+    <p class="body-l">Tap a picture to see it full size.</p>
+    <div class="gallery gallery-2 project-gallery">
+      <figure class="project-figure"><a href="../images/project_two/repo/winter-sun.svg"><img src="../images/project_two/repo/winter-sun.svg" alt="Winter solstice sun at the two plots: Prora 7.0 hours of daylight with the sun peaking at 12.2 degrees, Castelo Branco 9.2 hours at 26.7 degrees" width="900" height="340" loading="lazy"></a><figcaption>Prora gets 7.0 hours of daylight at the solstice, sun at 12.2 degrees. That is what the node is sized for.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/power-budget.svg"><img src="../images/project_two/repo/power-budget.svg" alt="Daily energy comparison: Pi always-on 14.4 Wh, Pi duty-cycled 2.4 Wh, Pico W duty-cycled 0.16 Wh" width="900" height="360" loading="lazy"></a><figcaption>A duty-cycled Pico runs on roughly sixty times less than an always-on Pi.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/birdbox-build.svg"><img src="../images/project_two/repo/birdbox-build.svg" alt="Cross-section of the field node: birdbox shell over an IP66 box, vent and glands on the underside, radiation shield on a tail, panel at 65 degrees, soil probes at 10 and 30 cm" width="940" height="620" loading="lazy"></a><figcaption>Two failure modes kill the node sooner than any sensor: condensation, and charging below zero.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/link-decision.svg"><img src="../images/project_two/repo/link-decision.svg" alt="Link choice by distance: BLE under 20 metres, marginal from 20 to 50 metres, LoRa beyond 50 metres" width="900" height="360" loading="lazy"></a><figcaption>Under 20 metres BLE, above that LoRa. The ingest layer makes that a one-module change.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <p class="idx">~/the calendar</p><h2 class="h2">The Thun calendar, honestly implemented.</h2>
+    <p class="body-l">The evidence does not support the trigon effect. The calendar is therefore logged as a covariate and tested, never used as a rule.</p>
+    <div class="gallery gallery-2 project-gallery">
+      <figure class="project-figure"><a href="../images/project_two/repo/thun-wheel.svg"><img src="../images/project_two/repo/thun-wheel.svg" alt="Ring chart of the time the Moon spends in each constellation over one sidereal month, coloured by Thun day-type, with Ophiuchus and non-zodiacal strays marked" width="940" height="724" loading="lazy"></a><figcaption>Computed from the ephemeris in thirty-minute steps. Sidereal, not tropical.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/sidereal-vs-tropical.svg"><img src="../images/project_two/repo/sidereal-vs-tropical.svg" alt="A tropical sign band above a shifted, unequal constellation band; the same Moon position reads as Gemini tropically and Taurus in the real sky" width="900" height="330" loading="lazy"></a><figcaption>Tropical signs sit 24 to 25 degrees off the real constellations. Get this wrong and every day type is wrong.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/thun-frequencies.svg"><img src="../images/project_two/repo/thun-frequencies.svg" alt="2027 calendar days by type: root 107, fruit 97, leaf 94, flower 67" width="900" height="340" loading="lazy"></a><figcaption>Real IAU boundaries are unequal, so 2027 comes out at 107 root days against 67 flower days.</figcaption></figure>
+      <figure class="project-figure"><a href="../images/project_two/repo/two-lunar-cycles.svg"><img src="../images/project_two/repo/two-lunar-cycles.svg" alt="Two sine waves at 27.32 and 29.53 day periods drifting apart, from half a day at the first crest to 2.8 days at the second" width="900" height="380" loading="lazy"></a><figcaption>Ascending and descending is a 27.3-day cycle, entirely separate from waxing and waning at 29.53.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/models</p><h2 class="h2">The LLM proposes, Python disposes.</h2></div>
+      <p class="vision-p">Every number is computed in tested Python. The model selects, prioritises and explains, and returns JSON validated against a schema. What fails the rules is dropped, and the drop is logged. What it is aimed at: yield per square metre.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/roadmap</p><h2 class="h2">Ten phases.</h2>
+    <div class="cols-gap"><figure class="project-figure"><a href="../images/project_two/repo/roadmap.svg"><img src="../images/project_two/repo/roadmap.svg" alt="Roadmap from September 2026 to October 2027 across ten phases" width="940" height="530" loading="lazy"></a><figcaption>September 2026 to October 2027. Every phase has a done-when you can actually check.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Read the plan. Read the code.</h2>
+  <div class="three">
+    <a class="card dl doc-download" href="https://github.com/nicomeihuizen-byte/AI-Homestead" rel="noopener" aria-label="AI-Homestead"><span class="chip tag">CODE</span><h3>AI-Homestead</h3><p>The repo. Build plan, ADRs, data sources, and the figures on this page.</p></a>
+    <a class="card dl doc-download" href="../images/project_two/one-acre-brief.pdf" download aria-label="Download Project overview as a PDF"><span class="chip tag">PDF</span><h3>Project overview</h3><p>Short brief. The two plots, the three commitments, and what each data source can and cannot claim.</p></a>
+    <div class="card dl"><span class="chip">STACK</span><div class="stack"><span class="chip">Pico 2 W</span><span class="chip">MicroPython</span><span class="chip">Python 3.11</span><span class="chip">SQLite</span><span class="chip">skyfield</span><span class="chip">LSTM</span><span class="chip">Ollama</span><span class="chip">BLE / LoRa</span><span class="chip">DWD / IPMA</span><span class="chip">ERA5-Land</span></div></div>
+  </div>
+  <p class="fine">MIT for the code. Weather data from DWD (CC BY 4.0), IPMA, and Open-Meteo (CC-BY-4.0). Ephemerides from JPL via skyfield. No copyrighted calendar data is redistributed.</p>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/next</p>
+        <h2>Same rigour,<br><span class="grad">your problem.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html" class="btn btn-p btn-wide">Start a project <span aria-hidden="true">→</span></a>
+        <a href="../builds.html" class="btn btn-g btn-wide">All builds <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="image-lightbox" hidden>
+  <button type="button" class="image-lightbox-close" aria-label="Close">×</button>
+  <img src="" alt="">
+</div>
+
 </main>
-<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>02 / 02</span></footer>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai since 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../legal/terms-of-business.pdf">terms</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign by Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
 <script src="scripts/project-lightbox.js" defer></script>
+<script src="../scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>

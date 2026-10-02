@@ -192,4 +192,10 @@
     <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
   </url>
+  <url>
+    <loc>https://www.meihuizen.ai/contact.html</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8000</priority>
+  </url>
 </urlset>

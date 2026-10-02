@@ -75,216 +75,252 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0E121A">
-<link rel="stylesheet" href="project-pages.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../styles/site.css">
 <script src="../scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <a class="brand" href="/"><span class="brand-dot"></span> meihuizen.ai</a>
-      <a class="back-link" href="/builds.html">&lt; builds</a>
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai home"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">home</a></li>
+        <li><a href="../builds.html" aria-current="page">builds</a></li>
+        <li><a href="../about.html">about</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Site language">
+        <a href="second-audience.html" lang="en" hreflang="en" aria-current="true">EN</a>
+        <a href="../lt/projects/second-audience.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+      <button type="button" class="ask-pill" data-fritz-ask="Hi Fritz, what can you do for me?">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="9" r="2.2"/><circle cx="10" cy="5.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"/></svg>~/ask fritz</button>
     </div>
   </div>
 </header>
-<main class="page-wrap">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
-      <nav class="lang-switch" aria-label="Site language">
-        <a href="second-audience.html" class="lang-flag" lang="en" hreflang="en" title="English" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">English (current page)</span>
-        </a>
-        <a href="../lt/projects/second-audience.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">View this page in Lithuanian</span>
-        </a>
-</nav>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>builds › <b>Second Audience</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">AI / agentic web</span><span class="chip chip-ok">free scan · €0</span></div>
+      <h1 class="h1 h1-p">Your website has <span class="grad">two kinds of visitor</span> now.</h1>
+      <p class="lead lead-p">One has eyes. The other is agentic AI: it never runs your JavaScript, reads only what your server sends, and answers questions about you for people who never open your page. Second Audience measures what that second visitor can actually do.</p>
+      <div class="btn-row">
+        <a href="#cta" class="btn btn-p">Request a free scan <span aria-hidden="true">→</span></a>
+        <a href="second-audience-cases.html" class="btn btn-g">Six real cases</a>
+      </div>
     </div>
-    <div class="terminal-body">
-      <div class="project-title-row"><svg class="project-title-mark" viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
-      <p class="project-summary">Your website has two kinds of visitor now. One has eyes. The other is agentic AI: it never runs your JavaScript, reads only what your server sends, and then answers questions about you for its visitors, who never open your page. Second Audience measures what that second visitor can actually do.</p>
-      <p class="project-summary">A service, not a tool. The scan is run by a person and a model working the same case, because the claim being sold is that machines read confidently and get facts wrong, and that is not a claim a machine can certify about itself.</p>
-      <div class="project-figures">
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa1t">
-          <title id="sa1t">The same page fetched twice, the second time missing most of its content</title>
-          <rect x="30" y="42" width="140" height="216" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
-          <g fill="#8b90a3">
-          <rect x="48" y="70" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="90" width="80" height="9" rx="4.5"/>
-          <rect x="48" y="120" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="140" width="92" height="9" rx="4.5"/>
-          <rect x="48" y="170" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="190" width="68" height="9" rx="4.5"/>
-          <rect x="48" y="220" width="88" height="9" rx="4.5"/>
-          </g>
-          <path d="M186 150 H214" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <path d="M206 143 L214 150 L206 157" stroke="#565b6e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="230" y="42" width="140" height="216" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <g fill="#8b90a3">
-          <rect x="248" y="70" width="104" height="9" rx="4.5"/>
-          <rect x="248" y="120" width="104" height="9" rx="4.5"/>
-          </g>
-          <g fill="#565b6e" opacity="0.22">
-          <rect x="248" y="90" width="80" height="9" rx="4.5"/>
-          <rect x="248" y="140" width="92" height="9" rx="4.5"/>
-          <rect x="248" y="170" width="104" height="9" rx="4.5"/>
-          <rect x="248" y="190" width="68" height="9" rx="4.5"/>
-          <rect x="248" y="220" width="88" height="9" rx="4.5"/>
-          </g>
-          </svg>
-          <figcaption><strong>Fetched twice</strong><span>The same page with JavaScript and without. What disappears is what a non-rendering crawler never sees.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa2t">
-          <title id="sa2t">One published fact, and four agents returning four different values</title>
-          <rect x="30" y="34" width="340" height="62" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
-          <rect x="50" y="52" width="60" height="8" rx="4" fill="#565b6e"/>
-          <rect x="50" y="70" width="104" height="12" rx="6" fill="#5fbf8e"/>
-          <path d="M200 104 V126" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g>
-          <circle cx="52" cy="152" r="7" fill="#565b6e"/><rect x="72" y="146" width="72" height="12" rx="6" fill="#d9a441"/>
-          <circle cx="52" cy="188" r="7" fill="#565b6e"/><rect x="72" y="182" width="132" height="12" rx="6" fill="#d9a441"/>
-          <circle cx="52" cy="224" r="7" fill="#565b6e"/><rect x="72" y="218" width="104" height="12" rx="6" fill="#5fbf8e"/>
-          <circle cx="52" cy="260" r="7" fill="#565b6e"/><rect x="72" y="254" width="188" height="12" rx="6" fill="#d9a441"/>
-          </g>
-          </svg>
-          <figcaption><strong>One fact, four answers</strong><span>A price published once, in a form that invites filling in the rest. Four agents, four numbers, one of them right.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa3t">
-          <title id="sa3t">A written prediction, then eighteen results of which nine are wrong</title>
-          <rect x="30" y="34" width="340" height="84" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <g fill="#8b90a3" opacity="0.8">
-          <rect x="50" y="56" width="180" height="9" rx="4.5"/>
-          <rect x="50" y="76" width="248" height="9" rx="4.5"/>
-          <rect x="50" y="96" width="140" height="9" rx="4.5"/>
-          </g>
-          <path d="M200 126 V148" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g>
-          <rect x="30" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="88" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="146" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="204" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="262" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="320" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="30" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="88" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="146" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="204" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="262" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="320" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="30" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="88" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="146" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="204" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="262" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="320" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          </g>
-          </svg>
-          <figcaption><strong>Predictions written first</strong><span>Eighteen written down before an agent was asked anything. Nine of them wrong, and that is in the report.</span></figcaption>
-        </figure>
-      </div>
-      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Full-size project image" hidden>
-        <button class="image-lightbox-close" type="button" aria-label="Close full-size image">&times;</button>
-        <img alt="">
-      </div>
-      <div class="project-grid">
-        <section class="project-copy">
-          <h2 class="section-label">// overview</h2>
-          <h2>Seven steps, in this order, and the agents come last</h2>
-          <p>The order is the product. A scan that starts at the agents finds technical imperfections and no money. Every strong finding this year came out of step three: does the same fact appear somewhere else on the domain, worded differently. An FAQ, a stale translation, an orphan page, a press release from four years ago.</p>
-          <h2>What a finding looks like</h2>
-          <p>An expert network had one client case page, and it was a template that was never filled in. Asked what the company had actually delivered, four agents gave four different answers. One invented a full case at a real bank and named the company as the source three times.</p>
-          <p>An education provider had the same programme live at three addresses, each with a different price, duration or guarantee. One agent sent the buyer to the oldest page, with the shorter guarantee. Its citation was correct, because that text really is there.</p>
-          <p>Every example on this site is anonymised: no names, no figures that can be searched for, and we do not confirm guesses. Six cases are written up in full on the cases page. <a href="second-audience-cases.html">&gt; six cases</a></p>
-          <h2>We publish our own misses</h2>
-          <p>Eighteen predictions written down before a single agent was asked. Nine of them wrong. That is in the report, with the reason. A report that shows only the hits is a sales document and gets read as one.</p>
-          <h2>A person and a model, working the same case</h2>
-          <p>The machine does the volume: every page fetched twice and compared, every business fact diffed against every other instance of itself on the domain, every cited document opened to see whether its text layer holds what the citation claims. A person makes the three decisions no loop produces: which object carries the revenue, which fact is worth chasing, and whether a citation actually holds. Both are wrong regularly. Each has to answer to the other before anything ships.</p>
-          <h2>It does not stay fixed</h2>
-          <p>Engines update, pages change, and a claim you have removed keeps being answered for months afterwards. There is a dated measurement of exactly that on this domain. So the work repeats: the same prompts at one week, one month and three months, against the same pages.</p>
-          <h2>What it costs</h2>
-          <p>The free scan is free. What comes after is priced on the complexity of your site, and every scan report comes with prices for three routes:</p>
-          <ol class="commitments">
-            <li><strong>1 &middot; Do it yourself.</strong> Use the implementation report and implement the findings yourself.</li>
-            <li><strong>2 &middot; Full implementation.</strong> We handle the complete implementation, including monitoring and the re-scans at one week, one month and three months.</li>
-            <li><strong>3 &middot; Implementation + Agent Fritz.</strong> The full implementation, bundled with Agent Fritz on your site, answering visitors from your corrected pages.</li>
-          </ol>
-          <p>With a scan, Fritz is priced on the value the scan shows.</p>
-          <h2>Status</h2>
-          <p>Some free scans became paying clients. Their work is never published here, not even anonymised. Reports ship in Dutch and English, with a two-page annex on scope, data, rights and GDPR attached to every one.</p>
-        </section>
-        <section>
-          <h2 class="section-label">// method</h2>
-          <ul class="stack"><li>Dual-render diffing</li><li>robots.txt &amp; UA verification</li><li>Structured verdict taxonomy</li><li>Multi-agent evaluation</li><li>Server-log forensics</li><li>Regulatory cross-check</li></ul>
-          <a class="doc-download" href="../images/project_five/brackwater-free-scan.pdf" download rel="noopener" aria-label="Download the example free scan as a PDF">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Example: the free scan</h3>
-              <p>A full 16-page scan for a fictional client, Brackwater Institute. Six findings, three model sessions, and the predictions we got wrong, shown in full.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-          <a class="doc-download" href="../images/project_five/brackwater-implementation-report-en-v1.0.md" download rel="noopener" aria-label="Download the example implementation report as a Markdown file">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Example: the implementation report</h3>
-              <p>Twenty four work items, five decisions we won't make for you, and paste-ready copy and code for each finding.</p>
-            </div>
-            <span class="tag">MD</span>
-          </a>
-          <a class="doc-download" href="second-audience-cases.html" aria-label="Read six anonymised Second Audience cases">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Six cases, anonymised</h3>
-              <p>What agents said about six real companies, which of their own pages explained it, and the fix. No names.</p>
-            </div>
-            <span class="tag">PAGE</span>
-          </a>
-          <a class="doc-download" href="../images/project_five/second-audience-how-we-work.pdf" download rel="noopener" aria-label="Download How We Work as a PDF">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>How we work</h3>
-              <p>Scope, data and rights. What we retrieved, how agent answers are used, and what you may do with the report.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-        </section>
-      </div>
-      <nav class="project-nav" aria-label="Project navigation">
-        <a class="nav-link" href="ai-sales-deal-intelligence.html"><span>&lt;- previous</span><strong>Project three</strong></a>
-        <div class="project-nav-socials">
-          <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg></a>
-          <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg></a>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>example.com/pricing · fetched twice</span>
+        <div class="tabs" role="tablist" aria-label="Two views of the same page">
+          <button type="button" class="tab" role="tab" id="t-human" aria-controls="p-human" aria-selected="false">what a person sees</button>
+          <button type="button" class="tab" role="tab" id="t-agent" aria-controls="p-agent" aria-selected="true">what the agent gets</button>
         </div>
-        <a class="nav-link next" href="agent-fritz.html"><span>next -&gt;</span><strong>Project five</strong></a>
-      </nav>
+      </div>
+      <div class="panel" id="p-human" role="tabpanel" aria-labelledby="t-human" hidden>
+        <div class="mock">
+          <div class="mock-top"><b>Northwind Academy</b><span>Programmes · Pricing · Contact</span></div>
+          <h3>Data Analyst Programme</h3>
+          <div class="mock-stats"><div><small>PRICE</small><b>€ 4,900</b></div><div><small>DURATION</small><b>16 weeks</b></div><div><small>GUARANTEE</small><b>90 days</b></div></div>
+          <span class="mock-btn">Enrol now</span>
+          <p class="mock-note">fictional example</p>
+        </div>
+      </div>
+      <div class="panel" id="p-agent" role="tabpanel" aria-labelledby="t-agent">
+        <div class="agent-view">
+          <p><span class="ok">GET</span> /pricing · no JavaScript · 200 OK</p>
+          <p class="gap k">Northwind Academy</p>
+          <p class="k">Data Analyst Programme</p>
+          <p><span class="bad">✗ price</span> rendered by script, not received</p>
+          <p><span class="bad">✗ duration</span> rendered by script, not received</p>
+          <p><span class="bad">✗ guarantee</span> rendered by script, not received</p>
+          <p class="gap"><span class="warn">!</span> same programme found at <span class="k">/courses/data-2023</span></p>
+          <p class="in">price <span class="k">€ 3,900</span> · guarantee <span class="k">30 days</span></p>
+          <div class="agent-say">Agent: "The programme costs €3,900 and comes with a 30-day guarantee."</div>
+          <small>fictional example, built from patterns in real scans</small>
+        </div>
+      </div>
     </div>
-  </article>
+  </div>
+</section>
+
+<section id="buying" class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap mb48">
+      <p class="idx">~/how buying works</p>
+      <h2 class="h2">Four steps. You decide after each one.</h2>
+      <p class="body-l">No package to pick and no long commitment up front. Every case is priced on what it is worth to you, before the work starts.</p>
+    </div>
+    <ol class="steps">
+      <li><div class="step-head"><span class="step-n">01</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">free · €0</div><h3>Free scan</h3><p>What AI agents read on your domain, and where they get it wrong.</p></li>
+      <li><div class="step-head"><span class="step-n">02</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">priced on the case</div><h3>Report, two prices</h3><p>Every finding explained in money terms. Fix it yourself, or we do it end to end.</p></li>
+      <li><div class="step-head"><span class="step-n">03</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">priced on the case</div><h3>Build or fix</h3><p>The fixes, Fritz on your own domain, or a custom build around your workflow.</p></li>
+      <li><div class="step-head"><span class="step-n">04</span><span class="step-line"></span></div><div class="step-price">ongoing</div><h3>Monitor and re-scan</h3><p>Re-scans after every change, so the fix still holds next quarter.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap section" aria-label="In numbers">
+  <div class="three">
+    <div class="card stat-card"><div class="stat-n">×2</div><h3>Fetched twice</h3><p>The same page with JavaScript and without. What disappears is what a non-rendering crawler never sees.</p></div>
+    <div class="card stat-card"><div class="stat-n">1 → 4</div><h3>One fact, four answers</h3><p>A price published once, in a form that invites filling in the rest. Four agents, four numbers, one of them right.</p></div>
+    <div class="card stat-card"><div class="stat-n">9 / 18</div><h3>We publish our misses</h3><p>Eighteen predictions written down before an agent was asked. Nine wrong, and that is in the report.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/what you get</p><h2 class="h2">A service, not a tool.</h2><p class="body-l">Run by a person and a model working the same case, because the claim being sold is that machines read confidently and get facts wrong. That is not a claim a machine can certify about itself.</p></div>
+    <div class="four cols-gap">
+      <div class="deliv"><div class="deliv-top"><span class="mono">01</span><span class="chip">PDF · 16 pages</span></div><h3>The free scan</h3><p>What agents read, do and get wrong on your domain. Findings in money terms, the predictions we got wrong included.</p><a class="link" href="../images/project_five/brackwater-free-scan.pdf" download>example scan →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">02</span><span class="chip">MD</span></div><h3>Implementation report</h3><p>Work items with paste-ready copy and code per finding, plus the decisions we will not make for you.</p><a class="link" href="../images/project_five/brackwater-implementation-report-en-v1.0.md" download>example report →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">03</span><span class="chip">1w · 1m · 3m</span></div><h3>Re-scans</h3><p>The same prompts against the same pages after one week, one month and three months. Engines update, fixes drift.</p><a class="link" href="#faq">why it repeats →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">04</span><span class="chip">PDF · 2 pages</span></div><h3>How we work annex</h3><p>Scope, data, rights and GDPR, attached to every report, in Dutch and English.</p><a class="link" href="../images/project_five/second-audience-how-we-work.pdf" download>read the annex →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap method">
+    <div class="method-side">
+      <p class="idx">~/method</p>
+      <h2 class="h2">Seven steps. The agents come last.</h2>
+      <p class="body-l">The order is the product. A scan that starts at the agents finds technical imperfections and no money. Every strong finding this year came out of step three.</p>
+      <div class="chips cols-gap"><span class="chip">dual-render diffing</span><span class="chip">robots.txt &amp; UA verification</span><span class="chip">verdict taxonomy</span><span class="chip">multi-agent evaluation</span><span class="chip">server-log forensics</span><span class="chip">regulatory cross-check</span></div>
+    </div>
+    <ol class="mlist">
+      <li><span class="ring">01</span><div><h3>Find the revenue object</h3><p>The page that makes the money. Everything after this is measured against it.</p></div></li>
+      <li><span class="ring">02</span><div><h3>Extract the facts a buyer needs</h3><p>Price, terms, who it is for, where you are. The answers an agent will be asked for.</p></div></li>
+      <li class="key"><span class="ring">03</span><div><h3>Hunt for the same fact, answered twice</h3><span class="chip chip-ok">where the money findings come from</span><p>An FAQ, a stale translation, an orphan page, a press release from four years ago. Where agents have to choose.</p></div></li>
+      <li><span class="ring">04</span><div><h3>Check how each fact is written</h3><p>Text, image, or hedged prose. Only one of the three survives a machine read.</p></div></li>
+      <li><span class="ring">05</span><div><h3>Map what third parties say</h3><p>Directories, guides and press that agents trust as much as your own site.</p></div></li>
+      <li><span class="ring">06</span><div><h3>Regulatory cross-check</h3><p>First to kill findings that turn out to be wording the law requires. Then to strengthen the ones that survive.</p></div></li>
+      <li class="last"><span class="ring">07</span><div><h3>Predictions first, then the agents</h3><p>What we expect each agent to say, written down before asking. Then the questions buyers really type, typos included.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what a finding looks like</p><h2 class="h2">An agent that finds nothing rarely says nothing.</h2></div>
+      <p class="vision-p">It fills the gap, and puts your name under what it filled in. Two real scans, anonymised: no names, no searchable figures, and we do not confirm guesses.</p>
+    </div>
+    <div class="two cols-gap">
+      <article class="finding"><div class="finding-h">case 01 · expert network</div><p class="f1"><b>on the site:</b> One client case page: a template never filled in, still in its own sitemap.</p><p class="f2"><b>the agents:</b> Four agents, four different answers. One invented a full case at a real bank and named the company as the source three times.</p><p class="f3"><b>the fix:</b> Real cases with a number, one line of text beside each logo, the template out of the sitemap. No rebuild.</p></article>
+      <article class="finding"><div class="finding-h">case 05 · online education provider</div><p class="f1"><b>on the site:</b> The same programme live at three addresses, with different prices, durations and guarantees.</p><p class="f2"><b>the agents:</b> One agent sent the buyer to the oldest page, with the shorter guarantee. Its citation was correct: that text really is there.</p><p class="f3"><b>the fix:</b> One live offer, the old addresses pointed at it, and the sitemap cleaned.</p></article>
+    </div>
+    <p class="cols-gap"><a class="link" href="second-audience-cases.html">read all six cases →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/who does what</p><h2 class="h2">A person and a model, working the same case.</h2><p class="body-l">Both are wrong regularly. Each has to answer to the other before anything ships.</p></div>
+    <div class="two cols-gap">
+      <div class="card"><p class="label">the machine does the volume</p><ul class="ticks"><li>Every page fetched twice and compared.</li><li>Every business fact diffed against every other instance of itself on the domain.</li><li>Every cited document opened, to check its text holds what the citation claims.</li></ul></div>
+      <div class="card card-key"><p class="label">the person makes three decisions</p><ul class="ticks num"><li>Which object carries the revenue.</li><li>Which fact is worth chasing.</li><li>Whether a citation actually holds.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what it costs</p><h2 class="h2">The scan is free. Then you pick a route.</h2></div>
+      <p class="vision-p">What comes after is priced on the complexity of your site. Every scan report comes with a price for each of the three routes, so you compare before you commit.</p>
+    </div>
+    <div class="routes">
+      <div class="route"><span class="mono">00</span><h3>Free scan</h3><div class="price">€0, no obligation</div><hr><ul class="ticks"><li>16-page report</li><li>Dutch and English</li><li>Three priced routes inside</li></ul></div>
+      <div class="route"><span class="mono">01</span><h3>Do it yourself</h3><div class="price">priced on your site</div><hr><ul class="ticks"><li>Implementation report</li><li>Paste-ready copy and code</li><li>Your team implements</li></ul></div>
+      <div class="route key"><span class="flag">end to end</span><span class="mono">02</span><h3>Full implementation</h3><div class="price">priced on your site</div><hr><ul class="ticks"><li>We implement everything</li><li>Monitoring</li><li>Re-scans at 1w, 1m, 3m</li></ul></div>
+      <div class="route"><span class="mono">03</span><h3>Implementation + Fritz</h3><div class="price">priced on the value the scan shows</div><hr><ul class="ticks"><li>Everything in route 02</li><li>Agent Fritz on your site</li><li>Answers from your corrected pages</li></ul></div>
+    </div>
+    <p class="fine">Some free scans became paying clients. Their work is never published here, not even anonymised.</p>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap method">
+    <div><p class="idx">~/questions buyers ask</p><h2 class="h2">Before you ask Fritz.</h2><p class="body-l">Or ask him anyway. He answers from this page, and says so when it isn't here.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>Is the free scan really free?</summary><p>Yes. You get the full report with three priced routes. Nothing is owed if you stop there.</p></details>
+      <details class="qa"><summary>Do you need access to our systems?</summary><p>No. The scan reads your public website the way an agent does, from the outside.</p></details>
+      <details class="qa"><summary>Can we not just add structured data?</summary><p>Structured data helps, but many agents never see it: they convert your page to text first. Every fact has to stand in the visible text as well.</p></details>
+      <details class="qa"><summary>Will our results be published?</summary><p>Paying clients never, not even anonymised. Free scans may become anonymised cases: no names, no searchable figures, and we do not confirm guesses.</p></details>
+      <details class="qa"><summary>Which languages?</summary><p>Reports ship in Dutch and English. Quoted evidence stays in the language it was captured in.</p></details>
+      <details class="qa"><summary>Why does it repeat?</summary><p>Engines update and pages change, and a claim you removed keeps being answered for months. There is a dated measurement of exactly that on this domain.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Read before you request.</h2>
+  <div class="four">
+    <a class="card dl doc-download" href="../images/project_five/brackwater-free-scan.pdf" download aria-label="Download Example free scan as a PDF"><span class="chip tag">PDF</span><h3>Example free scan</h3><p>A full 16-page scan for a fictional client. Six findings, three model sessions, our misses.</p></a>
+    <a class="card dl doc-download" href="../images/project_five/brackwater-implementation-report-en-v1.0.md" download aria-label="Download Example implementation report as a Markdown file"><span class="chip tag">MD</span><h3>Example implementation report</h3><p>Work items, decisions we leave to you, paste-ready fixes.</p></a>
+    <a class="card dl doc-download" href="second-audience-cases.html" aria-label="Six cases, anonymised"><span class="chip tag">PAGE</span><h3>Six cases, anonymised</h3><p>What agents said about six real companies, and the page that explained it.</p></a>
+    <a class="card dl doc-download" href="../images/project_five/second-audience-how-we-work.pdf" download aria-label="Download How we work as a PDF"><span class="chip tag">PDF</span><h3>How we work</h3><p>Scope, data and rights. What you may do with the report.</p></a>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/free scan</p>
+        <h2>See what the agents<br><span class="grad">say about you.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html#write" class="btn btn-p btn-wide">Request a free scan <span aria-hidden="true">→</span></a>
+        <button type="button" class="btn btn-g btn-wide" data-fritz-ask="I would like a free Second Audience scan of my website">or ask Fritz first</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>05 / 06</span></footer>
-<script src="scripts/project-lightbox.js" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai since 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../legal/terms-of-business.pdf">terms</a></li>
+        <li><a href="../credentials.html">credentials</a></li>
+        <li><a href="../status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign by Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>
