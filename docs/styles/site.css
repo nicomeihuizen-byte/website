@@ -511,7 +511,7 @@ img{max-width:100%;height:auto}
 .agent-view .gap{margin-top:10px}
 .agent-say{margin-top:14px;padding:10px 12px;border:1px solid #2E3344;border-radius:10px;color:var(--t-text);font-family:var(--font-body);font-size:13.5px;line-height:1.5}
 .agent-view small{display:block;margin-top:8px;font-size:10.5px;color:var(--t-dim)}
-.stat-n{font-family:var(--font-mono);font-size:30px;color:var(--accent);font-weight:500}
+.stat-n{font-family:var(--font-mono);font-size:30px;color:var(--accent);font-weight:500;overflow-wrap:anywhere}
 .stat-card h3{font-family:var(--font-display);font-size:19px;font-weight:600;margin:8px 0 4px}
 .stat-card p{font-size:15px}
 .deliv{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--bg);display:flex;flex-direction:column}
