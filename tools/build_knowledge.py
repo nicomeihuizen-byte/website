@@ -170,6 +170,8 @@ def build() -> dict:
     docs: dict[str, dict] = {}
     for rel in PAGES:
         html = (DOCS / rel).read_text(encoding="utf-8")
+        if 'http-equiv="refresh"' in html:  # a retired page that redirects: nothing to know
+            continue
         body = html.split("<body", 1)[1] if "<body" in html else html
         head = Extract(); head.feed(html.split("<body", 1)[0])
         p = Extract(); p.feed("<body" + body)
