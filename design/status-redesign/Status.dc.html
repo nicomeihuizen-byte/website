@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>meihuizen.ai status</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+.mz *{box-sizing:border-box}
+.mz{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:'JetBrains Mono',monospace}
+.disp{font-family:'Space Grotesk',sans-serif}
+.idx{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent2);letter-spacing:.02em}
+.h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 0}
+.lead{font-size:17px;color:var(--muted);margin:14px 0 0}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer}
+.btn-p{background:var(--accent);color:var(--onaccent)}
+.btn-p:hover{background:var(--accenth);color:var(--onaccent)}
+.btn-g{background:var(--raised);border-color:var(--line);color:var(--text)}
+.btn-g:hover{background:var(--hover);color:var(--text)}
+.card{background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.method{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:56px;align-items:start}
+.dots{background-image:radial-gradient(circle,var(--dotc) 1.2px,transparent 1.8px);background-size:20px 20px;-webkit-mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%)}
+.grad{background:linear-gradient(95deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navl a{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);padding:12px 2px}
+.navl a:hover,.navl a.on{color:var(--text)}
+.tab{font-family:'JetBrains Mono',monospace;font-size:12px;min-height:36px;padding:0 14px;border-radius:8px;border:1px solid #262A38;background:transparent;color:#8B90A3;cursor:pointer}
+.tab-on{background:#5FBF8E;border-color:#5FBF8E;color:#10121A}
+.qa{border-top:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;padding:20px 0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;display:flex;justify-content:space-between;gap:16px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+.qa[open] summary::after{content:'−'}
+.pulse{animation:pu 2s ease-in-out infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 var(--pulse)}50%{box-shadow:0 0 0 5px transparent}}
+.fld{display:block;width:100%;min-height:48px;margin-top:6px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:0 14px;font-family:'Inter',sans-serif;font-size:15px}
+.fld:focus{outline:2px solid var(--accent);outline-offset:1px}
+.pill{font-family:'JetBrains Mono',monospace;font-size:12.5px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer}
+.pill-on{background:var(--accent);border-color:var(--accent);color:var(--onaccent)}
+@media (max-width:900px){
+.wrap{padding:0 18px}
+.hero,.two,.method{grid-template-columns:minmax(0,1fr);gap:40px}
+.three,.four{grid-template-columns:minmax(0,1fr)}
+.navl{display:none}
+.h1{font-size:42px}
+.h2{font-size:30px}
+.hidem{display:none}
+.ctaflex{flex-direction:column;align-items:flex-start}
+.pad{padding:40px 24px}
+.split{grid-template-columns:minmax(0,1fr) !important}
+}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+</style>
+</helmet>
+
+<div class="mz" style="--bg: {{t.bg}}; --raised: {{t.raised}}; --line: {{t.line}}; --text: {{t.text}}; --muted: {{t.muted}}; --accent: {{t.accent}}; --accent2: {{t.accent2}}; --accenth: {{t.accenth}}; --onaccent: {{t.onaccent}}; --hover: {{t.hover}}; --dotc: {{t.dotc}}; --pulse: {{t.pulse}}; --glow: {{t.glow}}; --diffr: {{t.diffr}}; --diffg: {{t.diffg}}; min-height: 100vh; background-image: radial-gradient(ellipse 900px 520px at 10% -8%, var(--glow), transparent 60%);">
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid var(--line);">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 68px;">
+<a href="Main.dc.html" class="mono" style="display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></span>meihuizen.ai</a>
+<nav class="navl" style="display: flex; gap: 26px;">
+<a href="Main.dc.html">home</a><a href="SecondAudience.dc.html">products</a><a href="Main.dc.html#builds">builds</a><a href="About.dc.html">about</a><a href="Credentials.dc.html">credentials</a><a href="#cta">contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px;">
+<span class="mono hidem" style="font-size: 11.5px; color: var(--muted); letter-spacing: .06em;"><b style="color: var(--accent);">EN</b> NL DE LT</span>
+<a href="#cta" class="mono" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: #10121A; color: #ECEDF3; font-size: 13px;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="#5FBF8E" aria-hidden="true"><circle cx="6" cy="9" r="2.2"></circle><circle cx="10" cy="5.5" r="2.2"></circle><circle cx="14" cy="5.5" r="2.2"></circle><circle cx="18" cy="9" r="2.2"></circle><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"></path></svg>~/ask fritz</a>
+</div>
+</div>
+</header>
+
+<!-- STATUS STRIP -->
+<div style="border-bottom: 1px solid var(--line); background: var(--raised);">
+<div class="wrap mono" style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; min-height: 38px; padding-top: 8px; padding-bottom: 8px; font-size: 11.5px; letter-spacing: .07em; color: var(--muted); text-transform: uppercase;">
+<span style="display: inline-flex; align-items: center; gap: 8px;"><span class="pulse" style="width: 7px; height: 7px; border-radius: 50%; background: {{clock.dot}};"></span><b style="color: var(--text); font-weight: 600;">Kaunas {{clock.time}}</b> · {{clock.state}} · {{clock.reply}}</span>
+<span>│</span>
+<span><b style="color: var(--text); font-weight: 600;">status</b></span>
+<span class="hidem">│</span>
+<span class="hidem">monitor checks every minute</span>
+</div>
+</div>
+
+<!-- HERO -->
+<section id="top" class="wrap" style="padding-top: 80px; padding-bottom: 60px;">
+<div class="idx">~/status</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-top: 14px;">
+<h1 class="disp h1" style="font-size: 60px; line-height: 1.03; letter-spacing: -.035em; font-weight: 600; margin: 0;">Is it us, <span class="grad">or upstream?</span></h1>
+<button type="button" class="pill" onClick="{{toggleSim}}">{{simLabel}}</button>
+</div>
+<p style="font-size: 18px; color: var(--muted); margin: 20px 0 0; max-width: 680px;">Our services first, then the vendors they run on. Our own monitor checks every minute. Vendor lights come from each vendor's public status page, linked in every row, so you can check them yourself.</p>
+
+<div style="margin-top: 36px; border-radius: 18px; padding: 26px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; background: {{banner.bg}}; border: 1px solid {{banner.border}};">
+<div style="display: flex; align-items: center; gap: 16px;">
+<span class="pulse" style="width: 14px; height: 14px; border-radius: 50%; background: {{banner.dot}};"></span>
+<div><div class="disp" style="font-size: 26px; font-weight: 600;">{{banner.title}}</div><div style="color: var(--muted); font-size: 15px;">{{banner.sub}}</div></div>
+</div>
+<div class="mono" style="font-size: 12.5px; color: var(--muted);">checked {{clock.time}} Kaunas · refreshes every minute</div>
+</div>
+<div class="mono" style="display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; font-size: 12px; color: var(--muted);">
+<span><span style="color: #2E9E68;">●</span> operational</span><span><span style="color: #D9A030;">●</span> degraded or delayed</span><span><span style="color: #D8573A;">●</span> down</span><span><span style="color: #8B90A3;">●</span> unknown</span>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="wrap" style="padding-bottom: 70px;">
+<div class="idx">~/our services</div><h2 class="h2" style="margin-bottom: 24px;">Five services, watched every minute.</h2>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="5">
+<div class="card svc" style="padding: 20px 24px; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 16px; align-items: center; border-color: {{s.border}};">
+<div>
+<div style="display: flex; align-items: center; gap: 12px;"><span style="width: 11px; height: 11px; border-radius: 50%; background: {{s.dot}}; flex: none;"></span><span class="disp" style="font-size: 20px; font-weight: 600;">{{s.name}}</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-left: 23px;"><span class="mono" style="font-size: 11.5px; color: var(--muted); padding-top: 4px;">runs on</span><sc-for list="{{s.deps}}" as="d" hint-placeholder-count="3"><span class="chip" style="border-color: {{d.border}}; color: {{d.color}};">{{d.name}}</span></sc-for></div>
+<sc-if value="{{s.note}}" hint-placeholder-val="{{false}}"><div style="padding-left: 23px; margin-top: 8px; font-size: 14px; color: var(--muted);">{{s.note}}</div></sc-if>
+</div>
+<span class="mono" style="font-size: 13px; font-weight: 600; color: {{s.dot}}; white-space: nowrap;">{{s.word}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- VENDORS -->
+<section style="background: var(--raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 80px 0;">
+<div class="wrap">
+<div class="two" style="align-items: end;">
+<div><div class="idx">~/vendors</div><h2 class="h2">Their own status pages.</h2></div>
+<p style="margin: 0; font-size: 16px; color: var(--muted);">Only the vendors in your path, not every tool we use. Telegram publishes no status page of its own, so it shows as unknown rather than green.</p>
+</div>
+<div class="four" style="margin-top: 36px;">
+<sc-for list="{{vendors}}" as="v" hint-placeholder-count="11">
+<a href="#top" style="border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: var(--bg); display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+<span style="display: flex; align-items: center; gap: 10px;"><span style="width: 9px; height: 9px; border-radius: 50%; background: {{v.dot}};"></span><span style="font-weight: 600; font-size: 15px;">{{v.name}}</span></span>
+<span class="mono" style="font-size: 11.5px; color: var(--accent);">source →</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- FALLBACK -->
+<section class="wrap" style="padding-top: 70px; padding-bottom: 90px;">
+<div class="two split" style="gap: 16px;">
+<div class="card" style="border-style: dashed;"><div class="mono" style="font-size: 12px; color: var(--accent2);">if this page goes blank</div><div class="disp" style="font-size: 20px; font-weight: 600; margin-top: 8px;">The monitor runs on Vercel too.</div><p style="margin: 8px 0 0; color: var(--muted); font-size: 15px;">Like Agent Fritz and the contact form. If the lights cannot load, those may be down as well. The vendor pages still work. For anything urgent: info(at)meihuizen.ai.</p></div>
+<div class="card"><div class="mono" style="font-size: 12px; color: var(--accent2);">why this page exists</div><div class="disp" style="font-size: 20px; font-weight: 600; margin-top: 8px;">An outage took Fritz down once.</div><p style="margin: 8px 0 0; color: var(--muted); font-size: 15px;">Upstream, not us. You should not have to guess which, so now you can see it, with the vendor's own words one click away.</p></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid var(--line); padding: 44px 0 56px;">
+<div class="wrap" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; align-items: flex-start;">
+<div style="display: flex; gap: 18px; align-items: center;">
+<img src="/_blob/6d1d2bf1907344731ef7d9140eae2c7a" alt="meihuizen.ai since 2026" style="width: 120px; height: auto;">
+<div class="mono" style="font-size: 12px; color: var(--muted); line-height: 1.8;">MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</div>
+</div>
+<div class="mono" style="font-size: 12px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap;"><a href="#top">terms</a><a href="#top">privacy</a><a href="Credentials.dc.html">credentials</a><a href="#top">status</a><a href="#top">github</a></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark","kaunas"],"default":"light"},"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { now: Date.now(), sim: false };
+  }
+  componentDidMount() {
+    this._clock = setInterval(() => this.setState({ now: Date.now() }), 20000);
+  }
+  componentWillUnmount() {
+    clearInterval(this._clock);
+  }
+  kaunas() {
+    let wd = 'Mon', h = 12, m = 0;
+    try {
+      const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Vilnius', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(this.state.now));
+      parts.forEach((p) => { if (p.type === 'weekday') wd = p.value; if (p.type === 'hour') h = parseInt(p.value, 10) % 24; if (p.type === 'minute') m = parseInt(p.value, 10); });
+    } catch (e) {}
+    const weekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(wd) >= 0;
+    const open = weekday && h >= 10 && h < 18;
+    let reply = 'we reply today';
+    if (!open) {
+      if (weekday && h < 10) reply = 'reply from 10:00';
+      else if (['Mon', 'Tue', 'Wed', 'Thu'].indexOf(wd) >= 0) reply = 'reply tomorrow 10:00';
+      else reply = 'reply Monday 10:00';
+    }
+    const time = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+    return { open, time, reply, state: open ? 'open' : 'closed' };
+  }
+  renderVals() {
+    const k = this.kaunas();
+    const pick = this.props.theme ?? 'light';
+    const mode = pick === 'kaunas' ? (k.open ? 'light' : 'dark') : pick;
+    const L = { bg: '#F4F6F8', raised: '#FFFFFF', line: '#DFE3EA', text: '#14161C', muted: '#596074', accent: '#1F7D55', accent2: '#2B6F9C', accenth: '#186344', onaccent: '#FFFFFF', hover: '#EDF1F4', dotc: 'rgba(31,125,85,.35)', pulse: 'rgba(31,125,85,.45)', glow: 'rgba(95,168,211,.16)', diffr: 'rgba(216,115,74,.09)', diffg: 'rgba(31,125,85,.08)' };
+    const D = { bg: '#10121A', raised: '#171A24', line: '#262A38', text: '#ECEDF3', muted: '#8B90A3', accent: '#5FBF8E', accent2: '#5FA8D3', accenth: '#7AD0A4', onaccent: '#10121A', hover: '#1D2130', dotc: 'rgba(95,191,142,.30)', pulse: 'rgba(95,191,142,.45)', glow: 'rgba(95,168,211,.10)', diffr: 'rgba(216,115,74,.12)', diffg: 'rgba(95,191,142,.10)' };
+    const t = mode === 'dark' ? D : L;
+    const dot = k.open ? t.accent : '#D8734A';
+    const sim = this.state.sim;
+    const C = {
+      green: { dot: '#2E9E68', word: 'operational' },
+      amber: { dot: '#D9A030', word: 'degraded' },
+      red: { dot: '#D8573A', word: 'down' },
+      unknown: { dot: '#8B90A3', word: 'unknown' }
+    };
+    const vendorState = { 'Anthropic': sim ? 'amber' : 'green', 'Telegram': 'unknown' };
+    const vlight = (n) => vendorState[n] || 'green';
+    const svc = (name, deps, note) => {
+      const ls = deps.map(vlight);
+      const light = ls.indexOf('red') >= 0 ? 'red' : (ls.indexOf('amber') >= 0 ? 'amber' : 'green');
+      return {
+        name, note: note || '',
+        dot: C[light].dot, word: C[light].word,
+        border: light === 'green' ? 'var(--line)' : C[light].dot,
+        deps: deps.map((d) => { const l = vlight(d); return { name: d, border: l === 'green' || l === 'unknown' ? 'var(--line)' : C[l].dot, color: l === 'green' || l === 'unknown' ? 'var(--muted)' : C[l].dot }; })
+      };
+    };
+    const services = [
+      svc('Website', ['GitHub Pages']),
+      svc('Agent Fritz', ['Anthropic', 'Vercel', 'GitHub Pages', 'Upstash', 'Google Workspace', 'Proton', 'Telegram'], sim ? 'Answers may be slow or fail: Anthropic reports degraded performance. Not us, but it is our problem, so it is on this page.' : ''),
+      svc('Contact form and requests', ['Vercel', 'Proton']),
+      svc('Five', ['Supabase', 'Vercel', 'UpCloud']),
+      svc('Second Audience scans', ['OpenAI', 'Anthropic', 'Google Gemini', 'Perplexity'], sim ? 'A vendor outage can delay a report, not break it.' : '')
+    ];
+    const bad = services.filter((s) => s.word !== 'operational').length;
+    const banner = bad === 0
+      ? { title: 'All services operational', sub: 'Every light green. Telegram stays grey: it publishes no status.', dot: '#2E9E68', bg: 'var(--raised)', border: 'var(--line)' }
+      : { title: bad + ' services degraded, upstream', sub: 'Anthropic reports degraded performance. Our own systems are fine.', dot: '#D9A030', bg: 'rgba(217,160,48,.10)', border: '#D9A030' };
+    const vendors = ['GitHub', 'Vercel', 'Anthropic', 'Proton', 'Supabase', 'UpCloud', 'OpenAI', 'Google Cloud', 'Perplexity', 'Upstash', 'Google Workspace', 'Telegram'].map((n) => ({ name: n, dot: C[vlight(n)].dot }));
+    return {
+      t,
+      clock: { time: k.time, state: k.state, reply: k.reply, dot },
+      services,
+      banner,
+      vendors,
+      simLabel: sim ? '■ end the simulation' : '▶ simulate an upstream outage',
+      toggleSim: () => this.setState({ sim: !this.state.sim })
+    };
+  }
+}
+</script>
+</body>
+</html>

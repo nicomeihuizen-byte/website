@@ -615,6 +615,14 @@ def run(site_root: str) -> list[Issue]:
         )
         is_noindex = bool(robots_meta and "noindex" in robots_meta.attrs.get("content", ""))
         is_project_page = os.path.basename(full_path) not in ("index.html", "about.html", "builds.html")
+        # A noindex page whose only job is a meta refresh is a redirect stub
+        # (the retired NL/FR/DE/IT/ES/PT pages, 2026-10-02). It has no content
+        # to check; checking it as a page only buries real errors.
+        is_redirect_stub = is_noindex and any(
+            n.attrs.get("http-equiv", "").lower() == "refresh" for n in find_all(root, lambda n: n.tag == "meta")
+        )
+        if is_redirect_stub:
+            continue
 
         issues += check_seo_metadata(relpath, root, is_project_page, is_noindex)
         issues += check_headings(relpath, root)

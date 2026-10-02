@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>meihuizen.ai about</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+.mz *{box-sizing:border-box}
+.mz{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:'JetBrains Mono',monospace}
+.disp{font-family:'Space Grotesk',sans-serif}
+.idx{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent2);letter-spacing:.02em}
+.h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 0}
+.lead{font-size:18px;color:var(--muted);margin:14px 0 0}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer}
+.btn-p{background:var(--accent);color:var(--onaccent)}
+.btn-p:hover{background:var(--accenth);color:var(--onaccent)}
+.btn-g{background:var(--raised);border-color:var(--line);color:var(--text)}
+.btn-g:hover{background:var(--hover);color:var(--text)}
+.card{background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.five{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.pipe{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.spec{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px 18px}
+.dots{background-image:radial-gradient(circle,var(--dotc) 1.2px,transparent 1.8px);background-size:20px 20px;-webkit-mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%)}
+.grad{background:linear-gradient(95deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navl a{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);padding:12px 2px}
+.navl a:hover{color:var(--text)}
+.navl a.on{color:var(--text)}
+.pulse{animation:pu 2s ease-in-out infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 var(--pulse)}50%{box-shadow:0 0 0 5px transparent}}
+.spin{display:inline-block;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (max-width:900px){
+.wrap{padding:0 18px}
+.hero,.two{grid-template-columns:minmax(0,1fr);gap:40px}
+.three,.four{grid-template-columns:minmax(0,1fr)}
+.five{grid-template-columns:minmax(0,1fr)}
+.pipe{grid-template-columns:repeat(2,minmax(0,1fr))}
+.navl{display:none}
+.h1{font-size:42px}
+.h2{font-size:30px}
+.big{font-size:34px}
+.hidem{display:none}
+.ctaflex{flex-direction:column;align-items:flex-start}
+.pad{padding:40px 24px}
+.crewwrap{grid-template-columns:minmax(0,1fr) !important}
+.crew{grid-template-columns:minmax(0,1fr)}
+.spec{grid-template-columns:90px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.pulse,.spin{animation:none}}
+</style>
+</helmet>
+
+<div class="mz" style="--bg: {{t.bg}}; --raised: {{t.raised}}; --line: {{t.line}}; --text: {{t.text}}; --muted: {{t.muted}}; --accent: {{t.accent}}; --accent2: {{t.accent2}}; --accenth: {{t.accenth}}; --onaccent: {{t.onaccent}}; --hover: {{t.hover}}; --dotc: {{t.dotc}}; --pulse: {{t.pulse}}; --glow: {{t.glow}}; min-height: 100vh; background-image: radial-gradient(ellipse 900px 520px at 10% -8%, var(--glow), transparent 60%);">
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid var(--line);">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 68px;">
+<a href="#top" class="mono" style="display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></span>meihuizen.ai</a>
+<nav class="navl" style="display: flex; gap: 26px;">
+<a href="Main.dc.html">home</a><a href="Main.dc.html#builds">builds</a><a href="Main.dc.html#how">how it works</a><a href="#top" class="on">about</a><a href="#company">credentials</a><a href="#top">status</a><a href="#cta">contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px;">
+<span class="mono hidem" style="font-size: 11.5px; color: var(--muted); letter-spacing: .06em;"><b style="color: var(--accent);">EN</b> NL DE LT</span>
+<a href="#cta" class="mono" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: #10121A; color: #ECEDF3; font-size: 13px;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="#5FBF8E" aria-hidden="true"><circle cx="6" cy="9" r="2.2"></circle><circle cx="10" cy="5.5" r="2.2"></circle><circle cx="14" cy="5.5" r="2.2"></circle><circle cx="18" cy="9" r="2.2"></circle><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"></path></svg>~/ask fritz</a>
+</div>
+</div>
+</header>
+
+<!-- STATUS STRIP -->
+<div style="border-bottom: 1px solid var(--line); background: var(--raised);">
+<div class="wrap mono" style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; min-height: 38px; padding-top: 8px; padding-bottom: 8px; font-size: 11.5px; letter-spacing: .07em; color: var(--muted); text-transform: uppercase;">
+<span style="display: inline-flex; align-items: center; gap: 8px;"><span class="pulse" style="width: 7px; height: 7px; border-radius: 50%; background: {{clock.dot}};"></span><b style="color: var(--text); font-weight: 600;">Kaunas {{clock.time}}</b> · {{clock.state}} · {{clock.reply}}</span>
+<span>│</span>
+<span>Fritz <b style="color: var(--accent); font-weight: 600;">online</b></span>
+<span>│</span>
+<span>Last deploy <b style="color: var(--accent); font-weight: 600;">passed</b></span>
+<span class="hidem">│</span>
+<span class="hidem">MB Meihuizen AI · 308157412</span>
+</div>
+</div>
+
+<!-- HERO -->
+<section id="top" class="wrap" style="padding-top: 88px; padding-bottom: 96px;">
+<div class="hero">
+<div>
+<div class="idx">~/about</div>
+<h1 class="disp h1" style="font-size: 60px; line-height: 1.03; letter-spacing: -.035em; font-weight: 600; margin: 18px 0 0;">AI builds fast. Someone <span class="grad">senior</span> decides what's good.</h1>
+<p style="font-size: 19px; color: var(--muted); margin: 26px 0 0; max-width: 540px;">AI speeds up building enormously. It does not deliver a good product on its own. That takes vision, craft and hard choices, made by someone who has sat on the buyer's side of the table. That is the job here.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px;">
+<a href="#cta" class="btn btn-p">Talk to Nico <span aria-hidden="true">→</span></a>
+<a href="#ship" class="btn btn-g">How we ship</a>
+</div>
+</div>
+<div style="position: relative;">
+<img src="/_blob/8df94e5edeb88bf44bdc5c5cf415b6ff" alt="Fritz the dog, in sunglasses" style="position: absolute; right: 24px; top: -74px; width: 86px; height: auto; z-index: 2;">
+<div style="position: relative; z-index: 1; background: #10121A; border: 1px solid #262A38; border-radius: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.55); overflow: hidden; color: #ECEDF3;">
+<div class="mono" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #262A38; font-size: 12px;">
+<span style="display: flex; align-items: center; gap: 7px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #C02626;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #F4F6F8;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2B6F9C;"></span><span style="margin-left: 10px; color: #8B90A3;">nico@meihuizen.ai: ~/about</span></span>
+</div>
+<div style="display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 18px; padding: 20px;">
+<img src="/_blob/d22c0ec073a2c76e06759360ac47d66d" alt="Nico Meihuizen" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid #2E6B52; filter: grayscale(1);">
+<div class="mono" style="font-size: 12px; line-height: 1.75; color: #8B90A3;">
+<div><span style="color: #5FBF8E;">$</span> whoami</div>
+<div style="color: #ECEDF3;">Nico Meihuizen</div>
+<div style="color: #ECEDF3;">founder · AI-native software engineer</div>
+<div style="margin-top: 8px;"><span style="color: #5FBF8E;">$</span> history | head -1</div>
+<div style="color: #ECEDF3;">age 12 · IBM 5110 · a terminal and a manual</div>
+</div>
+</div>
+<div class="mono" style="padding: 0 20px 20px; font-size: 12px; line-height: 1.8; color: #8B90A3;">
+<div><span style="color: #5FBF8E;">$</span> cat career.log</div>
+<div><span style="color: #5FA8D3;">2011–2025</span> <span style="color: #ECEDF3;">enterprise IT sales · IBM · SoftLayer · Oracle · Minitab</span></div>
+<div><span style="color: #5FA8D3;">2022</span> <span style="color: #ECEDF3;">Minitab 100% Club</span></div>
+<div><span style="color: #5FA8D3;">2026</span> <span style="color: #ECEDF3;">meihuizen.ai · Kaunas</span></div>
+<div style="margin-top: 8px;"><span style="color: #5FBF8E;">$</span> ls ./cs-degree</div>
+<div style="color: #D8734A;">ls: cannot access './cs-degree': No such file or directory</div>
+<div><span style="color: #5FBF8E;">$</span> ls ./shipped</div>
+<div style="color: #ECEDF3;">second-audience/  agent-fritz/  five/  this-site/</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHO YOU GET -->
+<section class="wrap" style="padding-bottom: 110px;">
+<div class="two">
+<div>
+<div class="idx">~/who you get</div>
+<h2 class="h2">One person owns it. Start to finish.</h2>
+<p class="lead">Founder and AI-native software engineer, after fourteen years of enterprise sales. I own the architecture, the process and the hard technical calls, whether the team around it is me and nine agents or your own twenty engineers.</p>
+<p class="lead">No agency layers, no junior handoffs, no account manager relaying your notes. You talk to the person who writes the code. Having been the account manager for fourteen years is exactly why.</p>
+</div>
+<div class="card" style="align-self: start;">
+<div class="mono" style="font-size: 12px; color: var(--accent2); margin-bottom: 10px;">// from an IBM 5110 to enterprise IT</div>
+<p style="margin: 0; color: var(--muted);">I got my first computer at 12: an IBM 5110. No tutorials, just a terminal and a manual. Coding stayed a hobby through a career selling data center, cloud and SaaS to buyers who could smell a shallow pitch instantly.</p>
+<p style="margin: 14px 0 0; color: var(--muted);">That career taught one habit: know the product inside out before you present it. Now I build the product.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px;"><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">LLM tooling</span><span class="chip">Agentic workflows</span></div>
+</div>
+</div>
+</section>
+
+<!-- VISION -->
+<section style="background: var(--raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 110px 0;">
+<div class="wrap">
+<div class="idx">~/vision</div>
+<h2 class="disp big" style="font-size: 52px; line-height: 1.05; letter-spacing: -.03em; font-weight: 600; margin: 12px 0 0; max-width: 900px;">Your next buyer meets you <span class="grad">through an agent.</span></h2>
+<div class="two" style="margin-top: 36px;">
+<p style="margin: 0; font-size: 18px; color: var(--muted);">It reads your site, compares you with three others and answers before anyone picks up the phone. It answers whether or not you gave it anything to answer with. Most companies have not noticed yet. The agent does not care.</p>
+<p style="margin: 0; font-size: 18px; color: var(--muted);">Two things follow. Companies have to be readable by the machines that now do the first round of buying. And one senior person with agents has the reach a department used to need. We build for both: sites and data that agents get right, and agents that do real work.</p>
+</div>
+<div class="mono" style="margin-top: 56px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);">What we sell, we run on ourselves first</div>
+<div class="three" style="margin-top: 14px;">
+<div style="border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--bg);"><div class="mono" style="color: var(--accent); font-size: 12px;">✓ second-audience</div><div style="margin-top: 6px;">Scanned this site first. It found things.</div></div>
+<div style="border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--bg);"><div class="mono" style="color: var(--accent); font-size: 12px;">✓ agent-fritz</div><div style="margin-top: 6px;">Does the inside sales on this site. You can try him now.</div></div>
+<div style="border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--bg);"><div class="mono" style="color: var(--accent); font-size: 12px;">✓ five</div><div style="margin-top: 6px;">Holds our own pipeline. It knows which deal went quiet.</div></div>
+</div>
+</div>
+</section>
+
+<!-- SPECIALISATIONS -->
+<section class="wrap" style="padding-top: 110px; padding-bottom: 110px;">
+<div style="max-width: 640px;"><div class="idx">~/what we're good at</div><h2 class="h2">Four things, done properly.</h2></div>
+<div class="four" style="margin-top: 36px;">
+<sc-for list="{{skills}}" as="s" hint-placeholder-count="4">
+<div class="card" style="display: flex; flex-direction: column; padding: 24px;">
+<div class="mono" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid var(--accent); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;">{{s.glyph}}</div>
+<h3 class="disp" style="font-size: 21px; font-weight: 600; margin: 18px 0 8px; line-height: 1.2;">{{s.title}}</h3>
+<p style="margin: 0; color: var(--muted); font-size: 15px; flex: 1;">{{s.body}}</p>
+<a href="Main.dc.html#builds" class="mono" style="margin-top: 18px; font-size: 12px; color: var(--accent);">see: {{s.proof}} →</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- HOW WE SHIP -->
+<section id="ship" style="background: #10121A; color: #ECEDF3; padding: 110px 0; border-top: 1px solid #262A38; border-bottom: 1px solid #262A38;">
+<div class="wrap">
+<div class="two" style="align-items: end;">
+<div><div class="idx" style="color: #5FA8D3;">~/how we ship</div><h2 class="h2">Fast, with the brakes still on.</h2></div>
+<p style="margin: 0; font-size: 18px; color: #8B90A3;">Speed from AI is only worth something if the process catches what AI gets wrong. So every change runs the same route, whether it is a typo or a new agent. No exceptions for "small" ones.</p>
+</div>
+
+<div style="margin-top: 48px; border: 1px solid #262A38; border-radius: 16px; background: #171A24; overflow: hidden;">
+<div class="mono" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 14px 20px; border-bottom: 1px solid #262A38; font-size: 12px; color: #8B90A3;">
+<span><span style="color: #5FBF8E;">●</span> pipeline · feature/kaunas-clock → main</span>
+<span>{{run.label}}</span>
+</div>
+<div class="pipe" style="padding: 22px 20px;">
+<sc-for list="{{pipeline}}" as="p" hint-placeholder-count="7">
+<div style="border: 1px solid {{p.border}}; border-radius: 12px; padding: 14px; background: #10121A; transition: border-color .3s;">
+<div class="mono" style="font-size: 16px; height: 22px; color: {{p.color}};"><sc-if value="{{p.done}}" hint-placeholder-val="{{true}}">✓</sc-if><sc-if value="{{p.running}}" hint-placeholder-val="{{false}}"><span class="spin">◐</span></sc-if><sc-if value="{{p.waiting}}" hint-placeholder-val="{{false}}">○</sc-if></div>
+<div class="mono" style="font-size: 12.5px; font-weight: 600; margin-top: 8px; color: #ECEDF3;">{{p.name}}</div>
+<div style="font-size: 12.5px; color: #8B90A3; margin-top: 4px; line-height: 1.45;">{{p.body}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div class="three" style="margin-top: 16px;">
+<sc-for list="{{rules}}" as="r" hint-placeholder-count="6">
+<div style="border: 1px solid #262A38; border-radius: 14px; padding: 20px; background: #171A24;">
+<div class="mono" style="font-size: 12px; color: #5FBF8E;">{{r.tag}}</div>
+<div class="disp" style="font-size: 18px; font-weight: 600; margin-top: 6px;">{{r.title}}</div>
+<div style="font-size: 14.5px; color: #8B90A3; margin-top: 4px;">{{r.body}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- HOW I WORK WITH AI -->
+<section class="wrap" style="padding-top: 110px; padding-bottom: 110px;">
+<div style="max-width: 640px;"><div class="idx">~/how I work with AI</div><h2 class="h2">A tool. A very good one.</h2></div>
+<div class="five" style="margin-top: 40px; border-top: 1px solid var(--line);">
+<sc-for list="{{aiRules}}" as="a" hint-placeholder-count="5">
+<div style="padding: 22px 22px 0 0;">
+<div class="mono" style="font-size: 30px; font-weight: 500; color: var(--accent);">{{a.n}}</div>
+<div class="disp" style="font-size: 18px; font-weight: 600; margin-top: 10px; line-height: 1.25;">{{a.title}}</div>
+<div style="font-size: 14.5px; color: var(--muted); margin-top: 6px;">{{a.body}}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- CREW -->
+<section id="crew" style="background: var(--raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 110px 0;">
+<div class="wrap">
+<div class="two" style="align-items: end;">
+<div><div class="idx">~/the crew</div><h2 class="h2">One human. Nine agents. One dog.</h2></div>
+<p style="margin: 0; font-size: 18px; color: var(--muted);">You don't need thirty employees any more. One person with agents has the reach that used to take a department. Pretending otherwise is the old org chart with better marketing.</p>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 32px; margin-top: 48px;" class="crewwrap">
+<div style="display: flex; flex-direction: column; gap: 28px;">
+<div>
+<div class="mono" style="font-size: 11.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;">The one who steers</div>
+<div style="display: flex; align-items: center; gap: 16px; border: 1.5px solid var(--accent); border-radius: 14px; padding: 18px; background: var(--bg);">
+<img src="/_blob/d22c0ec073a2c76e06759360ac47d66d" alt="Nico" style="width: 56px; height: 56px; object-fit: cover; border-radius: 10px; filter: grayscale(1);">
+<div><div class="mono" style="font-weight: 600;">Nico</div><div style="color: var(--muted); font-size: 14px;">thinks, decides, verifies, and signs it</div></div>
+</div>
+</div>
+<div>
+<div class="mono" style="font-size: 11.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;">The one who fetches</div>
+<div style="display: flex; align-items: center; gap: 16px; border: 1px dashed var(--line); border-radius: 14px; padding: 18px; background: var(--bg);">
+<img src="/_blob/48580eac802121dae80a646b565ea73a" alt="Fritz the dog" style="width: 64px; height: auto;">
+<div><div class="mono" style="font-weight: 600;">Fritz, the dog</div><div style="color: var(--muted); font-size: 14px;">brings back only what is actually there. The agent got that rule from him.</div></div>
+</div>
+</div>
+</div>
+<div>
+<div class="mono" style="font-size: 11.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;">The ones who build</div>
+<div class="crew">
+<sc-for list="{{crew}}" as="c" hint-placeholder-count="9">
+<div style="border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--bg); display: flex; gap: 12px; align-items: flex-start;">
+<pre class="mono" style="margin: 0; flex: none; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 10px; line-height: 1.1;">{{c.face}}</pre>
+<div><div class="mono" style="font-size: 12.5px; font-weight: 600;">{{c.name}}</div><div style="font-size: 12.5px; color: var(--muted); line-height: 1.4; margin-top: 2px;">{{c.role}}</div></div>
+</div>
+</sc-for>
+</div>
+<div style="font-size: 12.5px; color: var(--muted); margin-top: 12px;">Tool names say which tools. No affiliation, partnership or endorsement implied.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MOBILE LAB -->
+<section id="lab" class="wrap" style="padding-top: 110px; padding-bottom: 110px;">
+<div class="pad" style="position: relative; border-radius: 28px; background: #10121A; color: #ECEDF3; overflow: hidden; padding: 56px;">
+<div class="two" style="align-items: center;">
+<div>
+<div class="idx" style="color: #5FA8D3;">~/the mobile lab</div>
+<h2 class="h2">The office has wheels.</h2>
+<p style="margin: 16px 0 0; font-size: 17px; color: #8B90A3;">There is no office to visit, on purpose. The work happens where the work is: at your table, on a call, or in the van parked outside. It runs fully off grid, so a discovery day in your car park and a build sprint in a Lithuanian forest run on the same power, the same uplink and the same coffee machine.</p>
+<p style="margin: 14px 0 0; font-size: 17px; color: #ECEDF3;">Anywhere in the EU, at your door within 48 hours.</p>
+</div>
+<img src="/_blob/8fc61c1de49376b7f5f4374ed59fa8be" alt="The meihuizen.ai van, mobile office and lab" style="width: 100%; height: auto;">
+</div>
+<div class="mono spec" style="margin-top: 40px; padding-top: 28px; border-top: 1px solid #262A38; font-size: 13px;">
+<sc-for list="{{specs}}" as="x" hint-placeholder-count="8">
+<span style="color: #5FBF8E; letter-spacing: .08em;">{{x.k}}</span><span style="color: #ECEDF3;">{{x.v}}</span>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- COMPANY / CHANGELOG -->
+<section id="company" class="wrap" style="padding-bottom: 110px;">
+<div class="two">
+<div>
+<div class="idx">~/where the company is</div>
+<h2 class="h2">Registered. And the old line stays.</h2>
+<p class="lead">I changed my mind for three reasons. An MB costs almost nothing to hold open. VAT and an entity turned out to be the price of entry to the conversations I want, not the reward for winning them. And Second Audience stopped being an idea.</p>
+<p class="lead">A page that was never wrong is a page nobody ever edited.</p>
+</div>
+<div style="align-self: start;">
+<div class="mono" style="border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 13px; background: var(--raised);">
+<div style="padding: 10px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px;">about.html · company</div>
+<div style="padding: 14px 16px; background: rgba(216,115,74,.10); color: var(--text); line-height: 1.65;"><span style="color: #D8734A;">- until Sep 2026</span><br>No company until there is a client. An empty company to look established is what I'd flag on your site.</div>
+<div style="padding: 14px 16px; background: rgba(95,191,142,.12); color: var(--text); line-height: 1.65;"><span style="color: var(--accent);">+ now</span><br>MB Meihuizen AI, a Lithuanian MB, company code 308157412. The VAT number goes here the day it lands.</div>
+</div>
+<a href="#company" class="mono" style="display: inline-block; margin-top: 14px; font-size: 13px; color: var(--accent);">check the code at Registrų centras →</a>
+<div class="mono" style="margin-top: 22px; font-size: 12px; color: var(--accent2); border: 1px dashed var(--accent2); padding: 12px 14px; border-radius: 10px; line-height: 1.6;">&gt; this page is also written for machines. Every fact here is in plain text and structured data, so I find out what agents get wrong about me before you do. ~/agents</div>
+</div>
+</div>
+</section>
+
+<!-- CTA BAND -->
+<section id="cta" class="wrap" style="padding-bottom: 100px;">
+<div class="pad" style="position: relative; border: 1px solid var(--line); border-radius: 28px; background: var(--raised); overflow: hidden; padding: 64px 56px;">
+<div class="dots" aria-hidden="true" style="position: absolute; inset: 0;"></div>
+<div class="ctaflex" style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 40px;">
+<div>
+<div class="idx">~/next</div>
+<h2 class="disp big" style="font-size: 52px; line-height: 1.04; letter-spacing: -.035em; font-weight: 600; margin: 14px 0 0;">15 minutes with the person<br>who <span class="grad">builds it.</span></h2>
+<div class="mono" style="margin-top: 22px; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 9px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{clock.dot}};"></span>{{clock.time}} in Kaunas · {{clock.state}} · {{clock.reply}}</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 260px;">
+<a href="#cta" class="btn btn-p" style="justify-content: space-between; min-height: 54px; font-size: 15px;">Book via Fritz
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6" cy="9" r="2.2"></circle><circle cx="10" cy="5.5" r="2.2"></circle><circle cx="14" cy="5.5" r="2.2"></circle><circle cx="18" cy="9" r="2.2"></circle><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"></path></svg></a>
+<a href="#cta" class="btn btn-g" style="justify-content: space-between; min-height: 54px; font-size: 15px;">Start a project <span aria-hidden="true">→</span></a>
+</div>
+</div>
+</div>
+<div class="mono" style="text-align: center; margin-top: 40px; font-size: 12.5px; color: var(--muted);">"The measure of intelligence is the ability to change." Albert Einstein</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid var(--line); padding: 44px 0 56px;">
+<div class="wrap" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; align-items: flex-start;">
+<div style="display: flex; gap: 18px; align-items: center;">
+<img src="/_blob/6d1d2bf1907344731ef7d9140eae2c7a" alt="meihuizen.ai since 2026" style="width: 120px; height: auto;">
+<div class="mono" style="font-size: 12px; color: var(--muted); line-height: 1.8;">MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</div>
+</div>
+<div class="mono" style="font-size: 12px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap;"><a href="#top">terms</a><a href="#top">privacy</a><a href="#company">credentials</a><a href="#top">status</a><a href="#top">github</a></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark","kaunas"],"default":"light"},"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { now: Date.now(), stage: 0 };
+  }
+  componentDidMount() {
+    this._clock = setInterval(() => this.setState({ now: Date.now() }), 20000);
+    this._pipe = setInterval(() => {
+      const s = this.state.stage;
+      this.setState({ stage: s >= 9 ? 0 : s + 1 });
+    }, 1100);
+  }
+  componentWillUnmount() {
+    clearInterval(this._clock);
+    clearInterval(this._pipe);
+  }
+  kaunas() {
+    let wd = 'Mon', h = 12, m = 0;
+    try {
+      const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Vilnius', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(this.state.now));
+      parts.forEach((p) => { if (p.type === 'weekday') wd = p.value; if (p.type === 'hour') h = parseInt(p.value, 10) % 24; if (p.type === 'minute') m = parseInt(p.value, 10); });
+    } catch (e) {}
+    const weekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(wd) >= 0;
+    const open = weekday && h >= 10 && h < 18;
+    let reply = 'we reply today';
+    if (!open) {
+      if (weekday && h < 10) reply = 'reply from 10:00';
+      else if (['Mon', 'Tue', 'Wed', 'Thu'].indexOf(wd) >= 0) reply = 'reply tomorrow 10:00';
+      else reply = 'reply Monday 10:00';
+    }
+    const time = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+    return { open, time, reply, state: open ? 'open' : 'closed' };
+  }
+  renderVals() {
+    const k = this.kaunas();
+    const pick = this.props.theme ?? 'light';
+    const mode = pick === 'kaunas' ? (k.open ? 'light' : 'dark') : pick;
+    const L = { bg: '#F4F6F8', raised: '#FFFFFF', line: '#DFE3EA', text: '#14161C', muted: '#596074', accent: '#1F7D55', accent2: '#2B6F9C', accenth: '#186344', onaccent: '#FFFFFF', hover: '#EDF1F4', dotc: 'rgba(31,125,85,.35)', pulse: 'rgba(31,125,85,.45)', glow: 'rgba(95,168,211,.16)' };
+    const D = { bg: '#10121A', raised: '#171A24', line: '#262A38', text: '#ECEDF3', muted: '#8B90A3', accent: '#5FBF8E', accent2: '#5FA8D3', accenth: '#7AD0A4', onaccent: '#10121A', hover: '#1D2130', dotc: 'rgba(95,191,142,.30)', pulse: 'rgba(95,191,142,.45)', glow: 'rgba(95,168,211,.10)' };
+    const t = mode === 'dark' ? D : L;
+    const dot = k.open ? t.accent : '#D8734A';
+    const stages = [
+      { name: 'branch', body: 'Every change on its own branch. Main is never touched directly.' },
+      { name: 'pull request', body: 'Described, linked to the why, readable a year later.' },
+      { name: 'ci: tests', body: 'Build, lint and tests run automatically on every push.' },
+      { name: 'ci: evals', body: 'Agents get graded on real conversations, traps included.' },
+      { name: 'human review', body: 'Nico reads the diff. Nothing merges unread.' },
+      { name: 'cd: deploy', body: 'Merge to main ships it. No hand-copied files.' },
+      { name: 'monitor', body: 'Public status page. If it breaks, you see it too.' }
+    ];
+    const st = this.state.stage;
+    const pipeline = stages.map((s, i) => {
+      const done = i < st;
+      const running = i === st && st < stages.length;
+      const waiting = !done && !running;
+      return { name: s.name, body: s.body, done, running, waiting, color: done ? '#5FBF8E' : (running ? '#E8B34A' : '#565B6E'), border: done ? '#2E6B52' : (running ? '#8A6A2A' : '#262A38') };
+    });
+    const run = { label: st >= stages.length ? '✓ all checks passed · deployed' : 'running ' + (st + 1) + ' of ' + stages.length };
+    return {
+      t,
+      clock: { time: k.time, state: k.state, reply: k.reply, dot },
+      pipeline,
+      run,
+      skills: [
+        { glyph: '{ }', title: 'Agentic products', body: 'Multi-agent systems and LLM-driven tools, built with a process disciplined enough that faster also means reliable.', proof: 'Agent Fritz' },
+        { glyph: '→→', title: 'Automated AI workflows', body: 'Agent-driven pipelines that take the repetitive work off your team, with a human sign-off where it matters.', proof: 'Second Audience' },
+        { glyph: '[ ]', title: 'Local-first, privacy-first', body: 'Software that runs on your own hardware, so your data stays yours. Built in the EU, for the GDPR you actually live with.', proof: 'One Acre, Zero Dependency' },
+        { glyph: '</>', title: 'Full-stack web platforms', body: 'Architecture, design, deployment and upkeep. This site runs in eight languages, written for people and machines.', proof: 'this site' }
+      ],
+      rules: [
+        { tag: 'git', title: 'Everything in version control', body: 'Code, prompts, evals and site copy. If it is not in Git, it does not exist.' },
+        { tag: 'ci/cd', title: 'Green pipeline or no release', body: 'A red check stops the deploy. Nobody overrides it to make a deadline.' },
+        { tag: 'evals', title: 'Agents are tested like code', body: 'A fixed set of conversations every agent has to pass, rerun on every change.' },
+        { tag: 'secrets', title: 'Keys never touch the repo', body: 'Credentials live in the platform vault. Least privilege, per environment.' },
+        { tag: 'gdpr', title: 'EU data, written down', body: 'A privacy page that says what is kept, how long, and who to ask to delete it.' },
+        { tag: 'open', title: 'Proof in public', body: 'Fritz’s guardrails and test harness are a public repo. Read the tests yourself.' }
+      ],
+      aiRules: [
+        { n: '01', title: 'It is a tool, not the work', body: 'A model on its own produces nothing a client can use. The result comes from the workflow around it.' },
+        { n: '02', title: 'Pipelines beat prompts', body: 'One prompt is a gamble. Controlled inputs and repeatable steps are a production method.' },
+        { n: '03', title: 'Default output is a draft', body: 'It ships when it survives review, not when it compiles.' },
+        { n: '04', title: 'Know where it breaks', body: 'Every model fails somewhere. Knowing where decides whether AI is the right tool at all.' },
+        { n: '05', title: 'The model does not decide what is good', body: 'It widens what one person can build. The judgement stays human.' }
+      ],
+      crew: [
+        { name: 'Claude', face: 'o o\n~', role: 'builds, writes, and argues back' },
+        { name: 'ChatGPT', face: '- -\n=', role: 'second opinion, and register A in a scan' },
+        { name: 'Gemini', face: '+ +\n.', role: 'third read on the same page' },
+        { name: 'Perplexity', face: '? ?\no', role: 'retrieval, and where a claim came from' },
+        { name: 'Kimi', face: '^ ^\n_', role: 'long context, and curiosity' },
+        { name: 'Mistral', face: '= =\nu', role: 'fifth register, and the European one' },
+        { name: 'Copilot', face: '= =\n=', role: 'inline completion in the editor' },
+        { name: 'BigML', face: ': :\n+', role: 'predictive models, and new here' },
+        { name: 'Agent Fritz', face: '• •\nω', role: 'answers from these pages only, and fetches the leads' }
+      ],
+      specs: [
+        { k: 'POWER', v: 'EcoFlow Delta Pro 3, plus a Heko station for DC' },
+        { k: 'SOLAR', v: 'roof panels, charging while we work' },
+        { k: 'UPLINK', v: 'Starlink Mini' },
+        { k: 'BACKUP', v: '3.3 kW inverter generator' },
+        { k: 'DESK', v: 'ThinkPad, 24" and 14" screens, one cable' },
+        { k: 'LAST MILE', v: 'a Microlino, for the final 30 km' },
+        { k: 'CREW', v: '1 human, 1 dog' },
+        { k: 'COFFEE', v: '3 a day, same battery as the build' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

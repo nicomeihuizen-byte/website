@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>meihuizen.ai homepage</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+.mz *{box-sizing:border-box}
+.mz{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:'JetBrains Mono',monospace}
+.disp{font-family:'Space Grotesk',sans-serif}
+.idx{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent2);letter-spacing:.02em}
+.h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 0}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer}
+.btn-p{background:var(--accent);color:var(--onaccent)}
+.btn-p:hover{background:var(--accenth);color:var(--onaccent)}
+.btn-g{background:var(--raised);border-color:var(--line);color:var(--text)}
+.btn-g:hover{background:var(--hover);color:var(--text)}
+.card{background:var(--raised);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.s4{grid-column:span 4}.s2{grid-column:span 2}.s6{grid-column:span 6}.r2{grid-row:span 2}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.crew{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.dots{background-image:radial-gradient(circle,var(--dotc) 1.2px,transparent 1.8px);background-size:20px 20px;-webkit-mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 60% 90% at 85% 50%,#000 20%,transparent 75%)}
+.grad{background:linear-gradient(95deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navl a{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);padding:12px 2px}
+.navl a:hover{color:var(--text)}
+.blink{animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.pulse{animation:pu 2s ease-in-out infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 var(--pulse)}50%{box-shadow:0 0 0 5px transparent}}
+.msg-in{animation:mi .35s ease-out}
+@keyframes mi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:900px){
+.wrap{padding:0 18px}
+.hero,.two{grid-template-columns:minmax(0,1fr);gap:40px}
+.bento{grid-template-columns:minmax(0,1fr)}
+.s4,.s2,.s6{grid-column:auto}.r2{grid-row:auto}
+.steps{grid-template-columns:minmax(0,1fr)}
+.crew{grid-template-columns:repeat(3,minmax(0,1fr))}
+.navl{display:none}
+.h1{font-size:44px}
+.h2{font-size:30px}
+.hidem{display:none}
+.ctaflex{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.blink,.pulse,.msg-in{animation:none}}
+</style>
+</helmet>
+
+<div class="mz" style="--bg: {{t.bg}}; --raised: {{t.raised}}; --line: {{t.line}}; --text: {{t.text}}; --muted: {{t.muted}}; --accent: {{t.accent}}; --accent2: {{t.accent2}}; --accenth: {{t.accenth}}; --onaccent: {{t.onaccent}}; --hover: {{t.hover}}; --dotc: {{t.dotc}}; --pulse: {{t.pulse}}; --glow: {{t.glow}}; min-height: 100vh; background-image: radial-gradient(ellipse 900px 520px at 10% -8%, var(--glow), transparent 60%);">
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid var(--line);">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 68px;">
+<a href="#top" class="mono" style="display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></span>meihuizen.ai</a>
+<nav class="navl" style="display: flex; gap: 26px;">
+<a href="#builds">builds</a><a href="#how">how it works</a><a href="#crew">about</a><a href="#top">credentials</a><a href="#top">status</a><a href="#cta">contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 14px;">
+<span class="mono hidem" style="font-size: 11.5px; color: var(--muted); letter-spacing: .06em;"><b style="color: var(--accent);">EN</b> NL DE LT</span>
+<a href="#fritz" class="mono" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: #10121A; color: #ECEDF3; font-size: 13px;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="#5FBF8E" aria-hidden="true"><circle cx="6" cy="9" r="2.2"></circle><circle cx="10" cy="5.5" r="2.2"></circle><circle cx="14" cy="5.5" r="2.2"></circle><circle cx="18" cy="9" r="2.2"></circle><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"></path></svg>~/ask fritz</a>
+</div>
+</div>
+</header>
+
+<!-- STATUS STRIP -->
+<div style="border-bottom: 1px solid var(--line); background: var(--raised);">
+<div class="wrap mono" style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; min-height: 38px; padding-top: 8px; padding-bottom: 8px; font-size: 11.5px; letter-spacing: .07em; color: var(--muted); text-transform: uppercase;">
+<span style="display: inline-flex; align-items: center; gap: 8px;"><span class="pulse" style="width: 7px; height: 7px; border-radius: 50%; background: {{clock.dot}};"></span><b style="color: var(--text); font-weight: 600;">Kaunas {{clock.time}}</b> · {{clock.state}} · {{clock.reply}}</span>
+<span>│</span>
+<span>Fritz <b style="color: var(--accent); font-weight: 600;">online</b></span>
+<span>│</span>
+<a href="#top" style="color: var(--muted);">All systems <b style="color: var(--accent); font-weight: 600;">green</b> →</a>
+<span class="hidem">│</span>
+<span class="hidem">MB Meihuizen AI · 308157412</span>
+<span class="hidem">│</span>
+<span class="hidem">VAT pending</span>
+</div>
+</div>
+
+<!-- HERO -->
+<section id="top" class="wrap" style="padding-top: 88px; padding-bottom: 96px;">
+<div class="hero">
+<div>
+<div class="idx">~/meihuizen.ai</div>
+<h1 class="disp h1" style="font-size: 64px; line-height: 1.02; letter-spacing: -.035em; font-weight: 600; margin: 18px 0 0;">Agentic AI software that <span class="grad">ships</span>, not just demos.</h1>
+<p style="font-size: 19px; color: var(--muted); margin: 26px 0 0; max-width: 520px;">We build AI-native software: systems that act on your workflows, not chatbots waiting for a prompt.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px;">
+<a href="#cta" class="btn btn-p">Talk to us <span aria-hidden="true">→</span></a>
+<a href="#builds" class="btn btn-g">See the builds</a>
+</div>
+<div class="mono" style="margin-top: 44px; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;">
+<span style="color: var(--accent2);">// years on the other side of the table</span>
+<span>IBM</span><span>SoftLayer</span><span>Oracle</span><span>Minitab</span>
+</div>
+</div>
+
+<!-- live Fritz -->
+<div id="fritz" style="position: relative;">
+<pre aria-hidden="true" class="mono" style="position: absolute; inset: -40px -60px -40px -40px; margin: 0; font-size: 11px; line-height: 1.3; color: var(--accent); opacity: .16; overflow: hidden; white-space: pre; pointer-events: none;">{{ascii}}</pre>
+<img src="/_blob/8df94e5edeb88bf44bdc5c5cf415b6ff" alt="Fritz the dog, in sunglasses" style="position: absolute; right: 26px; top: -78px; width: 92px; height: auto; z-index: 2;">
+<div style="position: relative; z-index: 1; background: #10121A; border: 1px solid #262A38; border-radius: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.55); overflow: hidden; color: #ECEDF3;">
+<div class="mono" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #262A38; font-size: 12px;">
+<span style="display: flex; align-items: center; gap: 7px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #C02626;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #F4F6F8;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2B6F9C;"></span><span style="margin-left: 10px; color: #8B90A3;">fritz@meihuizen.ai: ~/ask</span></span>
+<span style="color: #5FBF8E;">● online</span>
+</div>
+<div class="mono" style="padding: 16px 18px 6px; font-size: 12px; color: #8B90A3; line-height: 1.7;">
+<div><span style="color: #5FBF8E;">$</span> fritz --grounded --site meihuizen.ai</div>
+<div><span style="color: #5FBF8E;">✓</span> 57 pages indexed · answers only from what they say</div>
+</div>
+<div style="padding: 8px 18px 14px; height: 330px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; overflow: hidden;">
+<sc-for list="{{chat}}" as="m" hint-placeholder-count="3">
+<sc-if value="{{m.isUser}}" hint-placeholder-val="{{true}}">
+<div class="msg-in" style="align-self: flex-end; max-width: 78%; background: #1D2130; border: 1px solid #2E3344; border-radius: 12px 12px 3px 12px; padding: 9px 13px; font-size: 14px;">{{m.text}}</div>
+</sc-if>
+<sc-if value="{{m.isTool}}" hint-placeholder-val="{{false}}">
+<div class="mono msg-in" style="font-size: 11.5px; color: #5FA8D3;">↳ {{m.text}}</div>
+</sc-if>
+<sc-if value="{{m.isFritz}}" hint-placeholder-val="{{false}}">
+<div class="msg-in" style="max-width: 90%;">
+<div style="font-size: 14px; line-height: 1.55; color: #ECEDF3;">{{m.text}}</div>
+<div style="display: flex; gap: 6px; margin-top: 8px;"><span class="mono" style="font-size: 10.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid #2E6B52; color: #5FBF8E;">source: {{m.src}}</span><span class="mono" style="font-size: 10.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid #262A38; color: #8B90A3;">where does it say so?</span></div>
+</div>
+</sc-if>
+</sc-for>
+<sc-if value="{{typing}}" hint-placeholder-val="{{false}}">
+<div class="mono" style="font-size: 12px; color: #8B90A3;">fritz is reading<span class="blink">_</span></div>
+</sc-if>
+</div>
+<div style="padding: 0 18px 12px; display: flex; flex-wrap: wrap; gap: 6px;">
+<button type="button" class="mono" style="font-size: 11.5px; padding: 6px 10px; border-radius: 999px; border: 1px solid #262A38; background: transparent; color: #8B90A3; cursor: pointer;">Product sheet for Fritz?</button>
+<button type="button" class="mono" style="font-size: 11.5px; padding: 6px 10px; border-radius: 999px; border: 1px solid #262A38; background: transparent; color: #8B90A3; cursor: pointer;">Book 15 minutes</button>
+<button type="button" class="mono" style="font-size: 11.5px; padding: 6px 10px; border-radius: 999px; border: 1px solid #262A38; background: transparent; color: #8B90A3; cursor: pointer;">What is Second Audience?</button>
+</div>
+<div style="display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #262A38;">
+<label for="ask" style="position: absolute; left: -9999px;">Ask Fritz</label>
+<input id="ask" type="text" placeholder="Ask about meihuizen.ai…" style="flex: 1; min-height: 44px; background: #171A24; border: 1px solid #262A38; border-radius: 10px; color: #ECEDF3; padding: 0 14px; font-family: 'Inter', sans-serif; font-size: 14px; outline: none;">
+<button type="button" aria-label="Send" style="width: 44px; height: 44px; border-radius: 10px; border: none; background: #5FBF8E; color: #10121A; cursor: pointer; font-size: 18px;">↑</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BENTO -->
+<section id="builds" class="wrap" style="padding-bottom: 110px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 32px;">
+<div><div class="idx">~/builds</div><h2 class="h2">What we ship. All of it live.</h2></div>
+<a href="#builds" class="mono" style="font-size: 13px; color: var(--accent);">view all builds →</a>
+</div>
+<div class="bento">
+
+<div class="card s4">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+<div><span class="chip">AI / agentic web</span><h3 class="disp" style="font-size: 28px; font-weight: 600; margin: 16px 0 6px; letter-spacing: -.02em;">Second Audience</h3><p style="margin: 0; color: var(--muted); max-width: 380px;">Recurring audit of what AI agents read on your domain, and what they get wrong.</p></div>
+<span class="mono" style="font-size: 12px; padding: 6px 12px; border-radius: 8px; background: var(--accent); color: var(--onaccent); white-space: nowrap;">free scan · €0</span>
+</div>
+<div class="mono" style="margin-top: 26px; background: #10121A; border-radius: 12px; padding: 16px 18px; font-size: 12.5px; line-height: 1.95; color: #8B90A3;">
+<div style="color: #565B6E;">// sample readout, not a real client</div>
+<div><span style="color: #5FBF8E;">✓</span> robots.txt <span style="color: #ECEDF3;">AI crawlers allowed</span></div>
+<div><span style="color: #E8B34A;">!</span> JSON-LD <span style="color: #ECEDF3;">Organization present, legal name missing</span></div>
+<div><span style="color: #D8734A;">✗</span> same fact, two answers <span style="color: #ECEDF3;">pricing page vs FAQ</span></div>
+<div><span style="color: #5FBF8E;">✓</span> lang tags <span style="color: #ECEDF3;">all locales declared</span></div>
+</div>
+</div>
+
+<div class="card s2 r2" style="display: flex; flex-direction: column; background: #10121A; border-color: #262A38; color: #ECEDF3;">
+<span class="chip" style="background: transparent; border-color: #262A38; color: #8B90A3; align-self: flex-start;">AI / agents</span>
+<h3 class="disp" style="font-size: 28px; font-weight: 600; margin: 16px 0 6px; letter-spacing: -.02em;">Agent Fritz</h3>
+<p style="margin: 0; color: #8B90A3;">The chat in the corner. Answers from this site, or says it can't. Then books the call.</p>
+<div style="flex: 1; display: flex; align-items: flex-end; justify-content: center; padding: 22px 0 10px;"><img src="/_blob/48580eac802121dae80a646b565ea73a" alt="Fritz walking" style="width: 78%; max-width: 230px; height: auto;"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px;"><span class="mono" style="font-size: 11px; color: #5FBF8E; border: 1px solid #2E6B52; padding: 3px 9px; border-radius: 999px;">SPIN</span><span class="mono" style="font-size: 11px; color: #5FBF8E; border: 1px solid #2E6B52; padding: 3px 9px; border-radius: 999px;">Challenger</span><span class="mono" style="font-size: 11px; color: #5FBF8E; border: 1px solid #2E6B52; padding: 3px 9px; border-radius: 999px;">MEDDPICC</span></div>
+</div>
+
+<div class="card s2">
+<span class="chip">AI / SaaS</span>
+<h3 class="disp" style="font-size: 24px; font-weight: 600; margin: 16px 0 6px;">Five</h3>
+<p style="margin: 0; color: var(--muted); font-size: 15px;">Five deals a week. You will know when one goes quiet.</p>
+<div style="display: flex; gap: 8px; align-items: flex-end; height: 64px; margin-top: 22px;">
+<div style="flex: 1; height: 100%; border-radius: 6px; background: var(--accent);"></div>
+<div style="flex: 1; height: 82%; border-radius: 6px; background: var(--accent);"></div>
+<div style="flex: 1; height: 92%; border-radius: 6px; background: var(--accent);"></div>
+<div style="flex: 1; height: 30%; border-radius: 6px; border: 1.5px dashed var(--muted);"></div>
+<div style="flex: 1; height: 70%; border-radius: 6px; background: var(--accent);"></div>
+</div>
+<div class="mono" style="font-size: 11px; color: var(--muted); margin-top: 8px;">deal 4 · quiet for 9 days</div>
+</div>
+
+<div class="card s2">
+<span class="chip">custom builds</span>
+<h3 class="disp" style="font-size: 24px; font-weight: 600; margin: 16px 0 6px;">Built into your workflow</h3>
+<p style="margin: 0; color: var(--muted); font-size: 15px;">AI as the architecture, not a chatbot stapled to something that already existed.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px;"><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">React</span><span class="chip">LLM tooling</span></div>
+</div>
+
+<div class="card s6" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; padding: 24px 32px;">
+<img src="/_blob/6b2093d8b45e4bbddf774181614dca66" alt="The meihuizen.ai van: mobile office and lab" style="width: 260px; max-width: 100%; height: auto;">
+<div style="flex: 1; min-width: 240px;">
+<div class="idx">~/how we show up</div>
+<h3 class="disp" style="font-size: 26px; font-weight: 600; margin: 8px 0 6px; letter-spacing: -.01em;">A mobile office and lab, at your door within 48 hours.</h3>
+<p style="margin: 0; color: var(--muted);">Anywhere in the EU. No offshore team, no account manager relaying your notes.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- STEPS -->
+<section id="how" style="background: var(--raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 100px 0;">
+<div class="wrap">
+<div style="max-width: 640px; margin-bottom: 48px;"><div class="idx">~/how buying works</div><h2 class="h2">Four steps. You decide after each one.</h2><p style="color: var(--muted); margin: 14px 0 0;">No package to pick and no long commitment up front. Every case is priced on what it is worth to you, before the work starts.</p></div>
+<div class="steps">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<div style="position: relative; padding: 0 28px 0 0;">
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+<span class="mono" style="width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid var(--accent); color: var(--accent); font-size: 13px; font-weight: 600; background: var(--bg);">{{s.n}}</span>
+<span style="flex: 1; height: 1px; background: var(--line);"></span>
+<sc-if value="{{s.gate}}" hint-placeholder-val="{{true}}"><span class="mono" style="font-size: 10.5px; color: var(--accent2); border: 1px dashed var(--accent2); border-radius: 999px; padding: 3px 9px; white-space: nowrap;">you decide</span><span style="width: 16px; height: 1px; background: var(--line);"></span></sc-if>
+</div>
+<div class="mono" style="font-size: 12px; color: var(--accent); letter-spacing: .05em; text-transform: uppercase;">{{s.price}}</div>
+<h3 class="disp" style="font-size: 22px; font-weight: 600; margin: 6px 0 8px;">{{s.title}}</h3>
+<p style="margin: 0; color: var(--muted); font-size: 15px; padding-bottom: 28px;">{{s.body}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- PRINCIPLES + CREW -->
+<section id="crew" class="wrap" style="padding-top: 110px; padding-bottom: 110px;">
+<div class="two">
+<div>
+<div class="idx">~/principles</div><h2 class="h2">What we don't compromise on.</h2>
+<div style="margin-top: 34px; display: flex; flex-direction: column;">
+<sc-for list="{{principles}}" as="p" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: 56px minmax(0,1fr); gap: 12px; padding: 18px 0; border-top: 1px solid var(--line);">
+<span class="mono" style="font-size: 13px; color: var(--accent2); padding-top: 3px;">{{p.n}}</span>
+<div><div class="disp" style="font-size: 19px; font-weight: 600;">{{p.title}}</div><div style="color: var(--muted); font-size: 15px; margin-top: 3px;">{{p.body}}</div></div>
+</div>
+</sc-for>
+</div>
+</div>
+<div>
+<div class="idx">~/the crew</div><h2 class="h2">One human. Nine agents. Said out loud.</h2>
+<p style="color: var(--muted); margin: 14px 0 26px;">You don't need thirty employees any more. Pretending otherwise is the old org chart with better marketing.</p>
+<div class="mono" style="font-size: 11.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;">The one who steers</div>
+<div style="display: flex; align-items: center; gap: 16px; border: 1.5px solid var(--accent); border-radius: 14px; padding: 16px 18px; background: var(--raised); margin-bottom: 22px;">
+<pre class="mono" style="margin: 0; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 12px; line-height: 1.15; text-align: center;">* *
+ v</pre>
+<div><div class="mono" style="font-weight: 600;">Nico</div><div style="color: var(--muted); font-size: 14px;">thinks, decides, verifies, and signs it</div></div>
+</div>
+<div class="mono" style="font-size: 11.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px;">The ones who build</div>
+<div class="crew">
+<sc-for list="{{crew}}" as="c" hint-placeholder-count="9">
+<div style="border: 1px solid var(--line); border-radius: 12px; padding: 12px 8px; background: var(--raised); text-align: center;">
+<pre class="mono" style="margin: 0 auto 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 10px; line-height: 1.1;">{{c.face}}</pre>
+<div class="mono" style="font-size: 11.5px; font-weight: 600;">{{c.name}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA BAND -->
+<section id="cta" class="wrap" style="padding-bottom: 100px;">
+<div style="position: relative; border: 1px solid var(--line); border-radius: 28px; background: var(--raised); overflow: hidden; padding: 64px 56px;">
+<div class="dots" aria-hidden="true" style="position: absolute; inset: 0;"></div>
+<div aria-hidden="true" style="position: absolute; left: -120px; top: -160px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, var(--glow), transparent 70%);"></div>
+<div class="ctaflex" style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 40px;">
+<div>
+<div class="idx">~/next</div>
+<h2 class="disp" style="font-size: 56px; line-height: 1.02; letter-spacing: -.035em; font-weight: 600; margin: 14px 0 0;">Your build goes<br><span class="grad">here next.</span></h2>
+<div class="mono" style="margin-top: 22px; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 9px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{clock.dot}};"></span>{{clock.time}} in Kaunas · {{clock.state}} · {{clock.reply}}</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 260px;">
+<a href="#top" class="btn btn-p" style="justify-content: space-between; min-height: 54px; font-size: 15px;">Start a project <span aria-hidden="true">→</span></a>
+<a href="#fritz" class="btn btn-g" style="justify-content: space-between; min-height: 54px; font-size: 15px;">Book 15 min via Fritz
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6" cy="9" r="2.2"></circle><circle cx="10" cy="5.5" r="2.2"></circle><circle cx="14" cy="5.5" r="2.2"></circle><circle cx="18" cy="9" r="2.2"></circle><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid var(--line); padding: 44px 0 56px;">
+<div class="wrap" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; align-items: flex-start;">
+<div style="display: flex; gap: 18px; align-items: center;">
+<img src="/_blob/6d1d2bf1907344731ef7d9140eae2c7a" alt="meihuizen.ai since 2026" style="width: 120px; height: auto;">
+<div class="mono" style="font-size: 12px; color: var(--muted); line-height: 1.8;">MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+<div class="mono" style="font-size: 12px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap;"><a href="#top">terms</a><a href="#top">privacy</a><a href="#top">credentials</a><a href="#top">status</a></div>
+<a href="#top" class="mono" style="font-size: 12px; color: var(--accent2); border: 1px dashed var(--accent2); padding: 6px 12px; border-radius: 8px;">&gt; this site is built to be read by machines: ~/agents</a>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark","kaunas"],"default":"light"},"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { now: Date.now(), step: 1 };
+  }
+  componentDidMount() {
+    this._clock = setInterval(() => this.setState({ now: Date.now() }), 20000);
+    this._chat = setInterval(() => {
+      const s = this.state.step;
+      this.setState({ step: s >= 10 ? 1 : s + 1 });
+    }, 1500);
+  }
+  componentWillUnmount() {
+    clearInterval(this._clock);
+    clearInterval(this._chat);
+  }
+  kaunas() {
+    let wd = 'Mon', h = 12, m = 0;
+    try {
+      const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Vilnius', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(this.state.now));
+      parts.forEach((p) => { if (p.type === 'weekday') wd = p.value; if (p.type === 'hour') h = parseInt(p.value, 10) % 24; if (p.type === 'minute') m = parseInt(p.value, 10); });
+    } catch (e) {}
+    const weekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(wd) >= 0;
+    const open = weekday && h >= 10 && h < 18;
+    let reply = 'we reply today';
+    if (!open) {
+      if (weekday && h < 10) reply = 'reply from 10:00';
+      else if (['Mon', 'Tue', 'Wed', 'Thu'].indexOf(wd) >= 0) reply = 'reply tomorrow 10:00';
+      else reply = 'reply Monday 10:00';
+    }
+    const time = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+    return { open, time, reply, state: open ? 'open' : 'closed' };
+  }
+  ascii() {
+    const cs = '01{}[]<>/\\|=+*#%$@&?!;:~^-_abcdefghijklmnopqrstuvwxyz0123456789';
+    let seed = 7, out = [];
+    for (let r = 0; r < 34; r++) {
+      let line = '';
+      for (let c = 0; c < 78; c++) {
+        seed = (seed * 1103515245 + 12345) % 2147483648;
+        const v = seed / 2147483648;
+        const density = Math.min(1, (c / 78) * 1.5);
+        line += v < density * 0.8 ? cs[Math.floor(((seed >> 8) % cs.length + cs.length) % cs.length)] : ' ';
+      }
+      out.push(line);
+    }
+    return out.join('\n');
+  }
+  renderVals() {
+    const k = this.kaunas();
+    const pick = this.props.theme ?? 'light';
+    const mode = pick === 'kaunas' ? (k.open ? 'light' : 'dark') : pick;
+    const L = { bg: '#F4F6F8', raised: '#FFFFFF', line: '#DFE3EA', text: '#14161C', muted: '#596074', accent: '#1F7D55', accent2: '#2B6F9C', accenth: '#186344', onaccent: '#FFFFFF', hover: '#EDF1F4', dotc: 'rgba(31,125,85,.35)', pulse: 'rgba(31,125,85,.45)', glow: 'rgba(95,168,211,.16)' };
+    const D = { bg: '#10121A', raised: '#171A24', line: '#262A38', text: '#ECEDF3', muted: '#8B90A3', accent: '#5FBF8E', accent2: '#5FA8D3', accenth: '#7AD0A4', onaccent: '#10121A', hover: '#1D2130', dotc: 'rgba(95,191,142,.30)', pulse: 'rgba(95,191,142,.45)', glow: 'rgba(95,168,211,.10)' };
+    const t = mode === 'dark' ? D : L;
+    const dot = k.open ? t.accent : '#D8734A';
+    const priceLine = k.open
+      ? 'Priced per case: Fritz is a custom build, not a wrapper. It is ' + k.time + ' in Kaunas and Nico is in. Shall I pass this on so he can call you back?'
+      : 'Priced per case: Fritz is a custom build, not a wrapper. It is ' + k.time + ' in Kaunas, so Nico is off. I can pass this on now and he will ' + k.reply.replace('reply', 'reply') + '.';
+    const script = [
+      { isUser: true, text: 'Is this a real company?' },
+      { isTool: true, text: 'read_page  credentials.html' },
+      { isFritz: true, text: 'Yes. MB Meihuizen AI, company code 308157412, a Lithuanian legal entity. You can check it yourself at Registrų centras.', src: 'credentials.html' },
+      { isUser: true, text: 'What would Fritz cost for our site?' },
+      { isTool: true, text: 'read_page  projects/agent-fritz.html' },
+      { isFritz: true, text: priceLine, src: 'agent-fritz.html' }
+    ];
+    const n = Math.min(this.state.step, script.length);
+    const chat = script.slice(0, n).map((m) => ({ isUser: !!m.isUser, isTool: !!m.isTool, isFritz: !!m.isFritz, text: m.text, src: m.src || '' }));
+    const next = script[n];
+    const typing = !!(next && next.isTool) || !!(next && next.isFritz);
+    return {
+      t,
+      clock: { time: k.time, state: k.state, reply: k.reply, dot },
+      chat,
+      typing,
+      ascii: this.ascii(),
+      steps: [
+        { n: '01', price: 'free · €0', title: 'Free scan', body: 'What AI agents read on your domain, and where they get it wrong.', gate: true },
+        { n: '02', price: 'priced on the case', title: 'Report, two prices', body: 'Every finding explained in money terms. Fix it yourself, or we do it end to end.', gate: true },
+        { n: '03', price: 'priced on the case', title: 'Build or fix', body: 'The fixes, Fritz on your own domain, or a custom build around your workflow.', gate: true },
+        { n: '04', price: 'ongoing', title: 'Monitor and re-scan', body: 'Re-scans after every change, so the fix still holds next quarter.', gate: false }
+      ],
+      principles: [
+        { n: '01', title: 'AI + Human', body: 'Every build has two workers: a career in enterprise IT, and a model that reads faster and is wrong more confidently.' },
+        { n: '02', title: 'Not on the site is an answer', body: 'No estimate, no plausible filler. If it is not written down, we say so.' },
+        { n: '03', title: 'Nothing goes out unconfirmed', body: 'Details read back, the visitor says yes, then it acts.' },
+        { n: '04', title: 'Old claims stay visible', body: 'When we change our mind, the old line stays with a date. A page that was never wrong was never edited.' },
+        { n: '05', title: 'Small on purpose', body: 'Close enough to understand what you are trying to do. No delivery team in between.' }
+      ],
+      crew: [
+        { name: 'Claude', face: 'o o\n~' }, { name: 'ChatGPT', face: '- -\n=' }, { name: 'Gemini', face: '+ +\n.' },
+        { name: 'Perplexity', face: '? ?\no' }, { name: 'Kimi', face: '^ ^\n_' }, { name: 'Mistral', face: '= =\nu' },
+        { name: 'Copilot', face: '= =\n=' }, { name: 'BigML', face: ': :\n+' }, { name: 'Fritz', face: '• •\nω' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
