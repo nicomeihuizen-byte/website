@@ -148,4 +148,24 @@
       input.value = '';
     });
   }
+  // ---- 5. the "how we ship" pipeline -----------------------------------------
+  // The HTML shows every stage green, which is also the reduced-motion view.
+  // With motion allowed, a run walks through the stages and lands green again.
+  var pipe = document.querySelector('[data-pipe]');
+  if (pipe && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var stages = pipe.querySelectorAll('li');
+    var label = document.querySelector('[data-pipe-label]');
+    var done = label ? label.textContent : '';
+    var at = -2;
+    setInterval(function () {
+      at = at >= stages.length + 2 ? 0 : at + 1;
+      Array.prototype.forEach.call(stages, function (li, i) {
+        li.classList.toggle('done', at < 0 || i < at || at >= stages.length);
+        li.classList.toggle('run', i === at);
+      });
+      if (label) {
+        label.textContent = (at >= 0 && at < stages.length) ? 'running ' + (at + 1) + ' of ' + stages.length : done;
+      }
+    }, 1100);
+  }
 })();

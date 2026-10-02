@@ -44,391 +44,308 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="fonts/fonts.css">
-<style>
-  /* --- THEME -----------------------------------------------------------
-       Two palettes, one set of names. Light is on the bare :root so a page
-       paints light before scripts/theme.js has run: the flash you get
-       otherwise is the wrong-theme flash every static site has. Dark is a
-       values swap under [data-theme="dark"], which the script stamps on
-       <html> from localStorage. Values are the two palettes measured for
-       Five (sales-intel), so the app and the site are one product.
-       --------------------------------------------------------------- */
-  :root{
-    color-scheme:light;
-    --bg:#F4F6F8;
-    --bg-raised:#FFFFFF;
-    --line:#DFE3EA;
-    --text:#14161C;
-    --text-muted:#596074;
-    --text-dim:#666D80;
-    --accent:#1F7D55;
-    --accent-dim:#9FC4B1;
-    --accent2:#2B6F9C;
-    --accent-hover:#186344;
-    --on-accent:#FFFFFF;
-    --raised-hover:#EDF1F4;
-    --header-bg:rgba(244,246,248,0.85);
-    --dot-idle:#C7CDD8;
-    --figure-bg:#10121A;
-    --warn:#A84D08;
-    --danger:#C02626;
-    --glow-a:rgba(232,179,74,0.14);
-    --glow-b:rgba(95,168,211,0.12);
-    --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
-    --font-body:'Inter', sans-serif;
-    --font-mono:'JetBrains Mono', monospace;
-    --max-w:780px;
-  }
-  :root[data-theme="dark"]{
-    color-scheme:dark;
-    --bg:#10121A;
-    --bg-raised:#171A24;
-    --line:#262A38;
-    --text:#ECEDF3;
-    --text-muted:#8B90A3;
-    --text-dim:#565B6E;
-    --accent:#5FBF8E;
-    --accent-dim:#2E6B52;
-    --accent2:#5FA8D3;
-    --accent-hover:#7AD0A4;
-    --on-accent:#181205;
-    --raised-hover:#1D2130;
-    --header-bg:rgba(16,18,26,0.82);
-    --dot-idle:#3A3E4C;
-    --figure-bg:#10121A;
-    --warn:#E8B34A;
-    --danger:#D8734A;
-    --glow-a:rgba(232,179,74,0.07);
-    --glow-b:rgba(95,168,211,0.06);
-    --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
-  }
-
-
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    min-height:100vh;
-    background:var(--bg);
-    background-image:
-      radial-gradient(ellipse 900px 500px at 15% -10%, var(--glow-a), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, var(--glow-b), transparent 60%);
-    color:var(--text);
-    font-family:var(--font-body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--accent);color:var(--bg);}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-
-  header{
-    position:sticky;
-    top:0;
-    z-index:20;
-    background:var(--header-bg);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  /* Wordmark. A business site says whose it is in the top left, and that
-     name goes home. This was in the markup all along, commented out. */
-  .brand{
-    font-family:var(--font-mono);
-    font-size:14px; font-weight:500;
-    color:var(--text);
-    display:flex; align-items:center; gap:8px;
-  }
-  .brand .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 8px var(--accent);
-  }
-  .navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:var(--max-w);
-    margin:0 auto;
-    padding:18px 24px;
-  }
-  nav ul{list-style:none;display:flex;gap:28px;}
-  nav a{font-family:var(--font-mono);font-size:13px;color:var(--text-muted);transition:color .15s ease;}
-  nav a:hover{color:var(--accent);}
-
-  .page{max-width:var(--max-w);margin:0 auto;padding:88px 24px 64px;}
-  .terminal{
-    overflow:hidden;
-    background:var(--bg-raised);
-    border:1px solid var(--line);
-    border-radius:10px;
-    box-shadow:var(--shadow-card);
-  }
-  .terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
-  .terminal-bar > span{width:10px;height:10px;border-radius:50%;background:var(--dot-idle);}
-  .terminal-bar > span:nth-child(1){background:#AE1C28;}
-  .terminal-bar > span:nth-child(2){background:#FFFFFF;}
-  .terminal-bar > span:nth-child(3){background:#21468B;}
-  .lang-switch{display:flex;align-items:center;gap:6px;margin-left:auto;}
-  .lang-flag{display:inline-flex;align-items:center;justify-content:center;padding:2px;border-radius:2px;text-decoration:none;opacity:0.55;transition:opacity .15s ease, outline-color .15s ease;}
-  .lang-flag-code{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.5px;color:var(--text-muted);line-height:1;}
-  .lang-flag:hover{opacity:1;}
-  .lang-flag[aria-current="true"]{opacity:1;}
-  .lang-flag:hover .lang-flag-code,.lang-flag[aria-current="true"] .lang-flag-code{font-weight:700;color:var(--accent);}
-  .lang-flag .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .terminal-body{padding:28px 28px 32px;}
-  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:32px;}
-  .section-head .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent2);}
-  h1{font-family:var(--font-mono);font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.5;color:var(--accent);}
-  .about-copy{max-width:56ch;margin-top:22px;padding-top:22px;border-top:1px solid var(--line);}
-  .about-copy h2{
-    font-family:var(--font-mono);
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:0.02em;
-    color:var(--accent);
-    margin:26px 0 10px;
-  }
-  .about-copy h2:first-of-type{ margin-top:0; }
-  .about-copy p{margin-bottom:16px;color:var(--text-muted);font-size:15px;}
-  .about-copy p:last-child{margin-bottom:0;}
-  .about-copy strong{color:var(--text);font-weight:600;}
-  .about-copy .quote-text{color:var(--accent);}
-  .about-image{display:block;float:right;width:auto;max-width:240px;height:auto;max-height:180px;margin:0 0 20px 24px;border:1px solid var(--accent);border-radius:8px;}
-  .crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:10px;margin:20px 0 14px;}
-  .crew figure{margin:0;min-width:0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-raised);}
-  .crew figure::before{display:block;white-space:pre;font-family:var(--font-mono);font-size:12px;line-height:1.15;color:var(--accent-dim);margin:0 0 10px;}
-  .crew .is-human::before{color:var(--accent);}
-  .crew .c-nico::before{content:"┌─────┐\A│ * * │\A│  v  │\A└─────┘";}
-  .crew .c-claude::before{content:"┌─────┐\A│ o o │\A│  ─  │\A└─────┘";}
-  .crew .c-chatgpt::before{content:"┌─────┐\A│ - - │\A│  ~  │\A└─────┘";}
-  .crew .c-gemini::before{content:"┌─────┐\A│ + + │\A│  .  │\A└─────┘";}
-  .crew .c-perplexity::before{content:"┌─────┐\A│ ? ? │\A│  o  │\A└─────┘";}
-  .crew .c-kimi::before{content:"┌─────┐\A│ ^ ^ │\A│  _  │\A└─────┘";}
-  .crew .c-copilot::before{content:"┌─────┐\A│ = = │\A│  =  │\A└─────┘";}
-  .crew .c-mistral::before{content:"┌─────┐\A│ ~ ~ │\A│  u  │\A└─────┘";}
-  .crew .c-bigml::before{content:"┌─────┐\A│ : : │\A│  +  │\A└─────┘";}
-  .crew .c-fritz::before{content:"┌▼───▼┐\A│ • • │\A│  ω  │\A└─────┘";}
-  .crew figcaption{display:flex;flex-direction:column;gap:3px;}
-  .crew b{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:500;}
-  .crew span{font-size:12px;color:var(--text-muted);line-height:1.45;}
-  .crew .is-human{border-color:var(--accent-dim);}
-  .crew-note{font-size:12px;color:var(--text-dim);}
-  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-  .stack span{padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text-muted);font-family:var(--font-mono);font-size:12px;}
-  .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
-  .btn{padding:11px 18px;border:1px solid var(--line);border-radius:6px;font-family:var(--font-mono);font-size:13px;}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600;}
-  .btn.ghost{color:var(--text-muted);}
-  .btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .btn.primary:hover{background:var(--accent-hover);color:var(--on-accent);border-color:var(--accent);}
-  footer{max-width:var(--max-w);margin:0 auto;padding:0 24px 40px;color:var(--text-dim);font-family:var(--font-mono);font-size:11.5px;}
-  .social-links{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;}
-  .social-links a{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:7px 10px;
-    border:1px solid var(--accent-dim);
-    border-radius:4px;
-    color:var(--accent);
-    font-size:13.5px;
-    transition:color .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .social-links a:hover{color:var(--bg);border-color:var(--accent);background:var(--accent);}
-  .social-links svg{width:16px;height:16px;fill:currentColor;flex:none;}
-  .social-links .sr-only{
-    position:absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-    border:0;
-  }
-  .footer-meta{display:flex;justify-content:flex-start;gap:10px;color:var(--accent);}
-
-  @media (max-width:600px){
-    .navbar{padding:16px 18px;}
-    nav ul{gap:16px;}
-    .page{padding:56px 18px 44px;}
-    .terminal-body{padding:22px 18px 26px;}
-    .about-image{float:none;width:240px;max-width:100%;height:auto;max-height:180px;margin:0 auto 20px;object-position:center;}
-    footer{padding:0 18px 28px;}
-  }
-
-  /* Theme toggle. The button says where it will take you, not where you
-     are, and both words sit in the markup with CSS hiding one, so the
-     label is right in the first paint and cannot lag the attribute. It
-     ships visible and a <noscript> rule hides it, along with its
-     separator, when there is no JavaScript here to drive it. */
-  .theme-toggle{
-    font-family:var(--font-mono);
-    font-size:13px;
-    color:var(--text-muted);
-    background:none; border:0; padding:0;
-    cursor:pointer;
-    transition:color .15s ease;
-  }
-  .theme-toggle:hover{ color:var(--accent); }
-  .nav-sep{ color:var(--line); user-select:none; }
-  :root[data-theme="dark"] .theme-label-light{ display:none; }
-  :root:not([data-theme="dark"]) .theme-label-dark{ display:none; }
-  /* The white traffic light is white on white without this. Red and blue
-     are the flag's own colours and stay put in both themes. */
-  :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
-  /* The nav has six items, a wordmark and a theme toggle. On a phone that
-     is wider than the phone, and it was pushing the whole page sideways
-     before the wordmark was ever added. Let it wrap instead. */
-  @media (max-width: 600px){
-    .navbar{ flex-wrap:wrap; gap:12px; padding:14px 24px; }
-    nav ul{ flex-wrap:wrap; gap:14px 18px; }
-    /* Wrapped, the divider ends up alone at the start of a line, which
-       reads as a stray character rather than a divider. */
-    .nav-sep{ display:none; }
-  }
-</style>
+<link rel="stylesheet" href="styles/site.css">
 <script src="scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
-<header>
-  <div class="navbar">
-    <a class="brand" href="/"><span class="dot"></span> meihuizen.ai</a>
-    <nav aria-label="Primary navigation">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="./" class="brand" aria-label="meihuizen.ai home"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Main">
       <ul>
-        <li><a href="/">home</a></li>
+        <li><a href="./">home</a></li>
+        <li><a href="projects/second-audience.html">products</a></li>
         <li><a href="builds.html">builds</a></li>
         <li><a href="about.html" aria-current="page">about</a></li>
         <li><a href="credentials.html">credentials</a></li>
-        <li><a href="status.html">status</a></li>
-        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Site language">
+        <a href="about.html" lang="en" hreflang="en" aria-current="true">EN</a>
+        <a href="lt/about.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+      <button type="button" class="ask-pill" data-fritz-ask="Hi Fritz, what can you do for me?">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="9" r="2.2"/><circle cx="10" cy="5.5" r="2.2"/><circle cx="14" cy="5.5" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6.2 0 1.8 1.4 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-1 3-2.8C18 14.5 15 11 12 11z"/></svg>~/ask fritz</button>
+    </div>
   </div>
 </header>
 
-<main class="page">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
-      <nav class="lang-switch" aria-label="Site language">
-        <a href="about.html" class="lang-flag" lang="en" hreflang="en" title="English" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">English (current page)</span>
-        </a>
-        <a href="lt/about.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">View this page in Lithuanian</span>
-        </a>
-</nav>
-    </div>
-    <div class="terminal-body">
-      <div class="section-head">
-        <span class="idx">~/about</span>
-        <h1>meihuizen.ai: We Didn't Start With AI. We Started With a Terminal.</h1>
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span><b>about</b></span>
+    <span class="wide" aria-hidden="true">│</span>
+    <span class="wide">one human, nine agents, one dog</span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="idx">~/about</p>
+      <h1 class="h1" style="font-size:60px">AI builds fast. Someone <span class="grad">senior</span> decides what's good.</h1>
+      <p class="lead">AI speeds up building enormously. It does not deliver a good product on its own. That takes vision, craft and hard choices, made by someone who has sat on the buyer's side of the table. That is the job here.</p>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-p">Talk to Nico <span aria-hidden="true">→</span></a>
+        <a href="#ship" class="btn btn-g">How we ship</a>
       </div>
-      <div class="about-copy">
-        <img class="about-image" src="images/main/ai-software-engineering-workspace.png" alt="AI software engineering workspace" loading="lazy" width="800" height="800">
-        <h2>From an IBM 5110 to enterprise IT</h2>
-        <p>I got my first computer at 12: an IBM 5110, no tutorials, just a terminal and a manual. I taught myself HTML and JavaScript there, building websites for fun. That hobby ran alongside a career in enterprise IT sales, pitching data center, cloud, and SaaS at IBM, SoftLayer, Oracle, and Minitab to buyers who could smell a shallow pitch instantly.</p>
-        <h2>The pivot to AI-native engineering</h2>
-        <p>Years of pitching taught one habit: understand a product inside out before you present it. Then came the pivot, retraining through Metana's AI Software Engineering program. I now lead meihuizen.ai as an AI-native software engineer, stacking that coding background, sales instinct, and AI training on top of each other. AI isn't a feature here. It's how the work gets built.</p>
-        <h2>The stack</h2>
-        <p>The stack: TypeScript, Python, React, LLM tooling, agentic workflows, shipped and monitored, not demoed once and forgotten. No computer science degree, and that's fine. Ask about a decision and get a straight answer, including the ones that didn't work first try.</p>
-        <h2>Small on purpose</h2>
-        <p>I build for quality of life and the freedom to work on my own terms, including as a digital nomad. Small on purpose: close enough to actually understand what you're trying to accomplish, and quick to show up in person when it helps. No far-away delivery team in between.</p>
-        <h2>No office. On purpose.</h2>
-        <p>There is no office to visit, because there isn't one. The work happens where the work is: at your table, on a call, or in the van, kitted out to build from anywhere.</p>
-        <h2>"We" means me and my agents</h2>
-        <p>Claude, ChatGPT, Gemini, Perplexity, Kimi, Mistral, Copilot, BigML, and me. That's the team, and I'd rather say it than let you assume a bench of engineers that doesn't exist.</p>
-        <p>Every build has two workers on it: someone with a career in enterprise IT behind him, and a model that reads faster than he does and is wrong more confidently. The work is what each one catches the other doing.</p>
-        <p>Five of them are also the agents I query when I scan someone's website. I know how they read a page because I watch them read mine all day.</p>
-        <h2>The crew</h2>
-        <p>You don't need thirty employees any more. One person with agents has the reach that used to take a department, and pretending otherwise is just the old org chart with better marketing. So here is the whole roster.</p>
-        <div class="crew">
-          <figure class="is-human c-nico">
-            <figcaption><b>Nico</b>
-            <span>thinks, contemplates, decides, verifies, and signs it</span></figcaption>
-          </figure>
-          <figure class="c-claude">
-            <figcaption><b>Claude</b>
-            <span>builds, writes, and argues back</span></figcaption>
-          </figure>
-          <figure class="c-chatgpt">
-            <figcaption><b>ChatGPT</b>
-            <span>second opinion, and register A in a scan</span></figcaption>
-          </figure>
-          <figure class="c-gemini">
-            <figcaption><b>Gemini</b>
-            <span>third read on the same page</span></figcaption>
-          </figure>
-          <figure class="c-perplexity">
-            <figcaption><b>Perplexity</b>
-            <span>retrieval, and where a claim came from</span></figcaption>
-          </figure>
-          <figure class="c-kimi">
-            <figcaption><b>Kimi</b>
-            <span>long context, and curiosity</span></figcaption>
-          </figure>
-          <figure class="c-mistral">
-            <figcaption><b>Mistral</b>
-            <span>fifth register, and the European one</span></figcaption>
-          </figure>
-          <figure class="c-copilot">
-            <figcaption><b>Copilot</b>
-            <span>inline completion in the editor</span></figcaption>
-          </figure>
-          <figure class="c-bigml">
-            <figcaption><b>BigML</b>
-            <span>predictive models, and new here</span></figcaption>
-          </figure>
-          <figure class="c-fritz">
-            <figcaption><b>Fritz</b>
-            <span>answers from these pages only, and fetches the leads</span></figcaption>
-          </figure>
+    </div>
+    <div class="hero-term">
+      <div class="term">
+        <div class="term-bar"><span class="term-dots"><i></i><i></i><i></i><span>nico@meihuizen.ai: ~/about</span></span></div>
+        <div class="whoami">
+          <img src="images/main/ai-software-engineering-workspace.png" alt="Nico Meihuizen" width="800" height="800">
+          <div class="mono" style="font-size:12px;line-height:1.75;color:var(--t-muted)">
+            <p><b>$</b> whoami</p>
+            <p class="v">Nico Meihuizen</p>
+            <p class="v">founder · AI-native software engineer</p>
+            <p class="gap"><b>$</b> history | head -1</p>
+            <p class="v">age 12 · IBM 5110 · a terminal and a manual</p>
+          </div>
         </div>
-        <p class="crew-note">Tool names are used to say which tools. No affiliation, partnership or endorsement implied.</p>
-        <h2>Where the company is</h2>
-        <p>Registered. MB Meihuizen AI, a Lithuanian MB, company code 308157412. The VAT number goes in the footer the day it lands.</p>
-        <p>This page used to say the opposite. It said registering an empty company to look established is exactly the move I'd flag on a client's site, and that when there was a client there'd be a company. I changed my mind. The old line stays here instead of quietly disappearing, because a page that was never wrong is a page nobody ever edited.</p>
-        <p>Three things changed it. An MB costs almost nothing to hold open, so the empty-company objection doesn't bite the way it does against a real registration bill. VAT and an entity turned out to be the price of entry to the conversations I want to be in, not the reward for winning them. And Second Audience stopped being an idea. There's a method, there are reports, and there's a page on this site that proves the thing it claims. We're ready to deliver on that promise any day of the week.</p>
-        <p>Check the company code against the Lithuanian register. Beyond that you have my name, the company address, my email, and public code on GitHub. Verify any of it.</p>
-        <h2>What I'll tell you about your own site</h2>
-        <p>Second Audience is the scan I run on other people's websites: what an AI agent can actually read, do, and get wrong on your domain. I ran it on this one first. It found things.</p>
-        <p><a href="projects/second-audience.html">Second Audience &rarr;</a></p>
-        <br>
-        <p><strong><i class="quote-text">"The measure of intelligence is the ability to change."</i></strong> - Albert Einstein</p>
-      </div>
-      <div class="stack" aria-label="Technology stack">
-        <span>TypeScript</span>
-        <span>Python</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>LLM tooling</span>
-        <span>Agentic workflows</span>
+        <div class="term-log">
+          <p><b>$</b> cat career.log</p>
+          <p><span class="d">2011–2025</span> <span class="v">enterprise IT sales · IBM · SoftLayer · Oracle · Minitab</span></p>
+          <p><span class="d">2022</span> <span class="v">Minitab 100% Club</span></p>
+          <p><span class="d">2026</span> <span class="v">meihuizen.ai · Kaunas</span></p>
+          <p class="gap"><b>$</b> ls ./cs-degree</p>
+          <p class="e">ls: cannot access './cs-degree': No such file or directory</p>
+          <p><b>$</b> ls ./shipped</p>
+          <p class="v">second-audience/  agent-fritz/  five/  this-site/</p>
+        </div>
       </div>
     </div>
-  </article>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:110px">
+  <div class="two">
+    <div>
+      <p class="idx">~/who you get</p>
+      <h2 class="h2">One person owns it. Start to finish.</h2>
+      <p class="body-l">Founder and AI-native software engineer, after fourteen years of enterprise sales. I own the architecture, the process and the hard technical calls, whether the team around it is me and nine agents or your own twenty engineers.</p>
+      <p class="body-l">No agency layers, no junior handoffs, no account manager relaying your notes. You talk to the person who writes the code. Having been the account manager for fourteen years is exactly why.</p>
+    </div>
+    <div class="card" style="align-self:start">
+      <p class="mono" style="font-size:12px;color:var(--accent2);margin-bottom:10px">// from an IBM 5110 to enterprise IT</p>
+      <p>I got my first computer at 12: an IBM 5110. No tutorials, just a terminal and a manual. Coding stayed a hobby through a career selling data center, cloud and SaaS to buyers who could smell a shallow pitch instantly.</p>
+      <p style="margin-top:14px">That career taught one habit: know the product inside out before you present it. Now I build the product.</p>
+      <div class="chips" style="margin-top:20px"><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">LLM tooling</span><span class="chip">Agentic workflows</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-raised" style="padding:110px 0">
+  <div class="wrap">
+    <p class="idx">~/vision</p>
+    <h2 class="vision-h">Your next buyer meets you <span class="grad">through an agent.</span></h2>
+    <div class="two" style="margin-top:36px">
+      <p class="vision-p">It reads your site, compares you with three others and answers before anyone picks up the phone. It answers whether or not you gave it anything to answer with. Most companies have not noticed yet. The agent does not care.</p>
+      <p class="vision-p">Two things follow. Companies have to be readable by the machines that now do the first round of buying. And one senior person with agents has the reach a department used to need. We build for both: sites and data that agents get right, and agents that do real work.</p>
+    </div>
+    <p class="crew-label" style="margin-top:56px">What we sell, we run on ourselves first</p>
+    <div class="three">
+      <a class="proof" href="projects/second-audience.html"><div class="mono">✓ second-audience</div><p>Scanned this site first. It found things.</p></a>
+      <a class="proof" href="projects/agent-fritz.html"><div class="mono">✓ agent-fritz</div><p>Does the inside sales on this site. You can try him now.</p></a>
+      <a class="proof" href="projects/ai-sales-deal-intelligence.html"><div class="mono">✓ five</div><p>Holds our own pipeline. It knows which deal went quiet.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div style="max-width:640px"><p class="idx">~/what we're good at</p><h2 class="h2">Four things, done properly.</h2></div>
+    <div class="four" style="margin-top:36px">
+      <div class="card skill"><div class="glyph">{ }</div><h3>Agentic products</h3><p>Multi-agent systems and LLM-driven tools, built with a process disciplined enough that faster also means reliable.</p><a class="link" href="projects/agent-fritz.html">see: Agent Fritz →</a></div>
+      <div class="card skill"><div class="glyph">→→</div><h3>Automated AI workflows</h3><p>Agent-driven pipelines that take the repetitive work off your team, with a human sign-off where it matters.</p><a class="link" href="projects/second-audience.html">see: Second Audience →</a></div>
+      <div class="card skill"><div class="glyph">[ ]</div><h3>Local-first, privacy-first</h3><p>Software that runs on your own hardware, so your data stays yours. Built in the EU, for the GDPR you actually live with.</p><a class="link" href="projects/off-grid-ai-homestead.html">see: One Acre, Zero Dependency →</a></div>
+      <div class="card skill"><div class="glyph">&lt;/&gt;</div><h3>Full-stack web platforms</h3><p>Architecture, design, deployment and upkeep. This site is written for people and for machines, in English and Lithuanian.</p><a class="link" href="projects/terminal-portfolio-website.html">see: this site →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="ship" class="dark-band">
+  <div class="wrap">
+    <div class="two" style="align-items:end">
+      <div><p class="idx">~/how we ship</p><h2 class="h2">Fast, with the brakes still on.</h2></div>
+      <p style="margin:0;font-size:18px">Speed from AI is only worth something if the process catches what AI gets wrong. So every change runs the same route, whether it is a typo or a new agent. No exceptions for "small" ones.</p>
+    </div>
+    <div class="pipe-box">
+      <div class="pipe-bar"><span><span style="color:var(--t-green)">●</span> pipeline · branch → main</span><span data-pipe-label>✓ all checks passed · deployed</span></div>
+      <ol class="pipe" data-pipe>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>branch</b><span>Every change on its own branch. Main is never edited directly.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>pull request</b><span>Described, linked to the why, readable a year later.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>ci: scan + tests</b><span>CodeQL security scan and unit tests on every push and pull request.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>ci: evals</b><span>Fritz answers his trap questions on every preview deploy. Red means no merge.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>human review</b><span>Nico reads the diff. Nothing merges unread.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>cd: deploy</b><span>Merge to main ships it. No hand-copied files.</span></li>
+        <li class="done"><div class="st" aria-hidden="true"></div><b>monitor</b><span>Public status page. If it breaks, you see it too.</span></li>
+      </ol>
+      <p class="pipe-named"><span>CodeQL · this site</span><span>npm test · agent-fritz-guardrails, every push</span><span>Fritz evals · every Vercel deploy</span><span>ESLint + Next.js build · Five</span><span>site diagnostics · SEO and security sweep</span></p>
+    </div>
+    <div class="three" style="margin-top:16px">
+      <div class="rule"><div class="mono">git</div><b>Everything in version control</b><p>Code, prompts, evals and site copy. If it is not in Git, it does not exist.</p></div>
+      <div class="rule"><div class="mono">ci/cd</div><b>Green checks or no release</b><p>A red check on a preview means it does not merge. Nobody overrides it to make a deadline.</p></div>
+      <div class="rule"><div class="mono">evals</div><b>Agents are tested like code</b><p>A fixed set of trap questions every agent has to pass before a change goes out.</p></div>
+      <div class="rule"><div class="mono">secrets</div><b>Keys never touch the repo</b><p>Credentials live in the hosting platform's settings, per environment.</p></div>
+      <div class="rule"><div class="mono">gdpr</div><b>EU data, written down</b><p>A privacy page that says what is kept, how long, and who to ask to delete it.</p></div>
+      <div class="rule"><div class="mono">open</div><b>Proof in public</b><p>Fritz's guardrails and test harness are a public repo. Read the tests yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div style="max-width:640px"><p class="idx">~/how I work with AI</p><h2 class="h2">A tool. A very good one.</h2></div>
+    <ol class="five">
+      <li><div class="n">01</div><b>It is a tool, not the work</b><span>A model on its own produces nothing a client can use. The result comes from the workflow around it.</span></li>
+      <li><div class="n">02</div><b>Pipelines beat prompts</b><span>One prompt is a gamble. Controlled inputs and repeatable steps are a production method.</span></li>
+      <li><div class="n">03</div><b>Default output is a draft</b><span>It ships when it survives review, not when it compiles.</span></li>
+      <li><div class="n">04</div><b>Know where it breaks</b><span>Every model fails somewhere. Knowing where decides whether AI is the right tool at all.</span></li>
+      <li><div class="n">05</div><b>The model does not decide what is good</b><span>It widens what one person can build. The judgement stays human.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="crew" class="section section-raised">
+  <div class="wrap">
+    <div class="two" style="align-items:end">
+      <div><p class="idx">~/the crew</p><h2 class="h2">One human. Nine agents. One dog.</h2></div>
+      <p style="margin:0;font-size:18px" class="muted">You don't need thirty employees any more. One person with agents has the reach that used to take a department. Pretending otherwise is the old org chart with better marketing.</p>
+    </div>
+    <div class="crew-wrap">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div>
+          <p class="crew-label">The one who steers</p>
+          <div class="person"><img src="images/main/ai-software-engineering-workspace.png" alt="Nico" width="800" height="800" loading="lazy"><div><b class="mono">Nico</b><div class="muted" style="font-size:14px">thinks, decides, verifies, and signs it</div></div></div>
+        </div>
+        <div>
+          <p class="crew-label">The one who fetches</p>
+          <div class="person dog"><img src="images/main/hero-van-dog-walk.png" alt="Fritz the dog" width="514" height="422" loading="lazy"><div><b class="mono">Fritz, the dog</b><div class="muted" style="font-size:14px">brings back only what is actually there. The agent got that rule from him.</div></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="crew-label">The ones who build</p>
+        <ul class="crew-full">
+          <li><pre class="face" aria-hidden="true">o o
+~</pre><div><b>Claude</b><span>builds, writes, and argues back</span></div></li>
+          <li><pre class="face" aria-hidden="true">- -
+=</pre><div><b>ChatGPT</b><span>second opinion, and register A in a scan</span></div></li>
+          <li><pre class="face" aria-hidden="true">+ +
+.</pre><div><b>Gemini</b><span>third read on the same page</span></div></li>
+          <li><pre class="face" aria-hidden="true">? ?
+o</pre><div><b>Perplexity</b><span>retrieval, and where a claim came from</span></div></li>
+          <li><pre class="face" aria-hidden="true">^ ^
+_</pre><div><b>Kimi</b><span>long context, and curiosity</span></div></li>
+          <li><pre class="face" aria-hidden="true">= =
+u</pre><div><b>Mistral</b><span>fifth register, and the European one</span></div></li>
+          <li><pre class="face" aria-hidden="true">= =
+=</pre><div><b>Copilot</b><span>inline completion in the editor</span></div></li>
+          <li><pre class="face" aria-hidden="true">: :
++</pre><div><b>BigML</b><span>predictive models, and new here</span></div></li>
+          <li><pre class="face" aria-hidden="true">• •
+ω</pre><div><b>Agent Fritz</b><span>answers from these pages only, and fetches the leads</span></div></li>
+        </ul>
+        <p class="muted" style="font-size:12.5px;margin-top:12px">Tool names say which tools. No affiliation, partnership or endorsement implied.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lab" class="section">
+  <div class="wrap">
+    <div class="lab">
+      <div class="two" style="align-items:center">
+        <div>
+          <p class="idx">~/the mobile lab</p>
+          <h2 class="h2">The office has wheels.</h2>
+          <p>There is no office to visit, on purpose. The work happens where the work is: at your table, on a call, or in the van parked outside. It runs fully off grid, so a discovery day in your car park and a build sprint in a Lithuanian forest run on the same power, the same uplink and the same coffee machine.</p>
+          <p class="hi">Anywhere in the EU, at your door within 48 hours.</p>
+        </div>
+        <img src="images/main/van-with-logo2.png" alt="The meihuizen.ai van, mobile office and lab" width="982" height="598" loading="lazy">
+      </div>
+      <dl class="spec">
+        <dt>POWER</dt><dd>EcoFlow Delta Pro 3, plus a Heko station for DC</dd>
+        <dt>SOLAR</dt><dd>roof panels, charging while we work</dd>
+        <dt>UPLINK</dt><dd>Starlink Mini</dd>
+        <dt>BACKUP</dt><dd>3.3 kW inverter generator</dd>
+        <dt>DESK</dt><dd>ThinkPad, 24" and 14" screens, one cable</dd>
+        <dt>LAST MILE</dt><dd>a Microlino, for the final 30 km</dd>
+        <dt>CREW</dt><dd>1 human, 1 dog</dd>
+        <dt>COFFEE</dt><dd>3 a day, same battery as the build</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="company" class="wrap" style="padding-bottom:110px">
+  <div class="two">
+    <div>
+      <p class="idx">~/where the company is</p>
+      <h2 class="h2">Registered. And the old line stays.</h2>
+      <p class="body-l">I changed my mind for three reasons. An MB costs almost nothing to hold open. VAT and an entity turned out to be the price of entry to the conversations I want, not the reward for winning them. And Second Audience stopped being an idea.</p>
+      <p class="body-l">A page that was never wrong is a page nobody ever edited.</p>
+    </div>
+    <div style="align-self:start">
+      <div class="diff">
+        <div class="diff-h"><span>about.html · company</span></div>
+        <div class="diff-r"><span class="tag">- until Sep 2026</span><br>No company until there is a client. An empty company to look established is what I'd flag on your site.</div>
+        <div class="diff-g"><span class="tag">+ now</span><br>MB Meihuizen AI, a Lithuanian MB, company code 308157412. The VAT number goes here the day it lands.</div>
+      </div>
+      <p style="margin-top:14px"><a class="link" href="https://www.registrucentras.lt/" rel="noopener">check the code at Registrų centras →</a></p>
+      <p class="note-agent" style="margin-top:22px">&gt; this page is also written for machines. Every fact here is in plain text and structured data, so I find out what agents get wrong about me before you do.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:100px">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/next</p>
+        <h2>15 minutes with the person<br>who <span class="grad">builds it.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>office hours</span> · <span data-office-reply>Mon to Fri, 10:00 to 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <button type="button" class="btn btn-p btn-wide" data-fritz-ask="Book me a 15-minute call with Nico">Book via Fritz <span aria-hidden="true">→</span></button>
+        <a href="contact.html" class="btn btn-g btn-wide">Start a project <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+  <p class="quote">"The measure of intelligence is the ability to change." Albert Einstein</p>
+</section>
+
 </main>
 
-<footer>
-  <div class="social-links" aria-label="Social links">
-    <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-      <span class="sr-only">github</span>
-    </a>
-    <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg>
-      <span class="sr-only">linkedin</span>
-    </a>
-    <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg>
-      <span class="sr-only">X</span>
-    </a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai since 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · company code 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Mon to Fri, 10:00 to 18:00 Kaunas time</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="legal/terms-of-business.pdf">terms</a></li>
+        <li><a href="credentials.html">credentials</a></li>
+        <li><a href="status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span>© 2026 meihuizen.ai</span></p>
+    </div>
   </div>
-  <div class="footer-meta"><span>&copy; 2026 Nico Meihuizen</span><!-- <span>European Union</span> --></div>
 </footer>
+
+<script src="scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>
