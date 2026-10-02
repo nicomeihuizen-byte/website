@@ -1,0 +1,151 @@
+/*
+ * home.js: the moving parts of the redesigned pages (2026-10-02).
+ *
+ *  1. Office hours, everywhere a [data-office-*] element sits: the status
+ *     strip and the CTA band. Open or closed comes from window.mhOffice in
+ *     scripts/theme.js, so holidays and hours live in one place only. This
+ *     file only adds the wording for when a reply can be expected.
+ *  2. The live status bits in the strip, read from the same monitor that
+ *     fills status.html. If the monitor cannot be reached the strip keeps
+ *     its neutral text: it never claims green it did not see.
+ *  3. The hero chat: a replay of a real Fritz exchange, typed out line by
+ *     line. The first exchange is in the HTML, so without JavaScript (or with
+ *     reduced motion) the window still shows a real answer.
+ *  4. Typing in the hero box hands the question to the real Fritz, through
+ *     the data-fritz-ask hook that ask/ask.js listens for.
+ */
+(function () {
+  'use strict';
+
+  // ---- 1. office hours ------------------------------------------------------
+  var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  var fmt = null;
+  try {
+    fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Vilnius', hourCycle: 'h23', weekday: 'short', hour: '2-digit' });
+  } catch (e) { fmt = null; }
+
+  function replyText(open) {
+    if (open) { return 'we reply today'; }
+    if (!fmt) { return 'reply next working day'; }
+    var p = {};
+    fmt.formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+    var day = DAYS.indexOf(p.weekday), hour = Number(p.hour);
+    if (day >= 0 && day <= 4 && hour < 10) { return 'reply from 10:00'; }
+    if (day >= 0 && day <= 3 && hour >= 18) { return 'reply tomorrow from 10:00'; }
+    if (day >= 4) { return 'reply Monday from 10:00'; }
+    return 'reply next working day';
+  }
+
+  function setAll(sel, text) {
+    Array.prototype.forEach.call(document.querySelectorAll(sel), function (n) { n.textContent = text; });
+  }
+
+  function tick() {
+    if (!window.mhOffice) { return; }
+    var o = window.mhOffice.now();
+    if (!o) { return; }
+    document.documentElement.setAttribute('data-office', o.open ? 'open' : 'closed');
+    setAll('[data-office-time]', o.time);
+    setAll('[data-office-state]', o.open ? 'open' : 'closed');
+    setAll('[data-office-reply]', replyText(o.open));
+    return o;
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  // ---- 2. live status -------------------------------------------------------
+  var STATUS_URL = 'https://website-contact-function-4efp.vercel.app/api/status';
+  var fritzEl = document.querySelector('[data-status-fritz]');
+  var allEl = document.querySelector('[data-status-all]');
+  if (fritzEl || allEl) {
+    fetch(STATUS_URL).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
+      .then(function (d) {
+        var services = (d && d.services) || [];
+        var fritz = services.filter(function (s) { return /fritz/i.test(s.name || ''); })[0];
+        if (fritzEl && fritz) {
+          var word = { green: 'online', amber: 'slow', red: 'down' }[fritz.light];
+          if (word) { fritzEl.textContent = word; fritzEl.classList.toggle('ok', fritz.light === 'green'); }
+        }
+        if (allEl && services.length) {
+          var bad = services.filter(function (s) { return s.light !== 'green'; }).length;
+          allEl.textContent = bad ? bad + ' service' + (bad > 1 ? 's' : '') + ' degraded →' : 'all systems green →';
+        }
+      }).catch(function () { /* keep the neutral wording */ });
+  }
+
+  // ---- 3. hero chat replay --------------------------------------------------
+  var chat = document.querySelector('[data-chat]');
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (chat && !reduced) {
+    var steps = [
+      { k: 'user', t: 'Is this a real company?' },
+      { k: 'tool', t: '↳ read_page  credentials.html' },
+      { k: 'fritz', t: 'Yes. MB Meihuizen AI, company code 308157412, a Lithuanian legal entity. You can check it yourself at Registrų centras.', src: 'credentials.html' },
+      { k: 'user', t: 'What would Fritz cost for our site?' },
+      { k: 'tool', t: '↳ read_page  projects/agent-fritz.html' },
+      { k: 'fritz', price: true, src: 'agent-fritz.html' }
+    ];
+    function priceLine() {
+      var o = window.mhOffice && window.mhOffice.now();
+      var base = 'Priced per case: Fritz is a custom build, not a wrapper. ';
+      if (!o) { return base + 'Shall I pass this on to Nico so he can call you back?'; }
+      return o.open
+        ? base + 'It is ' + o.time + ' in Kaunas and Nico is in. Shall I pass this on so he can call you back?'
+        : base + 'It is ' + o.time + ' in Kaunas, so Nico is off. I can pass this on now, and you get a ' + replyText(false) + '.';
+    }
+    function node(s) {
+      var d = document.createElement('div');
+      d.className = 'msg msg-' + s.k;
+      d.textContent = s.price ? priceLine() : s.t;
+      if (s.src) {
+        var src = document.createElement('div');
+        src.className = 'msg-src';
+        var a = document.createElement('span'); a.textContent = 'source: ' + s.src;
+        var b = document.createElement('span'); b.textContent = 'where does it say so?';
+        src.appendChild(a); src.appendChild(b); d.appendChild(src);
+      }
+      return d;
+    }
+    var typing = document.createElement('div');
+    typing.className = 'typing';
+    typing.appendChild(document.createTextNode('fritz is reading'));
+    var cur = document.createElement('span'); cur.className = 'blink'; cur.textContent = '_';
+    typing.appendChild(cur);
+
+    var i = 0;
+    function next() {
+      if (typing.parentNode) { typing.parentNode.removeChild(typing); }
+      if (i >= steps.length) {
+        setTimeout(function () { chat.textContent = ''; i = 0; next(); }, 6000);
+        return;
+      }
+      chat.appendChild(node(steps[i]));
+      i += 1;
+      if (i < steps.length && steps[i].k !== 'user') { chat.appendChild(typing); }
+      setTimeout(next, steps[i - 1].k === 'fritz' ? 3200 : 1500);
+    }
+    // Let the static first exchange be read before the replay starts over.
+    setTimeout(function () { chat.textContent = ''; next(); }, 5000);
+  }
+
+  // ---- 4. hero box hands over to the real Fritz -----------------------------
+  var heroForm = document.querySelector('[data-hero-ask]');
+  if (heroForm) {
+    heroForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = heroForm.querySelector('input');
+      var q = (input.value || '').trim() || 'Hi Fritz, what can you do for me?';
+      // A throwaway type="button": clicking the form's own submit button
+      // from inside its submit handler would submit again, forever, if
+      // ask.js ever failed to load and preventDefault never came.
+      var hand = document.createElement('button');
+      hand.type = 'button';
+      hand.hidden = true;
+      hand.setAttribute('data-fritz-ask', q);
+      heroForm.appendChild(hand);
+      hand.click();
+      heroForm.removeChild(hand);
+      input.value = '';
+    });
+  }
+})();

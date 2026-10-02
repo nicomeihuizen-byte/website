@@ -24,7 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const name = form.name.value.trim();
     const email = form.email.value.trim();
-    const message = form.message.value.trim();
+    const typed = form.message.value.trim();
+    // The contact page asks a few extra things (topic, company, phone,
+    // domain). The serverless function only takes name, email and message,
+    // so they ride along at the top of the message: no backend change.
+    const extra = (n, label) => {
+      const f = form.elements[n];
+      const v = f ? String(f.value || "").trim() : "";
+      return v ? label + ": " + v : "";
+    };
+    const header = [extra("topic", "Topic"), extra("company", "Company"), extra("phone", "Phone"), extra("domain", "Domain")].filter(Boolean);
+    const message = typed && header.length ? header.join("\n") + "\n\n" + typed : typed;
     const website = form.website ? form.website.value.trim() : ""; // honeypot
 
     if (!name || !email || !message) {
@@ -65,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function setStatus(text, isError) {
     if (!status) return;
     status.textContent = text;
-    status.style.color = isError ? "#E2554B" : "#5FBF8E";
+    status.classList.toggle("is-error", !!isError);
     status.style.fontWeight = "bold";
   }
 });
