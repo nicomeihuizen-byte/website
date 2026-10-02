@@ -17,6 +17,30 @@
 (function () {
   'use strict';
 
+  // ---- 0. language ----------------------------------------------------------
+  // Lithuanian pages set <html lang="lt">. Every sentence this file writes
+  // comes from W, so one script serves both languages. English is the default.
+  var LT = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase() === 'lt';
+  var W = LT ? {
+    today: 'atsakome šiandien', next: 'atsakysime kitą darbo dieną', from10: 'atsakysime nuo 10:00',
+    tomorrow: 'atsakysime rytoj nuo 10:00', monday: 'atsakysime pirmadienį nuo 10:00',
+    open: 'dirbame', closed: 'nedirbame',
+    online: 'veikia', slow: 'lėtai', down: 'neveikia',
+    green: 'viskas veikia →', degraded: function (n) { return 'sutrikimų: ' + n + ' →'; },
+    nicoFrom: 'nico · iš telefono', source: 'šaltinis: ', where: 'kur tai parašyta?', reading: 'fritz skaito',
+    ask: 'Labas, Fritz, kuo gali man padėti?',
+    running: function (a, b) { return 'vykdoma ' + a + ' iš ' + b; }
+  } : {
+    today: 'we reply today', next: 'reply next working day', from10: 'reply from 10:00',
+    tomorrow: 'reply tomorrow from 10:00', monday: 'reply Monday from 10:00',
+    open: 'open', closed: 'closed',
+    online: 'online', slow: 'slow', down: 'down',
+    green: 'all systems green →', degraded: function (n) { return n + ' service' + (n > 1 ? 's' : '') + ' degraded →'; },
+    nicoFrom: 'nico · from his phone', source: 'source: ', where: 'where does it say so?', reading: 'fritz is reading',
+    ask: 'Hi Fritz, what can you do for me?',
+    running: function (a, b) { return 'running ' + a + ' of ' + b; }
+  };
+
   // ---- 1. office hours ------------------------------------------------------
   var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   var fmt = null;
@@ -25,15 +49,15 @@
   } catch (e) { fmt = null; }
 
   function replyText(open) {
-    if (open) { return 'we reply today'; }
-    if (!fmt) { return 'reply next working day'; }
+    if (open) { return W.today; }
+    if (!fmt) { return W.next; }
     var p = {};
     fmt.formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
     var day = DAYS.indexOf(p.weekday), hour = Number(p.hour);
-    if (day >= 0 && day <= 4 && hour < 10) { return 'reply from 10:00'; }
-    if (day >= 0 && day <= 3 && hour >= 18) { return 'reply tomorrow from 10:00'; }
-    if (day >= 4) { return 'reply Monday from 10:00'; }
-    return 'reply next working day';
+    if (day >= 0 && day <= 4 && hour < 10) { return W.from10; }
+    if (day >= 0 && day <= 3 && hour >= 18) { return W.tomorrow; }
+    if (day >= 4) { return W.monday; }
+    return W.next;
   }
 
   function setAll(sel, text) {
@@ -46,7 +70,7 @@
     if (!o) { return; }
     document.documentElement.setAttribute('data-office', o.open ? 'open' : 'closed');
     setAll('[data-office-time]', o.time);
-    setAll('[data-office-state]', o.open ? 'open' : 'closed');
+    setAll('[data-office-state]', o.open ? W.open : W.closed);
     setAll('[data-office-reply]', replyText(o.open));
     return o;
   }
@@ -73,12 +97,12 @@
         var services = (d && d.services) || [];
         var fritz = services.filter(function (s) { return /fritz/i.test(s.name || ''); })[0];
         if (fritzEl && fritz) {
-          var word = { green: 'online', amber: 'slow', red: 'down' }[fritz.light];
+          var word = { green: W.online, amber: W.slow, red: W.down }[fritz.light];
           if (word) { fritzEl.textContent = word; fritzEl.classList.toggle('ok', fritz.light === 'green'); }
         }
         if (allEl && services.length) {
           var bad = services.filter(function (s) { return s.light !== 'green'; }).length;
-          allEl.textContent = bad ? bad + ' service' + (bad > 1 ? 's' : '') + ' degraded →' : 'all systems green →';
+          allEl.textContent = bad ? W.degraded(bad) : W.green;
         }
         if (services.length) {
           var down = services.filter(function (s) { return s.light === 'red'; }).length;
@@ -98,7 +122,15 @@
     // The script is rebuilt at the start of every replay, because the last
     // scene depends on the clock: Fritz only brings Nico into the chat when
     // the office is open. Outside hours he does what he really does then.
-    var base = [
+    var base = LT ? [
+      { k: 'user', t: 'Ar tai tikra įmonė?' },
+      { k: 'tool', t: '↳ read_page  credentials.html' },
+      { k: 'fritz', t: 'Taip. MB Meihuizen AI, įmonės kodas 308157412, Lietuvos juridinis asmuo. Galite patys patikrinti Registrų centre.', src: 'credentials.html' },
+      { k: 'user', t: 'Kiek kainuotų Fritz mūsų svetainei?' },
+      { k: 'tool', t: '↳ read_page  projects/agent-fritz.html' },
+      { k: 'fritz', price: true, src: 'agent-fritz.html' },
+      { k: 'user', t: 'Ar galiu pakalbėti tiesiogiai su Nico?' }
+    ] : [
       { k: 'user', t: 'Is this a real company?' },
       { k: 'tool', t: '↳ read_page  credentials.html' },
       { k: 'fritz', t: 'Yes. MB Meihuizen AI, company code 308157412, a Lithuanian legal entity. You can check it yourself at Registrų centras.', src: 'credentials.html' },
@@ -107,7 +139,14 @@
       { k: 'fritz', price: true, src: 'agent-fritz.html' },
       { k: 'user', t: 'Can I talk to Nico directly?' }
     ];
-    var live = [
+    var live = LT ? [
+      { k: 'fritz', t: 'Jis darbe. Pakviesti jį į šį pokalbį?' },
+      { k: 'user', t: 'taip, prašau' },
+      { k: 'ok', t: '✓ Nico telefonas skamba' },
+      { k: 'nico', t: 'Labas, čia Nico. Mielai aptarsiu kainas. @Fritz, pasidalink Fritz produkto aprašu.' },
+      { k: 'tool', t: '↳ share_document  agent-fritz-product-sheet.pdf' },
+      { k: 'ok', t: '✓ produkto aprašas pasidalintas · žodis vėl Nico' }
+    ] : [
       { k: 'fritz', t: 'He is in. Want me to bring him into this chat?' },
       { k: 'user', t: 'yes please' },
       { k: 'ok', t: '✓ Nico’s phone is ringing' },
@@ -115,7 +154,10 @@
       { k: 'tool', t: '↳ share_document  agent-fritz-product-sheet.pdf' },
       { k: 'ok', t: '✓ product sheet shared · floor back to Nico' }
     ];
-    var later = [
+    var later = LT ? [
+      { k: 'fritz', closed: true },
+      { k: 'ok', t: '✓ užklausa kartu su šiuo pokalbiu išsiųsta į Nico telefoną' }
+    ] : [
       { k: 'fritz', closed: true },
       { k: 'ok', t: '✓ request sent to Nico’s phone, with this chat' }
     ];
@@ -126,10 +168,18 @@
     }
     function closedLine() {
       var o = window.mhOffice && window.mhOffice.now();
+      if (LT) { return 'Kaune dabar ' + (o ? o.time : 'ne darbo laikas') + ', Nico nedirba. Jūsų klausimą ir šį pokalbį siunčiu į jo telefoną; ' + replyText(false) + '.'; }
       return 'It is ' + (o ? o.time : 'after hours') + ' in Kaunas, so Nico is off. I am sending your question and this chat to his phone now; you get a ' + replyText(false) + '.';
     }
     function priceLine() {
       var o = window.mhOffice && window.mhOffice.now();
+      if (LT) {
+        var b = 'Kaina nustatoma kiekvienam atvejui: Fritz kuriamas pagal užsakymą, tai ne apvalkalas. ';
+        if (!o) { return b + 'Perduoti tai Nico, kad jis jums paskambintų?'; }
+        return o.open
+          ? b + 'Kaune dabar ' + o.time + ' ir Nico darbe. Perduoti tai jam, kad jis jums paskambintų?'
+          : b + 'Kaune dabar ' + o.time + ', Nico nedirba. Galiu perduoti dabar; ' + replyText(false) + '.';
+      }
       var base = 'Priced per case: Fritz is a custom build, not a wrapper. ';
       if (!o) { return base + 'Shall I pass this on to Nico so he can call you back?'; }
       return o.open
@@ -141,7 +191,7 @@
       d.className = 'msg msg-' + s.k;
       if (s.k === 'nico') {
         var who = document.createElement('small');
-        who.textContent = 'nico · from his phone';
+        who.textContent = W.nicoFrom;
         d.appendChild(who);
         d.appendChild(document.createTextNode(s.t));
       } else {
@@ -150,15 +200,15 @@
       if (s.src) {
         var src = document.createElement('div');
         src.className = 'msg-src';
-        var a = document.createElement('span'); a.textContent = 'source: ' + s.src;
-        var b = document.createElement('span'); b.textContent = 'where does it say so?';
+        var a = document.createElement('span'); a.textContent = W.source + s.src;
+        var b = document.createElement('span'); b.textContent = W.where;
         src.appendChild(a); src.appendChild(b); d.appendChild(src);
       }
       return d;
     }
     var typing = document.createElement('div');
     typing.className = 'typing';
-    typing.appendChild(document.createTextNode('fritz is reading'));
+    typing.appendChild(document.createTextNode(W.reading));
     var cur = document.createElement('span'); cur.className = 'blink'; cur.textContent = '_';
     typing.appendChild(cur);
 
@@ -184,7 +234,7 @@
     heroForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var input = heroForm.querySelector('input');
-      var q = (input.value || '').trim() || 'Hi Fritz, what can you do for me?';
+      var q = (input.value || '').trim() || W.ask;
       // A throwaway type="button": clicking the form's own submit button
       // from inside its submit handler would submit again, forever, if
       // ask.js ever failed to load and preventDefault never came.
@@ -214,7 +264,7 @@
         li.classList.toggle('run', i === at);
       });
       if (label) {
-        label.textContent = (at >= 0 && at < stages.length) ? 'running ' + (at + 1) + ' of ' + stages.length : done;
+        label.textContent = (at >= 0 && at < stages.length) ? W.running(at + 1, stages.length) : done;
       }
     }, 1100);
   }

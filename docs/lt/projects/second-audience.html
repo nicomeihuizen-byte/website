@@ -32,7 +32,7 @@
   "author": {
     "@type": "Person",
     "name": "Nico Meihuizen",
-    "url": "https://www.meihuizen.ai"
+    "url": "https://www.meihuizen.ai/lt/"
   },
   "image": "https://www.meihuizen.ai/images/project_five/second-audience-cover.png",
   "keywords": "DI agentų auditas, agentinis žiniatinklis, DI robotai, robots.txt auditas, matomumas LLM modeliuose, pasirengimo DI agentams patikrinimas",
@@ -48,7 +48,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Pradžia",
       "item": "https://www.meihuizen.ai/lt/"
     },
     {
@@ -75,216 +75,250 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0E121A">
-<link rel="stylesheet" href="../../projects/project-pages.css">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../styles/site.css">
 <script src="../../scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
+<a class="skip" href="#main">Pereiti prie turinio</a>
+
 <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <a class="brand" href="/lt/"><span class="brand-dot"></span> meihuizen.ai</a>
-      <a class="back-link" href="/lt/builds.html">&lt; projektai</a>
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai pradžia"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Pagrindinis meniu">
+      <ul>
+        <li><a href="../">pradžia</a></li>
+        <li><a href="../builds.html" aria-current="page">projektai</a></li>
+        <li><a href="../about.html">apie mus</a></li>
+        <li><a href="../credentials.html">rekvizitai</a></li>
+        <li><a href="../contact.html">kontaktai</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Svetainės kalba">
+        <a href="../../projects/second-audience.html" lang="en" hreflang="en">EN</a>
+        <a href="second-audience.html" lang="lt" hreflang="lt" aria-current="true">LT</a>
+      </nav>
     </div>
   </div>
 </header>
-<main class="page-wrap">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
-      <nav class="lang-switch" aria-label="Svetainės kalba">
-        <a href="../../projects/second-audience.html" class="lang-flag" lang="en" hreflang="en" title="English">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">Žiūrėti šį puslapį anglų kalba</span>
-        </a>
-        <a href="second-audience.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">Lietuvių (dabartinis puslapis)</span>
-        </a>
-</nav>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>darbo valandos</span> · <span data-office-reply>Pirm.–penkt. 10:00–18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>projektai › <b>Second Audience</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">DI / agentinis žiniatinklis</span><span class="chip chip-ok">nemokamas patikrinimas · €0</span></div>
+      <h1 class="h1 h1-p">Jūsų svetainė dabar turi <span class="grad">dviejų rūšių lankytojus</span>.</h1>
+      <p class="lead lead-p">Vienas turi akis. Kitas yra agentinis DI: jis niekada nevykdo jūsų JavaScript, skaito tik tai, ką siunčia jūsų serveris, ir atsakinėja į klausimus apie jus žmonėms, kurie jūsų puslapio niekada neatidaro. Second Audience matuoja, ką tas antrasis lankytojas iš tikrųjų gali.</p>
+      <div class="btn-row">
+        <a href="#cta" class="btn btn-p">Užsakyti nemokamą patikrinimą <span aria-hidden="true">→</span></a>
+        <a href="second-audience-cases.html" class="btn btn-g">Šeši tikri atvejai</a>
+      </div>
     </div>
-    <div class="terminal-body">
-      <div class="project-title-row"><svg class="project-title-mark" viewBox="0 0 96 96" width="40" height="40" aria-hidden="true" focusable="false"><path d="M26 18 H14 V78 H26" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><path d="M70 18 H82 V78 H70" fill="none" stroke="#5fbf8e" stroke-width="3" stroke-linecap="square"/><rect x="32" y="35" width="32" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="46" width="22" height="4.5" rx="2.25" fill="#5fbf8e"/><rect x="32" y="57" width="27" height="4.5" rx="2.25" fill="#2e6b52"/></svg><h1>Second Audience</h1></div>
-      <p class="project-summary">Jūsų svetainė dabar turi dviejų rūšių lankytojus. Vienas turi akis. Kitas yra agentinis DI: jis niekada nevykdo jūsų JavaScript, skaito tik tai, ką siunčia jūsų serveris, o tada atsakinėja į klausimus apie jus savo lankytojams, kurie jūsų puslapio niekada neatidaro. Second Audience matuoja, ką tas antrasis lankytojas iš tikrųjų gali.</p>
-      <p class="project-summary">Paslauga, ne įrankis. Patikrinimą atlieka žmogus ir modelis, dirbantys prie to paties atvejo, nes parduodamas teiginys yra toks: mašinos skaito užtikrintai, bet faktus supranta klaidingai. Tokio teiginio mašina apie save pati patvirtinti negali.</p>
-      <div class="project-figures">
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa1t">
-          <title id="sa1t">The same page fetched twice, the second time missing most of its content</title>
-          <rect x="30" y="42" width="140" height="216" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
-          <g fill="#8b90a3">
-          <rect x="48" y="70" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="90" width="80" height="9" rx="4.5"/>
-          <rect x="48" y="120" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="140" width="92" height="9" rx="4.5"/>
-          <rect x="48" y="170" width="104" height="9" rx="4.5"/>
-          <rect x="48" y="190" width="68" height="9" rx="4.5"/>
-          <rect x="48" y="220" width="88" height="9" rx="4.5"/>
-          </g>
-          <path d="M186 150 H214" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <path d="M206 143 L214 150 L206 157" stroke="#565b6e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="230" y="42" width="140" height="216" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <g fill="#8b90a3">
-          <rect x="248" y="70" width="104" height="9" rx="4.5"/>
-          <rect x="248" y="120" width="104" height="9" rx="4.5"/>
-          </g>
-          <g fill="#565b6e" opacity="0.22">
-          <rect x="248" y="90" width="80" height="9" rx="4.5"/>
-          <rect x="248" y="140" width="92" height="9" rx="4.5"/>
-          <rect x="248" y="170" width="104" height="9" rx="4.5"/>
-          <rect x="248" y="190" width="68" height="9" rx="4.5"/>
-          <rect x="248" y="220" width="88" height="9" rx="4.5"/>
-          </g>
-          </svg>
-          <figcaption><strong>Atsisiųsta du kartus</strong><span>Tas pats puslapis su JavaScript ir be jo. Tai, kas dingsta, yra būtent tai, ko JavaScript nevykdantis robotas niekada nemato.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa2t">
-          <title id="sa2t">One published fact, and four agents returning four different values</title>
-          <rect x="30" y="34" width="340" height="62" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
-          <rect x="50" y="52" width="60" height="8" rx="4" fill="#565b6e"/>
-          <rect x="50" y="70" width="104" height="12" rx="6" fill="#5fbf8e"/>
-          <path d="M200 104 V126" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g>
-          <circle cx="52" cy="152" r="7" fill="#565b6e"/><rect x="72" y="146" width="72" height="12" rx="6" fill="#d9a441"/>
-          <circle cx="52" cy="188" r="7" fill="#565b6e"/><rect x="72" y="182" width="132" height="12" rx="6" fill="#d9a441"/>
-          <circle cx="52" cy="224" r="7" fill="#565b6e"/><rect x="72" y="218" width="104" height="12" rx="6" fill="#5fbf8e"/>
-          <circle cx="52" cy="260" r="7" fill="#565b6e"/><rect x="72" y="254" width="188" height="12" rx="6" fill="#d9a441"/>
-          </g>
-          </svg>
-          <figcaption><strong>Vienas faktas, keturi atsakymai</strong><span>Kaina, paskelbta vieną kartą, tokia forma, kuri kviečia likusią dalį užpildyti pačiam. Keturi agentai, keturi skaičiai, vienas iš jų teisingas.</span></figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 400 300" role="img" aria-labelledby="sa3t">
-          <title id="sa3t">A written prediction, then eighteen results of which nine are wrong</title>
-          <rect x="30" y="34" width="340" height="84" rx="8" fill="none" stroke="#2e6b52" stroke-width="2"/>
-          <g fill="#8b90a3" opacity="0.8">
-          <rect x="50" y="56" width="180" height="9" rx="4.5"/>
-          <rect x="50" y="76" width="248" height="9" rx="4.5"/>
-          <rect x="50" y="96" width="140" height="9" rx="4.5"/>
-          </g>
-          <path d="M200 126 V148" stroke="#565b6e" stroke-width="2" fill="none"/>
-          <g>
-          <rect x="30" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="88" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="146" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="204" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="262" y="168" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="320" y="168" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="30" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="88" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="146" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="204" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="262" y="212" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="320" y="212" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="30" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="88" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="146" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="204" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          <rect x="262" y="256" width="48" height="34" rx="6" fill="#5fbf8e"/>
-          <rect x="320" y="256" width="48" height="34" rx="6" fill="#d9a441"/>
-          </g>
-          </svg>
-          <figcaption><strong>Prognozės užrašytos pirmiausia</strong><span>Aštuoniolika užrašyta dar prieš agentui ko nors paklausiant. Devynios iš jų klaidingos, ir tai yra ataskaitoje.</span></figcaption>
-        </figure>
-      </div>
-      <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Viso dydžio projekto vaizdas" hidden>
-        <button class="image-lightbox-close" type="button" aria-label="Uždaryti viso dydžio vaizdą">&times;</button>
-        <img alt="">
-      </div>
-      <div class="project-grid">
-        <section class="project-copy">
-          <h2 class="section-label">// apžvalga</h2>
-          <h2>Septyni žingsniai, būtent tokia tvarka, o agentai paskutiniai</h2>
-          <p>Tvarka ir yra produktas. Patikrinimas, prasidedantis nuo agentų, randa techninių netobulumų, bet ne pinigų. Kiekviena stipri šių metų išvada kilo iš trečiojo žingsnio: ar tas pats faktas kur nors kitur domene pateiktas kitais žodžiais. DUK, pasenęs vertimas, pamirštas puslapis, prieš ketverius metus išleistas pranešimas spaudai.</p>
-          <h2>Kaip atrodo išvada</h2>
-          <p>Ekspertų tinklas turėjo vienintelį kliento atvejo puslapį, ir tai buvo niekada neužpildytas šablonas. Paklausti, ką įmonė iš tikrųjų atliko, keturi agentai pateikė keturis skirtingus atsakymus. Vienas sugalvojo visą atvejį tikrame banke ir tris kartus nurodė įmonę kaip šaltinį.</p>
-          <p>Mokymų teikėjas tą pačią programą turėjo paskelbęs trimis adresais, kiekviename su skirtinga kaina, trukme ar garantija. Vienas agentas nusiuntė pirkėją į seniausią puslapį su trumpesne garantija. Jo nuoroda buvo teisinga, nes tas tekstas tikrai ten yra.</p>
-          <p>Kiekvienas šios svetainės pavyzdys yra anonimizuotas: jokių pavadinimų, jokių skaičių, pagal kuriuos būtų galima ieškoti, ir mes nepatvirtiname spėjimų. Šeši atvejai išsamiai aprašyti atvejų puslapyje. <a href="second-audience-cases.html">&gt; šeši atvejai</a></p>
-          <h2>Skelbiame savo pačių klaidas</h2>
-          <p>Aštuoniolika prognozių užrašyta dar prieš paklausiant bent vieno agento. Devynios iš jų klaidingos. Tai yra ataskaitoje, kartu su priežastimi. Ataskaita, rodanti tik pataikymus, yra pardavimo dokumentas, ir taip ji ir skaitoma.</p>
-          <h2>Žmogus ir modelis, dirbantys prie to paties atvejo</h2>
-          <p>Mašina atlieka apimtį: kiekvienas puslapis atsisiunčiamas du kartus ir palyginamas, kiekvienas verslo faktas lyginamas su kiekviena kita jo vieta domene, kiekvienas cituojamas dokumentas atidaromas, kad būtų matyti, ar jo tekstiniame sluoksnyje yra tai, ką teigia citata. Žmogus priima tris sprendimus, kurių joks ciklas nepagamina: kuris objektas neša pajamas, kurį faktą verta vytis ir ar citata iš tikrųjų pasitvirtina. Abu reguliariai klysta. Kiekvienas turi atsiskaityti kitam, kol kas nors iškeliauja klientui.</p>
-          <h2>Tai neišlieka sutvarkyta</h2>
-          <p>Varikliai atnaujinami, puslapiai keičiasi, o teiginys, kurį pašalinote, dar mėnesius po to ir toliau kartojamas atsakymuose. Šiame domene yra būtent to datuotas matavimas. Todėl darbas kartojasi: tos pačios užklausos po savaitės, po mėnesio ir po trijų mėnesių, tiems patiems puslapiams.</p>
-          <h2>Kiek tai kainuoja</h2>
-          <p>Nemokamas patikrinimas yra nemokamas. Tai, kas seka po jo, įkainojama pagal jūsų svetainės sudėtingumą, o kiekvienoje patikrinimo ataskaitoje pateikiamos kainos trims keliams:</p>
-          <ol class="commitments">
-            <li><strong>1 &middot; Patys.</strong> Naudojatės įgyvendinimo ataskaita ir išvadas įgyvendinate patys.</li>
-            <li><strong>2 &middot; Visas įgyvendinimas.</strong> Mes pasirūpiname visu įgyvendinimu, įskaitant stebėseną ir pakartotinius patikrinimus po savaitės, po mėnesio ir po trijų mėnesių.</li>
-            <li><strong>3 &middot; Įgyvendinimas + Agent Fritz.</strong> Visas įgyvendinimas kartu su Agent Fritz jūsų svetainėje, atsakančiu lankytojams pagal jūsų pataisytus puslapius.</li>
-          </ol>
-          <p>Su patikrinimu Fritz įkainojamas pagal vertę, kurią parodo patikrinimas.</p>
-          <h2>Status</h2>
-          <p>Dalis nemokamų patikrinimų tapo mokančiais klientais. Jų darbas čia niekada neskelbiamas, net ir anonimizuotas. Ataskaitos pateikiamos olandų ir anglų kalbomis, prie kiekvienos pridedant dviejų puslapių priedą apie apimtį, duomenis, teises ir BDAR.</p>
-        </section>
-        <section>
-          <h2 class="section-label">// metodas</h2>
-          <ul class="stack"><li>Dual-render diffing</li><li>robots.txt &amp; UA patikra</li><li>Struktūruota verdiktų taksonomija</li><li>Kelių agentų vertinimas</li><li>Serverio žurnalų analizė</li><li>Atitikties reguliavimui patikra</li></ul>
-          <a class="doc-download" href="../../images/project_five/brackwater-free-scan.pdf" download rel="noopener" aria-label="Atsisiųsti nemokamo patikrinimo pavyzdį PDF formatu (anglų kalba)">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Pavyzdys: nemokamas patikrinimas</h3>
-              <p>Pilnas 16 puslapių patikrinimas išgalvotam klientui, Brackwater Institute. Šešios išvados, trys modelio sesijos ir prognozės, kuriose suklydome, parodytos visos.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-          <a class="doc-download" href="../../images/project_five/brackwater-implementation-report-en-v1.0.md" download rel="noopener" aria-label="Atsisiųsti įgyvendinimo ataskaitos pavyzdį Markdown failu (anglų kalba)">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Pavyzdys: įgyvendinimo ataskaita</h3>
-              <p>Dvidešimt keturi darbo punktai, penki sprendimai, kurių už jus nepriimsime, ir kiekvienai išvadai paruoštas įklijuoti tekstas bei kodas.</p>
-            </div>
-            <span class="tag">MD</span>
-          </a>
-          <a class="doc-download" href="second-audience-cases.html" aria-label="Skaityti šešis anonimizuotus Second Audience atvejus">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>Šeši atvejai, anonimizuoti</h3>
-              <p>Ką agentai pasakė apie šešias tikras įmones, kuris jų pačių puslapis tai paaiškina, ir sprendimas. Be pavadinimų.</p>
-            </div>
-            <span class="tag">PUSLAPIS</span>
-          </a>
-          <a class="doc-download" href="../../images/project_five/second-audience-how-we-work.pdf" download rel="noopener" aria-label="Atsisiųsti How We Work PDF formatu (anglų kalba)">
-            <svg class="doc-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke-linejoin="round"/>
-              <path d="M15 2v5h5" stroke-linejoin="round"/>
-              <path d="M8 13h8M8 17h5" stroke-linecap="round"/>
-            </svg>
-            <div class="info">
-              <h3>How we work (anglų k.)</h3>
-              <p>Apimtis, duomenys ir teisės. Ką surinkome, kaip naudojami agentų atsakymai ir ką galite daryti su ataskaita.</p>
-            </div>
-            <span class="tag">PDF</span>
-          </a>
-        </section>
-      </div>
-      <nav class="project-nav" aria-label="Projekto navigacija">
-        <a class="nav-link" href="ai-sales-deal-intelligence.html"><span>&lt;- ankstesnis</span><strong>Projektas 3</strong></a>
-        <div class="project-nav-socials">
-          <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg></a>
-          <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg></a>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>example.com/pricing · atsisiųsta du kartus</span>
+        <div class="tabs" role="tablist" aria-label="Du to paties puslapio vaizdai">
+          <button type="button" class="tab" role="tab" id="t-human" aria-controls="p-human" aria-selected="false">ką mato žmogus</button>
+          <button type="button" class="tab" role="tab" id="t-agent" aria-controls="p-agent" aria-selected="true">ką gauna agentas</button>
         </div>
-        <a class="nav-link next" href="agent-fritz.html"><span>kitas -&gt;</span><strong>Projektas 5</strong></a>
-      </nav>
+      </div>
+      <div class="panel" id="p-human" role="tabpanel" aria-labelledby="t-human" hidden>
+        <div class="mock">
+          <div class="mock-top"><b>Northwind Academy</b><span>Programos · Kainos · Kontaktai</span></div>
+          <h3>Duomenų analitiko programa</h3>
+          <div class="mock-stats"><div><small>KAINA</small><b>€ 4,900</b></div><div><small>TRUKMĖ</small><b>16 savaičių</b></div><div><small>GARANTIJA</small><b>90 dienų</b></div></div>
+          <span class="mock-btn">Registruotis</span>
+          <p class="mock-note">išgalvotas pavyzdys</p>
+        </div>
+      </div>
+      <div class="panel" id="p-agent" role="tabpanel" aria-labelledby="t-agent">
+        <div class="agent-view">
+          <p><span class="ok">GET</span> /pricing · be JavaScript · 200 OK</p>
+          <p class="gap k">Northwind Academy</p>
+          <p class="k">Duomenų analitiko programa</p>
+          <p><span class="bad">✗ kaina</span> sugeneruota skriptu, negauta</p>
+          <p><span class="bad">✗ trukmė</span> sugeneruota skriptu, negauta</p>
+          <p><span class="bad">✗ garantija</span> sugeneruota skriptu, negauta</p>
+          <p class="gap"><span class="warn">!</span> ta pati programa rasta adresu <span class="k">/courses/data-2023</span></p>
+          <p class="in">kaina <span class="k">€ 3,900</span> · garantija <span class="k">30 dienų</span></p>
+          <div class="agent-say">Agentas: „Programa kainuoja €3,900 ir turi 30 dienų garantiją.“</div>
+          <small>išgalvotas pavyzdys, sukurtas pagal tikrų patikrinimų dėsningumus</small>
+        </div>
+      </div>
     </div>
-  </article>
+  </div>
+</section>
+
+<section id="buying" class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap mb48">
+      <p class="idx">~/kaip vyksta pirkimas</p>
+      <h2 class="h2">Keturi žingsniai. Po kiekvieno sprendžiate jūs.</h2>
+      <p class="body-l">Jokio paketo, kurį reikėtų rinktis, ir jokio ilgo įsipareigojimo iš anksto. Kiekvienas atvejis įkainojamas pagal tai, kiek jis jums vertas, dar prieš pradedant darbą.</p>
+    </div>
+    <ol class="steps">
+      <li><div class="step-head"><span class="step-n">01</span><span class="step-line"></span><span class="gate">sprendžiate jūs</span></div><div class="step-price">nemokamai · €0</div><h3>Nemokamas patikrinimas</h3><p>Ką DI agentai skaito jūsų domene ir kur jie klysta.</p></li>
+      <li><div class="step-head"><span class="step-n">02</span><span class="step-line"></span><span class="gate">sprendžiate jūs</span></div><div class="step-price">kaina pagal atvejį</div><h3>Ataskaita, dvi kainos</h3><p>Kiekviena išvada paaiškinta pinigais. Sutvarkote patys arba mes padarome viską nuo pradžios iki galo.</p></li>
+      <li><div class="step-head"><span class="step-n">03</span><span class="step-line"></span><span class="gate">sprendžiate jūs</span></div><div class="step-price">kaina pagal atvejį</div><h3>Sukurti arba sutvarkyti</h3><p>Pataisymai, Fritz jūsų pačių domene arba individualus sprendimas pagal jūsų darbo eigą.</p></li>
+      <li><div class="step-head"><span class="step-n">04</span><span class="step-line"></span></div><div class="step-price">nuolat</div><h3>Stebėsena ir pakartotiniai patikrinimai</h3><p>Pakartotiniai patikrinimai po kiekvieno pakeitimo, kad pataisymas išliktų ir kitą ketvirtį.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap section" aria-label="Skaičiais">
+  <div class="three">
+    <div class="card stat-card"><div class="stat-n">×2</div><h3>Atsisiųsta du kartus</h3><p>Tas pats puslapis su JavaScript ir be jo. Tai, kas dingsta, yra būtent tai, ko JavaScript nevykdantis robotas niekada nemato.</p></div>
+    <div class="card stat-card"><div class="stat-n">1 → 4</div><h3>Vienas faktas, keturi atsakymai</h3><p>Kaina, paskelbta vieną kartą, tokia forma, kuri kviečia likusią dalį užpildyti pačiam. Keturi agentai, keturi skaičiai, vienas iš jų teisingas.</p></div>
+    <div class="card stat-card"><div class="stat-n">9 / 18</div><h3>Skelbiame savo klaidas</h3><p>Aštuoniolika prognozių užrašyta dar prieš paklausiant agento. Devynios klaidingos, ir tai yra ataskaitoje.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/ką gaunate</p><h2 class="h2">Paslauga, ne įrankis.</h2><p class="body-l">Ją atlieka žmogus ir modelis, dirbantys prie to paties atvejo, nes parduodamas teiginys yra toks: mašinos skaito užtikrintai, bet faktus supranta klaidingai. Tokio teiginio mašina apie save pati patvirtinti negali.</p></div>
+    <div class="four cols-gap">
+      <div class="deliv"><div class="deliv-top"><span class="mono">01</span><span class="chip">PDF · 16 psl.</span></div><h3>Nemokamas patikrinimas</h3><p>Ką agentai skaito, daro ir kur klysta jūsų domene. Išvados pinigais, įskaitant prognozes, kuriose suklydome.</p><a class="link" href="../../images/project_five/brackwater-free-scan.pdf" download>patikrinimo pavyzdys →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">02</span><span class="chip">MD</span></div><h3>Įgyvendinimo ataskaita</h3><p>Darbo punktai su paruoštu įklijuoti tekstu ir kodu kiekvienai išvadai, taip pat sprendimai, kurių už jus nepriimsime.</p><a class="link" href="../../images/project_five/brackwater-implementation-report-en-v1.0.md" download>ataskaitos pavyzdys →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">03</span><span class="chip">1 sav. · 1 mėn. · 3 mėn.</span></div><h3>Pakartotiniai patikrinimai</h3><p>Tos pačios užklausos tiems patiems puslapiams po savaitės, po mėnesio ir po trijų mėnesių. Varikliai atnaujinami, pataisymai nuslysta.</p><a class="link" href="#faq">kodėl tai kartojama →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">04</span><span class="chip">PDF · 2 psl.</span></div><h3>Priedas „Kaip dirbame“</h3><p>Apimtis, duomenys, teisės ir BDAR, pridedamas prie kiekvienos ataskaitos, olandų ir anglų kalbomis.</p><a class="link" href="../../images/project_five/second-audience-how-we-work.pdf" download>skaityti priedą →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap method">
+    <div class="method-side">
+      <p class="idx">~/metodas</p>
+      <h2 class="h2">Septyni žingsniai. Agentai paskutiniai.</h2>
+      <p class="body-l">Tvarka ir yra produktas. Patikrinimas, prasidedantis nuo agentų, randa techninių netobulumų, bet ne pinigų. Kiekviena stipri šių metų išvada kilo iš trečiojo žingsnio.</p>
+      <div class="chips cols-gap"><span class="chip">dvigubo atvaizdavimo palyginimas</span><span class="chip">robots.txt ir UA patikra</span><span class="chip">verdiktų taksonomija</span><span class="chip">kelių agentų vertinimas</span><span class="chip">serverio žurnalų analizė</span><span class="chip">atitikties reguliavimui patikra</span></div>
+    </div>
+    <ol class="mlist">
+      <li><span class="ring">01</span><div><h3>Rasti pajamų objektą</h3><p>Puslapis, kuris uždirba pinigus. Viskas, kas vyksta toliau, matuojama pagal jį.</p></div></li>
+      <li><span class="ring">02</span><div><h3>Išskirti faktus, kurių reikia pirkėjui</h3><p>Kaina, sąlygos, kam tai skirta, kur esate. Atsakymai, kurių bus klausiama agento.</p></div></li>
+      <li class="key"><span class="ring">03</span><div><h3>Ieškoti to paties fakto, atsakyto du kartus</h3><span class="chip chip-ok">iš čia kyla pinigų išvados</span><p>DUK, pasenęs vertimas, pamirštas puslapis, prieš ketverius metus išleistas pranešimas spaudai. Vietos, kur agentams tenka rinktis.</p></div></li>
+      <li><span class="ring">04</span><div><h3>Patikrinti, kaip parašytas kiekvienas faktas</h3><p>Tekstas, paveikslėlis ar išsisukinėjanti proza. Mašinai skaitant išlieka tik vienas iš trijų.</p></div></li>
+      <li><span class="ring">05</span><div><h3>Išsiaiškinti, ką sako trečiosios šalys</h3><p>Katalogai, gidai ir spauda, kuriais agentai pasitiki tiek pat, kiek jūsų pačių svetaine.</p></div></li>
+      <li><span class="ring">06</span><div><h3>Atitikties reguliavimui patikra</h3><p>Pirmiausia tam, kad atmestume išvadas, kurios pasirodo esančios įstatymo reikalaujama formuluotė. Tada tam, kad sustiprintume tas, kurios išlieka.</p></div></li>
+      <li class="last"><span class="ring">07</span><div><h3>Pirmiausia prognozės, tada agentai</h3><p>Ką, mūsų manymu, pasakys kiekvienas agentas, užrašome prieš klausdami. Tada klausimai, kuriuos pirkėjai iš tikrųjų rašo, su rašybos klaidomis.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/kaip atrodo išvada</p><h2 class="h2">Nieko neradęs agentas retai tyli.</h2></div>
+      <p class="vision-p">Jis užpildo spragą ir po tuo, ką prikūrė, padeda jūsų vardą. Du tikri patikrinimai, anonimizuoti: jokių pavadinimų, jokių skaičių, pagal kuriuos būtų galima ieškoti, ir mes nepatvirtiname spėjimų.</p>
+    </div>
+    <div class="two cols-gap">
+      <article class="finding"><div class="finding-h">atvejis 01 · ekspertų tinklas</div><p class="f1"><b>svetainėje:</b> Vienintelis kliento atvejo puslapis: niekada neužpildytas šablonas, vis dar įtrauktas į svetainės žemėlapį.</p><p class="f2"><b>agentai:</b> Keturi agentai, keturi skirtingi atsakymai. Vienas sugalvojo visą atvejį tikrame banke ir tris kartus nurodė įmonę kaip šaltinį.</p><p class="f3"><b>sprendimas:</b> Tikri atvejai su skaičiumi, viena teksto eilutė prie kiekvieno logotipo, šablonas pašalintas iš svetainės žemėlapio. Nieko perdaryti nereikėjo.</p></article>
+      <article class="finding"><div class="finding-h">atvejis 05 · internetinio mokymo teikėjas</div><p class="f1"><b>svetainėje:</b> Ta pati programa skelbiama trimis adresais, su skirtingomis kainomis, trukmėmis ir garantijomis.</p><p class="f2"><b>agentai:</b> Vienas agentas nusiuntė pirkėją į seniausią puslapį su trumpesne garantija. Jo nuoroda buvo teisinga: tas tekstas tikrai ten yra.</p><p class="f3"><b>sprendimas:</b> Vienas aktyvus pasiūlymas, seni adresai nukreipti į jį, svetainės žemėlapis išvalytas.</p></article>
+    </div>
+    <p class="cols-gap"><a class="link" href="second-audience-cases.html">skaityti visus šešis atvejus →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/kas ką daro</p><h2 class="h2">Žmogus ir modelis, dirbantys prie to paties atvejo.</h2><p class="body-l">Abu reguliariai klysta. Kiekvienas turi atsiskaityti kitam, kol kas nors iškeliauja klientui.</p></div>
+    <div class="two cols-gap">
+      <div class="card"><p class="label">mašina atlieka apimtį</p><ul class="ticks"><li>Kiekvienas puslapis atsisiunčiamas du kartus ir palyginamas.</li><li>Kiekvienas verslo faktas lyginamas su kiekviena kita jo vieta domene.</li><li>Kiekvienas cituojamas dokumentas atidaromas, kad būtų patikrinta, ar jo tekste yra tai, ką teigia citata.</li></ul></div>
+      <div class="card card-key"><p class="label">žmogus priima tris sprendimus</p><ul class="ticks num"><li>Kuris objektas neša pajamas.</li><li>Kurį faktą verta vytis.</li><li>Ar citata iš tikrųjų pasitvirtina.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/kiek tai kainuoja</p><h2 class="h2">Patikrinimas nemokamas. Tada renkatės kelią.</h2></div>
+      <p class="vision-p">Tai, kas seka po jo, įkainojama pagal jūsų svetainės sudėtingumą. Kiekvienoje patikrinimo ataskaitoje nurodoma kiekvieno iš trijų kelių kaina, todėl palyginate prieš įsipareigodami.</p>
+    </div>
+    <div class="routes">
+      <div class="route"><span class="mono">00</span><h3>Nemokamas patikrinimas</h3><div class="price">€0, be įsipareigojimų</div><hr><ul class="ticks"><li>16 puslapių ataskaita</li><li>Olandų ir anglų kalbomis</li><li>Viduje trys įkainoti keliai</li></ul></div>
+      <div class="route"><span class="mono">01</span><h3>Patys</h3><div class="price">kaina pagal jūsų svetainę</div><hr><ul class="ticks"><li>Įgyvendinimo ataskaita</li><li>Paruoštas įklijuoti tekstas ir kodas</li><li>Įgyvendina jūsų komanda</li></ul></div>
+      <div class="route key"><span class="flag">nuo pradžios iki galo</span><span class="mono">02</span><h3>Visas įgyvendinimas</h3><div class="price">kaina pagal jūsų svetainę</div><hr><ul class="ticks"><li>Viską įgyvendiname mes</li><li>Stebėsena</li><li>Pakartotiniai patikrinimai po 1 sav., 1 mėn., 3 mėn.</li></ul></div>
+      <div class="route"><span class="mono">03</span><h3>Įgyvendinimas + Fritz</h3><div class="price">kaina pagal vertę, kurią parodo patikrinimas</div><hr><ul class="ticks"><li>Viskas, kas įeina į 02 kelią</li><li>Agent Fritz jūsų svetainėje</li><li>Atsakymai pagal jūsų pataisytus puslapius</li></ul></div>
+    </div>
+    <p class="fine">Dalis nemokamų patikrinimų tapo mokančiais klientais. Jų darbas čia niekada neskelbiamas, net ir anonimizuotas.</p>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap method">
+    <div><p class="idx">~/ko klausia pirkėjai</p><h2 class="h2">Prieš klausdami Fritz.</h2><p class="body-l">Arba vis tiek paklauskite jo. Jis atsako pagal šį puslapį ir pasako, kai atsakymo čia nėra.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>Ar nemokamas patikrinimas tikrai nemokamas?</summary><p>Taip. Gaunate visą ataskaitą su trimis įkainotais keliais. Jei tuo ir sustojate, nieko neskolingi.</p></details>
+      <details class="qa"><summary>Ar jums reikia prieigos prie mūsų sistemų?</summary><p>Ne. Patikrinimas skaito jūsų viešą svetainę taip, kaip ją skaito agentas: iš išorės.</p></details>
+      <details class="qa"><summary>Ar negalime tiesiog pridėti struktūrizuotų duomenų?</summary><p>Struktūrizuoti duomenys padeda, bet daugelis agentų jų niekada nemato: jie pirmiausia paverčia jūsų puslapį tekstu. Kiekvienas faktas turi būti ir matomame tekste.</p></details>
+      <details class="qa"><summary>Ar mūsų rezultatai bus paskelbti?</summary><p>Mokančių klientų niekada, net ir anonimizuotai. Nemokami patikrinimai gali tapti anonimizuotais atvejais: jokių pavadinimų, jokių skaičių, pagal kuriuos būtų galima ieškoti, ir mes nepatvirtiname spėjimų.</p></details>
+      <details class="qa"><summary>Kokiomis kalbomis?</summary><p>Ataskaitos pateikiamos olandų ir anglų kalbomis. Cituojami įrodymai lieka ta kalba, kuria buvo užfiksuoti.</p></details>
+      <details class="qa"><summary>Kodėl tai kartojama?</summary><p>Varikliai atnaujinami, puslapiai keičiasi, o teiginys, kurį pašalinote, dar mėnesius kartojamas atsakymuose. Šiame domene yra būtent to datuotas matavimas.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/pažiūrėkite tikrą darbą</p><h2 class="h2 mb28">Perskaitykite prieš užsakydami.</h2>
+  <div class="four">
+    <a class="card dl doc-download" href="../../images/project_five/brackwater-free-scan.pdf" download aria-label="Atsisiųsti nemokamo patikrinimo pavyzdį PDF formatu"><span class="chip tag">PDF</span><h3>Pavyzdys: nemokamas patikrinimas</h3><p>Pilnas 16 puslapių patikrinimas išgalvotam klientui. Šešios išvados, trys modelio sesijos, mūsų klaidos.</p></a>
+    <a class="card dl doc-download" href="../../images/project_five/brackwater-implementation-report-en-v1.0.md" download aria-label="Atsisiųsti įgyvendinimo ataskaitos pavyzdį Markdown failu"><span class="chip tag">MD</span><h3>Pavyzdys: įgyvendinimo ataskaita</h3><p>Darbo punktai, sprendimai, kuriuos paliekame jums, paruošti įklijuoti pataisymai.</p></a>
+    <a class="card dl doc-download" href="second-audience-cases.html" aria-label="Šeši atvejai, anonimizuoti"><span class="chip tag">PUSLAPIS</span><h3>Šeši atvejai, anonimizuoti</h3><p>Ką agentai pasakė apie šešias tikras įmones ir kuris puslapis tai paaiškina.</p></a>
+    <a class="card dl doc-download" href="../../images/project_five/second-audience-how-we-work.pdf" download aria-label="Atsisiųsti „Kaip dirbame“ PDF formatu"><span class="chip tag">PDF</span><h3>Kaip dirbame</h3><p>Apimtis, duomenys ir teisės. Ką galite daryti su ataskaita.</p></a>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/nemokamas patikrinimas</p>
+        <h2>Pažiūrėkite, ką agentai<br><span class="grad">sako apie jus.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> Kaune · <span data-office-state>darbo valandos</span> · <span data-office-reply>Pirm.–penkt. 10:00–18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html#write" class="btn btn-p btn-wide">Užsakyti nemokamą patikrinimą <span aria-hidden="true">→</span></a>
+        <button type="button" class="btn btn-g btn-wide" data-fritz-ask="Norėčiau nemokamo Second Audience savo svetainės patikrinimo">arba pirmiausia paklauskite Fritz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="site-footer"><span>© 2026 Nico Meihuizen</span><span>05 / 06</span></footer>
-<script src="../../projects/scripts/project-lightbox.js" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai nuo 2026" width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · įmonės kodas 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Pirm.–penkt. 10:00–18:00 Kauno laiku</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../../legal/terms-of-business.pdf">sąlygos</a></li>
+        <li><a href="../credentials.html">rekvizitai</a></li>
+        <li><a href="../../status.html">būsena</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Svetainės dizainas: Nico ir Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>

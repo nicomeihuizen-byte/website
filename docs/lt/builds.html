@@ -32,12 +32,12 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "meihuizen.ai",
-    "url": "https://www.meihuizen.ai/"
+    "url": "https://www.meihuizen.ai/lt/"
   },
   "about": {
     "@type": "Person",
     "name": "Nico Meihuizen",
-    "url": "https://www.meihuizen.ai/"
+    "url": "https://www.meihuizen.ai/lt/"
   }
 }
 </script>
@@ -50,408 +50,131 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="../fonts/fonts.css">
-<style>
-  /* --- THEME -----------------------------------------------------------
-       Two palettes, one set of names. Light is on the bare :root so a page
-       paints light before scripts/theme.js has run: the flash you get
-       otherwise is the wrong-theme flash every static site has. Dark is a
-       values swap under [data-theme="dark"], which the script stamps on
-       <html> from localStorage. Values are the two palettes measured for
-       Five (sales-intel), so the app and the site are one product.
-       --------------------------------------------------------------- */
-  :root{
-    color-scheme:light;
-    --bg:#F4F6F8;
-    --bg-raised:#FFFFFF;
-    --line:#DFE3EA;
-    --text:#14161C;
-    --text-muted:#596074;
-    --text-dim:#666D80;
-    --accent:#1F7D55;
-    --accent-dim:#9FC4B1;
-    --accent2:#2B6F9C;
-    --accent-hover:#186344;
-    --on-accent:#FFFFFF;
-    --raised-hover:#EDF1F4;
-    --header-bg:rgba(244,246,248,0.85);
-    --dot-idle:#C7CDD8;
-    --figure-bg:#10121A;
-    --warn:#A84D08;
-    --danger:#C02626;
-    --glow-a:rgba(232,179,74,0.14);
-    --glow-b:rgba(95,168,211,0.12);
-    --shadow-card:0 24px 48px -32px rgba(20,22,28,0.28);
-    --font-body:'Inter', sans-serif;
-    --font-mono:'JetBrains Mono', monospace;
-    --max-w:780px;
-  }
-  :root[data-theme="dark"]{
-    color-scheme:dark;
-    --bg:#10121A;
-    --bg-raised:#171A24;
-    --line:#262A38;
-    --text:#ECEDF3;
-    --text-muted:#8B90A3;
-    --text-dim:#565B6E;
-    --accent:#5FBF8E;
-    --accent-dim:#2E6B52;
-    --accent2:#5FA8D3;
-    --accent-hover:#7AD0A4;
-    --on-accent:#181205;
-    --raised-hover:#1D2130;
-    --header-bg:rgba(16,18,26,0.82);
-    --dot-idle:#3A3E4C;
-    --figure-bg:#10121A;
-    --warn:#E8B34A;
-    --danger:#D8734A;
-    --glow-a:rgba(232,179,74,0.07);
-    --glow-b:rgba(95,168,211,0.06);
-    --shadow-card:0 30px 60px -30px rgba(0,0,0,0.6);
-  }
-
-
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    min-height:100vh;
-    background:var(--bg);
-    background-image:
-      radial-gradient(ellipse 900px 500px at 15% -10%, var(--glow-a), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, var(--glow-b), transparent 60%);
-    color:var(--text);
-    font-family:var(--font-body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--accent);color:var(--bg);}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-
-  header{
-    position:sticky;
-    top:0;
-    z-index:20;
-    background:var(--header-bg);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  /* Wordmark. A business site says whose it is in the top left, and that
-     name goes home. This was in the markup all along, commented out. */
-  .brand{
-    font-family:var(--font-mono);
-    font-size:14px; font-weight:500;
-    color:var(--text);
-    display:flex; align-items:center; gap:8px;
-  }
-  .brand .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 8px var(--accent);
-  }
-  .navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:var(--max-w);
-    margin:0 auto;
-    padding:18px 24px;
-  }
-  nav ul{list-style:none;display:flex;gap:28px;}
-  nav a{font-family:var(--font-mono);font-size:13px;color:var(--text-muted);transition:color .15s ease;}
-  nav a:hover{color:var(--accent);}
-
-  .page{max-width:var(--max-w);margin:0 auto;padding:88px 24px 64px;}
-  .terminal{
-    overflow:hidden;
-    background:var(--bg-raised);
-    border:1px solid var(--line);
-    border-radius:10px;
-    box-shadow:var(--shadow-card);
-  }
-  .terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
-  .terminal-bar > span{width:10px;height:10px;border-radius:50%;background:var(--dot-idle);}
-  .terminal-bar > span:nth-child(1){background:#AE1C28;}
-  .terminal-bar > span:nth-child(2){background:#FFFFFF;}
-  .terminal-bar > span:nth-child(3){background:#21468B;}
-  .lang-switch{display:flex;align-items:center;gap:6px;margin-left:auto;}
-  .lang-flag{display:inline-flex;align-items:center;justify-content:center;padding:2px;border-radius:2px;text-decoration:none;opacity:0.55;transition:opacity .15s ease, outline-color .15s ease;}
-  .lang-flag-code{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.5px;color:var(--text-muted);line-height:1;}
-  .lang-flag:hover{opacity:1;}
-  .lang-flag[aria-current="true"]{opacity:1;}
-  .lang-flag:hover .lang-flag-code,.lang-flag[aria-current="true"] .lang-flag-code{font-weight:700;color:var(--accent);}
-  .lang-flag .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .terminal-body{padding:28px 28px 32px;}
-  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:32px;}
-  .section-head .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent2);}
-  h1{font-family:var(--font-mono);font-size:clamp(26px,4vw,36px);font-weight:600;line-height:1.5;color:var(--accent);}
-  .builds-intro{max-width:56ch;margin-top:22px;padding-top:22px;border-top:1px solid var(--line);}
-  .builds-intro p{color:var(--text-muted);font-size:15px;}
-
-  /* WORK LIST */
-  .work-list{ display:flex; flex-direction:column; gap:1px; background:var(--line); border-radius:10px; overflow:hidden; border:1px solid var(--line); margin-top:32px; }
-  .work-item{
-    background:var(--bg-raised);
-    padding:22px 22px;
-    display:grid;
-    grid-template-columns:auto 1fr auto;
-    align-items:center;
-    gap:18px;
-    transition:background .15s ease;
-  }
-  a.work-item{ color:inherit; text-decoration:none; }
-  .work-item:hover{ background:var(--raised-hover); }
-  .work-item .info h2{
-    font-family:var(--font-mono);
-    font-size:16.5px;
-    font-weight:600;
-    margin-bottom:4px;
-    color:var(--accent);
-  }
-  .work-item .info p{
-    font-size:13.5px;
-    color:var(--text-muted);
-  }
-  /* The thumbnails are inline SVG drawn fill-by-fill in the dark palette,
-     so they keep their own ground in both themes rather than being
-     recoloured in four files x seven locales. A drawing on its own mat is
-     what a thumbnail is anyway. */
-  .work-item .image{
-    display:block;
-    width:120px;
-    height:70px;
-    aspect-ratio:12 / 7;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background-color:var(--figure-bg);
-    object-fit:cover;
-    object-position:50% 50%;
-    overflow:hidden;
-  }
-  .tag{
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--accent);
-    border:1px solid var(--accent-dim);
-    padding:4px 9px;
-    border-radius:20px;
-    white-space:nowrap;
-  }
-
-  .page-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);}
-  .btn{padding:11px 18px;border:1px solid var(--line);border-radius:6px;font-family:var(--font-mono);font-size:13px;}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600;}
-  .btn.ghost{color:var(--text-muted);}
-  .btn:hover{color:var(--text);border-color:var(--text-dim);}
-  .btn.primary:hover{background:var(--accent-hover);color:var(--on-accent);border-color:var(--accent);}
-  footer{max-width:var(--max-w);margin:0 auto;padding:0 24px 40px;color:var(--text-dim);font-family:var(--font-mono);font-size:11.5px;}
-  .social-links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px;}
-  .social-links a{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:7px 10px;
-    border:1px solid var(--accent-dim);
-    border-radius:4px;
-    color:var(--accent);
-    font-size:13.5px;
-    transition:color .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .social-links a:hover{color:var(--bg);border-color:var(--accent);background:var(--accent);}
-  .social-links svg{width:16px;height:16px;fill:currentColor;flex:none;}
-  .social-links .sr-only{
-    position:absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-    border:0;
-  }
-  .footer-meta{display:flex;justify-content:flex-start;gap:10px;color:var(--accent);}
-
-  @media (max-width:600px){
-    .navbar{padding:16px 18px;}
-    nav ul{gap:16px;}
-    .page{padding:56px 18px 44px;}
-    .terminal-body{padding:22px 18px 26px;}
-    .work-item{ grid-template-columns:1fr; gap:8px; }
-    .work-item .tag{ justify-self:start; }
-    .work-item .image{ width:100%; height:150px; aspect-ratio:auto; }
-    footer{padding:0 18px 28px;}
-  }
-
-  .work-item .image .sa-echo{ opacity:0; transition:opacity .25s ease; }
-  .work-item:hover .image .sa-echo,
-  .work-item:focus-visible .image .sa-echo{ opacity:.9; }
-  .work-item:hover .image .slot-quiet,
-  .work-item:focus-visible .image .slot-quiet{ animation:slot-goes-quiet 2.6s ease-in-out infinite; }
-  @keyframes slot-goes-quiet{ 0%,55%{ fill:#5FBF8E; } 70%,84%{ fill:#D9A441; } 100%{ fill:#5FBF8E; } }
-  @media (prefers-reduced-motion: reduce){
-    .work-item:hover .image .slot-quiet,
-    .work-item:focus-visible .image .slot-quiet{ animation:none; }
-    .work-item .image .sa-echo{ transition:none; }
-  }
-
-  .work-item:hover .image .acre-summer,
-  .work-item:focus-visible .image .acre-summer{ animation:acre-season 4s ease-in-out infinite; }
-  .work-item:hover .image .acre-winter,
-  .work-item:focus-visible .image .acre-winter{ animation:acre-season 4s ease-in-out infinite reverse; }
-  @keyframes acre-season{ 0%,20%{ opacity:1; } 50%,70%{ opacity:.32; } 100%{ opacity:1; } }
-  .work-item:hover .image .pf-caret,
-  .work-item:focus-visible .image .pf-caret{ animation:pf-blink 1.1s steps(1,end) infinite; }
-  @keyframes pf-blink{ 0%,50%{ opacity:1; } 51%,100%{ opacity:0; } }
-  @media (prefers-reduced-motion: reduce){
-    .work-item:hover .image .acre-summer,
-    .work-item:focus-visible .image .acre-summer,
-    .work-item:hover .image .acre-winter,
-    .work-item:focus-visible .image .acre-winter,
-    .work-item:hover .image .pf-caret,
-    .work-item:focus-visible .image .pf-caret{ animation:none; }
-  }
-
-  /* Theme toggle. The button says where it will take you, not where you
-     are, and both words sit in the markup with CSS hiding one, so the
-     label is right in the first paint and cannot lag the attribute. It
-     ships visible and a <noscript> rule hides it, along with its
-     separator, when there is no JavaScript here to drive it. */
-  .theme-toggle{
-    font-family:var(--font-mono);
-    font-size:13px;
-    color:var(--text-muted);
-    background:none; border:0; padding:0;
-    cursor:pointer;
-    transition:color .15s ease;
-  }
-  .theme-toggle:hover{ color:var(--accent); }
-  .nav-sep{ color:var(--line); user-select:none; }
-  :root[data-theme="dark"] .theme-label-light{ display:none; }
-  :root:not([data-theme="dark"]) .theme-label-dark{ display:none; }
-  /* The white traffic light is white on white without this. Red and blue
-     are the flag's own colours and stay put in both themes. */
-  :root:not([data-theme="dark"]) .terminal-bar > span:nth-child(2){ border:1px solid var(--line); }
-  /* The nav has six items, a wordmark and a theme toggle. On a phone that
-     is wider than the phone, and it was pushing the whole page sideways
-     before the wordmark was ever added. Let it wrap instead. */
-  @media (max-width: 600px){
-    .navbar{ flex-wrap:wrap; gap:12px; padding:14px 24px; }
-    nav ul{ flex-wrap:wrap; gap:14px 18px; }
-    /* Wrapped, the divider ends up alone at the start of a line, which
-       reads as a stray character rather than a divider. */
-    .nav-sep{ display:none; }
-  }
-</style>
+<link rel="stylesheet" href="../styles/site.css">
 <script src="../scripts/theme.js"></script>
 <link rel="stylesheet" href="/ask/ask.css">
 </head>
 <body>
-<header>
-  <div class="navbar">
-    <a class="brand" href="/lt/"><span class="dot"></span> meihuizen.ai</a>
-    <nav aria-label="Pagrindinė navigacija">
+<a class="skip" href="#main">Pereiti prie turinio</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="./" class="brand" aria-label="meihuizen.ai pradžia"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Pagrindinė navigacija">
       <ul>
-        <li><a href="/lt/">pradžia</a></li>
+        <li><a href="./">pradžia</a></li>
         <li><a href="builds.html" aria-current="page">projektai</a></li>
         <li><a href="about.html">apie mus</a></li>
-        <li><a href="credentials.html">credentials</a></li>
-        <li><a href="../status.html">status</a></li>
-        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="credentials.html">rekvizitai</a></li>
+        <li><a href="contact.html">kontaktai</a></li>
       </ul>
     </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Svetainės kalba">
+        <a href="../builds.html" lang="en" hreflang="en">EN</a>
+        <a href="builds.html" lang="lt" hreflang="lt" aria-current="true">LT</a>
+      </nav>
+    </div>
   </div>
 </header>
 
-<main class="page">
-  <article class="terminal">
-    <div class="terminal-bar">
-      <span></span><span></span><span></span>
-      <nav class="lang-switch" aria-label="Svetainės kalba">
-        <a href="../builds.html" class="lang-flag" lang="en" hreflang="en" title="English">
-          <span class="lang-flag-code" aria-hidden="true">GB</span>
-          <span class="sr-only">Žiūrėti šį puslapį anglų kalba</span>
-        </a>
-        <a href="builds.html" class="lang-flag" lang="lt" hreflang="lt" title="Lietuvių" aria-current="true">
-          <span class="lang-flag-code" aria-hidden="true">LT</span>
-          <span class="sr-only">Lietuvių (dabartinis puslapis)</span>
-        </a>
-</nav>
-    </div>
-    <div class="terminal-body">
-      <div class="section-head">
-        <span class="idx">~/builds</span>
-        <h1>Naujausi projektai</h1>
-      </div>
-      <div class="builds-intro">
-        <p>Atrinktos atvejų analizės: DI pagrindu sukurtos sistemos ir full-stack interneto projektai, su gamybos detalėmis, kurias penkių minučių demonstracija paprastai praleidžia. Kiekvienas įrašas nurodo naudotas technologijas, priimtus sprendimus ir tai, kas iš tikrųjų buvo paleista.</p>
-      </div>
-      <div class="work-list">
-        <a class="work-item" href="projects/second-audience.html">
-          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Second Audience: the same content read twice"><path d="M32 16 H22 V54 H32" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><path d="M88 16 H98 V54 H88" fill="none" stroke="#5fbf8e" stroke-width="2.5" stroke-linecap="square"/><rect x="38" y="24" width="44" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="34" width="30" height="5" rx="2.5" fill="#5fbf8e"/><rect x="38" y="44" width="37" height="5" rx="2.5" fill="#2e6b52"/><g class="sa-echo"><rect x="38" y="34" width="44" height="5" rx="2.5" fill="#d9a441"/></g></svg>
-          <div class="info">
-            <h2>Second Audience</h2>
-            <p>Reguliarus auditas: ką DI agentai perskaito ir ką supranta klaidingai.</p>
-          </div>
-          <span class="tag">AI / agentic web</span>
-        </a>
-        <a class="work-item" href="projects/agent-fritz.html">
-          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Agent Fritz: a chat window and a paw"><rect x="13" y="13" width="94" height="44" rx="6" fill="none" stroke="#5fbf8e" stroke-width="1.5"/><path d="M13 24 H107" stroke="#5fbf8e" stroke-width="1.5"/><circle cx="21" cy="18.5" r="2" fill="#AE1C28"/><circle cx="28" cy="18.5" r="2" fill="#8b90a3"/><circle cx="35" cy="18.5" r="2" fill="#21468B"/><rect x="22" y="31" width="30" height="4" rx="2" fill="#5fa8d3"/><rect x="22" y="40" width="54" height="4" rx="2" fill="#8b90a3" opacity="0.75"/><rect x="22" y="48" width="38" height="4" rx="2" fill="#8b90a3" opacity="0.5"/><g fill="#5fbf8e" class="pf-caret"><ellipse cx="92" cy="45" rx="5" ry="4.2"/><circle cx="86" cy="39" r="1.9"/><circle cx="89.6" cy="35" r="2"/><circle cx="94.4" cy="35" r="2"/><circle cx="98" cy="39" r="1.9"/></g></svg>
-          <div class="info">
-            <h2>Agent Fritz</h2>
-            <p>Pokalbių langas kampe. Atsako remdamasis šia svetaine arba pasako, kad negali.</p>
-          </div>
-          <span class="tag">AI / agents</span>
-        </a>
-        <a class="work-item" href="projects/ai-sales-deal-intelligence.html">
-          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Five: three slots worked, two free"><rect x="16" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="35" y="16" width="12" height="38" rx="3" fill="#5fbf8e"/><rect x="54" y="16" width="12" height="38" rx="3" class="slot-quiet" fill="#5fbf8e"/><rect x="73.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/><rect x="92.75" y="16.75" width="10.5" height="36.5" rx="2.25" fill="none" stroke="#2e6b52" stroke-width="1.5"/></svg>
-          <div class="info">
-            <h2>Five</h2>
-            <p>Penki sandoriai per savaitę. Sužinosite, kai kuris nors iš jų nutils.</p>
-          </div>
-          <span class="tag">AI / SaaS</span>
-        </a>
-        <a class="work-item" href="projects/off-grid-ai-homestead.html">
-          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="One Acre: two plots covering opposite halves of the year"><rect x="14" y="22" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="14" y="38" width="92" height="10" rx="4" fill="#565b6e" opacity="0.35"/><rect x="38" y="22" width="54" height="10" rx="4" fill="#5fbf8e" class="acre-summer"/><rect x="14" y="38" width="28" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/><rect x="84" y="38" width="22" height="10" rx="4" fill="#5fa8d3" class="acre-winter"/></svg>
-          <div class="info">
-            <h2>One Acre Zero Dependency</h2>
-            <p>DI valdomas autonominės sodybos projektas.</p>
-          </div>
-          <span class="tag">AI / hardware</span>
-        </a>
-        <a class="work-item" href="projects/terminal-portfolio-website.html">
-          <svg class="image" viewBox="0 0 120 70" role="img" aria-label="Portfolio: a terminal window"><rect x="13" y="13" width="94" height="44" rx="6" fill="none" stroke="#5fbf8e" stroke-width="1.5"/><path d="M13 26 H107" stroke="#5fbf8e" stroke-width="1.5"/><circle cx="22" cy="19.5" r="2.4" fill="#AE1C28"/><circle cx="30" cy="19.5" r="2.4" fill="#8b90a3"/><circle cx="38" cy="19.5" r="2.4" fill="#21468B"/><rect x="24" y="35" width="46" height="4" rx="2" fill="#8b90a3" opacity="0.75"/><rect x="24" y="45" width="30" height="4" rx="2" fill="#8b90a3" opacity="0.5"/><rect x="58" y="44.5" width="5" height="5.5" rx="1" fill="#5fbf8e" class="pf-caret"/></svg>
-          <div class="info">
-            <h2>Portfolio svetainė</h2>
-            <p>Saugi, prisitaikanti statinė svetainė.</p>
-          </div>
-          <span class="tag">HTML / CSS / JS</span>
-        </a>
-      </div>
-      <nav class="page-links" aria-label="Puslapio nuorodos">
-        <a class="btn primary" href="index.html#contact">Susisiekite</a>
-        <a class="btn ghost" href="about.html">Apie studiją</a>
-      </nav>
-    </div>
-  </article>
-</main>
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>darbo valandos</span> · <span data-office-reply>Pirm.–penkt. 10:00–18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span><b>projektai</b></span>
+    <span class="wide" aria-hidden="true">│</span>
+    <span class="wide">produktai ir įrodymai</span>
+  </div>
+</div>
 
-<footer>
-  <div class="social-links" aria-label="Socialinių tinklų nuorodos">
-    <a href="https://github.com/nicomeihuizen-byte/" target="_blank" rel="noopener" aria-label="GitHub">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7.08c.85 0 1.71.12 2.51.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.95.68 1.92v2.84c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"/></svg>
-      <span class="sr-only">github</span>
+<main id="main">
+
+<section class="hero hero-short">
+  <div class="wrap">
+    <p class="idx">~/projektai</p>
+    <h1 class="h1 h1-p">Viskas, ką sukūrėme. <span class="grad">Ir viskas veikia.</span></h1>
+    <p class="lead lead-wide">Trys produktai, kuriuos galite įsigyti, ir projektai, kurie įrodo, kaip dirbame. Kiekviename puslapyje rasite technologijas, priimtus sprendimus ir tai, kas iš tikrųjų buvo paleista: gamybos detales, kurias penkių minučių demonstracija praleidžia.</p>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <div class="section-head"><div><p class="idx">~/produktai</p><h2 class="h2">Parduodama.</h2></div></div>
+  <div class="three">
+    <a href="projects/second-audience.html" class="card build">
+      <div class="card-top"><span class="chip">DI / agentinis žiniatinklis</span><span class="badge">nemokamas skenavimas · €0</span></div>
+      <h3 class="h3">Second Audience</h3>
+      <p>Reguliarus auditas: ką DI agentai perskaito jūsų domene ir ką supranta klaidingai.</p>
+      <span class="link build-go">žiūrėti produktą →</span>
     </a>
-    <a href="https://www.linkedin.com/in/nico-meihuizen/" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v11.7H3.3V9Zm6.1 0h3.6v1.6h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75v6.3h-3.8v-5.58c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.68H9.4V9Z"/></svg>
-      <span class="sr-only">linkedin</span>
+    <a href="projects/agent-fritz.html" class="card card-dark build">
+      <div class="card-top"><span class="chip">DI / agentai</span><span class="badge">individualiai · €</span></div>
+      <h3 class="h3">Agent Fritz</h3>
+      <p>Pokalbių langas kampe. Atsako remdamasis šia svetaine arba pasako, kad negali. Tada užregistruoja skambutį.</p>
+      <span class="link build-go">žiūrėti produktą →</span>
     </a>
-    <a href="https://x.com/nicomeihuizen" target="_blank" rel="noopener" aria-label="X">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.8h1.73L8.28 4.08H6.42L17.8 19.8Z"/></svg>
-      <span class="sr-only">X</span>
+    <a href="projects/ai-sales-deal-intelligence.html" class="card build">
+      <div class="card-top"><span class="chip">DI / SaaS</span><span class="badge">nuo €39</span></div>
+      <h3 class="h3">Five</h3>
+      <p>Penki sandoriai per savaitę. Sužinosite, kai kuris nors iš jų nutils.</p>
+      <span class="link build-go">žiūrėti produktą →</span>
     </a>
   </div>
-  <div class="footer-meta"><span>&copy; 2026 Nico Meihuizen</span></div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="section-head"><div><p class="idx">~/kiti projektai ir pro bono darbai</p><h2 class="h2">Įrodymai.</h2></div><p class="body-l builds-note">Neparduodama. Sukurta tam, kad išsiaiškintume, kas veikia, ir tai parodytume.</p></div>
+    <div class="two">
+      <a href="projects/off-grid-ai-homestead.html" class="card build">
+        <div class="card-top"><span class="chip">DI / aparatinė įranga</span></div>
+        <h3 class="h3">One Acre, Zero Dependency</h3>
+        <p>DI valdoma autonominė sodyba: saulės energija maitinamas jutiklių mazgas, vietinis LLM planuoklis ir du sezoniniai sklypai. Viskas vietoje, nes kitaip nėra kaip.</p>
+        <span class="link build-go">žiūrėti projektą →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/toliau</p>
+        <h2>Kitas čia bus<br><span class="grad">jūsų projektas.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span>Kaune <span data-office-time>--:--</span> · <span data-office-state>darbo valandos</span> · <span data-office-reply>Pirm.–penkt. 10:00–18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-p btn-wide">Pradėti projektą <span aria-hidden="true">→</span></a>
+        <a href="about.html" class="btn btn-g btn-wide">Kaip dirbame <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai nuo 2026 m." width="1365" height="772" loading="lazy">
+      <p>MB Meihuizen AI · įmonės kodas 308157412<br>Laisvės al. 110, LT-44253 Kaunas<br>Pirm.–penkt. 10:00–18:00 Kauno laiku</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../legal/terms-of-business.pdf">sąlygos</a></li>
+        <li><a href="credentials.html">rekvizitai</a></li>
+        <li><a href="../status.html">būsena</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Svetainės dizainas: Nico ir Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
 </footer>
+
+<script src="../scripts/home.js" defer></script>
 <script src="/ask/ask.js" defer></script>
 </body>
 </html>
