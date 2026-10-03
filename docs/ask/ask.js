@@ -302,7 +302,44 @@
   }
 
   // --- build ------------------------------------------------------------
-  let root, panel, log, form, input, sendBtn, suggest, count, status, launch, tip, live;
+  let root, panel, log, form, input, sendBtn, suggest, count, status, launch, tip, live, lightEl;
+
+  // --- status light ---------------------------------------------------------
+  // Same monitor and same four states as status.html: green, amber, red,
+  // unknown. Unknown until the monitor answers, so the bar never claims a
+  // green it did not see. home.js may already have fetched it (window.mhStatus).
+  const STATUS_URL = 'https://website-contact-function-4efp.vercel.app/api/status';
+  const LIGHTS = {
+    en: { green: 'online', amber: 'degraded', red: 'down', unknown: 'status' },
+    nl: { green: 'online', amber: 'verstoord', red: 'storing', unknown: 'status' },
+    de: { green: 'online', amber: 'gestört', red: 'ausgefallen', unknown: 'Status' },
+    fr: { green: 'en ligne', amber: 'perturbé', red: 'hors service', unknown: 'statut' },
+    es: { green: 'en línea', amber: 'degradado', red: 'caído', unknown: 'estado' },
+    it: { green: 'online', amber: 'degradato', red: 'non attivo', unknown: 'stato' },
+    pt: { green: 'online', amber: 'degradado', red: 'em baixo', unknown: 'estado' },
+    lt: { green: 'veikia', amber: 'sutrikimai', red: 'neveikia', unknown: 'būsena' }
+  };
+  let LIGHT_WORDS = LIGHTS[LANG] || LIGHTS.en;
+  function statusText() {
+    // The light now says "online"; the row keeps only the rest of the line.
+    let parts = t.status.split(' · ');
+    return parts.length > 1 ? parts.slice(1).join(' · ') : t.status;
+  }
+  function setLight(light) {
+    if (!lightEl) { return; }
+    if (!LIGHT_WORDS[light]) { light = 'unknown'; }
+    lightEl.setAttribute('data-light', light);
+    lightEl.lastChild.textContent = LIGHT_WORDS[light];
+    lightEl.title = 'Agent Fritz: ' + LIGHTS.en[light] + ' · status.html';
+  }
+  function loadLight(fresh) {
+    let p = (!fresh && window.mhStatus) || fetch(STATUS_URL).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); });
+    window.mhStatus = p;
+    p.then(function (d) {
+      let fritz = ((d && d.services) || []).filter(function (x) { return /fritz/i.test(x.name || ''); })[0];
+      setLight(fritz ? fritz.light : 'unknown');
+    }).catch(function () { setLight('unknown'); });
+  }
   let busy = false, spinTimer = null, spinFrame = 0, pagesCount = null;
 
   function build() {
@@ -330,7 +367,6 @@
     panel.setAttribute('aria-label', 'Agent Fritz');
 
     let bar = el('div', 'fritz-bar');
-    let dots = el('div', 'fritz-dots'); dots.appendChild(el('i')); dots.appendChild(el('i')); dots.appendChild(el('i'));
     let title = el('div', 'fritz-title');
     title.appendChild(el('b', null, 'fritz'));
     title.appendChild(document.createTextNode('@meihuizen.ai: ~/ask'));
@@ -340,11 +376,17 @@
     let closeBtn = el('button', 'fritz-icon-btn', '×');
     closeBtn.type = 'button'; closeBtn.title = t.close; closeBtn.setAttribute('aria-label', t.close);
     closeBtn.addEventListener('click', function () { setOpen(false); launch.focus(); });
-    bar.appendChild(dots); bar.appendChild(title); bar.appendChild(resetBtn); bar.appendChild(closeBtn);
+    // One light, on the right, fed by the same monitor as status.html.
+    lightEl = el('a', 'fritz-state');
+    lightEl.href = '/status.html';
+    lightEl.setAttribute('data-light', 'unknown');
+    lightEl.appendChild(el('i'));
+    lightEl.appendChild(el('span', null, LIGHT_WORDS.unknown));
+    lightEl.lastChild.previousSibling.setAttribute('aria-hidden', 'true');
+    bar.appendChild(title); bar.appendChild(lightEl); bar.appendChild(resetBtn); bar.appendChild(closeBtn);
 
     status = el('div', 'fritz-status');
-    status.appendChild(el('span', 'fritz-live'));
-    status.appendChild(el('span', 'fritz-status-text', t.status));
+    status.appendChild(el('span', 'fritz-status-text', statusText()));
 
     log = el('div', 'fritz-log');
     log.setAttribute('role', 'log');
@@ -689,7 +731,7 @@
 
   function setDown(down) {
     status.classList.toggle('is-down', down);
-    status.lastChild.textContent = down ? t.down : t.status;
+    status.lastChild.textContent = down ? t.down : statusText();
   }
 
   // --- live chat with Nico ---------------------------------------------------
@@ -1006,6 +1048,9 @@
   // --- start -----------------------------------------------------------------
   function start() {
     build();
+    // The light refreshes every minute while the window is open, like status.html.
+    loadLight(false);
+    setInterval(function () { if (state.open) { loadLight(true); } }, 60000);
     // Anything on a page marked data-fritz-ask opens Fritz and asks that
     // question: the project page uses it for its "try it" buttons.
     document.addEventListener('click', function (e) {

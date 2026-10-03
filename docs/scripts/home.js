@@ -26,6 +26,7 @@
     tomorrow: 'atsakysime rytoj nuo 10:00', monday: 'atsakysime pirmadienį nuo 10:00',
     open: 'dirbame', closed: 'nedirbame',
     online: 'veikia', slow: 'lėtai', down: 'neveikia',
+    lights: { green: 'veikia', amber: 'sutrikimai', red: 'neveikia', unknown: 'būsena' },
     green: 'viskas veikia →', degraded: function (n) { return 'sutrikimų: ' + n + ' →'; },
     nicoFrom: 'nico · iš telefono', source: 'šaltinis: ', where: 'kur tai parašyta?', reading: 'fritz skaito',
     ask: 'Labas, Fritz, kuo gali man padėti?',
@@ -35,6 +36,7 @@
     tomorrow: 'reply tomorrow from 10:00', monday: 'reply Monday from 10:00',
     open: 'open', closed: 'closed',
     online: 'online', slow: 'slow', down: 'down',
+    lights: { green: 'online', amber: 'degraded', red: 'down', unknown: 'status' },
     green: 'all systems green →', degraded: function (n) { return n + ' service' + (n > 1 ? 's' : '') + ' degraded →'; },
     nicoFrom: 'nico · from his phone', source: 'source: ', where: 'where does it say so?', reading: 'fritz is reading',
     ask: 'Hi Fritz, what can you do for me?',
@@ -91,11 +93,23 @@
     if (t) { t.textContent = title; }
     if (s) { s.textContent = sub; }
   }
-  if (fritzEl || allEl || banner) {
-    fetch(STATUS_URL).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
+  // The hero window's light: same four states as status.html.
+  var liveEls = document.querySelectorAll('[data-status-light]');
+  function setLive(light) {
+    if (!W.lights[light]) { light = 'unknown'; }
+    Array.prototype.forEach.call(liveEls, function (n) {
+      n.setAttribute('data-status-light', light);
+      var w = n.querySelector('span'); if (w) { w.textContent = W.lights[light]; }
+    });
+  }
+  if (fritzEl || allEl || banner || liveEls.length) {
+    // Shared with ask/ask.js, so the page asks the monitor once.
+    window.mhStatus = fetch(STATUS_URL).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); });
+    window.mhStatus
       .then(function (d) {
         var services = (d && d.services) || [];
         var fritz = services.filter(function (s) { return /fritz/i.test(s.name || ''); })[0];
+        setLive(fritz ? fritz.light : 'unknown');
         if (fritzEl && fritz) {
           var word = { green: W.online, amber: W.slow, red: W.down }[fritz.light];
           if (word) { fritzEl.textContent = word; fritzEl.classList.toggle('ok', fritz.light === 'green'); }
@@ -111,6 +125,7 @@
           else { setBanner(down ? 'red' : 'amber', (down + slow) + ' of ' + services.length + ' services affected', 'See which one below, and whether the vendor it runs on reports a problem.'); }
         }
       }).catch(function () {
+        setLive('unknown');
         setBanner('unknown', 'Our monitor cannot be reached', 'The vendor pages below still work.');
       });
   }

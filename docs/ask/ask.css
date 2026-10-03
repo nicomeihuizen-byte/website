@@ -90,11 +90,22 @@
   border-bottom: 1px solid var(--f-line);
   background: rgba(255,255,255,.015);
 }
-.fritz-dots { display: flex; gap: 6px; }
-.fritz-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
-.fritz-dots i:nth-child(1) { background: #AE1C28; }
-.fritz-dots i:nth-child(2) { background: #C9CCD6; }
-.fritz-dots i:nth-child(3) { background: #21468B; }
+/* Status light: same four states and colours as status.html (.st-green etc.). */
+.fritz-state {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  font-family: var(--f-mono); font-size: 11px; color: var(--f-muted);
+  text-decoration: none; padding: 3px 6px; border-radius: 6px;
+  transition: background .15s;
+}
+.fritz-state:hover { background: var(--f-raised); }
+.fritz-state:focus-visible { outline: 2px solid var(--f-green); outline-offset: 1px; }
+.fritz-state i { width: 7px; height: 7px; border-radius: 50%; display: block; background: #8B90A3; }
+.fritz-state[data-light="green"] { color: #2E9E68; }
+.fritz-state[data-light="green"] i { background: #2E9E68; box-shadow: 0 0 6px #2E9E68; animation: fritz-pulse 2.4s ease-in-out infinite; }
+.fritz-state[data-light="amber"] { color: #E8B34A; }
+.fritz-state[data-light="amber"] i { background: #D9A030; }
+.fritz-state[data-light="red"] { color: #D8573A; }
+.fritz-state[data-light="red"] i { background: #D8573A; }
 .fritz-title { flex: 1; min-width: 0; font-family: var(--f-mono); font-size: 12px; color: var(--f-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fritz-title b { color: var(--f-text); font-weight: 500; }
 .fritz-icon-btn {
@@ -110,8 +121,7 @@
   padding: 7px 14px; border-bottom: 1px solid var(--f-line);
   font-family: var(--f-mono); font-size: 11px; color: var(--f-dim);
 }
-.fritz-status .fritz-live { width: 6px; height: 6px; border-radius: 50%; background: var(--f-green); box-shadow: 0 0 6px var(--f-green); animation: fritz-pulse 2.4s ease-in-out infinite; }
-.fritz-status.is-down .fritz-live { background: var(--f-amber); box-shadow: 0 0 6px var(--f-amber); }
+.fritz-status.is-down { color: var(--f-amber); }
 
 /* --- log --------------------------------------------------------- */
 .fritz-log {

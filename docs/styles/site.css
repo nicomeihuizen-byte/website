@@ -189,8 +189,14 @@ img{max-width:100%;height:auto}
 .term-dots i:nth-child(1){background:#C02626}
 .term-dots i:nth-child(2){background:#F4F6F8}
 .term-dots i:nth-child(3){background:#2B6F9C}
-.term-dots span{margin-left:10px}
-.term-live{color:var(--t-green)}
+.term-dots i+i+i+span{margin-left:10px}
+/* Fritz's status light: same states and colours as status.html (.st-*) */
+.term-live{display:inline-flex;align-items:center;gap:6px;color:var(--t-muted);text-decoration:none}
+.term-live i{width:7px;height:7px;border-radius:50%;display:block;background:#8B90A3}
+.term-live[data-status-light="green"]{color:#2E9E68}
+.term-live[data-status-light="green"] i{background:#2E9E68;--pulse:rgba(46,158,104,.5);animation:pulse 2s ease-in-out infinite}
+.term-live[data-status-light="amber"]{color:#D9A030}.term-live[data-status-light="amber"] i{background:#D9A030}
+.term-live[data-status-light="red"]{color:#D8573A}.term-live[data-status-light="red"] i{background:#D8573A}
 .term-boot{padding:16px 18px 6px;font-family:var(--font-mono);font-size:12px;color:var(--t-muted);line-height:1.7}
 .term-boot b{color:var(--t-green);font-weight:400}
 .chat{padding:8px 18px 14px;height:330px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;overflow:hidden}
@@ -326,7 +332,7 @@ img{max-width:100%;height:auto}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .pulse,.blink,.msg{animation:none}
+  .pulse,.blink,.msg,.term-live i{animation:none}
 }
 .hero{overflow-x:clip}
 
