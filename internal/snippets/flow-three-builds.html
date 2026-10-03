@@ -1,0 +1,50 @@
+<!-- ~/how it fits: Second Audience → Fritz → Five, and back. Drop-in section, uses site.css tokens only. -->
+<section class="wrap section flow-sec" aria-labelledby="flow-h">
+  <style>
+    .flow-sec .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:36px}
+    .flow-sec .flow-card{background:var(--bg-raised);border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none;transition:border-color .15s}
+    .flow-sec a.flow-card:hover{border-color:var(--accent-dim)}
+    .flow-sec .flow-n{font-family:var(--font-mono);font-size:12px;color:var(--accent2)}
+    .flow-sec .flow-card h3{font-family:var(--font-display);font-size:22px;line-height:1.2;letter-spacing:-.02em;margin:0}
+    .flow-sec .flow-q{font-family:var(--font-mono);font-size:13px;color:var(--text);margin:2px 0 0}
+    .flow-sec .flow-card p{margin:0;color:var(--text-muted);font-size:15px;line-height:1.5}
+    .flow-sec .flow-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 10px;width:120px;text-align:center;font-family:var(--font-mono);font-size:11.5px;color:var(--text-dim)}
+    .flow-sec .flow-arrow i{display:block;width:100%;height:1px;background:var(--line);position:relative;margin:8px 0}
+    .flow-sec .flow-arrow i::after{content:"";position:absolute;right:-1px;top:-4px;border:4.5px solid transparent;border-left:7px solid var(--text-dim);border-right:0}
+    .flow-sec .flow-arrow b{color:var(--accent);font-weight:500}
+    .flow-sec .flow-loop{grid-column:1 / -1;margin-top:14px;display:flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:12px;color:var(--text-dim)}
+    .flow-sec .flow-loop::before{content:"↺";font-size:15px;color:var(--accent)}
+    .flow-sec .flow-loop span.line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px)}
+    @media (max-width:860px){
+      .flow-sec .flow{grid-template-columns:1fr}
+      .flow-sec .flow-arrow{flex-direction:row;gap:10px;padding:10px 0;min-width:0}
+      .flow-sec .flow-arrow i{width:1px;height:22px;margin:0}
+      .flow-sec .flow-arrow i::after{right:-4px;top:auto;bottom:-1px;border:4.5px solid transparent;border-top:7px solid var(--text-dim);border-bottom:0}
+    }
+  </style>
+  <div class="lead-wrap">
+    <p class="idx">~/how it fits</p>
+    <h2 class="h2" id="flow-h">Three builds, one loop.</h2>
+    <p class="body-l">Second Audience finds what agents get wrong about you. Fritz answers your visitors from your own pages. Five keeps the deal moving once a lead is real.</p>
+  </div>
+  <div class="flow">
+    <a class="flow-card" href="projects/second-audience.html">
+      <span class="flow-n">01 · second audience</span>
+      <h3>What do agents say about you?</h3>
+      <p>The scan shows what ChatGPT, Gemini and the rest tell your buyers, and where it is wrong.</p>
+    </a>
+    <div class="flow-arrow" aria-hidden="true"><span>fixed pages</span><i></i></div>
+    <a class="flow-card" href="projects/agent-fritz.html">
+      <span class="flow-n">02 · agent fritz</span>
+      <h3>Who answers your visitor?</h3>
+      <p>Fritz, from your own pages only. He qualifies, books the call, and hands over the lead.</p>
+    </a>
+    <div class="flow-arrow" aria-hidden="true"><span><b>FQL</b></span><i></i><span>qualified lead</span></div>
+    <a class="flow-card" href="projects/ai-sales-deal-intelligence.html">
+      <span class="flow-n">03 · five</span>
+      <h3>Is the deal still moving?</h3>
+      <p>Five deals on the desk. You know when one goes quiet, and why.</p>
+    </a>
+    <div class="flow-loop"><span>what closes and what stalls goes back into the scan and into Fritz's answers</span><span class="line" aria-hidden="true"></span><span class="chip">planned</span></div>
+  </div>
+</section>
