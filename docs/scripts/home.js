@@ -124,6 +124,8 @@
         if (allEl && services.length) {
           var bad = services.filter(function (s) { return s.light !== 'green'; }).length;
           allEl.textContent = bad ? W.degraded(bad) : W.green;
+          allEl.classList.toggle('ok', !bad);
+          allEl.classList.toggle('warn', !!bad);
         }
         if (services.length) {
           var down = services.filter(function (s) { return s.light === 'red'; }).length;
