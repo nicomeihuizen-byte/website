@@ -27,6 +27,7 @@
     open: 'dirbame', closed: 'nedirbame',
     online: 'veikia', slow: 'lėtai', down: 'neveikia',
     lights: { green: 'veikia', amber: 'sutrikimai', red: 'neveikia', unknown: 'būsena' },
+    here: 'prisijungęs', away: 'neprisijungęs',
     green: 'viskas veikia →', degraded: function (n) { return 'sutrikimų: ' + n + ' →'; },
     nicoFrom: 'nico · iš telefono', source: 'šaltinis: ', where: 'kur tai parašyta?', reading: 'fritz skaito',
     ask: 'Labas, Fritz, kuo gali man padėti?',
@@ -37,6 +38,7 @@
     open: 'open', closed: 'closed',
     online: 'online', slow: 'slow', down: 'down',
     lights: { green: 'online', amber: 'degraded', red: 'down', unknown: 'status' },
+    here: 'online', away: 'offline',
     green: 'all systems green →', degraded: function (n) { return n + ' service' + (n > 1 ? 's' : '') + ' degraded →'; },
     nicoFrom: 'nico · from his phone', source: 'source: ', where: 'where does it say so?', reading: 'fritz is reading',
     ask: 'Hi Fritz, what can you do for me?',
@@ -74,6 +76,11 @@
     setAll('[data-office-time]', o.time);
     setAll('[data-office-state]', o.open ? W.open : W.closed);
     setAll('[data-office-reply]', replyText(o.open));
+    // Nico's presence light (about page): online only inside Kaunas office hours.
+    Array.prototype.forEach.call(document.querySelectorAll('[data-office-light]'), function (n) {
+      n.setAttribute('data-office-light', o.open ? 'open' : 'closed');
+      var w = n.querySelector('span'); if (w) { w.textContent = o.open ? W.here : W.away; }
+    });
     return o;
   }
   tick();

@@ -197,6 +197,9 @@ img{max-width:100%;height:auto}
 .term-live[data-status-light="green"] i{background:#2E9E68;--pulse:rgba(46,158,104,.5);animation:pulse 2s ease-in-out infinite}
 .term-live[data-status-light="amber"]{color:#D9A030}.term-live[data-status-light="amber"] i{background:#D9A030}
 .term-live[data-status-light="red"]{color:#D8573A}.term-live[data-status-light="red"] i{background:#D8573A}
+/* Nico's presence on the about page: online in Kaunas office hours (window.mhOffice) */
+.term-live[data-office-light="open"]{color:#2E9E68}
+.term-live[data-office-light="open"] i{background:#2E9E68;--pulse:rgba(46,158,104,.5);animation:pulse 2s ease-in-out infinite}
 .term-boot{padding:16px 18px 6px;font-family:var(--font-mono);font-size:12px;color:var(--t-muted);line-height:1.7}
 .term-boot b{color:var(--t-green);font-weight:400}
 .chat{padding:8px 18px 14px;height:330px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;overflow:hidden}
