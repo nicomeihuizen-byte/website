@@ -565,6 +565,7 @@ img{max-width:100%;height:auto}
 .flag{position:absolute;top:-11px;left:20px;font-family:var(--font-mono);font-size:11px;padding:3px 10px;border-radius:999px;background:var(--accent);color:var(--on-accent)}
 .route .mono{font-size:12px;color:var(--accent2)}
 .route h3{font-family:var(--font-display);font-size:21px;font-weight:600;margin:8px 0 0}
+.route .price-sub{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);margin-top:2px}
 .route .price{font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-top:6px}
 .route .big{font-family:var(--font-display);font-size:36px;font-weight:600}
 .route .big small{font-family:var(--font-mono);font-size:13px;color:var(--text-muted);font-weight:400}
