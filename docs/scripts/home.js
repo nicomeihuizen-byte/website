@@ -292,6 +292,28 @@
       }
     }, 1100);
   }
+  // ---- 5b. stepped highlight (Agent Fritz capability cards) ------------------
+  // [data-step] holds the cards. The HTML shows them all plain, which is also the
+  // reduced-motion view. With motion allowed, a highlight walks the cards like
+  // the pipeline: past cards tick, the current one lifts, then it starts over.
+  // Hovering the grid pauses the walk so a card can be read.
+  var stepBox = document.querySelector('[data-step]');
+  if (stepBox && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    stepBox.classList.add('stepping');
+    var cards = stepBox.children;
+    var pos = -1;
+    var paused = false;
+    stepBox.addEventListener('mouseenter', function () { paused = true; });
+    stepBox.addEventListener('mouseleave', function () { paused = false; });
+    setInterval(function () {
+      if (paused) { return; }
+      pos = pos >= cards.length + 1 ? 0 : pos + 1;
+      Array.prototype.forEach.call(cards, function (c, i) {
+        c.classList.toggle('seen', pos < cards.length && i < pos);
+        c.classList.toggle('on', i === pos);
+      });
+    }, 1400);
+  }
   // ---- 6. demo tabs (product pages) ------------------------------------------
   // [data-tabs] holds role="tab" buttons and role="tabpanel" panels. Classes
   // and the hidden attribute only: project pages allow no inline styles.
