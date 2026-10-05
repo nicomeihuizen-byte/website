@@ -1,6 +1,6 @@
 {
  "site": "https://www.meihuizen.ai/",
- "version": "e88db2d87bacf2ac",
+ "version": "90666d0d635b817a",
  "pages": [
   {
    "path": "index.html",
@@ -142,6 +142,14 @@
    "type": "PDF",
    "url": "https://www.meihuizen.ai/images/project_five/second-audience-how-we-work.pdf",
    "page": "projects/second-audience.html"
+  },
+  {
+   "id": "privacy",
+   "title": "meihuizen.ai · Privacy notice",
+   "type": "Page",
+   "page": "privacy.html",
+   "description": "How meihuizen.ai handles personal data: every flow, processor and retention period, analytics only with consent, and how to reach us about your data.",
+   "url": "https://www.meihuizen.ai/privacy.html"
   }
  ]
 }

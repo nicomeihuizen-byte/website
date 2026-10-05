@@ -33,6 +33,13 @@ SITE = "https://www.meihuizen.ai/"
 PAGES = ["index.html", "about.html", "builds.html", "contact.html", "credentials.html", "privacy.html", "status.html", "terms.html"]
 PAGES += sorted(p.relative_to(DOCS).as_posix() for p in (DOCS / "projects").glob("*.html"))
 
+# Pages Fritz may hand over as a document card, next to the download cards.
+# The privacy notice stays a live page, not a PDF: a PDF would go stale the
+# day the page changes, and legal reads the current version.
+PAGE_DOCS = [
+    {"id": "privacy", "title": "meihuizen.ai · Privacy notice", "type": "Page", "page": "privacy.html"},
+]
+
 SKIP_TAGS = {"script", "style", "svg", "noscript", "template", "button", "head", "nav", "form"}
 SKIP_CLASSES = {"lang-switch", "sr-only", "site-header", "social-links",
                 "project-nav-socials", "image-lightbox", "theme-toggle"}
@@ -185,6 +192,10 @@ def build() -> dict:
         })
         for d in documents(rel, html, head.title.strip()):
             docs.setdefault(d["id"], d)
+    for d in PAGE_DOCS:
+        page = next((p for p in pages if p["path"] == d["page"]), None)
+        if page:
+            docs.setdefault(d["id"], {**d, "description": page["description"], "url": page["url"]})
     documents_ = list(docs.values())
     digest = hashlib.sha256(json.dumps([pages, documents_], ensure_ascii=False).encode()).hexdigest()[:16]
     return {"site": SITE, "version": digest, "pages": pages, "documents": documents_}
