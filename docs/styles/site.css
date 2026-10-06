@@ -286,6 +286,10 @@ img{max-width:100%;height:auto}
 .foot-id{display:flex;gap:18px;align-items:center}
 .foot-id img{width:120px}
 .foot-id p{margin:0;font-family:var(--font-mono);font-size:12px;color:var(--text-muted);line-height:1.8}
+.foot-id p .fi{display:inline-block;width:13px;height:13px;margin-right:8px;vertical-align:-2px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.foot-id p a:hover{color:var(--accent)}
+dl .fi{display:inline-block;width:13px;height:13px;margin-right:8px;vertical-align:-2px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+dd a[href^="tel:"]:hover{color:var(--accent)}
 .foot-links{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
 .foot-links ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap;font-family:var(--font-mono);font-size:12px;color:var(--text-muted)}
 .foot-links a:hover{color:var(--text)}
