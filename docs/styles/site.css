@@ -789,3 +789,12 @@ a.loop-card:hover{border-color:var(--accent-dim)}
 .does.on .mono{color:var(--accent)}
 .stepping .does.on .mono::before{content:'▸ ';color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.does{transition:none}}
+
+/* Partner logo in a build card: the partner's own dark wordmark on the light
+   theme, its white one on dark. Two files rather than a filter, because the
+   partner's colours are theirs to set, not ours to approximate. */
+.partner-logo{display:block;margin:6px 0 18px}
+.partner-logo img{display:block;width:auto;height:26px}
+.partner-logo-on-dark{display:none}
+:root[data-theme="dark"] .partner-logo-on-light{display:none}
+:root[data-theme="dark"] .partner-logo-on-dark{display:block}
