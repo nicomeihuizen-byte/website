@@ -1,0 +1,59 @@
+/* Social rail: LinkedIn and GitHub as a tab on the right edge.
+   Dark in both themes, like Fritz's launcher, so the two read as one
+   family. Built by scripts/rail.js; no inline styles (project-page CSP). */
+
+.side-rail {
+  --r-bg: #0D0F16;
+  --r-line: #242836;
+  --r-text: #E6E8EF;
+  --r-muted: #8B90A3;
+  --r-green: #5FBF8E;
+  --r-green-dim: #2E6B52;
+  position: fixed; right: 0; top: 50%; z-index: 9980;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  pointer-events: none;
+}
+.side-rail a {
+  pointer-events: auto;
+  display: flex; align-items: center; gap: 10px;
+  height: 46px; padding: 0 13px;
+  /* the label sits off-canvas to the right until hover pulls it in */
+  margin-right: -82px; /* label 72px + gap 10px */
+  background: var(--r-bg);
+  color: var(--r-muted);
+  border: 1px solid var(--r-line); border-right: 0;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 10px 28px -14px rgba(0,0,0,.55);
+  font-size: 12.5px; letter-spacing: .02em; text-decoration: none; white-space: nowrap;
+  transition: margin-right .28s cubic-bezier(.2,.8,.2,1), color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.side-rail a:hover, .side-rail a:focus-visible {
+  margin-right: 0;
+  color: var(--r-text);
+  border-color: var(--r-green-dim);
+  box-shadow: 0 0 0 3px rgba(95,191,142,.08), 0 14px 32px -14px rgba(95,191,142,.45);
+  outline: none;
+}
+.side-rail svg { width: 19px; height: 19px; flex: none; fill: currentColor; transition: fill .2s ease; }
+.side-rail a:hover svg, .side-rail a:focus-visible svg { fill: var(--r-green); }
+.side-rail .rail-label { width: 72px; opacity: 0; transition: opacity .2s ease; }
+.side-rail a:hover .rail-label, .side-rail a:focus-visible .rail-label { opacity: 1; }
+.side-rail .rail-prompt { color: var(--r-green); }
+
+/* a thin green tick on the edge, the only colour at rest */
+.side-rail a { position: relative; }
+.side-rail a::before {
+  content: ""; position: absolute; left: -1px; top: 12px; bottom: 12px; width: 2px;
+  border-radius: 2px; background: var(--r-green); opacity: .55;
+  transition: opacity .2s ease;
+}
+.side-rail a:hover::before, .side-rail a:focus-visible::before { opacity: 1; }
+
+/* Out of the way when Fritz takes the screen, and on phones, where the
+   footer already carries both links. */
+html.fritz-lock .side-rail { display: none; }
+@media (max-width: 760px), (max-height: 480px) { .side-rail { display: none; } }
+@media (prefers-reduced-motion: reduce) { .side-rail a, .side-rail a::before, .side-rail svg, .side-rail .rail-label { transition: none; } }
+@media print { .side-rail { display: none; } }
