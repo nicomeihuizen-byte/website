@@ -30,7 +30,7 @@ DOCS = ROOT / "docs"
 OUT = DOCS / "ask" / "knowledge.json"
 SITE = "https://www.meihuizen.ai/"
 
-PAGES = ["index.html", "about.html", "builds.html", "contact.html", "credentials.html", "privacy.html", "status.html", "terms.html"]
+PAGES = ["index.html", "about.html", "builds.html", "contact.html", "credentials.html", "privacy.html", "status.html", "terms.html", "tour.html"]
 PAGES += sorted(p.relative_to(DOCS).as_posix() for p in (DOCS / "projects").glob("*.html"))
 
 # Pages Fritz may hand over as a document card, next to the download cards.

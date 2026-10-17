@@ -272,6 +272,20 @@ Target terms: agence IA, agents IA sur mesure, chatbot IA commercial, agent comm
 
 ---
 
+## All languages: the 2027 European Tour page (17 Oct 2026, commit "The 2027 European Tour")
+
+**Idea (Nico):** make the focus regions real, like a band: a public tour schedule. New top-level page tour.html (English first), "tour" in the main navigation on every page.
+
+**Legs:** Feb/Mar Milano, Roma · Apr/May Barcelona, Madrid · Jun/Jul Lyon, Paris · Aug summer break · Sep/Oct Porto, Lisboa · Nov/Dec Berlin, Vilnius, Kaunas.
+
+**Also changed:** FR focus regions now Lyon and Paris (home, about), EN about list too. Fritz's knowledge now includes tour.html.
+
+**What to measure:** impressions and clicks on /tour.html; queries with a city name per leg; requests through the contact form that name a leg or city; whether visitors from a leg's country rise in the two months before that leg.
+
+**Open:** DE focus regions say Berlin, Hamburg, München, but the tour stops only in Berlin; NL Randstad is a focus region with no tour stop. No Event structured data on purpose: Google's event rules are for events people attend, and a sales tour risks a manual action.
+
+---
+
 ## Next human passes (to add here)
 
 NL and LT: competitor sites to be supplied by Nico. Until then NL is the agent-only comparison group (LT had an agent SEO retune only).
