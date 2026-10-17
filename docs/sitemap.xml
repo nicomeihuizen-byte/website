@@ -961,24 +961,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html"/>
   </url>
   <url>
-    <loc>https://www.meihuizen.ai/projects/off-grid-ai-homestead.html</loc>
-    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8000</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
-    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
-  </url>
-  <url>
-    <loc>https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html</loc>
-    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6000</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
-    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
-  </url>
-  <url>
     <loc>https://www.meihuizen.ai/privacy.html</loc>
     <lastmod>2026-10-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -998,19 +980,121 @@
   </url>
   <url>
     <loc>https://www.meihuizen.ai/projects/second-audience-cases.html</loc>
-    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7000</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/nl/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/de/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/fr/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/it/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/es/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/pt/projects/second-audience-cases.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
     <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/lt/projects/second-audience-cases.html</loc>
-    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5000</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience-cases.html"/>
     <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience-cases.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience-cases.html"/>
   </url>
@@ -1133,5 +1217,125 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/tour.html"/>
     <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/tour.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/tour.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html</loc>
+    <lastmod>2026-10-17T18:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html"/>
   </url>
 </urlset>

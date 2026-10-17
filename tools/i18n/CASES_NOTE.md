@@ -1,0 +1,10 @@
+Page: docs/<LANG>/projects/second-audience-cases.html ("What the agents said": six anonymised Second Audience scans). It is the evidence page behind the Second Audience product page.
+- Read tools/i18n/BRIEF.md first (register per language, no em dashes, what stays English).
+- Terminology must match docs/<LANG>/projects/second-audience.html exactly: the word used there for "scan", "agent", "finding", "free scan", the CTA wording. Open it and reuse its terms. "Second Audience" stays in English (product name).
+- ANONYMISATION IS THE POINT OF THIS PAGE. Do not add any detail the English lacks: no product types, no sectors more specific than the English, no countries, no years, no figures. Where the English is deliberately vague ("one fund", "a second safety question", "an earlier business", "a guarantee attached"), stay exactly that vague. If your language would naturally need a more specific word, choose the vaguer one.
+- Keep the counts as they are (sixteen answers, eleven of twelve, three of five, etc.): those are counts of our tests, not the companies' figures.
+- The idx lines (~/case 01 · expert network) and TOC links (~/case 01) are translated like the LT version does (docs/lt/projects/second-audience-cases.html is a good reference for structure; translate from the English skeleton).
+- JSON-LD: translate "description" and the BreadcrumbList "name" values (Home, Builds, Cases; keep "Second Audience"). Set the breadcrumb "item" URLs for Builds, Second Audience and Cases to the <LANG> URLs (https://www.meihuizen.ai/<LANG>/builds.html etc.); Home becomes https://www.meihuizen.ai/<LANG>/.
+- SEO: title (<=60 chars) and description (<=155) aimed at how people in your language search for what AI chatbots / ChatGPT say about a company, AI visibility, AI search errors about brands. Use docs/<LANG>/projects/second-audience.html's title as the style reference. No claims beyond the page.
+- The data-fritz-ask on the CTA button: translate the question.
+Check: python3 tools/check_locale.py <LANG> projects/second-audience-cases.html until OK.
