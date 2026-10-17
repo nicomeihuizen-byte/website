@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Second Audience: how we work | meihuizen.ai</title>
+<link rel="stylesheet" href="../../docs/fonts/fonts.css">
+<style>
+/* Source of docs/images/project_five/second-audience-how-we-work.pdf.
+   Render: python internal/pdf-src/render.py (Playwright, A4, two pages). */
+@page{size:A4;margin:0}
+:root{--ink:#14161C;--muted:#596074;--dim:#8B90A3;--line:#DFE3EA;--green:#1F7D55;--blue:#2B6F9C;--bg:#FFFFFF;--soft:#F4F6F8}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;padding:13mm 17mm 18mm;page-break-after:always;overflow:hidden}
+.page:last-child{page-break-after:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding-bottom:4mm;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:13mm;width:auto;filter:brightness(.62) saturate(1.5)}
+.brand b{display:block;font-family:'JetBrains Mono',monospace;font-size:13pt;font-weight:600;letter-spacing:.01em}
+.brand span{display:block;font-family:'JetBrains Mono',monospace;font-size:7pt;letter-spacing:.24em;color:var(--muted);margin-top:2px;text-transform:uppercase}
+.doc{text-align:right;font-family:'JetBrains Mono',monospace}
+.doc b{display:block;font-size:7.5pt;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;font-weight:500}
+.doc span{display:block;font-size:9.5pt;font-weight:600;margin-top:3px}
+.doc em{display:block;font-style:normal;font-size:7pt;color:var(--dim);margin-top:3px;letter-spacing:.06em}
+.idx{font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--blue);margin:6mm 0 0}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19pt;letter-spacing:-.02em;line-height:1.12;margin:2.5mm 0 0}
+h1 .g{color:var(--green)}
+.lead{font-size:9pt;line-height:1.5;color:var(--muted);margin:2.5mm 0 4mm;max-width:165mm}
+.row{display:grid;grid-template-columns:38mm minmax(0,1fr);gap:6mm;padding:2.8mm 0;border-top:1px solid var(--line)}
+.row .k{font-family:'JetBrains Mono',monospace;font-size:7.8pt;color:var(--green);letter-spacing:.02em;padding-top:.6mm}
+.row h2{font-family:'Space Grotesk',sans-serif;font-size:10pt;font-weight:600;margin:0 0 .8mm;letter-spacing:-.005em}
+.row p{font-size:8.2pt;line-height:1.48;color:var(--muted);margin:0}
+.row p a{color:var(--green);text-decoration:none}
+.id{margin-top:3mm;border:1px solid var(--line);border-radius:3mm;background:var(--soft);padding:4.5mm 5mm;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3mm 6mm}
+.id div{font-size:8.2pt;line-height:1.5;color:var(--ink)}
+.id div b{display:block;font-family:'JetBrains Mono',monospace;font-size:7pt;font-weight:500;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.8mm}
+footer{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:3mm;font-family:'JetBrains Mono',monospace;font-size:6.8pt;color:var(--dim);letter-spacing:.03em}
+footer .dot{color:var(--green)}
+</style>
+</head>
+<body>
+
+<section class="page">
+  <header>
+    <div class="brand">
+      <img src="../../docs/images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai">
+    </div>
+    <div class="doc"><b>Second Audience</b><span>how we work: scope, data and rights</span><em>version 17 October 2026</em></div>
+  </header>
+
+  <p class="idx">// how we work</p>
+  <h1>What this scan is, <span class="g">and how it came about.</span></h1>
+  <p class="lead">You have received a scan of your website without asking for one. That rightly raises a few questions: who we are, where these findings come from, and what happens next. This document answers them before you have to ask. It accompanies every scan we send and it applies in full.</p>
+
+  <div class="row"><div class="k">what we retrieved</div><div><h2>Public pages, with ordinary requests</h2><p>We requested a limited number of publicly accessible pages from your website using standard HTTP requests, exactly as your own browser or a search engine does. We also read your robots.txt, your sitemap and the public metadata in the page source. Nothing more, and we honour the instructions in your robots.txt.</p></div></div>
+
+  <div class="row"><div class="k">what we did not do</div><div><h2>No test, no intrusion, no contact</h2><p>We did not log in, did not access any protected part of your site and did not circumvent any security measure. We did not complete or submit a form and we contacted no one through your site. This is not a penetration test, not a vulnerability assessment and not a load test; we do not look for weaknesses in your systems.</p></div></div>
+
+  <div class="row"><div class="k">how agent answers are used</div><div><h2>Illustration, never the finding</h2><p>We do put questions to AI agents such as ChatGPT, Claude, Gemini, Perplexity and Google's AI answers, each in a fresh session, and we save every answer as a dated screenshot. Those answers illustrate what a visitor can be told today. They are never the finding, because an AI answer cannot be reproduced on demand. Every finding in a scan is a piece of text on a page, with the literal sentence and the URL alongside it, and that can be reproduced. We do not predict what an AI system will say about you tomorrow.</p></div></div>
+
+  <div class="row"><div class="k">personal data</div><div><h2>As little as possible, and only what you publish yourself</h2><p>We do not collect personal data as an objective. Where a name, job title or business email address appears in the scan, it is solely because you published it yourself on your website in a business context, and only where it is needed to support a finding. We do not build profiles of individuals, we do not combine your data with other sources, and we do not sell or share anything with third parties. The basis for this processing is our legitimate interest in being able to make you a business offer. After a free scan we keep only the report and delete the retrieved pages. If you become a client, we keep the retrieved pages for as long as the engagement needs them for re-scans. One email is enough to have everything deleted sooner.</p></div></div>
+
+  <div class="row"><div class="k">your content stays yours</div><div><h2>We take nothing over and we publish nothing</h2><p>All rights in your website and its content remain entirely yours. Where we quote, these are short fragments serving as evidence for a finding, with the page they appear on named. We do not publish your scan, we do not use it as an example to others, and we name you nowhere as a reference client without your explicit consent. We derive no right whatsoever from this scan over you, your content or your website.</p></div></div>
+
+  <div class="row"><div class="k">third-party names</div><div><h2>No affiliation, no endorsement</h2><p>ChatGPT, Claude, Copilot, Perplexity, Google and other names and services mentioned are the property of their respective owners. We are not affiliated with them, do not act on their instructions and do not speak on their behalf. We name them only to describe what kind of system reads your pages.</p></div></div>
+
+  <footer><span>meihuizen.ai <span class="dot">·</span> Second Audience: how we work</span><span>1 / 2 <span class="dot">·</span> © 2026 MB Meihuizen AI</span></footer>
+</section>
+
+<section class="page">
+  <header>
+    <div class="brand">
+      <img src="../../docs/images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai">
+    </div>
+    <div class="doc"><b>Second Audience</b><span>how we work: scope, data and rights</span><em>version 17 October 2026</em></div>
+  </header>
+
+  <p class="idx">// what you may do with it</p>
+  <h1>The report is yours, <span class="g">and there are no strings.</span></h1>
+
+  <div class="row" style="margin-top:4mm"><div class="k">what you may do with the scan</div><div><h2>Anything you like, within your own organisation</h2><p>You may share the scan internally, forward it to your web developer or a third party, and fix the findings yourself, with us or without us. No permission is needed and nothing is expected in return. We ask only that you do not publish it openly, because it contains your own findings.</p></div></div>
+
+  <div class="row"><div class="k">what this report is not</div><div><h2>Not advice, and a snapshot</h2><p>This is not legal, tax, compliance or investment advice. We are not lawyers. What a finding means for you is for you and your advisers to decide. The scan is also a measurement at a single moment, with the date and time stated: websites change. We do not predict what an AI system will say about you and we guarantee no result, including after work has been carried out.</p></div></div>
+
+  <div class="row"><div class="k">rulings we cite</div><div><h2>Named so that you can read them yourself</h2><p>Where we mention a court ruling or an enforcement decision, it is stated with its name, date and source. We name these as context for a finding, not as advice about your situation. Some rulings are still open to appeal; where that is the case, we say so.</p></div></div>
+
+  <div class="row"><div class="k">if a finding is wrong</div><div><h2>Tell us and we will take it out</h2><p>Every finding traces back to a retrieval we can repeat in your presence. If you think something is wrong, let us know: we redo the measurement with you watching and correct or withdraw the finding if you are right. If you have paid for a report and a finding cannot be reproduced, we refund that report.</p></div></div>
+
+  <div class="row"><div class="k">if you want to hear nothing more</div><div><h2>One reply is enough</h2><p>We contacted you at an address published on your own website. If you would rather not hear from us again, reply to our email with a single line or write to <a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a>. We will then delete the scan, the retrieved pages and your data, and you do not have to explain why. You also have the right to access, correct or erase your data, and the right to lodge a complaint with the Lithuanian State Data Protection Inspectorate (Valstybinė duomenų apsaugos inspekcija, vdai.lrv.lt) or with the data protection authority where you live.</p></div></div>
+
+  <div class="row"><div class="k">responsible</div><div><h2>MB Meihuizen AI, run by Nico Meihuizen</h2><p>Responsible for this scan and for the processing of the data used in it. Questions about your data go to <a href="mailto:dpo@meihuizen.ai">dpo@meihuizen.ai</a>, everything else to <a href="mailto:info@meihuizen.ai">info@meihuizen.ai</a>. We answer within five working days. Full privacy notice: meihuizen.ai/privacy.html.</p></div></div>
+
+  <div class="id">
+    <div><b>company</b>MB Meihuizen AI<br>(Mažoji bendrija Meihuizen AI)<br>company code 308157412</div>
+    <div><b>office</b>Laisvės al. 110<br>LT-44253 Kaunas<br>Lithuania</div>
+    <div><b>contact</b>+370 5 208 0293<br>info@meihuizen.ai<br>Mon to Fri, 10:00 to 18:00 Kaunas time</div>
+  </div>
+
+  <footer><span>MB Meihuizen AI <span class="dot">·</span> Laisvės al. 110, Kaunas <span class="dot">·</span> +370 5 208 0293</span><span>2 / 2 <span class="dot">·</span> © 2026 MB Meihuizen AI</span></footer>
+</section>
+
+</body>
+</html>
