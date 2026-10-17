@@ -22,7 +22,7 @@
     de: ['Wir nutzen Google Analytics, um Besuche zu zählen, aber nur, wenn Sie zustimmen. Bis Sie wählen, wird nichts geladen.', 'Analytics akzeptieren', 'Ablehnen', 'Datenschutz', 'Cookie-Einstellungen', 'Cookie-Auswahl'],
     fr: ['Nous utilisons Google Analytics pour compter les visites, uniquement si vous l’acceptez. Rien ne se charge tant que vous n’avez pas choisi.', 'Accepter l’analyse', 'Refuser', 'Confidentialité', 'Paramètres des cookies', 'Choix des cookies'],
     es: ['Usamos Google Analytics para contar visitas, solo si usted lo acepta. No se carga nada hasta que elija.', 'Aceptar analítica', 'Rechazar', 'Privacidad', 'Configuración de cookies', 'Elección de cookies'],
-    it: ['Usiamo Google Analytics per contare le visite, solo se è d’accordo. Nulla viene caricato finché non sceglie.', 'Accetta analytics', 'Rifiuta', 'Privacy', 'Impostazioni cookie', 'Scelta dei cookie'],
+    it: ['Usiamo Google Analytics per contare le visite, solo se sei d’accordo. Nulla viene caricato finché non scegli.', 'Accetta analytics', 'Rifiuta', 'Privacy', 'Impostazioni cookie', 'Scelta dei cookie'],
     pt: ['Usamos o Google Analytics para contar visitas, apenas se concordar. Nada é carregado até escolher.', 'Aceitar análise', 'Recusar', 'Privacidade', 'Definições de cookies', 'Escolha de cookies'],
     lt: ['Naudojame Google Analytics lankytojams skaičiuoti, bet tik jei sutinkate. Kol nepasirinksite, niekas neįkeliama.', 'Leisti analitiką', 'Atsisakyti', 'Privatumas', 'Slapukų nustatymai', 'Slapukų pasirinkimas']
   };

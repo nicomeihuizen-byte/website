@@ -259,23 +259,23 @@
   },
   "chat": {
    "q1": "È un’azienda vera?",
-   "a1": "Sì. MB Meihuizen AI, codice societario 308157412, persona giuridica lituana. Può verificarlo Lei stesso presso il Registrų centras.",
+   "a1": "Sì. MB Meihuizen AI, codice societario 308157412, persona giuridica lituana. Puoi verificarlo tu stesso presso il Registrų centras.",
    "q2": "Quanto costerebbe Fritz per il nostro sito?",
    "q3": "Posso parlare direttamente con Nico?",
-   "live1": "È in ufficio. Vuole che lo faccia entrare in questa chat?",
+   "live1": "È in ufficio. Vuoi che lo faccia entrare in questa chat?",
    "live2": "sì, grazie",
    "live3": "✓ il telefono di Nico sta squillando",
    "live4": "Buongiorno, sono Nico. Parliamo pure di numeri. @Fritz condividi la scheda prodotto di Fritz.",
    "live5": "✓ scheda prodotto condivisa · la parola torna a Nico",
    "later1": "✓ richiesta inviata al telefono di Nico, con questa chat"
   },
-  "closed": "Ora di Kaunas: {time}, Nico non è in ufficio. Invio subito la Sua domanda e questa chat al suo telefono; Le arriverà una {reply}.",
+  "closed": "Ora di Kaunas: {time}, Nico non è in ufficio. Invio subito la tua domanda e questa chat al suo telefono; ti arriverà una {reply}.",
   "afterHours": "fuori orario",
   "price": {
    "base": "Il prezzo si definisce caso per caso: Fritz è uno sviluppo su misura, non un wrapper. ",
-   "none": "Vuole che giri la richiesta a Nico, così La richiama?",
-   "open": "Ora di Kaunas: {time}, e Nico è in ufficio. Vuole che gli giri la richiesta, così La richiama?",
-   "closed": "Ora di Kaunas: {time}, Nico non è in ufficio. Posso girargli la richiesta subito, e Le arriverà una {reply}."
+   "none": "Vuoi che giri la richiesta a Nico, così ti richiama?",
+   "open": "Ora di Kaunas: {time}, e Nico è in ufficio. Vuoi che gli giri la richiesta, così ti richiama?",
+   "closed": "Ora di Kaunas: {time}, Nico non è in ufficio. Posso girargli la richiesta subito, e ti arriverà una {reply}."
   }
  },
  "es": {
