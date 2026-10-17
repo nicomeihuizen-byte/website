@@ -209,7 +209,7 @@ Target terms: agentes de IA à medida, Inteligência Artificial, automatizar pro
 
 **Sites (Nico's pick, Paris):** thecodingmachine.com, ia.agency, flowlab.studio/studio-ia-paris, synodique.com/paris, yieldstudio.fr/agence-ia-paris, genee.tech/agence-agent-ia-paris, agence-lewis.fr/agence-ia-paris (added mid-pass)
 
-**Usefulness of the picks:** all six are relevant. All six write **vous**, so France keeps vous. Five of six put Paris in the title and h1 with a real office address.
+**Usefulness of the picks:** all seven are relevant. All seven write **vous**, so France keeps vous. Six of seven put Paris in the title and h1 with a real office address.
 
 **Direct competitor for Second Audience:** Genee sells an "Audit GEO gratuit", and IA Agency an "Agence GEO" service. In France the free GEO audit is already a known offer.
 
@@ -218,6 +218,8 @@ Target terms: agentes de IA à medida, Inteligência Artificial, automatizar pro
 - "sur mesure" everywhere (TCM ~15x).
 - Production over slides: "on installe un système qui tourne, pas une slide" (Synodique), "De l'idée à la prod" (TCM).
 - Trust: "garde-fous", "humain dans la boucle", "escalade vers un humain" (Genee). Fritz really has server-side guardrails and hands over to Nico, so this went into the Fritz description.
+- "Agent commercial" as a product name (Lewis: Agent Commercial, Agent Support Client), with "chatbot" used as the contrast. Fritz keeps "chatbot IA" in the title for search volume and is called "agent commercial IA" in the description.
+- Lewis also leads with "Des chiffres, pas des promesses" and "Sans engagement"; we use neither (no published results figures yet; the call is not described as no-obligation on our pages).
 - CTA: "Parlons de votre projet" (TCM), "Discutons de votre projet" (IA Agency, Yield).
 
 **Deliberately not copied:** Paris/Île-de-France (no office there), "PME/ETI" (not claimed), "devis gratuit" and diagnostic prices (not offered), "souverain/RGPD" claims for Fritz (true of the planned EU stack, but not stated on the current pages).
@@ -245,12 +247,28 @@ Target terms: agentes de IA à medida, Inteligência Artificial, automatizar pro
 
 | field | before | after |
 |---|---|---|
-| description | Chatbot IA commercial pour votre site : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et transmet les documents. | Chatbot IA commercial avec garde-fous : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et passe la main à un humain. |
+| description | Chatbot IA commercial pour votre site : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et transmet les documents. | Agent commercial IA avec garde-fous : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et passe la main à un humain. |
 
 
 **Buttons, FR pages:** "Lancer un projet" → "Parlons de votre projet" (home, about, builds).
 
-Target terms: agence IA, agents IA sur mesure, chatbot IA commercial, garde-fous, audit GEO, scan GEO gratuit.
+Target terms: agence IA, agents IA sur mesure, chatbot IA commercial, agent commercial IA, garde-fous, audit GEO, scan GEO gratuit.
+
+---
+
+## All languages: focus regions (17 Oct 2026, commit "Focus regions per country, from the mobile office")
+
+**Idea (Nico):** we cannot win on a physical address, but the mobile office can have focus regions per country, chosen for clients and for where the van can park. A pattern for now; a public tour schedule may follow.
+
+**Regions:** DE Berlin, Hamburg, München · IT Milano, Roma · ES Barcelona, Madrid · FR Paris · PT Lisboa, Porto · NL Randstad · LT Kaunas, Vilnius.
+
+**Where:**
+- About page, "the office has wheels" section, one sentence per language (EN lists all countries, so Fritz knows them; Fritz reads the English pages).
+- Home page, van card: "Anywhere in the EU" plus that country's regions.
+
+**What to measure:** queries combining the category term with a city (KI-Agentur Berlin, agenzia AI Milano, agencia de IA Madrid, agence IA Paris, agentes de IA Lisboa, AI-bureau Randstad / Amsterdam / Utrecht, DI agentai Kaunas / Vilnius) and impressions on /about and the home page per country. Expect organic results only: the map pack needs a verified local address.
+
+**Open:** LT sentence needs a native proofread. Lyon not included for FR (two Paris competitors are Lyon-based); add it if the van goes there.
 
 ---
 
