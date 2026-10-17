@@ -116,10 +116,7 @@
 .leg[data-state="next"] .leg-chip{border-color:var(--accent);color:var(--accent)}
 .leg[data-state="done"]{opacity:.55}
 .leg[data-state="now"]{border-color:var(--accent)}
-.leg-stop{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.leg-btns{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.leg-btns button{font-family:var(--font-mono);font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer}
-.leg-btns button:hover,.leg-btns button:focus-visible{border-color:var(--accent);color:var(--accent)}
+.leg-req{min-height:0;padding:9px 16px;font-size:13px;white-space:nowrap}
 .leg-go{font-family:var(--font-mono);font-size:13px;color:var(--accent);white-space:nowrap}
 .leg-off{background:transparent;box-shadow:none;border-style:dashed}
 .leg-off .leg-cities{font-size:24px;color:var(--text-muted)}
@@ -177,7 +174,6 @@
   .leg-where{padding:18px 22px 4px}
   .leg-cities{font-size:30px}
   .leg-side{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 22px 20px}
-  .leg-stop{align-items:flex-end}
   .route{padding:32px 22px}
   .route-grid{grid-template-columns:minmax(0,1fr);gap:28px}
   .crew-row{grid-template-columns:minmax(0,1fr)}
@@ -256,17 +252,17 @@
     <li class="leg" data-start="2027-02-01" data-end="2027-03-31">
       <div class="leg-when"><span class="leg-m">Feb · Mar</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">leg 01</span><span class="leg-cities">Milano · Roma</span><span class="leg-country">Italy</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><div class="leg-stop"><span class="leg-go">request a stop</span><span class="leg-btns"><button type="button" data-fritz-stop="Milano" data-when="February or March 2027">Milano</button><button type="button" data-fritz-stop="Roma" data-when="February or March 2027">Roma</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Milano or Roma" data-when="February or March 2027" data-stop-say="Good choice. The van is in {city} in {when}. Which city is it for you? Send me that, where you are (address or area), the dates that suit you, your name and an email or phone, and I&#x27;ll pass it straight to the frontman.">request a stop <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-04-01" data-end="2027-05-31">
       <div class="leg-when"><span class="leg-m">Apr · May</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">leg 02</span><span class="leg-cities">Barcelona · Madrid</span><span class="leg-country">Spain</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><div class="leg-stop"><span class="leg-go">request a stop</span><span class="leg-btns"><button type="button" data-fritz-stop="Barcelona" data-when="April or May 2027">Barcelona</button><button type="button" data-fritz-stop="Madrid" data-when="April or May 2027">Madrid</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Barcelona or Madrid" data-when="April or May 2027" data-stop-say="Good choice. The van is in {city} in {when}. Which city is it for you? Send me that, where you are (address or area), the dates that suit you, your name and an email or phone, and I&#x27;ll pass it straight to the frontman.">request a stop <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-06-01" data-end="2027-07-31">
       <div class="leg-when"><span class="leg-m">Jun · Jul</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">leg 03</span><span class="leg-cities">Lyon · Paris</span><span class="leg-country">France</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><div class="leg-stop"><span class="leg-go">request a stop</span><span class="leg-btns"><button type="button" data-fritz-stop="Lyon" data-when="June or July 2027">Lyon</button><button type="button" data-fritz-stop="Paris" data-when="June or July 2027">Paris</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Lyon or Paris" data-when="June or July 2027" data-stop-say="Good choice. The van is in {city} in {when}. Which city is it for you? Send me that, where you are (address or area), the dates that suit you, your name and an email or phone, and I&#x27;ll pass it straight to the frontman.">request a stop <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg leg-off">
       <div class="leg-when"><span class="leg-m">Aug</span><span class="leg-y">2027</span></div>
@@ -276,12 +272,12 @@
     <li class="leg" data-start="2027-09-01" data-end="2027-10-31">
       <div class="leg-when"><span class="leg-m">Sep · Oct</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">leg 04</span><span class="leg-cities">Porto · Lisboa</span><span class="leg-country">Portugal</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><div class="leg-stop"><span class="leg-go">request a stop</span><span class="leg-btns"><button type="button" data-fritz-stop="Porto" data-when="September or October 2027">Porto</button><button type="button" data-fritz-stop="Lisboa" data-when="September or October 2027">Lisboa</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Porto or Lisboa" data-when="September or October 2027" data-stop-say="Good choice. The van is in {city} in {when}. Which city is it for you? Send me that, where you are (address or area), the dates that suit you, your name and an email or phone, and I&#x27;ll pass it straight to the frontman.">request a stop <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-11-01" data-end="2027-12-31">
       <div class="leg-when"><span class="leg-m">Nov · Dec</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">leg 05 · homecoming</span><span class="leg-cities">Berlin · Vilnius · Kaunas</span><span class="leg-country">Germany and Lithuania</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><div class="leg-stop"><span class="leg-go">request a stop</span><span class="leg-btns"><button type="button" data-fritz-stop="Berlin" data-when="November or December 2027">Berlin</button><button type="button" data-fritz-stop="Vilnius" data-when="November or December 2027">Vilnius</button><button type="button" data-fritz-stop="Kaunas" data-when="November or December 2027">Kaunas</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>announced</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin, Vilnius or Kaunas" data-when="November or December 2027" data-stop-say="Good choice. The van is in {city} in {when}. Which city is it for you? Send me that, where you are (address or area), the dates that suit you, your name and an email or phone, and I&#x27;ll pass it straight to the frontman.">request a stop <span aria-hidden="true">→</span></button></div>
     </li>
   </ol>
   <p class="fine">Months, not days. Exact days per city go up here, leg by leg. Between the legs nothing stops: the 15 minute intro, the builds and Fritz all run remote, all year.</p>

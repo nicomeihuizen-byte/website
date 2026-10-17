@@ -116,10 +116,7 @@
 .leg[data-state="next"] .leg-chip{border-color:var(--accent);color:var(--accent)}
 .leg[data-state="done"]{opacity:.55}
 .leg[data-state="now"]{border-color:var(--accent)}
-.leg-stop{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.leg-btns{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.leg-btns button{font-family:var(--font-mono);font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer}
-.leg-btns button:hover,.leg-btns button:focus-visible{border-color:var(--accent);color:var(--accent)}
+.leg-req{min-height:0;padding:9px 16px;font-size:13px;white-space:nowrap}
 .leg-go{font-family:var(--font-mono);font-size:13px;color:var(--accent);white-space:nowrap}
 .leg-off{background:transparent;box-shadow:none;border-style:dashed}
 .leg-off .leg-cities{font-size:24px;color:var(--text-muted)}
@@ -177,7 +174,6 @@
   .leg-where{padding:18px 22px 4px}
   .leg-cities{font-size:30px}
   .leg-side{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 22px 20px}
-  .leg-stop{align-items:flex-end}
   .route{padding:32px 22px}
   .route-grid{grid-template-columns:minmax(0,1fr);gap:28px}
   .crew-row{grid-template-columns:minmax(0,1fr)}
@@ -256,17 +252,17 @@
     <li class="leg" data-start="2027-02-01" data-end="2027-03-31">
       <div class="leg-when"><span class="leg-m">Vas · Kov</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">etapas 01</span><span class="leg-cities">Milano · Roma</span><span class="leg-country">Italija</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><div class="leg-stop"><span class="leg-go">užsakyti sustojimą</span><span class="leg-btns"><button type="button" data-fritz-stop="Milano" data-when="2027 m. vasaris arba kovas">Milano</button><button type="button" data-fritz-stop="Roma" data-when="2027 m. vasaris arba kovas">Roma</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Milano arba Roma" data-when="2027 m. vasaris arba kovas" data-stop-say="Puikus pasirinkimas. {city}: {when}. Kuris miestas jums tinka? Atsiųskite jį, kur esate (adresas ar rajonas), jums tinkamas datas, savo vardą ir el. paštą ar telefoną, ir aš iškart perduosiu tai grupės lyderiui.">užsakyti sustojimą <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-04-01" data-end="2027-05-31">
       <div class="leg-when"><span class="leg-m">Bal · Geg</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">etapas 02</span><span class="leg-cities">Barcelona · Madrid</span><span class="leg-country">Ispanija</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><div class="leg-stop"><span class="leg-go">užsakyti sustojimą</span><span class="leg-btns"><button type="button" data-fritz-stop="Barcelona" data-when="2027 m. balandis arba gegužė">Barcelona</button><button type="button" data-fritz-stop="Madrid" data-when="2027 m. balandis arba gegužė">Madrid</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Barcelona arba Madrid" data-when="2027 m. balandis arba gegužė" data-stop-say="Puikus pasirinkimas. {city}: {when}. Kuris miestas jums tinka? Atsiųskite jį, kur esate (adresas ar rajonas), jums tinkamas datas, savo vardą ir el. paštą ar telefoną, ir aš iškart perduosiu tai grupės lyderiui.">užsakyti sustojimą <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-06-01" data-end="2027-07-31">
       <div class="leg-when"><span class="leg-m">Bir · Lie</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">etapas 03</span><span class="leg-cities">Lyon · Paris</span><span class="leg-country">Prancūzija</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><div class="leg-stop"><span class="leg-go">užsakyti sustojimą</span><span class="leg-btns"><button type="button" data-fritz-stop="Lyon" data-when="2027 m. birželis arba liepa">Lyon</button><button type="button" data-fritz-stop="Paris" data-when="2027 m. birželis arba liepa">Paris</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Lyon arba Paris" data-when="2027 m. birželis arba liepa" data-stop-say="Puikus pasirinkimas. {city}: {when}. Kuris miestas jums tinka? Atsiųskite jį, kur esate (adresas ar rajonas), jums tinkamas datas, savo vardą ir el. paštą ar telefoną, ir aš iškart perduosiu tai grupės lyderiui.">užsakyti sustojimą <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg leg-off">
       <div class="leg-when"><span class="leg-m">Rgp</span><span class="leg-y">2027</span></div>
@@ -276,12 +272,12 @@
     <li class="leg" data-start="2027-09-01" data-end="2027-10-31">
       <div class="leg-when"><span class="leg-m">Rgs · Spa</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">etapas 04</span><span class="leg-cities">Porto · Lisboa</span><span class="leg-country">Portugalija</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><div class="leg-stop"><span class="leg-go">užsakyti sustojimą</span><span class="leg-btns"><button type="button" data-fritz-stop="Porto" data-when="2027 m. rugsėjis arba spalis">Porto</button><button type="button" data-fritz-stop="Lisboa" data-when="2027 m. rugsėjis arba spalis">Lisboa</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Porto arba Lisboa" data-when="2027 m. rugsėjis arba spalis" data-stop-say="Puikus pasirinkimas. {city}: {when}. Kuris miestas jums tinka? Atsiųskite jį, kur esate (adresas ar rajonas), jums tinkamas datas, savo vardą ir el. paštą ar telefoną, ir aš iškart perduosiu tai grupės lyderiui.">užsakyti sustojimą <span aria-hidden="true">→</span></button></div>
     </li>
     <li class="leg" data-start="2027-11-01" data-end="2027-12-31">
       <div class="leg-when"><span class="leg-m">Lap · Grd</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">etapas 05 · grįžimas namo</span><span class="leg-cities">Berlin · Vilnius · Kaunas</span><span class="leg-country">Vokietija ir Lietuva</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><div class="leg-stop"><span class="leg-go">užsakyti sustojimą</span><span class="leg-btns"><button type="button" data-fritz-stop="Berlin" data-when="2027 m. lapkritis arba gruodis">Berlin</button><button type="button" data-fritz-stop="Vilnius" data-when="2027 m. lapkritis arba gruodis">Vilnius</button><button type="button" data-fritz-stop="Kaunas" data-when="2027 m. lapkritis arba gruodis">Kaunas</button></span></div></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>paskelbta</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin, Vilnius arba Kaunas" data-when="2027 m. lapkritis arba gruodis" data-stop-say="Puikus pasirinkimas. {city}: {when}. Kuris miestas jums tinka? Atsiųskite jį, kur esate (adresas ar rajonas), jums tinkamas datas, savo vardą ir el. paštą ar telefoną, ir aš iškart perduosiu tai grupės lyderiui.">užsakyti sustojimą <span aria-hidden="true">→</span></button></div>
     </li>
   </ol>
   <p class="fine">Mėnesiai, ne dienos. Tikslios dienos kiekvienam miestui bus skelbiamos čia, etapas po etapo. Tarp etapų niekas nesustoja: 15 minučių pažintinis pokalbis, projektai ir Fritz veikia nuotoliu, ištisus metus.</p>

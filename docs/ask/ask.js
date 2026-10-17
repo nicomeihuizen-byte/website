@@ -1060,8 +1060,10 @@
     document.addEventListener('click', function (e) {
       const stop = e.target.closest && e.target.closest('[data-fritz-stop]');
       if (!stop) { return; }
-      const box = stop.closest('[data-stop-say]');
-      if (!box) { return; }
+      // Each template is read from the closest element that carries it, so a
+      // button can override one (a leg asks which city; a city does not).
+      const pick = function (name) { const el = stop.closest('[' + name + ']'); return el ? el.getAttribute(name) : ''; };
+      if (!stop.closest('[data-stop-say]')) { return; }
       e.preventDefault();
       const v = { city: stop.getAttribute('data-fritz-stop') || '', when: stop.getAttribute('data-when') || '' };
       const fill = function (tpl) { return (tpl || '').replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); };
@@ -1069,13 +1071,13 @@
       if (busy || (state.live && state.live.floor !== 'fritz')) { return; }
       suggest.hidden = true;
       Array.prototype.forEach.call(log.querySelectorAll('.fritz-next'), function (n) { n.remove(); });
-      const userText = fill(box.getAttribute('data-stop-user'));
-      const botText = fill(box.getAttribute('data-stop-say'));
+      const userText = fill(pick('data-stop-user'));
+      const botText = fill(pick('data-stop-say'));
       if (userText) { pushItem({ type: 'user', text: userText }); state.history.push({ role: 'user', content: userText }); }
       pushItem({ type: 'bot', segs: [{ kind: 'text', text: botText }], sources: [], action: null, evidence: [], next: [] });
       state.history.push({ role: 'assistant', content: botText });
       while (state.history.length > MAX_HISTORY) { state.history.splice(0, 2); }
-      const hint = box.getAttribute('data-stop-hint');
+      const hint = pick('data-stop-hint');
       if (hint) { input.placeholder = hint; }
       save();
       input.focus();
