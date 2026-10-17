@@ -7,16 +7,16 @@ Purpose: keep apart the changes that came from Nico's own competitor picks (huma
 - **Baseline window:** the 28 days before the merge of branch `translations-restore` to main. Note: for most of that window the NL/DE/FR/IT/ES/PT pages were noindex stubs, so the baseline for those languages is close to zero. Compare against the English pages over the same window as a control.
 - **Merge date:** ____ (fill in when the PR is merged). Then wait for Google to recrawl (URL Inspection, "Request indexing" on the 8 main pages per language speeds this up).
 - **Read-outs:** at 28 and 90 days after the merge, Search Console → Performance → Search results:
-  - Filter Country = Germany, Austria, Switzerland (for DE) and Italy (for IT); filter Page contains `/de/` or `/it/`.
+  - Filter Country = Germany, Austria, Switzerland (for DE), Italy (for IT) and Spain (for ES); filter Page contains `/de/` or `/it/`.
   - Record impressions, clicks, CTR, average position per page.
   - Queries tab: check whether the target terms below show up, and which queries actually bring traffic.
-- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (FR, ES, PT, NL) over the same period.
+- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (FR, PT, NL) over the same period.
 
-| read-out | date | DE impressions | DE clicks | IT impressions | IT clicks | notes |
-|---|---|---|---|---|---|---|
-| baseline (28 d before merge) | | | | | | |
-| +28 days | | | | | | |
-| +90 days | | | | | | |
+| read-out | date | DE impr. | DE clicks | IT impr. | IT clicks | ES impr. | ES clicks | notes |
+|---|---|---|---|---|---|---|---|---|
+| baseline (28 d before merge) | | | | | | | | |
+| +28 days | | | | | | | | |
+| +90 days | | | | | | | | |
 
 ## Layers of change (so effects can be attributed)
 
@@ -124,6 +124,48 @@ Target terms: agenti AI su misura, agenti AI per aziende, AI agentica, assistent
 
 ---
 
+## ES: human optimizations (17 Oct 2026, commit "ES: wording from Barcelona and Madrid AI agencies")
+
+**Sites (Nico's pick):** bldiseno.com/agencia-ia-barcelona, digitup.studio (Madrid), fundaciontelefonica.com, aigency.es (Barcelona)
+
+**Usefulness of the picks:**
+- BL Diseño (Barcelona) is the closest match: agentes de IA, automatización, auditoría IA, "control humano", "pruebas, no promesas", "en producción". It writes **usted**, which settled the register: Spain stays on usted.
+- Digitup (Madrid) writes tú/vosotros, with "a medida", "de la idea a producción", "Chatbots IA", "IA para empresas".
+- Fundación Telefónica is a corporate foundation for the general public, not a competitor: no usable SEO signal.
+- AIgency is an AI video production house and its homepage is set to noindex, nofollow, so Google does not index it: nothing to learn for search. Its "nativa de IA" matches our existing "nativo de IA".
+
+**Lessons taken:** "agencia de IA" as the category term (BL title and h1), "a medida" (both), "chatbot con IA" (BL service name), "Hablemos" / "Hablar de su caso" CTAs (BL), founder-direct trust angle.
+
+**Deliberately not copied:** Barcelona/Madrid (no office there), "precio cerrado" (not offered for builds), "pymes" and sector lists (not claimed on our pages).
+
+**/es/**
+
+| field | before | after |
+|---|---|---|
+| title | Agentes de IA para empresas e IA agéntica \| meihuizen.ai | Agencia de IA: agentes de IA a medida \| meihuizen.ai |
+| description | Agentes de IA para empresas que llegan a producción: IA agéntica, herramientas LLM y software nativo de IA, con experiencia en IT empresarial. | Agencia de IA para empresas: agentes de IA y software a medida que llegan a producción, no se quedan en la demo. Trato directo con el fundador. |
+
+**/es/contact.html**
+
+| field | before | after |
+|---|---|---|
+| title | Contacto \| meihuizen.ai, agentes de IA para empresas | Hablemos \| meihuizen.ai, agencia de IA para empresas |
+| description | Tres formas de contactar con meihuizen.ai: pregunte a Agent Fritz, reserve 15 minutos o escriba a Nico. Lun. a vie., de 10:00 a 18:00, hora de Kaunas. | Hablemos: pregunte a Agent Fritz, reserve una llamada de 15 minutos o escriba a Nico. Lun. a vie., de 10:00 a 18:00, hora de Kaunas. |
+
+**/es/projects/agent-fritz.html**
+
+| field | before | after |
+|---|---|---|
+| title | Agente de IA de ventas para su web \| Agent Fritz | Chatbot con IA para su web: Agent Fritz \| meihuizen.ai |
+| description | Más que un chatbot con IA para su web: responde solo con sus páginas, reserva reuniones, cualifica leads y entrega documentos. Pruébelo en la esquina. | Agente de IA de ventas para su web: responde solo con sus páginas, cualifica leads, reserva reuniones y le pasa a Nico lo que toca. Pruébelo en la esquina. |
+
+
+**Buttons, ES pages:** "Iniciar un proyecto" → "Hablar de su proyecto" (home, about, builds).
+
+Target terms: agencia de IA, agentes de IA a medida, chatbot con IA para su web, auditoría de visibilidad en IA (unchanged), IA para ventas (unchanged).
+
+---
+
 ## Next human passes (to add here)
 
-FR, ES, PT, NL, LT: competitor sites to be supplied by Nico. Add one section per language in the same format: competitor list, lessons, not copied, before/after table, target terms.
+FR, PT, NL, LT: competitor sites to be supplied by Nico. Add one section per language in the same format: competitor list, lessons, not copied, before/after table, target terms.
