@@ -7,16 +7,16 @@ Purpose: keep apart the changes that came from Nico's own competitor picks (huma
 - **Baseline window:** the 28 days before the merge of branch `translations-restore` to main. Note: for most of that window the NL/DE/FR/IT/ES/PT pages were noindex stubs, so the baseline for those languages is close to zero. Compare against the English pages over the same window as a control.
 - **Merge date:** ____ (fill in when the PR is merged). Then wait for Google to recrawl (URL Inspection, "Request indexing" on the 8 main pages per language speeds this up).
 - **Read-outs:** at 28 and 90 days after the merge, Search Console → Performance → Search results:
-  - Filter Country = Germany, Austria, Switzerland (for DE), Italy (for IT) and Spain (for ES); filter Page contains `/de/` or `/it/`.
+  - Filter Country = Germany, Austria, Switzerland (for DE), Italy (for IT), Spain (for ES) and Portugal (for PT); filter Page contains `/de/` or `/it/`.
   - Record impressions, clicks, CTR, average position per page.
   - Queries tab: check whether the target terms below show up, and which queries actually bring traffic.
-- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (FR, PT, NL) over the same period.
+- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (FR, NL) over the same period.
 
-| read-out | date | DE impr. | DE clicks | IT impr. | IT clicks | ES impr. | ES clicks | notes |
-|---|---|---|---|---|---|---|---|---|
-| baseline (28 d before merge) | | | | | | | | |
-| +28 days | | | | | | | | |
-| +90 days | | | | | | | | |
+| read-out | date | DE impr. | DE clicks | IT impr. | IT clicks | ES impr. | ES clicks | PT impr. | PT clicks | notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| baseline (28 d before merge) | | | | | | | | | | |
+| +28 days | | | | | | | | | | |
+| +90 days | | | | | | | | | | |
 
 ## Layers of change (so effects can be attributed)
 
@@ -166,6 +166,45 @@ Target terms: agencia de IA, agentes de IA a medida, chatbot con IA para su web,
 
 ---
 
+## PT: human optimizations (17 Oct 2026, commit "PT: wording from Portuguese AI studios")
+
+**Sites (Nico's pick):** nilg.ai/pt (Porto), polarisai.studio/pt/sobre (Lisbon)
+
+**Usefulness of the picks:**
+- NILG.AI is the real match: AI strategy and automation for companies, pt-PT. It writes **tu** throughout ("Escala a tua empresa com Inteligência Artificial").
+- Polaris AI Studio is a creative studio (websites, AI visuals), less comparable. It mixes registers: formal "Conheça", "Fale connosco" next to "Envia-nos".
+
+**Register: Portugal stays formal ("o seu").** One clear tu site is not enough evidence, and keeping PT formal gives a control for the Italian switch to tu: if IT improves and PT does not, the register is a candidate cause; if both improve, it is the wording.
+
+**Lessons taken:**
+- "Inteligência Artificial" spelled out (NILG h1), not only "IA".
+- "à medida" (NILG "Soluções à medida", the pt-PT form of "tailor-made").
+- "automatiza(r)" + "empresa" (NILG, ~12 uses).
+- "Fale connosco" as the contact CTA (Polaris; formal, standard pt-PT).
+- First-person CTAs avoid the register question altogether (NILG "Analisar a minha empresa", "Quero automatizar a minha empresa"): the scan button became "Analisar o meu site, grátis".
+
+**Deliberately not copied:** Lisboa/Porto (no office there), PMEs (not claimed), "escalar" growth promises (not on our pages).
+
+**/pt/**
+
+| field | before | after |
+|---|---|---|
+| title | Agentes de IA para empresas e IA agêntica \| meihuizen.ai | Agentes de IA à medida para empresas \| meihuizen.ai |
+| description | Agentes de IA para empresas e software de IA agêntica que atua nos seus processos e entra em produção. Com anos de TI empresarial na IBM e na Oracle. | Agentes de IA à medida: software de Inteligência Artificial que automatiza os processos da sua empresa e entra em produção, não fica pela demo. |
+
+**/pt/contact.html**
+
+| field | before | after |
+|---|---|---|
+| title | Contacto \| meihuizen.ai, agentes de IA para empresas | Fale connosco \| meihuizen.ai, agentes de IA à medida |
+
+
+**Buttons, PT pages:** "Iniciar um projeto" → "Fale connosco" (home, about, builds); "Pedir uma análise gratuita" → "Analisar o meu site, grátis" (Second Audience).
+
+Target terms: agentes de IA à medida, Inteligência Artificial, automatizar processos, visibilidade em IA (unchanged), chatbot com IA (unchanged).
+
+---
+
 ## Next human passes (to add here)
 
-FR, PT, NL, LT: competitor sites to be supplied by Nico. Add one section per language in the same format: competitor list, lessons, not copied, before/after table, target terms.
+FR, NL, LT: competitor sites to be supplied by Nico. Add one section per language in the same format: competitor list, lessons, not copied, before/after table, target terms.
