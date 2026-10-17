@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "réponse aujourd’hui", "next": "réponse le jour ouvré suivant", "from10": "réponse dès 10 h",
+    "tomorrow": "réponse demain dès 10 h", "monday": "réponse lundi dès 10 h",
+    "open": "ouvert", "closed": "fermé",
+    "online": "en ligne", "slow": "lent", "down": "hors service",
+    "lights": { "green": "en ligne", "amber": "dégradé", "red": "hors service", "unknown": "statut" },
+    "here": "en ligne", "away": "hors ligne",
+    "green": "tous les systèmes au vert →",
+    "degraded_one": "1 service dégradé →", "degraded_many": "{n} services dégradés →",
+    "nicoFrom": "nico · depuis son téléphone", "source": "source : ", "where": "où est-ce écrit ?", "reading": "fritz lit",
+    "ask": "Bonjour Fritz, que pouvez-vous faire pour moi ?",
+    "running": "exécution {a} sur {b}"
+  },
+  "chat": {
+    "q1": "Est-ce une vraie entreprise ?",
+    "a1": "Oui. MB Meihuizen AI, code d’entreprise 308157412, une personne morale de droit lituanien. Vous pouvez le vérifier vous-même auprès du Registrų centras.",
+    "q2": "Combien coûterait Fritz pour notre site ?",
+    "q3": "Puis-je parler directement à Nico ?",
+    "live1": "Il est là. Voulez-vous que je le fasse entrer dans cette conversation ?",
+    "live2": "oui, merci",
+    "live3": "✓ le téléphone de Nico sonne",
+    "live4": "Bonjour, ici Nico. Parlons chiffres, avec plaisir. @Fritz partage la fiche produit de Fritz.",
+    "live5": "✓ fiche produit partagée · la parole revient à Nico",
+    "later1": "✓ demande envoyée sur le téléphone de Nico, avec cette conversation"
+  },
+  "closed": "Il est {time} à Kaunas, Nico n’est pas au bureau. J’envoie dès maintenant votre question et cette conversation sur son téléphone ; vous aurez une {reply}.",
+  "afterHours": "en dehors des heures de bureau",
+  "price": {
+    "base": "Tarif au cas par cas : Fritz est un développement sur mesure, pas un wrapper. ",
+    "none": "Voulez-vous que je transmette votre demande à Nico pour qu’il vous rappelle ?",
+    "open": "Il est {time} à Kaunas et Nico est au bureau. Voulez-vous que je transmette votre demande pour qu’il vous rappelle ?",
+    "closed": "Il est {time} à Kaunas, Nico n’est pas au bureau. Je peux transmettre votre demande dès maintenant, et vous aurez une {reply}."
+  }
+}

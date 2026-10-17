@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "we reply today", "next": "reply next working day", "from10": "reply from 10:00",
+    "tomorrow": "reply tomorrow from 10:00", "monday": "reply Monday from 10:00",
+    "open": "open", "closed": "closed",
+    "online": "online", "slow": "slow", "down": "down",
+    "lights": { "green": "online", "amber": "degraded", "red": "down", "unknown": "status" },
+    "here": "online", "away": "offline",
+    "green": "all systems green →",
+    "degraded_one": "1 service degraded →", "degraded_many": "{n} services degraded →",
+    "nicoFrom": "nico · from his phone", "source": "source: ", "where": "where does it say so?", "reading": "fritz is reading",
+    "ask": "Hi Fritz, what can you do for me?",
+    "running": "running {a} of {b}"
+  },
+  "chat": {
+    "q1": "Is this a real company?",
+    "a1": "Yes. MB Meihuizen AI, company code 308157412, a Lithuanian legal entity. You can check it yourself at Registrų centras.",
+    "q2": "What would Fritz cost for our site?",
+    "q3": "Can I talk to Nico directly?",
+    "live1": "He is in. Want me to bring him into this chat?",
+    "live2": "yes please",
+    "live3": "✓ Nico’s phone is ringing",
+    "live4": "Hi, Nico here. Happy to talk numbers. @Fritz share the Fritz product sheet.",
+    "live5": "✓ product sheet shared · floor back to Nico",
+    "later1": "✓ request sent to Nico’s phone, with this chat"
+  },
+  "closed": "It is {time} in Kaunas, so Nico is off. I am sending your question and this chat to his phone now; you get a {reply}.",
+  "afterHours": "after hours",
+  "price": {
+    "base": "Priced per case: Fritz is a custom build, not a wrapper. ",
+    "none": "Shall I pass this on to Nico so he can call you back?",
+    "open": "It is {time} in Kaunas and Nico is in. Shall I pass this on so he can call you back?",
+    "closed": "It is {time} in Kaunas, so Nico is off. I can pass this on now, and you get a {reply}."
+  }
+}

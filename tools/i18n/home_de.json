@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "Antwort heute", "next": "Antwort am nächsten Werktag", "from10": "Antwort ab 10:00 Uhr",
+    "tomorrow": "Antwort morgen ab 10:00 Uhr", "monday": "Antwort am Montag ab 10:00 Uhr",
+    "open": "geöffnet", "closed": "geschlossen",
+    "online": "online", "slow": "langsam", "down": "ausgefallen",
+    "lights": { "green": "online", "amber": "eingeschränkt", "red": "ausgefallen", "unknown": "status" },
+    "here": "online", "away": "offline",
+    "green": "alle Systeme grün →",
+    "degraded_one": "1 Dienst eingeschränkt →", "degraded_many": "{n} Dienste eingeschränkt →",
+    "nicoFrom": "nico · von seinem Handy", "source": "Quelle: ", "where": "wo steht das?", "reading": "fritz liest",
+    "ask": "Hallo Fritz, was können Sie für mich tun?",
+    "running": "Schritt {a} von {b}"
+  },
+  "chat": {
+    "q1": "Ist das ein echtes Unternehmen?",
+    "a1": "Ja. MB Meihuizen AI, Unternehmenscode 308157412, eine juristische Person nach litauischem Recht. Sie können das selbst beim Registrų centras prüfen.",
+    "q2": "Was würde Fritz für unsere Website kosten?",
+    "q3": "Kann ich direkt mit Nico sprechen?",
+    "live1": "Er ist da. Soll ich ihn in diesen Chat holen?",
+    "live2": "ja, bitte",
+    "live3": "✓ Nicos Handy klingelt",
+    "live4": "Hallo, hier ist Nico. Über Zahlen rede ich gern. @Fritz teile das Produktblatt zu Fritz.",
+    "live5": "✓ Produktblatt geteilt · Nico hat wieder das Wort",
+    "later1": "✓ Anfrage an Nicos Handy geschickt, mit diesem Chat"
+  },
+  "closed": "Es ist {time} in Kaunas, Nico hat also Feierabend. Ich schicke Ihre Frage und diesen Chat jetzt auf sein Handy. Sie erhalten Ihre {reply}.",
+  "afterHours": "außerhalb der Bürozeiten",
+  "price": {
+    "base": "Der Preis richtet sich nach dem Einzelfall: Fritz ist eine Maßanfertigung, kein Wrapper. ",
+    "none": "Soll ich das an Nico weitergeben, damit er Sie zurückruft?",
+    "open": "Es ist {time} in Kaunas und Nico ist da. Soll ich das weitergeben, damit er Sie zurückruft?",
+    "closed": "Es ist {time} in Kaunas, Nico hat also Feierabend. Ich kann das jetzt weitergeben, und Sie erhalten Ihre {reply}."
+  }
+}

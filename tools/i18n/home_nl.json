@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "antwoord vandaag", "next": "antwoord op de volgende werkdag", "from10": "antwoord vanaf 10:00",
+    "tomorrow": "antwoord morgen vanaf 10:00", "monday": "antwoord maandag vanaf 10:00",
+    "open": "open", "closed": "gesloten",
+    "online": "online", "slow": "traag", "down": "storing",
+    "lights": { "green": "online", "amber": "verstoord", "red": "storing", "unknown": "status" },
+    "here": "online", "away": "offline",
+    "green": "alle systemen groen →",
+    "degraded_one": "1 dienst verstoord →", "degraded_many": "{n} diensten verstoord →",
+    "nicoFrom": "nico · vanaf zijn telefoon", "source": "bron: ", "where": "waar staat dat?", "reading": "fritz leest",
+    "ask": "Hallo Fritz, wat kun je voor me doen?",
+    "running": "bezig met {a} van {b}"
+  },
+  "chat": {
+    "q1": "Is dit een echt bedrijf?",
+    "a1": "Ja. MB Meihuizen AI, registratienummer 308157412, een Litouwse rechtspersoon. U kunt het zelf controleren bij Registrų centras.",
+    "q2": "Wat zou Fritz kosten voor onze site?",
+    "q3": "Kan ik Nico rechtstreeks spreken?",
+    "live1": "Hij is er. Zal ik hem bij dit gesprek halen?",
+    "live2": "graag",
+    "live3": "✓ Nico’s telefoon gaat over",
+    "live4": "Hallo, met Nico. Over de prijs praat ik graag. @Fritz deel de productsheet van Fritz.",
+    "live5": "✓ productsheet gedeeld · het woord is weer aan Nico",
+    "later1": "✓ verzoek met dit gesprek naar Nico’s telefoon gestuurd"
+  },
+  "closed": "Het is {time} in Kaunas, dus Nico is er niet. Ik stuur uw vraag en dit gesprek nu naar zijn telefoon; u krijgt {reply}.",
+  "afterHours": "buiten kantooruren",
+  "price": {
+    "base": "Prijs per opdracht: Fritz is maatwerk, geen wrapper. ",
+    "none": "Zal ik dit aan Nico doorgeven, zodat hij u terugbelt?",
+    "open": "Het is {time} in Kaunas en Nico is er. Zal ik dit doorgeven, zodat hij u terugbelt?",
+    "closed": "Het is {time} in Kaunas, dus Nico is er niet. Ik kan dit nu doorgeven; u krijgt dan {reply}."
+  }
+}

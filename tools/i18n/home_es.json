@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "respuesta hoy", "next": "respuesta el próximo día laborable", "from10": "respuesta a partir de las 10:00",
+    "tomorrow": "respuesta mañana a partir de las 10:00", "monday": "respuesta el lunes a partir de las 10:00",
+    "open": "abierto", "closed": "cerrado",
+    "online": "en línea", "slow": "lento", "down": "caído",
+    "lights": { "green": "en línea", "amber": "degradado", "red": "caído", "unknown": "estado" },
+    "here": "en línea", "away": "desconectado",
+    "green": "todos los sistemas en verde →",
+    "degraded_one": "1 servicio degradado →", "degraded_many": "{n} servicios degradados →",
+    "nicoFrom": "nico · desde su teléfono", "source": "fuente: ", "where": "¿dónde lo dice?", "reading": "fritz está leyendo",
+    "ask": "Hola, Fritz: ¿qué puede hacer por mí?",
+    "running": "ejecutando {a} de {b}"
+  },
+  "chat": {
+    "q1": "¿Es una empresa real?",
+    "a1": "Sí. MB Meihuizen AI, código de empresa 308157412, una persona jurídica lituana. Puede comprobarlo usted mismo en el Registrų centras.",
+    "q2": "¿Cuánto costaría Fritz para nuestra web?",
+    "q3": "¿Puedo hablar directamente con Nico?",
+    "live1": "Está disponible. ¿Quiere que lo incorpore a este chat?",
+    "live2": "sí, por favor",
+    "live3": "✓ está sonando el teléfono de Nico",
+    "live4": "Hola, soy Nico. Encantado de hablar de números. @Fritz comparte la ficha de producto de Fritz.",
+    "live5": "✓ ficha de producto compartida · la palabra vuelve a Nico",
+    "later1": "✓ solicitud enviada al teléfono de Nico, con este chat"
+  },
+  "closed": "Hora en Kaunas: {time}; Nico ya ha terminado su jornada. Envío ahora su pregunta y este chat a su teléfono; recibirá {reply}.",
+  "afterHours": "fuera de horario",
+  "price": {
+    "base": "El precio depende de cada caso: Fritz es un desarrollo a medida, no un envoltorio. ",
+    "none": "¿Se lo paso a Nico para que le devuelva la llamada?",
+    "open": "Hora en Kaunas: {time}, y Nico está en la oficina. ¿Se lo paso para que le devuelva la llamada?",
+    "closed": "Hora en Kaunas: {time}; Nico ya ha terminado su jornada. Puedo pasárselo ahora, y recibirá {reply}."
+  }
+}

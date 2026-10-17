@@ -136,7 +136,7 @@
 
   // Remember a language the visitor picked themselves.
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a.lang-flag[hreflang]') : null;
+    var a = e.target && e.target.closest ? e.target.closest('a.lang-flag[hreflang], nav.lang a[hreflang]') : null;
     if (a) { remember(a.getAttribute('hreflang')); }
   });
 

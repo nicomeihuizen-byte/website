@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "resposta hoje", "next": "resposta no próximo dia útil", "from10": "resposta a partir das 10:00",
+    "tomorrow": "resposta amanhã a partir das 10:00", "monday": "resposta na segunda-feira a partir das 10:00",
+    "open": "aberto", "closed": "fechado",
+    "online": "online", "slow": "lento", "down": "em baixo",
+    "lights": { "green": "online", "amber": "degradado", "red": "em baixo", "unknown": "estado" },
+    "here": "online", "away": "offline",
+    "green": "todos os sistemas a verde →",
+    "degraded_one": "1 serviço degradado →", "degraded_many": "{n} serviços degradados →",
+    "nicoFrom": "nico · do telemóvel", "source": "fonte: ", "where": "onde é que isso está escrito?", "reading": "o fritz está a ler",
+    "ask": "Olá Fritz, o que pode fazer por mim?",
+    "running": "a executar {a} de {b}"
+  },
+  "chat": {
+    "q1": "Esta empresa é real?",
+    "a1": "Sim. MB Meihuizen AI, código de empresa 308157412, uma pessoa coletiva lituana. Pode confirmá-lo no Registrų centras.",
+    "q2": "Quanto custaria o Fritz para o nosso site?",
+    "q3": "Posso falar diretamente com o Nico?",
+    "live1": "Ele está disponível. Quer que o chame para esta conversa?",
+    "live2": "sim, por favor",
+    "live3": "✓ o telemóvel do Nico está a tocar",
+    "live4": "Olá, fala o Nico. Falamos de números com todo o gosto. @Fritz partilha a ficha de produto do Fritz.",
+    "live5": "✓ ficha de produto partilhada · a palavra volta para o Nico",
+    "later1": "✓ pedido enviado para o telemóvel do Nico, com esta conversa"
+  },
+  "closed": "Hora de Kaunas: {time}, por isso o Nico já não está. Vou enviar agora a sua pergunta e esta conversa para o telemóvel dele; terá {reply}.",
+  "afterHours": "fora de horas",
+  "price": {
+    "base": "Preço por caso: o Fritz é desenvolvido à medida, não é um wrapper. ",
+    "none": "Quer que passe isto ao Nico, para ele lhe ligar de volta?",
+    "open": "Hora de Kaunas: {time}, e o Nico está disponível. Quer que passe isto ao Nico, para ele lhe ligar de volta?",
+    "closed": "Hora de Kaunas: {time}, por isso o Nico já não está. Posso passar isto agora, e terá {reply}."
+  }
+}

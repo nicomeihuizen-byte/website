@@ -1,13 +1,341 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
 <head>
-<meta charset="utf-8">
-<title>meihuizen.ai, now in English</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://www.meihuizen.ai/projects/second-audience.html">
-<meta http-equiv="refresh" content="0; url=../../projects/second-audience.html">
+<script src="../../scripts/consent.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO: cosa dice ChatGPT della Sua azienda? | Second Audience</title>
+<meta name="description" content="Scansione GEO gratuita: misuriamo cosa ChatGPT, Claude, Gemini e Perplexity leggono davvero sul Suo sito e dove sbagliano. Audit periodico, con prove.">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/it/projects/second-audience.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/second-audience.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/second-audience.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/second-audience.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/second-audience.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/second-audience.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/second-audience.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/second-audience.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/second-audience.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/second-audience.html">
+<meta property="og:title" content="GEO: cosa dice ChatGPT della Sua azienda? | Second Audience">
+<meta property="og:description" content="Scansione GEO gratuita: misuriamo cosa ChatGPT, Claude, Gemini e Perplexity leggono davvero sul Suo sito e dove sbagliano. Audit periodico, con prove.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_five/second-audience-cover.png">
+<meta property="og:image:width" content="1488">
+<meta property="og:image:height" content="2105">
+<meta property="og:url" content="https://www.meihuizen.ai/it/projects/second-audience.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO: cosa dice ChatGPT della Sua azienda? | Second Audience">
+<meta name="twitter:description" content="Scansione GEO gratuita: misuriamo cosa ChatGPT, Claude, Gemini e Perplexity leggono davvero sul Suo sito e dove sbagliano. Audit periodico, con prove.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_five/second-audience-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Second Audience",
+  "description": "Un audit GEO periodico che misura cosa gli agenti AI come ChatGPT, Claude, Gemini e Perplexity possono davvero leggere, fare e sbagliare sul sito di un cliente: prima le prove, gli agenti per ultimi.",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai/it/"
+  },
+  "image": "https://www.meihuizen.ai/images/project_five/second-audience-cover.png",
+  "keywords": "GEO, Generative Engine Optimization, visibilità su ChatGPT, audit agenti AI, web agentico, crawler AI, audit robots.txt, visibilità negli LLM",
+  "url": "https://www.meihuizen.ai/it/projects/second-audience.html",
+  "datePublished": "2026-08-30T10:00:00+03:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.meihuizen.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Progetti",
+      "item": "https://www.meihuizen.ai/builds.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Second Audience",
+      "item": "https://www.meihuizen.ai/projects/second-audience.html"
+    }
+  ]
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../styles/site.css">
+<script src="../../scripts/theme.js"></script>
+<link rel="stylesheet" href="/ask/ask.css">
+<link rel="stylesheet" href="/styles/rail.css">
 </head>
 <body>
-<p>meihuizen.ai is published in English and Lithuanian. This page now lives at <a href="../../projects/second-audience.html">https://www.meihuizen.ai/projects/second-audience.html</a>.</p>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai, home page"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="../">home</a></li>
+        <li><a href="../builds.html" aria-current="page">builds</a></li>
+        <li><a href="../about.html">chi siamo</a></li>
+        <li><a href="../credentials.html">credenziali</a></li>
+        <li><a href="../contact.html">contatti</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Lingua del sito">
+        <a href="../../projects/second-audience.html" lang="en" hreflang="en">EN</a>
+        <a href="../../nl/projects/second-audience.html" lang="nl" hreflang="nl">NL</a>
+        <a href="../../de/projects/second-audience.html" lang="de" hreflang="de">DE</a>
+        <a href="../../fr/projects/second-audience.html" lang="fr" hreflang="fr">FR</a>
+        <a href="second-audience.html" lang="it" hreflang="it" aria-current="true">IT</a>
+        <a href="../../es/projects/second-audience.html" lang="es" hreflang="es">ES</a>
+        <a href="../../pt/projects/second-audience.html" lang="pt" hreflang="pt">PT</a>
+        <a href="../../lt/projects/second-audience.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>orario d’ufficio</span> · <span data-office-reply>da lun. a ven., dalle 10:00 alle 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>progetti › <b>Second Audience</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">AI / web agentico</span><span class="chip chip-ok">scansione gratuita · 0 €</span></div>
+      <h1 class="h1 h1-p">Oggi il Suo sito ha <span class="grad">due tipi di visitatori</span>.</h1>
+      <p class="lead lead-p">Uno ha gli occhi. L’altro è l’AI agentica di ChatGPT e simili: non esegue mai il Suo JavaScript, legge solo ciò che il Suo server invia e risponde a domande su di Lei per persone che la Sua pagina non la aprono mai. Second Audience misura cosa può fare davvero quel secondo visitatore: GEO (Generative Engine Optimization) che parte dalle prove.</p>
+      <div class="btn-row">
+        <a href="#cta" class="btn btn-p">Richieda una scansione gratuita <span aria-hidden="true">→</span></a>
+        <a href="../../projects/second-audience-cases.html" class="btn btn-g">Sei casi reali</a>
+      </div>
+    </div>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>example.com/pricing · scaricata due volte</span>
+        <div class="tabs" role="tablist" aria-label="Due viste della stessa pagina">
+          <button type="button" class="tab" role="tab" id="t-human" aria-controls="p-human" aria-selected="false">cosa vede una persona</button>
+          <button type="button" class="tab" role="tab" id="t-agent" aria-controls="p-agent" aria-selected="true">cosa riceve l’agente</button>
+        </div>
+      </div>
+      <div class="panel" id="p-human" role="tabpanel" aria-labelledby="t-human" hidden>
+        <div class="mock">
+          <div class="mock-top"><b>Northwind Academy</b><span>Corsi · Prezzi · Contatti</span></div>
+          <h3>Corso Data Analyst</h3>
+          <div class="mock-stats"><div><small>PREZZO</small><b>4.900 €</b></div><div><small>DURATA</small><b>16 settimane</b></div><div><small>GARANZIA</small><b>90 giorni</b></div></div>
+          <span class="mock-btn">Si iscriva ora</span>
+          <p class="mock-note">esempio fittizio</p>
+        </div>
+      </div>
+      <div class="panel" id="p-agent" role="tabpanel" aria-labelledby="t-agent">
+        <div class="agent-view">
+          <p><span class="ok">GET</span> /pricing · no JavaScript · 200 OK</p>
+          <p class="gap k">Northwind Academy</p>
+          <p class="k">Corso Data Analyst</p>
+          <p><span class="bad">✗ prezzo</span> generato da script, non ricevuto</p>
+          <p><span class="bad">✗ durata</span> generata da script, non ricevuta</p>
+          <p><span class="bad">✗ garanzia</span> generata da script, non ricevuta</p>
+          <p class="gap"><span class="warn">!</span> stesso corso trovato su <span class="k">/courses/data-2023</span></p>
+          <p class="in">prezzo <span class="k">3.900 €</span> · garanzia <span class="k">30 giorni</span></p>
+          <div class="agent-say">Agente: “Il corso costa 3.900 € e ha una garanzia di 30 giorni.”</div>
+          <small>esempio fittizio, costruito su schemi ricorrenti in scansioni reali</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="buying" class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap mb48">
+      <p class="idx">~/how buying works</p>
+      <h2 class="h2">Quattro passi. Dopo ognuno decide Lei.</h2>
+      <p class="body-l">Nessun pacchetto da scegliere e nessun impegno lungo all’inizio. Il costo del report viene interamente detratto se realizziamo noi gli interventi, quindi il primo passo a pagamento non è mai una spesa persa.</p>
+    </div>
+    <ol class="steps">
+      <li><div class="step-head"><span class="step-n">01</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">gratis · 0 €</div><h3>Scansione gratuita</h3><p>Cosa hanno detto di Lei gli agenti AI a un potenziale cliente, con data e ora, e quanto Le costa.</p></li>
+      <li><div class="step-head"><span class="step-n">02</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">da 500 €</div><h3>Report completo</h3><p>Ogni rilievo con le sue prove, le correzioni in ordine e una nuova scansione. Interamente detratto dal passo 03.</p></li>
+      <li><div class="step-head"><span class="step-n">03</span><span class="step-line"></span><span class="gate">you decide</span></div><div class="step-price">da 1.500 €</div><h3>Sviluppo o correzione</h3><p>Le correzioni, Fritz sul Suo dominio, o uno sviluppo su misura intorno al Suo flusso di lavoro.</p></li>
+      <li><div class="step-head"><span class="step-n">04</span><span class="step-line"></span></div><div class="step-price">continuativo</div><h3>Monitoraggio e nuove scansioni</h3><p>Nuove scansioni dopo ogni modifica, perché la correzione regga anche il prossimo trimestre.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap section" aria-label="In cifre">
+  <div class="three">
+    <div class="card stat-card"><div class="stat-n">×2</div><h3>Scaricata due volte</h3><p>La stessa pagina con JavaScript e senza. Ciò che sparisce è ciò che un crawler senza rendering non vede mai.</p></div>
+    <div class="card stat-card"><div class="stat-n">1 → 4</div><h3>Un fatto, quattro risposte</h3><p>Un prezzo pubblicato una sola volta, in una forma che invita a completare il resto. Quattro agenti, quattro cifre, una sola giusta.</p></div>
+    <div class="card stat-card"><div class="stat-n">9 / 18</div><h3>Pubblichiamo i nostri errori</h3><p>Diciotto previsioni messe per iscritto prima di interrogare un agente. Nove sbagliate, ed è scritto nel report.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/what you get</p><h2 class="h2">Un servizio GEO, non uno strumento.</h2><p class="body-l">Svolto da una persona e da un modello che lavorano sullo stesso caso, perché ciò che vendiamo è la tesi che le macchine leggono con sicurezza e sbagliano i fatti. Non è una tesi che una macchina possa certificare su se stessa.</p></div>
+    <div class="four cols-gap">
+      <div class="deliv"><div class="deliv-top"><span class="mono">01</span><span class="chip">PDF · 4 pagine</span></div><h3>La scansione gratuita</h3><p>Cosa abbiamo chiesto agli agenti, cosa hanno detto di Lei a un potenziale cliente, con data e ora, e quanto costa. Una sintesi della scansione completa, non la soluzione.</p><a class="link" href="#faq">perché niente correzioni →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">02</span><span class="chip">PDF · MD</span></div><h3>Il report completo</h3><p>Ogni rilievo con prove e trascrizioni, attività con testi e codice pronti da incollare, le decisioni che lasciamo a Lei e un verdetto firmato.</p><a class="link" href="../../images/project_five/brackwater-free-scan.pdf" download>report di esempio →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">03</span><span class="chip">1 sett. · 1 mese · 3 mesi</span></div><h3>Nuove scansioni</h3><p>Gli stessi prompt sulle stesse pagine dopo una settimana, un mese e tre mesi. I motori si aggiornano, le correzioni scivolano.</p><a class="link" href="#faq">perché si ripete →</a></div>
+      <div class="deliv"><div class="deliv-top"><span class="mono">04</span><span class="chip">PDF · 2 pagine</span></div><h3>Allegato “How we work”</h3><p>Ambito, dati, diritti e GDPR, allegato a ogni report, in inglese.</p><a class="link" href="../../images/project_five/second-audience-how-we-work.pdf" download>legga l’allegato →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap method">
+    <div class="method-side">
+      <p class="idx">~/method</p>
+      <h2 class="h2">Nove passi. Gli agenti AI per ultimi.</h2>
+      <p class="body-l">L’ordine è il prodotto. Una scansione che parte dagli agenti trova imperfezioni tecniche e nessun denaro. Ogni rilievo forte di quest’anno è uscito dal passo quattro.</p>
+      <div class="chips cols-gap"><span class="chip">confronto a doppio rendering</span><span class="chip">verifica robots.txt e user agent</span><span class="chip">tassonomia dei verdetti</span><span class="chip">valutazione multi-agente</span><span class="chip">analisi forense dei log del server</span><span class="chip">verifica normativa incrociata</span></div>
+    </div>
+    <ol class="mlist">
+      <li><span class="ring">01</span><div><h3>Chiedere cosa si consiglia di verificare</h3><p>Prima di fare il Suo nome, chiediamo a un agente cosa dovrebbe verificare un acquirente nel Suo mercato. Le domande di test vengono dal mercato, non da noi.</p></div></li>
+      <li><span class="ring">02</span><div><h3>Trovare l’oggetto che genera ricavi</h3><p>La pagina che porta il fatturato. Tutto ciò che segue si misura su di essa.</p></div></li>
+      <li><span class="ring">03</span><div><h3>Estrarre i fatti che servono a chi compra</h3><p>Prezzo, condizioni, a chi si rivolge, dove si trova. Le risposte che verranno chieste a un agente.</p></div></li>
+      <li class="key"><span class="ring">04</span><div><h3>Cercare lo stesso fatto con due risposte</h3><span class="chip chip-ok">da qui vengono i rilievi che valgono denaro</span><p>Una FAQ, una traduzione vecchia, una pagina orfana, un comunicato stampa di quattro anni fa. Dove gli agenti devono scegliere.</p></div></li>
+      <li><span class="ring">05</span><div><h3>Verificare come è scritto ogni fatto</h3><p>Testo, immagine o prosa vaga. Solo uno dei tre sopravvive alla lettura di una macchina.</p></div></li>
+      <li><span class="ring">06</span><div><h3>Percorrere il Suo funnel sul sito live</h3><p>Una persona clicca il Suo annuncio e segue il percorso del Suo cliente, registrando cosa è online a ogni passo. Gli agenti rispondono spesso da una copia più vecchia; la differenza è un rilievo.</p></div></li>
+      <li><span class="ring">07</span><div><h3>Mappare cosa dicono i terzi</h3><p>Directory, guide e stampa di cui gli agenti si fidano quanto del Suo sito.</p></div></li>
+      <li><span class="ring">08</span><div><h3>Verifica normativa incrociata</h3><p>Prima per eliminare i rilievi che si rivelano formulazioni imposte dalla legge. Poi per rafforzare quelli che restano.</p></div></li>
+      <li class="last"><span class="ring">09</span><div><h3>Prima le previsioni, poi gli agenti</h3><p>Ciò che ci aspettiamo dica ogni agente, scritto prima di chiedere. Poi le domande che i clienti digitano davvero, refusi compresi.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what a finding looks like</p><h2 class="h2">Un agente che non trova nulla raramente tace.</h2></div>
+      <p class="vision-p">Riempie il vuoto, e mette il Suo nome sotto ciò che ha inventato. Due scansioni reali, anonimizzate: niente nomi, niente cifre ricercabili, e non confermiamo ipotesi.</p>
+    </div>
+    <div class="two cols-gap">
+      <article class="finding"><div class="finding-h">caso 01 · rete di esperti</div><p class="f1"><b>sul sito:</b> Una sola pagina di caso cliente: un modello mai compilato, ancora nella sua sitemap.</p><p class="f2"><b>gli agenti:</b> Quattro agenti, quattro risposte diverse. Uno ha inventato un intero caso presso una banca reale e ha indicato l’azienda come fonte tre volte.</p><p class="f3"><b>la correzione:</b> Casi reali con un numero, una riga di testo accanto a ogni logo, il modello fuori dalla sitemap. Nessun rifacimento.</p></article>
+      <article class="finding"><div class="finding-h">caso 05 · formazione online</div><p class="f1"><b>sul sito:</b> Lo stesso corso online a tre indirizzi, con prezzi, durate e garanzie diversi.</p><p class="f2"><b>gli agenti:</b> Un agente ha mandato il cliente alla pagina più vecchia, con la garanzia più breve. La sua citazione era corretta: quel testo c’è davvero.</p><p class="f3"><b>la correzione:</b> Un’unica offerta online, i vecchi indirizzi reindirizzati lì e la sitemap ripulita.</p></article>
+    </div>
+    <p class="cols-gap"><a class="link" href="../../projects/second-audience-cases.html">legga tutti e sei i casi →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="lead-wrap"><p class="idx">~/who does what</p><h2 class="h2">Una persona e un modello, sullo stesso caso.</h2><p class="body-l">Entrambi sbagliano regolarmente. Ognuno deve rispondere all’altro prima che qualcosa esca.</p></div>
+    <div class="two cols-gap">
+      <div class="card"><p class="label">la macchina fa i volumi</p><ul class="ticks"><li>Ogni pagina scaricata due volte e confrontata.</li><li>Ogni fatto aziendale confrontato con ogni altra sua occorrenza sul dominio.</li><li>Ogni documento citato aperto, per verificare che il testo contenga ciò che la citazione afferma.</li></ul></div>
+      <div class="card card-key"><p class="label">la persona fa ciò che un modello non sa fare</p><ul class="ticks num"><li>Decide quale oggetto porta i ricavi, quale fatto vale la pena inseguire e se una citazione regge davvero.</li><li>Percorre il Suo funnel come un cliente, e interroga gli agenti come scrive un cliente.</li><li>Per il report completo: chiede al Suo responsabile vendite da cosa dipendevano le trattative perse, mette alla prova il Suo processo di vendita come un cliente e firma il verdetto.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what it costs</p><h2 class="h2">La scansione GEO è gratuita. Il report si detrae.</h2></div>
+      <p class="vision-p">La scansione gratuita mostra cosa dicono gli agenti ai Suoi clienti e quanto Le costa. Il report completo mostra dove si trova ogni problema e qual è la versione corretta, e il suo prezzo viene interamente detratto se realizziamo noi gli interventi.</p>
+    </div>
+    <div class="routes">
+      <div class="route"><span class="mono">00</span><h3>Scansione gratuita</h3><div class="price">0 €, senza impegno</div><hr><ul class="ticks"><li>Sintesi della scansione completa</li><li>Cosa hanno detto gli agenti a un cliente, con data e ora</li><li>Quanto Le costa</li></ul></div>
+      <div class="route"><span class="mono">01</span><h3>Report completo</h3><div class="price">da 500 €</div><hr><ul class="ticks"><li>Ogni rilievo, con le prove</li><li>Correzioni pronte da incollare, in ordine</li><li>Interamente detratto da 02 o 03</li></ul></div>
+      <div class="route"><span class="mono">02</span><h3>Implementazione completa</h3><div class="price">da 1.500 €</div><hr><ul class="ticks"><li>Implementiamo tutto noi</li><li>Monitoraggio</li><li>Nuove scansioni a 1 settimana, 1 mese, 3 mesi</li></ul></div>
+      <div class="route key"><span class="flag">su misura</span><span class="mono">03</span><h3>Implementazione + Fritz</h3><div class="price">da 3.500 €</div><hr><ul class="ticks"><li>Tutto ciò che include il percorso 02</li><li>Agent Fritz sul Suo sito</li><li>Risposte in base alle Sue pagine corrette</li><li>Piano Fritz da 390 € al mese</li></ul></div>
+    </div>
+    <p class="fine">Alcune scansioni gratuite sono diventate clienti paganti. Il loro lavoro non viene mai pubblicato qui, nemmeno in forma anonima.</p>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap method">
+    <div><p class="idx">~/questions buyers ask</p><h2 class="h2">Prima di chiedere a Fritz.</h2><p class="body-l">O glielo chieda comunque. Risponde in base a questa pagina, e lo dice quando l’informazione non c’è.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>La scansione gratuita è davvero gratuita?</summary><p>Sì. Riceve una sintesi della scansione completa: cosa hanno detto di Lei gli agenti a un potenziale cliente, con data e ora, e quanto Le costa. Se si ferma lì, non deve nulla.</p></details>
+      <details class="qa"><summary>Perché la scansione gratuita non mostra come correggere?</summary><p>Perché la correzione è il lavoro. La scansione gratuita dimostra il problema. Il report completo mostra dove si trova ogni problema e qual è la versione corretta, e il suo prezzo viene interamente detratto se realizziamo noi gli interventi.</p></details>
+      <details class="qa"><summary>Vi serve l’accesso ai nostri sistemi?</summary><p>No. La scansione legge il Suo sito pubblico come lo legge un agente, dall’esterno.</p></details>
+      <details class="qa"><summary>Non basta aggiungere dati strutturati?</summary><p>I dati strutturati aiutano, ma molti agenti non li vedono mai: prima convertono la Sua pagina in testo. Ogni fatto deve comparire anche nel testo visibile.</p></details>
+      <details class="qa"><summary>I nostri risultati verranno pubblicati?</summary><p>Quelli dei clienti paganti mai, nemmeno in forma anonima. Le scansioni gratuite possono diventare casi anonimi: niente nomi, niente cifre ricercabili, e non confermiamo ipotesi.</p></details>
+      <details class="qa"><summary>In quali lingue?</summary><p>I report vengono consegnati in inglese. Le prove citate restano nella lingua in cui sono state raccolte.</p></details>
+      <details class="qa"><summary>Perché si ripete?</summary><p>I motori si aggiornano e le pagine cambiano, e un’affermazione che ha rimosso continua a essere riportata per mesi. Su questo dominio c’è una misurazione datata proprio di questo.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Legga prima di richiedere.</h2>
+  <div class="four">
+    <a class="card dl doc-download" href="../../images/project_five/brackwater-free-scan.pdf" download aria-label="Scarichi il report completo di esempio in PDF"><span class="chip tag">PDF</span><h3>Report completo di esempio</h3><p>Un report completo di 16 pagine per un cliente fittizio. Sei rilievi, tre sessioni con i modelli, i nostri errori.</p></a>
+    <a class="card dl doc-download" href="../../images/project_five/brackwater-implementation-report-en-v1.0.md" download aria-label="Scarichi le attività di esempio in Markdown"><span class="chip tag">MD</span><h3>Attività di esempio</h3><p>Parte del report completo: attività, decisioni che lasciamo a Lei, correzioni pronte da incollare.</p></a>
+    <a class="card dl doc-download" href="../../projects/second-audience-cases.html" aria-label="Sei casi, anonimizzati"><span class="chip tag">PAGINA</span><h3>Sei casi, anonimizzati</h3><p>Cosa hanno detto gli agenti di sei aziende reali, e la pagina che lo spiegava.</p></a>
+    <a class="card dl doc-download" href="../../images/project_five/second-audience-how-we-work.pdf" download aria-label="Scarichi How we work in PDF"><span class="chip tag">PDF</span><h3>How we work</h3><p>Ambito, dati e diritti. Cosa può fare con il report.</p></a>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/free scan</p>
+        <h2>Scopra cosa dicono di Lei<br><span class="grad">ChatGPT e gli altri agenti.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> a Kaunas · <span data-office-state>orario d’ufficio</span> · <span data-office-reply>da lun. a ven., dalle 10:00 alle 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html#write" class="btn btn-p btn-wide">Richieda una scansione gratuita <span aria-hidden="true">→</span></a>
+        <button type="button" class="btn btn-g btn-wide" data-fritz-ask="Vorrei una scansione Second Audience gratuita del mio sito">oppure chieda prima a Fritz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai dal 2026" width="1365" height="772" loading="lazy">
+      <p><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V4h10v17M14 9h6v12M2 21h20M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h1M16.5 17h1"/></svg>MB Meihuizen AI · codice societario 308157412<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Laisvės al. 110, LT-44253 Kaunas<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+37052080293">+370 5 208 0293</a><br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>da lun. a ven., dalle 10:00 alle 18:00, ora di Kaunas</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../../terms.html">condizioni</a></li>
+        <li><a href="../credentials.html">credenziali</a></li>
+        <li><a href="../../status.html">stato</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign by Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/home.js" defer></script>
+<script src="/ask/ask.js" defer></script>
+<script src="/scripts/rail.js" defer></script>
 </body>
 </html>

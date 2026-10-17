@@ -1,13 +1,413 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-<meta charset="utf-8">
-<title>meihuizen.ai, now in English</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://www.meihuizen.ai/projects/agent-fritz.html">
-<meta http-equiv="refresh" content="0; url=../../projects/agent-fritz.html">
+<script src="../../scripts/consent.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Fritz: zegt alleen wat uw site zegt | meihuizen.ai</title>
+<meta name="description" content="Een AI-salesagent voor uw site: antwoordt alleen vanuit uw pagina's, plant afspraken, kwalificeert leads en deelt documenten. Probeer hem hier in de hoek.">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/nl/projects/agent-fritz.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/agent-fritz.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/agent-fritz.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/agent-fritz.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/agent-fritz.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/agent-fritz.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/agent-fritz.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/agent-fritz.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/agent-fritz.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/agent-fritz.html">
+<meta property="og:title" content="Agent Fritz: zegt alleen wat uw site zegt | meihuizen.ai">
+<meta property="og:description" content="Een AI-salesagent voor uw site: antwoordt alleen vanuit uw pagina's, plant afspraken, kwalificeert leads en deelt documenten. Probeer hem hier in de hoek.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_six/agent-fritz-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.meihuizen.ai/nl/projects/agent-fritz.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent Fritz: zegt alleen wat uw site zegt | meihuizen.ai">
+<meta name="twitter:description" content="Een AI-salesagent voor uw site: antwoordt alleen vanuit uw pagina's, plant afspraken, kwalificeert leads en deelt documenten. Probeer hem hier in de hoek.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_six/agent-fritz-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Agent Fritz",
+  "description": "Een AI-salesagent voor uw website: antwoordt alleen vanuit uw pagina's, plant afspraken, kwalificeert leads en deelt documenten. Probeer hem: hij zit in de hoek van deze pagina.",
+  "inLanguage": "nl",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai/nl/"
+  },
+  "image": "https://www.meihuizen.ai/images/project_six/agent-fritz-og.png",
+  "keywords": "AI-agent, AI-salesagent, gegronde chatbot, agentic workflow, tool use, websiteassistent, RAG, SPIN, Challenger, MEDDPICC, geen wrapper",
+  "url": "https://www.meihuizen.ai/nl/projects/agent-fritz.html",
+  "datePublished": "2026-09-28T10:00:00+03:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agent Fritz",
+  "serviceType": "AI-salesagent op maat voor websites",
+  "url": "https://www.meihuizen.ai/nl/projects/agent-fritz.html",
+  "description": "Een op maat gebouwde salesagent, geen wrapper. Hij draait op een gehuurd taalmodel; het verschil is een menselijke saleslaag: sales plays geschreven door Nico Meihuizen op basis van veertien jaar enterprise sales, toegepast met SPIN, Challenger en MEDDPICC. Hij antwoordt alleen vanuit de pagina's van de klant, kwalificeert leads en draagt ze over aan een mens; zelf sluit hij nooit een deal. Op het Pro-abonnement wordt hij maandelijks bijgewerkt met nieuwe sales plays, actuele marktkennis voor de sector van de klant (gebruikt in vragen, nooit als feit gebracht) en nieuwe strikvragen die draaien voordat elke update live gaat.",
+  "provider": {
+    "@type": "Organization",
+    "name": "meihuizen.ai",
+    "legalName": "MB Meihuizen AI",
+    "url": "https://www.meihuizen.ai/nl/"
+  },
+  "areaServed": "EU",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Setup",
+      "price": "2500",
+      "priceCurrency": "EUR",
+      "description": "Eenmalig, vanaf 2.500 EUR exclusief btw; gereguleerde sectoren vanaf 4.500 EUR. Sectorsjabloon ingericht op de pagina's van de klant, maximaal twee talen, afspraken plannen en overdracht, een set strikvragen."
+    },
+    {
+      "@type": "Offer",
+      "name": "Fritz Core",
+      "price": "390",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "390",
+        "priceCurrency": "EUR",
+        "unitText": "month",
+        "valueAddedTaxIncluded": false
+      },
+      "description": "Uw eigen deployment in Frankfurt, beheerd door meihuizen.ai: model, nachtelijke tests, monitoring. 1.000 gesprekken per maand inbegrepen, daarboven 0,25 EUR per gesprek. Minimaal 12 maanden."
+    },
+    {
+      "@type": "Offer",
+      "name": "Fritz Pro",
+      "price": "690",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "690",
+        "priceCurrency": "EUR",
+        "unitText": "month",
+        "valueAddedTaxIncluded": false
+      },
+      "description": "Alles uit Core plus een maandelijkse sectorupdate (nieuwe sales plays, marktkennis, nieuwe strikvragen) en elke maand één review van de eigen plays van de klant. Minimaal 12 maanden."
+    }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "B2B-bedrijven met weloverwogen aankopen: vastgoed, financiële dienstverlening, zakelijke dienstverlening. Geen retail."
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.meihuizen.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projecten",
+      "item": "https://www.meihuizen.ai/builds.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agent Fritz",
+      "item": "https://www.meihuizen.ai/projects/agent-fritz.html"
+    }
+  ]
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../styles/site.css">
+<script src="../../scripts/theme.js"></script>
+<link rel="stylesheet" href="/ask/ask.css">
+<link rel="stylesheet" href="/styles/rail.css">
 </head>
 <body>
-<p>meihuizen.ai is published in English and Lithuanian. This page now lives at <a href="../../projects/agent-fritz.html">https://www.meihuizen.ai/projects/agent-fritz.html</a>.</p>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai, naar de homepage"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="../">home</a></li>
+        <li><a href="../builds.html" aria-current="page">projecten</a></li>
+        <li><a href="../about.html">over ons</a></li>
+        <li><a href="../credentials.html">gegevens</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Taal van de site">
+        <a href="../../projects/agent-fritz.html" lang="en" hreflang="en">EN</a>
+        <a href="agent-fritz.html" lang="nl" hreflang="nl" aria-current="true">NL</a>
+        <a href="../../de/projects/agent-fritz.html" lang="de" hreflang="de">DE</a>
+        <a href="../../fr/projects/agent-fritz.html" lang="fr" hreflang="fr">FR</a>
+        <a href="../../it/projects/agent-fritz.html" lang="it" hreflang="it">IT</a>
+        <a href="../../es/projects/agent-fritz.html" lang="es" hreflang="es">ES</a>
+        <a href="../../pt/projects/agent-fritz.html" lang="pt" hreflang="pt">PT</a>
+        <a href="../../lt/projects/agent-fritz.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>kantooruren</span> · <span data-office-reply>ma t/m vr, 10:00 tot 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>projecten › <b>Agent Fritz</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">AI / agents</span><span class="chip chip-ok">live op deze site sinds september 2026</span></div>
+      <h1 class="h1 h1-p">De chat in de hoek <span class="grad">is het product.</span></h1>
+      <p class="lead lead-p nw-lead">De meeste chatbots zijn een wrapper: een gehuurd model met een prompt erbovenop. Fritz draait ook op een gehuurd model. Het verschil zit in de menselijke laag: veertien jaar enterprise sales, verwerkt in hoe hij vraagt, luistert en overdraagt. Een wrapper beantwoordt vragen. Fritz kwalificeert kopers.</p>
+      <p class="nw-quip">Dat is het verschil tussen een bot van de plank en investeren in Fritz. Wie met pinda's betaalt, krijgt apen. Wij kozen voor Fritz!</p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-p" data-fritz-ask="Hallo Fritz, wat kun je allemaal?">Praat nu met Fritz <span aria-hidden="true">→</span></button>
+        <a href="../../images/project_six/agent-fritz-product-sheet.pdf" class="btn btn-g" download>Productsheet (pdf)</a>
+        <a href="#not-a-wrapper" class="link nw-jump">bekijk het verschil ↓</a>
+      </div>
+    </div>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>fritz@meihuizen.ai: ~/ask</span>
+        <div class="tabs" role="tablist" aria-label="Drie dingen die Fritz doet">
+          <button type="button" class="tab" role="tab" id="t-book" aria-controls="p-book" aria-selected="true">plant het gesprek in</button>
+          <button type="button" class="tab" role="tab" id="t-cant" aria-controls="p-cant" aria-selected="false">zegt wat er niet staat</button>
+          <button type="button" class="tab" role="tab" id="t-nico" aria-controls="p-nico" aria-selected="false">haalt Nico erbij</button>
+        </div>
+      </div>
+      <div class="panel chat-panel" id="p-book" role="tabpanel" aria-labelledby="t-book">
+        <div class="msg-user">Plan een gesprek van 15 minuten met Nico voor me in</div>
+        <div class="msg-tool">↳ calendar.free_slots  next 10 working days</div>
+        <div class="msg-fritz">Vrije tijden, in uw tijdzone: di 10:30, wo 14:00, do 11:15. Welke wordt het, en naar welke naam en welk e-mailadres mag de uitnodiging?</div>
+        <div class="msg-user">wo 14:00, Anna Berg, anna@northwind.example</div>
+        <div class="msg-fritz">Ik lees het even terug: woensdag 14:00, 15 minuten met Nico, uitnodiging naar anna@northwind.example. Zal ik hem versturen?</div>
+        <div class="msg-user">ja</div>
+        <div class="msg-ok">✓ uitnodiging verstuurd · inclusief Google Meet-link</div>
+      </div>
+      <div class="panel chat-panel" id="p-cant" role="tabpanel" aria-labelledby="t-cant" hidden>
+        <div class="msg-user">Wat is jullie btw-nummer?</div>
+        <div class="msg-tool">↳ read_page  credentials.html</div>
+        <div class="msg-fritz">Dat is nog niet toegekend. Op de gegevenspagina staat dat het in het dossier komt op de dag dat het wordt toegekend, niet op de dag dat het is aangevraagd. Wat nu gepubliceerd is, is het registratienummer: 308157412.</div>
+        <div class="msg-user">Hebben jullie 20 engineers?</div>
+        <div class="msg-tool">↳ read_page  about.html</div>
+        <div class="msg-fritz">Nee. Eén persoon, Nico, die met negen agents werkt, elk bij naam genoemd. De over-onspagina somt ze op, zodat niemand een bank vol engineers hoeft te veronderstellen die niet bestaat.</div>
+      </div>
+      <div class="panel chat-panel" id="p-nico" role="tabpanel" aria-labelledby="t-nico" hidden>
+        <div class="msg-user">We hebben dit nodig voor 40 locaties, kan er korting af?</div>
+        <div class="msg-fritz">Over kortingen en contracten beslist Nico, niet ik. Hij is nu beschikbaar. Zal ik hem bij dit gesprek halen?</div>
+        <div class="msg-user">graag</div>
+        <div class="msg-ok">✓ Nico's telefoon gaat over</div>
+        <div class="msg-nico"><small>nico · vanaf zijn telefoon</small>Hallo, met Nico. 40 locaties, mooi. @Fritz plan volgende week een demo van 30 minuten en deel de productsheet.</div>
+        <div class="msg-ok">✓ productsheet gedeeld · demotijden aangeboden</div>
+      </div>
+      <p class="panel-note">nagespeelde weergave van echt gedrag · namen en tijden zijn voorbeelden</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what Fritz does</p><h2 class="h2">Een inside salesrep die nooit zelf de deal sluit.</h2></div>
+      <p class="vision-p">Op deze site is Fritz ingericht als salesassistent: hij kwalificeert leads en doet echt presales- en inside-saleswerk. Dat is onze versie. De uwe kan een klantenservicemedewerker zijn, een doktersassistent of een supportdesk, gebouwd rond de eisen van uw regelgeving.</p>
+    </div>
+    <div class="four cols-gap" data-step>
+      <div class="does"><span class="mono">antwoorden</span><h3>Vanuit uw pagina's</h3><p>In de taal van de bezoeker en de toon van uw site, met de bron onder elk antwoord.</p></div>
+      <div class="does"><span class="mono">documenten</span><h3>Deelt bestanden</h3><p>Vraag om een productsheet en hij is er. Vraag om een sheet die niet bestaat en hij zegt dat.</p></div>
+      <div class="does"><span class="mono">agenda</span><h3>Plant de afspraak</h3><p>Echte vrije tijden, gegevens teruggelezen, uitnodiging met videolink.</p></div>
+      <div class="does"><span class="mono">leads</span><h3>Draagt leads over</h3><p>Vraag, contactgegevens en het hele gesprek, plus één regel over pijnpunt, beslisser en tijdlijn.</p></div>
+      <div class="does"><span class="mono">tijd</span><h3>Weet hoe laat het is</h3><p>Buiten kantooruren zegt hij dat, noemt hij wanneer er weer iemand is, en vraagt hij of het kan wachten.</p></div>
+      <div class="does"><span class="mono">live</span><h3>Haalt een mens erbij</h3><p>Als Nico vrij is, vraagt hij het de bezoeker en laat hij Nico's telefoon overgaan. Nico komt in dezelfde chat.</p></div>
+      <div class="does"><span class="mono">delegeren</span><h3>Neemt opdrachten aan</h3><p>Nico geeft hem midden in een chat taken vanaf zijn telefoon. Een bezoeker die dezelfde woorden typt, komt nergens.</p></div>
+      <div class="does"><span class="mono">optie</span><h3>Voedt Five</h3><p>Gekwalificeerde leads komen als FQL's in Five binnen, in een aparte wachtrij, niet in uw vijf plekken.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section pb40">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what it costs</p><h2 class="h2">Gepubliceerde prijzen. Geen CRM nodig.</h2></div>
+      <p class="vision-p">Een eenmalige setup, daarna een maandabonnement. Het abonnement dekt uw eigen deployment in Frankfurt, door ons beheerd, het model, de tests die elke nacht draaien, en Nico die erbovenop blijft zitten. Prijzen in euro, exclusief btw.</p>
+    </div>
+    <div class="routes r2">
+      <div class="route"><span class="mono">core</span><h3>Fritz Core</h3><div class="price">€390 per maand</div><div class="price-sub">plus eenmalige setup vanaf €2.500</div><hr><ul class="ticks"><li>Uw eigen deployment in Frankfurt, door ons beheerd</li><li>Model en nachtelijke tests</li><li>1.000 gesprekken per maand inbegrepen</li><li>€0,25 per gesprek daarboven</li><li>Monitoring en kleine fixes</li><li>Minimaal 12 maanden</li></ul></div>
+      <div class="route key"><span class="flag">de Rolls-Royce</span><span class="mono">pro</span><h3>Fritz Pro</h3><div class="price">€690 per maand</div><div class="price-sub">plus eenmalige setup vanaf €2.500</div><hr><ul class="ticks"><li>Alles uit Core</li><li>Een maandelijkse sectorupdate: nieuwe sales plays, marktkennis, nieuwe strikvragen</li><li>Elke maand één review van uw eigen plays</li><li>Minimaal 12 maanden</li></ul></div>
+    </div>
+    <p class="body-l">De eenmalige setup omvat een sectorsjabloon ingericht op uw pagina's, maximaal twee talen, afspraken plannen en overdracht aan uw mensen, en een set strikvragen geschreven voor uw bedrijf: vanaf €2.500, gereguleerde sectoren (bankwezen, medisch) vanaf €4.500.</p>
+    <p class="body-l">Later een product of dienst toevoegen: schrijf de plays zelf en Nico beoordeelt en test ze voordat ze live gaan (€150 per update), of Nico schrijft ze (€450 per update). Uw kennis van uw eigen aanbod uit de eerste hand, met zijn saleslaag erbovenop.</p>
+    <p class="body-l"><b>Gemaakt voor</b> B2B-producten en -diensten waarbij een aankoop weloverwogen is: vastgoed, financiële dienstverlening, zakelijke dienstverlening. <b>Niet voor</b> retail of winkels met duizend artikelen: supporttools die per gesprek rekenen, zijn daar beter in.</p>
+    <div class="cmp-wrap">
+      <table class="cmp cmp-light">
+        <caption class="sr-only">Agent Fritz vergeleken met AI-salesagents die een CRM nodig hebben, voor een team van drie verkopers</caption>
+        <thead><tr><th scope="col"><span class="sr-only">Vergeleken op</span></th><th scope="col" class="c-five"><small>geen CRM nodig</small>Agent Fritz Core</th><th scope="col"><small>vereist Salesforce</small>Qualified (Piper)</th><th scope="col"><small>vereist Salesforce</small>Salesforce Agentforce</th><th scope="col"><small>vereist HubSpot</small>HubSpot Breeze</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">CRM nodig</th><td class="c-five">Nee. Leads bereiken u via telefoon en e-mail</td><td>Salesforce</td><td>Salesforce Sales Cloud Enterprise, $175 per gebruiker per maand</td><td>HubSpot Sales Hub Pro, $90 per seat per maand plus $1.500 onboarding</td></tr>
+          <tr><th scope="row">prijsmodel van de AI</th><td class="c-five">€390 per maand, 1.000 gesprekken inbegrepen</td><td>Jaarcontract, geen openbare prijs</td><td>$2 per gesprek</td><td>$1 per gekwalificeerde lead</td></tr>
+          <tr><th scope="row">eerste jaar, drie verkopers</th><td class="c-five">€7.180 inclusief setup</td><td>$95.000 tot $165.000 met Salesforce en implementatie (dealdata van Vendr)</td><td>Ongeveer $55.000 en meer met implementatie</td><td>Ongeveer $6.000 bij 100 leads per maand</td></tr>
+          <tr><th scope="row">wie schrijft de sales plays</th><td class="c-five">Nico, op basis van veertien jaar enterprise sales; u voegt uw eigen plays toe, gereviewd</td><td>Uw team configureert ze</td><td>Uw team configureert ze</td><td>Uw team configureert ze</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Bedragen van concurrenten in Amerikaanse dollars, uit hun gepubliceerde prijspagina's en openbare dealdata, oktober 2026: <a class="link" href="https://www.hubspot.com/pricing/sales">HubSpot</a>, <a class="link" href="https://marketbetter.ai/blog/salesforce-sales-cloud-pricing-breakdown-2026/">Salesforce</a>, <a class="link" href="https://marketbetter.ai/blog/qualified-pricing-breakdown-2026/">Qualified</a>. HubSpot is goedkoper; wat er niet bij zit, is een saleslaag die door een mens is geschreven. Ook dealtracking nodig? <a class="link" href="ai-sales-deal-intelligence.html">Five</a>, vanaf €39 per maand, voor één tot vijf verkopers.</p>
+    <p class="fine">Onder de motorkap: Claude Haiku 4.5 via de Anthropic API, draaiend in Frankfurt. Gesprekken worden niet gelogd, alleen aantallen. Guardrails worden door de server afgedwongen, en een set strikvragen draait voordat elke wijziging live gaat. De volledige specificatie staat in de <a class="link" href="../../images/project_six/agent-fritz-product-sheet.pdf">productsheet</a>.</p>
+    <p class="fine">Status: live op deze site sinds september 2026. Nog geen klantdeployment: deze site is de eerste. De eerste klant krijgt de helft van de setup cadeau, in ruil voor een case study.</p>
+  </div>
+</section>
+
+<section id="not-a-wrapper" class="section pt0">
+  <div class="wrap">
+    <div class="lead-wrap">
+      <p class="idx">~/not a wrapper</p>
+      <h2 class="h2">Zelfde model. Zelfde methode. Andere verkoper.</h2>
+      <p class="body-l">Links: wat elke willekeurige wrapper schrijft met een salesmethode en een website. Rechts: Fritz, met veertien jaar quota dragen verwerkt in elke zin. Dezelfde bezoeker, verzonnen: een Head of Digital bij een Nederlandse kleppenfabrikant die al een SEO-bureau betaalt. Tik op een methodelabel om te zien wat het doet.</p>
+    </div>
+    <div class="nw-panes">
+      <div class="demo nw-pane nw-pane-agent">
+        <div class="demo-bar"><span>wrapper@any-site: ~/chat</span><span class="nw-label">door een agent gegenereerd</span></div>
+        <div class="panel chat-panel">
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Wat zien ChatGPT en Perplexity eigenlijk op onze website?</div>
+          <details class="msg-tool nw-m"><summary>↳ Challenger · Teach<span class="sr-only">: </span></summary><span class="nw-m-exp">Challenger, Teach: geef de bezoeker een nieuwe kijk op zijn situatie, onderbouwd met een feit, niet met een argument.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Kort antwoord: alles wat ze kunnen lezen, en dat brengen ze allemaal met dezelfde stelligheid. Uw site heeft nu twee doelgroepen: de mensen, en de agents die namens u antwoorden voordat iemand klikt. Wat maakt u?</div>
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Industriële kleppen, vooral voor voedselverwerkende fabrieken.</div>
+          <details class="msg-tool nw-m"><summary>↳ SPIN · Problem<span class="sr-only">: </span></summary><span class="nw-m-exp">SPIN, Problem: één vraag die naar boven haalt wat er nu misgaat.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Als een koper ChatGPT om een klepleverancier vraagt, welk ene feit moet dan kloppen? Levertijd, certificering, minimale afname?</div>
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Wat controleren jullie precies?</div>
+          <details class="msg-tool nw-m"><summary>↳ Overdracht · Gratis scan<span class="sr-only">: </span></summary><span class="nw-m-exp">Overdracht: Fritz sluit nooit zelf de deal. Hij verzamelt de gegevens en geeft ze door, hier als aanvraag voor een gratis scan.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Wat ChatGPT, Claude, Gemini en Perplexity op uw site kunnen lezen, en wat ze verkeerd hebben. De eerste scan is gratis. Graag uw domein en een e-mailadres.</div>
+        </div>
+      </div>
+      <div class="demo nw-pane nw-pane-human">
+        <div class="demo-bar"><span>fritz@meihuizen.ai: ~/ask</span><span class="nw-label">door een mens geoptimaliseerd</span></div>
+        <div class="panel chat-panel">
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Wat zien ChatGPT en Perplexity eigenlijk op onze website?</div>
+          <details class="msg-tool nw-m"><summary>↳ Challenger · Teach → SPIN · Situation<span class="sr-only">: </span></summary><span class="nw-m-exp">Eerst Teach, een nieuwe kijk onderbouwd met een feit. Dan SPIN, Situation: één vraag over hoe het er nu voor staat, gebouwd op het eigen woord van de bezoeker.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Alles wat ze kunnen lezen, ongeacht de context. Verouderde pagina's, achterhaalde informatie, gewone fouten: allemaal met dezelfde stelligheid geciteerd. Agents kennen uw bedrijf niet. Ze zijn gebouwd om te antwoorden, niet om te controleren. Over context gesproken: in wat voor branche zit u?</div>
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Industriële kleppen, vooral voor voedselverwerkende fabrieken.</div>
+          <details class="msg-tool nw-m"><summary>↳ SPIN · Situation → Problem<span class="sr-only">: </span></summary><span class="nw-m-exp">SPIN, Situation en dan Problem: laat zien dat u de wereld van de koper kent, en stel dan de ene vraag die alleen een insider stelt.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Kleppen voor voedingsfabrieken: grondstofprijzen die alle kanten op schieten, en de CBAM-papierwinkel er nog bovenop, neem ik aan. Dus als een koper ChatGPT vraagt volgens welk compliancekader u werkt, wat moet er dan absoluut kloppen?</div>
+          <div class="msg-user"><span class="sr-only">Bezoeker: </span>Wat controleren jullie precies?</div>
+          <details class="msg-tool nw-m"><summary>↳ Challenger · Teach → Overdracht · Nico<span class="sr-only">: </span></summary><span class="nw-m-exp">Leer wat het werk waard is, en draag dan over: Fritz sluit nooit zelf de deal, hij geeft een gekwalificeerde lead door aan Nico.</span></details>
+          <div class="msg-fritz"><span class="sr-only">Fritz: </span>Uw domein, op alles wat agents verkeerd weergeven. Agents voeren de scan uit, en Nico loopt de site zelf door zoals uw koper dat zou doen. Geen afvinkoefening. Zet uw domein en e-mailadres in de chat, dan leg ik het nu bij Nico neer.</div>
+        </div>
+      </div>
+    </div>
+    <ul class="nw-why">
+      <li><b>Vraag één.</b> Dezelfde vraag, maar hij pakt het eigen woord van de bezoeker op, context, zodat die er antwoord op wil geven.</li>
+      <li><b>Vraag twee.</b> Hij laat eerst zien dat hij de wereld van de koper kent, en vraagt dan wat alleen een insider vraagt: compliance, niet levertijd.</li>
+      <li><b>Vraag drie.</b> Hij verkoopt het werk achter de scan, een mens die de site doorloopt als een koper, en draagt over aan Nico.</li>
+    </ul>
+    <div class="nw-rr">
+      <h3 class="nw-h3">Geprijsd als een senior. Betaald als een junior. Meldt zich nooit ziek.</h3>
+      <p class="body-l">Beide vensters draaien op hetzelfde model. Het linker is gratis; half internet verkoopt het. Het rechter wordt per klant gebouwd en op Fritz Pro elke maand door Nico bijgewerkt: nieuwe sales plays, actuele marktkennis voor uw sector (gebruikt in vragen, nooit als feit gebracht) en nieuwe strikvragen, die draaien voordat de update live gaat.</p>
+      <p class="body-l">Vergelijkt u maandbedragen? Koop een wrapper. Vergelijkt u wat één verloren deal u kost? <a class="link" href="#cta">Spreek Nico</a>. Prijzen: <a class="link" href="#pricing">wat het kost</a>.</p>
+      <p class="fine">Voorbeeldgesprek, verzonnen ter illustratie.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section pt0">
+  <div class="wrap method">
+    <div><p class="idx">~/questions buyers ask</p><h2 class="h2">Of vraag het hem.</h2><p class="body-l">Hij zit in de hoek van deze pagina. Hij antwoordt op basis van deze pagina, en zegt het als iets er niet op staat.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>Op welk model draait hij?</summary><p>Claude Haiku 4.5 via de Anthropic API, met tool use en streaming. Het model schrijft de tekst; de server dwingt de regels af.</p></details>
+      <details class="qa"><summary>Waar draait hij, en wat wordt er opgeslagen?</summary><p>Vercel-functies in Frankfurt. Gesprekken worden niet gelogd: de server houdt aantallen bij, geen inhoud, behalve het gesprek dat een bezoeker als verzoek meestuurt.</p></details>
+      <details class="qa"><summary>Kan hij ook iets anders doen dan sales?</summary><p>Ja. Klantenservice, een supportdesk, een doktersassistent. Dezelfde bouw, uw pagina's, uw regels, uw strikvragen.</p></details>
+      <details class="qa"><summary>Kan een bezoeker hem iemand anders laten mailen?</summary><p>Nee. Alleen naar adressen die de bezoeker zelf heeft ingetypt, teruggelezen en bevestigd. Alleen de site-eigenaar kan hem opdrachten geven.</p></details>
+      <details class="qa"><summary>Sluit hij deals?</summary><p>Nee, en dat is bewust. Prijsonderhandelingen, kortingen, contracten en klachten gaan altijd naar een mens.</p></details>
+      <details class="qa"><summary>Wie gebruikt hem nog meer?</summary><p>Nog niemand. Deze site is de eerste deployment, en de deployment die u het hardst kunt testen.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Lees de sheet. Lees de tests.</h2>
+  <div class="three">
+    <a class="card dl doc-download" href="../../images/project_six/agent-fritz-product-sheet.pdf" download aria-label="Download de productsheet als pdf"><span class="chip tag">PDF</span><h3>Productsheet</h3><p>Wat Fritz doet, de guardrails, de technische specificatie en hoe de prijzen werken.</p></a>
+    <a class="card dl doc-download" href="https://github.com/nicomeihuizen-byte/agent-fritz-guardrails" rel="noopener" aria-label="agent-fritz-guardrails"><span class="chip tag">GITHUB</span><h3>agent-fritz-guardrails</h3><p>De guardrails en de testomgeving, openbaar. Het deel dat bewijs is, niet het deel dat het product is.</p></a>
+    <div class="card dl"><span class="chip">STACK</span><div class="stack"><span class="chip">Claude Haiku 4.5</span><span class="chip">Anthropic API</span><span class="chip">SSE streaming</span><span class="chip">Vercel · Frankfurt</span><span class="chip">Upstash Redis</span><span class="chip">Telegram Bot API</span><span class="chip">Google Calendar + Meet</span><span class="chip">Proton Mail</span><span class="chip">GitHub Actions evals</span></div></div>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/your Fritz</p>
+        <h2>Zet een Fritz<br><span class="grad">op uw site.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>kantooruren</span> · <span data-office-reply>ma t/m vr, 10:00 tot 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <button type="button" class="btn btn-p btn-wide" data-fritz-ask="Wat komt er kijken bij een Fritz voor mijn eigen website?">Vraag Fritz naar Fritz <span aria-hidden="true">→</span></button>
+        <a href="second-audience.html" class="btn btn-g btn-wide">Begin met een gratis scan <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="image-lightbox" hidden>
+  <button type="button" class="image-lightbox-close" aria-label="Sluiten">×</button>
+  <img src="" alt="">
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai sinds 2026" width="1365" height="772" loading="lazy">
+      <p><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V4h10v17M14 9h6v12M2 21h20M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h1M16.5 17h1"/></svg>MB Meihuizen AI · registratienummer 308157412<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Laisvės al. 110, LT-44253 Kaunas<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+37052080293">+370 5 208 0293</a><br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>ma t/m vr, 10:00 tot 18:00, tijd in Kaunas</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../../terms.html">voorwaarden</a></li>
+        <li><a href="../credentials.html">gegevens</a></li>
+        <li><a href="../../status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign door Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../projects/scripts/project-lightbox.js" defer></script>
+<script src="../../scripts/home.js" defer></script>
+<script src="/ask/ask.js" defer></script>
+<script src="/scripts/rail.js" defer></script>
 </body>
 </html>

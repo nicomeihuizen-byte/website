@@ -503,6 +503,7 @@ def collect_alt_duplicates(alt_registry: dict[str, list[tuple[str, str]]]) -> li
 # question that would have caught this.
 
 IDENTIFIER_ALLOWLIST: dict[str, str] = {
+    "37052080293": "Company phone +370 5 208 0293 (tel: link), allocated 2026-10-15, supplied by Nico; a phone number, not a registration",
     "308157412": "Company code (įmonės kodas), MB Meihuizen AI, from the Lithuanian registration, supplied by Nico 2026-09-28",
     # "LT100012345678": "VAT certificate, MB Meihuizen AI, issued 2026-09-__",
 }

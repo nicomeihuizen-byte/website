@@ -1,13 +1,293 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<meta charset="utf-8">
-<title>meihuizen.ai, now in English</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
-<meta http-equiv="refresh" content="0; url=../../projects/ai-sales-deal-intelligence.html">
+<script src="../../scripts/consent.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five: KI-Deal-Management für kleine Vertriebsteams</title>
+<meta name="description" content="KI im Vertrieb für ein bis fünf Verkäufer: Five sagt Ihnen, welcher Deal still wird und warum. Kein CRM, gebaut von jemandem mit vierzehn Jahren Quote.">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/ai-sales-deal-intelligence.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html">
+<meta property="og:title" content="Five: KI-Deal-Management für kleine Vertriebsteams">
+<meta property="og:description" content="KI im Vertrieb für ein bis fünf Verkäufer: Five sagt Ihnen, welcher Deal still wird und warum. Kein CRM, gebaut von jemandem mit vierzehn Jahren Quote.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
+<meta property="og:url" content="https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Five: KI-Deal-Management für kleine Vertriebsteams">
+<meta name="twitter:description" content="KI im Vertrieb für ein bis fünf Verkäufer: Five sagt Ihnen, welcher Deal still wird und warum. Kein CRM, gebaut von jemandem mit vierzehn Jahren Quote.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_four/deal-management-workspace.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Five",
+  "description": "KI im Vertrieb für ein bis fünf Verkäufer: Five sagt Ihnen, welcher Deal still wird und warum. Kein CRM, gebaut von jemandem mit vierzehn Jahren Quote.",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai/de/"
+  },
+  "image": "https://www.meihuizen.ai/images/project_four/deal-management-workspace.png",
+  "keywords": "Sales Intelligence, Erkennung festgefahrener Deals, KI für Deal-Momentum, Structured Tool Use, Next.js, Supabase, Anthropic API",
+  "url": "https://www.meihuizen.ai/de/projects/ai-sales-deal-intelligence.html",
+  "datePublished": "2026-08-24T10:00:00+03:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://www.meihuizen.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projekte",
+      "item": "https://www.meihuizen.ai/builds.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Five",
+      "item": "https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html"
+    }
+  ]
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../styles/site.css">
+<script src="../../scripts/theme.js"></script>
+<link rel="stylesheet" href="/ask/ask.css">
+<link rel="stylesheet" href="/styles/rail.css">
 </head>
 <body>
-<p>meihuizen.ai is published in English and Lithuanian. This page now lives at <a href="../../projects/ai-sales-deal-intelligence.html">https://www.meihuizen.ai/projects/ai-sales-deal-intelligence.html</a>.</p>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai Startseite"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="../">start</a></li>
+        <li><a href="../builds.html" aria-current="page">projekte</a></li>
+        <li><a href="../about.html">über uns</a></li>
+        <li><a href="../credentials.html">nachweise</a></li>
+        <li><a href="../contact.html">kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Sprache der Website">
+        <a href="../../projects/ai-sales-deal-intelligence.html" lang="en" hreflang="en">EN</a>
+        <a href="../../nl/projects/ai-sales-deal-intelligence.html" lang="nl" hreflang="nl">NL</a>
+        <a href="ai-sales-deal-intelligence.html" lang="de" hreflang="de" aria-current="true">DE</a>
+        <a href="../../fr/projects/ai-sales-deal-intelligence.html" lang="fr" hreflang="fr">FR</a>
+        <a href="../../it/projects/ai-sales-deal-intelligence.html" lang="it" hreflang="it">IT</a>
+        <a href="../../es/projects/ai-sales-deal-intelligence.html" lang="es" hreflang="es">ES</a>
+        <a href="../../pt/projects/ai-sales-deal-intelligence.html" lang="pt" hreflang="pt">PT</a>
+        <a href="../../lt/projects/ai-sales-deal-intelligence.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>Bürozeiten</span> · <span data-office-reply>Mo. bis Fr., 10:00 bis 18:00 Uhr</span></span>
+    <span aria-hidden="true">│</span>
+    <span>projekte › <b>Five</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">KI / SaaS</span><span class="chip chip-ok">ab 39 € / Monat</span></div>
+      <h1 class="h1 h1-p">Fünf Deals pro Woche. <span class="grad">Sie merken, wann einer still wird.</span></h1>
+      <p class="lead lead-p">KI-Deal-Management für ein bis fünf Verkäufer, gebaut von jemandem, der vierzehn Jahre lang bei IBM, Oracle und Minitab Quote getragen hat. Betrieben als Ihre eigene Instanz in Frankfurt.</p>
+      <div class="btn-row">
+        <a href="https://sales-intel-rho.vercel.app/api/demo-login" class="btn btn-p" rel="noopener">Live-Demo öffnen <span aria-hidden="true">↗</span></a>
+        <a href="#pricing" class="btn btn-g">Preise</a>
+      </div>
+    </div>
+    <div class="demo" data-tabs>
+      <div class="demo-bar">
+        <span>five · diese Woche</span>
+        <div class="tabs" role="tablist" aria-label="Five in zwei Ansichten">
+          <button type="button" class="tab" role="tab" id="t-desk" aria-controls="p-desk" aria-selected="true">Ihre fünf</button>
+          <button type="button" class="tab" role="tab" id="t-verdict" aria-controls="p-verdict" aria-selected="false">Deal 4 analysieren</button>
+        </div>
+      </div>
+      <div class="panel" id="p-desk" role="tabpanel" aria-labelledby="t-desk">
+        <ol class="desk">
+          <li class="deal"><span class="n">01</span><div><b>Northwind Logistics</b><small>gestern · Preisgespräch, Referenzen angefragt</small></div><em>in Bewegung</em></li>
+          <li class="deal"><span class="n">02</span><div><b>Halden Medical</b><small>vor 3 Tagen · Demo für Dienstag gebucht</small></div><em>in Bewegung</em></li>
+          <li class="deal"><span class="n">03</span><div><b>Brackwater Institute</b><small>diese Woche · Rechtsabteilung prüft Konditionen</small></div><em>in Bewegung</em></li>
+          <li class="deal quiet"><span class="n">04</span><div><b>Vesta Foods</b><small>vor 23 Tagen · wartet auf Bestellung</small></div><em>still geworden</em></li>
+          <li class="deal"><span class="n">05</span><div><b>Kestrel Energy</b><small>vor 5 Tagen · zweiter Stakeholder dazugekommen</small></div><em>in Bewegung</em></li>
+        </ol>
+        <p class="panel-note">Beispielunternehmen</p>
+      </div>
+      <div class="panel verdict" id="p-verdict" role="tabpanel" aria-labelledby="t-verdict" hidden>
+        <p class="mono"><span class="term-live">▸</span> liest die Notizhistorie</p>
+        <p class="mono v-label">Urteil · festgefahren</p>
+        <blockquote>„Beide Kontakte haben ein positives Kaufsignal gegeben und wollen die Implementierung, aber der Deal hängt an einer administrativen Lücke: keine Gesellschaft, keine USt-IdNr., keine Firmennummer, also kann das lokale Büro keine Bestellung auslösen. Es gibt einen Plan, ein Vertriebler fliegt am 26. hin, aber das ist über drei Wochen entfernt, ohne Zwischenschritt.“</blockquote>
+        <small>ein echtes Urteil, anonymisiert · keine Zusammenfassung der Notizen</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0" aria-label="So funktioniert es">
+  <div class="three">
+    <div class="card stat-card"><div class="stat-n">5</div><h3>Fünf auswählen</h3><p>Alle, mit denen Sie je gesprochen haben, auf der einen Seite. Fünf auf dem Tisch, damit der Fokus bleibt.</p></div>
+    <div class="card stat-card"><div class="stat-n">1 Zeile</div><h3>Aufschreiben, was passiert ist</h3><p>Eine Zeile nach jedem Gespräch. Das ist die gesamte Eingabe und das Einzige, was von Ihnen verlangt wird.</p></div>
+    <div class="card stat-card"><div class="stat-n">warum</div><h3>Erfahren, was gerade stirbt</h3><p>Five liest die Lücken und die Formulierungen und nennt den Deal, der sich nicht mehr bewegt, und warum.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap method">
+    <div><p class="idx">~/overview</p><h2 class="h2">Ein CRM haben Sie schon.</h2><p class="body-l">Seien Sie ehrlich: Wann hat es zuletzt jemand gepflegt?</p></div>
+    <div>
+      <p class="vision-p">Five ist das nicht. Fünf Slots, damit der Fokus bleibt, und eine Zeile nach jedem Gespräch. Five liest den Verlauf und sagt Ihnen, welcher Deal sich nicht mehr bewegt und warum.</p>
+      <p class="vision-p cols-gap">Genau das macht ein guter Vertriebsleiter in einem Pipeline-Review, und genau das hatten die meisten Teams dieser Größe noch nie.</p>
+      <p class="claim"><b>Nico führt seine eigene Pipeline darin, täglich.</b> <span class="muted">Die Einzeilen-Notiz hat jemand entworfen, der es vierzehn Jahre lang gehasst hat, CRMs zu pflegen.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/how it differs</p><h2 class="h2">Bewusst weniger.</h2></div>
+      <p class="vision-p">Alles andere auf deren Listen haben sie, und Five hat es nicht. Forecasting, Marketing, Gebiete, ein App-Marktplatz. Reporting fehlt mit Absicht: Ihr Postgres, direkt aus Power BI und Excel gelesen, schlägt ein doppelt gebautes Dashboard.</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr-only">Verglichen nach</span></th><th scope="col" class="c-five">Five</th><th scope="col">Pipedrive</th><th scope="col">Salesforce</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">auf Ihrem Tisch</th><td class="c-five">Fünf Interessenten, gedeckelt</td><td>Alles, was Sie haben</td><td>Alles, was Sie haben</td></tr>
+          <tr><th scope="row">was Sie bekommen</th><td class="c-five">Ein Urteil zu einem Deal, in Worten, mit Begründung</td><td>Felder und eine Pipeline-Ansicht</td><td>Scores und Dashboards</td></tr>
+          <tr><th scope="row">was die KI kostet</th><td class="c-five">Inklusive, nichts pro Aktion</td><td>Im Lizenzpreis enthalten</td><td>Pro Aktion, in Credits</td></tr>
+          <tr><th scope="row">wo die Notizen liegen</th><td class="c-five">In Ihrer eigenen Datenbank, in Frankfurt</td><td>In deren Cloud</td><td>In deren Cloud</td></tr>
+          <tr><th scope="row">Daten herausholen</th><td class="c-five">Ihr eigenes Postgres. Power BI und Excel verbinden sich direkt damit</td><td>Exporte und eine API</td><td>Exporte und eine API</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two">
+    <div class="card"><p class="label">Ihre Daten</p><h3 class="h3">Ihre eigene Datenbank, in Frankfurt.</h3><p>Row Level Security auf der geteilten Instanz; Ihr eigenes Postgres bei Team und Private. Stockholm auf Anfrage für Kunden aus Skandinavien.</p></div>
+    <div class="card"><p class="label">Stack</p><div class="stack"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Row Level Security</span><span class="chip">Anthropic API</span><span class="chip">Structured tool use</span><span class="chip">Tailwind CSS</span></div></div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/pricing</p><h2 class="h2">Drei Pläne. Bei fünf ist Schluss.</h2></div>
+      <p class="vision-p">Keine Sammelansichten, keine Deal-Zuständigkeiten, keine Gebiete: Ein Tool, das auf fünf gedeckelt ist, hat nicht so zu tun, als würde es eine ganze Vertriebsetage steuern. Größer als das? Fragen Sie trotzdem, es gibt individuelle Optionen.</p>
+    </div>
+    <div class="routes r3">
+      <div class="route"><h3>Solo</h3><div class="big">39 € <small>/ Monat</small></div><div class="price">ein Verkäufer</div><hr><ul class="ticks"><li>Geteilte Instanz in Frankfurt, Ihre Datensätze auf Datenbankebene isoliert</li><li>Unbegrenzte Analysen und Entwürfe</li><li>Hell und dunkel als Standard</li></ul></div>
+      <div class="route key"><span class="flag">eigene Datenbank</span><h3>Team</h3><div class="big">129 € <small>/ Monat</small></div><div class="price">bis zu drei Verkäufer</div><hr><ul class="ticks"><li>Ihre eigene Datenbank, auf geteilter Infrastruktur in Frankfurt</li><li>Unbegrenzte Analysen und Entwürfe</li><li>Alles aus Solo</li><li>Lesender SQL-Zugriff für Power BI und Excel</li></ul></div>
+      <div class="route"><h3>Private</h3><div class="big">299 € <small>/ Monat</small></div><div class="price">bis zu fünf Verkäufer</div><hr><ul class="ticks"><li>Ihre eigene Instanz und Datenbank, auf Ihrer eigenen Subdomain</li><li>Unbegrenzte Analysen, oder Sie bringen Ihren eigenen Modell-Key mit</li><li>Unterschriebener Auftragsverarbeitungsvertrag</li><li>Ihre Marke auf Anfrage</li><li>Lesender SQL-Zugriff für Power BI und Excel</li></ul></div>
+    </div>
+    <p class="fine">Preise zzgl. MwSt. Bei jährlicher Zahlung zwölf Monate zum Preis von zehn. Dreißig Tage zum Testen, denn die Auswertung braucht erst eine Notizhistorie, bevor sie etwas Sinnvolles zu sagen hat.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap method">
+    <div><p class="idx">~/questions buyers ask</p><h2 class="h2">Von Verkäufern gefragt.</h2><p class="body-l">Fritz kennt diese Seite auch, falls Sie lieber ihn fragen.</p></div>
+    <div class="faq">
+      <details class="qa"><summary>Warum nur fünf?</summary><p>Damit der Fokus bleibt. Alle, mit denen Sie je gesprochen haben, bleiben auf der einen Seite; fünf liegen auf dem Tisch.</p></details>
+      <details class="qa"><summary>Was muss ich eintippen?</summary><p>Eine Zeile nach jedem Gespräch, was passiert ist. Das ist die gesamte Eingabe.</p></details>
+      <details class="qa"><summary>Kostet die KI extra?</summary><p>Nein. Analysen und Entwürfe sind unbegrenzt und inklusive. Bei Private können Sie Ihren eigenen Modell-Key mitbringen.</p></details>
+      <details class="qa"><summary>Wo liegen meine Daten, und komme ich wieder an sie heran?</summary><p>Standardmäßig in Frankfurt, Stockholm auf Anfrage. Bei Team und Private ist es Ihr eigenes Postgres, und Power BI und Excel verbinden sich direkt damit.</p></details>
+      <details class="qa"><summary>Wir haben mehr als fünf Verkäufer.</summary><p>Die Pläne enden mit Absicht bei fünf. Fragen Sie trotzdem: Es gibt individuelle Optionen.</p></details>
+      <details class="qa"><summary>Kann ich es erst testen?</summary><p>Dreißig Tage. Die Auswertung braucht erst eine Notizhistorie, bevor sie etwas Sinnvolles zu sagen hat.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Erst ausprobieren, dann darüber lesen.</h2>
+  <div class="two">
+    <a class="card dl doc-download" href="https://sales-intel-rho.vercel.app/api/demo-login" rel="noopener" aria-label="Live-Demo"><span class="chip tag chip-ok">LIVE</span><h3>Live-Demo</h3><p>Öffnet sich in einem Unternehmen mit einem Jahr Notizen im Rücken. Klicken Sie auf Analyze und lesen Sie, was es über den Deal sagt.</p></a>
+    <a class="card dl doc-download" href="../../images/project_four/five-deal-management-product-sheet.pdf" download aria-label="Produktblatt als PDF herunterladen"><span class="chip tag">PDF</span><h3>Produktblatt</h3><p>Vier Seiten: was es tut, wie die Analyse funktioniert, die technische Spezifikation und die Preise.</p></a>
+  </div>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/your instance</p>
+        <h2>Welcher Ihrer Deals<br><span class="grad">ist still geworden?</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> in Kaunas · <span data-office-state>Bürozeiten</span> · <span data-office-reply>Mo. bis Fr., 10:00 bis 18:00 Uhr</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html#write" class="btn btn-p btn-wide">Mit Nico über eine Instanz sprechen <span aria-hidden="true">→</span></a>
+        <a href="https://sales-intel-rho.vercel.app/api/demo-login" class="btn btn-g btn-wide" rel="noopener">Live-Demo öffnen <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai seit 2026" width="1365" height="772" loading="lazy">
+      <p><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V4h10v17M14 9h6v12M2 21h20M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h1M16.5 17h1"/></svg>MB Meihuizen AI · Unternehmenscode 308157412<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Laisvės al. 110, LT-44253 Kaunas<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+37052080293">+370 5 208 0293</a><br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mo. bis Fr., 10:00 bis 18:00 Uhr Ortszeit Kaunas</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../../terms.html">AGB</a></li>
+        <li><a href="../credentials.html">nachweise</a></li>
+        <li><a href="../../status.html">status</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Webdesign von Nico &amp; Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/home.js" defer></script>
+<script src="/ask/ask.js" defer></script>
+<script src="/scripts/rail.js" defer></script>
 </body>
 </html>

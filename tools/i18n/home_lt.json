@@ -1,0 +1,35 @@
+{
+  "W": {
+    "today": "atsakome šiandien", "next": "atsakysime kitą darbo dieną", "from10": "atsakysime nuo 10:00",
+    "tomorrow": "atsakysime rytoj nuo 10:00", "monday": "atsakysime pirmadienį nuo 10:00",
+    "open": "dirbame", "closed": "nedirbame",
+    "online": "veikia", "slow": "lėtai", "down": "neveikia",
+    "lights": { "green": "veikia", "amber": "sutrikimai", "red": "neveikia", "unknown": "būsena" },
+    "here": "prisijungęs", "away": "neprisijungęs",
+    "green": "viskas veikia →",
+    "degraded_one": "sutrikimų: 1 →", "degraded_many": "sutrikimų: {n} →",
+    "nicoFrom": "nico · iš telefono", "source": "šaltinis: ", "where": "kur tai parašyta?", "reading": "fritz skaito",
+    "ask": "Labas, Fritz, kuo gali man padėti?",
+    "running": "vykdoma {a} iš {b}"
+  },
+  "chat": {
+    "q1": "Ar tai tikra įmonė?",
+    "a1": "Taip. MB Meihuizen AI, įmonės kodas 308157412, Lietuvos juridinis asmuo. Galite patys patikrinti Registrų centre.",
+    "q2": "Kiek kainuotų Fritz mūsų svetainei?",
+    "q3": "Ar galiu pakalbėti tiesiogiai su Nico?",
+    "live1": "Jis darbe. Pakviesti jį į šį pokalbį?",
+    "live2": "taip, prašau",
+    "live3": "✓ Nico telefonas skamba",
+    "live4": "Labas, čia Nico. Mielai aptarsiu kainas. @Fritz, pasidalink Fritz produkto aprašu.",
+    "live5": "✓ produkto aprašas pasidalintas · žodis vėl Nico",
+    "later1": "✓ užklausa kartu su šiuo pokalbiu išsiųsta į Nico telefoną"
+  },
+  "closed": "Kaune dabar {time}, Nico nedirba. Jūsų klausimą ir šį pokalbį siunčiu į jo telefoną; {reply}.",
+  "afterHours": "ne darbo laikas",
+  "price": {
+    "base": "Kaina nustatoma kiekvienam atvejui: Fritz kuriamas pagal užsakymą, tai ne apvalkalas. ",
+    "none": "Perduoti tai Nico, kad jis jums paskambintų?",
+    "open": "Kaune dabar {time} ir Nico darbe. Perduoti tai jam, kad jis jums paskambintų?",
+    "closed": "Kaune dabar {time}, Nico nedirba. Galiu perduoti dabar; {reply}."
+  }
+}
