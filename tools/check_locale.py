@@ -12,7 +12,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import mk_locales as mk
 
 FREE = {'alt', 'title', 'aria-label', 'content', 'placeholder', 'aria-description',
-        'data-label', 'data-tip', 'data-q', 'data-ask', 'value', 'data-fritz-ask', 'data-msg-required', 'data-msg-sending', 'data-msg-success', 'data-msg-error', 'data-msg-network-error'}
+        'data-label', 'data-tip', 'data-q', 'data-ask', 'value', 'data-fritz-ask', 'data-msg-required', 'data-msg-sending', 'data-msg-success', 'data-msg-error', 'data-msg-network-error',
+        'data-tpl-next', 'data-tpl-now', 'data-tpl-done', 'data-l-now', 'data-l-next', 'data-l-later', 'data-l-done'}
 
 
 class P(HTMLParser):

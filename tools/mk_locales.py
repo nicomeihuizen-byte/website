@@ -14,7 +14,7 @@ SITE = 'https://www.meihuizen.ai/'
 DOCS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs')
 PAGES = ['index.html', 'about.html', 'builds.html', 'credentials.html', 'contact.html',
          'projects/second-audience.html', 'projects/agent-fritz.html',
-         'projects/ai-sales-deal-intelligence.html']
+         'projects/ai-sales-deal-intelligence.html', 'tour.html']
 NEW = ['nl', 'de', 'fr', 'it', 'es', 'pt']
 ALL = ['en', 'nl', 'de', 'fr', 'it', 'es', 'pt', 'lt']
 LANG_LABEL = {'en': 'Site language', 'lt': 'Svetainės kalba', 'nl': 'Taal van de site',
@@ -145,8 +145,8 @@ def fix_meta(html, lang, page):
     return html
 
 
-def build(lang):
-    for page in PAGES:
+def build(lang, pages=None):
+    for page in (pages or PAGES):
         with open(os.path.join(DOCS, page), encoding='utf-8') as f:
             html = f.read()
         html = rewrite_body_links(html, lang, page)
@@ -176,6 +176,9 @@ if __name__ == '__main__':
     langs = sys.argv[1:] or NEW
     if langs == ['originals']:
         refresh_originals()
+    elif langs and langs[0] == 'page':
+        for l in langs[2:] or NEW:
+            build(l, [langs[1]])
     else:
         for l in langs:
             build(l)

@@ -286,6 +286,19 @@ Target terms: agence IA, agents IA sur mesure, chatbot IA commercial, agent comm
 
 ---
 
+## All languages: tour page translated, tour cities as location markers (17 Oct 2026, commit "Tour page in all 8 languages, tour cities as location markers")
+
+- tour.html now exists in NL, DE, FR, IT, ES, PT and LT, with hreflang between all 8 and its own sitemap entries. The nav "tour" link on every page now points to that language's own tour page.
+- **Location markers:**
+  - Each language's tour title and description lead with that country's leg cities and months: DE "Berlin, Nov./Dez. 2027: KI-Agentur auf Tour", IT "Milano e Roma, febbraio e marzo 2027", ES "Barcelona y Madrid, abril y mayo", FR "Lyon, Paris, juin et juillet 2027", PT "Porto e Lisboa, setembro e outubro de 2027", LT "Vilnius ir Kaunas, 2027 m. lapkritis ir gruodis". NL (no Dutch stop) leads with "Tour 2027: van Milano tot Kaunas".
+  - Tour structured data: spatialCoverage lists all 11 cities as City with address (locality, country) and geo coordinates, plus temporalCoverage 2027-02-01/2027-12-31.
+  - Home structured data (all 8 languages): areaServed adds the 11 tour cities, each contained in its country.
+  - City names stay endonyms everywhere (Milano, Roma, Lisboa), because they are what locals search.
+- **What to measure:** per country, queries of the form category term + leg city, and impressions on /<lang>/tour.html, starting about two months before each leg.
+- **Not used:** geo meta tags (geo.region, geo.placename); Google ignores them.
+
+---
+
 ## Next human passes (to add here)
 
 NL and LT: competitor sites to be supplied by Nico. Until then NL is the agent-only comparison group (LT had an agent SEO retune only).
