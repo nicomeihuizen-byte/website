@@ -1051,6 +1051,35 @@
     // The light refreshes every minute while the window is open, like status.html.
     loadLight(false);
     setInterval(function () { if (state.open) { loadLight(true); } }, 60000);
+    // A tour stop: [data-fritz-stop] opens Fritz with a scripted exchange,
+    // no server round trip. The visitor's line, Fritz's answer and the input
+    // hint are templates on the nearest [data-stop-say] ancestor, worded per
+    // language on the page; the button gives {city} and {when}. Both lines go
+    // into the history, so the visitor's reply reaches the server in context
+    // and Fritz hands the request to Nico like any other lead.
+    document.addEventListener('click', function (e) {
+      const stop = e.target.closest && e.target.closest('[data-fritz-stop]');
+      if (!stop) { return; }
+      const box = stop.closest('[data-stop-say]');
+      if (!box) { return; }
+      e.preventDefault();
+      const v = { city: stop.getAttribute('data-fritz-stop') || '', when: stop.getAttribute('data-when') || '' };
+      const fill = function (tpl) { return (tpl || '').replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); };
+      setOpen(true);
+      if (busy || (state.live && state.live.floor !== 'fritz')) { return; }
+      suggest.hidden = true;
+      Array.prototype.forEach.call(log.querySelectorAll('.fritz-next'), function (n) { n.remove(); });
+      const userText = fill(box.getAttribute('data-stop-user'));
+      const botText = fill(box.getAttribute('data-stop-say'));
+      if (userText) { pushItem({ type: 'user', text: userText }); state.history.push({ role: 'user', content: userText }); }
+      pushItem({ type: 'bot', segs: [{ kind: 'text', text: botText }], sources: [], action: null, evidence: [], next: [] });
+      state.history.push({ role: 'assistant', content: botText });
+      while (state.history.length > MAX_HISTORY) { state.history.splice(0, 2); }
+      const hint = box.getAttribute('data-stop-hint');
+      if (hint) { input.placeholder = hint; }
+      save();
+      input.focus();
+    });
     // Anything on a page marked data-fritz-ask opens Fritz and asks that
     // question: the project page uses it for its "try it" buttons.
     document.addEventListener('click', function (e) {

@@ -136,15 +136,25 @@
     <button type="button" class="card card-dark" style="text-align:left;font:inherit;cursor:pointer;display:flex;flex-direction:column" data-fritz-ask="Olá Fritz, tenho uma pergunta sobre a meihuizen.ai">
       <span style="display:flex;justify-content:space-between;align-items:flex-start;width:100%"><span class="mono" style="font-size:12px;color:var(--t-blue)">01 · imediato</span><img src="../images/main/hero-van-dog-walk.png" alt="O Fritz, o cão" width="64" height="53" loading="lazy" style="width:64px;margin-top:-8px"></span>
       <span class="h3" style="display:block;margin-top:10px">Pergunte ao Fritz</span>
-      <span style="color:var(--t-muted);font-size:15px;flex:1">Responde com base neste site, a qualquer hora. Quando a coisa fica séria, passa o seu pedido para o telemóvel do Nico, com a conversa completa.</span>
+      <span style="color:var(--t-muted);font-size:15px;flex:1">O Fritz propõe horários realmente livres na agenda do Nico, no seu fuso horário, até dez dias úteis à frente. Confirmados consigo, convite enviado.</span>
       <span class="mono" style="margin-top:18px;font-size:13px;color:var(--t-green)">abrir o chat →</span>
     </button>
-    <button type="button" class="card" style="text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;border-color:var(--accent)" data-fritz-ask="Marque-me uma chamada de 15 minutos com o Nico">
-      <span class="mono" style="font-size:12px;color:var(--accent2)">02 · 15 minutos</span>
-      <span class="h3" style="display:block;margin-top:10px">Marcar uma apresentação</span>
-      <span class="muted" style="font-size:15px;flex:1">O Fritz propõe horários realmente livres na agenda do Nico, no seu fuso horário, até dez dias úteis à frente. Confirmados consigo, convite enviado.</span>
-      <span class="mono" style="margin-top:18px;font-size:13px;color:var(--accent)">marcar com o Fritz →</span>
-    </button>
+    <div class="card stop-pick" style="display:flex;flex-direction:column;border-color:var(--accent)" data-stop-user="Gostaria de uma paragem em {city}." data-stop-say="Boa escolha. A carrinha está em {city} em {when}. Envie-me onde está (morada ou zona), as datas que lhe convêm, o seu nome e um email ou telefone, e passo já o pedido ao líder da banda." data-stop-hint="Morada ou zona, datas, nome, email ou telefone">
+      <span class="mono" style="font-size:12px;color:var(--accent2)">02 · em digressão</span>
+      <span class="h3" style="display:block;margin-top:10px">Peça uma paragem</span>
+      <span class="muted" style="font-size:15px">Escolha uma cidade e o Fritz regista o pedido: onde, quando e como o contactar.</span>
+      <details class="stop-roll">
+        <summary>as datas de 2027</summary>
+        <ul class="stop-list">
+          <li><span class="stop-m">fev · mar</span><button type="button" data-fritz-stop="Milano" data-when="fevereiro ou março de 2027">Milano</button><button type="button" data-fritz-stop="Roma" data-when="fevereiro ou março de 2027">Roma</button></li>
+          <li><span class="stop-m">abr · mai</span><button type="button" data-fritz-stop="Barcelona" data-when="abril ou maio de 2027">Barcelona</button><button type="button" data-fritz-stop="Madrid" data-when="abril ou maio de 2027">Madrid</button></li>
+          <li><span class="stop-m">jun · jul</span><button type="button" data-fritz-stop="Lyon" data-when="junho ou julho de 2027">Lyon</button><button type="button" data-fritz-stop="Paris" data-when="junho ou julho de 2027">Paris</button></li>
+          <li><span class="stop-m">set · out</span><button type="button" data-fritz-stop="Porto" data-when="setembro ou outubro de 2027">Porto</button><button type="button" data-fritz-stop="Lisboa" data-when="setembro ou outubro de 2027">Lisboa</button></li>
+          <li><span class="stop-m">nov · dez</span><button type="button" data-fritz-stop="Berlin" data-when="novembro ou dezembro de 2027">Berlin</button><button type="button" data-fritz-stop="Vilnius" data-when="novembro ou dezembro de 2027">Vilnius</button><button type="button" data-fritz-stop="Kaunas" data-when="novembro ou dezembro de 2027">Kaunas</button></li>
+        </ul>
+      </details>
+      <a class="mono" href="tour.html" style="margin-top:auto;padding-top:18px;font-size:13px;color:var(--accent)">ver a digressão →</a>
+    </div>
     <a href="#write" class="card" style="display:flex;flex-direction:column">
       <span class="mono" style="font-size:12px;color:var(--accent2)">03 · por escrito</span>
       <span class="h3" style="display:block;margin-top:10px">Enviar uma mensagem</span>
