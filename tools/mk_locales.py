@@ -14,7 +14,9 @@ SITE = 'https://www.meihuizen.ai/'
 DOCS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs')
 PAGES = ['index.html', 'about.html', 'builds.html', 'credentials.html', 'contact.html',
          'projects/second-audience.html', 'projects/agent-fritz.html',
-         'projects/ai-sales-deal-intelligence.html', 'tour.html']
+         'projects/ai-sales-deal-intelligence.html', 'tour.html',
+         'projects/off-grid-ai-homestead.html',
+         'projects/second-audience-cases.html']
 NEW = ['nl', 'de', 'fr', 'it', 'es', 'pt']
 ALL = ['en', 'nl', 'de', 'fr', 'it', 'es', 'pt', 'lt']
 LANG_LABEL = {'en': 'Site language', 'lt': 'Svetainės kalba', 'nl': 'Taal van de site',

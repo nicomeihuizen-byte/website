@@ -1,13 +1,382 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>meihuizen.ai, now in English</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
-<meta http-equiv="refresh" content="0; url=../../projects/off-grid-ai-homestead.html">
+<script src="../../scripts/consent.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Granja autosuficiente con IA | meihuizen.ai</title>
+<meta name="description" content="Granja autosuficiente con IA en dos parcelas a 2256 km: Prora, Báltico alemán, en verano; Castelo Branco, Portugal, en invierno. Nodo solar Pico.">
+<meta name="author" content="Nico Meihuizen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/projects/off-grid-ai-homestead.html">
+<link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/projects/off-grid-ai-homestead.html">
+<meta property="og:title" content="Granja autosuficiente con IA | meihuizen.ai">
+<meta property="og:description" content="Granja autosuficiente con IA en dos parcelas a 2256 km: Prora, Báltico alemán, en verano; Castelo Branco, Portugal, en invierno. Nodo solar Pico.">
+<meta property="og:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
+<meta property="og:url" content="https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Granja autosuficiente con IA | meihuizen.ai">
+<meta name="twitter:description" content="Granja autosuficiente con IA en dos parcelas a 2256 km: Prora, Báltico alemán, en verano; Castelo Branco, Portugal, en invierno. Nodo solar Pico.">
+<meta name="twitter:image" content="https://www.meihuizen.ai/images/project_two/one-acre-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "One Acre, Zero Dependency",
+  "description": "Agricultura autosuficiente y guiada por IA en dos parcelas estacionales a 2256 km de distancia, Prora en la costa báltica alemana y Castelo Branco en el centro de Portugal: un nodo de campo Pico 2 W alimentado por energía solar, una pila de Python sobre registros de estaciones del DWD y el reanálisis ERA5-Land, un motor del calendario Thun construido desde los principios básicos y un planificador con LLM local.",
+  "author": {
+    "@type": "Person",
+    "name": "Nico Meihuizen",
+    "url": "https://www.meihuizen.ai"
+  },
+  "image": "https://www.meihuizen.ai/images/project_two/one-acre-og.png",
+  "keywords": "granja autosuficiente con IA, agricultura off-grid con IA, nodo de campo Pico 2 W, previsión solar con LSTM, planificador con LLM local, calendario biodinámico Thun, DWD Climate Data Center, ERA5-Land",
+  "url": "https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html",
+  "sameAs": "https://github.com/nicomeihuizen-byte/AI-Homestead",
+  "datePublished": "2026-01-01T10:00:00+02:00",
+  "dateModified": "2026-10-02T10:00:00+03:00"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.meihuizen.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proyectos",
+      "item": "https://www.meihuizen.ai/builds.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "One Acre, Zero Dependency",
+      "item": "https://www.meihuizen.ai/es/projects/off-grid-ai-homestead.html"
+    }
+  ]
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://website-contact-function-4efp.vercel.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self';">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E121A">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../styles/site.css">
+<script src="../../scripts/theme.js"></script>
+<link rel="stylesheet" href="/ask/ask.css">
+<link rel="stylesheet" href="/styles/rail.css">
 </head>
 <body>
-<p>meihuizen.ai is published in English and Lithuanian. This page now lives at <a href="../../projects/off-grid-ai-homestead.html">https://www.meihuizen.ai/projects/off-grid-ai-homestead.html</a>.</p>
+<a class="skip" href="#main">Ir al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="meihuizen.ai inicio"><span class="brand-dot" aria-hidden="true"></span>meihuizen.ai</a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="../">inicio</a></li>
+        <li><a href="../builds.html" aria-current="page">proyectos</a></li>
+        <li><a href="../about.html">nosotros</a></li>
+        <li><a href="../credentials.html">credenciales</a></li>
+        <li><a href="../tour.html">gira</a></li>
+        <li><a href="../contact.html">contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label="Idioma del sitio">
+        <a href="../../projects/off-grid-ai-homestead.html" lang="en" hreflang="en">EN</a>
+        <a href="../../nl/projects/off-grid-ai-homestead.html" lang="nl" hreflang="nl">NL</a>
+        <a href="../../de/projects/off-grid-ai-homestead.html" lang="de" hreflang="de">DE</a>
+        <a href="../../fr/projects/off-grid-ai-homestead.html" lang="fr" hreflang="fr">FR</a>
+        <a href="../../it/projects/off-grid-ai-homestead.html" lang="it" hreflang="it">IT</a>
+        <a href="off-grid-ai-homestead.html" lang="es" hreflang="es" aria-current="true">ES</a>
+        <a href="../../pt/projects/off-grid-ai-homestead.html" lang="pt" hreflang="pt">PT</a>
+        <a href="../../lt/projects/off-grid-ai-homestead.html" lang="lt" hreflang="lt">LT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot dot-office pulse" aria-hidden="true"></span> <b>Kaunas <span data-office-time>--:--</span></b> · <span data-office-state>horario de oficina</span> · <span data-office-reply>lun. a vie., de 10:00 a 18:00</span></span>
+    <span aria-hidden="true">│</span>
+    <span>proyectos › <b>One Acre, Zero Dependency</b></span>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-chips"><span class="chip">IA / hardware</span><span class="chip chip-warn">fase 0 · el plan está hecho, la granja todavía no</span></div>
+      <h1 class="h1 h1-p">One Acre, <span class="grad">Zero Dependency.</span></h1>
+      <p class="lead lead-p">Una granja autosuficiente guiada por IA en dos parcelas a 2256 km de distancia: Prora en verano, Castelo Branco en invierno. Una sola pregunta: ¿qué parte de las decisiones diarias de una pequeña granja puede asumir una IA de verdad desconectada de la red, del sensor al planificador?</p>
+      <div class="btn-row">
+        <a href="https://github.com/nicomeihuizen-byte/AI-Homestead" class="btn btn-p" rel="noopener">Abrir el repositorio <span aria-hidden="true">→</span></a>
+        <a href="../../images/project_two/one-acre-brief.pdf" class="btn btn-g" download>Resumen del proyecto (PDF)</a>
+      </div>
+    </div>
+    <div>
+      <figure class="project-figure"><a href="../../images/project_two/repo/architecture.svg"><img src="../../images/project_two/repo/architecture.svg" alt="Arquitectura del sistema: un nodo de campo Pico 2 W envía lecturas por BLE o LoRa a una pila de Python en un portátil que ingiere, almacena, modela y planifica" width="940" height="520"></a><figcaption>Del sensor al planificador. El almacenamiento es la costura.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section pt0" aria-label="Cómo funciona">
+  <div class="three">
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa1t">
+          <title id="oa1t">Dos parcelas que cubren mitades opuestas del año, de modo que una siempre está produciendo</title>
+          <g fill="#565b6e" opacity="0.35">
+          <rect x="30" y="96" width="340" height="44" rx="6"/>
+          <rect x="30" y="164" width="340" height="44" rx="6"/>
+          </g>
+          <rect x="114" y="96" width="200" height="44" rx="6" fill="#5fbf8e"/>
+          <rect x="30" y="164" width="112" height="44" rx="6" fill="#5fa8d3"/>
+          <rect x="286" y="164" width="84" height="44" rx="6" fill="#5fa8d3"/>
+          <g fill="#565b6e">
+          <circle cx="52" cy="74" r="4"/><circle cx="110" cy="74" r="4"/><circle cx="168" cy="74" r="4"/>
+          <circle cx="226" cy="74" r="4"/><circle cx="284" cy="74" r="4"/><circle cx="342" cy="74" r="4"/>
+          </g>
+          <path d="M30 60 H370" stroke="#565b6e" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <g fill="#8b90a3" opacity="0.75">
+          <rect x="30" y="238" width="10" height="10" rx="2"/>
+          <rect x="30" y="262" width="10" height="10" rx="2"/>
+          </g>
+          <rect x="30" y="238" width="10" height="10" rx="2" fill="#5fbf8e"/>
+          <rect x="30" y="262" width="10" height="10" rx="2" fill="#5fa8d3"/>
+          <g fill="#565b6e" opacity="0.55">
+          <rect x="50" y="241" width="86" height="5" rx="2.5"/>
+          <rect x="50" y="265" width="118" height="5" rx="2.5"/>
+          </g>
+          </svg><h3>Dos parcelas, una sola temporada</h3><p>Prora cubre el verano, Castelo Branco el invierno. Entre las dos no hay ni un mes sin nada creciendo.</p></div>
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa2t">
+          <title id="oa2t">Del sol al sensor, del sensor al portátil, del portátil al calendario, sin que nada salga de la finca</title>
+          <circle cx="58" cy="76" r="18" fill="none" stroke="#d9a441" stroke-width="2"/>
+          <g stroke="#d9a441" stroke-width="2" stroke-linecap="round">
+          <path d="M58 44 V52"/><path d="M58 100 V108"/><path d="M26 76 H34"/><path d="M82 76 H90"/>
+          </g>
+          <path d="M58 112 V140" stroke="#565b6e" stroke-width="2"/>
+          <rect x="26" y="146" width="64" height="52" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <g fill="#5fbf8e"><circle cx="46" cy="166" r="4"/><circle cx="70" cy="166" r="4"/></g>
+          <rect x="40" y="180" width="36" height="6" rx="3" fill="#8b90a3" opacity="0.7"/>
+          <g stroke="#5fbf8e" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M102 164 q10 -8 20 0"/><path d="M102 176 q10 -10 20 0"/><path d="M102 188 q10 -12 20 0"/>
+          </g>
+          <rect x="136" y="140" width="104" height="64" rx="8" fill="none" stroke="#5fbf8e" stroke-width="2"/>
+          <rect x="152" y="158" width="72" height="28" rx="5" fill="#5fbf8e" opacity="0.25"/>
+          <rect x="160" y="168" width="56" height="8" rx="4" fill="#5fbf8e"/>
+          <path d="M240 172 H268" stroke="#565b6e" stroke-width="2"/>
+          <path d="M260 165 L268 172 L260 179" stroke="#565b6e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#8b90a3">
+          <rect x="278" y="150" width="86" height="8" rx="4"/>
+          <rect x="278" y="168" width="66" height="8" rx="4"/>
+          <rect x="278" y="186" width="78" height="8" rx="4"/>
+          </g>
+          <path d="M188 232 V262" stroke="#565b6e" stroke-width="2" opacity="0.5"/>
+          <path d="M30 250 H370" stroke="#d9a441" stroke-width="2" stroke-dasharray="7 7" fill="none"/>
+          <g stroke="#d9a441" stroke-width="2.5" stroke-linecap="round">
+          <path d="M180 268 L196 284"/><path d="M196 268 L180 284"/>
+          </g>
+          </svg><h3>Nada sale de la finca</h3><p>Del sol al sensor, al portátil, al calendario. El modelo funciona en local, que es la única forma de que lo de "sin red" sobreviva a la primera factura.</p></div>
+<div class="card oa-draw"><svg class="fig" viewBox="0 0 400 300" role="img" aria-labelledby="oa3t">
+          <title id="oa3t">Tres propuestas de un modelo, filtradas por reglas: dos aceptadas y una rechazada</title>
+          <rect x="24" y="112" width="76" height="76" rx="10" fill="none" stroke="#5fa8d3" stroke-width="2"/>
+          <g fill="#5fa8d3" opacity="0.8">
+          <rect x="40" y="134" width="44" height="7" rx="3.5"/>
+          <rect x="40" y="147" width="32" height="7" rx="3.5"/>
+          <rect x="40" y="160" width="38" height="7" rx="3.5"/>
+          </g>
+          <g stroke="#565b6e" stroke-width="2" fill="none">
+          <path d="M100 150 H140 V78 H172"/>
+          <path d="M100 150 H172"/>
+          <path d="M100 150 H140 V222 H172"/>
+          </g>
+          <rect x="176" y="46" width="52" height="208" rx="10" fill="none" stroke="#2e6b52" stroke-width="2"/>
+          <g stroke="#2e6b52" stroke-width="1.5">
+          <path d="M176 108 H228"/><path d="M176 192 H228"/>
+          </g>
+          <g stroke="#565b6e" stroke-width="2" fill="none">
+          <path d="M232 78 H268"/><path d="M232 150 H268"/>
+          </g>
+          <g stroke="#d9a441" stroke-width="2.5" stroke-linecap="round">
+          <path d="M240 214 L254 228"/><path d="M254 214 L240 228"/>
+          </g>
+          <g fill="#5fbf8e">
+          <rect x="276" y="62" width="96" height="32" rx="7"/>
+          <rect x="276" y="134" width="96" height="32" rx="7"/>
+          </g>
+          <rect x="276" y="206" width="96" height="32" rx="7" fill="none" stroke="#d9a441" stroke-width="2" opacity="0.6"/>
+          </svg><h3>El modelo propone, Python dispone</h3><p>Cada sugerencia pasa por un conjunto de reglas deterministas antes de convertirse en tarea. Lo que no cumple las reglas se descarta, y el descarte queda registrado.</p></div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/what it does</p><h2 class="h2">Sensor, historial, calendario, modelo.</h2></div>
+      <div>
+        <p class="vision-p">Un módulo de campo alimentado por energía solar (Birdbox) recoge datos del suelo y del tiempo local. El archivo histórico de Open-Meteo aporta veinte años de meteorología regional. Eurostat aporta cifras regionales de rendimiento, y son gruesas: anuales, por hectárea, por región, no por bancal. El calendario Thun proporciona un calendario de siembra basado en la Luna, que este proyecto calcula correctamente y pone a prueba en lugar de darlo por bueno.</p>
+        <p class="vision-p">Los cálculos se hacen en Python. Un modelo local pone los resultados uno al lado del otro y propone qué cultivos dan el mejor rendimiento por plantación, cuándo sembrar y qué rotaciones funcionan en 4000 m&sup2;.</p>
+        <p class="vision-p">El objetivo: algo a lo que agricultores, aficionados al huerto y familias puedan agarrarse para cultivar en ecológico a cualquier escala, con técnica moderna y conceptos milenarios que protegen la tierra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/where</p><h2 class="h2">Dos parcelas, a 2256 km de distancia.</h2>
+    <p class="body-l">14,6 grados de latitud de diferencia. Se sigue la temporada de cultivo en lugar de luchar contra ella.</p>
+    <div class="two cols-gap">
+      <div><h3 class="h3">Prora <span class="chip">verano</span></h3><dl class="kv">
+        <dt>dónde</dt><dd>R&uuml;gen, costa báltica alemana</dd>
+        <dt>latitud</dt><dd>54,39 &deg;N</dd>
+        <dt>referencia</dt><dd>DWD Arkona, estación 00183, 33 km al norte</dd>
+        <dt>solsticio de invierno</dt><dd>7,0 h de luz, el sol culmina a 12,2 &deg;</dd>
+      </dl></div>
+      <div><h3 class="h3">Castelo Branco <span class="chip">invierno</span></h3><dl class="kv">
+        <dt>dónde</dt><dd>Centro de Portugal, interior</dd>
+        <dt>latitud</dt><dd>39,82 &deg;N</dd>
+        <dt>referencia</dt><dd>Serie larga del IPMA, más ERA5-Land</dd>
+        <dt>solsticio de invierno</dt><dd>9,2 h de luz, el sol culmina a 26,7 &deg;</dd>
+      </dl></div>
+    </div>
+    <p class="body-l cols-gap">Prora se apoya en DWD Arkona, con radiación medida desde 1947. Castelo Branco no tiene un historial abierto equivalente y se apoya en ERA5-Land. Esa asimetría no se disimula.</p>
+  </div>
+</section>
+
+<section class="section section-raised" aria-label="Compromisos">
+  <div class="wrap">
+    <p class="idx">~/commitments</p><h2 class="h2 mb28">Tres cosas que no se negocian.</h2>
+    <div class="three">
+      <div class="card stat-card"><div class="stat-n">01</div><h3>Sin red significa sin red.</h3><p>Ningún LLM en la nube en el ciclo diario.</p></div>
+      <div class="card stat-card"><div class="stat-n">02</div><h3>Cada cifra lleva su margen de error.</h3><p>Un sensor de 30 &euro; que declara &plusmn;0,3 de pH no tiene derecho a dar el pH con un decimal.</p></div>
+      <div class="card stat-card"><div class="stat-n">03</div><h3>El calendario es una hipótesis.</h3><p>El calendario biodinámico está a prueba, no es una regla de planificación.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/the field node</p><h2 class="h2">Una Pico, no una Pi.</h2>
+    <p class="body-l">Toque una imagen para verla a tamaño completo.</p>
+    <div class="gallery gallery-2 project-gallery">
+      <figure class="project-figure"><a href="../../images/project_two/repo/winter-sun.svg"><img src="../../images/project_two/repo/winter-sun.svg" alt="El sol del solsticio de invierno en las dos parcelas: Prora con 7,0 horas de luz y el sol culminando a 12,2 grados, Castelo Branco con 9,2 horas a 26,7 grados" width="900" height="340" loading="lazy"></a><figcaption>Prora tiene 7,0 horas de luz en el solsticio, con el sol a 12,2 grados. Para eso está dimensionado el nodo.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/power-budget.svg"><img src="../../images/project_two/repo/power-budget.svg" alt="Comparación de energía diaria: Pi siempre encendida 14,4 Wh, Pi por ciclos 2,4 Wh, Pico W por ciclos 0,16 Wh" width="900" height="360" loading="lazy"></a><figcaption>Una Pico que trabaja por ciclos consume unas sesenta veces menos que una Pi siempre encendida.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/birdbox-build.svg"><img src="../../images/project_two/repo/birdbox-build.svg" alt="Sección del nodo de campo: carcasa de pajarera sobre una caja IP66, respiradero y prensaestopas en la parte inferior, protector de radiación en un brazo, panel a 65 grados, sondas de suelo a 10 y 30 cm" width="940" height="620" loading="lazy"></a><figcaption>Dos modos de fallo acaban con el nodo antes que cualquier sensor: la condensación y la carga por debajo de cero.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/link-decision.svg"><img src="../../images/project_two/repo/link-decision.svg" alt="Elección del enlace según la distancia: BLE por debajo de 20 metros, en el límite de 20 a 50 metros, LoRa a partir de 50 metros" width="900" height="360" loading="lazy"></a><figcaption>Por debajo de 20 metros, BLE; por encima, LoRa. La capa de ingesta lo reduce a cambiar un solo módulo.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-raised">
+  <div class="wrap">
+    <p class="idx">~/the calendar</p><h2 class="h2">El calendario Thun, implementado con honestidad.</h2>
+    <p class="body-l">La evidencia no respalda el efecto trígono. Por eso el calendario se registra como covariable y se pone a prueba, nunca se usa como regla.</p>
+    <div class="gallery gallery-2 project-gallery">
+      <figure class="project-figure"><a href="../../images/project_two/repo/thun-wheel.svg"><img src="../../images/project_two/repo/thun-wheel.svg" alt="Gráfico circular del tiempo que la Luna pasa en cada constelación durante un mes sidéreo, coloreado por tipo de día Thun, con Ofiuco y los pasos por constelaciones no zodiacales marcados" width="940" height="724" loading="lazy"></a><figcaption>Calculado a partir de las efemérides en pasos de treinta minutos. Sidéreo, no tropical.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/sidereal-vs-tropical.svg"><img src="../../images/project_two/repo/sidereal-vs-tropical.svg" alt="Una banda de signos tropicales sobre una banda de constelaciones desplazada y desigual; la misma posición de la Luna es Géminis en el sistema tropical y Tauro en el cielo real" width="900" height="330" loading="lazy"></a><figcaption>Los signos tropicales están desplazados entre 24 y 25 grados respecto a las constelaciones reales. Si esto falla, falla cada tipo de día.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/thun-frequencies.svg"><img src="../../images/project_two/repo/thun-frequencies.svg" alt="Días del calendario 2027 por tipo: raíz 107, fruto 97, hoja 94, flor 67" width="900" height="340" loading="lazy"></a><figcaption>Los límites reales de la IAU son desiguales, así que 2027 sale con 107 días de raíz frente a 67 días de flor.</figcaption></figure>
+      <figure class="project-figure"><a href="../../images/project_two/repo/two-lunar-cycles.svg"><img src="../../images/project_two/repo/two-lunar-cycles.svg" alt="Dos ondas sinusoidales con periodos de 27,32 y 29,53 días que se van separando, de medio día en la primera cresta a 2,8 días en la segunda" width="900" height="380" loading="lazy"></a><figcaption>Ascendente y descendente es un ciclo de 27,3 días, totalmente distinto del creciente y menguante de 29,53.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="wrap">
+    <div class="two">
+      <div><p class="idx">~/models</p><h2 class="h2">El LLM propone, Python dispone.</h2></div>
+      <p class="vision-p">Cada cifra se calcula en Python probado. El modelo selecciona, prioriza y explica, y devuelve JSON validado contra un esquema. Lo que no cumple las reglas se descarta, y el descarte queda registrado. El objetivo: rendimiento por metro cuadrado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="idx">~/roadmap</p><h2 class="h2">Diez fases.</h2>
+    <div class="cols-gap"><figure class="project-figure"><a href="../../images/project_two/repo/roadmap.svg"><img src="../../images/project_two/repo/roadmap.svg" alt="Hoja de ruta de septiembre de 2026 a octubre de 2027 en diez fases" width="940" height="530" loading="lazy"></a><figcaption>De septiembre de 2026 a octubre de 2027. Cada fase tiene un criterio de terminado que se puede comprobar de verdad.</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="wrap section pt0">
+  <p class="idx">~/see the real thing</p><h2 class="h2 mb28">Lea el plan. Lea el código.</h2>
+  <div class="three">
+    <a class="card dl doc-download" href="https://github.com/nicomeihuizen-byte/AI-Homestead" rel="noopener" aria-label="AI-Homestead"><span class="chip tag">CÓDIGO</span><h3>AI-Homestead</h3><p>El repositorio. Plan de construcción, ADR, fuentes de datos y las figuras de esta página.</p></a>
+    <a class="card dl doc-download" href="../../images/project_two/one-acre-brief.pdf" download aria-label="Descargar el resumen del proyecto en PDF"><span class="chip tag">PDF</span><h3>Resumen del proyecto</h3><p>Un resumen breve. Las dos parcelas, los tres compromisos y lo que cada fuente de datos puede y no puede afirmar.</p></a>
+    <div class="card dl"><span class="chip">STACK</span><div class="stack"><span class="chip">Pico 2 W</span><span class="chip">MicroPython</span><span class="chip">Python 3.11</span><span class="chip">SQLite</span><span class="chip">skyfield</span><span class="chip">LSTM</span><span class="chip">Ollama</span><span class="chip">BLE / LoRa</span><span class="chip">DWD / IPMA</span><span class="chip">ERA5-Land</span></div></div>
+  </div>
+  <p class="fine">Código bajo licencia MIT. Datos meteorológicos del DWD (CC BY 4.0), el IPMA y Open-Meteo (CC-BY-4.0). Efemérides del JPL a través de skyfield. No se redistribuye ningún dato de calendario protegido por derechos de autor.</p>
+</section>
+
+<section id="cta" class="wrap section pt0">
+  <div class="cta">
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-row">
+      <div>
+        <p class="idx">~/next</p>
+        <h2>El mismo rigor,<br><span class="grad">su problema.</span></h2>
+        <p class="office"><span class="dot dot-office" aria-hidden="true"></span><span><span data-office-time>--:--</span> en Kaunas · <span data-office-state>horario de oficina</span> · <span data-office-reply>lun. a vie., de 10:00 a 18:00</span></span></p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contact.html" class="btn btn-p btn-wide">Empiece un proyecto <span aria-hidden="true">→</span></a>
+        <a href="../builds.html" class="btn btn-g btn-wide">Todos los proyectos <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="image-lightbox" hidden>
+  <button type="button" class="image-lightbox-close" aria-label="Cerrar">×</button>
+  <img src="" alt="">
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="../../images/main/digital-nomad-logo-meihuizen-transparent.png" alt="meihuizen.ai desde 2026" width="1365" height="772" loading="lazy">
+      <p><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V4h10v17M14 9h6v12M2 21h20M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h1M16.5 17h1"/></svg>MB Meihuizen AI · código de empresa 308157412<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Laisvės al. 110, LT-44253 Kaunas<br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+37052080293">+370 5 208 0293</a><br><svg class="fi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>lun. a vie., de 10:00 a 18:00, hora de Kaunas</p>
+    </div>
+    <div class="foot-links">
+      <ul>
+        <li><a href="../../terms.html">condiciones</a></li>
+        <li><a href="../credentials.html">credenciales</a></li>
+        <li><a href="../../status.html">estado</a></li>
+        <li><a href="https://github.com/nicomeihuizen-byte/" rel="me noopener">github</a></li>
+        <li><a href="https://www.linkedin.com/in/nico-meihuizen/" rel="me noopener">linkedin</a></li>
+      </ul>
+      <p class="foot-meta"><span class="credit"><svg class="credit-mark" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Diseño web de Nico y Claude</span><span aria-hidden="true">·</span><span>© 2026 meihuizen.ai</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../../projects/scripts/project-lightbox.js" defer></script>
+<script src="../../scripts/home.js" defer></script>
+<script src="/ask/ask.js" defer></script>
+<script src="/scripts/rail.js" defer></script>
 </body>
 </html>
