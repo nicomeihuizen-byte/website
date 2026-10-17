@@ -84,7 +84,7 @@
 .tour-next::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--t-amber);box-shadow:0 0 0 0 rgba(232,179,74,.6);animation:tour-ping 2s infinite}
 @keyframes tour-ping{0%{box-shadow:0 0 0 0 rgba(232,179,74,.55)}80%,100%{box-shadow:0 0 0 12px rgba(232,179,74,0)}}
 .tour-road{position:relative;height:320px;margin-top:20px}
-.tour-van{position:absolute;right:8%;bottom:34px;width:min(520px,72vw);height:auto;animation:van-in 2.6s cubic-bezier(.16,.84,.3,1) both,van-bob 1.1s ease-in-out 2.6s infinite}
+.tour-van{position:absolute;right:8%;bottom:34px;width:min(520px,72vw);height:auto;opacity:.6;animation:van-in 2.6s cubic-bezier(.16,.84,.3,1) both,van-bob 1.1s ease-in-out 2.6s infinite}
 @keyframes van-in{from{transform:translateX(70vw)}to{transform:translateX(0)}}
 @keyframes van-bob{0%,100%{translate:0 0}50%{translate:0 -2px}}
 .tour-sky{position:absolute;left:0;right:0;bottom:31px;height:262px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 50%,transparent 60%);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 50%,transparent 60%)}
@@ -219,7 +219,7 @@
     <span aria-hidden="true">│</span>
     <span><b>tournée</b></span>
     <span class="wide" aria-hidden="true">│</span>
-    <span class="wide">2027 · cinq étapes · onze villes</span>
+    <span class="wide">2027 · cinq étapes · dix villes</span>
   </div>
 </div>
 
@@ -231,7 +231,7 @@
     <div class="tour-head">
       <p class="idx">~/tour --year 2027</p>
       <h1 class="tour-title"><span class="k">meihuizen.ai présente</span><span class="b">La tournée</span><span class="b g">européenne 2027</span></h1>
-      <p class="tour-sub"><b>Un van. Un humain. Neuf agents. Un chien.</b> Onze villes dans six pays, deux mois par étape, et le bureau se gare devant votre porte.</p>
+      <p class="tour-sub"><b>Un van. Un humain. Neuf agents. Un chien.</b> Dix villes dans six pays, deux mois par étape, et le bureau se gare devant votre porte.</p>
       <div class="tour-actions">
         <a href="#dates" class="btn btn-p">Voir les dates <span aria-hidden="true">→</span></a>
       </div>
@@ -245,7 +245,7 @@
 </section>
 
 <section id="dates" class="wrap section">
-  <div class="section-head"><div><p class="idx">~/dates</p><h2 class="h2">Cinq étapes. Onze villes. <span class="grad">Un van.</span></h2></div></div>
+  <div class="section-head"><div><p class="idx">~/dates</p><h2 class="h2">Cinq étapes. Dix villes. <span class="grad">Un van.</span></h2></div></div>
   <p class="lead lead-wide">Comme tout groupe en tournée, sauf que le merch, c’est du logiciel qui marche. Chaque étape dure deux mois : le temps de se garer devant vos bureaux, pas juste de vous saluer depuis l’autoroute.</p>
 
   <ol class="legs" data-tour-legs data-stop-user="J’aimerais une étape à {city}." data-stop-say="Bon choix. Le groupe passe à {city} en {when}. Envoyez-moi où vous êtes (adresse ou secteur), les dates qui vous conviennent, votre nom et un e-mail ou un téléphone, et je transmets tout de suite au leader du groupe." data-stop-hint="Adresse ou secteur, dates, nom, e-mail ou téléphone" data-l-now="sur la route" data-l-next="prochaine date" data-l-later="annoncée" data-l-done="jouée">
@@ -276,8 +276,8 @@
     </li>
     <li class="leg" data-start="2027-11-01" data-end="2027-12-31">
       <div class="leg-when"><span class="leg-m">Nov. · Déc.</span><span class="leg-y">2027</span></div>
-      <div class="leg-where"><span class="leg-n">étape 05 · retour à la maison</span><span class="leg-cities">Berlin · Vilnius · Kaunas</span><span class="leg-country">Allemagne et Lituanie</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annoncée</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin, Vilnius ou Kaunas" data-when="novembre ou décembre 2027" data-stop-say="Bon choix. Le groupe passe à {city} en {when}. Quelle ville vous convient ? Envoyez-la-moi avec l’endroit où vous êtes (adresse ou secteur), les dates qui vous conviennent, votre nom et un e-mail ou un téléphone, et je transmets tout de suite au leader du groupe.">demander une étape <span aria-hidden="true">→</span></button></div>
+      <div class="leg-where"><span class="leg-n">étape 05 · retour à la maison</span><span class="leg-cities">Berlin · Vilnius</span><span class="leg-country">Allemagne et Lituanie</span></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annoncée</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin ou Vilnius" data-when="novembre ou décembre 2027" data-stop-say="Bon choix. Le groupe passe à {city} en {when}. Quelle ville vous convient ? Envoyez-la-moi avec l’endroit où vous êtes (adresse ou secteur), les dates qui vous conviennent, votre nom et un e-mail ou un téléphone, et je transmets tout de suite au leader du groupe.">demander une étape <span aria-hidden="true">→</span></button></div>
     </li>
   </ol>
   <p class="fine">Des mois, pas des jours. Les dates exactes par ville seront publiées ici, étape par étape. Entre les étapes, rien ne s’arrête : l’intro de 15 minutes, les réalisations et Fritz fonctionnent à distance, toute l’année.</p>
@@ -320,7 +320,7 @@
         <div class="route-stats">
           <div><b>9 300 km</b><span>à vol d’oiseau</span></div>
           <div><b>0</b><span>oiseau à bord</span></div>
-          <div><b>11</b><span>villes</span></div>
+          <div><b>10</b><span>villes</span></div>
           <div><b>6</b><span>pays</span></div>
         </div>
       </div>

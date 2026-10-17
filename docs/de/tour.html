@@ -84,7 +84,7 @@
 .tour-next::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--t-amber);box-shadow:0 0 0 0 rgba(232,179,74,.6);animation:tour-ping 2s infinite}
 @keyframes tour-ping{0%{box-shadow:0 0 0 0 rgba(232,179,74,.55)}80%,100%{box-shadow:0 0 0 12px rgba(232,179,74,0)}}
 .tour-road{position:relative;height:320px;margin-top:20px}
-.tour-van{position:absolute;right:8%;bottom:34px;width:min(520px,72vw);height:auto;animation:van-in 2.6s cubic-bezier(.16,.84,.3,1) both,van-bob 1.1s ease-in-out 2.6s infinite}
+.tour-van{position:absolute;right:8%;bottom:34px;width:min(520px,72vw);height:auto;opacity:.6;animation:van-in 2.6s cubic-bezier(.16,.84,.3,1) both,van-bob 1.1s ease-in-out 2.6s infinite}
 @keyframes van-in{from{transform:translateX(70vw)}to{transform:translateX(0)}}
 @keyframes van-bob{0%,100%{translate:0 0}50%{translate:0 -2px}}
 .tour-sky{position:absolute;left:0;right:0;bottom:31px;height:262px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 50%,transparent 60%);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 50%,transparent 60%)}
@@ -219,7 +219,7 @@
     <span aria-hidden="true">│</span>
     <span><b>tour</b></span>
     <span class="wide" aria-hidden="true">│</span>
-    <span class="wide">2027 · fünf Etappen · elf Städte</span>
+    <span class="wide">2027 · fünf Etappen · zehn Städte</span>
   </div>
 </div>
 
@@ -231,7 +231,7 @@
     <div class="tour-head">
       <p class="idx">~/tour --year 2027</p>
       <h1 class="tour-title"><span class="k">meihuizen.ai präsentiert</span><span class="b">Tour 2027</span><span class="b g">durch Europa</span></h1>
-      <p class="tour-sub"><b>Ein Van. Ein Mensch. Neun Agenten. Ein Hund.</b> Elf Städte in sechs Ländern, zwei Monate pro Etappe, und das Büro parkt vor Ihrer Tür.</p>
+      <p class="tour-sub"><b>Ein Van. Ein Mensch. Neun Agenten. Ein Hund.</b> Zehn Städte in sechs Ländern, zwei Monate pro Etappe, und das Büro parkt vor Ihrer Tür.</p>
       <div class="tour-actions">
         <a href="#dates" class="btn btn-p">Termine ansehen <span aria-hidden="true">→</span></a>
       </div>
@@ -245,7 +245,7 @@
 </section>
 
 <section id="dates" class="wrap section">
-  <div class="section-head"><div><p class="idx">~/dates</p><h2 class="h2">Fünf Etappen. Elf Städte. <span class="grad">Ein Van.</span></h2></div></div>
+  <div class="section-head"><div><p class="idx">~/dates</p><h2 class="h2">Fünf Etappen. Zehn Städte. <span class="grad">Ein Van.</span></h2></div></div>
   <p class="lead lead-wide">Wie jede Band auf Tour, nur ist das Merch funktionierende Software. Jede Etappe dauert zwei Monate: genug Zeit, um vor Ihrem Büro zu parken, statt nur von der Autobahn aus zu winken.</p>
 
   <ol class="legs" data-tour-legs data-stop-user="Ich hätte gern einen Tourstopp in {city}." data-stop-say="Gute Wahl. Die Band ist im {when} in {city}. Schicken Sie mir, wo Sie sind (Adresse oder Gegend), Ihre Wunschtermine, Ihren Namen und eine E-Mail oder Telefonnummer, dann gebe ich es sofort an den Frontmann weiter." data-stop-hint="Adresse oder Gegend, Termine, Name, E-Mail oder Telefon" data-l-now="jetzt auf Tour" data-l-next="als Nächstes" data-l-later="angekündigt" data-l-done="gespielt">
@@ -276,8 +276,8 @@
     </li>
     <li class="leg" data-start="2027-11-01" data-end="2027-12-31">
       <div class="leg-when"><span class="leg-m">Nov · Dez</span><span class="leg-y">2027</span></div>
-      <div class="leg-where"><span class="leg-n">Etappe 05 · Heimspiel</span><span class="leg-cities">Berlin · Vilnius · Kaunas</span><span class="leg-country">Deutschland und Litauen</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>angekündigt</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin, Vilnius oder Kaunas" data-when="November oder Dezember 2027" data-stop-say="Gute Wahl. Die Band ist im {when} in {city}. Welche Stadt soll es für Sie sein? Schicken Sie mir das, wo Sie sind (Adresse oder Gegend), Ihre Wunschtermine, Ihren Namen und eine E-Mail oder Telefonnummer, dann gebe ich es sofort an den Frontmann weiter.">Tourstopp anfragen <span aria-hidden="true">→</span></button></div>
+      <div class="leg-where"><span class="leg-n">Etappe 05 · Heimspiel</span><span class="leg-cities">Berlin · Vilnius</span><span class="leg-country">Deutschland und Litauen</span></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>angekündigt</span><button type="button" class="btn btn-p leg-req" data-fritz-stop="Berlin oder Vilnius" data-when="November oder Dezember 2027" data-stop-say="Gute Wahl. Die Band ist im {when} in {city}. Welche Stadt soll es für Sie sein? Schicken Sie mir das, wo Sie sind (Adresse oder Gegend), Ihre Wunschtermine, Ihren Namen und eine E-Mail oder Telefonnummer, dann gebe ich es sofort an den Frontmann weiter.">Tourstopp anfragen <span aria-hidden="true">→</span></button></div>
     </li>
   </ol>
   <p class="fine">Monate, keine Tage. Die genauen Tage pro Stadt stehen hier, Etappe für Etappe. Zwischen den Etappen steht nichts still: das 15-Minuten-Erstgespräch, die Projekte und Fritz laufen remote, das ganze Jahr.</p>
@@ -320,7 +320,7 @@
         <div class="route-stats">
           <div><b>9.300 km</b><span>Luftlinie</span></div>
           <div><b>0</b><span>davon geflogen</span></div>
-          <div><b>11</b><span>Städte</span></div>
+          <div><b>10</b><span>Städte</span></div>
           <div><b>6</b><span>Länder</span></div>
         </div>
       </div>
