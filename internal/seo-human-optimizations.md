@@ -7,16 +7,16 @@ Purpose: keep apart the changes that came from Nico's own competitor picks (huma
 - **Baseline window:** the 28 days before the merge of branch `translations-restore` to main. Note: for most of that window the NL/DE/FR/IT/ES/PT pages were noindex stubs, so the baseline for those languages is close to zero. Compare against the English pages over the same window as a control.
 - **Merge date:** ____ (fill in when the PR is merged). Then wait for Google to recrawl (URL Inspection, "Request indexing" on the 8 main pages per language speeds this up).
 - **Read-outs:** at 28 and 90 days after the merge, Search Console → Performance → Search results:
-  - Filter Country = Germany, Austria, Switzerland (for DE), Italy (for IT), Spain (for ES) and Portugal (for PT); filter Page contains `/de/` or `/it/`.
+  - Filter Country = Germany, Austria, Switzerland (for DE), Italy (for IT), Spain (for ES), Portugal (for PT) and France, Belgium (for FR); filter Page contains `/de/` or `/it/`.
   - Record impressions, clicks, CTR, average position per page.
   - Queries tab: check whether the target terms below show up, and which queries actually bring traffic.
-- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (FR, NL) over the same period.
+- **What counts as an effect of the human pass:** movement on the pages and terms listed below, compared with the agent-only pages (NL) over the same period.
 
-| read-out | date | DE impr. | DE clicks | IT impr. | IT clicks | ES impr. | ES clicks | PT impr. | PT clicks | notes |
-|---|---|---|---|---|---|---|---|---|---|---|
-| baseline (28 d before merge) | | | | | | | | | | |
-| +28 days | | | | | | | | | | |
-| +90 days | | | | | | | | | | |
+| read-out | date | DE impr. | DE clicks | IT impr. | IT clicks | ES impr. | ES clicks | PT impr. | PT clicks | FR impr. | FR clicks | notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| baseline (28 d before merge) | | | | | | | | | | | | |
+| +28 days | | | | | | | | | | | | |
+| +90 days | | | | | | | | | | | | |
 
 ## Layers of change (so effects can be attributed)
 
@@ -205,6 +205,55 @@ Target terms: agentes de IA à medida, Inteligência Artificial, automatizar pro
 
 ---
 
+## FR: human optimizations (17 Oct 2026, commit "FR: wording from Paris AI agencies")
+
+**Sites (Nico's pick, Paris):** thecodingmachine.com, ia.agency, flowlab.studio/studio-ia-paris, synodique.com/paris, yieldstudio.fr/agence-ia-paris, genee.tech/agence-agent-ia-paris, agence-lewis.fr/agence-ia-paris (added mid-pass)
+
+**Usefulness of the picks:** all six are relevant. All six write **vous**, so France keeps vous. Five of six put Paris in the title and h1 with a real office address.
+
+**Direct competitor for Second Audience:** Genee sells an "Audit GEO gratuit", and IA Agency an "Agence GEO" service. In France the free GEO audit is already a known offer.
+
+**Lessons taken:**
+- "agence IA" as the category term (IA Agency ~20x, Synodique, Yield, Genee "agence d'agents IA"); "studio IA" (Flowlab).
+- "sur mesure" everywhere (TCM ~15x).
+- Production over slides: "on installe un système qui tourne, pas une slide" (Synodique), "De l'idée à la prod" (TCM).
+- Trust: "garde-fous", "humain dans la boucle", "escalade vers un humain" (Genee). Fritz really has server-side guardrails and hands over to Nico, so this went into the Fritz description.
+- CTA: "Parlons de votre projet" (TCM), "Discutons de votre projet" (IA Agency, Yield).
+
+**Deliberately not copied:** Paris/Île-de-France (no office there), "PME/ETI" (not claimed), "devis gratuit" and diagnostic prices (not offered), "souverain/RGPD" claims for Fritz (true of the planned EU stack, but not stated on the current pages).
+
+**/fr/**
+
+| field | before | after |
+|---|---|---|
+| title | Agents IA pour entreprise, sur mesure \| meihuizen.ai | Agence IA : agents IA sur mesure \| meihuizen.ai |
+| description | Agents IA pour entreprise et logiciels d’IA agentique sur mesure, prêts pour la production, pas des démos. Ancrés dans l’IT d’entreprise. | Agence IA pour entreprises : agents IA et logiciels sur mesure qui tournent en production, pas des slides. En direct avec le fondateur. |
+
+**/fr/contact.html**
+
+| field | before | after |
+|---|---|---|
+| title | Contact \| meihuizen.ai, agents IA et logiciels sur mesure | Parlons de votre projet \| meihuizen.ai, agence IA |
+
+**/fr/projects/second-audience.html**
+
+| field | before | after |
+|---|---|---|
+| description | Audit GEO récurrent : ce que ChatGPT, Claude, Gemini et Perplexity lisent, font et comprennent de travers sur votre site. Le premier scan est gratuit. | Audit GEO récurrent : ce que ChatGPT, Claude, Gemini et Perplexity lisent, font et comprennent de travers sur votre site. Le premier scan GEO est gratuit. |
+
+**/fr/projects/agent-fritz.html**
+
+| field | before | after |
+|---|---|---|
+| description | Chatbot IA commercial pour votre site : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et transmet les documents. | Chatbot IA commercial avec garde-fous : il répond à partir de vos seules pages, qualifie les leads, réserve les rendez-vous et passe la main à un humain. |
+
+
+**Buttons, FR pages:** "Lancer un projet" → "Parlons de votre projet" (home, about, builds).
+
+Target terms: agence IA, agents IA sur mesure, chatbot IA commercial, garde-fous, audit GEO, scan GEO gratuit.
+
+---
+
 ## Next human passes (to add here)
 
-FR, NL, LT: competitor sites to be supplied by Nico. Add one section per language in the same format: competitor list, lessons, not copied, before/after table, target terms.
+NL and LT: competitor sites to be supplied by Nico. Until then NL is the agent-only comparison group (LT had an agent SEO retune only).
