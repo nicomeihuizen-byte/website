@@ -36,7 +36,7 @@
   box-shadow: 0 0 0 3px rgba(95,191,142,.08), 0 14px 32px -14px rgba(95,191,142,.45);
   outline: none;
 }
-.side-rail svg { width: 19px; height: 19px; flex: none; fill: currentColor; transition: fill .2s ease; }
+.side-rail svg { width: 19px; height: 19px; flex: none; fill: var(--r-green); transition: fill .2s ease; }
 .side-rail a:hover svg, .side-rail a:focus-visible svg { fill: var(--r-green); }
 .side-rail .rail-label { width: 72px; opacity: 0; transition: opacity .2s ease; }
 .side-rail a:hover .rail-label, .side-rail a:focus-visible .rail-label { opacity: 1; }
