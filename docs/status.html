@@ -11,6 +11,13 @@
 <meta name="theme-color" content="#F4F6F8">
 <link rel="canonical" href="https://www.meihuizen.ai/status.html">
 <link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html">
+<link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html">
+<link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html">
+<link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html">
+<link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html">
+<link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html">
+<link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html">
+<link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html">
 <link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html">
 <meta property="og:title" content="meihuizen.ai | Status">
 <meta property="og:description" content="Live status of meihuizen.ai services (website, Agent Fritz, contact form, Five, Second Audience scans) and the vendors they run on, checked every minute.">
@@ -58,7 +65,13 @@
     <div class="header-tools">
       <nav class="lang" aria-label="Site language">
         <a href="status.html" lang="en" hreflang="en" aria-current="true">EN</a>
-        <a href="lt/" lang="lt" hreflang="lt">LT</a>
+        <a href="nl/status.html" lang="nl" hreflang="nl">NL</a>
+        <a href="de/status.html" lang="de" hreflang="de">DE</a>
+        <a href="fr/status.html" lang="fr" hreflang="fr">FR</a>
+        <a href="it/status.html" lang="it" hreflang="it">IT</a>
+        <a href="es/status.html" lang="es" hreflang="es">ES</a>
+        <a href="pt/status.html" lang="pt" hreflang="pt">PT</a>
+        <a href="lt/status.html" lang="lt" hreflang="lt">LT</a>
       </nav>
     </div>
   </div>
@@ -82,7 +95,14 @@
     <h1 class="h1 h1-p">Is it us, <span class="grad">or upstream?</span></h1>
     <p class="lead lead-wide">Our services first, then the vendors they run on. Our own monitor checks every minute. Vendor lights and descriptions come from each vendor's public status page, linked in every row, so you can check them yourself.</p>
 
-    <div class="st-banner" data-status-banner data-state="unknown">
+    <div class="st-banner" data-status-banner data-state="unknown"
+      data-w-green="operational" data-w-amber="degraded" data-w-red="down" data-w-unknown="unknown"
+      data-w-runs="runs on" data-w-update="vendor update" data-w-source="source →"
+      data-w-checked="Checked {when}. Refreshes every minute." data-w-attempt="Last attempt {when}."
+      data-n-website="Website" data-n-contact="Contact form and requests" data-n-scans="Second Audience scans"
+      data-b-ok="All services operational" data-b-ok-sub="Every service green. Details per service and vendor below."
+      data-b-bad="{n} of {total} services affected" data-b-bad-sub="See which one below, and whether the vendor it runs on reports a problem."
+      data-b-off="Our monitor cannot be reached" data-b-off-sub="The vendor pages below still work.">
       <div class="st-banner-main"><span class="st-light st-unknown pulse" aria-hidden="true"></span><div><p class="st-banner-title" data-status-title>Checking our monitor…</p><p class="st-banner-sub" data-status-sub>The lights below fill in as soon as it answers.</p></div></div>
       <p id="st-checked" class="st-checked"></p>
     </div>
