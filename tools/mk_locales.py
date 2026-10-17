@@ -16,7 +16,7 @@ PAGES = ['index.html', 'about.html', 'builds.html', 'credentials.html', 'contact
          'projects/second-audience.html', 'projects/agent-fritz.html',
          'projects/ai-sales-deal-intelligence.html', 'tour.html',
          'projects/off-grid-ai-homestead.html',
-         'projects/second-audience-cases.html']
+         'projects/second-audience-cases.html', 'status.html']
 NEW = ['nl', 'de', 'fr', 'it', 'es', 'pt']
 ALL = ['en', 'nl', 'de', 'fr', 'it', 'es', 'pt', 'lt']
 LANG_LABEL = {'en': 'Site language', 'lt': 'Svetainės kalba', 'nl': 'Taal van de site',

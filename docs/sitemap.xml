@@ -974,9 +974,123 @@
   </url>
   <url>
     <loc>https://www.meihuizen.ai/status.html</loc>
-    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/nl/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/de/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/fr/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/it/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/es/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/pt/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
+  </url>
+  <url>
+    <loc>https://www.meihuizen.ai/lt/status.html</loc>
+    <lastmod>2026-10-17T19:30:00+03:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.3000</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.meihuizen.ai/status.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.meihuizen.ai/nl/status.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.meihuizen.ai/de/status.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.meihuizen.ai/fr/status.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.meihuizen.ai/it/status.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.meihuizen.ai/es/status.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.meihuizen.ai/pt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://www.meihuizen.ai/lt/status.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.meihuizen.ai/status.html"/>
   </url>
   <url>
     <loc>https://www.meihuizen.ai/projects/second-audience-cases.html</loc>

@@ -486,6 +486,8 @@
   var fritzEl = document.querySelector('[data-status-fritz]');
   var allEl = document.querySelector('[data-status-all]');
   var banner = document.querySelector('[data-status-banner]');
+  // Banner text comes from the page (data-b-* on the banner), so each language version carries its own.
+  function bt(key, fallback) { return (banner && banner.getAttribute('data-' + key)) || fallback; }
   function setBanner(state, title, sub) {
     if (!banner) { return; }
     banner.setAttribute('data-state', state);
@@ -525,12 +527,12 @@
         if (services.length) {
           var down = services.filter(function (s) { return s.light === 'red'; }).length;
           var slow = services.filter(function (s) { return s.light !== 'green' && s.light !== 'red'; }).length;
-          if (!down && !slow) { setBanner('green', 'All services operational', 'Every service green. Details per service and vendor below.'); }
-          else { setBanner(down ? 'red' : 'amber', (down + slow) + ' of ' + services.length + ' services affected', 'See which one below, and whether the vendor it runs on reports a problem.'); }
+          if (!down && !slow) { setBanner('green', bt('b-ok', 'All services operational'), bt('b-ok-sub', 'Every service green. Details per service and vendor below.')); }
+          else { setBanner(down ? 'red' : 'amber', bt('b-bad', '{n} of {total} services affected').replace('{n}', down + slow).replace('{total}', services.length), bt('b-bad-sub', 'See which one below, and whether the vendor it runs on reports a problem.')); }
         }
       }).catch(function () {
         setLive('unknown');
-        setBanner('unknown', 'Our monitor cannot be reached', 'The vendor pages below still work.');
+        setBanner('unknown', bt('b-off', 'Our monitor cannot be reached'), bt('b-off-sub', 'The vendor pages below still work.'));
       });
   }
 

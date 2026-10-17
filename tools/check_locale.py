@@ -14,7 +14,8 @@ import mk_locales as mk
 FREE = {'alt', 'title', 'aria-label', 'content', 'placeholder', 'aria-description',
         'data-label', 'data-tip', 'data-q', 'data-ask', 'value', 'data-fritz-ask', 'data-msg-required', 'data-msg-sending', 'data-msg-success', 'data-msg-error', 'data-msg-network-error',
         'data-tpl-next', 'data-tpl-now', 'data-tpl-done', 'data-l-now', 'data-l-next', 'data-l-later', 'data-l-done',
-        'data-stop-user', 'data-stop-say', 'data-stop-hint', 'data-fritz-stop', 'data-when'}
+        'data-stop-user', 'data-stop-say', 'data-stop-hint', 'data-fritz-stop', 'data-when',
+        'data-w-green', 'data-w-amber', 'data-w-red', 'data-w-unknown', 'data-w-runs', 'data-w-update', 'data-w-source', 'data-w-checked', 'data-w-attempt', 'data-n-website', 'data-n-contact', 'data-n-scans', 'data-b-ok', 'data-b-ok-sub', 'data-b-bad', 'data-b-bad-sub', 'data-b-off', 'data-b-off-sub'}
 
 
 class P(HTMLParser):
