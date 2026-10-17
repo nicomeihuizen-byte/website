@@ -116,6 +116,10 @@
 .leg[data-state="next"] .leg-chip{border-color:var(--accent);color:var(--accent)}
 .leg[data-state="done"]{opacity:.55}
 .leg[data-state="now"]{border-color:var(--accent)}
+.leg-stop{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.leg-btns{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
+.leg-btns button{font-family:var(--font-mono);font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer}
+.leg-btns button:hover,.leg-btns button:focus-visible{border-color:var(--accent);color:var(--accent)}
 .leg-go{font-family:var(--font-mono);font-size:13px;color:var(--accent);white-space:nowrap}
 .leg-off{background:transparent;box-shadow:none;border-style:dashed}
 .leg-off .leg-cities{font-size:24px;color:var(--text-muted)}
@@ -173,6 +177,7 @@
   .leg-where{padding:18px 22px 4px}
   .leg-cities{font-size:30px}
   .leg-side{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 22px 20px}
+  .leg-stop{align-items:flex-end}
   .route{padding:32px 22px}
   .route-grid{grid-template-columns:minmax(0,1fr);gap:28px}
   .crew-row{grid-template-columns:minmax(0,1fr)}
@@ -233,7 +238,6 @@
       <p class="tour-sub"><b>Un furgone. Un umano. Nove agenti. Un cane.</b> Undici città in sei paesi, due mesi per tappa, e l’ufficio parcheggia davanti alla tua porta.</p>
       <div class="tour-actions">
         <a href="#dates" class="btn btn-p">Vedi le date <span aria-hidden="true">→</span></a>
-        <a href="contact.html" class="btn btn-g">Chiedi una sosta <span aria-hidden="true">→</span></a>
       </div>
       <p class="tour-next" data-tour-next data-tpl-next="Prossima tappa: {cities}, tra {days} giorni" data-tpl-now="In tour adesso: {cities}" data-tpl-done="Il tour 2027 è finito. Il 2028 è in lavorazione.">Prossima tappa: Milano · Roma, febbraio 2027</p>
     </div>
@@ -252,17 +256,17 @@
     <li class="leg" data-start="2027-02-01" data-end="2027-03-31">
       <div class="leg-when"><span class="leg-m">Feb · Mar</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">tappa 01</span><span class="leg-cities">Milano · Roma</span><span class="leg-country">Italia</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><a class="leg-go" href="contact.html" data-fritz-stop="Milano o Roma" data-when="febbraio e marzo 2027">chiedi una sosta →</a></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><div class="leg-stop"><span class="leg-go">chiedi una sosta</span><span class="leg-btns"><button type="button" data-fritz-stop="Milano" data-when="febbraio e marzo 2027">Milano</button><button type="button" data-fritz-stop="Roma" data-when="febbraio e marzo 2027">Roma</button></span></div></div>
     </li>
     <li class="leg" data-start="2027-04-01" data-end="2027-05-31">
       <div class="leg-when"><span class="leg-m">Apr · Mag</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">tappa 02</span><span class="leg-cities">Barcelona · Madrid</span><span class="leg-country">Spagna</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><a class="leg-go" href="contact.html" data-fritz-stop="Barcelona o Madrid" data-when="aprile e maggio 2027">chiedi una sosta →</a></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><div class="leg-stop"><span class="leg-go">chiedi una sosta</span><span class="leg-btns"><button type="button" data-fritz-stop="Barcelona" data-when="aprile e maggio 2027">Barcelona</button><button type="button" data-fritz-stop="Madrid" data-when="aprile e maggio 2027">Madrid</button></span></div></div>
     </li>
     <li class="leg" data-start="2027-06-01" data-end="2027-07-31">
       <div class="leg-when"><span class="leg-m">Giu · Lug</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">tappa 03</span><span class="leg-cities">Lyon · Paris</span><span class="leg-country">Francia</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><a class="leg-go" href="contact.html" data-fritz-stop="Lyon o Paris" data-when="giugno e luglio 2027">chiedi una sosta →</a></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><div class="leg-stop"><span class="leg-go">chiedi una sosta</span><span class="leg-btns"><button type="button" data-fritz-stop="Lyon" data-when="giugno e luglio 2027">Lyon</button><button type="button" data-fritz-stop="Paris" data-when="giugno e luglio 2027">Paris</button></span></div></div>
     </li>
     <li class="leg leg-off">
       <div class="leg-when"><span class="leg-m">Ago</span><span class="leg-y">2027</span></div>
@@ -272,12 +276,12 @@
     <li class="leg" data-start="2027-09-01" data-end="2027-10-31">
       <div class="leg-when"><span class="leg-m">Set · Ott</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">tappa 04</span><span class="leg-cities">Porto · Lisboa</span><span class="leg-country">Portogallo</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><a class="leg-go" href="contact.html" data-fritz-stop="Porto o Lisboa" data-when="settembre e ottobre 2027">chiedi una sosta →</a></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><div class="leg-stop"><span class="leg-go">chiedi una sosta</span><span class="leg-btns"><button type="button" data-fritz-stop="Porto" data-when="settembre e ottobre 2027">Porto</button><button type="button" data-fritz-stop="Lisboa" data-when="settembre e ottobre 2027">Lisboa</button></span></div></div>
     </li>
     <li class="leg" data-start="2027-11-01" data-end="2027-12-31">
       <div class="leg-when"><span class="leg-m">Nov · Dic</span><span class="leg-y">2027</span></div>
       <div class="leg-where"><span class="leg-n">tappa 05 · ritorno a casa</span><span class="leg-cities">Berlin · Vilnius · Kaunas</span><span class="leg-country">Germania e Lituania</span></div>
-      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><a class="leg-go" href="contact.html" data-fritz-stop="Berlin, Vilnius o Kaunas" data-when="novembre e dicembre 2027">chiedi una sosta →</a></div>
+      <div class="leg-side"><span class="leg-chip" data-leg-status>annunciata</span><div class="leg-stop"><span class="leg-go">chiedi una sosta</span><span class="leg-btns"><button type="button" data-fritz-stop="Berlin" data-when="novembre e dicembre 2027">Berlin</button><button type="button" data-fritz-stop="Vilnius" data-when="novembre e dicembre 2027">Vilnius</button><button type="button" data-fritz-stop="Kaunas" data-when="novembre e dicembre 2027">Kaunas</button></span></div></div>
     </li>
   </ol>
   <p class="fine">Mesi, non giorni. I giorni esatti per città compaiono qui, tappa dopo tappa. Tra una tappa e l’altra non si ferma niente: l’intro di 15 minuti, i progetti e Fritz vanno avanti da remoto, tutto l’anno.</p>
