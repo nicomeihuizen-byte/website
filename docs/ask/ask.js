@@ -974,7 +974,7 @@
       } else if (event === 'next') {
         bot.next = data.questions || [];
       } else if (event === 'action') {
-        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null, lang: T[data.lang] ? data.lang : null, confirm: data.confirm !== false, start: typeof data.start === 'string' ? data.start.slice(0, 40) : null };
+        bot.action = { type: data.type, domain: data.domain, booking: data.booking || null, lang: T[data.lang] ? data.lang : null, confirm: data.confirm !== false, start: typeof data.start === 'string' ? data.start.slice(0, 40) : null, meeting: /^(Google|Proton) Meet$/.test(data.meeting || '') ? data.meeting : null };
       } else if (event === 'error') {
         throw new Error(data.code || 'upstream');
       }
