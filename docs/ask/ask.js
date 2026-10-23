@@ -632,7 +632,10 @@
           try { when = bookedWhen(d, item.action.lang || LANG); } catch (e) { when = ''; }
         }
         card.appendChild(el('b', null, '✓ ' + at.booked[0] + (when ? ' · ' + when : '')));
-        card.appendChild(el('span', null, at.booked[1]));
+        // The server says what the call runs on; every language's line names
+        // Google Meet, so only the word Google is swapped (DE: "Google-Meet-Link").
+        let provider = /^(Google|Proton) Meet$/.test(item.action.meeting || '') ? item.action.meeting.split(' ')[0] : 'Google';
+        card.appendChild(el('span', null, at.booked[1].replace(/Google(?=[- ]Meet)/, provider)));
       } else if (item.action.type === 'contact_requested') {
         card.appendChild(el('b', null, '✓ ' + at.contact[0]));
         card.appendChild(el('span', null, item.action.confirm === false || !at.contact[2] ? at.contact[1] : at.contact[1] + ' ' + at.contact[2]));
