@@ -323,3 +323,40 @@
 }
 .fritz-book:hover { transform: translateY(-1px); }
 .fritz-book:focus-visible { outline: 2px solid var(--f-text); outline-offset: 2px; }
+
+/* "browse the site": only shown in the phone chat-first shell below. */
+.fritz-browse { display: none; }
+
+/* --- phones, home page: chat first ------------------------------------
+   ask.js sets html.fritz-first on a phone's home page and opens Fritz
+   under the site header and office strip (--fritz-top), so the company
+   stays on screen and the conversation is the page. The page itself is
+   still in the HTML underneath: Google and agents read all of it, and
+   "browse the site" closes the chat to show it. Desktop never gets this
+   class, so nothing here touches it. */
+@media (max-width: 600px) and (min-height: 501px) {
+  html.fritz-first .fritz-panel {
+    top: var(--fritz-top, 0px); bottom: 0; height: auto;
+    border-top: 1px solid var(--f-line);
+    box-shadow: none;
+    transform: none; transition: opacity .2s ease, visibility 0s linear .2s;
+  }
+  html.fritz-first .fritz.is-open .fritz-panel { transition-delay: 0s; }
+  /* the strip above already says Fritz is online and when Nico is in */
+  html.fritz-first .fritz-status { display: none; }
+  html.fritz-first .fritz-bar { padding: 7px 10px 7px 14px; }
+  html.fritz-first .fritz-log { padding: 18px 16px 6px; }
+  html.fritz-first .fritz-opener { font-family: var(--f-body); font-size: 15px; line-height: 1.55; margin-bottom: 16px; }
+  html.fritz-first .fritz-opener .ready { color: var(--f-text); margin: 0; }
+  html.fritz-first .fritz-browse {
+    display: block; align-self: center;
+    margin: 0 0 6px; padding: 6px 12px; border-radius: 999px;
+    font-family: var(--f-mono); font-size: 12px; color: var(--f-muted);
+    transition: color .15s, background .15s;
+  }
+  html.fritz-first .fritz-browse:hover { color: var(--f-text); background: var(--f-raised); }
+  html.fritz-first .fritz-browse:focus-visible { outline: 2px solid var(--f-green); outline-offset: 2px; }
+  html.fritz-first .fritz-foot { font-size: 10.5px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+  /* the cookie choice has to stay answerable, so it sits above the chat */
+  html.fritz-first .mz-consent { z-index: 9995; }
+}
